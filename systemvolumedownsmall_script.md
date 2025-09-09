@@ -1,0 +1,20 @@
+# Script: SystemVolumeDownSmall
+
+## Description
+
+System Volume down by 2% increment. This volume change is saved by the
+operating system.
+
+## Returns
+
+Type: Void\
+
+## Parameters
+
+No Parameters
+
+## Version
+
+This function is available in the following releases:
+
+1.  JAWS 22.00 and later

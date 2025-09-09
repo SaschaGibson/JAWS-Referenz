@@ -1,0 +1,29 @@
+# Function: BraillePanRight
+
+## Description
+
+Displays the next group of Braille characters from the line with the
+active cursor. The characters that are displayed when this function is
+used are those that follow the last character on the current display of
+Braille characters. For example, the display moves or pans to the right
+to reveal additional text.
+
+## Returns
+
+Type: Int\
+Description: \"WAS_SUCCESSFUL\" = 1, \"WAS_NOT_SUCCESSFUL\" = 0.\
+
+## Parameters
+
+### Param 1:
+
+Type: Int\
+Description: true to move to the first segment of the next line if no
+more text to the right, default value is false.\
+Include: Optional\
+
+## Version
+
+This function is available in the following releases:
+
+1.  JAWS 4.51 and later
