@@ -1,0 +1,175 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>9.8 Chapter Exercises</title>
+<LINK rel="StyleSheet" href="default.css">
+</head>
+
+<body>
+<h1>9.8 Chapter Exercises</h1>
+
+<p>The following exercises will give you practice in creating If-Then
+statements.</p>
+
+<p class="Note"><b>Note:</b> The exercises in this
+chapter will not walk you through the steps needed to open the Script Manager
+or the steps needed to activate the New script dialog. To review these steps,
+refer to the previous chapters in this manual.</p>
+
+<h2>Exercise 9.1: Using the If statement to Check for User Verbosity</h2>
+<p>The following script for Notepad uses an If statement to determine which user verbosity level is active and speaks an appropriate message. You will need to use the GetVerbosity function to determine the current verbosity level. The GetVerbosity function returns the constant BEGINNER, INTERMEDIATE, or ADVANCED depending on which level JAWS is currently set on. The constants are defined in the header file hjconst.jsh. Use the If statement and the GetVerbosity function to determine which verbosity level is currently active and speak a message accordingly.</p>
+
+<ol>
+ <li>Make sure that the Notepad script file is open and your cursor is at the bottom of the file ready to insert a new script.</li>
+ <li>Add the following information in the New Script dialog:</li>
+ <ul>
+  <li>Script Name: CheckVerbosity</li>
+  <li>Can be Attached to Key: checked</li>
+  <li>Synopsis: Speaks a message based on which verbosity level is active.</li>
+  <li>Description: This script uses the GetVerbosity function to determine which verbosity level is active and then speaks a message accordingly.</li>
+  <li>Category: None</li>
+  <li>Assign to Key: <b>CTRL+SHIFT+C</b></li>
+ </ul>
+<li>The script should first check to see if the verbosity level is set to beginner. If so, a message should be spoken. After typing the keyword If, press <b>CTRL+I</b> to activate the Insert Function dialog box and insert the GetVerbosity function. Notice the function requires no parameters. The statement should look like the following and should be placed beneath the line containing the script name:</li>
+</ol>
+
+<p class="Code">If GetVerbosity () == BEGINNER Then ; Check to see if verbosity is beginner.</p>
+
+<p class="Note"><b>NOTE:</b> You do not need quotes around the word BEGINNER because it is a constant value rather than a string value.</p>
+
+<ol start=4>
+<li>On the next line use the SayFormattedMessage function to have JAWS speak the message, "Your verbosity is beginner." Be sure to indent the line first. The line should look like the following:</li>
+</ol>
+
+<p class="Code">SayFormattedMessage (OT_Message, "Your verbosity is beginner")</p>
+
+<ol start=5>
+<li>Since we are checking for three conditions (beginner, intermediate, or advanced) we must use the ElIf statement to check for intermediate verbosity. The statement should look like the following:</li>
+</ol>
+
+<p class="Code">ElIf GetVerbosity () == INTERMEDIATE Then ; Check to see if verbosity is INTERMEDIATE</p>
+
+<ol start=6>
+<li>On the next line use the SayFormattedMessage function to have JAWS speak the message, "Your verbosity is intermediate."</li>
+<li>Since the verbosity level must be one of three levels, we know that if it is not beginner or intermediate then it must be advanced. Therefore we can simply use the Else statement and have JAWS speak the message, "Your verbosity is advanced."</li>
+<li>After inserting the Else statement and final SayFormattedMessage function don't forget the EndIf keyword before the EndScript statement. When finished, your script should look like the following:</li>
+</ol>
+
+<p class="Code">Script CheckVerbosity ()<br>
+If GetVerbosity () == BEGINNER Then ; Check to see if verbosity is beginner.<br>
+SayFormattedMessage (OT_Message, "Your verbosity is beginner")<br>
+ElIf GetVerbosity () == INTERMEDIATE Then ; Check to see if verbosity is INTERMEDIATE<br>
+SayFormattedMessage (OT_Message, "Your verbosity is intermediate")<br>
+Else ; If the verbosity is not beginner or intermediate, it must be advanced<br>
+SayFormattedMessage (OT_Message, "Your verbosity is advanced")<br>
+EndIf<br>
+EndScript</p>
+
+<ol start=9>
+<li>Press <b>CTRL+S</b> to save and compile the script. If any errors exist be sure your script looks like the one above.</li>
+<li>Switch over to Notepad and press <b>CTRL+SHIFT+C</b> to run your script. JAWS should speak the message telling you what your verbosity currently is.</li>
+<li>Be sure to change your verbosity to all three levels and test your script. Do the following to change your verbosity:</li>
+<ul>
+<li>Press <b>INSERT+V</b> to open the Adjust JAWS Options dialog box.</li>
+<li>Press the letter 'U' until you find the User Verbosity option and press <b>SPACEBAR</b> to cycle between the three values.</li>
+<li>Press <b>ENTER</b> to accept your change and close the Adjust JAWS Options dialog box and return to Notepad.</li>
+</ul>
+</ol>
+
+<h2>Exercise 9.2: Looping Example</h2>
+
+<p>The following script in Notepad should make JAWS count out loud from one to
+ten. You will accomplish this using a While EndWhile loop. During each
+iteration through the loop, JAWS will speak the value of an integer variable
+and then increase the value of the variable by one. The SayInteger function
+will be used to speak the value of the integer variable.</p>
+
+<ol>
+ <li>Make sure that the Notepad script file is open and your cursor is at the bottom of the file ready to insert a new script.</li>
+ <li>Add the following information in the New Script dialog:</li>
+ <ul>
+  <li>Script Name: LoopingExample</li>
+  <li>Can be Attached to Key: checked</li>
+  <li>Synopsis: Counts out loud to ten.</li>
+  <li>Description: This script uses a loop and the SayInteger function to count from one to ten.</li>
+  <li>Category: None</li>
+  <li>Assign to Key: <b>CTRL+SHIFT+L</b></li>
+ </ul>
+ <li>You must first create an integer variable that will be used to count to ten. Make
+     sure the cursor is in the body of the script and create an integer
+     variable named iCount.</li>
+ <li>Using a Let statement, assign a value of 1 to the iCount variable.</li>
+ <li>Since we want JAWS to stop counting after it reaches ten, we use a While loop that
+     only executes while the value of iCount is less than eleven. Enter the
+     following on a blank line below the Let statement:</li>
+</ol>
+
+<p class="Code">While iCount &lt; 11; This loop will execute 10 times</p>
+
+<ol start=6>
+ <li>You can now insert the SayInteger function that will speak the value of the iCount
+     variable. On a blank line below the While statement, press <b>TAB</b> to
+     indent the code inside the loop. Then press <b>CTRL+I</b> to activate the
+     Insert Function dialog box and locate the SayInteger function.</li>
+ <li>After choosing the SayInteger function, The Script Manager prompts you for two parameters.
+     The first parameter is the numeric value or integer variable containing
+     the numeric value to be spoken. When prompted by the Script Manager for
+     this parameter, type &quot;iCount&quot; without the quotation marks to
+     indicate that the function will speak the value of the iCount variable. The
+     Script Manager then prompts you for the second parameter, the base of the
+     number to be used. Since this parameter is optional, press <b>TAB</b> until you reach
+     the Finish button followed by the <b>SPACEBAR</b> to activate the button and
+     close the Insert Function dialog. After the function is inserted into your
+     script, you will need to remove the comma and space between the iCount
+     variable and the right parenthesis. The line should look like the following:</li>
+</ol>
+
+<p class="Code">SayInteger (iCount)</p>
+
+<ol start=8>
+ <li>On the next line you can now increase the value of the iCount variable by one.
+     First press <b>TAB</b> to indent the new line to the same level as the
+     previous line. Now type the following Let statement:</li>
+</ol>
+
+<p class="Code">Let iCount = iCount + 1; Adds 1 to the value of iCount. When it reaches 11, the loop will stop.</p>
+
+<ol start=9>
+ <li>On the next line add the EndWhile keyword to conclude the loop.</li>
+ <li>After performing the above steps, your script should look like the following:</li>
+</ol>
+
+<p class="Code">Script LoopingExample ()<br>
+var<br>
+int iCount<br>
+Let iCount = 1<br>
+While iCount &lt; 11; This loop will execute 10 times.<br>
+SayInteger (iCount); Speaks the value of the iCount variable<br>
+Let iCount = iCount + 1; Adds 1 to the value of iCount. When it reaches 11, the loop will stop.<br>
+EndWhile<br>
+EndScript</p>
+
+<ol start=11>
+ <li>Press <b>CTRL+S</b> to save and compile the script. If you get a compile error, check to make
+     sure your script matches the example above.</li>
+ <li>You can now move to Notepad and press <b>CTRL+SHIFT+L</b> to activate your script.
+     You should hear JAWS count from one to ten.</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="10-0_PassingKeystrokesAndTypingTextWithScripts.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</body>
+
+</html>

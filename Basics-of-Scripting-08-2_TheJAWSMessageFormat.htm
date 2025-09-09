@@ -1,0 +1,184 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>8.2 The JAWS Message Format</title>
+<LINK rel="StyleSheet" href="default.css">
+</head>
+
+<body>
+<h1>8.2 The JAWS Message Format</h1>
+
+<p>The JAWS message format was first introduced in JAWS 4.0. This new message
+format replaced the need for concatenating message constants together to
+produce a single message. The message format also makes modifying your messages
+much easier. You do not have to worry about surrounding the entire message text
+in quotation marks.</p>
+
+<p>The JAWS message format consists of the following parts:</p>
+
+<ul>
+ <li>Messages</li>
+ <li>@MsgName</li>
+ <li>message body</li>
+ <li>@@</li>
+ <li>EndMessages</li>
+</ul>
+
+<h2>Beginning the Block of Messages</h2>
+
+<p>You use the key word, Messages, to begin the entire block of messages. You
+place this key word at the beginning of your message file. You only use this
+key word once within the message file. This key word tells JAWS that anything
+following the word is part of your messages block.</p>
+
+<h2>Beginning an Individual Message</h2>
+
+<p>All of your individual messages immediately follow the Messages key word.
+You start each individual message with the @ symbol followed by the name of the
+message. When you name your messages, it is often helpful to begin the name
+with &quot;Msg.&quot; When you start each message in this way, you will know
+immediately where the message is stored when you reference the message in your
+script file.</p>
+
+<p>You can think of the message name as a constant. Once you have named an
+individual message, you will most likely not modify the message content during
+the execution of your scripts. When you reference your message from within a
+script, you do not include the @ symbol. This symbol only tells JAWS that the
+text immediately following the symbol is the actual name of the message. For
+example, if you have messages defined in your message file as @Msg1 and @Msg2,
+you would reference those messages using the Say function as follows:</p>
+
+<p class="Code">Say (Msg1, OT_MESSAGE)<br>
+Say (Msg2, OT_MESSAGE)</p>
+
+<p>In the above examples, only the actual message name is used as the parameter
+for the Say function. </p>
+
+<h2>The Body of the Message</h2>
+
+<p>The text to be spoken by JAWS immediately follows the @MsgName statement.
+This is the body of the individual message. The body of the message can contain
+any text or punctuation. You can type anything inside the body of the message
+that you would in a word processor or text editor. You can press <b>ENTER</b>
+to create a new line and do not have to use escape characters to represent
+certain symbols such as the backslash. The following example shows the message
+name and the text contained in the body of a message:</p>
+
+<p class="Code">@MsgName<br>
+This text is part of the body of a message. Notice it is written
+just as if you typed it into a text editor or word processor. When you press
+the keystroke to activate the script that uses this message, JAWS speaks this
+text.</p>
+
+<h2>Message Placeholders</h2>
+
+<p>You can also use placeholders within the body of your message. These
+placeholders essentially hold a place in your message for information you want
+to add to the message during the execution of your script or function. You can
+use up to nine placeholders within the body of the message. To add a
+placeholder to your message, type the percent sign followed by a number from 1
+to 9.</p>
+
+<p>You can find the following examples of the use of placeholders in the
+common.jsm message file:</p>
+
+<p class="Code">;for cMsgMenuItem_L/S, %1=app title, %2=current menu selection,
+this is used in SayWindowTitle<br>
+@cMsgMenuItem_L<br>
+title= %1 menu<br>
+%2<br>
+@@<br>
+@cMsgMenuItem_S<br>
+%1<br>
+menu<br>
+%2<br>
+@@</p>
+
+<p>The message referenced by MsgMenuItem_L shown above is heard when you press <b>INSERT+T</b>
+to read the title of an application and a menu is open. The placeholders allow
+for changes in the menu name and the selected item in the menu. This message is
+heard when you are using beginner verbosity. The message referenced by
+MsgMenuItem_S is heard when you are using intermediate or advanced verbosity.</p>
+
+<h2>Ending the Message</h2>
+
+<p>After you have completed the body of the message, you need to end the
+individual message. You type 2 @ symbols &quot;@@&quot; to tell JAWS that this
+is the end of your individual message. You should type the @ symbols together
+without spaces between them. The @@ symbols should go on their own line
+following the individual message.</p>
+
+<p>The following example shows a complete individual message:</p>
+
+<p class="Code">@MsgName<br>
+This text is part of the body of a message. Notice it is written
+just as if you typed it into a text editor or word processor. When you press
+the keystroke to activate the script that uses this message, JAWS speaks this
+text.<br>
+@@</p>
+
+<h2>Ending the Messages Block</h2>
+
+<p>After you have entered all of your messages into your message file, you must
+end the messages block. The key word EndMessages tells JAWS this is the end of
+all of your messages. You only type this key word once in your message file. It
+must follow all individual messages. There is no space separating the words of
+&quot;End&quot; and &quot;Messages.&quot; The following example shows a complete
+messages block:</p>
+
+<p class="Code">Messages<br>
+@MsgName<br>
+This text is part of the body of a message. Notice it is written
+just as if you typed it into a text editor or word processor. When you press
+the keystroke to activate the script that uses this message, JAWS speaks this
+text.<br>
+@@<br>
+EndMessages</p>
+
+<h2>Adding Comments</h2>
+
+<p>You can add comments at the top of your message file or within the messages
+block. Just as in your script file, you begin all comments with a &quot;;&quot;
+semi colon. When you add comments inside the messages block, make sure you have
+not added the comments in the body of an individual message. Even though you
+begin a comment line with a semi colon, JAWS will think it is just part of the
+body of your message. Thus, the comment will be treated just as if it is part
+of the message.</p>
+
+<p>An example of comments within a script message file along with an message
+block follows:</p>
+
+<h3>Example 1: Full Message Block Example</h3>
+
+<p class="Code">; JAWS 12.0.512 Message file for Notepad in Windows
+Vista<br>
+; created by the Freedom Scientific Training Department<br>
+Messages<br>
+; my first practice message<br>
+@MsgName<br>
+This text is part of the body of a message. Notice it is written
+just as if you typed it into a text editor or word processor. When you press the
+keystroke to activate the script that uses this message, JAWS speaks this text.<br>
+@@<br>
+EndMessages</p>
+
+<p>In the above example, the comment within the message block is placed before
+the start of the individual message.</p>
+
+<p>&nbsp;</p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="08-3_FormattingYourMessages.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</body>
+
+</html>

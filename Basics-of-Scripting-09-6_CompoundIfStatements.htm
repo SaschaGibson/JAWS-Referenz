@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+ <TITLE>9.6 Compound If Statements</TITLE>
+ <LINK rel="StyleSheet" href="default.css">
+</HEAD>
+<BODY>
+<H1>9.6 Compound If Statements</H1>
+
+<P>Compound statements contain two or more conditions that JAWS evaluates before your script continues processing. There are two types of compound If statements:</P>
+	<ul>
+	<LI>Statements joined by "AND"</LI>
+	<LI>Statements joined by "OR"</LI>
+	</UL>
+
+<P>The type of compound statement you use within your script is based largely on the type of processing that needs to occur under certain situations. Compound statements 		can often replace nested If statements.</P>
+
+<H2>Compound Statements Using "And"</H2>
+
+<P>A compound statement joined by “and” evaluates two or more conditions before processing continues. All conditions must be true before the entire If statement is said to 	be true. If JAWS determines that one of the conditions is false, then the entire If statement is considered to be false.
+	You use two ampersands (&&) placed next to each other to indicate a compound statement joined by “and.”</P>
+
+<h3>Example 1: A compound statement joined by “and”</h3>
+
+<P class="Code">Var<br>
+Int iValue<br>
+Let iValue = CalculateNumber (); Assign a number to iValue<br>
+If iValue > 5 && iValue < 10 Then<br>
+SayFormattedMessage (OT_MESSAGE, “The value is between 5 and 10.”)<br>
+Else<br>
+SayFormattedMessage (OT_MESSAGE, “The value is not between 5 and 10.”)<br>
+EndIf</P>
+
+<P>In the above example, the compound statement determines if the value stored in iValue is between 5 and 10. 
+<UL>
+<LI>If the value stored in iValue is greater than 5 but less than 	10, then the If statement is true and JAWS speaks, “The value is between 5 and 10.”</LI>
+<LI>If the value stored in iValue is less than or equal to 5 or greater than or equal to 10, then the If statement is false and JAWS speaks, “The value is not between 5 and 10."</LI>
+</UL></P>
+
+<H2>Compound Statements Using "Or"</H2>
+
+<P>A compound statement joined by “or” evaluates two or more conditions before processing continues. Any of the conditions can be true to make the entire If statement true. 	If JAWS determines that none of the conditions are true, then the entire If statement is false.
+	You use two vertical bars (||) placed next to each other to indicate a compound statement joined by “or.”</P>
+
+<h3>Example 2: A compound statement joined by 	“or"</h3>
+
+<P class="Code">If iValue == 5 || iValue == 10 Then<br>
+SayFormattedMesssage (OT_MESSAGE, “The value is either equal to 5 or 10.”)<br>
+Else<br>
+SayFormattedMessage (OT_MESSAGE, “The value is not equal to either 5 or 10.”)<br>
+EndIf</p>
+
+<P>In the above statement, the compound statement determines if the value stored in iValue is equal to 5 or 10. 
+<UL>
+<LI>If the value is either 5 or 10, the If statement is true and JAWS speaks, “The value is either 5 or 10.”</LI>
+<LI>If the value stored in iValue is not equal to 5 or 10, then the If statement is false and JAWS speaks, “The value is not equal to 5 or 10.”</LI>
+</UL></P>
+
+<H2>Short Circuit Evaluation</H2>
+
+<P>JAWS uses a feature called short circuit evaluation to speed up the execution of scripts. This feature keeps JAWS from having to evaluate all parts of the expression 	whether it is needed or not. Short circuit evaluation works by evaluating an expression for an "or condition" such that if the first variable condition is true 	there is no need to evaluate the second variable condition. In an "and condition," if the first variable condition is false then there is no need to 	evaluate the 	second condition. </P>
+
+<P>Consider the following if condition:</P>
+
+<P class="Code">If (function1() || function2()) then</p>
+
+<P>In versions of JAWS prior to 5.0, both function1 and function2 would be executed even if function1 returned TRUE. Now however, if function1 returns true then function2 is not executed. In this example, function2 is only executed if function1 returns false. Similarly:</P>
+
+<P class="Code">If (f1() && f2()) then</P>
+
+<P>If f1 returns false, f2 will not be evaluated because it will not be possible for both sides of the "and" expression to be true. The function f2 will only be executed if 	f1 returns true.</P>
+ 
+<P>&nbsp;</P>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="09-7_Looping.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</BODY>
+</HTML>

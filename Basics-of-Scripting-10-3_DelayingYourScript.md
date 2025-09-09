@@ -1,0 +1,103 @@
+# 10.3 Delaying Your Script
+
+Your scripts generally process faster than the system you are using.
+When you pass keystrokes from within your script, you may need to pause
+the script to give the system time to process the keystrokes. You can
+use one of two built-in functions to pause the processing of your
+script:
+
+- Pause
+- Delay
+
+The two functions differ in how much time they allow for the system to
+catch up with your script. The Pause function pauses the processing of
+your script so that other applications can complete tasks. The delay
+function allows you to specify the amount of time your script pauses
+before processing resumes.
+
+You don't have to limit the use of these functions to only scripts that
+pass keystrokes. You can use both functions in other circumstances where
+the script needs to be paused to allow for system processing.
+
+Knowing when to use one of these functions depends on the application
+and the PC. You may not need to pause the processing of a script to
+allow the system to catch up on a fast PC. On the other hand, a slower
+PC may require more time to process a command.
+
+## The Pause Function
+
+The pause function causes JAWS to yield to the time needs of other
+applications. Once other applications have been given the opportunity to
+use processing time, then JAWS resumes processing the script.
+
+An example of the use of the Pause function follows:
+
+### Example 1: Using the Pause Function
+
+TypeKey (\"alt+f\") ; open the File menu\
+Pause () ; allow system to open the File menu\
+If MenusActive () Then; make sure the menu bar opened\
+TypeKey (\"s\") ; activate the Save option\
+Else\
+SayFormattedMessage (OT_ERROR, \"The menu bar did not open\")\
+EndIf
+
+In the above example, the TypeKey function opens the File menu. Next,
+the Pause function stops the processing of the script to give the
+application time to open the menu. Before JAWS performs the TypeKey
+function, the MenusActive function must determine if the menu bar is
+open. If the menu bar is open, then JAWS performs the TypeKey function
+and the menu item is activated. If the menu did not open successfully,
+then JAWS speaks an appropriate error message.
+
+## The Delay Function
+
+The Delay function gives you more control than the Pause function when
+stopping your script. Since the Pause function relies on other system
+processes, the amount of time your script is stopped can vary. If this
+amount of time is insufficient for your script to process correctly,
+then you should use the Delay function.
+
+The Delay function requires a numeric value as a parameter. This value
+is a whole number that tells JAWS the length of time to pause script
+execution. This value can be a numeric value such as 5, an integer
+variable containing a value or a constant representing a numeric value.
+The amount of time JAWS pauses script execution is measured in tenths of
+a second. For example, a value of 1 tells the delay function to stop for
+a tenth of a second.
+
+In JAWS 5.0 and above, the Delay function accepts an optional second
+parameter. This parameter is a numeric value that tells JAWS to suppress
+checking for and processing FocusChangedEvent and NewTextEvent functions
+before returning from the delay. When you pass TRUE in this parameter,
+then JAWS suppresses any processing of the NewText or FocusChanged
+events. If you pass FALSE in this parameter, then JAWS will not suppress
+the processing of these two events. You call the Delay function using
+the following syntax:
+
+Delay (nDelayValue, , nNoEvents)
+
+An example of the use of the Delay function follows:
+
+### Example 2: Using the Delay Function
+
+TypeKey (\"alt+f\") ; open the File menu\
+Delay (3); allow system to open the File menu\
+If MenusActive () Then\
+TypeKey (\"s\") ; activate the Save option\
+Else\
+SayFormattedMessage (OT_ERROR, \"The menu bar did not open\")\
+EndIf
+
+In the above example, the first TypeKey function activates the File
+menu. JAWS then performs the Delay function to pause script processing
+to give the File menu time to open. The MenusActive function then
+determines if the menu is open. If it is open, then JAWS performs the
+second TypeKey function and the Save option is activated. Otherwise,
+JAWS speaks an appropriate error message.
+
+ 
+
+  ---------------------------------------------------------- -- --------------------------------------------
+  [Back](javascript:window.history.go(-1);){accesskey="b"}      [Next](10-4_TypingText.htm){accesskey="x"}
+  ---------------------------------------------------------- -- --------------------------------------------

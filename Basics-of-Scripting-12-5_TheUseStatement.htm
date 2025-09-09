@@ -1,0 +1,58 @@
+<html lang="en-us">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>12.5 The Use Statement</title>
+<LINK rel="StyleSheet" href="default.css">
+</head>
+
+<body>
+
+<h1>12.5 The Use Statement</h1>
+
+<p>In a previous chapter of this manual, you learned about the include
+statement. You use this statement to &quot;include&quot; the contents of a JAWS
+script header or message file within a JAWS script file. There is a second
+statement you can add to your script file that allows you to use another type
+of Script Manager file.</p>
+
+<p>If you were to look at the default script file, you would find a number of
+include statements for a variety of header and message files. Following these
+include statements, you will find a series of &quot;use&quot; statements. These
+&quot;use&quot; statements allow you to create a link between the binary
+version of one script file with the binary of another. For example, you will
+find the statement use &quot;Magic.jsb&quot; in the default script file. This
+statement tells JAWS to create a link between the compiled version of the
+default script file, Default.jsb, and the Magic.jsb binary file.</p>
+
+<p>This link then allows the script developers at Freedom Scientific to call
+functions from the Magic.jsb file just as if the functions had been created in
+the default script file or were part of the built-in functions of JAWS.</p>
+
+<p>The syntax of the use statement is identical to that of the include
+statement. You begin by typing the word &quot;use&quot; followed by a space
+then the name of the binary file you want to include. The name of the binary
+file must include the extension of &quot;.jsb&quot; and be surrounded in
+quotation marks. Some examples of use statements taken from the default script
+file follow:</p>
+
+<p class="Code">use "say.jsb"<br>
+use "Braille.jsb"<br>
+Use "Virtual.jsb"</p>
+
+<p>&nbsp;</p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="12-6_ChapterExercises.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</body>
+
+</html>

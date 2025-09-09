@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>4.1 Script Manager Files</title>
+<LINK rel="StyleSheet" href="default.css">
+</head>
+
+<body>
+
+<h1>4.1 Script Manager Files</h1>
+
+<p>The Script Manager uses five different files, some of which are created
+automatically. All five files are found within your JAWS settings folder. See <a
+href="Appendix_D.htm">Naming JAWS Settings Files</a> for more
+information on how JAWS derives the names of files created automatically.</p>
+
+<ul>
+<li>JSS JAWS Script Source File</li>
+<li>JSD JAWS Script Documentation File</li>
+<li>JSH JAWS Script Header File</li>
+<li>JSM JAWS Script Message File</li>
+<li>JSB JAWS Script Binary File</li>
+</ul>
+
+<h2>The JAWS Script Source File</h2>
+
+<p>The first file the Script Manager uses is the JAWS script source file. The
+script source file is the file that contains all the text of the scripts and
+functions you create. This file is essentially a text file with the file
+extension of jss.</p>
+
+<p>When you start the Script Manager from an application that is not supported
+by Freedom Scientific, the Script Manager automatically creates this file for
+the active application. For example when you run the Script Manager from within
+Notepad, the Script Manager creates a new script file. The manager creates the
+file because Notepad is not supported by Freedom Scientific. In other words,
+the script developers at Freedom Scientific have not written any scripts or
+user-defined functions for Notepad. See <a
+href="04-2_StartingTheScriptManager.htm">section 4.2</a> for more information
+on starting the Script Manager.</p>
+
+<h2>The JAWS Script Documentation File</h2>
+
+<p>The second file the Script Manager uses is the JAWS script documentation
+file. This file contains the name, synopsis, description, return value, and
+parameters for all of the scripts and user-defined functions in the
+corresponding script file. Like the script source file, this file is also a
+text file with an extension of jsd.</p>
+
+<p>When you activate keyboard help, the information JAWS speaks as you press
+keystrokes is retrieved from this file. When you press a keystroke once, JAWS
+speaks the synopsis of the script. When you press the same keystroke twice in
+succession, JAWS speaks the description.</p>
+
+<h2>The JAWS Script Header and JAWS Script Message Files</h2>
+
+<p>The next files the Script Manager uses contain header and message
+information. You can create and modify both of these files using the Script
+Manager. The first of these two files is the JAWS script header file and has an
+extension of jsh. You use header files to store things such as constant and
+global variable definitions. The second of these 2 files is the JAWS script
+message file and has a file extension of jsm. You use message files to store
+all of the spoken messages used within your script file. </p>
+
+<p>Through the use of the Include statement, you can add the content of both of
+these files to as many script files as you want. Storing your constant
+definitions, global variable definitions, and messages in header and message
+files makes for easier maintenance. For example, when you store all of your
+messages in a message file, it is much easier to translate those messages from
+English to another language. Instead of searching your entire script file for
+all spoken messages, you need only to look at the appropriate message file. See
+<a href="05-1_BeforeYouStart.htm#include">5.1 The Include Statement</a> for
+more information on including header and message files.</p>
+
+<h2>The JAWS Script Binary File</h2>
+
+<p>The last file used by the Script Manager is the JAWS script binary file.
+This file matches the script source file with one exception. The file contains
+the machine language used by your computer to determine what action to take
+when a script is performed or a user-defined function is called. The file has
+an extension of jsb and is created each time you compile your script source
+file. You cannot view the contents of this file with the Script Manager or any
+other text editor. </p>
+
+<p>&nbsp;</p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="04-2_StartingTheScriptManager.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</body>
+
+</html>

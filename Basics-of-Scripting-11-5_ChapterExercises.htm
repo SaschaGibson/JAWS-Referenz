@@ -1,0 +1,172 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>11.5 Chapter Exercises</title>
+<LINK rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>11.5 Chapter Exercises</h1>
+
+<p>The following exercises give you practice creating and using messages in the
+virtual viewer. Before you start these exercises, make sure you have the
+Notepad.jss script file open within the Script Manager. This file should
+contain any practice scripts from earlier chapters of this manual. </p>
+
+<p>If you run Script Manager from within Notepad and a blank file is opened,
+type the following lines at the top of the file: </p>
+
+<p class="Code">; Script file for Notepad <br>
+; JAWS version 12.0 <br>
+include "hjconst.jsh" <br>
+include "common.jsm" </p>
+
+<h2>Exercise 11.1: Displaying a Message in the Virtual Viewer</h2>
+
+<p>The objective of this exercise is to create a message and display it in the
+virtual viewer. You should start Notepad and run the Script Manager from within
+Notepad for this exercise.</p>
+
+<p>Before you write your script, you need to create the message used by your
+script in the Notepad.jsm message file. You can open the file within the Script
+Manager and add your message. If you already have a Notepad.jsm message file,
+do the following to open the file in the Script Manager: </p>
+
+<ol>
+ <li>Press <strong>CTRL+O</strong> to display the Open File dialog.</li>
+ <li>Type Notepad.jsm in the File Name edit box and press <strong>ENTER</strong>.</li>
+</ol>
+
+<p>If you have not previously created the Notepad message file, perform the
+following: </p>
+
+<ol>
+ <li>Press <strong>CTRL+N</strong> to display the New File dialog.</li>
+ <li>The active control is a list of file types. Press <strong>M</strong> to select Messages followed by <strong>ENTER</strong>. This will
+     open an untitled message file in the Script Manager.</li>
+ <li>Type the following text in the file:</li>
+</ol>
+
+<p class="Code">; Message file for Notepad <br>
+Messages <br>
+EndMessages</p>
+
+<ol start=4>
+<li>Press <strong>CTRL+S</strong> to save the file. JAWS prompts you for the filename. Type Notepad in the File
+Name Edit box followed by <strong>ENTER</strong>.</li>
+</ol>
+<p>Now you are ready to insert the individual message in the Notepad.jsm
+message file. To add the individual message, perform the following: </p>
+
+<ol>
+ <li>Press <strong>UP ARROW</strong> until you reach the line entitled "Messages."</li>
+ <li>Press <strong>END</strong> to move to the end of the line.</li>
+ <li>Press <strong>ENTER</strong> twice to create two blank lines.</li>
+ <li>Type the following message:</li>
+</ol>
+
+<p class="Code">@MsgVirtualViewer <br>
+This text is being displayed in the virtual viewer. You can use the virtual viewer to display helpful messages and other information.<br>
+Press ESC to close this message. <br>
+@@</p>
+
+<ol start=5>
+ <li>Press <strong>CTRL+S</strong> to save the file.</li>
+ <li>Press <strong>CTRL+TAB</strong> to move
+     back to the Notepad.jss script source file.</li>
+</ol>
+
+<p class="Note"><b>NOTE:</b> After you have moved back to the
+Notepad.jss script file, be sure to include the Notepad.jsm file. Failure to do so will result in errors at the time of
+compilation. For more information on the include statement see <a href="05-0_CreatingScripts.htm"> 5.0 Creating
+Scripts.</a> </p>
+
+<p>After you have added the message to the Notepad.jsm message file, you are
+ready to create the script. Your script should begin by determining if the
+virtual viewer is currently being displayed. If it is, then use the UserBufferDeactivate function to close the viewer before
+displaying the new message. After you have determined if the viewer is active
+and closed it if necessary, you should use the SayFormattedMessage function to
+display the message in the virtual viewer. </p>
+
+<h3>DisplayVirtualViewer Script Documentation:</h3>
+
+<ul>
+ <li>Script Name: DisplayVirtualViewer</li>
+ <li>Can be Attached to Key: checked</li>
+ <li>Synopsis: Displays a message in the virtual viewer.</li>
+ <li>Description: Displays a message in the virtual viewer using the SayFormattedMessage function.</li>
+ <li>Category: None</li>
+ <li>Assign to: <strong>CTRL+SHIFT+V</strong></li>
+</ul>
+
+<h3>DisplayVirtualViewer Script:</h3>
+
+<p class="Code">Script DisplayVirtualViewer () <br>
+If UserBufferIsActive () Then <br>
+UserBufferDeactivate () <br>
+EndIf<br>
+SayFormattedMessage (OT_USER_BUFFER, MsgVirtualViewer)<br>
+EndScript</p>
+
+<h2>Exercise 11.2: Displaying Keystrokes in the Virtual Viewer</h2>
+
+<p>The objective of this exercise is to take the previous exercise and add a
+keystroke link to the message JAWS displays in the virtual viewer. To add a
+keystroke to the message, you need only modify the message, save the message
+file and recompile the Notepad.jss script file.</p>
+
+<p>Start by performing the following steps to modify the message from the
+previous exercise: </p>
+
+<ol>
+ <li>Press <strong>CTRL+TAB</strong> until
+     you reach the Notepad.jsm file.</li>
+ <li>Press <strong>CTRL+END</strong> to move the insertion point to the bottom of the file.</li>
+ <li>Press <strong>UP ARROW</strong> until you reach the line containing the text of &#8220;Press escape to close this message.&#8221;</li>
+ <li>Press <strong>HOME</strong> to move to
+     the beginning of the line followed by <strong>ENTER</strong> twice. This will insert two
+     blank lines above the current line of text.</li>
+ <li>Press <strong>UP ARROW</strong> to move to one of the blank lines.</li>
+ <li>Type the following text on this line:</li>
+</ol>
+
+<p class="Code">Press %KeyFor(DisplayVirtualViewer) to redisplay this message </p>
+
+<p>Follow this text by pressing <strong>ENTER</strong>
+twice. </p>
+
+<p>After you complete the above steps, your message should look like the
+following: </p>
+
+<p class="Code">@MsgVirtualViewer <br>
+This text is being displayed in the virtual viewer. You can use the virtual viewer to display helpful messages and other information.<br>
+Press %KeyFor(DisplayVirtualViewer) to redisplay this message.<br>
+Press ESC to close this message. <br>
+@@ </p>
+
+<p>After you have modified the individual message, press <strong>CTRL+S</strong> to save the
+message file. You then need to recompile the Notepad script file.</p>
+
+<p>When you receive the &#8220;compile complete&#8221; message, you can move
+back to Notepad. Test the script by pressing the keystroke to activate the
+script. Your message should be displayed in the virtual viewer. Use the arrow
+keys to move through the message. Did you hear JAWS speak the keystroke as a
+link? If so, then press <strong>ENTER</strong>
+on the link to redisplay the message. If not, then return to the Script Manager
+and make sure your message is identical to the message shown above. </p>
+
+<p>&nbsp; </p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="12-0_UnderstandingFunctions.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</body>
+</html>

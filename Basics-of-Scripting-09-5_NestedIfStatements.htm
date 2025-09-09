@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+ <TITLE>9.5 Adding Nested If Statements</TITLE>
+ <LINK rel="StyleSheet" href="default.css">
+</HEAD>
+<BODY>
+	<H1>9.5 Nested If Statements</H1>
+ 
+<P>You can place or nest an If statement inside another If statement. When you nest If statements, you can check for a condition only when another condition is found to 	be true. When the first condition is found to be true, JAWS evaluates the nested If statement. JAWS evaluates it just as it would do for any 	other If statement. Thus, if the condition in the nested If statement is found to be true, JAWS performs any statements following the If statement.</P>
+
+<P>You can use the Else key word within the nested If statement structure. You can also add any number of ElIf statements to the nested If statement structure.</P>
+
+<P>When you nest If statements, you should use indentation. Using indentation makes it easier to match the If, Else, Elif, and EndIf keywords up with each other. Thus, 		you can be assured you have an EndIf that corresponds to each If key word.</P> 
+
+<P class="Note"><b>Note:</b> You can add any number of nested If statements within your scripts and functions. However, the more nested If statements you add, the harder 	your scripts are to debug when errors are encountered at compilation time. You should try to limit nesting If statements to one or two levels.</P>
+
+<h2>Example 1: Nested If statements</h2>
+
+<P class="Code">Var</p>
+<P class="code-indented">Int iValue</P>
+<P class="Code">Let iValue = CalculateNumber (); Assign a number to iValue</P>
+<P class="Code">If iValue > 4 Then</P>
+	<P class="code-indented">If iValue == 5 Then</P>
+		<P class="code-indented2">SayFormattedMessage (OT_MESSAGE, "The value is 5")</P>
+	<P class="code-indented">ElIf iValue == 7 Then</P>
+		<P class="code-indented2">SayFormattedMessage (OT_MESSAGE, "The value is 7")</P>
+	<P class="code-indented">Else</P>
+<P class="code-indented2">SayFormattedMessage (OT_MESSAGE, "The value is greater than 4 but is not equal to 5 or 7")</P>
+	<P class="code-indented">EndIf; complete the nested If statement</P>
+<P class="Code">Else</P>
+	<P class="code-indented">SayFormattedMessage (OT_MESSAGE, "The value is less than or equal to 4")</P>
+<P class="code">EndIf; complete the outer If statement</P>
+
+<P>In the above example, JAWS performs the CalculateNumber function and stores the result in the iValue local variable.
+<UL>
+<LI>The outer If statement first determines if the value stored in iValue is greater than 4.</LI>
+<LI>If the value is greater than 4, then the inner If statement executes.</LI>
+<LI>Thus, if the value is 5, then JAWS performs the SayFormattedMessage function following the If statement and speaks, “The value is 5."</LI>
+<LI>If the value is equal to 7, then JAWS performs the SayFormattedMessage function following the Elif Statement and speaks, “The value is 7."</LI>
+<LI>If the value stored in iValue is greater than 4 but is not 5 or 7, JAWS performs the SayFormattedMessage function following the Else Statement and speaks, "The value is greater than 4 but is not equal to 5 or 7."</LI>
+<LI>If the value is less than or equal to 4, JAWS does not process the nested If statement. Instead, JAWS jumps directly to the Else statement following the nested If statements and performs the final SayFormattedMessage function that speaks, "The value is less than or equal to 4."</LI>
+</UL>
+<P>Regardless of the number stored in iValue, JAWS will speak one of the above messages.</P>
+	
+<P>&nbsp</P>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="09-6_CompoundIfStatements.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</BODY>
+</HTML>
