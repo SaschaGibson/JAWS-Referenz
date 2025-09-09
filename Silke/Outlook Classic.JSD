@@ -1,0 +1,641 @@
+:function InfoBarShowEvent
+:SearchRank 1
+:Synopsis This function is triggered when the InfoBar is shown
+:Description Processes InfoBar messages
+:Param handle/hWnd The handle of the Information Bar
+
+:function InfoBarHideEvent
+:SearchRank 1
+:Synopsis This function is triggered when the InfoBar is Hidden
+:Description Processes InfoBar messages
+:Param handle/hWnd The handle of the Information Bar
+
+:function IsMessagesList
+:Returns int True if in Message list
+:SearchRank 1
+:Synopsis Determines if the message list is the active window.
+:Description Checks if the messages list is the window where the focus is currently located and returns TRUE if so, FALSE otherwise
+
+:function IsNavigationPane
+:Returns int TRUE if focus is in the Outlook 2013 navigation pane, FALSE otherwise.
+:SearchRank 1
+:Synopsis Determines if focus is in the Outlook 2013 navigation pane.
+:Description This function determines if focus is in the Outlook 2013 navigation pane. If focus is in the pane, then a value of TRUE is returned. Otherwise, a value of FALSE is returned.
+
+:function IsMessageTextWindow
+:Returns int TRUE if the control belongs to a message window, FALSE otherwise
+:SearchRank 1
+:Synopsis Checks if the control belongs to a window with message text
+:Description Controls if the control whoes handle is passed to a window belongs to a window containing the message text
+:Category Windows
+:Param handle/hWnd Handle to a control to analyse
+
+:function IsInOutlookMainWindow
+:Returns int TRUE if the window provided relies inside the Outlook main window, FALSE otherwise
+:SearchRank 1
+:Synopsis Checks if the handle provided is in Outlook main window
+:Description Checks if the handle provided as a parameter relies in the main Outlook window
+:Category WindowsAndObjects
+:Param handle/hWnd Handle of the window to analyze
+
+:function IsWindowADistributionList
+:Returns int TRUE if the handle provided is a distribution list handle, FALSE otherwise
+:SearchRank 1
+:Synopsis Checks if the handle provided is a distribution list handle
+:Description Checks if the handle provided is a distribution list handle
+:Category Windows
+:Param handle/hWnd Window to check
+
+:function IsMessageSelected
+:Returns int TRUE if the message is selected, FALSE otherwise
+:SearchRank 1
+:Synopsis Checks if the message is selected
+:Description Checks if the current message is selected and returns TRUE if selected and FALSE if not selected
+:Category System
+
+:function RedirectLostFocus
+:SearchRank 1
+:Synopsis Redirects focus to most likely window, when focus gets lost.
+:Description Periodically, focus will get lost, so this function is scheduled from ScreenStabilizedEvent, and if focus has been lost, it resets it back to the most likely window.
+
+:function GetSuperGridListItem
+:Returns string Current item if it was possible to get it or an empty string if not
+:SearchRank 1
+:Synopsis Gets the current list item of a list based on a super grid
+:Description Gets the currently active item of a list that is based on a supergrid window class
+:Param handle/hWnd Handle of the window to operate on
+:Optional
+:Param int/iAmount The anount of information to provide - 0 - normal amount of information, 1 - all possible amount of information to use it in the reading of columns and 2 - the minimum possible amount of information
+
+:function HandleCustomDialogueWindows
+:Returns int TRUE, if the dialogue was specially handled, FALSE otherwise
+:SearchRank 1
+:Synopsis Handles all the dialogues
+:Description Handles all the dialogues appearing on top of any other windows
+:Category Windows
+:Param handle/hWnd The window to handle
+
+:function SetGlobals
+:SearchRank 1
+:Synopsis Sets global variables.
+:Param handle/hWnd Current window handle
+:Param int/iInitialValues True if initial values, False if set with previous values.
+
+:function GetNumberOfAttachments
+:Returns string The number of attachments followed by either the word attachment or attachments
+:SearchRank 1
+:Synopsis Gets the number of attachments
+:Description Gets the number of attachments and appends it to the appropriate message
+
+:script ControlDelete
+:SearchRank 1
+:Synopsis Gibt STRG+Entfernen an die Anwendung weiter.
+:KBCategory Null
+
+:script PermenantDelete
+:SearchRank 1
+:Synopsis Gibt Umschalt+Entfernen an die Anwendung weiter.
+:KBCategory Null
+
+:function GetHeaderWindow
+:Returns handle No Return Description
+:SearchRank 1
+:Synopsis function that get the window containing the header
+
+:function GetHeaderControl
+:Returns handle No Return Description
+:SearchRank 1
+:Synopsis function that gets the header control
+:Param int/ctrlId No Description
+
+:function FocusControl
+:SearchRank 1
+:Synopsis function that gets the control with focus
+:Param handle/winHandle No Description
+
+:function ReadPrompt
+:SearchRank 1
+:Synopsis function used to read the prompt with focus
+:Param int/controlId No Description
+:Param int/typeOfWindow No Description
+
+:function ControlNotFound
+:SearchRank 1
+:Synopsis function called if control is not found
+:Param int/controlId No Description
+:Param int/typeOfWindow No Description
+
+:function ReadHeaderControl
+:SearchRank 1
+:Synopsis reads the specified header control
+:Param int/controlId No Description
+:Param int/typeOfWindow No Description
+
+:function FocusTaskBodyWindow
+:SearchRank 1
+:Synopsis function that checks  to see if the focus is in the task body window
+
+:function FocusContactBodyWindow
+:SearchRank 1
+:Synopsis function that checks to see if the focus is in the contact body window
+
+:function TypeOfWindow
+:Returns int No Return Description
+:SearchRank 1
+:Synopsis function that checks to type of window with focus
+
+:function AutoSayHeader
+:SearchRank 1
+:Synopsis Will speak the header when a message is opened automatically
+:Description Written to give the user the header information automatically.
+:Param int/nID the control iD of the window to speak
+
+:function ReadHeader
+:SearchRank 1
+:Description This function when called from SayFocusedWindow, just announces the header information. When called from a script, upon first press, announcess associated Outlook header field; twice moves focus to that field.
+:Param int/iField No Description
+
+:function MoveToField
+:SearchRank 1
+:Synopsis Moves the PC focus to the field
+:Description Moves the PC focus to the field.
+:Param handle The handle of the window the function will move to
+
+:function ClickToolBarButton
+:SearchRank 1
+:Synopsis Funtion that clicks the tool bar button that is specified in the tool bar dialog
+:Description This funtion uses a searh string and a handle to determine what tool bar button to click
+:Param handle/winHandle No Description
+:Param string/buttonLabel No Description
+
+:function GetToolbar
+:Returns handle No Return Description
+:SearchRank 1
+:Synopsis function used to make sure you are in the tool bar
+:Description this function is used to be sure that you are in the tool bar for the tool bar dialog list
+
+:function ToolBar
+:SearchRank 1
+:Synopsis builds the tool bar list
+:Description the user can make a choice from the list and have the appropriate tool bar button clicked
+
+:function IsToolbarList
+:Returns int No Return Description
+:SearchRank 1
+:Synopsis checks to see if the user is in the tool bar list
+:Description useful to see if the tool bar dialog list is still visible on the screen.
+:Param handle/hwnd No Description
+
+:script CallToolBars
+:SearchRank 1
+:Synopsis Öffnet eine Liste der Symbole der Standard-Symbolleiste
+:Description Öffnet eine Liste, die die Symbole der Standard-Symbolleiste enthält, aus denen Sie auswählen können, um den jeweiligen Befehl auszuführen.
+:KBCategory Null
+
+:script MessageBodyDelete
+:SearchRank 1
+:Synopsis Löscht die Nachricht
+:Description Nach dem Löschen einer Nachricht werden die Felder Von und Betreff gelesen.
+:KBCategory Null
+
+:function ForceMessageAnnouncement
+:SearchRank 1
+:Synopsis Forces a call to activeItemChangeEvent in case of lost call
+:Description Forces a call to ActiveItemChangedEvent in case if it is lost due to multiple keypresses in a message list
+:Category WindowsAndObjects
+
+:script NewContactDialog
+:SearchRank 1
+:Synopsis Reicht die Taste an die Anwendung weiter, um einen neuen Kontakt zu erstellen.
+:KBCategory Null
+
+:script WindowKeysHelp
+:SearchRank 1
+:Synopsis This script speaks shortcut keys appropriate to Outlook 2013.
+:Description Says Windows shortcut keys, keyboard Help, and other information that is important when using Outlook 2013 without a mouse
+
+:script ReadFromAndSubject
+:SearchRank 1
+:Synopsis Liest die Von und Betreff Überschriften
+:Description Liest die Von und Betreff Überschriften
+
+:function SayLine
+:SearchRank 1
+:Optional
+:Param int/iDrawHighlights Optional parameter added in JAWS 7.1 / MAGic 10.0.  Used to indicate whether or not the line should be highlighted by the MAGic engine as the text is being spoken.  The possible values are as follows:  If the parameter is not present or is equal to 0, do nothing; If the parameter is equal to 1, highlight each word as it is being spoken; If the parameter is equal to 2, highlight the entire line.  NOTES: (1) This functionality is not currently supported in all applications.  (2) The highlight rectangles will only be drawn if MAGic is running.
+:Param int/bSayingLineAfterMovement set to TRUE if calling from sayNext/Prior line to avoid speaking the prompt when arrowing over forms mode controls whose prompt is already spoeken from the prior line. This parameter is available starting with JAWS version 10 and MAGic version 12.
+
+:script Enter
+:SearchRank 1
+:Synopsis Gibt die Eingabetaste an die Anwendung weiter.
+
+:script ShiftTabKey
+:SearchRank 1
+:KBCategory Null
+
+:script TabKey
+:SearchRank 1
+:KBCategory Null
+
+:function MoveToFieldUsingHandle
+:SearchRank 1
+:Synopsis change focus to a given window and control name
+:Param handle/hndDesiredWindow No Description
+:Param string/strControlName No Description
+
+:script ClickButton
+:SearchRank 1
+:Synopsis Sucht und klickt Schalter, der dieser Tastenkombination zugewiesen ist.
+:Description Dieses Skript sucht nach dem für diese Taste zugewiesenen Schalter und klickt ihn an.
+:Category Find
+:KBCategory Null
+:Param int/iButtonID No Description
+
+:function saveApplicationSettings
+:Returns int true if settings were saved successfully. False otherwise.
+:SearchRank 1
+:Synopsis saves Outlook specific verbosity settings to Outllib.jsi
+:Description This function saves Outlook specific verbosity settings to Outllib.jsi. The settings saved include meeting request indication and unread message status announcement.
+
+:function loadApplicationSettings
+:SearchRank 1
+:Synopsis loads Outlook specific verbosity settings from Outllib.jsi.
+:Description This function loads Outlook specific verbosity settings from Outllib.jsi.
+
+:function SetDeletedGroupByFlag
+:SearchRank 1
+:Synopsis Determines if the current item in the messages list is grouped.
+:Description This function determines if the messages in a particular mail box are grouped by conversation follow up flag etc. If they are, then a global flag is set to true indicating the messages are grouped.
+
+:script GoToMessagesView
+:SearchRank 1
+:Synopsis Schaltet die Ansicht in Outlook 2013 zur Nachrichtenansicht oder -liste um.
+:Description Dieses Skript veranlasst das FocusChangedEvent den Namen zu sprechen, zu dem gewechselt wird, wenn die Kurztaste für dieses Skript gedrückt wurde. Das Skript reicht dann die Outlook 2013 Kurztaste an die Anwendung durch.
+:KBCategory Null
+
+:script GoToContactsView
+:SearchRank 1
+:Synopsis Schaltet die Ansicht in Outlook 2013 zu den Kontakten um.
+:Description Dieses Skript veranlasst das FocusChangedEvent den Namen zu sprechen, zu dem gewechselt wird, wenn die Kurztaste für dieses Skript gedrückt wurde. Das Skript reicht dann die Outlook 2013 Kurztaste an die Anwendung durch.
+:KBCategory Null
+
+:script GoToTasksView
+:SearchRank 1
+:Synopsis Schaltet die Ansicht in Outlook 2013 zu den Aufgaben um.
+:Description Dieses Skript veranlasst das FocusChangedEvent den Namen zu sprechen, zu dem gewechselt wird, wenn die Kurztaste für dieses Skript gedrückt wurde. Das Skript reicht dann die Outlook 2013 Kurztaste an die Anwendung durch.
+:KBCategory Null
+
+:script GoToNotesView
+:SearchRank 1
+:Synopsis Schaltet die Ansicht in Outlook 2013 zu den Notizen um.
+:Description Dieses Skript veranlasst das FocusChangedEvent den Namen zu sprechen, zu dem gewechselt wird, wenn die Kurztaste für dieses Skript gedrückt wurde. Das Skript reicht dann die Outlook 2013 Kurztaste an die Anwendung durch.
+:KBCategory Null
+
+:script GoToCalendarView
+:SearchRank 1
+:Synopsis Schaltet die Ansicht in Outlook 2013 zum Kalender um.
+:Description Dieses Skript veranlasst das FocusChangedEvent den Namen zu sprechen, zu dem gewechselt wird, wenn die Kurztaste für dieses Skript gedrückt wurde. Das Skript reicht dann die Outlook 2013 Kurztaste an die Anwendung durch.
+:KBCategory Null
+
+:script SelectCurrentItem
+:SearchRank 1
+:Synopsis Markiert den aktuellen Eintrag.
+:Description Nützlich, um einen Listeneintrag auszuschneiden, zu kopieren oder einzufügen.
+
+:function StringWordCharacterIn
+:Returns string The string containing the word.
+:SearchRank 1
+:Synopsis Returns The word in which the current character is positioned.
+:Description Returns the word which contains the character with the number provided.
+:Param string/Str The string for analisys.
+:Param int/Position Position of the character in the string.
+
+:script SayMSAAData
+:SearchRank 1
+:Synopsis Spricht die MSAA-Daten für aktuellen Listeneintrag.
+:Description Spricht die MSAA-Daten für den aktuellen Listeneintrag, wenn in Nachrichten-, Aktiver Termin-, Kontakt-, Notizen- oder Aufgabenliste.
+:KBCategory Null
+
+:function IsMessageOpenForEditing
+:Returns int True if message is open for editing, False if not.
+:SearchRank 1
+:Synopsis Used to check that the current message is open for editing.
+:Description This function checks the subTypeCode of the To: field, and if it is type 66 (multiline edit) then the message is being edited.
+
+:function IsMessageOpenForReading
+:Returns int TRUE if the message is a message to read, FALSE otherwise.
+:SearchRank 1
+:Synopsis Tests the message if it is opened for reading.
+:Description Tests the message if it is opened for reading not for editing or creating.
+
+:function ActiveItemChangedEvent
+:SearchRank 1
+:Synopsis This function is triggered when the active element in an object changes.
+:Description The MSAAMode flag must be set to 2 in the [Options] section of your application-specific jcf file to enable this function.  This function receives the following parameters: the handle for the window containing the current object, the iD of the object, the iD of the child object, the handle of the previous window, the iD of the previous object, and the iD of the previous child object.
+:Category Object Model And MSAA
+:Param handle/curHwnd the handle of the window containing the current object.
+:Param int/curObjectId the iD of the current object.
+:Param int/curChildId the iD of the current child.
+:Param handle/prevHwnd the handle of the window containing the previous object.
+:Param int/prevObjectId The iD or the previous object.
+:Param int/prevChildId the iD of the previous child.
+:Optional
+:Param int/nChangeDepth from FocusChangedEventEX, depth of object.
+
+:function SpeakMessageFlags
+:Returns int True if in Message list.
+:SearchRank 1
+:Synopsis Speaks message list flags
+:Description Announces message list item flags, such as unread, meeting request, flagged, follow-up, importance, sensitivity, attachment, etc.  All this info is from MSAA.
+
+:function GotoFoundItems
+:Returns int ic_NotInAdvancedFind if the keystroke is issued when not in the Advanced Find dialog, icNoFoundItemsList if the Find has not yet been performed, or icFoundItemsList if the Find command has been performed.
+:SearchRank 1
+:Synopsis Attempts to move to the list of found items in the Advanced Find dialog
+:Description Attempts to move to the list of found items in the Advanced Find dialog
+
+:script GetAttendeesStatus
+:SearchRank 1
+:Synopsis Zeigt den Teilnehmerstatus im virtuellen Betrachter an
+:Description Beim Planen einer Besprechung zeigt dieses Skript den Frei/Gebucht-Status des gewählten Teilnehmers im virtuellen Betrachter an.
+:KBCategory Null
+
+:script ContactFieldsDialog
+:SearchRank 1
+:Synopsis Liste der sichtbaren Felder für aktiven Kontakt.
+:Description Öffnet eine Liste aller sichtbaren Felder im geöffneten Kontaktformular.
+
+:script GotoFoundItemsScript
+:SearchRank 1
+:Synopsis Versucht, auf die Liste der gefundenen Elemente im Dialogfeld Erweiterte Suche zu gehen
+:Description Versucht, auf die Liste der gefundenen Elemente im Dialogfeld Erweiterte Suche zu gehen Verwenden Sie dieses Skript, um zur Liste der gefundenen Elemente zurückzukehren, nachdem ein Suchen durchgeführt wurde.
+:KBCategory Null
+
+:function CheckForNoMoreItems
+:Returns int TRUE if status bar found.
+:SearchRank 1
+:Synopsis Checks status line for "0 items"
+:Param int/iOtToSpeak the output type to use, SayLine uses OT_LINE while everything else uses OT_POSITION
+
+:function GetObjectNameOrValue
+:Returns string Object name or value
+:SearchRank 1
+:Synopsis Retrieves object's name or value
+:Param int/iProperty True if name, False if value
+:Optional
+:Param int/iSuppressState Strip the Not Selected from name
+
+:script AnnounceOutlookInfoBar
+:SearchRank 1
+:Synopsis Sagt die Outlook Infoleiste an
+:Description Sagt die Outlook Infoleiste an, wenn in diesem Fenster Text angezeigt wird.
+
+:function RetrieveElement
+:Returns string The string containing the desired element.
+:SearchRank 1
+:Synopsis Gets the desired element, character, word, or line, and returns it for comparison or processing.
+:Description This function retrieves the desired current, next or prior element--be it character, word, or line, and returns it for processing.
+:Param int/iElementType No Description
+:Param int/iDirection No Description
+
+:script AppointmentsAndAttachments
+:SearchRank 1
+:Synopsis Verarbeitet Termine und Anhänge.
+:Description Im Kalender werden Termindaten angesagt; in einer Nachricht hingegen, gelangt man in die Liste der Dateianhänge.
+
+:function ReadHeader
+:SearchRank 1
+:Description This function when called from SayFocusedWindow, just announces the header information. When called from a script, upon first press, announcess associated Outlook header field; twice moves focus to that field.
+:Param int/iField No Description
+
+:script ReadOutlookHeader
+:SearchRank 1
+:Synopsis Liest die Outlook Kopfzeile
+:Description Liest die durch die übergebene Nummer angegebene Kopfzeile. Drücken Sie zweimal schnell hintereinander, um den PC Cursor zu aktivieren und ihn auf dieses Steuerelement zu bewegen.
+:Param int/iField No Description
+
+:function GetFieldText
+:Returns string Text of window or field
+:SearchRank 1
+:Synopsis Retrieves text in window or field
+:Param int/iControl Control id of field to retrieve
+
+:script GoToOutlookMessageBodyWindow
+:SearchRank 1
+:Synopsis Springt mit dem PC Cursor in die Nachricht
+:Description Ist Outlook die E-Mail-Anwendung und Word wird als Editor verwendet, dann bewirkt die Kurztaste, dass der PC Cursor im Nachrichtentext von einer empfangenen oder einer neuen Nachricht plaziert wird.
+:KBCategory Null
+
+:function ReadOutlookMessage
+:SearchRank 1
+:Synopsis Reads Outlook Message automatically.
+:Description Reads Outlook 2013 message automatically, if that verbosity option is selected.cc
+
+:function TypeOfItem
+:Returns string Item type
+:SearchRank 1
+:Synopsis Returns the current item
+:Param int/iIsMessage/ByRef No Description
+:Param int/iIsTask/ByRef No Description
+
+:script MoveBackItem
+:SearchRank 1
+:Synopsis Beim Lesen wird ein Element oder eine Nachricht zurück gesprungen; beim Schreiben wird die Schriftgröße verkleinert.
+:Description Beim Lesen wird ein Element oder eine Nachricht zurück gesprungen; beim Schreiben wird die Schriftgröße verkleinert.
+:KBCategory Null
+
+:script MoveForwardItem
+:SearchRank 1
+:Synopsis Beim Lesen wird ein Element oder eine Nachricht vorwärts gesprungen; beim Schreiben wird die Schriftgröße vergrößert.
+:Description Beim Lesen wird ein Element oder eine Nachricht vorwärts gesprungen; beim Schreiben wird die Schriftgröße vergrößert.
+:KBCategory Null
+
+:script OutlookAttachmentsList
+:SearchRank 1
+:Synopsis Springt in die Liste der Outlook 2013 Dateianhänge
+:Description Bringt den Fokus in die Liste der Outlook Dateianhänge, falls vorhanden.
+
+:function QuickNavStateChange
+:SearchRank 1
+:Description This function changes the state of quick navigation mode on demand. It is used for turning quick keys on/off while in read-only messages and another key needs to be passed through.
+:Param int/iState False to turn off quick keys, true to turn them on.
+
+:function SayLine
+:SearchRank 1
+:Optional
+:Param int/iDrawHighlights Optional parameter added in JAWS 7.1 / MAGic 10.0.  Used to indicate whether or not the line should be highlighted by the MAGic engine as the text is being spoken.  The possible values are as follows:  If the parameter is not present or is equal to 0, do nothing; If the parameter is equal to 1, highlight each word as it is being spoken; If the parameter is equal to 2, highlight the entire line.  NOTES: (1) This functionality is not currently supported in all applications.  (2) The highlight rectangles will only be drawn if MAGic is running.
+:Param int/bSayingLineAfterMovement set to TRUE if calling from sayNext/Prior line to avoid speaking the prompt when arrowing over forms mode controls whose prompt is already spoeken from the prior line. This parameter is available starting with JAWS version 10 and MAGic version 12.
+
+:script SayMoveForward
+:SearchRank 1
+:Synopsis Bewegt sich vorwärts durch die besuchten Ordner.
+:Description Diese Kurztaste bewegt vorwärts durch bereits besuchte Nachrichten-Ordner.
+:KBCategory Null
+
+:script SayMoveBack
+:SearchRank 1
+:Synopsis Bewegt sich rückwärts durch die besuchten Ordner.
+:Description Diese Kurztaste bewegt rückwärts durch bereits besuchte Nachrichten-Ordner.
+:KBCategory Null
+
+:script ReplyDirectlyToSender
+:SearchRank 1
+:Synopsis Antwort direkt an den Absender.
+:Description Antwortet direkt an den Absender der Nachricht und nicht an die Liste.
+:KBCategory Null
+
+:script GrowFont1Point
+:SearchRank 1
+:Synopsis Microsoft Outlook eigene Kurztaste zum Vergrößern der Schriftgröße um genau einen Punkt.
+:Description Diese Kurztaste vergrößert die Schriftgröße um genau einen Punkt.
+:KBCategory Null
+
+:script ShrinkFont1Point
+:SearchRank 1
+:Synopsis Microsoft Outlook eigene Kurztaste zum Verkleinern der Schriftgröße um genau einen Punkt.
+:Description Diese Kurztaste verkleinern die Schriftgröße um genau einen Punkt.
+:KBCategory Null
+
+:function ClearDateFlag
+:SearchRank 1
+:Synopsis Clears date flag after entering the direct date activation
+:Description Clears date flag after entering the direct date activation mode and after waiting for specified amount of time
+:KBCategory Null
+
+:function StringFilterOutMessageInformation
+:Returns string The string filtered out for announcing
+:SearchRank 1
+:Synopsis Filters out message information for announcement
+:Description Filters out message information for announcing - this is the core function for handling all the necessary filtering for the message before announcing.
+:Category String
+:Param string/sMessageInformation draft information for the message to filter out
+:Optional
+:Param int/iBrailleFlag If TRUE - filters out Braille, not speech - which is the default
+
+:script OpenListBox
+:SearchRank 1
+:Synopsis Springt zum nächsten Satz in Eingabeelementen und liest diesen, springt zur nächsten Woche im Kalender; ansonsten wird eine Liste oder Ausklappliste geöffnet oder ausgeklappt.
+:Description Sendet ein ALT+PFEIL RUNTER an das System, wodurch normalerweise eine Liste geöffnet wird.  Befinden Sie sich im Kalender, dann wird zur nächsten Woche gesprungen und das Datum angesagt. Innerhalb eines Eingabeelements wird zum nächsten Satz gesprungen und dieser gelesen.
+:Category Dialog Controls
+:KBCategory Null
+
+:script CloseListBox
+:SearchRank 1
+:Synopsis Springt zum vorherigen Satz in Eingabeelementen und liest diesen, springt zur vorherigen Woche im Kalender; ansonsten wird eine Liste oder Ausklappliste geschlossen, sollte sie geöffnet sein.
+:Description Sendet ein ALT+PFEIL RAUF an das System, wodurch normalerweise eine Liste geschlossen wird.  Befinden Sie sich im Kalender, dann wird zur vorherigen Woche gesprungen und das Datum angesagt. Innerhalb eines Eingabeelements wird zum vorherigen Satz gesprungen und dieser gelesen.
+:Category Dialog Controls
+:KBCategory Null
+
+:script VirtualEnter
+:SearchRank 1
+:Synopsis Dieses Skript erzwingt den Aufruf der regulären EnterKey Funktion wenn der Benutzerbuffer oder der Virtuelle Cursor aktiv ist.
+:Description Um zu verhindern, dass die Zuweisung der Eingabetaste bei aktivem Benutzerpuffer oder dem Virtuellen Cursor ignoriert wird, erzwingt dieses Skript den Aufruf der standardmäßigen EnterKey Funktion in der Rubrik Virtual Keys der microsoft outlook 2013.jkm Datei.
+:KBCategory NULL
+
+:function GetMSAAColourAtComboBox
+:Returns int Colour of the control provided by MSAA
+:SearchRank 1
+:Synopsis Gets a colour provided by MSAA
+:Description Gets the colour provided by MSAA in some controls for selecting colours in rather strange form
+:Category Windows
+
+:script SelectAField
+:DisplayName Formularfeld auswählen
+:SearchRank 1
+:Synopsis Listet Formularfelder in einer geöffneten Outlook 2013 Nachricht auf.
+:Description Diese Kurztaste listet die Formularfelder in einer geöffneten Outlook 2013 Nachricht auf, sofern welche vorhanden sind.
+
+:script AltF4
+:SearchRank 1
+:Synopsis Schließt die Office Anwendung. Nutzen Sie diese Kurztaste, nicht die Menüs oder die Maus, um die aktuell geöffnete Office Anwendung zu schließen.
+:Description Schließt die Office Anwendung. Nutzen Sie diese Kurztaste, nicht die Menüs oder die Maus, um die aktuell geöffnete Office Anwendung zu schließen. Dieses gilt insbesondere für Office 2016 und höher. Wenn Sie zum Schließen die Menüs oder die Maus verwenden, dann können JAWS und die Anwendung hängen bleiben oder abstürzen.
+:KBCategory null
+
+:script Incidenterstellen
+:SearchRank 1
+
+:script selectionByUnitMode
+:SearchRank 1
+:KBCategory Null
+
+:script selectPriorHeadingOrListLevelStyle
+:SearchRank 1
+:Synopsis Wählt das nächste Überschriften- oder Listenstufenformat für den aktuellen Text, indem Alt+Umschalt+Pfeil rechts an MS Outlook 2013 gesendet wird, wenn man sich in einer editierbaren Nachricht befindet.
+:Description Dieses Skript wählt das nächste Überschriften- oder Listenstufenformat für den aktuellen Text, indem Alt+Umschalt+Pfeil rechts an MS Outlook 2013 gesendet wird, wenn man sich in einer editierbaren Nachricht befindet. Wenn der %product% oder der Unsichtbarer Cursor aktiv ist, dann führt diese Funktion das Standardskript für Mausbewegung aus.
+:KBCategory Null
+
+:script MoveItemUp
+:SearchRank 1
+:Synopsis Bewegt das aktuelle Element höher, indem Alt+Umschalt+Pfeil Rauf an MS Outlook 2013 gesendet wird, wenn man sich in einer editierbaren Nachricht befindet.
+:Description Dieses Skript bewegt das aktuelle Element höher, indem Alt+Umschalt+Pfeil Rauf an MS Outlook 2013 gesendet wird, wenn man sich in einer editierbaren Nachricht befindet. Wenn der JAWS oder der Unsichtbare Cursor aktiv sind, dann führt diese Funktion das Standardskript für Mausbewegung aus.
+:KBCategory Null
+
+:script ListHeadings
+:DisplayName Überschriften auflisten
+:SearchRank 1
+:Synopsis Listet die Überschriften in einer geöffneten Outlook 2013 Nachricht auf.
+:Description Diese Kurztaste listet die Überschriften in einer geöffneten Outlook 2013 Nachricht auf, sofern welche vorhanden sind.
+
+:function SpeakCalendarFocusChange
+:SearchRank 1
+:Synopsis Speaks the appropriate view for the calendar when it gains focus.
+:Description This function speaks the view of the calendar when it gains focus.  If the version of Outlook being used is 2013, then this function uses MSAA object information to speak the name of the calendar in use. Otherwise, the function uses a stored string to speak the view.
+
+:script MoveItemDown
+:SearchRank 1
+:Synopsis Bewegt das aktuelle Element tiefer, indem Alt+Umschalt+Pfeil Runter an MS Outlook 2013 gesendet wird, wenn man sich in einer editierbaren Nachricht befindet.
+:Description Dieses Skript bewegt das aktuelle Element tiefer, indem Alt+Umschalt+Pfeil Runter an MS Outlook 2013 gesendet wird, wenn man sich in einer editierbaren Nachricht befindet. Wenn der JAWS oder der Unsichtbare Cursor aktiv sind, dann führt diese Funktion das Standardskript für Mausbewegung aus.
+:KBCategory Null
+
+:function EnteringRecipients
+:Returns int True if entering recipients, False if reading recipients
+:SearchRank 1
+:Synopsis Determines if in either To, CC, or BCC fields for entering, not reading, recipients.
+
+:script GoToFolderList
+:SearchRank 1
+:Synopsis Aktiviert die Ordnerliste
+:KBCategory Null
+
+:script selectNextHeadingOrListLevelStyle
+:SearchRank 1
+:Synopsis Wählt das nächste Überschriften- oder Listenstufenformat für den aktuellen Text, indem Alt+Umschalt+Pfeil rechts an MS Outlook 2013 gesendet wird, wenn man sich in einer editierbaren Nachricht befindet.
+:Description Dieses Skript wählt das nächste Überschriften- oder Listenstufenformat für den aktuellen Text, indem Alt+Umschalt+Pfeil rechts an MS Outlook 2013 gesendet wird, wenn man sich in einer editierbaren Nachricht befindet. Wenn der %product% oder der Unsichtbarer Cursor aktiv ist, dann führt diese Funktion das Standardskript für Mausbewegung aus.
+:KBCategory Null
+
+:script reduceSelectionUnit
+:SearchRank 1
+:KBCategory Null
+
+:function ToggleWarningMessageForBrowserOption
+:Returns string description of value used to populate DlgSelectTreeFunctionToRun  function item's value.
+:SearchRank 1
+:Description On by default. When toggled on, warning message for browser option help is announced.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:script selectionByMovementMode
+:SearchRank 1
+:KBCategory Null
+
+:script sayLookInOrSaveInFolderName
+:SearchRank 1
+:KBCategory Null
+
+:function IsCurrentMessageSelected
+:Returns int TRUE if the message is selected, FALSE otherwise
+:SearchRank 1
+:Synopsis Checks if the current message is selected
+:Description Checks if the currently active message is selected and returns TRUE if selected, FALSE otherwise
+:Category System
+
+:function SuperGridListProcessed
+:Returns int TRUE if the control was processed and no further processing is needed, FALSE otherwise
+:SearchRank 1
+:Synopsis Processes the control with the lists
+:Description Processes most of the lists, like messagelist, distribution list and so on the class of which is superGrid
+:Category WindowsAndObjects
+:Param handle/hWnd Window to process
+:Optional
+:Param int/iAnnounceSuppress If TRUE suppresses the announcement of control type information - usefull for announcing the information in activeItemChangedEvent function for example
+:Param int/bSpellItem applies only if iAnnounceSuppress is on, and used by SayLine script to have the item spelled out.
+

@@ -1,0 +1,57 @@
+﻿;  UTF-8 w/BOM: If there are some funny characters at the beginning
+;  of the first line, then your editor may not support UTF-8
+;  format files with a Byte-Order-Mark (BOM) - try notepad.
+[Options]
+BrailleDisplay=fsbrl
+MigrationWizardDisplayed=1
+ViewMode=1
+AutomaticNotificationOfUpdates=1
+TypingEcho=2
+Verbosity=1
+SpeechHistory=0
+VTUseTouchCursor=0
+SaySelectedFirst=0
+FirstWindows11Run=1
+DisplayStartupWizard=0
+VideoDriverInstalledWindows11=1
+[Voice Profiles]
+ActiveVoiceProfileName=Yannick
+[OutputModes]
+NO_DISABLE=0|2|2|ncr
+APP_START=1|0|0|Meldungen beim Anwendungsstart
+CONTROL_NAME=1|2|2|Name des Steuerelements
+CONTROL_TYPE=1|2|2|Steuerelementtyp
+DIALOG_NAME=1|2|2|Dialogtitel
+SELECTED_ITEM=1|2|2|Gew?hltes Element
+ITEM_STATE=1|2|2|Elementstatus
+POSITION=1|2|2|Positionsinformation
+STATUS=1|2|2|Status Informationen
+SELECT=1|2|0|Ausw?hlen
+HELP_BALLOON=1|1|1|Hilfe-Sprechblasen
+CONTROL_DESCRIPTION=0|0|0|Elementbeschreibung
+ACCESS_KEY=3|3|3|Zugriffstaste
+[Focus80]
+StructuredModeAlignToSegment=0
+UseStatusCellsForControlType=0
+StructuredModeInclusionFlags=8173
+[FocusXT80]
+PositionOfStatusCells=2
+UseHowManyStatusCells=0
+BrailleShowLoadError=1
+UseStatusCellsForControlType=0
+StructuredModeInclusionFlags=8173
+StructuredModeAlignToSegment=0
+WordWrap=1
+DotFirmness=4
+[Braille]
+BrailleShowLoadError=1
+SelectedBrailleTranslator=
+ShowTimeInStatusCells=5
+[MessageCenter]
+PendingMessages=0
+[options]
+FirstWindows11Run=1
+[ScriptManager]
+ZoomLevel=-2
+[osm]
+HookingMode=1

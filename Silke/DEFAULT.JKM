@@ -1,0 +1,6 @@
+[Modifiers]
+insert=17|3|0|2|0|0|0x402
+numinsert=26|1|0|1|0|0|0x402
+extinsert=11|3|0|1|0|0|0x402
+[FocusXT80 Keys]
+Braille Wheel2 Btn=ToggleScreenCaptureMethod

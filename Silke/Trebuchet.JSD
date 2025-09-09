@@ -1,0 +1,38 @@
+:script AlternativesEinfuegen
+:SearchRank 1
+
+:script ShowStaticText
+:SearchRank 1
+
+:function BrailleBuildLine
+:SearchRank 1
+
+:script Test
+:SearchRank 1
+
+:script Wiedereroeffnen
+:SearchRank 1
+
+:script GotoList
+:SearchRank 1
+
+:script GotoList2
+:SearchRank 1
+
+:script GotoList3
+:SearchRank 1
+
+:script SayMeldung
+:SearchRank 1
+
+:function BrailleResult
+:Returns string No Return Description
+:SearchRank 1
+:Param string/s No Description
+
+:script GotoStatus
+:SearchRank 1
+
+:script AlternativesEinfügen
+:SearchRank 1
+

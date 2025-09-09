@@ -1,0 +1,10 @@
+[Desktop Keys]
+Shift+Control+T=ListReasons
+Control+L=GotoAgentButton
+Shift+Control+L=GotoCallButton
+Shift+Control+C=CopyInfo
+Control+T=GotoStringTable
+Control+2=AgentOff
+F12=AgentOn
+F11=MachMalPause
+Control+I=SqayLastCallInfo

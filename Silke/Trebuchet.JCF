@@ -1,0 +1,15 @@
+[WindowClasses]
+WindowsForms10.EDIT.app.0.e484a5_r6_ad1=Edit
+WindowsForms10.Window.8.app.0.e484a5_r6_ad1=Edit
+WindowsForms10.Window.8.app.0.e484a5_r7_ad1=Edit
+[Braille]
+BrailleMessages=0
+BrailleMode=1
+[Braille OutputModes]
+MouseEcho=0|1|1|me
+[options]
+Verbosity=2
+[FocusXT80]
+StructuredModeAlignToSegment=1
+[Braille Profiles]
+deu=0|0|Euro_Unicode|Euro_Unicode|1|0|1
