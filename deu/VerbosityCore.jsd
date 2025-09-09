@@ -1,0 +1,240 @@
+:function VerbosityLevelToggle
+:Synopsis Toggles Verbosity from Beginner, to Intermediate, to Advanced.
+:Description Controls how much JFW will say when the focus changes or other events occur on the screen or in response to key strokes.
+:Returns String description of value to be displayed as value of Verbosity Level setting.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function ToggleUseVirtualInfoInFormsMode
+:Synopsis Toggles the use of information from the Virtual Document when in Forms Mode.
+:Description This function toggles the use of information from the Virtual Document when in Forms Mode. There are times when the Virtual Document and real document get out of synchronization due to errors in the HTML which will cause erroneous information in Forms Mode when this setting is enabled. If the HTML is correct however, this setting will ensure that prompts spoken for controls in Forms Mode will be identical to the prompts spoken in Virtual Mode.
+:Returns String description of value to be displayed as value of Use Virtual info for Forms Mode Labels.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function ToggleExpandAbbreviations
+:Synopsis Toggles the expansion of abbreviations on web pages.
+:Description This function toggles the expansion of abbreviations on web pages (using the abbr tag) on and off.
+:Returns String description of value to be displayed as value of Expand abbreviations.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function ToggleExpandAcronyms
+:Synopsis Toggles the expansion of acronyms on web pages.
+:Description This function toggles the expansion of acronyms on web pages (using the acronym tag) on and off.
+:Returns String description of value to be displayed as value of Expand acronyms.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function ToggleLanguageDetection
+:Synopsis Toggles the language detection.
+:Description Toggles whether JAWS recognizes language changes.
+:Returns String description of value to be displayed as value of Language Detection.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function GraphicsVerbosity
+:Synopsis Toggles between the graphics verbosity levels.
+:Description Graphics Verbosity can be set to All Graphics, Labeled Graphics, or No Graphics.
+:Returns String description of value to be displayed as value of Graphics Verbosity.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLButtonTextVerbosityToggle
+:Synopsis Toggles the verbosity for Button elements.
+:Description Toggles the verbosity for buttons between title, screen text/label, alt, value and longest.
+:Returns String description of value to be displayed as value of HTML button text verbosity item.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLDecrementLinesPerPageItem
+:Synopsis Decreases lines per page while in virtual cursor mode.
+:Description Decreases the number of lines used when the page up or page down is used in virtual cursor mode.
+:Returns String description of value to be displayed as value of HTML decrement lines per page option.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLDecrementMaxBlockLength
+:Synopsis Decrements the Max Block Length setting by 10.
+:Description This keystroke is used to decrement the max block length by 10 in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  This keystroke uses a minimum value of 0.  If a successful change in the block length would result in a maximum block length of 0 or less, this value is reset to 255.
+:Returns String description of value to be displayed as value of HTML decrement max block length.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:Function HTMLDecrementMaxLineLength
+:Synopsis Increments the Max Line Length setting by 10.
+:Description This keystroke is used to increment the max line length by 10 in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  This keystroke uses a minimum value of 0.  If a successful change in the line length would result in a maximum line length of 0 or less, this value is reset to 255.
+:Returns String description of value to be displayed as value of HTML decrement max line length.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLFrameIndicationToggle
+:Synopsis Toggles the Frame Indication Setting.
+:Description This keystroke is used to toggle the Frame Indication setting in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  The possible values for this JCF option are Give No indication of Frame Change, Say the name of the frame at the beginning and end of each frame, Say New Frame at the beginning of each frame.
+:Returns String description of value to be displayed as value of HTML frame indication option.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLGraphicReadingVerbosityToggle
+:Synopsis Toggles the verbosity for image elements.
+:Description Toggles the verbosity for reading HTML Graphics from longest, OnMouseOver, title and alt tag.
+:Returns String description of value to be displayed as value of HTML Graphics Reading verbosity item.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIdentifyLinkTypeToggle
+:Synopsis Toggles the HTML Identify Link Type Setting.
+:Description This keystroke is used to toggle the identification of link type in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  The possible values for this JCF option are identify link type enabled and nce link only.
+:Returns String description of value to be displayed as value of HTML link type.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIdentifySamePageLinksToggle
+:Synopsis Toggles the Identify Same Page Link Setting.
+:Description This keystroke is used to toggle the identification of same page links in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  The possible values for this JCF option are identify same page links on and identify same page links off.
+:Returns String description of value to be displayed as value of HTML Same Page Links item.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIncludeGraphicsToggle
+:Synopsis Toggles the HTML Include Graphics Settings.
+:Description This keystroke is used to toggle the graphics verbosity setting in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  The possible values for Include HTML Graphics are Labeled, None, and All.
+:Returns String description of value to be displayed as value of HTML Graphics Toggle.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIncludeImageMapLinksToggle
+:Synopsis Toggles the HTML Include Image Map Links Setting.
+:Description This keystroke is used to toggle the Image Map link verbosity setting in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  The possible values for this JCF option are never include image map links, include image map links that have labels, include all image map links.
+:Returns String description of value to be displayed as value of HTML Image Map Level.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIncludeLinksToggle
+:Synopsis Toggles the HTML Include Graphical Links Setting.
+:Description This keystroke is used to toggle the graphical link verbosity setting in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  The possible values for this JCF option are never include graphical links, include graphical links that have labels, and include all graphical links.
+:Returns String description of value to be displayed as value of HTML Links Level.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIncrementLinesPerPageItem
+:Synopsis Increases lines per page for virtual cursor mode.
+:Description Increases the lines per page that is used when the user uses the page up and page down in virtual cursor mode.
+:Returns String description of value to be displayed as value of HTML increment lines per page.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIncrementMaxBlockLength
+:Synopsis Increments the Max Block Length setting by 10.
+:Description This keystroke is used to increment the max block length by 10 in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  This keystroke uses a maximum value of 255.  If a successful change in the maximum block length would result in a maximum block length of 155, this value is reset to 10.
+:Returns String description of value to be displayed as value of HTML increment max block length.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIncrementMaxLineLength
+:Synopsis Decrements the Max Line Length setting by 10.
+:Description This keystroke is used to decrement the max line length by 10 in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  This keystroke uses a minum value of 0.  If a successful change in the line length would result in a maximum line length of 0 or less, this value is reset to 255.
+:Returns String description of value to be displayed as value of HTML increment max line length.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIndicateBlockQuotes
+:Synopsis Toggles whether or not block quotes are indicated in Virtual Cursor.
+:Description Turns on or off the Block Quotes indication.
+:Returns String 
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIndicateElementAccessKeys
+:Synopsis Toggles whether or not element Access Keys are indicated in Virtual Cursor.
+:Description Turns on or off the Element Access Keys indication.
+:Returns String description of value to be displayed as value of Indicate Element Access Keys option.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLIndicateLists
+:Synopsis Toggles whether or not lists are indicated in Virtual Cursor.
+:Description Turns on or off the lists indication.
+:Returns String description of value to be displayed as value of Indicate lists option.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLScreenFollowsVCursorToggle
+:Synopsis Toggles the Screen Follows VCursor Setting.
+:Description This keystroke is used to toggle the Frame follows virtual cursor setting in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  The possible values for this JCF option are will automatically scroll to display the line on which the VCursor is positioned and will not scroll to display the line on which the VCursor is positioned.
+:Returns String description of value to be displayed as value of HTML Screen Follows Virtual Cursor option.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLSkipPastRepeatedTextToggle
+:Synopsis Toggles the Skip Past Repeated Text Setting.
+:Description This keystroke is used to toggle the Skip Past Repeated Text setting in the context of HTML Documents and Web pages.  This keystroke is designed to be a part of the HTML Options dialog that is displayed by the script Adjust HTML Settings.  The possible values for this JCF option are Virtual Cursor Will Skip Text that was repeated when a new page is loaded and Virtual Cursor Will Not Skip Text that was repeated when a new page is loaded.
+:Returns String description of value to be displayed as value of HTML Skip Repeated Text option.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLTextLinkVerbosityToggle
+:Synopsis Toggles the verbosity for text links.
+:Description Toggles the verbosity for text links between title, screen text, onMouseOver, longest and custom.
+:Returns String description of value to be displayed as value of HTML text link verbosity item.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function HTMLToggleFormsModeAutoOff
+:Synopsis Toggles the setting of FormsModeAutoOff.
+:Description This function toggles the setting of the FormsModeAutoOff feature. When on, Forms mode is switched off whenever a new page is loaded provided you weren't in Forms mode in that IE session previously. Forms mode is also turned off if the page is updated by the server. When this setting is off, Forms Mode is never automatically switched off once it has been turned on Unless you switch to an IE session which previously had it turned off.:Returns String description of value to be displayed as value of HTML Toggle Forms Mode Auto Off
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+:returns string
+
+:function HTMLToggleIgnoreInlineFrames
+:Synopsis Toggles the inclusion of inline frames.
+:Description This function toggles the inclusion of inline frames in the virtual representation of a web page. Inline frames are often used for advertisements so this function provides a way to turn off unwanted ads which are implemented using inline frames.
+:Returns String description of value to be displayed as value of HTML Ignore Inline Frames.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function SpellModeToggle
+:Synopsis Toggles mode for SpellLine, SpellWord, etc. between Phonetic and standard spelling.
+:Description Sets the OPT_SPELL_PHONETIC JCF option monitored by internal spell functions.
+:Returns String The new option (text).
+:Param Int/iRetCurVal Pass True to keep the value the same, false to update it.
+
+:function ScreenEchoToggle
+:Synopsis Switches the screen echo between echoing Highlighted text, All text, and None.
+:Description Toggles the screen echo. The default is Highlighted, which speaks only highlighted text when it appears on the screen. "All" speaks all the text that gets written to the screen, and "None" speaks none of the text.:Returns String description of value to be displayed as value of Screen Echo.
+:Returns string the new echo setting as a human-readable string.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function SetTableTitleReading
+:Synopsis Updated the Table Titles element in the Adjust JAWS Verbosity list box.
+:Description The Table Title Reading option allows either column titles, row titles, both or none to be spoken.
+:Returns String the new value for the element in the list.
+:Param Int/iRetCurVal Passed by JAWS to instruct the function whether or not to update.
+
+:function SayAllBy
+:Synopsis Determines what method of Say All is used.
+:Description Determines whether say all will read by line, sentence, or paragraph.
+:Returns String description of value to be displayed as value of SayAllBy
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned
+
+:function TypingEcho
+:Synopsis Echoes characters, words, or none.
+:Description JAWS will echo or speak each character as you type, or just the complete word when you press the space bar, or nothing.
+:Returns String description of value to be displayed as value of Typing Echo.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function ProgressBarAnnouncementToggle
+:synopsis Toggles progress bar announcement on and off.
+:description Used to toggle the announcement of the progress bar. The status will revert to the default setting when JAWS is restarted.
+:param int true if current value is to be returned, false if value is to be updated and returned.
+:returns string the state of the progress bar announcement after the toggle.
+
+:function PunctuationToggle
+:Synopsis Toggles the punctuation between the choices available.
+:Description Changes the punctuation spoken by JFW such as:  All, Some, Most, and None.
+:Returns String description of value to be displayed as value of Punctuation Level.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:function JAWSVerbosityCore
+:Synopsis Helper to the AdjustJAWSVerbosity script.
+:Description Use in your own AdjustJAWSVerbosity script and pass your own delimited string in the format shown in common.jsm represented by the constant cStrDefaultList.  Hj Dialogs, muted synthesizers and Virtual Cursor are all handled automatically.  Just pass your list of items for your convenience.
+:Param String/sCustomItems Your specific list of items to go at the top of the AdjustJAWSVerbosity list.
+
+:function BrailleVerbosity
+:Synopsis Adjusts the Braille verbosity.
+:Description When in structured mode varies the amount of descriptive information shown on the Braille display.
+:Returns String description of value to be displayed as value of Braille Verbosity.
+:Param Int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned.
+
+:Function cStrBrailleList 
+:Description This function returns the default Braille verbosity list.  The functions is found in VerbosityCore.jss.  Use the new TreeCoreGetDefault version with JAWS 9 and later for AdjustJAWSOptions dialog box.
+:Returns String
+
+:Function cstrBrailleMarkingList
+:Description This function returns the default Braille marking verbosity list.
+:Returns String
+
+:Function cStrDefaultList
+:Description This function returns the default verbosity dialog list.  The list is now legacy, but is replaced with the new TreeCore functions.
+:Returns String
+
+:Function cStrDefaultHTMLList
+:Description This function returns the default HTML verbosity list.  This function is now legacy, and lives in VerbosityCore.jss.  Use its TreeCore companion for VCursor options to add to the AdjustJAWSOptions tree.
+:Returns String
+
+:Function cStrTableBrailleList
+:Description This function returns the default Braille HTML table verbosity list.  This list is now legacy, and the functions live in VerbosityCore.jss.  For new functionality, use the TreeCore companion functions in default.jss
+:Returns String

@@ -1,0 +1,28 @@
+:function RemoveUIALyncConversationWindowData
+:param handle the window being destroyed, typically from WindowDestroyedEvent.
+:Description clears out data related to the Skype for Business conversation window. This will prevent a situation where com events are attached which no longer exist.
+
+:function RemoveMainUIALyncEventHandler 
+:param handle the window being destroyed, typically from WindowDestroyedEvent.
+:Description clears out data related to the main Skype for Business window. This will prevent a situation where com events are attached which no longer exist.
+
+:function LyncAddConversationToCollection
+:Param handle The window of the active conversation, usually from WindowCreatedEvent
+:Description Adds the window to the collection of active conversation windows, and hooks the proper events for it.
+
+:function AddMainUIALyncEventHandler
+:Param string the name of the application being loaded.
+:Description Sets up the initial data and objects for Skype for Business and its related events.
+
+:function LyncWatchUIA_AutomationEvent
+:Param object/element the FSUIAElement object that raised the event.
+:Param int/eventID the ID of the event that was registerd. See UIA.jsh for EventID constants.
+:Description AutomationEvent listener used to speak incoming messages and alerts from Skype for Business.
+
+:function LyncWatchUIA_LiveRegionChangedEvent
+:Param object/element The FSUIAElement object from AutomationEvent
+:Description Used to respond as callback / listener to the LiveRegionChangedEvent from the FSUIA object.
+
+:function LyncWatchUIA_SystemAlertEvent
+:Param object/element The FSUIAElement object from AutomationEvent
+:Description Used to respond as callback / listener to the SystemAlertEvent from the FSUIA object.

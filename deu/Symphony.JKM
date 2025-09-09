@@ -1,0 +1,54 @@
+[Common Keys]
+Control+Delete=DeleteWord
+Control+ExtendedDelete=DeleteWord
+JAWSKey+Z=NavigationModeToggle
+Control+Shift+DownArrow=SelectNextParagraph
+Control+Shift+ExtendedDownArrow=SelectNextParagraph
+Control+Shift+UpArrow=SelectPriorParagraph
+Control+Shift+ExtendedUpArrow=SelectPriorParagraph
+Alt+Windows+Comma=ReadCurrentRow
+Alt+Windows+NumPad5=ReadCurrentRow
+Alt+Windows+Period=ReadCurrentColumn
+
+[Desktop Keys]
+Alt+Shift+Apostrophe=ReadCellComment
+JAWSKey+Delete=SayDocumentPosition
+Control+Shift+D=SayObjectDescription
+Control+Shift+L=DisplayLayerInfo
+Enter=Enter
+NumPadEnter=Enter
+Alt+f=PressFindButton
+JAWSKey+F7=ReadMisspelledWordAndSuggestion
+JawsKey+F6=SelectAHeading
+Braille F2+F3+F5=SelectaHeading
+
+[Quick Navigation Keys]
+H=moveToNextHeading 0
+Shift+H=moveToPriorHeading 0
+Braille h=moveToNextHeading 0
+Braille Dot1257=moveToPriorHeading 0
+B=MoveToNextBookmark
+Shift+B=MoveToPriorBookmark
+Braille B=moveToNextBookmark
+Braille Dot127=moveToPriorBookmark
+L=MoveToNextList
+Shift+L=MoveToPriorList
+Braille L=moveToNextList
+Braille Dot1237=moveToPriorList
+I=MoveToNextListItem
+Shift+I=MoveToPriorListItem
+Braille I=moveToNextListItem
+Braille Dot247=moveToPriorListItem
+T=MoveToNextTable
+Shift+T=MoveToPriorTable
+Braille T=MoveToNextTable
+Braille Dot23457=MoveToPriorTable
+JawsKey+ctrl+T=SelectATable
+P=MoveToNextParagraph
+Shift+P=MoveToPriorParagraph
+Braille P=MoveToNextParagraph
+Braille Dot12347=MoveToPriorParagraph
+S=MoveToNextMisspelled
+Shift+S=MoveToPriorMisspelled
+Braille S=MoveToNextMisspelled
+Braille Dot2347=MoveToPriorMisspelled

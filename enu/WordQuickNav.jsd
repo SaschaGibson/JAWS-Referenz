@@ -1,0 +1,508 @@
+:function SuspendDocumentQuickNav
+:description Suspends quick key navigation for the Word document. 
+Quick key navigation may be temporarily suspended when focus moves somewhere such as a menu, then turned back on when focus moves back to the Word document.
+:optional
+:param int/KeepQuickNavActiveForVirtualCursor If true, allows quick key navigation to stay active. 
+Quick key navigation should remain active if focus is moving to an area where the virtual cursor is active. 
+The default is false.
+
+:function UnsuspendDocumentQuickNav
+:description If quick key navigation has been temporarily suspended for the Word document, unsuspends it and turns quick key navigation back on for the Word document.
+
+:function TurnOffDocumentQuickNav
+:description Turns off quick key navigation for the Word document.
+
+:function TurnOnDocumentQuickNav
+:description Turns on quick key navigation for the Word document.
+
+:function DocumentQuickNavIsSuspended
+:description Tests if quick key navigation is temporarily suspended for the Word document.
+:returns int True if quick key navigation is suspended for the Word document, false otherwise.
+
+:function DocumentQuickNavIsOff
+:description Tests if quick key navigation is off, not active and not suspended, for the word document. Does not apply to the virtual cursor.
+:returns int True if quick key navigation is off for the Word document, false otherwise.
+
+:function DocumentQuickNavIsOn
+:description Tests if quick key navigation is active for the word document. Does not apply to the virtual cursor.
+:returns int True if quick key navigation is active for the Word document, false otherwise.
+
+:function QuickNavKeyTrapping
+:description Determines if keys are being trapped due to quick key navigation mode being on for the Word document.
+:returns int true if quick navigation mode is trapping keys, false otherwise.
+
+:function IsTrappableKey
+:param int The key code of a key.
+:description Determines if a key belongs to a set which may be trapped. The set includes all alphanumeris keys, punctuation, Backspace, Enter, space and their shifted equivalents.
+:returns int true if the key is in the range which may be trapped, false otherwise.
+
+:Function TrimKeyName
+:Description Strips the Left or Right word that begins a key name where a left or right modifier keystroke is associated with the key name. Such key names include LeftWindows or RightWindows plus an alphanumeric key. The key name returned can then be used to provide a valid parm to SimulateKey or TypeKey function calls.
+:Param String/sKeyName The key name to trim.
+:Returns String The key name without the leading Left or Right part of the name.
+
+:function QuickNavTrappedKeyProcessed
+:param int the key code.
+:param string The key name.
+:param int boolean telling if it is a script key.
+:description If a key is not scripted and if it belongs to a set of keys which may be trapped, traps the key; otherwise, runs the script for the key or sends it through to the application.
+:returns int true if the key was trapped, false otherwise.
+
+:function EnsureQuickNavKeyTrapReleased
+:description releases the key trap set in place by the quick navigation key mode.
+
+:function QuickNavState
+:description Retrieves the quick navigation status.
+:returns int True or false.
+
+:function SetQuickKeyNavigationState
+:description Sets the quick key navigation state, and turns on or off trapping of keys according to the state.
+:Param Int true to turn quick navigation on, false to turn it off.
+
+:function EstablishQuickNavState
+:description If quick navigation mode has been turned on, makes sure to release key traps when focus leaves an open documetn and the mode is toggled off by the system, and toggles the mode back on when focus returns to an open document.
+
+:function EnsureQuickNavIsOff
+:description If quick nav is on, turns it off.
+
+:function SetSayAllRestart
+:description Sets SayAll to enable automatic restart after interruption.
+
+:function ClearSayAllRestart
+:description Determines whether SayAll should automatically restart after interruption.
+:returns int in True if SayAll will restart after interruption, false otherwise.
+
+:function ShouldSayAllRestart
+:description Determines whether say all should automatically restart after interruption.
+:returns int true if SayAll should automatically restart after interruption, false otherwise.
+
+:function SayAllRelocateCursor
+:param int iSayAllMode
+:param int iUnitsToRetreat
+:param int iWordsSpokenInCurrentUnit
+
+:Function SayWrapMessageError
+:Description  Announces the appropriate error message for whether no more or no prior elements have been found depending on whether wrapping to top or bottom of file.
+:Param String/sElementType The type of element to report not having been found.
+
+:Function SayOrPlayMessage
+:Description Says or plays a message or sound, depending on whether SayAll is in progress. If it is, a sound is played. If it is not, the message is spoken.
+:Param String/smsg_l The long message to be spoken.
+:optional
+:Param String/smsg_s The short message to be spoken.
+
+:function SayKeyNotAvailableAppMessage
+:Description Speaks an error message for quick navigation scripts that are not available for the current application.
+
+:function ProcessMoveToSpellingError
+:description Used by the move to spelling error scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+
+:Script MoveToFirstSpellingError
+:Synopsis Moves to the first spelling error.
+:description When quick navigation keys are used, moves to the first spelling error in the document or email message.
+
+:Script MoveToLastSpellingError
+:Synopsis Moves to the last spelling error.
+:description When quick navigation keys are used, moves to the last spelling error in the document or email message.
+
+:Script MoveToPriorSpellingError
+:DisplayName Move To Prior Spelling Error
+:Synopsis Moves to the prior spelling error.
+:description When quick navigation keys are used, moves to the prior spelling error in the document or email message.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToNextSpellingError
+:DisplayName Move To Next Spelling Error
+:Synopsis Moves to the next spelling error.
+:description When quick navigation keys are used, moves to the next spelling error in the document or email message.
+:KeyWords Quick Key
+:SearchRank 1
+
+:function ProcessMoveToGrammaticalError
+:description Used by the move to grammatical error scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+
+:Script MoveToFirstGrammaticalError
+:Synopsis Moves to the first sentence with a grammatical error.
+:description When quick navigation keys are used, moves to the first sentence with a grammatical error in the document or email message.
+
+:Script MoveToLastGrammaticalError
+:Synopsis Moves to the last sentence with a grammatical error.
+:description When quick navigation keys are used, moves to the last sentence with a grammatical error in the document or email message.
+
+:Script MoveToPriorGrammaticalError
+:DisplayName Move To Prior Grammatical Error
+:Synopsis Moves to the prior sentence with a grammatical error.
+:description When quick navigation keys are used, moves to the prior sentence with a grammatical error in the document or email message.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToNextGrammaticalError
+:DisplayName Move To Next Grammatical Error
+:Synopsis Moves to the next sentence with a grammatical error.
+:description When quick navigation keys are used, moves to the next sentence with a grammatical error in the document or email message.
+:KeyWords Quick Key
+:SearchRank 1
+
+:function ProcessMoveToField
+:description Used by the move to field scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstField
+:Synopsis Moves to the first field.
+:description When quick navigation keys are used, moves to the first field in the document or read-only email message.
+
+:Script MoveToLastField
+:Synopsis Moves to the last field.
+:description When quick navigation keys are used, moves to the last field in the document or read-only email message.
+
+:Script MoveToPriorField
+:DisplayName Move To Prior Field
+:Synopsis Moves to the prior field.
+:description When quick navigation keys are used, moves to the prior field in the document or read-only email message.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToNextField
+:DisplayName Move To Next Field
+:Synopsis Moves to the next field.
+:description When quick navigation keys are used, moves to the next field in the document or read-only email message.
+:KeyWords Quick Key
+:SearchRank 1
+
+:function ProcessMoveToHeading
+:description Used by the move to heading scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:optional
+:param int The heading level.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstHeading
+:Synopsis Moves to the first heading at the specified level.
+:description When quick navigation keys are used, moves to the first heading at the specified level in the document or read-only email message.
+:param int The heading level.
+
+:Script MoveToLastHeading
+:Synopsis Moves to the last heading at the specified level.
+:description When quick navigation keys are used, moves to the last heading at the specified level in the document or read-only email message.
+:param int The heading level.
+
+:Script MoveToPriorHeading
+:Synopsis Moves to the prior heading at the specified level.
+:description When quick navigation keys are used, moves to the prior heading at the specified level in the document or read-only email message.
+:param int The heading level.
+
+:Script MoveToNextHeading
+:Synopsis Moves to the next heading at the specified level.
+:description When quick navigation keys are used, moves to the next heading at the specified level in the document or read-only email message.
+:param int The heading level.
+
+:function ProcessMoveToTable
+:description Used by the move to table scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:optional
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstTable
+:Synopsis Moves to the first table.
+:description When quick navigation keys are used, moves to the first table in the document or read-only email message.
+
+:Script MoveToLastTable
+:Synopsis Moves to the last table.
+:description When quick navigation keys are used, moves to the last table in the document or read-only email message.
+
+:Script MoveToPriorTable
+:Synopsis Moves to the prior table.
+:description When quick navigation keys are used, moves to the prior table in the document or read-only email message.
+
+:Script MoveToNextTable
+:Synopsis Moves to the next table.
+:description When quick navigation keys are used, moves to the next table in the document or read-only email message.
+
+:script MoveToNextList
+:DisplayName Move To Next List
+:Synopsis Moves to the next List in a document.
+:Description When inside a document, moves to the next List in the document.
+:Category HTML
+:KeyWords Quick Key
+:SearchRank 1
+
+:script MoveToPriorList
+:DisplayName Move To Prior List
+:Synopsis Moves to the previous List in a document.
+:Description When inside a document, moves to the previous List in the document.
+:Category HTML
+:KeyWords Quick Key
+:SearchRank 1
+
+:function ProcessMoveToBookmark
+:description Used by the move to bookmark scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstBookmark
+:Synopsis Moves to the first bookmark in a Word document.
+:description When quick navigation keys are used, moves to the first bookmark in the Word document. Not available for Outlook messages.
+
+:Script MoveToLastBookmark
+:Synopsis Moves to the last bookmark in a Word document.
+:description When quick navigation keys are used, moves to the last bookmark in the Word document. Not available for Outlook messages.
+
+:Script MoveToPriorBookmark
+:DisplayName Move To Prior Bookmark
+:Synopsis Moves to the prior bookmark in a Word document.
+:description When quick navigation keys are used, moves to the prior bookmark in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToNextBookmark
+:DisplayName Move To Next Bookmark
+:Synopsis Moves to the next bookmark in a Word document.
+:description When quick navigation keys are used, moves to the next bookmark in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 1
+
+:function ProcessMoveToComment
+:description Used by the move to comment scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstComment
+:Synopsis Moves to the first comment in a Word document.
+:description When quick navigation keys are used, moves to the first comment in the Word document. Not available for Outlook messages.
+
+:Script MoveToLastComment
+:Synopsis Moves to the last comment in a Word document.
+:description When quick navigation keys are used, moves to the last comment in the Word document. Not available for Outlook messages.
+
+:Script MoveToPriorComment
+:DisplayName Move To Prior Comment
+:Synopsis Moves to the prior comment in a Word document.
+:description When quick navigation keys are used, moves to the prior comment in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToNextComment
+:DisplayName Move To Next Comment
+:Synopsis Moves to the next comment in a Word document.
+:description When quick navigation keys are used, moves to the next comment in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 1
+
+:function ProcessMoveToFootnote
+:description Used by the move to footnote scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstFootnote
+:Synopsis Moves to the first footnote in a Word document.
+:description When quick navigation keys are used, moves to the first footnote in the Word document. Not available for Outlook messages.
+
+:Script MoveToLastFootnote
+:Synopsis Moves to the last footnote in a Word document.
+:description When quick navigation keys are used, moves to the last footnote in the Word document. Not available for Outlook messages.
+
+:Script MoveToPriorFootnote
+:DisplayName Move To Prior Footnote
+:Synopsis Moves to the prior footnote in a Word document.
+:description When quick navigation keys are used, moves to the prior footnote in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 2
+
+:Script MoveToNextFootnote
+:DisplayName Move To Next Footnote
+:Synopsis Moves to the next footnote in a Word document.
+:description When quick navigation keys are used, moves to the next footnote in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 2
+
+:function ProcessMoveToEndnote
+:description Used by the move to endnote scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstEndnote
+:Synopsis Moves to the first endnote in a Word document.
+:description When quick navigation keys are used, moves to the first endnote in the Word document. Not available for Outlook messages.
+
+:Script MoveToLastEndnote
+:Synopsis Moves to the last endnote in a Word document.
+:description When quick navigation keys are used, moves to the last endnote in the Word document. Not available for Outlook messages.
+
+:Script MoveToPriorEndnote
+:DisplayName Move To Prior Endnote
+:Synopsis Moves to the prior endnote in a Word document.
+:description When quick navigation keys are used, moves to the prior endnote in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 2
+
+:Script MoveToNextEndnote
+:DisplayName Move To Next Endnote
+:Synopsis Moves to the next endnote in a Word document.
+:description When quick navigation keys are used, moves to the next endnote in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 2
+
+:function ProcessMoveToRevision
+:description Used by the move to revision scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstRevision
+:Synopsis Moves to the first revision in a Word document.
+:description When quick navigation keys are used, moves to the first revision in the Word document. Not available for Outlook messages.
+
+:Script MoveToLastRevision
+:Synopsis Moves to the last revision in a Word document.
+:description When quick navigation keys are used, moves to the last revision in the Word document. Not available for Outlook messages.
+
+:Script MoveToPriorRevision
+:DisplayName Move To Prior Revision
+:Synopsis Moves to the prior revision in a Word document.
+:description When Navigation Quick Keys are used, moves to the prior revision in the Word document if Track Changes is enabled. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToNextRevision
+:DisplayName Move To Next Revision
+:Synopsis Moves to the next revision in a Word document.
+:description When Navigation Quick Keys are used, moves to the next revision in the Word document if Track Changes is enabled. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 1
+
+:function ProcessMoveToGraphic
+:description Used by the move to graphic scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:optional
+:param string The long error message to be spoken when the move is unsuccessful.
+:param string The short error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstGraphic
+:Synopsis Moves to the first graphic.
+:description When quick navigation keys are used, moves to the first graphic in the document or read-only email message.
+
+:Script MoveToLastGraphic
+:Synopsis Moves to the last graphic.
+:description When quick navigation keys are used, moves to the last graphic in the document or read-only email message.
+
+:Script MoveToPriorGraphic
+:Synopsis Moves to the prior graphic.
+:description When quick navigation keys are used, moves to the prior graphic in the document or read-only email message.
+
+:Script MoveToNextGraphic
+:Synopsis Moves to the next graphic.
+:description When quick navigation keys are used, moves to the next graphic in the document or read-only email message.
+
+:function ProcessMoveToPage
+:description Used by the move to page scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The long error message to be spoken when the move is unsuccessful.
+:optional
+:param string The short error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstPage
+:Synopsis Moves to the first page in a Word document.
+:description When quick navigation keys are used, moves to the first page in the Word document. Not available for Outlook messages.
+
+:Script MoveToLastPage
+:Synopsis Moves to the last page in a Word document.
+:description When quick navigation keys are used, moves to the last page in the Word document. Not available for Outlook messages.
+
+:Script MoveToPriorPage
+:DisplayName Move To Prior Page
+:Synopsis Moves to the prior page in a Word document.
+:description When quick navigation keys are used, moves to the prior page in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToNextPage
+:DisplayName Move To Next Page
+:Synopsis Moves to the next page in a Word document.
+:description When quick navigation keys are used, moves to the next page in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 1
+
+:function ProcessMoveToSection
+:description Used by the move to section scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The long error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstSection
+:Synopsis Moves to the first section in a Word document.
+:description When quick navigation keys are used, moves to the first section in the Word document. Not available for Outlook messages.
+
+:Script MoveToLastSection
+:Synopsis Moves to the last section in a Word document.
+:description When quick navigation keys are used, moves to the last section in the Word document. Not available for Outlook messages.
+
+:Script MoveToPriorSection
+:DisplayName Move To Prior Section
+:Synopsis Moves to the prior section in a Word document.
+:description When quick navigation keys are used, moves to the prior section in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 2
+
+:Script MoveToNextSection
+:DisplayName Move To Next Section
+:Synopsis Moves to the next section in a Word document.
+:description When quick navigation keys are used, moves to the next section in the Word document. Not available for Outlook messages.
+:KeyWords Quick Key
+:SearchRank 2
+
+:Function ProcessFormfieldMovement
+:Description Processes the movement forward or backward when formfields exist and quick key navigation is enabled. The function is called by each of the formfield movement scripts for edit, checkbox, and combo box formfields.
+:Param int/index The index of the formfield type sought.
+:Param int/iControlType One of the three formfield types, edit, checkbox, or combo box.
+:Param int/iCount The nnumber of formfields of the type sought present in the list
+:Param int/bForward True if moving forward, false if moving backward.
+:Param string/sMsgElementTypeError The string representing the message for no more or no prior element type of the formfield in the script calling this function.
+:Returns Void
+
+:Script MoveToNextCombo
+:Synopsis Moves to the next combo field in a protected Word form.
+:Description When quick navigation keys are used, moves to the next combo field in a protected Word document. Not available in Outlook messages.
+
+:Script MoveToPriorCombo
+:Synopsis Moves to the prior combo field in a protected Word form.
+:Description When quick navigation keys are used, moves to the prior combo field in a protected Word document. Not available in Outlook messages.
+
+:Script MoveToNextEdit
+:Synopsis Moves to the next edit field in a protected Word form.
+:Description When quick navigation keys are used, moves to the next edit field in a protected Word document. Not available in Outlook messages.
+
+:Script MoveToPriorEdit
+:Synopsis Moves to the prior edit field in a protected Word form.
+:Description When quick navigation keys are used, moves to the prior edit field in a protected Word document. Not available in Outlook messages.
+
+:Script MoveToNextCheckbox
+:Synopsis Moves to the next checkbox field in a protected Word form.
+:Description When quick navigation keys are used, moves to the next checkbox field in a protected Word document. Not available in Outlook messages.
+
+:Script MoveToPriorCheckbox
+:Synopsis Moves to the prior checkbox field in a protected Word form.
+:Description When quick navigation keys are used, moves to the prior checkbox field in a protected Word document. Not available in Outlook messages.
+
+:function ProcessUnavailableQuickNavKey
+:description Handles processing for all quick navigation keys that are not available for Word.
+
+:Script MoveToNextWordFromList
+:DisplayName Move To Next Word From List
+:Synopsis If a word list has been created, moves to the next word from the list in a Microsoft Word document using quick keys, or an Outlook read-only message.
+:Description This script assumes a word list has been created for the document or Outlook read-only message. In these cases, it is moved to the next word in the list.
+:KeyWords Quick Key
+:SearchRank 2
+
+:Script MoveToPriorWordFromList
+:DisplayName Move To Prior Word From List
+:Synopsis If a word list has been created, moves to the prior word from the list in a Microsoft Word document using quick keys, or an Outlook read-only message.
+:Description This script assumes a word list has been created for the Microsoft Word document or Outlook read-only message. In these cases, it is moved to the prior word in the word list.
+:KeyWords Quick Key
+:SearchRank 2
+
+:Script NavigationModeToggle
+:DisplayName Navigation Mode Toggle
+:Synopsis Toggles quick key navigation mode on or off.
+:Description Quick key navigation mode refers to single-letter keystrokes used for HTML style element navigation within the document.

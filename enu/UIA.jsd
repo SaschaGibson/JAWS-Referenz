@@ -1,0 +1,396 @@
+:function GetUIAElementAtPoint
+:description Retrieves the UIA element located at the supplied coordinate location.
+:param int x The X coordinate.
+:param int y The Y coordinate.
+:returns object The UIA element retrieved from the supplied location.
+
+:function GetUIAFocusElement
+:description Retrieves the focus element returned by querying the passed UIA object.
+:param object The UIA object to use when getting the focus element.
+:returns object the focus element retrieved using the UIA object.
+
+:function SetCurrentElementToFirstElement
+:param object The UIA object that was used to create the treewalker.
+:param object The treewalker object whose current element is to be set.
+:description Sets the current element of the treewalker to the first element in the tree.
+
+:function SetCurrentElementToDeepestFocusElement
+:param object The UIA object that was used to create the treewalker.
+:param object The treewalker object whose current element is to be set.
+:description More than one element in a process may show as having the focus, this tries to set the current element to the deepest focus element.
+
+:function CreateUIAFocusElement
+:description Creates and returns a UIA focus object element. Useful when you only need the focus element, not when you need to navigate the UIA tree.
+:optional
+:param int If true, tries to set focus to the deepest element having focus in the tree from the point of focus obtained by the UIA method GetFocusElement.
+:returns object A UIA focus object element.
+
+:function CreateUIAElementFromWindow
+:description Creates and returns a UIA object element for the specified window. Useful when you only need the element, not when you need to navigate the UIA tree.
+:optional
+:param handle The handle to use for the element. If not supplied, the handle of the focus window will be used.
+:returns object A UIA object element for the specified window.
+
+:function CreateUIANextSiblingOfElement
+:description Creates a UIA object which is the next sibling of the UIA object parameter.
+:param object The UIA element for which the next sibling is to be retrieved.
+:returns object The next sibling of the UIA object parameter.
+
+:function CreateUIAPriorSiblingOfElement
+:description Creates a UIA object which is the prior sibling of the UIA object parameter.
+:param object The UIA element for which the prior sibling is to be retrieved.
+:returns object The prior sibling of the UIA object parameter.
+
+:function CreateUIAParentOfElement
+:description Creates a UIA object which is the parent of the UIA object parameter.
+:param object The UIA element for which the parent is to be retrieved.
+:returns object The parent of the UIA object parameter.
+
+:function CreateUIAFirstChildOfElement
+:description Creates a UIA object which is the first child of the UIA object parameter.
+:param object The UIA element for which the first child is to be retrieved.
+:returns object The first child of the UIA object parameter.
+
+:function CreateUIARawViewTreeWalker
+:description Creates a treewalker with a rawview condition. The current element is set to the focus object before returning the treewalker object only if the optional parameter is true.
+:optional
+:param int If true, sets the current element to the focus object. Default is false.
+:returns object a treewalker object.
+
+:function CreateUIATreeWalkerWithCurrentElement
+:description Creates a UIA treewalker object,
+setting the current element of the treewalker to a specified element object,
+and optionally using a supplied condition for creating the treewalker.
+:param object The element to which the treewalker current element will be set.
+:optional
+:param object The condition to use when creating the treewalker. If no condition is supplied, the rawview condition will be used.
+:returns object The treewalker, with current element set at the object element parameter.
+
+:function CreateUIATreeWalkerForFocusProcessId
+:description Creates a treewalker object for the process ID of the focus object.
+:optional
+:param object The condition to use when creating the treewalker. If not supplied, a rawview condition will be used.
+:param int True if the current element should be set to the deepest focus element; otherwise, sets the current element to the first element in the tree.
+:returns object A treewalker for the processID of the focus object.
+
+:function GetWin8AppWindowTitle
+:description Retrieves the window title for modern or universal applications.
+:returns string the window title for modern or universal applications.
+
+:function FindUIAElementOfProperty
+:description Uses the UIA FindFirst method to find an element matching the search criteria.
+:param int The property ID to use.
+:param variant The property to use.
+:optional
+:param int The scope to use for the find.
+:param object The element to use as the starting point.
+:param object Any condition to use for the find.
+:returns object The UIA element, if one was found.
+
+:function FindAllUIAElementsOfProperty
+:description Uses the UIA FindAll method to find the elements matching the search criteria.
+:param int The property ID to use.
+:param variant The property to use.
+:optional
+:param int The scope to use for the find.
+:param object The element to use as the starting point.
+:param object Any condition to use for the find.
+:returns object The UIA array of elements found.
+
+:function FindUIAElementOfType
+:description Uses the UIA FindUIAElementOfProperty method to find an element matching the criteria.
+:param int The UIA control type to use.
+:optional
+:param object The element to use as the starting point.
+:param object Any condition to use for the find.
+:returns object The element found.
+
+:function FindAllUIAElementsOfType
+:description Uses the UIA FindAllUIAElementsOfProperty method to find the elements matching the criteria.
+:param int The UIA control type to use.
+:optional
+:param object The element to use as the starting point.
+:param object Any condition to use for the find.
+:returns object The array of elements found.
+
+:function CompareUIAElements
+:description Compares two UIA elements to determine if they are the same element.
+:param object The first element to be compared against the second.
+:param object The second element to be compared against the first.
+:returns int True if the first and second elements are the same, false otherwise.
+
+:function GetBoundingRectFromRectArray
+:description Retrieves the coordinates of the rectangles which encloses all the rectangles in the rectangle array object.
+:param object/rectArray An array of rectangles.
+:param int byRef/left The left coordinate of the bounding rectangle.
+:param int byRef/top The top coordinate of the bounding rectangle.
+:param int byRef/right The right coordinate of the bounding rectangle.
+:param int byRef bottom The bottom coordinate of the bounding rectangle.
+:returns int True if a rectangle was retrieved, false otherwise.
+
+:function ElementBoundingRectsAreIdentical
+:description Determines if two UIA elements have the same bounding rectangles.
+:param object/element1 A UIA element to be used for comparison.
+:param object/element2 A UIA element to be used for comparison.
+:returns int True if the bounding rectangles for both elements exists and are identical.
+
+:function UIAMoveRangeEndPointPastClickablePointRangeFormat
+:description Attempts to find a format range at the clickable point of the element, then updates one of the endpoints of the supplied range. If the element has no clickable point, an attempt is made to scroll the element into view and a second attempt is made to obtain a clickable point. If a clickable point is obtained, a range for the format at that point is obtained and the supplied range is updated.
+:param object byRef The range whose endpoint is to be moved.
+:param object The text pattern object to which the range belongs.
+:param object The element to use when attempting to obtain a range at point.
+:optional
+:param int true if the ending endpoint of the supplied range is to be updated to the starting point of the format range, otherwise it is assumed that the starting endpoint of the supplied range is to be updated to the ending endpoint of the format range.
+:returns int True if a point range for the supplied element is found and the supplied range could be updated, false otherwise.
+
+:function UIAMoveRangeEndPointPastChildRange
+:description Attempts to find a child range for the text pattern using the supplied element, then updates one of the endpoints of the supplied range.
+:param object byRef The range whose endpoint is to be moved.
+:param object The text pattern object to which the range belongs.
+:param object The element to use when attempting to obtain a child range.
+:optional
+:param int true if the ending endpoint of the supplied range is to be updated to the starting point of the child range, otherwise it is assumed that the starting endpoint of the supplied range is to be updated to the ending endpoint of the child range.
+:returns int True if a child range for the supplied element is found and the supplied range could be updated, false otherwise.
+
+:function UIAGetNextHeadingRangeFromDocumentRange
+:description Finds the next occurrence of text with any level of heading style, and returns the range object for the text with the heading style.
+:param object documentRange The document range to be used when finding the next heading style.
+:optional
+:param int bReverseDirection If true, starts at the end of the document range and searches backwards; otherwise, starts at the beginning of the range and searches forward.
+:param int The highest heading level priority to use when searching. If not specified, or if an invalid priority is used or if it is a lower priority than a specified lowest heading level priority, the highest heading level priority for the search is 1. Valid heading level priorities are 1 through 9, with 1 being high and 9 being low.
+:param int The lowest heading level priority to use when searching. If not specified, or if an invalid priority is used or if it is a higher priority than a specified highest heading level priority, the lowet heading level priority for the search is 9. Valid heading level priorities are 1 through 9, with 1 being high and 9 being low.
+:returns object If found, the next range for text with a heading style.
+
+:function UIAWalkTheTree
+:description Instructs the treeWalker to move forward or backward through the tree.
+:param object The treeWalker which wil be called upon to move through the tree structure.
+:optional
+:param int True if the treeWalker should move backward through the tree structure, otherwise a forward move is assumed.
+:returns int True if the treeWalker could be moved, false otherwise.
+
+:function GetTextFromDocumentRange
+:description Retrieves document range text from the element if such exists.
+:param object/element The element for which the document range text is to be retrieved.
+:returns string The text in the document range, if any exists.
+
+:function GetTopLevelAppElement
+:description Gets the ancestor element of the focus element which is a child of the desktop element.
+:returns object The element which is the top level for the current application, the child of the desktop.
+
+:function GetElementRuntimeIDString
+:description Retrieves the element's runtime id and returns it as a decimal-delimited hex number string, such as is shown in AccEvent and AccExplorer.
+:param object The UIA element object whose runtime id is to be retrieved.
+:returns string The element ID such as is shown by AccEvent and AccExplorer.
+
+:function UIAGoToNextInSubtree
+:description Traverses the UIA subtree in depth-first order to move forward to the next element.
+:param object The treewalker object whose currentElement is to be moved.
+:param object The root of the tree branch to be traversed. It is assumed that the treewalker currentElement was set to this element before the first call to use this function for traversal.
+:returns int True if the treewalker currentElement moved to a new element, false otherwise.
+
+:function FSUIACompareElements
+:description Provides a means for comparing two UIA elements without the need to explicitly create the FSUIA object for the purpose of element comparison.
+:param object/element1 An element to be compared against another element.
+:param object/element Another element to be compared against the first element.
+:returns int True if the two elements are the same, false otherwise.
+
+:function FSUIACreateAndCondition
+:description Provides a means for creating a UIA AND condition without the need to explicitly create the FSUIA object for the purpose of condition creation.
+:param object/condition The first condition.
+:param object/condition The secont condition.
+:returns object the UIA AND condition.
+
+:function FSUIACreateOrCondition
+:description Provides a means for creating a UIA OR condition without the need to explicitly create the FSUIA object for the purpose of condition creation.
+:param object/condition The first condition.
+:param object/condition The secont condition.
+:returns object the UIA OR condition.
+
+:function FSUIACreateBoolCondition
+:description Provides a means for creating a UIA bool property condition without the need to explicitly create the FSUIA object for the purpose of condition creation.
+:param int/PropertyID The property ID to be used to create the condition.
+:param int/boolVal True or false. IF the JAWS script value for true is passed, it will be converted into the UIA value for true before creating the condition.
+:returns object The bool condition.
+
+:function FSUIACreateTrueCondition
+:description Provides a means for creating a UIA true condition without the need to explicitly create the FSUIA object for the purpose of condition creation.
+:returns object The true condition.
+
+:function FSUIACreateFalseCondition
+:description Provides a means for creating a UIA false condition without the need to explicitly create the FSUIA object for the purpose of condition creation.
+:returns object The false condition.
+
+:function FSUIACreateNotCondition
+:description Provides a means for creating a UIA NOT condition without the need to explicitly create the FSUIA object for the purpose of condition creation.
+:param object/condition The condition to be used for the NOT condition.
+:returns object the NOT condition.
+
+:function FSUIACreateIntPropertyCondition
+:description Provides a means for creating a UIA int property condition without the need to explicitly create the FSUIA object for the purpose of condition creation.
+:param int/propertyID The property ID.
+:param int/iVal The integer value.
+:returns object The int property condition.
+
+:function FSUIACreateStringPropertyCondition
+:description Provides a means for creating a UIA string property condition without the need to explicitly create the FSUIA object for the purpose of condition creation.
+:param int/propertyID The property ID.
+:param string/sVal The string value.
+:optional
+:param int/propertyConditionFlags One of the PropertyConditionFlags constants defined in UIA.jsh.
+:returns object The string property condition.
+
+:function FSUIAContentViewCondition
+:description Provides a means for obtaining the UIA content view condition without the need to explicitly create the FSUIA object for the purpose of retrieving the condition.
+:returns object the condition.
+
+:function FSUIAControlViewCondition
+:description Provides a means for obtaining the UIA control view condition without the need to explicitly create the FSUIA object for the purpose of retrieving the condition.
+:returns object the condition.
+
+:function FSUIARawViewCondition
+:description Provides a means for obtaining the UIA raw view condition without the need to explicitly create the FSUIA object for the purpose of retrieving the condition.
+:returns object the condition.
+
+:function FSUIACreateTreeWalker
+:description Provides a means for creating a UIA treewalker without the need to explicitly create the FSUIA object for the purpose of treewalker creation.
+:param object/condition The condition to be used for the treewalker.
+:returns object The treewalker.
+
+:function FSUIAContentViewWalker
+:description Provides a means for obtaining the UIA content view treewalker without the need to explicitly create the FSUIA object for the purpose of retrieving the treewalker.
+:returns object The treewalker.
+
+:function FSUIAControlViewWalker
+:description Provides a means for obtaining the UIA control view treewalker without the need to explicitly create the FSUIA object for the purpose of retrieving the treewalker.
+:returns object The treewalker.
+
+:function FSUIARawViewWalker
+:description Provides a means for obtaining the UIA raw view treewalker without the need to explicitly create the FSUIA object for the purpose of retrieving the treewalker.
+:returns object The treewalker.
+
+:function FSUIAGetFocusedElement
+:description Provides a means for obtaining the UIA focus element without the need to explicitly create the FSUIA object for the purpose of retrieving the element.
+:optional
+:param int/getDeepestFocus Set to True if you want to get the deepest element with focus. Default is false.
+:returns object The focus element.
+
+:function FSUIAGetRootElement
+:description Provides a means for obtaining the UIA root element without the need to explicitly create the FSUIA object for the purpose of retrieving the element.
+:returns object The root UIA element.
+
+:function FSUIAGetElementFromHandle
+:description Provides a means for getting the UIA element, if one exists, from the window handle without the need to explicitly create the FSUIA object for the purpose of accessing the UIA method call.
+:param handle/hWnd The window handle to be used.
+:returns object The UIA element which was obtained, if any, from the window handle.
+
+:function FSUIAGetElementFromIAccessible
+:description Provides a means for getting the UIA element, if one exists, from the accessible object without the need to explicitly create the FSUIA object for the purpose of accessing the UIA method call.
+:param object/accessibleObject The accessible object from a Microsoft Active Accessibility server.
+:param int/childID the MSAA child ID of the desired object.
+:returns object the UIA element, if one was obtained.
+
+:function FSUIAGetElementFromPoint
+:description Provides a means for getting the UIA element from the screen X and Y coordinates without the need to explicitly create the FSUIA object for the purpose of accessing the UIA method call.
+:param int/x The X screen coordinate.
+:param int/y The Y screen coordinate.
+:returns object The element, if one was obtained.
+
+:function FSUIAGetParentOfElement
+:description Provides a means for obtaining the parent of a UIA element without the need to explicitly create the FSUIA object or treewalker for the purpose of retrieving the element.
+:param object/element The element whose parent is to be retrieved.
+:returns object The parent element, if one exists.
+
+:function FSUIAGetFirstChildOfElement
+:description Provides a means for obtaining the first child of a UIA element without the need to explicitly create the FSUIA object or treewalker for the purpose of retrieving the element.
+:param object/element The element whose first child is to be retrieved.
+:returns object The first child element, if one exists.
+
+:function FSUIAGetNthChildOfElement
+:Returns object The nth child element, if one exists.
+:Description Provides a means for obtaining the nth child of a UIA element without the need to explicitly create the FSUIA object or treewalker for the purpose of retrieving the element.
+:Param object/element The element whose nth child is to be retrieved.
+:Param int/iChild The one-based number representing the nth child desired.
+
+:function FSUIAGetNextSiblingOfElement
+:description Provides a means for obtaining the next sibling of a UIA element without the need to explicitly create the FSUIA object or treewalker for the purpose of retrieving the element.
+:param object/element The element whose next sibling is to be retrieved.
+:returns object The next sibling element, if one exists.
+
+:function FSUIAGetPriorSiblingOfElement
+:description Provides a means for obtaining the prior sibling of a UIA element without the need to explicitly create the FSUIA object or treewalker for the purpose of retrieving the element.
+:param object/element The element whose prior sibling is to be retrieved.
+:returns object The prior sibling element, if one exists.
+
+:function FSUIAGetAncestorOfControlType
+:description Searches the ancestors of the element for an element with the supplied UIA controlType.
+:param object The element whose ancestors are to be searched.
+:param int int The UIA controlType code to search for.
+:returns object If found, the ancestor element whose ControlType matches the one searched for; otherwise null.
+
+:function FSUIAGetAncestorOfARIARole
+:description Searches the ancestors of the element for an element with the supplied ARIA role.
+:param object The element whose ancestors are to be searched.
+:param string the ARIA role to search for.
+:returns object If found, the ancestor element whose ARIA role matches the one searched for; otherwise null.
+
+:function FSUIAGetAncestorWithClass
+:description Searches the ancestors of the element for an element with the supplied class name.
+:param string/class The class name to search for.
+:optional
+:param object/element The element whose ancestors are to be searched. If not provided, the focused element will be used.
+:param int/level The level of the ancestor if found, otherwise -1.
+:returns object If found, the ancestor element whose class name matches the one searched for; otherwise null.
+
+:function FSUIAGetFocusedDocumentTextRangeText
+:description Retrieves the text in the document text range for the UIA element.
+:optional
+:param object/Element The UIA element whose text in the text range is to be retrieved. The UIA focus element will be used if this is left unassigned.
+:returns string The text in the document text range of the UIA element if possible, otherwise null.
+
+:function FSUIAGetFocusedElementValueText
+:description Retrieves the text in the value for the UIA element.
+:optional
+:param object/Element The UIA element whose value text is to be retrieved. The UIA focus element will be used if this is left unassigned.
+:returns string The text in the value of the UIA element if possible, otherwise null.
+
+:function PositionInGroupFromUIA
+:description Uses UIA to retrieve position in group text.
+:param object/element The element from which the UIA information for position in group is to be retrieved.
+:returns string The formatted position in group string retrieved from UIA index an sizeOfSet.
+
+:function FSUIAGetWindowVisualState
+:description Provides a means for getting the visual state of a UIA window element from the window handle without the need to explicitly create the FSUIA object for the purpose of accessing the UIA method call.
+:optional
+:param handle/hWnd The window handle to be used. If no handle is provided, the handle of the focused application will be used.
+:returns int One of the WindowVisualState constants defined in UIA.jsh.
+
+:function UIAElementHasValidRect
+:description Checks if an element has a bounding rectangle, that the difference between the left and right values is non-zero, and that the difference between the top and bottom values is non-zero.
+:param object/element The element whose bounding rectangle will be validated.
+:returns int True if the element has a valid bounding rectangle, false otherwise.
+
+:function UIAIsPointInElementRect
+:description Determines whether the supplied x y coordinates are contained within the bounding rectangle of the element.
+:param object/element The element whose bounding rectangle the point will be checked against.
+:param int/x The X coordinate.
+:param int/y The Y coordinate.
+:returns int True if the point is contained within the element's bounding rectangle, false otherwise.
+
+:function UIAGetSiblingElementWithIdenticalRect
+:description Retrieves the first sibling element that has an identical bounding rectangle as the element passed to the function .
+:param object/oElement The element for which a sibling with an identical bounding rectangle is desired.
+:returns object The first sibling element that has an identical bounding rectangle, null if none are found.
+
+:function UIAGetElementWithPointInElementRect
+:description Retrieves an element whose bounding rectangle contains the supplied x y coordinates and is also contained within the bounding rectangle of the supplied element. The element that is returned may be a child of the supplied element or a child of a sibling element with an identical rectangle.
+:param object/oElement The element whose bounding rectangle will contain the target element.
+:param int/x The X coordinate.
+:param int/y The Y coordinate.
+:returns object The element containing the specified point, null if not found.
+
+:function UIAGetDeepestElementWithPointInElementRect
+:description Retrieves the deepest element whose bounding rectangle contains the supplied x y coordinates and is also contained within the bounding rectangle of the supplied element. The element that is returned may be a descendant of the supplied element or a descendant of a sibling element with an identical rectangle.
+:param object/oElement The element whose bounding rectangle will contain the target element.
+:param int/x The X coordinate.
+:param int/y The Y coordinate.
+:returns object The element containing the specified point, null if not found.

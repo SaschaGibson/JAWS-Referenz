@@ -1,0 +1,16 @@
+:function GetCurrentlyPlayingTrackName
+:returns string The name of the currently playing media
+
+:function GetCurrentPlaylistName
+:returns string The name of the current playlist.
+
+:function IsListItemCurrentlyPlayingMedia
+:returns int True if the focus list item of the focus list is the currently playing media.
+
+:function GetStarRating
+:description Gets the user rating for a media object.
+:param object A media object.
+:returns int The numbers 1 through 5 representing the star ratings 1 through 5, or 0 if the item has no rating or rating could not be determined.
+
+:function NowPlayingFocusItemStarRating
+:returns int The star rating for the focus item in the Now Playing play list. The Now Playing list must be in focus.

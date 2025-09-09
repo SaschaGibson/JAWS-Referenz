@@ -1,0 +1,10 @@
+[common Keys]
+Control+JAWSKey+DownArrow=SayHelpWindow
+Control+JAWSKey+ExtendedDownArrow=SayHelpWindow
+Control+PageUp=SayPriorScreen
+Control+ExtendedPageUp=SayPriorScreen
+Control+PageDown=SayNextScreen
+Control+ExtendedPageDown=SayNextScreen
+Control+N=SayTopicsFound
+Tab=NextControl
+Shift+Tab=PriorControl

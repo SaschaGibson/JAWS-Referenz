@@ -1,0 +1,65 @@
+:function AutoStartEvent
+
+:script GoBack
+:Synopsis Loads the previously opened Web page
+:Description Passes ALT+LEFT ARROW to the Conference Room's browser to load the previous page.
+
+:script GoForward
+:Synopsis Loads the next opened Web page.
+:Description Passes ALT+RIGHT ARROW to the Conference Room's browser to load the next page.
+
+:script ToggleGlobalSetting
+:Synopsis Toggles global talk key setting
+:Description Passes ALT+G through to the Conference Room to toggle the global talk key setting. Since this is an application keystroke, the toggle status is not spoken.
+
+:script DisableTalkKey
+:Synopsis temporarily disables the talk key
+:Description Passes ALT+D through to the Conference Room to temporarily disable the talk key. This keystroke acts as a toggle.
+
+:script MuteAudio
+:Synopsis Mute conference room sounds
+:Description Passes ALT+Q through to the Conference Room to temporarily mute the sounds in the conference room. Other system sounds are not affected.
+
+:script AnnounceActionKeysStatus
+:Synopsis Announces the states of the talk key and audio mute keystrokes.
+:Description This keystroke announces the current state of the Disable Talk Key, Mute Audio and Lock Talk Key commands.
+
+:script SelectHTMLElement
+:Synopsis Moves to the chat text entry edit box
+:Description Moves the focus from your current location within the conference room to the chat text entry edit box.
+
+:function ClickButton
+:Synopsis Clicks a specific button or control
+:Description This function uses the control ID value passed as a parameter to locate the corresponding window for the button or control to be clicked in the Conference Room.
+:Param int/iControl Control ID for the button or control to be clicked.
+
+:script ActivateFontDialog
+:Synopsis Activates the font button.
+:Description Activates the font button which, in turn, displays the Font dialog that lets you alter the font type, size and attributes for the chat text.
+
+:script ActivateCustomColorDlg
+:Synopsis Activates the color button
+:Description Activates the color button which, in turn, displays the Color dialog that lets you add colors used to alter the appearance of the chat text.
+
+:script SayWindowPromptAndText
+
+:script HotKeyHelp
+
+:function IsWebConferenceAddressBarWindow
+:description Test if a handle is the Web conference Plug In addressbar window.
+:param handle The handle to test if it is the web conference plug in addressbar.
+:returns int True if the handle is the addressbar window handle, false otherwise.
+
+:function GetAddressBarWindow
+:description Attempts to obtain the Web Conference Plug In addressbar window handle.
+:returns handle The handle to the addressbar window if it could be obtained, null otherwise.
+
+:function GetCurrentURL
+:description Attempts to retrieve the URL shown in the Web Conference Plug In addressbar.
+:param handle The handle of the Web Conference Plug In addressbar window.
+:returns string The URL shown in the web Conference Plug In addressbar.
+
+script AddressBar
+:synopsis Speak the addressbar, or moves the focus to the addressbar.
+:description With a single press, speaks the content of the addressbar. With a double press,  moves to the addressbar.
+

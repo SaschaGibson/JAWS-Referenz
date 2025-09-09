@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Default.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="ReadingOptions" Text="Reading Options">
+			<HelpMsg>
+This group contains options used for reading Microsoft Outlook messages.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.MessagesAutomaticallyRead" Text="Messages Automatically Read">
+			<HelpMsg>
+When turned on, JAWS reads the message when you open an e-mail. The default setting is On.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

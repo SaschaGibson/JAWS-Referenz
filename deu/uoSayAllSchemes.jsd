@@ -1,0 +1,21 @@
+:function InitUOSayAllSchemesData
+:synopsis Initializes the array of scheme file and title data.
+:description Called by user options and personalized settings to initialize the count of schemes, along with the list of scheme files and titles available for choice as a SayAll scheme.
+
+:function GetSchemePositionInUOSayAllSchemesData
+:description Finds the indexed position of a scheme in the list of schemes in the SayAllSchemes key of the jcf file.
+:param string A scheme file name listed in the SayAllSchemes key of the jcf file.
+:returns int The indexed position of the scheme in the list of schemes in the SayAllSchemes key.
+
+:function GetSchemeFileNameInUOSayAllSchemesData
+:param int the index of the scheme in the array of schemes.
+:returns string The file name base, without the .smf extention, of the scheme.
+
+:function LookupSchemeTitleInUOSayAllSchemesData
+:description Takes the scheme file name and retrieved the title assigned to it in the jcf file.
+:param string The non-localizable filename without the .smf extention which defines the scheme.
+:returns string The localizable title of the scheme.
+
+:function GetCurrentSayAllScheme
+:description Returns the name of the scheme currently assigned to SayAll, either by a personalized setting, an application or default setting.
+:returns string The scheme name currently assigned as the SayAll scheme.

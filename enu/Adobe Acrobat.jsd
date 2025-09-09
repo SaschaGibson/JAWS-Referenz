@@ -1,0 +1,135 @@
+:script SelectPageUp
+:synopsis Select page up.
+:description select text up one page from the current cursor position.
+
+:script SelectPageDown
+:synopsis Select page down.
+:description select text down one page from the current cursor position.
+
+:function HandleCustomWindows
+
+:script GoToPage
+:Synopsis Provides a space for you to type the page number to go to
+:Description Press this keystroke to bring up a dialog in which you can type in a page number to go to. Use Control+N for Adobe Acrobat version 5, and Control+Shift+N for Adobe version 6.
+
+:script GoToFirstPage
+:Synopsis Go to first page
+:Description Moves to the first page in the document
+
+:script GoToLastPage
+:Synopsis Go to last page
+:Description Moves to the last page in the document
+
+:function SayLineUnit
+:Synopsis Handles line speaking
+:Category Say
+:Param int/iMoveUnit Direction to move
+
+:function GetWindowSubTypeCode
+:Returns int No Return Description
+:Param handle/hWndToType No Description
+
+:script OpenPreferencesDialog
+
+:script SayNextCharacter
+
+:script AccessibilityQuickCheck
+
+:function ScreenSensitiveHelpForKnownClasses
+
+:function SayNonHighlightedText
+
+:script NextPage
+:Synopsis Moves to the next page in the Adobe document
+:Description Press this keystroke to move to the next page of the document.
+
+:function BrailleAppropriateCellData
+
+:function KeyPressedEvent
+
+:script ShiftTab
+
+:function AutoStartEvent
+
+:script PreviousPage
+:Synopsis Moves to the previous page in the Adobe document
+:Description Press this keystroke to move to the previous page of the document.
+
+:script JAWSPageUp
+
+:function SayFocusedObject
+
+:script PcCursor
+
+:function SayComboAndListItems
+:Returns int Returns 0 if it said nothing
+:Synopsis Says Adobe combo & list items
+:Description Used in the SayNextLine/PriorLine scripts to speak values in formsmode
+:Category Say
+
+:script SayNextWord
+
+:function SayHighlightedText
+
+:function InFindDialog
+:Returns int No Return Description
+:Synopsis Returns 1 if in the find dialog
+
+:script UpALevel
+
+:script SayPriorCharacter
+
+:script ScreenSensitiveHelp
+
+:function SayFocusedWindow
+
+:function SayTutorialHelp
+:Param int/iObjType No Description
+:Param int/IsScriptKey No Description
+
+:function HandleCustomAppWindows
+
+:function DocumentLoadedEvent
+
+:function InAcrobatDialog
+:Returns int No Return Description
+:Synopsis Returns 1 if in a dialog
+
+:function GetCustomTutorMessage
+
+:script SayPriorWord
+
+:script ChangeReadingOptions
+
+:script VirtualPCCursorToggle
+
+:script VirtualFind
+:Synopsis Invokes the Virtual Find dialog
+:Description When executed, the screen reader's find will be activated.
+
+:script ScriptFileName
+
+:function DoAndSayCurrentKeystroke
+:Description Used to simply say the key naturally and pass it through.
+
+:script Tab
+
+:function HandleCustomRealWindows
+
+:function OmitWhenDialogActive
+:Returns int No Return Description
+:Param int/pTypeCode No Description
+
+:function RoleToType
+:Returns int No Return Description
+:Param int/pRole No Description
+
+:function SignatureState
+:Returns string No Return Description
+:Synopsis Returns the signature state
+:Param int/iState No Description
+
+:function FocusChangedEvent
+:Param Handle/FocusWindow the handle of the window that has received the focus.
+:Param Handle/PrevWindow the handle of the window that previously had the focus.
+

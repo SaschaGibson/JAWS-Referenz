@@ -1,0 +1,25 @@
+:function HandleCustomWindows
+
+:script test
+
+:function GetAddressBox
+
+:function KeyPressedEvent
+
+:script IEFind
+
+:function WindowDestroyedEvent
+
+:script JawsBackspace
+
+:function FocusChangedEvent
+
+:function objchange
+:Synopsis Called from KeyPressedEvent
+
+:script ScriptFileName
+
+:function HandleCustomRealWindows
+
+:function SetAsDefault
+

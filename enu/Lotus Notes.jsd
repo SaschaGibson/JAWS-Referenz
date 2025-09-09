@@ -1,0 +1,125 @@
+:function SayTreeViewItem
+:Synopsis Speaks the active item in the Lotus Tree view
+:Description Speaks the status assigned to the item, followed by the name, followed by its state (either open or closed, if possible)
+
+:function AutoStartEvent
+
+:function AutoFinishEvent
+
+:function SayObjectActiveItem
+
+:script sayline
+
+:function DocumentLoadedEvent
+
+:function saynonhighlightedtext
+
+:function SayHighlightedText
+
+:function isNotesWindow
+
+:function focuschangedevent
+
+:script ScriptFileName
+
+:script ScreenSensitiveHelp
+
+:script HotKeyHelp
+
+:script WindowKeysHelp
+
+:script SayPriorCharacter
+
+:script SayNextCharacter
+
+:script MoveToNextSelectedDocument
+:Synopsis Moves to next selected document
+
+:script MoveToPrevSelectedDocument
+:Synopsis Move to previous selected document
+
+:script MoveToNextUnreadDocument
+:Synopsis move to next unread document
+
+:script MoveToPrevUnreadDocument
+
+:script JAWSDelete
+
+:script JAWSBackspace
+
+:script ExpandAll
+:Synopsis Expands all items in the Tree view
+:Description When in a Tree view, all items with children are expanded
+
+:script CollapseAll
+:Synopsis Collapses all items in the Tree view
+:Description When in a Tree view, all items with children are collapsed
+
+:script SayFieldHelp
+
+:script ReadMistakeAndSuggestion
+:Synopsis Reads and spells the misspelled word, and reads and spells the suggestion
+:Description By default, no suggestion is highlighted in the list.  The first suggestion is spoken and spelled, unless one is highlighted
+
+:script SelectALink
+:Synopsis Places all of the links on the active document in a list
+:Description Use the UP and DOWN ARROWS to select the link of your choice and press ENTER.  This only works with the Inline Notes Internet Explorer
+
+:function AddToString
+:Returns string No Return Description
+:Synopsis Takes two strings and adds the second string to the first
+:Description Adds the second string parameter to the first parameter and returns the new string
+:Param string/Base The base string that is to be added to
+:Param string/New The string that is to be added to the base
+
+:script ActionButtons
+:Synopsis Brings up a list of the buttons available on the action bar
+:Description The available action bar buttons differ from screen to screen, and are a convenient way to quickly access Notes options.
+
+:function ActiveItemChangedEvent
+
+:script SayNextLine
+
+:script SayPriorLine
+
+:script MoveToNextRadioButton
+
+:script MoveToPriorRadioButton
+
+:script MoveToNextCombo
+
+:script MoveToPriorCombo
+
+:script MoveToNextCheckbox
+
+:script MoveToPriorCheckbox
+
+:script MoveToNextButton
+
+:script MoveToPriorButton
+
+:script AdjustJAWSOptions
+
+:function ToggleReadingStatusLine
+
+:function ToggleReadingStatusLineHlp
+:Returns string No Return Description
+
+:script TopOfFile
+
+:script BottomOfFile
+
+:function IsPageTab
+
+:script NextDocumentWindow
+
+:script PreviousDocumentWindow
+
+:function ObjStateChangedEvent
+
+:function IsLotusMultilineEdit
+
+:function FocusChangedEventEx
+
+:function SayTutorialHelp
+

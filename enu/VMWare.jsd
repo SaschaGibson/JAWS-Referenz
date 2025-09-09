@@ -1,0 +1,19 @@
+:script MoveToTree
+:Synopsis Moves focus to the virtual machines tree control
+
+:script MoveToFind
+:Synopsis Moves focus to the find edit box
+
+:script Tab
+:Synopsis tab
+:Description tab
+
+:function GetNodeInfo
+:Param string/nodeText/ByRef No Description
+:Param string/nodeStatus/ByRef No Description
+:Param string/nodeBrailleStatus/ByRef No Description
+
+:script ApplicationsKey
+
+:script GrabInput
+

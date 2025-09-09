@@ -1,0 +1,9 @@
+[Common Keys]
+Alt+Shift+UpArrow=MoveTileOrGroupUp
+Alt+Shift+ExtendedUpArrow=MoveTileOrGroupUp
+Alt+Shift+DownArrow=MoveTileOrGroupDown
+Alt+Shift+ExtendedDownArrow=MoveTileOrGroupDown
+Alt+Shift+LeftArrow=MoveTileOrGroupLeft
+Alt+Shift+ExtendedLeftArrow=MoveTileOrGroupLeft
+Alt+Shift+RightArrow=MoveTileOrGroupRight
+Alt+Shift+ExtendedRightArrow=MoveTileOrGroupRight

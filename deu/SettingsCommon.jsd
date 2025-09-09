@@ -1,0 +1,25 @@
+:function IsInDialogueContainer
+:Returns int TRUE if the window provided is located inside the dialogue container, FALSE otherwise
+:Synopsis Checks if the window is in dialogue container
+:Description Checks if the window provided is located inside the dialogue container
+:Category Windows
+:Param handle/hWnd Window to check location of
+
+:function GetDialogueContainerWindowName
+:Returns string Dialogue container window accName property if present or empty string in case of a fail
+:Synopsis Gets dialogue container accName property
+:Description Gets dialogue container window accName property according to the handle of the focused window
+:Category Windows
+:Optional
+:Param handle/hDialogueContainer/ByRef DialogueContainer window handle returned by reference
+
+:function SMMMarkupStringToSayMessage
+:Returns string The string marked up
+:Synopsis Markups string to be used as a message
+:Description Markup string to be used as a message, in other words to use message voice for announcement
+:Category Say
+:Param string/sMessage The string to use as a nessage
+
+:function GetSelectedControlInfo 
+:returns string
+

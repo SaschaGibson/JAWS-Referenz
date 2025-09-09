@@ -1,0 +1,9 @@
+; For calculator results display static windows
+[CustomControl1]
+components=name,value
+removed=
+type=
+displayname=Results
+
+[Information]
+Description=Default  Structured Mode view for Microsoft Calculator.

@@ -1,0 +1,114 @@
+:function qsxmlMakeBooleanState
+:returns string The xml state string (without the quotes) that represents the JAWS-usable TRUE/FALSE state constants.
+:description Atomic types and values in xml are case-sensitive, so this function returns the proper state string for use with Quick Settings xml.
+:param int/nJAWSState either TRUE or FALSE
+
+:function QsxmlMakeList
+:returns string the QuickSettings callback response string for list items callbacks.
+:Description Use to format xml creating list of available options to submit to the QuickSettings engine.
+:param string/settingID the ID that came as parameter to your custom callback.
+:param int/nSelectIndex The item in the array to make default list position.
+:Param stringArray/listItems The array of items, or available settings, for the callback. Most commonly would be ints or strings.  Written to xml as strings.
+:Param int/nArraySize The size or elements count in the listItems array.
+:Optional
+:param int/bDisabledSetting set to TRUE to add the attribute to disable the setting. This leaves it in the window but renders it unavailable.
+
+:function qsxmlMakeBoolean
+:returns string the xml for the boolean callbacks.
+:Description Use to format xml creating the state of the checkbox to submit to the QuickSettings engine. Is used tfor settings of type Boolean which correspond to check boxes in QuickSettings.
+:param string/settingID the Setting ID given as parameter to the callback.
+:param string/state either the string literal "true" or "false" for xml formatting.
+:Optional
+:param int/bDisabledSetting set to TRUE to add the attribute to disable the setting. This leaves it in the window but renders it unavailable.
+
+:function qsxmlMakeVariable
+:Returns string The xml for the callback associated with the variable.
+:description returns xml format for the callback associated with a variable in the qs xml.
+:param string/settingID the ID supplied as parameter to your custom callback.
+:param string/sValue The variable's value.
+
+:function parseXMLListWriteRequest
+:Description QuickSettings function to be used in callbacks for settings of type List. The parameters will be filled with the relevant data from the xml in the first parameter.
+:param string/sxml the xml passed as parameter to the callback being used.
+:param int/byRef/item the selected item number in the list.
+:Optional
+:param string/byRef/sItemText The printable, human-readable text for the selected list item.
+:param string/byRef/settingID the setting ID associated with the callback for the control in Quick Settings.
+
+:function parseXMLBooleanWriteRequest
+:Description QuickSettings function to be used in callbacks for settings of type Boolean. The parameters will be filled with the relevant data from the xml in the first parameter.
+:param string/sxml the xml passed as parameter to the callback being used.
+:param int/byRef/nState the boolean state converted to a JAWS constant TRUE or FALSE.
+:Optional
+:param string/byRef/settingID the setting ID associated with the callback for the control in Quick Settings.
+
+:function ParseXMLDependenceEvent
+:returns void
+:description Unwraps the xml for the Dependee event callback, this is the second parameter to the function specified in the OnDependeeChangedEvent attribute of the SettingsFile node, which belongs to the Setting node in question.
+:param string/sXmlWriteRequest The xml to unwrap: second parameter to OnDependeeChangedEvent attribute
+:param int/byRef/iSelection The index of the list item or state of the boolean.
+:Optional
+:param string/sDependee The setting for which this callback is responsible. Useful if your event works on multiple settings.
+:param string/byRef/sType The type of the setting, either List or Boolean.
+
+:function getNonJCFOption
+:returns int the value of the setting in the current or default jcf file, only if it is in the NonJCFOptions section.
+:Description Gets the "NonJCF" setting, similar to GetJCFOption except that the settings are gotten from the NonJCFOptions section of the JCF file. Just like GetJCFOption, the load order is: Get from application-specific file, and if not present, get from default file. Uses standard JAWS Settings layering.
+:param string/sOption The string name of the option to retrieve, this is the key name.
+:Optional
+:param int/nReadSource the source to read from.  Constants in hjConst.jsh: rsStandardLayering, rsSession, rsFocus, or rsNoTransient
+
+:function GetNonJCFOptionEx
+:returns int the value of the setting in the current or default jcf file, only if it is in the NonJCFOptions section.
+:Description Gets the "NonJCF" setting, similar to GetJCFOption except that the settings are gotten from the NonJCFOptions section of the JCF file. Just like GetJCFOption, the load order is: Get from application-specific file, and if not present, get from default file. Uses standard JAWS Settings layering. Allows the default value to be specified.
+:param string/sOption The string name of the option to retrieve, this is the key name.
+:param int/defaultValue The default value. This value is returned if the value is not specified in the NonJCFOptions section of the current or default jcf file.
+:Optional
+:param int/nReadSource the source to read from.  Constants in hjConst.jsh: rsStandardLayering, rsSession, rsFocus, or rsNoTransient
+
+:function getNavQuickKeyDelayInfoList
+:returns stringArray the array of list items, size must be 8 in length to match.
+:description This gets all the strings for the Navigation Quick Key Delay list items for QuickSettings.
+
+:function GetPageRefreshInfoHelper
+:description helper function called by getPageRefreshInfo and getCustomPageRefreshInfo, combines the logic and add a new parameter for file type
+:param string/settingID the id string of quick setting node
+:param int/nReadSource the source to be used wdUser, transient, etc.
+:param int/iFileType the file type ft_jsi or ft_current_jcf
+:Returns string the XML list to be displayed by quick settings
+
+:function SetPageRefreshInfoHelper
+:description helper function called by setPageRefreshInfo and setCustomPageRefreshInfo, combines the logic and add a new parameter for file type
+:param string/settingID the id string of quick setting node
+:param string/sxmlWriteRequest the xml string
+:param int/nWriteDestination passed from quick settings for transient operation
+:param int/iFileType must by ft_jsi or ft_current_jcf
+:returns int whether the write was successful
+
+:Function QsxmlMakeListFromDelimitedString
+:returns string the QuickSettings callback response string for list items callbacks.
+:Description Use to format xml creating list of available options to submit to the QuickSettings engine from a delimited segmented string.
+:param string/settingID the ID that came as parameter to your custom callback.
+:param int/nSelectIndex The item in the array to make default list position.
+:Param string sSegments segmented delimited string e.g. item1|item2|item3
+:Param string sDelim the delimiter used to segment the string
+:Optional
+:param int/bDisabledSetting set to TRUE to add the attribute to disable the setting. This leaves it in the window but renders it unavailable.
+
+:function GetBraillePreferredTranslationTableInfo
+:Returns string The XML formatted list of preferred translation tables to populate the combo along with the currently selected index to use
+:Param string settingID
+
+:function SetBraillePreferredTranslationTableInfo
+:Description Sets the selected translation table as the active table and updates the default.jcf with the new value.
+:Param string settingID
+:Param string sXmlWriteRequest
+:Param int nWriteDestination
+
+:function loadNonJCFOptions
+:description Loads settings from the default and application JCF files that are in the NonJCFOptions section.
+These are settings which are implemented solely through scripts, and are therefore unknown to internal JAWS functions.
+LoadNonJCFOptions should run each time an application gains focus,
+so that script-implemented options in the JCF file load along with internal JCF options.
+If a script has customized options for an application, overwrite this function to load the application's customized options
+and then call this function for default handling of script-implemented options.

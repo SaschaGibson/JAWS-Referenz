@@ -1,0 +1,14 @@
+:script VirtualFind
+:DisplayName Virtual Find
+:Synopsis Invokes the screen reader's Find dialog.
+:Description Activates the JAWS Find when the Virtual Cursor is active. Otherwise, passes the keystroke through to the application.
+:Category HTML
+:Version JAWS/18.0
+:Version MAGic/15.0
+:SearchRank 1
+
+:script SpeakCurrentNotificationBarText
+:displayName Speak Current Notification Bar Text
+:synopsis Speaks messages and alerts shown on the Microsoft Edge notification bar.
+:description The notification bar shows messages and alerts, and contains controls for acting on them.
+:SearchRank 1

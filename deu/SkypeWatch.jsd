@@ -1,0 +1,40 @@
+:function AddNotificationWindowToCollection
+:Param handle/hwndthe window of the incoming notification. This is the child window, not the application or form window. 
+:Param int/NotifierType the Notifier Type from Skype.jsh, starting with NOTIFIER_
+:Optional
+:Param string/AlertText optional The alert text originating from an event such as MSAAAlertEvent
+:Description Used to update the notifications collection with the latest notification window and its data.
+
+:function RemoveNotificationWindowFromCollection
+:Param handle/hwnd the window whose notification to be removed. This window was usually destroyed.
+:Description Clean-up function to purge notifications collection of unused notifications who are extinct.
+
+:Function RemoveTimeStampFromSkypeChatMessage
+:Param string/strMessage The message to be cleaned up
+:returns string The message who is cleaned up.
+:Description Removes the time stamp segment from the incoming notification. If no time stamp is present, the original string is returned. Time stamp = message starts with [some text] regardless of language or format of text within brackets.
+
+:Function IndicateNotification
+:Param handle/hwnd the window whose notification is to be processed.
+:Description Checks the notification in the collection for validity and updates, and announces and Brailles it if notification contains new items.
+
+:Function NotificationRepeatCaller
+:Description Repeats the incoming caller ID notification until the call is answered, dismissed or goes to Voicemail. Repeats about every two seconds.
+
+:Function ProcessEachNotification
+:Param collection notification the daughter collection containing notification data
+:Param handle hwnd the window to whom that notification belongs
+:Description Helper function to NotificationsCollectionUpdateChats iterator function.
+
+:Function NotificationsCollectionUpdateChats
+:Description Iterator function to process all the notifications in the notifications collection for validity and updates.
+
+:Function CheckForSkypeAlerts
+:Param handle/hWindow the window who just got created
+:Optional
+:param string/AlertText the text from an event like MSAAAlertEvent
+:Description Helper to WindowCreatedEvent. Determines if this is a Skype Alerts Notification window and passes it on to be updated in the Skype Notifications collection.
+
+:Function DestroyOldSkypeAlerts
+:Param handle hWindow the window just destroyed.
+:Description Helper to WindowDestroyedEvent. Removes the window's daughter collection from the Skype Notifications Mother collection. If the mother collection has no items, any timers in progress are killed.

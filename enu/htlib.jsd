@@ -1,0 +1,155 @@
+:script HTToggleStatusCellsOnOff
+:Synopsis Show or hide status section on the Braille display.
+
+:script HTToggleBrailleInputOnOff
+:Synopsis Turn Braille input on and off.
+
+:script HTTurnOnMenuMode
+:Synopsis Switch into Braille display's menu mode.
+
+:script HTBrailleStarPanLeft
+:Synopsis Show text to left of current Braille display position and also drag the active cursor.
+
+:script HTBrailleStarPanRight
+:Synopsis Show text to right of current Braille display position and also drag the active cursor.
+
+:script HTNumPad0
+:Synopsis Same as pressing 0 on the keyboard.
+
+:script HTNumPad1
+:Synopsis Same as pressing 1 on the keyboard.
+
+:script HTNumPad2
+:Synopsis Same as pressing 2 on the keyboard.
+
+:script HTNumPad3
+:Synopsis Same as pressing 3 on the keyboard.
+
+:script HTNumPad4
+:Synopsis Same as pressing 4 on the keyboard.
+
+:script HTNumPad5
+:Synopsis Same as pressing 5 on the keyboard.
+
+:script HTNumPad6
+:Synopsis Same as pressing 6 on the keyboard.
+
+:script HTNumPad7
+:Synopsis Same as pressing 7 on the keyboard.
+
+:script HTNumPad8
+:Synopsis Same as pressing 8 on the keyboard.
+
+:script HTNumPad9
+:Synopsis Same as pressing 9 on the keyboard.
+
+:script HTControlTab
+:Synopsis Same as pressing Control + Tab on the keyboard.
+
+:script HTControlShiftTab
+:Synopsis Same as pressing Control + Shift + Tab on the keyboard.
+
+:script HTStartConfigDialog
+:Synopsis Start Handy Tech Braille display driver configuration dialog.
+
+:script HTToggleAtc
+:Synopsis Enables or disables the ATC reading protocol
+
+:script HTToggleAtcProtocol
+:Synopsis Enables or disables the ATC reading protocol
+
+:script HTToggleLockedKeys
+:Synopsis lock or unlock specified Braille keys
+
+:script onhtlayoutchangeevent
+
+:script HTGetCurrentCursorShape
+
+:script onAtcActionEvent
+:Param int/action No Description
+:Param int/readingPos No Description
+:Param int/param1 No Description
+:Param int/param2 No Description
+
+:function GetCharacterAtCell
+:Returns string
+:Param int/readingPos No Description
+
+:function GetWordAtCell
+:Returns string
+:Param int/readingPos No Description
+
+:function GetTextBetweenCells
+:Returns string
+:Param int/beginCell No Description
+:Param int/endCell No Description
+
+:function getFontAttributeStringAtCell
+:Returns string
+:Param int/cell No Description
+:Param int/onlyChanges No Description
+
+:function HTMoveVirtualTo
+:Param int/x No Description
+:Param int/y No Description
+
+:script togglestatuscellsonoff
+:Synopsis Show or hide status section on the Braille display.
+
+:script togglebrailleinputonoff
+:Synopsis Turn Braille input on and off.
+
+:script turnOnMenuMode
+:Synopsis Switch into Braille display's menu mode.
+
+:script braillestarpanleft
+:Synopsis Show text to left of current Braille display position and also drag the active cursor.
+
+:script braillestarpanright
+:Synopsis Show text to right of current Braille display position and also drag the active cursor.
+
+:script HT_SetBrailleText
+
+:function HTSayAttributeChanged
+:Param int/cell No Description
+:Param int/param2 No Description
+
+:function HTReadAloud
+:Param int/cell No Description
+:Param int/param2 No Description
+
+:function GetFontSize
+:Returns string No Return Description
+
+:function HTSayWord
+:Param int/cell No Description
+:Param int/isScreenText No Description
+:Param int/param1 No Description
+:Param int/param2 No Description
+
+:script test
+
+:function HTRouteCursor
+:Param int/cell No Description
+:Param int/param2 No Description
+
+:function HTSayAttribute
+:Param int/cell No Description
+:Param int/param2 No Description
+
+:function HTPerformActionAtCurrentPos
+
+:function HTSayTextBetween
+:Param int/unused No Description
+:Param int/isScreenText No Description
+:Param int/startCell No Description
+:Param int/endCell No Description
+
+:function HTPerformActionAtCellPos
+
+:function HTSayChar
+:Param int/cell No Description
+:Param int/param2 No Description
+
+:function SayAttributeNames
+

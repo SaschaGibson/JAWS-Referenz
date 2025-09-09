@@ -1,0 +1,604 @@
+:function KeyHasJAWSModifier
+:description Determines if the key name contains a JAWS modifier.
+:returns int True if the key name contains JAWSKey, Insert or CapsLock; false otherwise.
+
+:function IsDocumentAreaScriptException
+:description Used by scripts that are intended to run only in the document area to standardize behavior when the script is run from outside the document area.
+If not in the document area, either outputs an error message or, if the key does not include a JAWS modifier, passes it through to the application.
+:optional
+:param int If true, the script may apply to an Outlook message as well as a Word document.
+:returns int True if not in the document area, false otherwise.
+
+:function NotifyZoomManyPages
+:Description Determines whether the Zoom_ManyPages error message should be announced and if so, announces it.
+:Returns Int True if GetCurrentZoomLevel returns the Many pages setting; false otherhwise.
+
+
+:function SayActivePaneName
+:description Speaks the name of the active pane.
+
+:function getPropertyComboValue
+:returns string the text that should be used as the combo box value
+:Description Returns the values for some combo boxes on form property pages.
+:param handle/hwnd the window where the sdm control lives
+:param int/iSDMControl the ID of the combo box.
+
+:script SwitchPanes
+:Synopsis Wechselt zwischen geöffneten Bereichen, wie Kommentarbereich und Dokumentfenster.
+:Description Nutzt F6 um zwischen geöffneten Bereichen wie Kommentarbereich und Dokumentfenster zu wechseln.
+
+:script SwitchPanesReverse
+:Synopsis Wechselt zwischen geöffneten Bereichen, wie Kommentarbereich und Dokumentfenster.
+:Description Nutzt Umschalt+F6 um zwischen geöffneten Bereichen wie Kommentarbereich und Dokumentfenster zu wechseln.
+
+:Script SwitchDocumentView
+:DisplayName Dokumentansicht wechseln
+:synopsis Wechselt die Dokumentansicht
+:description Führt Microsoft Word eigene Kurztasten aus, um die Dokumentansicht zwischen Gliederungsansicht, Druckansicht, Entwurfsansicht oder Normalansicht zu wechseln und spricht dann den Namen der Ansicht.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script SayFirstCellInRow
+:DisplayName Erste Zelle der Reihe lesen
+:Synopsis Spricht den Inhalt der ersten Zelle in der aktuellen Reihe
+:Description Spricht den Inhalt der ersten Zelle in der aktuellen Reihe, was häufig der Name der Reihe ist
+:SearchRank 1
+
+:script SayFirstCellInColumn
+:DisplayName Erste Zelle der Spalte lesen
+:Synopsis Spricht den Inhalt der ersten Zelle in der aktuellen Spalte oder führt die MS Word Standardfunktion aus, wenn man sich im Speichern unter Dialog befindet
+:Description Spricht den Inhalt der ersten Zelle der aktuellen Spalte, was häufig der Spaltentitel ist, oder führt die MS Word Standardfunktion aus, wenn man sich im Speichern unter Dialog befindet.
+:SearchRank 1
+
+:function readTableRow
+:Description Reads across the current table row.
+
+:function readTableColumn
+:description Reads down the current table column.
+
+:function ListTables
+:Description Lists all the tables in the current document and allows the user to jump to either the first cell or the first form field (if the document is protected) of the table chosen from the list.
+
+:script SelectATable
+:DisplayName Tabelle auswählen
+:Synopsis Listet alle Tabelle im aktuellen Dokuemnt auf und ermöglicht dem Anwender direkt in die erste Zelle der ausgewählten Tabelle zu springen
+:Description Dieses Skript listet alle Tabelle im aktuellen Dokument auf und ermöglicht dem Anwender direkt in die erste Zelle oder ins erste Formularfeld (falls das Dokument schreibgeschützt ist) der ausgewählten Tabelle zu springen.
+:SearchRank 1
+
+:script SelectAList
+:DisplayName Liste auswählen
+:Synopsis Wählen Sie eine Liste aus der Listenliste des Dokuments.
+:Description Listet alle Listen des aktuellen Dokuments auf. Wählen Sie eine Liste, um direkt auf ein Element der Liste zu springen, welches aus der Liste ausgewählt wurde.
+:SearchRank 1
+
+:script MoveToNextList
+:DisplayName Zur nächsten Liste springen
+:Synopsis Springt zur nächsten Liste in einem Dokument.
+:Description Innerhalb eines Dokuments wird zur nächsten Liste des Dokuments gesprungen.
+:Category HTML
+:KeyWords Kurztaste
+:SearchRank 1
+
+:script MoveToPriorList
+:DisplayName Zur vorherigen Liste springen
+:Synopsis Springt zur vorherigen Liste in einem Dokument.
+:Description Innerhalb eines Dokuments wird zur nächsten Liste des Dokuments gesprungen.
+:Category HTML
+:KeyWords Kurztaste
+:SearchRank 1
+
+:Script SayField
+:DisplayName Feld lesen
+:Synopsis Spricht das Textfeld an der Cursorposition, es sei denn, es ist ein ungeschütztes Formularfeld.
+:Description Ein Feld ist eine Textgruppe mit den gleichen Attributen. Das Feld an der Position des aktiven Cursors wird gesprochen, es sei denn, es ist ein ungeschütztes Formularfeld.
+:SearchRank 2
+
+:script SelectAField
+:DisplayName Feld auswählen
+:Synopsis Listet alle Felder und Formularfelder in einem Dokument auf und ermöglicht dem Anwender das Auswählen und Fokussieren eines Feldes
+:Description Dieses Skript listet alle Felder eines Dokuments (nicht nur Formularfelder) auf und ermöglicht dem Anwender das Auswählen und Fokussieren eines Feldes. Die Auswahl wird ausgeklappt, so dass der Anwender nicht versehentlich das Feld durch das Schreiben eines Buchstabens löscht.
+:SearchRank 2
+
+:Script SelectNextOrPriorField
+:DisplayName Nächstes oder vorheriges Feld auswählen
+:Synopsis Springt zum nächsten oder vorherigen Feld und spricht dieses.
+:Description Diese Kurztasten springt zum nächsten oder vorherigen Feld in dem Dokument und liest es.
+:SearchRank 2
+
+:function GetHeadingSoundFile
+:Description Retrieves the sound file, if any, that is set for the specified heading level in the .smf file currently in use.
+:Param Int The heading level for which a sound file is to be retrieved.
+:Returns String The sound file for the specified heading level, or null if no sound file is associated with the heading level.
+
+:script ListHeadings
+:DisplayName Überschriften auflisten
+:Synopsis Listet alle Überschriften auf und ermöglicht dem Anwender zum Textbereich, zu dem die Überschrift gehört, zu springen
+:Description Dieses Skript listet alle Überschriften auf, wenn diese über das Format als Überschriften spezifiziert wurden, und ermöglicht dem Anwender zum Textbereich, zu dem die Überschrift gehört, zu springen.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script ListSpellingErrors
+:DisplayName Rechtschreibfehler auflisten
+:Synopsis Listet alle als Rechtschreibfehler markierten Wörter auf und ermöglicht dem Anwender direkt zum ausgewählten Wort zu springen
+:Description Dieses Skript listet alle als Rechtschreibfehler markierten Wörter auf und ermöglicht dem Anwender direkt zum ausgewählten Wort zu springen.
+:SearchRank 1
+
+:script ListGrammaticalErrors
+:DisplayName Grammatikfehler auflisten
+:Synopsis Listet die Grammatikfehler im Dokument auf und ermöglicht, direkt zum ausgewählten Fehler im Text zu springen
+:Description Dieses Skript listet die Grammatikfehler im Dokument auf und ermöglicht, direkt zum ausgewählten Fehler im Text zu springen
+:SearchRank 1
+
+:Script ListBookmarks
+:DisplayName Lesezeichen auflisten
+:Synopsis Listet die Textmarken im aktuellen Dokument auf.
+:Description Diese Kurztasten listet die Textmarken im aktuellen Dokument auf.
+:SearchRank 2
+
+:function announceComment
+:Description Announces the comment at the cursor.
+:param int The output type to be used when announcing the comment.
+
+:script AnnounceComment
+:DisplayName Kommentar ansagen
+:Synopsis Spricht den Kommentar unter dem Cursor
+:Description Sagt den Kommentar an der Cursorposition an. Wird die Kurztaste zweimal schnell gedrückt, dann wird der Kommentar im Virtuellen Betrachter angezeigt.
+:SearchRank 1
+
+:script ListComments
+:DisplayName Kommentare auflisten
+:Synopsis Listet Kommentare auf und ermöglicht dem Anwender zu dem Textbereich zu springen, auf den sich der gewählte Kommentar bezieht
+:Description Dieses Skript listet Kommentare auf und ermöglicht dem Anwender zu dem Textbereich zu springen, auf den sich der gewählte Kommentar bezieht.
+:SearchRank 1
+
+:function announceFootnoteOrEndNote
+:Description Announces the footnote or end note referenced at the cursor location.
+:param int The output type to be used when announcing the footnote or endnote.
+
+:script AnnounceFootnoteOrEndNote
+:DisplayName Fußnote oder Endnote ansagen
+:Synopsis Spricht die Fuß- oder Endnote unter dem Cursor
+:Description Dieses Skript spricht die Fuß- oder Endnote an der Cursorposition.
+:SearchRank 1
+
+:script ListFootnotes
+:DisplayName Fußnoten auflisten
+:Synopsis Listet Fußnoten auf und ermöglicht dem Anwender, zum Textbereich, auf den sich die Fußnote bezieht, zu springen
+:Description Dieses Skript listet Fußnoten auf und ermöglicht dem Anwender, zum Textbereich, auf den sich die Fußnote bezieht, zu springen.
+:SearchRank 2
+
+:script ListEndnotes
+:DisplayName Endnoten auflisten
+:Synopsis Listet Endnoten auf und ermöglicht dem Anwender, zum Textbereich, auf den sich die Fußnote bezieht, zu springen
+:Description Dieses Skript listet Endnoten auf und ermöglicht dem Anwender, zum Textbereich, auf den sich die Fußnote bezieht, zu springen.
+:SearchRank 2
+
+:Function GetRevisionInfo
+:description Retrieves revision information and text at the cursor position.
+:param int The message output type to be used for the revision information message.
+:param string/byRef The message that will contain the revision information about the author and date.
+:param string/byRef The revision text.
+:returns int True if a revision is at the cursor, and the information and text is retrieved, false otherwise.
+
+:Script AnnounceRevision
+:DisplayName Überarbeitung ansagen
+:Synopsis Spricht die Überarbeitung an der aktuellen Cursorposition.
+:Description Wenn Änderungen verfolgen aktiviert ist, dann wird die Überarbeitung an der aktuellen Cursorposition gesprochen. Diese Kurztaste zweimal schnell gedrückt, zeigt die Überarbeitung im virtuellen Betrachter.
+:SearchRank 1
+
+:script ListRevisions
+:DisplayName Überarbeitungen auflisten
+:Synopsis Listet die Überarbeitungen in einem Dokument auf.
+:Description Wenn das Verfolgen von Änderungen in Word aktiviert ist, dann wird eine Liste der Überarbeitungen im aktuellen Dokument angezeigt. Wählen Sie eine Überarbeitung in der Liste, um direkt zu seiner Position zu springen.
+:SearchRank 1
+
+:script ToggleTrackChanges
+:DisplayName Verfolgung der Änderungen umschalten
+:synopsis Schaltet die Einstellung zum Verfolgen der Änderungen um.
+:Description Dies ist die Word Kurztaste um Änderungen verfolgen ein- oder auszuschalten. Das Verfolgen der Änderungen muss im Dokument aktiviert sein, bevor Sie die JAWS Kurztaste für die Ansage der Überarbeitungen nutzen können.
+:SearchRank 1
+
+:script ListObjects
+:DisplayName Objekte auflisten
+:Synopsis Listet eingebettete Objekte, wie z.B. Cliparts, auf und ermöglicht das Springen zum ausgewählten Objekt
+:Description Dieses Skript listet eingebettete Objekte, wie z.B. Cliparts, auf und ermöglicht das Springen zum ausgewählten Objekt. Der Cursor wird dabei so dicht wie möglich an dem Objekt platziert.
+:SearchRank 1
+
+:Script GrowFont1Point
+:Synopsis Vergrößert die Schriftgröße um einen Punkt.
+:Description Dies ist die Word Kurztaste zum Vergrößern der Schrift um genau einen Punkt.
+
+:Script ShrinkFont1Point
+:Synopsis Verkleinert die Schriftgröße um einen Punkt.
+:Description Dies ist die Word Kurztaste zum Verkleinern der Schrift um genau einen Punkt.
+
+:Script GrowFont
+:DisplayName Schriftgröße vergrößern
+:Synopsis Vergrößert die Schriftgröße.
+:Description Dies ist die Word Kurztaste zum Vergrößern der Schrift. Die neue Schriftgröße ist genau einen Punkt größer, als die Ausgangsschrift.
+:SearchRank 3
+
+:Script ShrinkFont
+:DisplayName Schriftgröße verkleinern
+:Synopsis Verkleinert die Schriftgröße.
+:Description Dies ist die Word Kurztaste zum Verkleinern der Schrift. Die neue Schriftgröße ist genau einen Punkt kleiner, als die Ausgangsschrift.
+:SearchRank 3
+
+:script DescribeBorderOfTextUnit
+:Synopsis Beschreibt die Umrandung der aktuellen Auswahl.
+:Description Jede Umrandung wird beschrieben, wenn man auf sie trifft, dieses wird von Innen nach Außen durchgeführt.
+
+:script SayLineAndColumn
+:DisplayName Aktuelle Zeile und Spalte im Dokument lesen
+:Synopsis Liest aktuelle Zeile und Spalte im Dokument
+:Description Liest aktuelle Zeile und Spaltenposition im Dokument. Diese Information wird auch als Blitzmeldung auf der Braillezeile angezeigt.
+:SearchRank 1
+
+:Script InsertComment
+:DisplayName Kommentar einfügen
+:Synopsis Fügt einen Kommentar ein.
+:Description Dies ist die Word Kurztaste zum Einfügen eines Kommentars an der aktuellen Cursorposition im Dokument.
+:SearchRank 4
+:CommandSearchProductFilter Fusion
+
+:script ToggleBetweenAllAndHeadingsOnly
+:DisplayName Zwischen gesamten Text und nur Überschriften umschalten
+:Synopsis In der Gliederungsansicht wird zwischen der Anzeige des gesamten Textes und Nur Überschriften umgeschaltet.
+:Description Dieses Skript schaltet in der Gliederungsansicht wird zwischen der Anzeige des gesamten Textes und Nur Überschriften um.
+:SearchRank 2
+
+:script ShowHeading1
+:Synopsis Zeigt in der Gliederungsansicht die Überschriften der Ebene 1
+:Description Dieses Skript zeigt in der Gliederungsansicht die Überschriften der Ebene 1.
+
+:script ShowHeading2
+:Synopsis Zeigt in der Gliederungsansicht die Überschriften der Ebene 2
+:Description Dieses Skript zeigt in der Gliederungsansicht die Überschriften der Ebene 2.
+
+:script ShowHeading3
+:Synopsis Zeigt in der Gliederungsansicht die Überschriften der Ebene 3. In E-Mail-Nachrichten wird der "An..." Schalter gedrückt.
+:Description Dieses Skript zeigt in der Gliederungsansicht die Überschriften der Ebene 3 oder drückt den "An..." Schalter in E-Mail-Nachrichten.
+
+:script ShowHeading4
+:Synopsis Zeigt in der Gliederungsansicht die Überschriften der Ebene 4. In E-Mail-Nachrichten wird der "CC..." Schalter gedrückt.
+:Description Dieses Skript zeigt in der Gliederungsansicht die Überschriften der Ebene 4 oder drückt den "CC..." Schalter in E-Mail-Nachrichten.
+
+:script ShowHeading5
+:Synopsis Zeigt in der Gliederungsansicht die Überschriften der Ebene 5
+:Description Dieses Skript zeigt in der Gliederungsansicht die Überschriften der Ebene 5.
+
+:script ShowHeading6
+:Synopsis Zeigt in der Gliederungsansicht die Überschriften der Ebene 6
+:Description Dieses Skript zeigt in der Gliederungsansicht die Überschriften der Ebene 6.
+
+:script ShowHeading7
+:Synopsis Zeigt in der Gliederungsansicht die Überschriften der Ebene 7
+:Description Dieses Skript zeigt in der Gliederungsansicht die Überschriften der Ebene 7.
+
+:script ShowHeading8
+:Synopsis Zeigt in der Gliederungsansicht die Überschriften der Ebene 8
+:Description Dieses Skript zeigt in der Gliederungsansicht die Überschriften der Ebene 8.
+
+:script ShowHeading9
+:Synopsis Zeigt in der Gliederungsansicht die Überschriften der Ebene 9
+:Description Dieses Skript zeigt in der Gliederungsansicht die Überschriften der Ebene 9.
+
+:Script SelectNextHeadingOrListLevelStyle
+:Synopsis Wählt die nächste Überschrift oder Formatvorlage für den aktuellen Text, durch Durchreichen der Tasten ALT+UMSCHALT+PFEIL RECHTS an MSWord.
+:Description Dieses Skript wählt die nächste Überschrift oder Formatvorlage für den aktuellen Text, durch Durchreichen der Tasten ALT+UMSCHALT+PFEIL RECHTS an MSWord. Ist der %product% oder unsichtbare Cursor aktiv, dann führt dieses Skript die Standard-Mausbewegung aus.
+
+:Script SelectPriorHeadingOrListLevelStyle
+:Synopsis Wählt die vorherige Überschrift oder Formatvorlage für den aktuellen Text, durch Durchreichen der Tasten ALT+UMSCHALT+PFEIL LINKS an MSWord.
+:Description Dieses Skript wählt die vorherige Überschrift oder nächste Formatvorlage für den aktuellen Text, durch Durchreichen der Tasten ALT+UMSCHALT+PFEIL LINKS an MSWord. Ist der %product% oder unsichtbare Cursor aktiv, dann führt dieses Skript die Standard-Mausbewegung aus.
+
+:script MoveItemDown
+:Synopsis Dieses Skript bewegt das aktuelle Element tiefer.
+:Description Dieses ist die MS Word Kurztaste, um das aktuelle Element in dem Dokument tiefer zu bewegen.
+
+:script MoveItemUp
+:Synopsis Dieses Skript bewegt das aktuelle Element höher.
+:Description Dieses ist die MS Word Kurztaste, um das aktuelle Element in dem Dokument höher zu bewegen.
+
+:function SayHorizontalPosition
+:Synopsis Announces the horizontal distance from the edge of the page to the caret.
+:Description Announces the horizontal distance from the edge of the page to the caret.
+
+:script Indent
+:Synopsis Innerhalb eines Word Dokuments oder einer E-Mail-Nachricht wird Text eingerückt und die neue Cursorposition angesagt.
+:Description Innerhalb eines Word Dokuments oder einer E-Mail-Nachricht wird durch dieses Skript Text eingerückt und die neue Cursorposition angesagt.
+
+:script Outdent
+:Synopsis Innerhalb eines Word Dokuments oder einer E-Mail-Nachricht wird Texteinrückung entfernt und die neue Cursorposition angesagt.
+:Description Innerhalb eines Word Dokuments oder einer E-Mail-Nachricht wird durch dieses Skript die Texteinrückung entfernt und die neue Cursorposition angesagt.
+
+:function sayHangingIndent
+:Synopsis Announces the hanging indent measure for the current paragraph.
+:Description Announces the hanging indent measure for the current paragraph.
+
+:script HangingIndent
+:Synopsis Während Sie sich in einem Word Dokument oder einer E-Mail-Nachricht befinden, wird ein hängender Einzug erstellt und die neue Cursorposition angesagt; ansonsten wird die Standardfunktion ausgeführt.
+:Description Während Sie sich in einem Word Dokument oder einer E-Mail-Nachricht befinden, erstellt dieses Skript einen hängenden Einzug und sagt die neue Cursorposition an; ansonsten wird die Standardfunktion ausgeführt.
+
+:script RemoveHangingIndent
+:Synopsis Während Sie sich in einem Word Dokument oder einer E-Mail-Nachricht befinden, wird ein hängender Einzug entfernt und die neue Cursorposition angesagt.
+:Description Während Sie sich in einem Word Dokument oder einer E-Mail-Nachricht befinden, entfernt dieses Skript einen hängenden Einzug und sagt die neue Cursorposition an.
+
+:script BoldText
+:DisplayName Text fett
+:Synopsis Schaltet die Fett-Option um und meldet den aktuellen Status des hervorgehobenen Textes
+:Description Diese Funktion schaltet die Fett-Option um und meldet den aktuellen Status des hervorgehobenen Textes
+:SearchRank 4
+
+:script ItalicText
+:DisplayName Text kursiv
+:Synopsis Schaltet die Kursiv-Option in Word um und meldet den aktuellen Status des hervorgehobenen Textes
+:Description Diese Funktion schaltet die Kursiv-Option in Word um und meldet den aktuellen Status des hervorgehobenen Textes
+:SearchRank 4
+
+:script UnderlineText
+:DisplayName Text unterstrichen
+:Synopsis Schaltet die Unterstrichen-Option in Word um und meldet den aktuellen Status des hervorgehobenen Textes
+:Description Diese Funktion schaltet die Unterstrichen-Option in Word um und meldet den aktuellen Status des hervorgehobenen Textes
+:SearchRank 4
+
+:script LeftJustify
+:DisplayName Text linksbündig
+:Synopsis Richtet markierten oder eingegebenen Text linksbündig aus. 
+:Description Nutzt die Word Kurztaste STRG+L, um die Funktion Linksbündig ausrichten auszuführen. Dadurch wird der linke Rand gleichmäßig oder ausgerichtet. Nutzen Sie die Kurztaste zur Ansage der Schriftart, normalerweise Einfügen+F, um die Einstellung zu bestätigen.
+:SearchRank 4
+
+:script CenterText
+:DisplayName Text zentriert
+:Synopsis Richtet markierten oder eingegebenen Text zentriert aus. 
+:Description Nutzt die Word Kurztaste STRG+E, um die Funktion Zentriert ausrichten auszuführen. Nutzen Sie die Kurztaste zur Ansage der Schriftart, normalerweise Einfügen+F, um die Einstellung zu bestätigen.
+:SearchRank 4
+
+:script RightJustify
+:DisplayName Text rechtsbündig
+:Synopsis Richtet markierten oder eingegebenen Text rechtsbündig aus. 
+:Description Nutzt die Word Kurztaste STRG+R, um die Funktion Rechtsbündig ausrichten auszuführen. Dadurch wird der rechte Rand gleichmäßig oder ausgerichtet. Nutzen Sie die Kurztaste zur Ansage der Schriftart, normalerweise Einfügen+F, um die Einstellung zu bestätigen.
+:SearchRank 4
+
+:script JustifyText
+:DisplayName Text ausrichten
+:Synopsis Richtet markierten oder eingegebenen Text aus, 
+:Description Nutzt die Word Kurztaste STRG+J, um die Funktion Ausrichten auszuführen. Dadurch werden sowohl linker als auch rechter Rand gleichmäßig oder ausgerichtet. Nutzen Sie die Kurztaste zur Ansage der Schriftart, normalerweise Einfügen+F, um die Einstellung zu bestätigen.
+:SearchRank 4
+
+:script ConvertShapesToInline
+:Synopsis Wandelt Formen in eingebettete Formen um, so dass %product% sie erkennen kann
+:Description Dieses Skript wandelt Formen in eingebettete Formen um, so dass %product% sie erkennen kann Formen befinden sich auf der Zeichen-Ebene, während eingebettete Formen sich in der Text-Ebene eines Dokuments befinden. Formen sind schwebende Objekte, die an einem Punkt der Seite befestigt sind, und die %product% nur schwer erkennt, wenn die Schreibmarke darauf landet. Eingebettete Formen kann %product% erkennen und sie beschreiben, wenn Sie sich mit der Schreibmarke durch ein Dokument bewegen
+
+:script SayLanguageInUse
+:Synopsis Meldet die im Einsatz befindliche Sprache
+:Description Dieses Skript nennt den Namen der verwendeten Sprache an der aktuellen Position der Schreibmarke
+
+:script FocusToFirstFormField
+:DisplayName Fokus auf erstes Formularfeld setzen
+:Synopsis Bewegt den Fokus auf das erste Formularfeld in dem Dokument und verkleinert die Auswahl, so dass so der Anwender nicht versehentlich das Feld löscht, indem er ein Zeichen eingibt
+:Description Dieses Skript bewegt den Fokus auf das erste Formularfeld in dem Dokument und verkleinert die Auswahl, so dass so der Anwender nicht versehentlich das Feld löscht, indem er ein Zeichen eingibt
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Script ShowItemsInVirtualViewer
+:DisplayName Elemente im Virtuellen Betrachter anzeigen
+:Synopsis Zeigt im virtuellen Betrachter einer Liste der Kommentare, Fußnoten, Endnoten und Überarbeitungen des aktuellen Dokuments.
+:Description Wählen Sie Kommentare, Fußnoten, Endnoten oder Überarbeitungen aus einer Liste, in der Sie alle Vorkommen im Dokument sehen können. Der virtuelle Betrachter wird geöffnet und zeigt jedes Element als Link an. Drücken Sie auf einem Link die Eingabetaste, um zum jeweiligen Eintrag im Dokument zu springen. Um Änderungen anzuzeigen, muss die Verfolgung der Änderungen in Word aktiviert sein.
+:SearchRank 2
+
+:script CloseOfficeAssistant
+:Synopsis Sucht und schließt den Office Assistenten, sofern er läuft (Office 2003 oder älter)
+:Description Der Office Assistent wird beendet, sofern geöffnet, oder Office Assistent Nicht Gefunden berichtet wird
+
+:script ToggleWritingMode
+:Synopsis Schaltet in Word zwischen Überschreib- und Einfüge-Modus um
+:Description Verwenden Sie diese Funktion, um den Schreib-Modus umzuschalten und den aktuellen Status zu lesen, entweder Einfügen oder Überschreiben
+
+:script ToggleCase
+:DisplayName Großschreibung umschalten
+:synopsis Schaltet die Großschreibung des Worts an der Cursorposition oder des gewählten Texts um.
+:description Dies Skript schaltet die Großschreibung des Worts an der Cursorposition oder des gewählten Texts um.
+:SearchRank 2
+
+:script DeleteWord
+:DisplayName Wort löschen
+:Synopsis Löscht das aktuelle Wort und spricht das Wort, auf dem der PC Cursor landet
+:Description Löscht das Wort an der Position der Schreibmarke auf dem Bildschirm. Dies bezieht sich nicht auf den Mauszeiger.
+:SearchRank 4
+
+:script SelectionByUnitMode
+:Synopsis Schaltet die Auswahl per Einheit-Modus um
+:Description Dieses Skript schaltet die Auswahl per Einheit-Modus um.
+
+:script ReduceSelectionUnit
+:Synopsis Reduziert die Auswahl-Einheit, wenn der Modus erweiterte Auswahl um Einheiten eingeschaltet ist
+:Description Dieses Skript reduziert die Auswahl-Einheit, wenn der Modus erweiterte Auswahl um Einheiten eingeschaltet ist. Wenn ein Absatz markiert ist, dann reduziert dieses Skript die Auswahl auf einen Satz.
+
+:script SelectionByMovementMode
+:Synopsis Schaltet den Modus Auswahl beim Bewegen um
+:Description Dieses Skript schaltet den Modus  Auswahl beim Bewegen um.
+
+:script ShowSmartTagList
+:DisplayName Liste der Smart Tags anzeigen
+:synopsis Listet alle Smart Tags in dem Dokument auf.
+:Description Verwenden Sie diese Tastenkombination, um eine Liste aller Smart Tags in dem Dokument zu erhalten. Gehen Sie mit Pfeil rauf und runter durch die Liste, dann drücken Sie Eingabe, um auf den Smart Tag im Dokument zu springen. Mit Escape schließen Sie die Liste, ohne auf einen Smart Tag zu springen.
+:SearchRank 4
+
+:script SmartTagActionsMenu
+:DisplayName Smart Tag Aktionsmenü
+:synopsis Öffnet das Smart Tag Aktionsmenü auf dem Bildschirm
+:Description Verwenden Sie diese Tastenkombination, um das Smart Tag Aktionsmenü auf dem Bildschirm zu öffnen.
+:SearchRank 4
+
+:Script MarkPlace
+:DisplayName Position markieren
+:Synopsis Markiert die aktuelle Position im aktuellen Dokument.
+:Description Dieses Skript markiert die aktuelle Position im aktuellen Dokument, so dass an diese in Zukunft zurückgekehrt werden kann.
+:SearchRank 1
+
+:Script ReturnToMarkedPlace
+:DisplayName Zu markierter Position zurückkehren
+:Synopsis Kehrt zu einer markierten Position im Dokument zurück.
+:Description Dieses Skript kehrt zu einer markierten Position im Dokument zurück, falls eine vorhanden ist.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script SelectTextBetweenMarkedPlaceAndCurrentPosition
+:Synopsis Markiert den gesamtem Text zwischen der markierten Position und der aktuellen Position im aktuellen Dokument.
+:Description Dieses Skript markiert den gesamtem Text zwischen der markierten Position und der aktuellen Position im aktuellen Dokument. Wurde keine Position markiert, dann wird eine Fehlermeldung angesagt.
+
+:function IsRibbonEditComboDroppedDown
+:description Used to test if an edit combo in a lower ribbon has been dropped down.
+:returns int True if the ribbon edit combo is dropped down, false otherwise.
+
+:function IsToolBarEditComboDroppedDown
+:description Used to test if an edit combo on a toolbar has been dropped down.
+:returns int True if the toolbar edit combo is dropped down, false otherwise.
+
+:function GetUpDownButtonName
+:description Returns "Move up" or "Move down" or null based on the button in focus.  Written for Office Move Up/Down controls.
+:returns string The button name or null if not applicable.
+
+:Script GoForward
+:Synopsis Geht von einem Link innerhalb eines Inhaltsverzeichnisses vorwärts und sagt die neue Position an.
+:Description Diese Tastenkombination geht von einem Link innerhalb eines Inhaltsverzeichnisses vorwärts und sagt die neue Position an.
+
+:Script GoBack
+:Synopsis Geht zurück zu einem Link innerhalb eines Inhaltsverzeichnisses und sagt die neue Position an.
+:Description Diese Tastenkombination geht zurück zu einem Link innerhalb eines Inhaltsverzeichnisses und sagt die neue Position an.
+
+:Script SpellCheckAccelerators
+:Synopsis Eine der Tasten zum Beschleunigen des Rechtschreibdialogs. Außerhalb der Rechtschreibprüfung könnte eine andere Funktion ausgeführt werden.
+:Description Diese Kurztaste wird von der Anwendung gesteuert.
+
+:Script RevisionDetectionToggle
+:DisplayName Erkennung von Überarbeitungen umschalten
+:Synopsis Schaltet die Erkennung von Überarbeitungen ein/aus, ist abhängig davon, ob die Markierungen angezeigt werden.
+:Description Diese Kurztaste schaltet die Erkennung von Überarbeitungen in Word Dokumenten ein oder aus, vorausgesetzt, die Verfolgung der Änderungen ist in Word aktiviert.
+:SearchRank 2
+
+:script UpOneLevel
+
+:script IgnoreAllButton
+
+:script SayLookInOrSaveInFolderName
+
+:script EnvelopesDlgKey
+
+:script ReplaceDlgKey
+
+:script FindDlgKey
+
+:script GotoPageDlgKey
+
+:script LabelsDlgKey
+
+:script TabKey
+
+:script ShiftTabKey
+
+:script PreviousItem
+
+:script NextItem
+
+:script PostComment
+:Synopsis Zeigt den Kommentar unter dem Cursor in einem Dialogfenster an.
+:Description Diese Kurztaste zeigt den Kommentar unter dem Cursor in einem Dialogfenster an.
+
+:script PostFootnoteOrEndNote
+:Synopsis Zeigt die unter dem Cursor befindliche Fuß- oder Endnote in einem Dialogfenster an.
+:Description Diese Kurztaste zeigt die unter dem Cursor befindliche Fuß- oder Endnote in einem Dialogfenster an.
+
+:script PostRevision
+:Synopsis Zeigt die Überarbeitung unter dem Cursor in einem Dialogfenster an.
+:Description Diese Kurztaste zeigt die Überarbeitung unter dem Cursor in einem Dialogfenster an.
+
+:script ReadMistakeAndSuggestion
+:DisplayName Rechtschreibfehler und Vorschlag lesen
+:Synopsis Liest bei aktivem Rechtschreibdialog den Fehler und den Korrekturvorschlag, oder öffnet im Dokumentfenster die Linkliste.
+:Description Diese Kurztaste liest bei aktivem Rechtschreibdialog den Fehler und den Korrekturvorschlag, oder öffnet im Dokumentfenster die Linkliste.
+:SearchRank 1
+
+:script SayColumnTitle
+:DisplayName Spaltentitel lesen
+:Synopsis Sagt den Spaltentitel der aktuellen Spalte an
+:Description Diese Kurztaste sagt den Spaltentitel der aktuellen Spalte an. Der Spaltentitel ist der Text der Zelle dieser Spalte, die als Titelreihe angegeben wurde
+:SearchRank 1
+
+:script SayRowTitle
+:DisplayName Reihentitel lesen
+:Synopsis Sagt den Reihentitel der aktuellen Reihe an
+:Description Diese Kurztaste sagt den Reihentitel der aktuellen Reihe an. Der Reihentitel ist der Text der Zelle dieser Reihe, die als Titelspalte angegeben wurde
+:SearchRank 1
+
+:Script Alt1
+:Synopsis Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+:Description Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+
+:Script Alt2
+:Synopsis Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+:Description Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+
+:Script Alt3
+:Synopsis Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+:Description Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+
+:Script Alt4
+:Synopsis Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+:Description Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+
+:Script Alt5
+:Synopsis Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+:Description Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+
+:Script Alt6
+:Synopsis Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+:Description Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+
+:Script Alt7
+:Synopsis Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+:Description Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+
+:Script Alt8
+:Synopsis Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+:Description Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+
+:Script Alt9
+:Synopsis Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+:Description Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+
+:Script Alt0
+:Synopsis Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+:Description Reicht die Taste durch oder verwaltet in einem Entwurfsfenster die Überschriften.
+
+:Script AltF4
+:Synopsis Schließt die Office Anwendung. Nutzen Sie diese Kurztaste, nicht die Menüs oder die Maus, um die aktuell geöffnete Office Anwendung zu schließen.
+:Description Schließt die Office Anwendung. Nutzen Sie diese Kurztaste, nicht die Menüs oder die Maus, um die aktuell geöffnete Office Anwendung zu schließen. Wenn Sie zum Schließen die Menüs oder die Maus verwenden, dann können JAWS und die Anwendung hängen bleiben oder abstürzen.
+
+:script ToggleShowHideNonprintingCharacters
+:DisplayName Anzeige von nicht-druckbaren Zeichen umschalten
+:synopsis Schaltet um zwischen anzeigen oder verbergen von nicht-druckbaren Zeichen.
+:description Dieses ist die Word Kurztaste zum Umschalten, ob nicht-druckbare Zeichen angezeigt oder verborgen werden sollen.
+:SearchRank 2
+
+:Function GetWordCountDlgStaticText
+:returns string the static text for the Word Count dialog if it exists.
+:Param handle the focused Word Count dialog window.
+:Description Returns text for the Word Count dialog, but we use UIA instead of SDM logic to acquire the text.
+
+:script ShowMathViewer
+:DisplayName Mathematischen Betrachter anzeigen
+:Synopsis  Zeigt den mathematischen Betrachter, wenn sich der Cursor auf einer Gleichung oder Formel befindet.  Der mathematische Betrachter ermöglicht das Navigieren durch einzelne Teile der Gleichung oder Formel.
+:Description Zeigt den mathematischen Betrachter, wenn sich der Cursor auf einer Gleichung oder Formel befindet.  Der mathematische Betrachter ermöglicht das Navigieren durch einzelne Teile der Gleichung wie Variablen, Berechnungen, Koeffizienten, Exponenten etc. Beim Navigieren durch die einzelnen Komponenten können Sie mit der EINGABETASTE in die jeweilige Ebene springen und innerhalb dieser Ebene der Gleichung mit PFEIL RECHTS und PFEIL LINKS navigieren. Das Drücken von PFEIL RAUF bringt Sie in die vorherige Ebene zurück.
+:KeyWords Mathematik, MathML, Addition, Subtraktion, Multiplikation, Division, MathTyp
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:function GetHeaderForNewAddressListField
+:Returns string the text that should be used as the edit name
+:Description Gets the header of the currently focused field in the New Address List dialog.
+
+:function GetFirstObjectWithClickablePoint
+:Returns object the first object in the array with clickable point x and y that are not 0
+:Param object/oArray 
+

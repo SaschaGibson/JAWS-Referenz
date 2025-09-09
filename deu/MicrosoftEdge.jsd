@@ -1,0 +1,14 @@
+:script VirtualFind
+:DisplayName Virtuelle Suche
+:Synopsis Ruft das JAWS Suchen Dialogfeld auf.
+:Description Aktiviert die JAWS Suche, falls der virtuelle Cursor aktiv ist. Sonst wird die Taste an die Anwendung durchgereicht.
+:Category HTML
+:Version JAWS/18.0
+:Version MAGic/15.0
+:SearchRank 1
+
+:script SpeakCurrentNotificationBarText
+:displayName Aktuellen Text der Benachrichtigungsleiste ansagen
+:synopsis Spricht Meldungen und Hinweise, die in der Benachrichtigungsleiste von Microsoft Edge angezeigt werden.
+:description Die Benachrichtigungsleiste zeigt Meldungen und Hinweise und enthält Steuerelemente, um auf diese zu reagieren.
+:SearchRank 1

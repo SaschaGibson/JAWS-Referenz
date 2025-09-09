@@ -1,0 +1,286 @@
+:function AutoStartEvent
+
+:function GetDocTitle
+:Returns string No Return Description
+
+:function GetDocSpecificSettingsFile
+:Returns string No Return Description
+
+:function LoadDocumentSpecificSettings
+
+:function SaveDocumentSpecificSettings
+:Param string No Description
+:Param string No Description
+
+:function SayCell
+:Param int No Description
+
+:function HandleTableCellFocus
+:Returns int No Return Description
+:Optional
+:Param int identifies the calling function. 0 = unknown.
+
+:function HandleCustomWindows
+:Returns int No Return Description
+:Param handle No Description
+
+:function DoSayObjectTypeAndTextFromLevel
+:Param int No Description
+
+:function IsTableCell
+:Returns int No Return Description
+
+:function IsSpinBox
+:Returns int No Return Description
+
+:function IsTreeItem
+:Returns int No Return Description
+
+:script SayNextCharacter
+
+:script SayPriorCharacter
+
+:script SayNextWord
+
+:script SayPriorWord
+
+:function SayWordUnit
+:Category Cursor
+:Param int/UnitMovement No Description
+
+:script SayNextLine
+
+:script SayPriorLine
+
+:function SayNextOrPriorParagraph
+
+:script SayNextParagraph
+
+:script SayPriorParagraph
+
+:script SayCharacter
+
+:script SayWord
+
+:script SayLine
+
+:script SelectNextCharacter
+
+:script SelectPriorCharacter
+
+:script SelectNextWord
+
+:script SelectPriorWord
+
+:script SelectNextLine
+
+:script SelectPriorLine
+
+:script ScriptFileName
+
+:script SayWindowPromptAndText
+
+:function SetTableHeaderReading
+:Returns string No Return Description
+:Param int No Description
+
+:function SetTableHeaderReadingHlp
+:Returns string No Return Description
+
+:function SetColumnHeadersToRow
+:Returns string No Return Description
+:Param int/iRetCurVal No Description
+
+:function SetColumnHeadersToRowHlp
+:Returns string No Return Description
+
+:function SetRowHeadersToColumn
+:Returns string No Return Description
+:Param int No Description
+
+:function SetRowHeadersToColumnHlp
+:Returns string No Return Description
+
+:function ClearTableHeaders
+:Returns string No Return Description
+:Param int No Description
+
+:function ClearTableHeadersHlp
+:Returns string No Return Description
+
+:script AdjustJAWSOptions
+:Returns undef No Return Description
+
+:function ValueChangedEvent
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+:Param string No Description
+:Param string No Description
+:Param int No Description
+
+:function ObjStateChangedEvent
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+
+:function NameChangedEvent
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+:Param string No Description
+:Param string No Description
+
+:function ActiveItemChangedEvent
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+
+:function DescriptionChangedEvent
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+:Param string No Description
+:Param string No Description
+
+:function SayObjectDetail
+:Param object No Description
+
+:function FocusChangedEventEx
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+
+:function FocusChangedEvent
+
+:function tutorMessageEvent
+:Param handle No Description
+:Param int No Description
+
+:script SayWindowTitle
+
+:script ReadCellComment
+
+:function SpeakTableCells
+:Param int No Description
+:Param int No Description
+
+:function SayDocumentPageName
+
+:function DocumentPageChangedEvent
+
+:function DocumentTextColumnChangedEvent
+
+:function DocumentTextSectionChangedEvent
+
+:script SayDocumentPosition
+:Synopsis Liest die aktuelle Seiten-, Zeilen-, Zeichen- und Spaltenposition 
+
+:script SayObjectDescription
+:Synopsis Liest die Beschreibung für Elemente wie Links, Figuren oder eingebettete Objekte
+
+:script DisplayLayerInfo
+:Synopsis Stellt Informationen über die Sichtbarkeit und Dimensionen des aktuellen Präsentationsobjekt zur Verfügung
+
+:script SayActiveCursor
+
+:script ReadWordInContext
+:Returns undef No Return Description
+
+:function DocumentLoadedEvent
+
+:script JAWSPageUp
+:Returns int No Return Description
+
+:script JAWSPageDown
+:Returns int No Return Description
+
+:function InNamedDialog
+:Returns int No Return Description
+:Param string No Description
+:Param int No Description
+
+:function SayWordInContext
+:Returns int No Return Description
+
+:script Enter
+:Returns undef No Return Description
+
+:script PressFindButton
+:Returns undef No Return Description
+
+:script SayAll
+:Returns int No Return Description
+
+:function GetSelectedChild
+:Returns object No Return Description
+:Param object No Description
+
+:script ReadMisspelledWordAndSuggestion
+:Synopsis Im Rechtschreibdialog wird das falsch geschriebene und die vorgeschlagene Ersetzung gelesen. In einem Dokument wird eine Linkliste angezeigt.
+:Description Im Rechtschreibdialog wird das falsch geschriebene und die vorgeschlagene Ersetzung gelesen. In einem Dokument wird eine Linkliste angezeigt.
+
+:script ReadBoxInTabOrder
+:Returns undef No Return Description
+
+:function SayNextOrPriorSentence
+
+:function ShouldMoveBySentence
+:Returns int No Return Description
+:Param int No Description
+
+:script SayAppVersion
+:Returns undef No Return Description
+
+:script SayColor
+:Returns undef No Return Description
+
+:function listHeadings
+
+:function SayCharacterUnit
+:Synopsis Override of the default with SayCharacter UseMarkup parameter set to true
+:Category Say
+:Param int/UnitMovement No Description
+
+:script ReadCurrentRow
+:Synopsis Liest aktuelle Tabellenreihe
+:Category Say
+
+:script ReadCurrentColumn
+:Synopsis Liest aktuelle Tabellenspalte
+:Category Say
+
+:script DeleteWord
+:Synopsis Löscht das aktuelle Wort und sagt das Wort unter dem Cursor an
+:Category Say
+
+:script SelectPriorParagraph
+:Synopsis Wählt den vorherigen Absatz
+:Category selection
+
+:script SelectNextParagraph
+:Synopsis Wählt den nächsten Absatz in Symphony
+:Category selection
+
+:function SelectingTextByParagraph
+:Synopsis Handles selection processing for paragraphs
+:Category selection
+:Param int/nMode No Description
+
+:function AnnounceLink
+:Returns int Returns true if link was read
+:Synopsis Announce link in documents
+:Category Say
+:Param int/forceAnnouncement No Description

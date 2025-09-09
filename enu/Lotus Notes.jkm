@@ -1,0 +1,18 @@
+[Common Keys]
+Shift+NumPadMinus=CollapseAll
+Shift+NumPadPlus=ExpandAll
+Control+JAWSKey+F7=ReadMistakeAndSuggestion
+JAWSKey+F7=SelectALink
+JAWSKey+a=ActionButtons
+Control+JAWSKey+Tab=
+F3=MoveToNextSelectedDocument
+Shift+F3=MoveToPrevSelectedDocument
+F4=MoveToNextUnreadDocument
+Shift+F4=MoveToPrevUnreadDocument
+Control+Shift+H=SayFieldHelp
+Control+PageDown=NextDocumentWindow
+Control+PageUp=PreviousDocumentWindow
+[Laptop Keys]
+Control+Insert+F7=ReadMistakeAndSuggestion
+Insert+F7=SelectALink
+Insert+a=ActionButtons

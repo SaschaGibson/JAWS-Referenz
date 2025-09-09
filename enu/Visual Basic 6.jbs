@@ -1,0 +1,23 @@
+; braille structure file for VB6
+; by Rob G 6/20/2001
+
+[Component Aliases]
+DesignerControl=Designer Control
+ControlOverlap=Designer Control Overlap
+CodeWinSuggestion=Code Window Suggestions
+CodeWinLine=Code Line
+
+[CustomControl1]
+components=DesignerControl,ControlOverlap
+type=
+removed=
+displayname=
+
+[CustomControl2]
+components=CodeWinSuggestion,CodeWinLine
+type=
+removed=
+displayname=
+
+[Information]
+Description=Default  Structured Mode view for Visual Basic.

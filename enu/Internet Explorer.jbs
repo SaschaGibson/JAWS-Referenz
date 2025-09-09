@@ -1,0 +1,17 @@
+;Copyright 1995-2015 Freedom Scientific, Inc.
+;JAWS Braille Structure file for Microsoft Internet Explorer
+; sections for localization and UI display
+[Component Aliases]
+Autocomplete=Auto Complete
+
+; Section for edit, addition of Autocomplete.
+; note that multiline edits will always use line mode if not in a dialog
+[SubtypeCode3]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value,state,Autocomplete,description
+type=ed
+removed=
+displayname=
+AlignmentPriority=name,type,ComputerBrailleIndicator,value,state
+
+[Information]
+Description=Default  Structured Mode view for Microsoft Internet Explorer.

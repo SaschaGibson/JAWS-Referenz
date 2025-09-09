@@ -1,0 +1,10 @@
+﻿;  Section for button is augmented with position, so that buttons in lists may show their position in group.
+[SubtypeCode1]
+components=ContextHelp,state,name,type,position,description
+type=sltr
+removed=hotkey
+displayname=
+AlignmentPriority=state,name
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Microsoft Explorer.

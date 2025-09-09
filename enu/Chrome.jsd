@@ -1,0 +1,51 @@
+:function IsBrowserContentWindow
+:description Determines if the window is a browser content window for Chrome.
+:param handle The window to test.
+:returns int True if the window is a browser content window for Chrome.
+
+:function ShouldUseDoSayObjectFromLevel
+:description Determines if focus change should process the window by announcing hierarchical level changes.
+:param handle The current focus window.
+:param handle The previous focus window.
+:returns int True if focus change should process the window by announcing hierarchical level changes.
+
+:function GetDocumentNameFromRealWindow
+:description Retrieves the name of the current page or document.
+:returns string The name of the current page or document.
+
+:function GetBrowserName
+:description Retrieves the name of the browser currently being used.
+:optional
+:param int If true, returns the name Google Chrome, otherwise returns the name Chrome.
+:returns string The name of the browser.
+
+:function SayNewDocumentTab
+:description Used by focus change to announce the name of the new document.
+
+:script PictureSmartWithControl
+:DisplayName Picture Smart from a Control
+:Synopsis Describes a picture control that has focus.
+:Optional
+:Param int/serviceOptions Additional Picture Smart service options. See HJConst.jsh for option constants, all prefixed by PSServiceOptions_.
+:Category Picture Smart
+:Keywords image, photo, picture, photograph, graphic, describe, recognize
+:Version JAWS/20.00
+:SearchRank 1
+
+:script AddressBar
+:DisplayName Read Address Bar
+:Synopsis Reads the address of the active web page.
+:Description Reads the address or URL of the current web page. Press twice quickly to show it in the virtual viewer.
+:SearchRank 1
+
+:script AnnounceCommentText
+:DisplayName Announce Comment Text
+:Synopsis Announce the text of a comment
+:Description If text inside an edit field has an associated comment, this script reads the comment text.  Press twice quickly to navigate to the comment text in the virtual buffer.
+:SearchRank 1
+
+:script DisplayARIAActions
+:DisplayName Display ARIA Actions
+:SearchRank 1
+:Synopsis Display a list of ARIA actions on a web page element
+:Description If a web page author has defined an aria-actions list on an element on the web, this will display a list of the actions present and allow a user to invoke a selected option. 

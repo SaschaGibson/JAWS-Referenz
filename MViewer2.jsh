@@ -1,0 +1,14 @@
+; Build 3.7.10.001
+const
+	ID_MAIN = 1,
+	ID_WORD = 2,
+	ID_INDEX = 3,
+	ID_MARKS = 4,
+	ID_BACK = 5,
+	ID_PRINT = 6,
+	ID_HELP = 7,
+	ID_EXIT = 8,
+	ID_ABOUT = 9,
+	ID_SIGHTS=10,
+	ID_KING = 11,
+	ID_TIMELINE = 12

@@ -1,0 +1,3 @@
+:function GetWin11NotepadStatusBarText
+:Returns string Text of the items in the status bar of Windows 11 Notepad
+:Description Returns a string containing the text of the items found in the status bar of Windows 11 Notepad.

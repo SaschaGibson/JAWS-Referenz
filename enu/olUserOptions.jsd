@@ -1,0 +1,112 @@
+:function toggleMessageHeaderVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function MessageFlagsHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleMessageElementsVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleMessageTitleVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleMessageSayAllVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleMessageReadingPaneVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleAttachmentsVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleInfoBarVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleAutoCompleteVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleMessageStatusVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleMeetingRequestVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleMessageFlagVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleFollowUpFlagVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleForwardedFlagVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleRepliedFlagVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:script AdjustJAWSOptions
+:Synopsis adjusts JAWS options including Outlook-specific options
+:Description This script adjusts JAWS options including Outlook-specific options. For Outlook-specific options, changed settings are saved to the jsi file in this script.
+
+:function GetMSOutlookOptionsBranch
+:description Constructs the Microsoft Outlook options branch of the AdjustJAWSOption tree.
+:param string The name of the node which will contain the application-specific settings.
+:returns string The app-specific options formatted and ready to send to AdjustJAWSOptions.
+
+:function GetOutlookExpressOptionsBranch
+:description Constructs the Outlook Express options branch of the AdjustJAWSOption tree.
+:param string The name of the node which will contain the application-specific settings.
+:returns string The app-specific options formatted and ready to send to AdjustJAWSOptions.
+
+:function GetWindowsLiveMailOptionsBranch
+:description Constructs the Windows Live Mail options branch of the AdjustJAWSOption tree.
+:param string The name of the node which will contain the application-specific settings.
+:returns string The app-specific options formatted and ready to send to AdjustJAWSOptions.
+
+:function toggleMessageLinkCountIndicationHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function vCursorHeadingsAnnounceHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleSelCtxWithMarkupHlp
+:Description This is the helper function for the var referred to in its name.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleWarningMessageForBrowserOptionHlp
+:Description This is the helper function for the var referred to in its name.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.

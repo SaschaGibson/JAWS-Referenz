@@ -1,0 +1,547 @@
+:Function GeneralOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function ReadingOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function SayAllOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function EditingOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function SpellingOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function VirtualCursorOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function TextOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function GraphicsOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function LinksOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function FormsOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function HeadingAndFrameOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function ListAndTableOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function BrailleOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function Grade2OptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function CursorOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function PanningOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function TableOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:Function MarkingOptionsHlp
+:Description This help callback function relates to a node, or group of options.  When this node is selected, this function is called by dlgSelectTreeFunctionToRun.  Hlp callback functions for nodes are named after the display text of that node with spaces removed and the suffix hlp appended.
+:Returns string The text for the help windows of this node branch.
+
+:function VerbositySetLevelTextOutput
+:description Returns the text displayed for the settings belonging to the User Verbosity option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function UseTandemConnectSoundsTextOutput
+:description Returns the text displayed for the settings belonging to the Tandem Connect Sounds option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function SmartWordReadingSetTextOutput
+:description Returns the text displayed for the settings belonging to the Smart Word Reading option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function SpellModeSetTextOutput
+:description Returns the text displayed for the settings belonging to the Text Spell option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function AlphaNumCombinationsTextOutput
+:description Returns the text displayed for the settings belonging to the Alphanumeric Text option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function ProgressBarSetAnnouncementTextOutput
+:description Returns the text displayed for the settings belonging to the Progress Bars option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function TypingEchoSetTextOutput
+:description Returns the text displayed for the settings belonging to the Typing Echo option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function ScreenEchoSetTextOutput
+:description Returns the text displayed for the settings belonging to the Screen Echo option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function GraphicsShowTextOutput
+:description Returns the text displayed for the settings belonging to the Graphics option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function CustomLabelsSetTextOutput
+:description Returns the text displayed for the settings belonging to the option.
+:param int The integer representing the setting for this Custom Labels option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function TopAndBottomEdgeIndicateTextOutput
+:description Returns the text displayed for the settings belonging to the Top And Bottom Edge option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function LanguageDetectChangeTextOutput
+:description Returns the text displayed for the settings belonging to the Language Detect Change option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function SayAllReadsByTextOutput
+:description Returns the text displayed for the settings belonging to the SayAll Reads By option.
+:param int The integer representing the SayAll mode setting.
+:param int The integer representing the Line Pause mode setting.
+:returns string The text to be shown for settings belonging to this option.
+
+:function CapsIndicateDuringSayAllTextOutput
+:description Returns the text displayed for the settings belonging to the Capitalization option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function CapsIndicateTextOutput
+:description Returns the text displayed for the settings belonging to the Caps Indicate option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function PunctuationSetLevelTextOutput
+:description Returns the text displayed for the settings belonging to the Punctuation option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function IndentationIndicateTextOutput
+:description Returns the text displayed for the settings belonging to the Indentation option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function SynthesizerMuteTextOutput
+:description Returns the text displayed for the settings belonging to the Synthesizer option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function NavigationQuickKeysSetTextOutput
+:description Returns the text displayed for the settings belonging to the Navigation Quick Keys option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function DocumentPresentationSetTextOutput
+:description Returns the text displayed for the settings belonging to the Document Presentation option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorGraphicsShowTextOutput
+:description Returns the text displayed for the settings belonging to the Graphics Show option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorGraphicsSetRecognitionTextOutput
+:description Returns the text displayed for the settings belonging to the Graphics recognize by option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorGraphicsSetRecognitionHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorGraphicalLinksSetTextOutput
+:description Returns the text displayed for the settings belonging to the Graphical Links Show option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function vCursorUntaggedGraphicalLinkShowTextOutput
+:description Returns the text displayed for the settings belonging to the Untagged Graphical Links Show option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorImageMapLinksShowTextOutput
+:description Returns the text displayed for the settings belonging to the Links In Image Maps Show option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorTextLinksShowTextOutput
+:description Returns the text displayed for the settings belonging to the text Links show Using option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorLinksIdentifyTypeTextOutput
+:description Returns the text displayed for the settings belonging to the Links Identify Type option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorLinksIdentifySamePageTextOutput
+:description Returns the text displayed for the settings belonging to the Links Identify "Same Page" option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorButtonsShowUsingTextOutput
+:description Returns the text displayed for the settings belonging to the Buttons Show Using option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorAbbreviationsExpandTextOutput
+:description Returns the text displayed for the settings belonging to the Abbreviations Expand option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorAcronymsExpandTextOutput
+:description Returns the text displayed for the settings belonging to the Acronyms Expand option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorFormFieldsIdentifyPromptUsingTextOutput
+:description Returns the text displayed for the settings belonging to the Form Fields Identify Prompt Using option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorFramesShowStartAndEndTextOutput
+:description Returns the text displayed for the settings belonging to the Frames Show Start And End option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorInlineFramesShowTextOutput
+:description Returns the text displayed for the settings belonging to the Inline Frames Show option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorScreenTrackTextOutput
+:description Returns the text displayed for the settings belonging to the Screen Track Virtual Cursor option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorRepeatedTextSkipTextOutput
+:description Returns the text displayed for the settings belonging to the Repeated Text Skip option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorBlockQuotesIdentifyStartAndEndTextOutput
+:description Returns the text displayed for the settings belonging to the Block Quotes Identify Start And End option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorListsIdentifyStartAndEndTextOutput
+:description Returns the text displayed for the settings belonging to the Lists Identify Start And End option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorAccessKeysShowTextOutput
+:description Returns the text displayed for the settings belonging to the Access Keys Show option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function vCursorAttributesIndicateTextOutput
+:description Returns the text displayed for the settings belonging to the Attributes Indicate option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function vCursorTablesShowStartAndEndTextOutput
+:description Returns the text displayed for the settings belonging to the Tables Show Start and End option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function vCursorLayoutTablesTextOutput
+:description Returns the text displayed for the settings belonging to the Layout Tables option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function vCursorTableTitlesAnnounceTextOutput
+:description Returns the text displayed for the settings belonging to the Table Titles Announce option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function VCursorCellCoordinatesAnnouncementTextOutput
+:description Returns the text displayed for the settings belonging to the Cell coordinates announcement option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorHeadingsAnnounceTextOutput
+:description Returns the text displayed for the settings belonging to the Headings Announce option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function vCursorEnhancedClipboardTextOutput
+:description Returns the text displayed for the settings belonging to the Select and Copy option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function vCursorAutoFormsModeTextOutput
+:description Returns the text displayed for the settings belonging to the Auto Forms Mode option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function vCursorIndicateFormsModeWithSoundsTextOutput
+:description Returns the text displayed for the settings belonging to the Use Sound option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function vCursorNavQuickKeyDelayTextOutput
+:description Returns the text displayed for the settings belonging to the Navigation Quick Key Delay option.
+:param int The integer representing the Threshold setting.
+:param int The integer representing the Auto Forms Mode setting.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function FlashMoviesRecognizeTextOutput
+:description Returns the text displayed for the settings belonging to the Flash Movies Recognize option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function AnnounceLiveRegionUpdatesTextOutput
+:description Returns the text displayed for the settings belonging to the Announce live region updates option.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:function AnnounceLiveRegionUpdatesHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorFormsModeAutoOffTextOutput
+:description Returns the text displayed for the settings belonging to the Forms Mode Off When New Page Loads option.
+:param int The integer representing the Auto Forms Mode setting.
+:param int The integer representing the setting for this option.
+:returns string The text to be shown for settings belonging to this option.
+
+:Function vCursorGraphicsShowHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorGraphicalLinksSetHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorUntaggedGraphicalLinkShowHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorImageMapLinksShowHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorFramesShowStartAndEndHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorTextLinksShowHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorButtonsShowUsingHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorAbbreviationsExpandHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorAcronymsExpandHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorFormFieldsIdentifyPromptUsingHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function AlphaNumCombinationsHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function CapsIndicateDuringSayAllHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function CapsIndicateHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function VerbositySetLevelHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function SmartWordReadingSetHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function SpellModeSetHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function ProgressBarSetAnnouncementHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function TypingEchoSetHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function ScreenEchoSetHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function GraphicsShowHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function CustomLabelsSetHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function TopAndBottomEdgeIndicateHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function LanguageDetectChangeHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function SayAllReadsByHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function PunctuationSetLevelHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function IndentationIndicateHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function SynthesizerMuteHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function NavigationQuickKeysSetHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function DocumentPresentationSetHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorLinksIdentifyTypeHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorLinksIdentifySamePageHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorInlineFramesShowHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorScreenTrackHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorRepeatedTextSkipHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorBlockQuotesIdentifyStartAndEndHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorListsIdentifyStartAndEndHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorAccessKeysShowHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorAttributesIndicateHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorTablesShowStartAndEndHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorLayoutTablesHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorTableTitlesAnnounceHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorHeadingsAnnounceHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function FlashMoviesRecognizeHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function PageRefreshHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorFormsModeAutoOffHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:function vCursorCustomPageSummaryHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function DocumentPresentationSetHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorReadOnlyStateTextOutput
+:description Returns the text displayed for the settings belonging to the Read Only State option.
+:param int The integer representing the setting for this option.
+
+:Function vCursorReadOnlyStateHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+
+:Function vCursorVirtualDocumentLinkActivationMethodTextOutput
+:description Returns the text displayed for the settings belonging to the Virtual Document Link Activation Method option.
+:param int The integer representing the setting for this option.
+
+:Function vCursorVirtualDocumentLinkActivationMethodHlp
+:Description Help callback function which provides help for the selected setting and item in the tree view inspired by the dlgSelectTreeFunctionToRun internal function.
+:Returns string The text for the help information belonging to this option.
+

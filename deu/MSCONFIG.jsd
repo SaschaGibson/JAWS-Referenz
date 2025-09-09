@@ -1,0 +1,24 @@
+:script HotKeyHelp
+
+:function HandleCustomWindows
+
+:function SayNonHighlightedText
+
+:function KeyPressedEvent
+
+:function AutoStartEvent
+
+:script SayWindowPromptAndText
+
+:function SayHighlightedText
+
+:script ScreenSensitiveHelp
+
+:function FocusChangedEvent
+
+:script ToolbarList
+
+:script ScriptFileName
+
+:function HandleCustomRealWindows
+

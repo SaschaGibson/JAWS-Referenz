@@ -1,0 +1,162 @@
+;Microsoft Access Braille Structure File
+;Joseph Stephen 14 May 2001
+; Olga Espinola June 12, 2003
+; MSAccess Controls exposed via the Object Model
+;The Custom Control Number is obtained by subtracting 100 then adding 1 to the AcType 
+;property of the ActiveControl object.
+
+;Component aliases
+[Component Aliases]
+formName=Form Name
+subformName=Subform Name
+subformType=Subform Type
+GBFocusName=Groupbox Focus Name
+GBFocusState=Groupbox Focus State
+GBFocusType=Groupbox Focus Type
+GBFocusPosition=Groupbox Focus Position
+
+;acLabel=100, ;	Label
+[CustomControl1]
+displayName=Label
+components=formName,name
+removed=type
+type=lbl
+
+;acRectangle=101, ;	Rectangle
+[CustomControl2]
+displayName=Rectangle
+components=formName,name,type
+removed=
+type=rect
+
+;acLine=102, ;	Line
+[CustomControl3]
+displayname=Line
+components=formName,name,type
+removed=
+type=line
+
+;acImage=103, ;	Image
+[CustomControl4]
+displayname=Image
+components=formName,name,type
+removed=
+type=img
+
+;acCommandButton=104, ;	Command button
+[CustomControl5]
+displayname=Command Button
+components=formName,name,type
+removed=
+type=btn
+
+;acOptionButton=105, ;	Option button
+[CustomControl6]
+displayname=Option Button
+components=formName,state,name,type
+removed=
+type=rbtn
+
+;acCheckBox=106, ;	Check box
+[CustomControl7]
+displayname=Checkbox
+components=formName,state,name,type
+removed=
+type=chk
+
+;acOptionGroup=107, ;	Option group
+[CustomControl8]
+displayname=Option Group
+components=formName,subformName,subformType,type,gbFocusState,gbFocusName,gbFocusType,gbFocusPosition
+removed=
+type=gb
+AlignmentPriority=gbFocusState,gbFocusName
+
+;acBoundObjectFrame=108, ;	Bound object frame
+[CustomControl9]
+displayname=Bound Object Frame
+components=formName,name,type
+removed=
+type=frame
+
+;acTextBox=109, ;	Text box
+[CustomControl10]
+displayname=Text Box
+components=formName,name,type,value
+removed=
+type=ed
+
+;acListBox=110, ;	List box
+[CustomControl11]
+displayname=Listbox
+components=formName,name,type,value,position
+removed=
+type=lbx
+
+;acComboBox=111, ;	Combo box
+[CustomControl12]
+displayname=Combobox
+components=formName,name,type,value,position
+removed=
+type=cbo
+
+;acSubform=112, ;	Subform/subreport
+[CustomControl13]
+displayname=Subform
+components=formName,name,type
+removed=
+type=sub frm
+
+;acObjectFrame=114, ;	Unbound object frame or chart
+[CustomControl15]
+displayname=Object Frame
+components=formName,name,type
+removed=
+type=obj frame
+
+;acPageBreak=118, ;	Page break
+[CustomControl19]
+displayname=Page Break
+components=formName,name,type
+removed=
+type=pg brk
+
+;acCustomControl=119, ;	ActiveX (custom) control
+[CustomControl20]
+displayname=Custom Control
+components=formName,name,type,value
+removed=
+type=custom ctl
+
+;acToggleButton=122, ;	Toggle button
+[CustomControl23]
+displayname=Toggle Button
+components=formName,state,name,type
+removed=
+type=btn
+
+;acTabCtl=123, ;	Tab
+[CustomControl124]
+displayname=Tab Control
+components=formName,name,type,value
+removed=
+type=tab
+
+;acPage=124, ;	Page
+[CustomControl25]
+displayname=Page
+components=formName,name,type
+removed=
+type=pg
+
+; Section for toolbar
+;note name is name of button with focus in ToolbarWindow32
+[CustomControl26]
+[SubtypeCode61]
+displayname=toolbar
+components=formName,name,type
+removed=
+type=btn
+
+[Information]
+Description=Default  Structured Mode view for Microsoft Access.

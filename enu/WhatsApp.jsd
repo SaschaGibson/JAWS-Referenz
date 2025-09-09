@@ -1,0 +1,115 @@
+:function LoadNonJCFOptions
+:Description Loads What'sApp settings.
+
+:function getMainWindowComponent
+:Returns object The UIA element matching the AutomationID supplied in the parameter.
+:Description Finds the first UIA element that is a descendant of the root element and matches the supplied AutomationID.
+:Param string/automationID The Automation ID of the requested component
+
+:function GetWhatsappWindow
+:Returns handle The handle of the What'sApp window
+:Description Returns the handle of the What'sApp main window.
+
+:function UIAInit
+:Description Initializes global UIA variables.
+:Category WindowsAndObjects
+
+:function SpeakMessagesAuto
+:Description Speaks messages automatically, called by UIAPropertyChangedEvent.
+:Param string/sMessage Message to speak, passed by event function
+
+:function TrimStatusFromMessage
+:Returns String Text minus any status that may be included after the time at the end of the message.
+:Description Used to strip any status off the end of a message, such as pending, sent, received, read, etc. 
+This function looks for the time separator ":" near the end of the string and trims off anything that comes after the minutes of the time.
+Note, this will trim AM or PM, if present.
+:Param string/sMessage The string of the message to trim.
+
+:function TypingSounder
+:Description Controls playback of the contact typing sound
+:Param object/SoundElement The typing indicator
+
+:function WhatsAppUIAPropertyChangedEvent
+:Description Event that fires when new WhatsApp messages arrive.
+:Param object/element No Description
+:Param int/PropertyID No Description
+:Param variant/NewValue No Description
+
+:function GetRecentMessage
+:Returns String Text of the requested message.
+:Description Returns the message associated with the number passed in the parameter.
+:Param int/iRecentMessage The number of the desired message. 1 represents the most recent message, 2 represents the second most recent message, etc.
+
+:script RecordVoiceMessage
+:SearchRank 1
+:Synopsis Record voice message
+:Description Presses the button to start recording a voice message. Subsequent presses alternate between pausing and resuming recording.
+
+:script SendVoiceMessage
+:SearchRank 1
+:Synopsis Send recorded voice message
+:Description Sends the recorded voice message.
+
+:script PlayPauseRecording
+:SearchRank 1
+:Synopsis Play / pause recorded voice message
+:Description Plays or pauses previewing a recorded voice message.
+
+:script DiscardVoiceMessage
+:SearchRank 1
+:Synopsis Discard recorded voice message
+:Description Discards the recorded voice message without sending.
+
+:script SpeedVoiceMessage
+:SearchRank 1
+:Synopsis Control voice message speed
+:Description Controls the playback speed of the currently playing voice message.
+
+:script MoveToChatList
+:SearchRank 1
+:Synopsis Move to chat list
+:Description Moves to the chat list, which can then be navigated using the ARROW keys.
+
+:script MoveToEditField
+:SearchRank 1
+:Synopsis Move to chat entry field
+:Description Focuses the chat entry field.
+
+:script MoveToHistory
+:SearchRank 1
+:Synopsis Move to chat history
+:Description Moves to the chat history field.
+
+:script SpeakNameAndStatus
+:SearchRank 1
+:Synopsis Speak contact name and status
+:Description Reads the name and status of the current contact if this information is available (e.g. online status, last access date)
+
+:script SpeakMessageOnDemand
+:SearchRank 1
+:Synopsis Speak the last 9 messages
+:Description Speaks the 1st through 9th message in the history. Adding the JAWSKey to this command will virtualize.
+
+:script AudioCall
+:SearchRank 1
+:Synopsis Make an audio call
+:Description Starts an audio call with the current contact
+
+:script VideoCall
+:SearchRank 1
+:Synopsis Make a video call
+:Description Starts a video call with the current contact
+
+:script Attach
+:SearchRank 1
+:Synopsis Attach a file
+:Description Opens the window for selecting a file to attach to the current message.
+
+:script VirtualizeMessageONDemand
+:SearchRank 1
+:Synopsis Virtualize message
+:Description Virtualizes the 1st through 9th message in the history.
+
+:script ControlDelete
+:Synopsis Issues a Control+Delete keystroke
+:Description Issues a Control+Delete keystroke. If editing text, speaks the newly focused word.

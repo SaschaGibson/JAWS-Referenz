@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="VisualStudioCode.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="VisualStudioCodeOptions" Text="VisualStudioCode Settings">
+			<HelpMsg>
+These are options specific to the application.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VisualStudioCodeOptions.SpeakLineNumbers" Text="Speak Line Numbers">
+			<HelpMsg>
+This option is used to toggle on or off the announcement of line numbers when navigating by line.
+A slight delay when navigating by line will be introduced when this setting is on.
+The default setting is off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VisualStudioCodeOptions.ShowLineNumberInStatusCells" Text="Show Line Number in Status Cells">
+			<HelpMsg>
+This option is used to toggle on or off whether line numbers are shown in the status cells of a braille display.
+This works best when "Active cursor follows Braille display" is checked in Settings Center, as the line number is only updated when the caret moves.
+The default setting is off.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

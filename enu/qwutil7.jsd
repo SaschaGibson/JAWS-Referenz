@@ -1,0 +1,4 @@
+:function autoStartEvent
+:Synopsis This function is executed when qwutil7.dll is invoked to cause execution to switch to qw.jsb
+:Description This function switches to the main qw.jsb when the qwutil7.dll is invoked in certain situations like when the QW Calculator has focus.
+

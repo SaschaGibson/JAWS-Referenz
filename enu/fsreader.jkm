@@ -1,0 +1,22 @@
+[Common Keys]
+Control+O=OpenDialog
+Control+P=PlayPause
+Control+S=Stop
+Comma=Rewind
+Period=FastForward
+Control+PageDown=DecreaseRate
+Control+ExtendedPageDown=DecreaseRate
+Control+PageUp=IncreaseRate
+Control+ExtendedPageUp=IncreaseRate
+Control+Shift+N=NormalRate
+Control+U=TogglePauseReduction
+Control+B=SetBookmark
+Control+K=ViewBookmarks
+Control+G=GoToPage
+Control+F=JAWSFind
+F3=JAWSFindNext
+Shift+F3=JAWSFindPrior
+
+[PACMate Braille Keys]
+Dot6=Rewind
+Dot46=FastForward

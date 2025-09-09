@@ -1,0 +1,23 @@
+:Script OCRSelectedFile
+:DisplayName OCR-Erkennung der gewählten Datei
+:Synopsis Erkennt den Text der gewählten Datei unter Verwendung von OCR Komponenten.
+:Description Führt eine OCR-Erkennung der gewählten Datei durch und zeigt die Inhalte im Ergebnisbetrachter an. Die Texterkennung (OCR) wird in der gewählten Datei ausgeführt, nicht auf die Bildschirminhalte.
+:Category Optical Character Recognition
+:SearchRank 1
+
+:Script PictureSmartWithSelectedFile
+:DisplayName Picture Smart auf aktuell gewählter Datei
+:Synopsis Beschreibt die aktuell gewählte Datei.
+:Optional
+:Param int/serviceOptions Additional Picture Smart service options. See HJConst.jsh for option constants, all prefixed by PSServiceOptions_.
+:Category Picture Smart
+:Keywords Abbildung, Foto, Bild, Fotografie, Grafik, beschreiben, erkennen
+:Version JAWS/20.00
+:SearchRank 1
+
+:script AddressBar
+:DisplayName  Breadcrumb-Leiste oder Adressleiste lesen
+:Synopsis Liest die Breadcrumb-Leiste oder Adressleiste.
+:Description Liest die Breadcrumb-Leiste in Windows 11. Liest die Adressleiste in Windows 10. Zweimal schnell drücken für die Ansicht im virtuellen Betrachter.
+:Version JAWS/25.00
+:SearchRank 1

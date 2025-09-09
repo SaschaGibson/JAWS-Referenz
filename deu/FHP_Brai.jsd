@@ -1,0 +1,627 @@
+:function FHPBrailleUnhideBrailleCursor
+:Description If BrailleCursor is hidden, it unhides it
+:Category Braille
+
+:function FHPBraille2DTogglePCMode
+:Synopsis Toggle between PC mode and Navigation mode on Braillex 2D-Screen
+:Description Toggle between PC mode and Navigation mode on Braillex 2D-Screen
+:Category Braille
+
+:function FHPBraille2DToggleReadingMode
+:Synopsis Toggle between PC mode and Reading mode on Braillex 2D-Screen
+:Description Toggle between PC mode and Reading mode on Braillex 2D-Screen
+:Category Braille
+
+:function FHPBrailleKeyPCMode
+:Synopsis Turns on PC mode
+:Description Turns on PC mode
+
+:function FHPBrailleKeyNavigationMode
+:Synopsis Turns on Navigation mode
+:Description Turns on Navigation mode
+
+:function FHPBrailleKeyReadingMode
+:Synopsis Turns on reading mode
+:Description Turns on reading mode
+
+:function FHPBrailleKeySpeechMode
+:Synopsis Turns on Navigation mode
+:Description Turns on Navigation mode
+
+:function FHPBrailleKeyBrailleMode
+:Synopsis Turns on braille mode
+:Description Turns on braille mode
+
+:function FHPBrailleKeyBrailleSpeechMode
+:Synopsis Switch has no function
+:Description Switch has no function
+
+:function FHPcursorup
+:Synopsis Cursor up in PC mode
+:Description Cursor up in PC mode
+
+:function FHPcursordown
+:Synopsis Cursor down in PC mode
+:Description Cursor down in PC mode
+
+:function FHPcursorright
+:Synopsis Cursor right in PC mode
+:Description Cursor right in PC mode
+
+:function FHPcursorleft
+:Returns int No Return Description
+:Synopsis Cursor left in PC mode
+:Description Cursor up in PC mode
+
+:function FHPBrailleTab
+:Synopsis TAB in PC mode
+:Description TAB in PC mode
+
+:function FHPBrailleShiftTab
+:Synopsis Shift+TAB in PC mode
+:Description Shift+TAB in PC mode
+
+:function FHPBrailleEscape
+:Synopsis Escape in PC mode
+:Description Escape in PC mode
+
+:function FHPBrailleEnter
+:Synopsis Enter in PC mode
+:Description Enter in PC mode
+
+:function FHPBraillePriorLine
+:Synopsis Moves Brailleline to prior line
+:Description Moves Brailleline to prior line
+
+:function FHPBrailleNextLine
+:Synopsis Moves Brailleline to next line
+:Description Moves Brailleline to next line
+
+:function FHPBraillePanLeft
+:Synopsis pans Brailleline left
+:Description pans Brailleline left
+
+:function FHPBraillePanRight
+:Synopsis pans Brailleline right
+:Description pans Brailleline right
+
+:function FHPBrailleSpeechPriorLine
+:Synopsis Moves Brailleline to prior line and speaks it
+:Description Moves Brailleline to prior line and speaks it
+
+:function FHPBrailleSpeechNextLine
+:Synopsis Moves Brailleline to next line and speaks it
+:Description Moves Brailleline to next line and speaks it
+
+:function FHPBrailleSpeechPanLeft
+:Synopsis pans Brailleline left and speaks new line
+:Description pans Brailleline left and speaks new line
+
+:function FHPBrailleSpeechPanRight
+:Synopsis pans Brailleline right and speaks new line
+:Description pans Brailleline right and speaks new line
+
+:function FHPRouting
+:Synopsis Clicks on corresponding screen position
+:Description Clicks on corresponding screen position
+
+:function FHPLineRouting
+:Synopsis moves brailleline to according screen position
+:Description moves brailleline to according screen position
+
+:function FHPBrailleTurnMarkingOff
+:Synopsis Turns off Braille marking
+:Description Turns off Braille marking
+
+:function FHPBrailleShowBoldMarking
+:Synopsis Turns on bold marking
+:Description Turns on bold marking
+:Category Braille
+
+:function FHPBrailleShowHighlightMarking
+:Synopsis Turns on highlight marking
+:Description Turns on highlight marking
+:Category Braille
+
+:function FHPBrailleShowItalicMarking
+:Synopsis Turns on italic marking
+:Description Turns on italic marking
+:Category Braille
+
+:function FHPBrailleShowUnderlineMarking
+:Synopsis Turns on underline marking
+:Description Turns on underline marking
+:Category Braille
+
+:function FHPBrailleShowAllMarking
+:Synopsis Turns on all marking
+:Description Turns on all marking
+:Category Braille
+
+:function FHPBrailleToggleCharactersAndAttributes
+:Synopsis Toggles between character and attribute
+:Description Toggles between character and attribute
+:Category Braille
+
+:function FHPBTA
+:Returns int current marking
+:Synopsis Switch for braille marking
+:Description Switch for braille marking
+:Category Braille
+:Param int/direction No Description
+
+:function FHPBNA
+:Synopsis speaks selected marking
+:Description speaks selected marking
+:Category Say
+:Param int/Attribute No Description
+
+:function FHPBrailleToggleAttributeUp
+:Synopsis Selects previous marking
+:Description Selects previous marking
+:Category Application
+
+:function FHPBrailleToggleAttributeDown
+:Synopsis Selects next marking
+:Description Selects next marking
+:Category Application
+
+:function FHPBrailleCheckTopLeft
+:Synopsis special positioning on desktop and in Braille viewer
+:Description special positioning on desktop and in Braille viewer
+:Category Braille
+
+:function FHPBrailleShowWindowsTop
+:Synopsis shows and reads first line in window
+:Description shows and reads first line in window
+:Category Braille
+
+:function FHPBrailleShowWindowsBottom
+:Synopsis Shows and reads windows bottom
+:Description Shows and reads windows bottom
+:Category Braille
+
+:function FHPBrailleToggle68Dots
+:Synopsis Toggles between 6 and 8 dot braille
+:Description Toggles between 6 and 8 dot braille
+:Category Braille
+
+:function FHPToggleCursorMode
+:Synopsis toggles between JAWS and PC cursor
+:Description toggles between JAWS and PC cursor
+:Category Braille
+
+:function FHPBrailleToggleCursorShape
+:Synopsis toggles cursor shape between dot78 and block
+:Description toggles cursor shape between dot78 and block
+:Category Braille
+
+:function FHPBrailleActiveCursorTracking
+:Synopsis toggles cursor following
+:Description toggles cursor following
+:Category Braille
+
+:function FHPBrailleSelectText
+:Synopsis text is marked with routing keys
+:Description text is marked with routing keys
+:Category Braille
+
+:function FHPBrailleToggleVertical
+:Synopsis shows vertical information on horizontal braille line
+:Description shows vertical information on horizontal braille line 2D with BDAS only
+:Category Braille
+
+:function FHPBrailleLineMode
+:Synopsis turns on line mode
+:Description turns on line mode
+:Category Braille
+
+:function FHPBrailleStructuredMode
+:Synopsis turns on structured mode
+:Description turns on structured mode
+:Category Braille
+
+:function FHPActivateTaskList
+:Synopsis shows JAWS Tasklist
+:Description shows JAWS Tasklist
+:Category Braille
+
+:function FHPBrailleManager
+:Synopsis starts BDAS Configuration manager
+:Description starts BDAS Configuration manager
+:Category Braille
+
+:function FHP_RunJAWSManager
+:Synopsis starts JAWS manager with BDAS Configuration Manager included
+:Description starts JAWS manager with BDAS Configuration Manager included
+:Category Braille
+
+:function FHPAttributSettings
+:Synopsis display the attribute configuration dialog
+:Description display the attribute configuration dialog
+:Category Braille
+
+:function FHPBrailleShowAllOrNothing
+:Returns string select value
+:Synopsis toggles between all and no attribute display
+:Description toggles between all and no attribute display
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPIdentifyAttr
+:Returns string No Return Description
+:Synopsis identifies the attribute combination
+:Description identifies the attribute combination
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPBrailleSettings
+:Synopsis shows braille configuration dialog
+:Description shows braille configuration dialog
+:Category Braille
+
+:function PressEsc
+:Synopsis help function to close dialog
+:Description help function to close dialog
+:Category Braille
+
+:function FHPBrailleKompLine
+:Returns string selected mode
+:Synopsis toggles between compressed and normal mode
+:Description toggles between compressed and normal mode
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPWorkingMode
+:Synopsis shows working mode configuration dialog
+:Description shows working mode configuration dialog
+:Category Braille
+
+:function FHPToggleWorkingMode
+:Returns string selected working mode
+:Synopsis switches to next working mode
+:Description switches to next working mode
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPSwitchReadingNaviMode
+:Returns string No Return Description
+:Synopsis toggles reading navigation mode between on and off
+:Description toggles reading navigation mode between on and off
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPSwitchProfiMode
+:Returns string value to be displayed
+:Synopsis toggles expert mode between on and off
+:Description toggles expert mode between on and off
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPSwitchWordStatusCell
+:Returns string No Return Description
+:Synopsis changes word cell display
+:Description changes word cell display
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPActiveModeOption
+:Returns string No Return Description
+:Synopsis selects the next braille mode
+:Description selects the next braille mode
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPGradeTwoModeOption
+:Returns string state
+:Synopsis turns on/off grade two translation
+:Description turns on/off grade two translation
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPExpandCurrentWordOption
+:Returns string state
+:Synopsis turns on/off word expansion
+:Description turns on/off word expansion
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPSixOrEightDotOption
+:Returns string state
+:Synopsis toggles between 6 and 8 dots
+:Description toggles between 6 and 8 dots
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPBraillexEL2R
+:Synopsis EAB two steps right
+:Description EAB two steps right; handles different working modes
+:Category Braille
+
+:function FHPBraillexEL2L
+:Synopsis EAB two steps left
+:Description EAB two steps left; handles different working modes
+:Category Braille
+
+:function FHPBraillexEL2U
+:Synopsis EAB two steps up
+:Description EAB two steps up, handles different working modes
+:Category Braille
+
+:function FHPBraillexEL2D
+:Synopsis EAB two steps down
+:Description EAB two steps down, handles different working modes
+:Category Braille
+
+:function FHPBraillexEL1R
+:Synopsis EAB one step right
+:Description EAB one step right, handles working mode
+:Category Braille
+
+:function FHPBraillexEL1L
+:Synopsis EAB one step left
+:Description EAB one step left, handles working mode
+:Category Braille
+
+:function FHPBraillexEL1U
+:Synopsis EAB one step up,
+:Description EAB one step up, handles working mode
+:Category Braille
+
+:function FHPBraillexEL1D
+:Synopsis EAB one step down
+:Description EAB one step down, handles working mode
+:Category Braille
+
+:function FHPBraillexELSpeakBrailleLine
+:Synopsis speaks the braille line if speaking reading mode is turned on
+:Description speaks the braille line if speaking reading mode is turned on
+:Category Braille
+
+:function FHPBrailleMoveLeft
+:Synopsis moves braille display to start of line
+:Description moves braille display to start of line
+:Category Braille
+
+:function FHPBrailleMoveRight
+:Synopsis moves braille display to end of line
+:Description moves braille display to end of line
+:Category Braille
+
+:function RouteInvisibleToBraille
+:Synopsis routes invisible to braille cursor
+:Description routes invisible to braille cursor and turns on Invisible Cursor
+:Category Cursor
+
+:function RouteBrailleToInvisible
+:Synopsis routes braille to invisible cursor
+:Description routes braille to invisible cursor and turns on Braille Cursor
+:Category Cursor
+
+:function FHPMarkScript
+:Returns string No Return Description
+:Synopsis Used to display and toggle this marking option.
+:Description Used to display and toggle this marking option.
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPMarkColor
+:Returns string No Return Description
+:Synopsis Used to display and toggle this marking option.
+:Description Used to display and toggle this marking option.
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPMarkStrikeOut
+:Returns string No Return Description
+:Synopsis Used to display and toggle this marking option.
+:Description Used to display and toggle this marking option.
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPMarkItalic
+:Returns string No Return Description
+:Synopsis Used to display and toggle this marking option.
+:Description Used to display and toggle this marking option.
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPMarkUnderline
+:Returns string No Return Description
+:Synopsis Used to display and toggle this marking option.
+:Description Used to display and toggle this marking option.
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPMarkBold
+:Returns string No Return Description
+:Synopsis Used to display and toggle this marking option.
+:Description Used to display and toggle this marking option.
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPMarkHighlight
+:Returns string No Return Description
+:Synopsis Used to display and toggle this marking option.
+:Description Used to display and toggle this marking option.
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPMarkOption
+:Returns string state
+:Synopsis changes the selected marking option
+:Description changes the selected marking option
+:Category Braille
+:Param int/iRetCurVal No Description
+:Param int/iOption No Description
+
+:function MarkingBit
+:Returns int No Return Description
+:Synopsis new attribute marking bit
+:Description new attribute marking bit
+:Category Application
+:Param int/mark No Description
+
+:function FHPBraillexELActivateNaviMode
+:Synopsis activates navigation mode
+:Description activates navigation mode
+:Category Braille
+
+:function FHPBraillexELActivateCombiMode
+:Synopsis activates combined mode
+:Description activates combined mode
+:Category Braille
+
+:function FHPBraillexELActivatePcMode
+:Synopsis activates PC mode
+:Description activates PC mode
+:Category Braille
+
+:function FHPBraillexELActivateLineMode
+:Synopsis activates line mode
+:Description activates line mode
+:Category Braille
+
+:function FHPBraillexELActivateStrukturedMode
+:Synopsis activates structured mode
+:Description activates structured mode
+:Category Braille
+
+:function FHPBraillexELToggelProfiMode
+:Synopsis turns on/off profi mode
+:Description turns on/off profi mode
+
+:function FHPBraillexELToggelSpeakingNaviMode
+:Synopsis turns on/off speaking navigation mode
+:Description turns on/off speaking navigation mode
+
+:function FHPLoadSavedBrailleSettings
+:Synopsis loads application specific braille modes
+:Description loads application specific braille modes, if not available previous settings are unchanged
+:Category Braille
+
+:function FHPToggelExtendedMode
+:Synopsis turns on/off extended mode
+:Description turns on/off extended mode
+
+:function ProfiModeActive
+:Synopsis tests if focus is in a menu
+:Description tests if focus is in a menu
+:Category Application
+
+:function FHPExpandDlg
+:Synopsis expands HJDialogs
+:Description expands HJDialogs to display more text
+
+:function FHPSayAndBrailleMessage
+:Synopsis speaks and displays a message
+:Description speaks and displays a message
+:Category Application
+:Param string/psMessage_L No Description
+
+:function FHPSayAndBrailleMessageEx
+:Synopsis speaks and displays a short or long message
+:Description speaks and displays a short or long message
+:Category Application
+:Param string/psMessage_L No Description
+:Param string/psMessage_S No Description
+
+:function FHPRoutingAux
+:Synopsis displays the Screen sensitive help
+:Description displays the Screen sensitive help at the routing position
+:Category Say
+
+:function FHPNewState
+:Synopsis placeholder for extended functionality
+:Description placeholder for extended functionality
+:Category Braille
+
+:function FHPToggleCursorShape
+:Synopsis toggles cursor shape between dot78 and block
+:Description toggles cursor shape between dot78 and block
+
+:function FHPBraillexELCDirectStart
+:Synopsis starts the program according to given parameter
+:Description starts the program according to given parameter
+:Category Application
+:Param int/prognumber No Description
+
+:function FHPBraillexELCDirectStartInit
+:Synopsis start directstart program configuration
+:Description start directstart program configuration
+:Category Application
+
+:function FHPBrailleActiveMovesBraille
+:Synopsis ActiveMovesBraille for Papenmeier Braillex
+:Description ActiveMovesBraille for Papenmeier Braillex
+:Category Braille
+
+:function FHPBrailleFuncLURU
+:Synopsis usually assigned to left switch up, right switch up
+:Category Braille
+
+:function FHPBrailleFuncLURD
+:Synopsis usually assigned to left switch up, right switch down
+:Category Braille
+
+:function FHPBrailleFuncLDRU
+:Synopsis usually assigned to left switch down, right switch up
+:Category Braille
+
+:function FHPBrailleFuncLDRD
+:Synopsis usually assigned to left switch down, right switch down
+:Category Braille
+
+:function FHPBrailleSplitMode
+:Synopsis SetBrailleView for Papenmeier Braillex
+:Description SetBrailleView for Papenmeier Braillex
+
+:function FHPBrailleSplitToggleSide
+:Synopsis switch side for braille split view
+:Description switch side for braille split view
+:Category Braille
+
+:function FHPBrailleSplitPriorLine
+:Synopsis BrailleSplitPriorLine for Papenmeier Braillex
+:Description BrailleSplitPriorLine for Papenmeier Braillex
+:Category Braille
+
+:function FHPBrailleSplitNextLine
+:Synopsis BrailleSplitNextLine for Papenmeier Braillex
+:Description BrailleSplitNextLine for Papenmeier Braillex
+:Category Braille
+
+:function FHPBrailleSplitPanLeft
+:Synopsis BrailleSplitPanLeft for Papenmeier Braillex
+:Description BrailleSplitPanLeft for Papenmeier Braillex
+:Category Braille
+
+:function FHPBrailleSplitPanRight
+:Synopsis BrailleSplitPanRight for Papenmeier Braillex
+:Description BrailleSplitPanRight for Papenmeier Braillex
+:Category Braille
+
+:function FHPGradeTwoModeOption
+:Returns string state
+:Synopsis turns on/off grade two translation
+:Description turns on/off grade two translation
+:Category Braille
+:Param int/iRetCurVal No Description
+
+:function FHPToggleG2CapSuppression
+:Returns string current state
+:Synopsis turns on/off the suppression of capital letters in Grade 2
+:Description turns on/off the suppression of capital letters in Grade 2
+:Param int/iRetCurVal No Description
+
+:function GetPrimaryBrailleProfile
+:Returns string name of the braille profile
+:Synopsis retrieves the active braille profile
+:Description retrieves the active braille profile for the active application
+
+:function FHPContractedBrailleType
+:Returns string current selection
+:Synopsis retrieves the type of contracted Braille
+:Description retrieves the type of contracted Braille
+:Param int/iRetCurVal No Description
+

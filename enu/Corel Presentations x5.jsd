@@ -1,0 +1,119 @@
+:script sayNextLine
+
+:script HotKeyHelp
+
+:function glbFocusRead
+
+:function HandleCustomWindows
+
+:script sayNextCharacter
+
+:function SayNonHighlightedText
+
+:script deleteObject
+:Synopsis deletes a character, selection, object or slide
+:Description This script deletes a character, selection, object or slide depending on the UI state and current view. If you delete an object then JAWS will tell you this information.
+
+:function PRArrayFocusRead
+:Synopsis reads the selected item in a PRArrayClass9.32 control
+:Description This function reads the selected item in a PRArrayClass9.32 control.
+
+:script sayObjectDimensionsAndLocation
+:Synopsis speaks the dimensions and top left coordinates of the currently selected object
+:Description This script speaks the dimensions and top left coordinates of the currently selected object. The unit of measure is WP units. One WP unit is 1/1200 inches.
+
+:function KeyPressedEvent
+
+:script shiftTab
+
+:script sayPriorLine
+
+:function AutoStartEvent
+
+:script sayCharacter
+
+:script SayWindowPromptAndText
+
+:script readSpeakerNotes
+:Synopsis reads the speakers notes associated with a slide
+:Description This script reads the speakers notes associated with a slide.
+
+:script readMisspelledAndSuggestion
+:Synopsis reads the misspelled word and suggestion in the Writing Tools Spelling dialog
+:Description This script reads the misspelled word and suggestion in the Writing Tools Spelling dialog.
+
+:script sayLine
+
+:function SayHighlightedText
+
+:function getRealWindow
+:Returns handle No Return Description
+:Param handle/hwnd No Description
+
+:script sayPriorCharacter
+
+:script ScreenSensitiveHelp
+
+:function SayFocusedWindow
+
+:script sayAll
+
+:script nextSlide
+:Synopsis passes a page down to Presentations and reads the next slide title
+:Description This script passes a page down to Presentations and reads the next slide title.
+
+:script upALevel
+:Synopsis Performs the standard Windows Escape command. Checks if the drawing tool has changed and announces the new tool if it has.
+:Description In menus, this script will close the menu and place the focus on the menu bar. In Combo List boxes this script will exit the Combo List box returning focus to the Combo box without making a selection. This script will also close a Context menu. This script Checks if the drawing tool has changed and announces the new tool if it has.
+
+:function FocusChangedEvent
+
+:script windowKeysHelp
+
+:script sayCurrentTool
+:Synopsis says the name of the current drawing tool
+:Description This script speaks a description for the current drawing tool being used in the draw area.
+
+:script AdjustJAWSVerbosity
+:Synopsis brings up a dialog that allows you to adjust several JAWS verbosity levels. Adds Corel Presentations specific options.
+:Description ANSI and graphics are some of the choices you can set verbosity levels for in this list. This script adds Corel Presentations specific options.
+
+:script priorSlide
+:Synopsis passes a page up to Presentations and reads the next slide title
+:Description This script passes a page up to Presentations and reads the next slide title.
+
+:script ToolbarList
+:Synopsis lists the toolbar buttons and clicks the selected button
+:Description This script lists the toolbar buttons and clicks the selected button.
+
+:script sayWord
+
+:script ScriptFileName
+
+:function isWritingToolsActive
+:Returns int true or false
+:Synopsis determines if the Writing Tools window is open
+:Description This function determines if the Writing Tools window is active.
+
+:function toggleUnitsOfMeasure
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis toggles the units of measure reported by JAWS between Points and WP Units (1 WP Unit is 1/1200 inches)
+:Description This function toggles the units of measure reported by JAWS between Points and WP Units (1 WP Unit is 1/1200 inches).
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function SaySlideSorterFocus
+:Synopsis says the focused slide's info in Slide Sorter view
+:Description This function speaks relevant slide information for the focused slide in Slide Sorter View.
+
+:script tab
+
+:function HandleCustomRealWindows
+
+:script SaySlideInfo
+:Synopsis says information about the current slide such as the layout, number of objects, whether it has notes, etc
+:Description This script says information about the current slide such as the layout, number of objects, whether it has notes, etc.
+
+:script SetFocusWritingTools
+:Synopsis Set the focus to the Writing Tools dialogue when focus is lost.
+:Description This script moves the focus to the multi dialogue tag strip, only when the focus has been lost from the Writing Tools dialogue.  this normally occurs when move focus to another application.
+:Category Application

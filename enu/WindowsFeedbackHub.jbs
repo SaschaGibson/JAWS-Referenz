@@ -1,0 +1,18 @@
+;  Section for button is augmented with position, so that buttons in lists may show their position in group.
+[SubtypeCode1]
+components=ContextHelp,state,name,type,position,description
+type=btn
+removed=hotkey
+displayname=
+AlignmentPriority=state,name
+
+; Section for tabcontrol is augmented with position, so that tab controls may show their position in group.
+[SubtypeCode29]
+components=ContextHelp,name,type,state,position,description
+type=tab
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,state
+
+[Information]
+Description=Default  Structured Mode view for Windows Feedback Hub.

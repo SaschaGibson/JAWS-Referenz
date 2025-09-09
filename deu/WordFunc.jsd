@@ -1,0 +1,1047 @@
+:function TrackEvent
+:description Sets the most recent tracked event as the specified type. Used in event tracking to determine which was the most recent tracked event to fire.
+:param int One of the event_ constants in word.jsh.
+
+:function SetDocumentCaretMovementType
+:description Used by navigation scripts and events to determine which was the most recent type of navigation.
+:param int/MovementType One of the Movement Unit Values from hjConst.jsh. This should be the same type as received by the CaretMovedEvent function.
+:optional
+:param int/ForceRecognition If a navigation type should be processed as something other than unit_None but CaretMovedEvent receives the movement unit as 0, repeat the non-zero movement unit type here so that the scripts can recognize it.
+
+:function HasNavigatedForwardInCurrentDocument
+:description Used to test if navigation forward has happened in the document.
+:returns int True if navigation forward has been performed in the current document, false otherwise.
+
+:function GetLastTrackedEvent
+:description Retrieves the type of the most recently tracked event.
+:returns int One of the event types as specified in the event_ constants in word.jsh.
+
+:function GetWordVersion
+:Description Returns the program version, i.e., 11, 12 or 14.
+:Returns int version of Word in use.
+
+:function InitOWord
+:description initializes the word application object.
+:returns object The application object.
+
+:function initializeAppObj
+:Description Initializes the application object reference.
+
+:function isAppObjInvalid
+:Description Determines if the application object has been derreferenced.
+:Returns int true if the application object is invalid, false otherwise.
+
+:function AttachWDEvents
+:description Attaches script functions to events fired by the Word application.
+:returns int TRUE if the events have been attached, FALSE otherwise.
+
+:function InitNewCollections
+:description Creates the collections for storing Word data.
+
+:function IsUpdatingApplicationData
+:description Tests if the data for the application collection is being updated.
+:returns int True if the application collection data is being updated, false otherwise.
+
+:function IsUpdatingDocumentData
+:description Tests if the data for the document collection is being updated.
+:returns int True if the document collection data is being updated, false otherwise.
+
+:function WDApp_DocumentChange
+:description Event fired when a Word document is opened, closed, or when switching to a different document.
+
+:function UpdateCWDOptions
+:description Updates the Word application data collection.
+
+:Function ToggleScreenUpdating
+:Description Turns screen redraw on and off for the document and status windows of the application. Used do disable screen drawing when the selection object is being manipulated.
+:Param Int/nFlag True if screen redraw is turned on, false otherwise.
+
+:function IsCheckSpellingAsYouTypeEnabled
+:description Determines the state of the Check Spelling As You Type option in Word.
+:returns int True if Check Spelling As You Type is enabled, false otherwise.
+
+:function IsCheckGrammarAsYouTypeEnabled
+:description Determines the state of the Check Grammar As You Type option in Word.
+:returns int True if Check Grammar As You Type is enabled, false otherwise.
+
+:function getRangeAtCursor
+:Description Retrieves the range object located at the active cursor location.
+:Returns object The range object if available, otherwise null.
+
+:Function 	RelocateCursorInDocument
+:param int The saved position to where the cursor should be relocated.
+:param int The current position from which the cursor should be relocated.
+
+:Function ConvertMeasurementUnitToSmmUnit
+:description Converts an integer representing a type of unit measure used by Word into a corresponding integer representing an smm unit of measure used by JAWS.
+:param int The unit of measure used by Word.
+:returns int The corresponding smm unit used by JAWS.
+
+:Function GetAppUnitOfMeasure
+:Description Retrieves a text description of the type of units of measure currently set in the application.
+:Returns String The currently set unit of measure in the application.
+
+:Function GetDesiredUnitOfMeasureString
+:Description Retrieves the string for the desired unit of measure.
+:Returns string the desired unit of measure string.
+
+:function UpdateCWDActiveDocument
+:description Updates the collection of data for the active Word document.
+
+:function InDocument
+:description Determines if the focus is in a Word document or Outlook email message where Word is the editor or reader.
+:returns int True or false.
+
+:function GetActiveDocumentName
+:returns string The name of the active Word document.
+
+:function IsActiveDocumentProtected
+:Description Determines whether or not the document has any protection restrictions.
+:Returns int True if the document has no protection restrictions, false otherwise.
+
+:Function IsActiveDocumentProtectedForm
+:Description Determines whether the active document is a protected form.
+:Returns Int True if the document is a protected form, false otherwise.
+
+:function IsActiveDocumentTrackChangesEnabled
+:description determines whether track changes have been enabled in Word for the active document.
+:returns int True if track changes are enabled for the current document, false otherwise.
+
+:function IsReadingViewActive
+:description Determines if the active document is in reading view mode.
+:returns int True if the active document is in reading view mode, false otherwise.
+
+:function isOutlineViewActive
+:description Determines if the active document is in outline view mode.
+:returns int True if the active document is in outline view mode, false otherwise.
+
+:function GetCurrentZoomLevel
+:Description This function determines the zoom level for the active document.
+:Returns Int The zoom level as a percentage.
+
+:Function GetActiveDocumentProtectionStatus
+:description Retrieves a text string describing the protection status of the active Word document.
+:returns string A text describing the document protection status.
+
+:Function GetCurrentTable
+:description Retrieves the object for the current Word table.
+:returns object The current table object.
+
+:Function GetCurrentCell
+:description Retrieves the object for the current Word table cell.
+:returns object The current table cell object.
+
+:Function GetCurrentCellHeadingStyle
+:Description Determines the heading style for the currently active table cell, if any.
+:Returns String The current cell style.
+
+:Function ScrollTableIntoView
+:Description Ensures that when a table gains focus and quick navigation is on, the table is properly in view so that quick navigation keys work as expected.
+:Param Int/BStart True or false depending on starting point in document window.
+
+:function IsCaretInTable
+:Description Uses the object model to determine whether the cursor is within a table when the builtin InTable function call fails. This occurs mainly when selecting text.
+:Returns Int True if in a table; false otherwise.
+
+:function GetCellHeaderText
+:description Removes the end of cell marker from the header to get the text. If the text is empty oor whitespace, a message is returned which says that the column or row header at the index location is blank.
+:param string The cell header, or title, text.
+:param int The type of header, colum or row.
+:param int The index of the row or column.
+:returns string the text of the header, or a message to be used in the place of the header when it is blank.
+
+:function UpdateCWDCurrentTableOnCellChange
+:description Updates the table collection when the cell changes.
+:Param int/nNewCol
+:Param int/nNewRow
+:Param int/nNewNesting
+:Param int/nNewRowColCount
+:Param string/ColHeader
+:Param string/RowHeader
+:Param int/nPrevCol
+:Param int/nPrevRow
+:Param int/nPrevNesting
+:Param int/nPrevRowColCount
+
+:function CellChangedEventSayChangedHeaders
+:description Speaks the changed headers after a cell change occurs in the document.
+
+:function CellChangedEventSayNewPosition
+:description Speaks the new cell position after a cell change occurs in the document.
+:param int/tableNavType The table navigation type when using Word. Because the event order is different in Word than in Outlook editable messages, we send two different variables.
+:param int/tableNavType The table navigation type when editing an email message in Outlook. Because the event order is different in Word than in Outlook editable messages, we send two different variables.
+:param int/caretNavType The caret navigation type when using Word. Because the event order is different in Word than in Outlook editable messages, we send two different variables.
+:param int/caretNavType The caret navigation type when editing an email message in Outlook. Because the event order is different in Word than in Outlook editable messages, we send two different variables.
+:param int/Bool True if the column is changing.
+:param int/bool True if the row is changing.
+
+:function TestForEndOfCellOrRowMarker
+:description Tests whether the document cursor is on an end of cell or row marker.
+:optional
+:param int If this parameter is true, and if the cursor is on the end of cell or row marker, speaks a message reporting the end of cell or row marker.
+:returns int True if the document cursor is on an end of cell or row marker, false otherwise.
+
+:function IsDocumentTableActive
+:description Determines if on a table in the active document.
+:returns int True if a table is active in the document, false otherwise.
+
+:function AtFirstCellInDocumentTable
+:description Determines if the current cell in a document table is the first cell in the table.
+:returns int True if the current cell is the first cell in the document table, false otherwise.
+
+:function AtLastCellInDocumentTable
+:description Determines if the current cell in a document table is the last cell in the table.
+:returns int True if the current cell is the last cell in the document table, false otherwise.
+
+:function GetDocumentTableCellCoordinates
+:Description Gets the coordinates of the current cell in the currently active document table and passes them by reference to the variables specified in the parameter list.
+:Param Int/Column/ByRef References the  current cell column on return.
+:Param Int/Row/ByRef References the  current cell row on return.
+:Returns Int TRUE if the document selection is positioned inside of a table.  In this case, the Row and Column  parameters will have meaningful information placed in them.
+
+:function WarnOnLastcell
+:description speaks a warning to the user that they are on the last cell in the table.
+:param int True if the position of last cell should also be announced in addition to the warning.
+
+:function IsTableUniform
+:returns int True if the current table is uniform, false otherwise.
+
+:Function getCurrentTableCellTitle
+:param int The type of header, column or row.
+:returns string The text of the header for the current cell table.
+
+:Function getCurrentTableCellColumnTitle
+:returns string The text of the column title for the current cell table.
+
+:Function getCurrentTableCellRowTitle
+:returns string The text of the row title for the current cell table.
+
+:function NextRow
+:Description This function attempts to move to the next row in a table if one exists.
+:Returns int
+
+:function PriorRow
+:Description This function attempts to move to the prior rowin a table if one exists.
+:Returns int
+
+:function NextColumn
+:Description This function attempts to move to the next column in a table if one exists.
+:Returns int
+
+:function PriorColumn
+:Description This function attempts to move to the prior column in a table if one exists.
+:Returns int
+
+:Function GetLineSpacingDescription
+:Description Gets the text for the line spacing in points provided by LineSpacingChangedEvent.
+:Param Int/nLineSpacing in points
+:Param int/nLineSpacingRule The wdLineSpacingRule constant from DOM
+:Returns String The text to be announced by LineSpacingChangedEvent when a spacing change is detected.
+
+:function InDocumentList
+:description Dtermines if the cursor is in a list. will also test if the document is active and in focus.
+:returns int true if the cursor is in a list, false otherwise.
+
+:function InList
+:description Dtermines if the cursor is in a list. Assumes that the document is active and in focus.
+:returns int true if the cursor is in a list, false otherwise.
+
+:function sayStyleAtCursor
+:Description Says the style at the caret location.
+
+:Function ToggleSelCTxFlag
+:Description Toggles the indicated selection context flag on/off.
+:Param Int/iFlags The currently set flags.
+:Param Int/iFlag the flag to be toggled.
+
+:function DetermineInlineShapeOleType
+:description Determines the type of ole inline shape.
+:param object The inline shape object.
+:returns int The type of ole inline shape.
+
+:function UpdateCWDSelectionContext
+:description Helper function used by SelectionContextChangedEvent to initialize data.
+:param int nSelectionContextFlags, from SelectionContextChangedEvent.
+:param int nCurrentcontextFlags, flags for the current context.
+:param int nData1, from SelectionContextChangedEvent.
+:param int nData2, from SelectionContextChangedEvent.
+:param string sDesc1, from SelectionContextChangedEvent.
+:param string sDesc2, from SelectionContextChangedEvent.
+:param string sDesc3, from SelectionContextChangedEvent.
+:param string sDesc4, from SelectionContextChangedEvent.
+:param string sDesc5, from SelectionContextChangedEvent.
+
+:function clickFormField
+:Description Finds and left clicks a form field with the mouse.
+
+:function FocusToFirstFormField
+:Description Moves the focus to the first form field in the document and collapses the selection.
+
+:Function isFieldTypeKnown
+:Description Determines whether the field type is a known type.
+:Param string/sType
+:Returns Int True if the field type is known, false otherwise.
+
+:function isFormField
+:Description Determines if the cursor is located in a form field.
+:returns int True if the cursor is currently on a form field, false otherwise.
+
+:function GetSelectionContextRevisionType
+:description Retrieves the type of revision at the selection context.
+:returns int The type of revision.
+
+:function GetSelectionContextRevisionAuthor
+:description Retrieves the author of the revision at the cursor position in the document.
+:returns string The author of the revision at the cursor.
+
+:function GetSelectionContextRevisionText
+:description Retrieves the text of the revision at the cursor position in the document.
+:returns string The text of the revision at the cursor.
+
+:function GetSelectionContextRevisionDate
+:description Retrieves the date of the revision at the cursor position in the document.
+:returns string The date of the revision at the cursor.
+
+:function getOleObjectTypeAndState
+:Description Returns a string describing the supplied OLE object.
+:Param object The shape object.
+:Returns string The ole object type and state string.
+
+:function GetInlineShapeAlternativeText
+:description Retrieves the alternative text, if any, of the detected selected inline shape. Selection context for shapes must be on to retrieve this information.
+:returns string The alternative text, if any, for the detected selection inline shape.
+
+:function GetInlineShapeHeight
+:description Retrieves the height of the detected selected inline shape. Selection context for shapes must be on to retrieve this information.
+:returns int The height of the detected selected inline shape.
+
+:function GetInlineShapeWidth
+:description Retrieves the width of the detected selected inline shape. Selection context for shapes must be on to retrieve this information.
+:returns int The width of the detected selected inline shape.
+
+:function GetInlineShapeHeightInUnitsOfMeasure
+:description Retrieves the height of the detected selected inline shape in the user's chosen unit of measure. Selection context for shapes must be on to retrieve this information.
+:returns string The height of the detected selected inline shape in the user's chosen unit of measure.
+
+:function GetInlineShapeWidthInUnitsOfMeasure
+:description Retrieves the width of the detected selected inline shape in the user's chosen unit of measure. Selection context for shapes must be on to retrieve this information.
+:returns string The width of the detected selected inline shape in the user's chosen unit of measure.
+
+:Function getInlineShapeTypeString
+:Description Retrieves a descriptive string describing the supplied inline shape. An inline shape could be a picture etc and differs from an OLE object because it is stored in the text layer rather than the drawing layer. JAWS can detect inline shapes if Border and Picture Detection is enabled, whereas OLE objects must be converted to inline shapes first.
+:Param object The inline shape object.
+:Returns string A description of the inline shape
+
+:function getBrlInlineShapeTypeString
+:Description Returns a string describing an inline shape suitable for output to a braille display.
+:Returns string The Braille representation of inline shape.
+
+:function GetActiveInlineShapeOleType
+:description Retrieves the type of inline shape ole type at the document cursor location.
+:returns int The inline shape ole type if one is determined to exist at the cursor, 0 otherwise.
+
+:function convertShapesToInline
+:Description Converts shapes to inline shapes so JAWS can detect them. Shapes are in the drawing layer, whereas inline shapes are in the text layer of a document. Shapes are floating objects, anchored to a point on a page, making it difficult for JAWS to detect when the caret lands on one. Inline shapes are inline so JAWS can detect and describe them as you move the caret through the document.
+
+:function sayInlineShape
+:Description Says the inline shape at the cursor.
+
+:function sayInlineShapeHelp
+:Description Says Help information for inline shapes.
+
+:Function getGraphicTypeString
+:description Retrieves a text string to match the numeric graphic type belonging to Word.
+:param int type The numeric graphic type.
+:returns string The text matching the numeric graphic type.
+
+:Function getRevisionTypeString
+:description Retrieves a text string to match the numeric revision type belonging to Word.
+:param int type The numeric revision type.
+:returns string The text matching the numeric revision type.
+
+:function getColorDescription
+:Description Retrieves the name, or description, for a color constant as defined by MicroSoft Word.
+:Param int/color color value see MSWord object browser.
+:optional
+:param int ColorIndex. If colorIndex is supplied, and color cannot be determined using the Color parameter, the ColorIndex is used as a backup method for retrieving the color.
+:Returns string Color name or description.
+
+:function GetPatternDescription
+:Description Retrieves the name of the texture pattern for a shaded object.
+:Param Int/iPattern The numeric value of the pattern.
+:Returns String The name of the pattern.
+
+:function GetPatternPercentage
+:Description Retrieves the percentage of shading of the texture pattern for a shaded object.
+:Param Int/iPattern The numeric value of the pattern.
+:returns int The percentage of the shading pattern, 0 through 100.
+
+:function getBorderedRange
+:Description Determines the extent of the bordered region starting at the current selection and working outward.
+:Returns object The range object representing bordered region.
+
+:function getBorderLineStyle
+:Description Retrieves a string describing the border object's line style.
+:Param object/border The border object.
+:Returns string A description of the border line style.
+
+:function getBorderLineWidth
+:Description Retrieves a string describing the line width of a border object in points. 72 points = 1 inch
+:Param object/border The border object.
+:Returns string The width of line in points.
+
+:function getBorderArtStyle
+:Synopsis Gets the  art style description for the border
+:Description Retrieves a string describing the art style of a border object.
+:Param object The border object.
+:Returns string A description of the border art style.
+
+:function GetBorderName
+:Description Retrieves a border name based on the border type, such as top, left, etc.
+:Param int The border type, see MS Word object browser.
+:Returns string The name of the border.
+
+:function GetBorderDescription
+:Description Retrieves a detailed description of the border around the supplied object.
+:Param object The object whose border is to be described.
+:Param string A string naming the object that the border surrounds, eg page, paragraph, text, cell, table etc.
+:returns string A detailed description of the border surrounding the object.
+
+:function DescribeBorder
+:Synopsis Describes the border around the supplied object
+:Description Ddescribes the border around the supplied object using the specified voice. The text unit is passed as a parameter so JAWS knows what object is being described. For example: is it a bordered paragraph, a bordered block of arbitrary text, a bordered section? JAWS tries to group like borders together. For example: if a cell has its right border set as a double line rather than a single line, JAWS will attempt to group like borders when describing them. It will say something like, "top, left and bottom red single line", "right red double line."
+:Param object The object whose border is to be to described.
+:Param string The voice constant to use, eg vctx_message, etc, see hjconst.jsh.
+:Param string/textUnit a string describing the text unit that the border surrounds, eg page, paragraph, text, cell, table etc.
+
+:function DescribeBorderOfTextUnit
+:Description Describes the border around the current selection. It describes each border as it finds it. For example, if arbitrary text is surrounded by a border that is inside a bordered paragraph that is inside a bordered section, this script describes each bordered region working from the innermost outward.
+
+:function SayTextInBorderedRegion
+:Description First describes the border surrounding the text at the insertion point, then says the bordered text containing the insertion point.
+
+:function getPaneName
+:Description Retrieves the name of the pane based on the provided story as WDStory.
+:param int/ The story type as wdStory.
+:returns string The pane name based on the provided story as WDStory.
+
+:function GetActiveDocumentViewName
+:description Retrieves a string for the active Word document view name.
+:returns string the name of the active document view.
+
+:function SayOrBufferFormattedMessage
+:description When user buffer is active or the passed output type is ot_user_buffer, the message is added to the user buffer; otherwise, the message is spoken.
+:param int/iOutPutType The output type of the message
+:param string/sTextLong The long version of the formatted message
+:param string/sTextShort The short version of the formatted message
+
+:function IsCellTextBlank
+:description Determines if the cell text is empty or contains only whitespace.
+:param string The cell text.
+:returns int True if the cell text is empty or contains only whitespace, false otherwise.
+
+:function GetCellPatternAndShadingDescription
+:description Retrieves a description of the background shading and/or pattern for the cell.
+:optional
+:param object The cell for which the information is to be retrieved. If not provided, uses the current table cell.
+:returns string A description of the cell's background shading and pattern.
+
+:function GetTableScreenSensitiveHelpInfo
+:Description Retrieves a detailed description of the current table and cell.
+:returns string A detailed description of the current table and cell.
+
+:function sayActivePane
+:Description Speaks the name, or type and number of the active pane.
+
+:function SayCellHeaders
+:description Speaks the cell row and/or column table cell headers.
+:Optional
+:param int The output type to be used for the information.
+
+:function GetTableLastCellWarningMessage
+:description determines if the user is on the last cell in the table, and if so retrieves a warning message about pressing tab adding a new row to the table.
+:returns string If the user is on the last cell of the table, the text of the warning message for when the user is on the last cell of a table.
+:Function GetCellCoordinatesMessage
+:description Retrieves a message with information about the row and column number of the current table cell.
+:param int The output type to be used for the information.
+:returns string The row and column information for the current table cell.
+
+:function SayCellCoordinatesInfo
+:description Speaks a message giving the cell coordinates using the given output type if specified, otherwise speaks the cell coordinates message using the position output type. If the cell is the last cell in the table, speaks a warning message using the help output type.
+:optional
+:param int The output type to be used when speaking the cell coordinates message.
+
+
+:function sayCellPromptAndText
+:Description Helper function to SayWindowTypeAndText that announces the current table cell details.
+
+:Function SayF1Help
+:Description Speaks the F1 help prompt or the text of the F1 help itself, depending on the user settings for the extra help option.
+
+:function getFormfieldF1Help
+:description Retrieves the text, if any, for F1 help associated with the active formfield.
+:returns string The F1 help text of the formfield.
+
+:function GetUnderlineStyleString
+:description Retrieves the name of the underline style corresponding with its defined constant value.
+:param int The defined constant integer value of an underline style
+:returns string The name of the underline style corresponding with the defined integer constant.
+
+:function GetLineSpacing
+:Description Retrieves text describing the line spacing for the current paragraph.
+:returns string The text describing the line spacing.
+
+:function GetListTypeAndItemIdentifier
+:Description Retrieves a description of the current list type and current item identifier (if appropriate).
+:Returns string The description of the current list type and current item identifier.
+
+:Function GetFontSizeString
+:Description Retrieves the current font size of the selected range in points.
+:Returns String The font size in points.
+
+:Function GetFormFieldHelpMessage
+:description Retrieves the text of the formfield help message.
+:param int The output type of the message.
+:returns string The text of the formfield help message.
+
+:Function GetOutlineViewStatusMessage
+:description Retrieves the text of the outline view status help message.
+:param int The output type of the message.
+:returns string The text of the outline view status help message.
+
+:function getRangeTextColumnNumber
+:Description Calculates and retrieves the text column number of a specified range if the range is in newspaper style columns and the view is Print/Page layout.
+:Param object The range object
+:Returns int The column number of the specified range if the range is in multiple text columns.
+
+:function GetDesiredUnitTypeOfMeasure
+:Description Obtains the desired measurement unit type based on the user's desired unit of measure.
+:Param Int The application's default measurement unit type.
+:Returns Int The desired measurement unit type.
+
+:function pointsToDefaultUnits
+:Description Takes an integer value representing a measurement in points and returns the value in the appropriate unit of measure with the word describing the measure appended.
+:Param int The measurement in points to convert to the default unit of measure
+:Returns string x cm, x inches, etc.
+
+:function isMultipleColumnText
+:Description Determines if text being displayed is in multiple columns.
+:Returns int true or false
+
+:function GetNewspaperColumnHelpMessage
+:description Retrieves information about the current section's newspaper style columns.
+:param int The output type of the message to be used.
+:returns string The newspaper column help message.
+
+:Function GetDocTableCount
+:Description Retrieves the number of tables in the active document.
+:Returns Int The number of tables in the active document.
+
+:function GetDocItemsMessage
+:Description Retrieves a message describing the number of tables, fields and objects in the drawing and text layers of the active document and gives instructions on how to convert from drawing layer objects to text layer objects so JAWS can detect them.
+:returns string The message describing the items in the drawing and text layers.
+
+:function GetPageNumberInfo
+:Description Retrieves a description of the page numbers and alignments for the specified header or footer.
+:Param object The headerFooter object
+:Returns string The description of page number alignments and the actual numbers.
+
+:function isEvenNumber
+:Description Dtermines whether a number is an even number.
+:Param int The number to test.
+:Returns int true if the number is even, false otherwise.
+
+:function DetectDocumentHeadersFooters
+:description Used to detect and announce the presence of headers and footers in a document section.
+:optional
+:param int The section number for which headers and footers are to be detected. If not supplied, 1 is used for the section number.
+
+:function GetSectionHeadersFootersMessage
+:description If the document section has headers or footers, returns a message indicating that headers and/or footers exist.
+:param object The section for which header/footer information is to be retrieved.
+:param int The current page number in the document.
+:optional
+:param int If true, includes text of headers and footers; default is false.
+:param int The output type to use when creating the return string.
+:returns string Information about the section's headers and footers, if present.
+
+:function GetSectionInfoMessage
+:Description Retrieves a description of the number of sections in the document and details of the current section including headers and footers, text columns and margins.
+:returns string the description of the number of sections in the document and details of the current section.
+
+:function GetDocumentProtectionStatusMessage
+:Description Retrieves a message describing protection status of the active document.
+:returns string The message describing the document protection status.
+
+:function SayLineAndColumn
+:Description Speaks the line and column of the caret.  It no longer requires that the status line be visible.
+
+:function sayDocumentWindowHelp
+:Description Provides Screen Sensitive Help for the document window.
+
+:function ProofreadingElementToContextFlag
+:description Retrieves the flags for the selection context type corresponding to the specified proofreading element type.
+:param int The proofreading element type, as specified in hjConst.jsh.
+:returns int The selection context flag, as specified in hjConst.jsh.
+
+:Function GetNearestProofreadingElementText
+:Description Retrieves the text of the nearest proofreading element in the active document of the specified proofreading element type.
+:Param int The type of element to be processed. See hjconst.jsh for the proofreading element types.
+:Returns String The text of the nearest proofreading element of the type sought.
+
+:function CleanUpDocumentTextList
+:description Removes extra returns and tab characters that cause visual square Unicode symbolb to appear with each item in list.
+:param string The list of document text strings.
+:returns string The list of document text strings with undesirable characters replaced with spaces.
+
+:function getActiveFieldName
+:description Retrieves the name, or prompt, of the active field in the document.
+:returns string The name, or prompt, of the active field in the document.
+
+:function getActiveFieldBrlTypeString
+:description Retrieves the braille type string for the active field in a document.
+:returns string The type string to be used in braille for the active field in a document.
+
+:Function GetFieldTypeBrlString
+:description Retrieves a string to be used when outputting the type in braille.
+:param int The type of field.
+:returns string The string to be output in braille for the type.
+
+:function ListFields
+:description Lists all the fields and form fields in a document and allows the user to select one and move to its location.
+
+:Function GotoHyperlink
+:description Activates the selected hyperlink.
+
+:Function IsHyperlinkField
+:description Determines if the selection is on a hyperlink.
+:returns int true or false.
+
+:function listSpellingErrors
+:Description Lists the words marked as misspelled and allows the user to jump directly to the spelling error.
+
+:function listGrammaticalErrors
+:Description Lists the grammatical errors in the document and allows the user to move directly to the chosen grammatical error.
+
+:function GetActiveBookmarkName
+:description Retrieves the name of the bookmark at the document cursor location.
+:returns string The name of the bookmark at the document cursor.
+
+:function listBookmarks
+:Description Lists all bookmarks and allows the user to select a bookmark and move to the text to its location in the document.
+
+:Function GetCommentInfo
+:Description Retrieves the relevant comment information at the current cursor location when in the comment pane.
+:Param int/byRef The comment number.
+:Param string/byRef The author.
+:Param string/byRef The initials.
+
+:function listComments
+:Description Lists all comments and allows the user to select a comment and move to the text to which it applies.
+
+:function ListFootnotes
+:Description Lists all footnotes and allows the user to select a footnote and move to the text to which it applies.
+
+:function ListEndnotes
+:Description Lists all endnotes and allows the user to select an endnote and move to the text to which it applies.
+
+:function listRevisions
+:Description Lists the revisions in the active document and allows the user to choose and move to a revision in the list.
+
+:Function SaySelectedShape
+:Description Announces the type of shape or inline object.
+:param string The voice to use when speaking the message.
+:param int The output type to use when speaking the message.
+:Param object The currently selected shape or inline object
+
+:Function GetObjectCount
+:Description Determines the number of inline shapes and/or embedded objects in the document or Outlook message.
+:Returns Int The number of objects found.
+
+:function listObjects
+:Description Lists and allows user to jump directly to inline objects such as clipart, etc. The caret is located as near the object as possible.
+
+:function SaySelectionContextCommentChange
+:description Used by SelectionContextChangedEvent to speak comment contextual change.
+:param int True if SayAll is active, false otherwise.
+:param int The output type to use when speaking.
+:param int The selection context flags as received by SelectionContextChangedEvent.
+:param int The selection context at the cursor.
+
+:function SaySelectionContextRevisionChange
+:description Used by SelectionContextChangedEvent to speak revision contextual change.
+:param int True if SayAll is active, false otherwise.
+:param int The output type to use when speaking.
+:param int The selection context flags as received by SelectionContextChangedEvent.
+:param int The selection context at the cursor.
+
+:function SaySelectionContextBookmarkChange
+:description Used by SelectionContextChangedEvent to speak bookmark contextual change.
+:param int True if SayAll is active, false otherwise.
+:param int The output type to use when speaking.
+:param int The selection context flags as received by SelectionContextChangedEvent.
+:param int The selection context at the cursor.
+
+:function SaySelectionContextFieldChange
+:description Used by SelectionContextChangedEvent to speak field contextual change.
+:param int True if SayAll is active, false otherwise.
+:param int The output type to use when speaking.
+:param int The selection context flags as received by SelectionContextChangedEvent.
+:param int The selection context at the cursor.
+
+:function SaySelectionContextFormfieldChange
+:description Used by SelectionContextChangedEvent to speak formfield contextual change.
+:param int True if SayAll is active, false otherwise.
+:param int The output type to use when speaking.
+:param int The selection context flags as received by SelectionContextChangedEvent.
+:param int The selection context at the cursor.
+
+:Function getSelectionCommentText
+:returns string the text.
+:Description Returns the text to be displayed in Graille for the associated item.
+
+:Function getSelectionFootnoteText
+:returns string the text.
+:Description Returns the text to be displayed in Graille for the associated item.
+
+:Function getSelectionEndnoteText
+:returns string the text.
+:Description Returns the text to be displayed in Graille for the associated item.
+
+:Function getSelectionCommentAuthor
+:returns string the text.
+:Description Returns the text to be displayed in Graille for the associated item.
+
+:function getSelectionFootnoteAuthor
+:returns string the text.
+:Description Returns the text to be displayed in Graille for the associated item.
+
+:function getSelectionEndnoteAuthor
+:returns string the text.
+:Description Returns the text to be displayed in Graille for the associated item.
+
+:Function getSelectionCommentDate
+:returns string the text of the comment date.
+:Description Retrieves the text of a comment date.
+
+:Function getSelectionCommentDocumentText
+:returns string the text in the document to which a comment applies.
+:Description Retrieves the text in the document to which a comment applies.
+
+:function isAllButtonPressed
+:Description Determines if the All button is pressed on the Outlining Command bar.
+:Returns int true or false
+
+:Function GetVisibleHeadingLevelString
+:description Retrieves a string describing the visible heading levels in the document area.
+:returns string The outline level.
+
+:function ParagraphIsLeftAligned
+:Description Determines if the current paragraph is left aligned.
+:Returns int true or false
+
+:function ParagraphIsCentered
+:Description Determines if the current paragraph is centered.
+:Returns int true or false
+
+:function ParagraphIsRightAligned
+:Description Determines if the current paragraph is right aligned.
+:Returns int true or false
+
+:function ParagraphIsJustified
+:Description Determines if the current paragraph is justified.
+:Returns int true or false
+
+:function fontIsBold
+:Description Determines if the font in use is bold.
+:Returns int true or false
+
+:function fontIsItalic
+:Description Determines if the font in use is italic.
+:Returns int true or false
+
+:function fontIsUnderlined
+:Description Determines if the font in use is underlined.
+:Returns int true or false
+
+:Function IsShowParagraphs
+:Description Determines whetehr the application is set to show paragraph marks.
+:Returns Int True if showing paragraph marks, false otherwise.
+
+:Function IsShowAll
+:Description Determines whetehr the application is set to show all marks.
+:Returns Int True if showing all marks, false otherwise.
+
+:function SetNewLineIndicationMode
+:Description Checks the default setting for new line indication in default.jcf. If < the word default, we set the option by adding the two together. Otherwise, we allow the word setting to remain in effect.
+
+:function SetFindItemToPage
+:Description Sets the Word browser target to page.
+
+:function BrowserTargetIsPage
+:description Tests whether the Control+PageUp/Down navigation is set to move by page.
+:returns int True if Control+PageUp/Down is set to move by page, false otherwise.
+
+:Function GetFindItemTypeString
+:Description Determines the type of item being navigated to by GoTo next/previous item.
+:Returns String The item type.
+
+:Function SayAccentedCharacter
+:Description Speaks accented or other special character generated after typing special keystrokes such as Ctrl+apostrophe and Ctrl+grave.
+
+:function IsPrintLayoutView
+:description Determines whether the document is in print layout view.
+:returns int True if the document is in print layout view, false otherwise.
+
+:function IsNormalOrDraftView
+:description Determines if Word is in normal or draft  view. Word 2007 and later refers to the view as draft, whereas earlier versions refered to it as normal.
+:returns int true if in normal or draft view, false otherwise.
+
+:function SetNormalOrDraftView
+:description Forces Word into normal or draft view. Word 2007 and later refers to the view as draft, whereas earlier versions refered to it as normal.
+:returns int true if the view was changed successfully, false otherwise.
+
+:function getLanguageName
+:Synopsis Gets the name of a language from its id
+:Description Retrieves a string describing the local name of a language given a language id parameter.
+:Param int/languageId language id as defined by MSWord (see object browser).
+:Returns string language name
+
+:function getCurrentLanguageName
+:Synopsis Gets the name of the current language in use
+:Description Retrieves a string describing the local name of the current language at the insertion point of the document.
+:Returns string language name of language in use at insertion point
+
+:function sayLanguageInUse
+:Description Says the name of the language in use at the current caret location of the document.
+
+:function readRevisionInContext
+:Description Reads the supplied revision in the context of the supplied text range.
+:Param object/textRange sentence or paragraph range object containing revision.
+:Param object/revision revision object.
+
+:function ReadWordInContext
+:Synopsis Reads the highlighted word and the text that surrounds it
+:Description Reads the misspelled word and the word being searched for in the Find and Replace dialog in Word.
+:Optional
+:param int/bIgnoreNotFoundMessage Enter TRUE to have the 'Not found' message ignored this function is called.
+:Param int/UseSearchStringNotFoundMessageInstead TRUE to say the search string not found message, good for responding to search panes, etc.
+
+:function isSelectionModeActive
+:Description Determines if selection mode (f8) is active.
+:Returns int true or false
+
+:function StepOutOfTable
+:param int true if stepping forward, false if stepping backward.
+:returns int true if the cursor was successfully moved, false otherwise.
+:description Attempts to move the cursor out of the current table.
+
+:function StepOutOfList
+:param int true if stepping forward, false if stepping backward.
+:returns int true if the cursor was successfully moved, false otherwise.
+:description Attempts to move the cursor out of the current list.
+
+
+:function IsScreenUpdateEnabled
+:Description Tests whether screen update is enabled in Word.
+:Returns Int True if screen update is enabled, false otherwise.
+
+:function getDocPageCount
+:Description Retrieves the number of pages in the current document.
+:returns int The number of pages in the document.
+
+:function MoveToPage
+:Description Moves the cursor to  a page. Depending on the value of SearchOption, positions to the first, last, next, or prior page in the current document.
+:Returns Int TRUE if a page was found, FALSE otherwise.
+:Param Int/SearchOption one of S_TOP, S_BOTTOM, S_NEXT, or S_PRIOR to move to the first, last, next or prior form field respectively.
+
+:function getDocSectionCount
+:Description Retrieves the number of sections in the current document.
+:returns int The number of sections in the document.
+
+:function MoveToSection
+:Description Moves the cursor to  a section. Depending on the value of SearchOption, positions to the first, last, next, or prior section in the current document.
+:Returns Int TRUE if a section was found, FALSE otherwise.
+:Param Int/SearchOption one of S_TOP, S_BOTTOM, S_NEXT, or S_PRIOR to move to the first, last, next or prior form field respectively.
+
+:function DocumentUpdateNotificationMode
+:description Determines if document selection changes are visually suppressed and context changes not announced. The mode is set to on or off by the SetDocumentUpdateNotification function.
+:returns int True if document selection updates are visually suppressed and context changes are not announced, false otherwise.
+
+:function SetDocumentUpdateNotification
+:description Toggles screen writes and notification of selection changes on or off according to the parameter value.
+:param int True if user should not be notified of selection changes in the document, false otherwise.
+
+
+:Function GetTextToDisplay
+:Description This function parses the text to be displayed in the virtual viewer for comments, footnotes, endnotes, and revisions. The text to be displayed should begin with the author, then the date, then the type of text change if it is a revision, then the text affected itself - all on separate lines. The text to be displayed should also match the Track Changes setting in the AdjustJAWSOptions dialog. So for example, if author is not turned on as part of revision text, then author should not be shown.
+:Param int/iType One of the proofreading element types found in hjconst.jsh.
+:Param Int/index The index of the item whose info is being sought.
+:Param string/sLink/ByRef The author and date to be displayed as part of the link.
+:Param string/sText/byRef The text to display for the item.
+
+:Function MoveToLinkItem
+:Description Helper function to ShowListInvirtualViewer. Presents the items to display as links.
+:Param string/sType
+:Param string sIndex
+:Returns Void
+
+:Function ShowListInVirtualViewer
+:Description Displays the selected item list in the virtual viewer. The list is shown as vlinks that the user can review and select by pressing Enter.
+:Param int/iType The type of item, including comments, footnotes, endnotes, and revisions as found in the SelCtx section of hjconst.jsh..
+:Param String/sItem The textual representation of the type
+:Param string/sList The list of proofreading elements
+:param int The count of items to show.
+
+:function ShouldProcessSelectionChangedEvent
+:description Determines whether to allow speech to speak the change in selection.
+:optional
+:param int The source of the navigation, as received by CaretMovedEvent.
+:param string text
+:returns int True or false
+
+:Function IsTextSelected
+:Description Determines whether text in the document window is currently selected.
+:Returns Int True if text is selected, false otherwise.
+
+:function toggleOverTypeMode
+:Description Toggles the Word editing mode between Insert and OverType and reports the new state.
+
+:Function IsEndOfDocument
+:Description Determines whether the range is at the end of the document.
+:Param Object the range to check.
+:Returns Int True if the range is at the end of doc, otherwise false.
+
+:Function atStartOfDocument
+:returns int TRUE if cursor is at start of document, FALSE otherwise.
+:Description Returns based on positional information from the document and the cursor.
+
+:Function atEndOfDocument
+:returns int TRUE if cursor is at end of document, FALSE otherwise.
+:Description Returns based on positional information from the document and the cursor.
+
+:function InitExtendedSelectionModeWatch
+:description Call when extended selection mode is toggled on to enable script tracking of the mode.
+
+:function UpdateExtendedSelectionModeWatch
+:description Call when watching extended selection mode and the selection has changed.
+
+:function StopExtendedSelectionModeWatch
+:description Call to notify the scripts that extended selection mode is now off.
+
+:function IsExtendedSelectionModeWatchActive
+:description Can be used to test if extended selection mode is on, but only if the extended selection mode watch was initialized when the mode is turned on and stopped when it is turned off.
+:returns int True if extended selection mode watch is on, false otherwise.
+
+:function getActiveSmartTagName
+:description Retrieves the name of the smart tag at the active selection in the document.
+:returns string The name of the smart tag at the active selection in the document.
+:Function ShowSmartTagList
+:Description Displays a list of all functional smart tags in the Word document
+
+:Function WasDocumentEverSaved
+:returns int TRUE if document has been saved at least once, FALSE otherwise.
+:Description returns TRUE if document has been saved at least once, FALSE otherwise.
+
+:Function GetCurCharPos
+:returns int the position of the current character at the cursor. Not valid for selections.
+:Description If text is not selected, returns the position of the current character under the cursor.
+
+:function ReturnToMarkedPlace
+:returns int TRUE if successful, FALSE otherwise.
+:Description moves the cursor to the character position supplied by the parameter, within the document.
+:param int/iMarkedPos The document cursor position to use.
+
+:function SayWordATMarkedPlace
+:returns void
+:Description use to speak the word at marked position after movement to marked place.
+
+:function PrepareForSilentSelectionToMarkedPlace
+:description Sets the variable to suppress speech of the selected text during selection to marked place, and schedules a function to later clear the speech selection variable.
+
+:function ClearSilentSelectionToMarkedPlace
+:description Clears the variable which was set to ensure that selection to marked place does not speak the selected text.
+
+:Function SelectTextBetweenMarkedPlaceAndPos
+:returns int TRUE if successful, FALSE otherwise.
+:Description Selects between the document positions supplied by both parameters. The From and To do not have to be less to greater, selection greater to less will also work just fine.
+:param int/iMarkedPlace the marked place in the document.
+:param int/iCharPos the position to which to select.
+
+:function SayFirstOrLastLineNavTypeFromCaretMovedEvent
+:description Speaks the messages for moving to top or bottom of document when in the document area.
+:param int True if the navigation type is top of document, false otherwise.
+
+:function ShouldWaitForDocumentChangeToRunEvent
+:description Used by events for Word documents to determine if the event should wait for the document information to be available before running. This is most often used to test if the document information is ready when Word gains focus.
+:returns int True if the event should wait for the document information to be available before running, false otherwise.
+
+:function GetBrlObjectOleNameString
+:description Retrieves from the collection data the string to be used by BrailleAddObjectOleName.
+:returns string
+
+:function GetBrlObjectOleValueString
+:description Retrieves from the collection data the string to be used by BrailleAddObjectOleValue.
+:returns string
+
+:function GetBrlObjectOleTypeString
+:description Retrieves from the collection data the string to be used by BrailleAddObjectOleType.
+:returns string
+
+:function GetBrlObjectOleStateString
+:description Retrieves from the collection data the string to be used by BrailleAddObjectOleState.
+:returns string
+
+:function GetBrlObjectOlePositionString
+:description Retrieves from the collection data the string to be used by BrailleAddObjectOlePosition.
+:returns string
+
+:function GetBrlObjectOlePositionString
+:returns string
+
+:function GetCachedColumnHeaderText
+:description Retrieved the cached column header (or title) text for tables.
+:returns string The cached text of the column title for the current table cell.
+
+:function GetCachedRowHeaderText
+:description Retrieved the cached row header (or title) text for tables.
+:returns string The cached text of the row title for the current table cell.
+
+:function InMultilevelListPane
+:description Determines if focus is in the pane of the multilevel list, available on the ribbons.
+:returns int True if focus is in the pane of the multilevel list, available on the ribbons.
+
+:function UsingShortNameOfMultiLevelListObject
+:description Determines if name of the focus object is being substituted with the name used from Word 2003 for multilevel list objects.
+:returns int True if name of the focus object is being substituted with the name used from Word 2003 for multilevel list objects, false otherwise.
+
+:function initMultilevelListNamesWithWord2003ObjectNames
+:description Initializes the collection of user-friendly names for multilevel list objects. Names are taken from those used in Word 2003.
+
+:function GetWord2003MultiLevelListObjectNameOfFocusObject
+:description translates the name of multilevel list objects from Word 2007 and later into the names that were used in Word 2003.
+:returns string The user-friendly name of a multilevel list object.
+
+:function OnEndOfCellOrRowMarker
+:description Determines if the document cursor is on an end of cell or row marker in a table.
+:returns int True if the document cursor is on an end of cell or row marker in a table.
+
+:function GoToNextCellInTable
+:description Moves to the next cell in the table without regard to whether or not the cell is in the next row.
+:returns int True if a next cell in the table exists and was moved to, false otherwise.
+
+:function GoToPriorCellInTable
+:description Moves to the prior cell in the table without regard to whether or not the cell is in the prior row.
+:returns int True if a prior cell in the table exists and was moved to, false otherwise.
+
+:function ListenForProofingPaneSpellCheckEvent
+:description Used with the Word 2013 proofreading pane to detect occurrences of finding the next spelling or grammar error.
+
+:function ManageUIAEvents
+:description Used in focus change to manage turning on or off UIA event listeners.
+
+:function DescribeTextAnnotationOrAttributes
+:Description Describes the annotations and attributes under the cursor.
+:Param int/alsoSpeakIt Speak the info, not just Braille.
+:Optional
+:Param int/IgnoreFontInfo For insert tab and anywhere else where all we want is attributes related to annotations.

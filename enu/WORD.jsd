@@ -1,0 +1,604 @@
+:function KeyHasJAWSModifier
+:description Determines if the key name contains a JAWS modifier.
+:returns int True if the key name contains JAWSKey, Insert or CapsLock; false otherwise.
+
+:function IsDocumentAreaScriptException
+:description Used by scripts that are intended to run only in the document area to standardize behavior when the script is run from outside the document area.
+If not in the document area, either outputs an error message or, if the key does not include a JAWS modifier, passes it through to the application.
+:optional
+:param int If true, the script may apply to an Outlook message as well as a Word document.
+:returns int True if not in the document area, false otherwise.
+
+:function NotifyZoomManyPages
+:Description Determines whether the Zoom_ManyPages error message should be announced and if so, announces it.
+:Returns Int True if GetCurrentZoomLevel returns the Many pages setting; false otherhwise.
+
+
+:function SayActivePaneName
+:description Speaks the name of the active pane.
+
+:function getPropertyComboValue
+:returns string the text that should be used as the combo box value
+:Description Returns the values for some combo boxes on form property pages.
+:param handle/hwnd the window where the sdm control lives
+:param int/iSDMControl the ID of the combo box.
+
+:script SwitchPanes
+:Synopsis Switches between open panes, such as Comment pane and document window.
+:Description Uses F6 to switch between the open panes such as the Comment pane and document area.
+
+:script SwitchPanesReverse
+:Synopsis Switches between open panes, such as Comment pane and document window
+:Description Uses Shift+F6 to switch between the open panes such as the Comment pane and document area
+
+:Script SwitchDocumentView
+:DisplayName Switch Document View
+:synopsis Switch document view
+:description Performs the MicroSoft Word native keystroke to switch the document view to outline, print, draft or normal and then speaks the view name.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script SayFirstCellInRow
+:DisplayName Say First Cell In Row
+:Synopsis Speaks the content of the first cell in the current row
+:Description Reads the content of the first cell in the current row, which is often the name of the row
+:SearchRank 1
+
+:script SayFirstCellInColumn
+:DisplayName Say First Cell In Column
+:Synopsis Speaks the content of the first cell in the current column or if in the save as dialog, performs the MS Word default function
+:Description Reads the content of the first cell in the current column, which is often the header of the column or if in the Save As Dialog, performs the MSWord default function.
+:SearchRank 1
+
+:function readTableRow
+:Description Reads across the current table row.
+
+:function readTableColumn
+:description Reads down the current table column.
+
+:function ListTables
+:Description Lists all the tables in the current document and allows the user to jump to either the first cell or the first form field (if the document is protected) of the table chosen from the list.
+
+:script SelectATable
+:DisplayName Select A Table
+:Synopsis Choose a table from a list of tables in the document and jump directly to the first cell of the chosen table.
+:Description Lists all the tables in the current document. Select a table to jump directly to either the first cell or the first form field (if the document is protected) of the table chosen from the list.
+:SearchRank 1
+
+:script SelectAList
+:DisplayName Select A List
+:Synopsis Choose a list from a list of lists in the document.
+:Description Lists all the lists in the current document. Select a list to jump directly to item  of the list chosen from the list.
+:SearchRank 1
+
+:script MoveToNextList
+:DisplayName Move To Next List
+:Synopsis Moves to the next List in a document.
+:Description When inside a document, moves to the next List in the document.
+:Category HTML
+:KeyWords Quick Key
+:SearchRank 1
+
+:script MoveToPriorList
+:DisplayName Move To Prior List
+:Synopsis Moves to the previous List in a document.
+:Description When inside a document, moves to the previous List in the document.
+:Category HTML
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script SayField
+:DisplayName Say Field
+:Synopsis Says the field of text where the cursor is located, unless it is an unprotected formfield.
+:Description A field is a group of text having the same attribute. The field at the position of the active cursor is spoken, unless it is an unprotected formfield.
+:SearchRank 2
+
+:script SelectAField
+:DisplayName Select A Field
+:Synopsis Lists all the fields and form fields in the document.
+:Description Choose a field or formfield from the list to move to its location in the document.
+:SearchRank 2
+
+:Script SelectNextOrPriorField
+:DisplayName Select Next Or Prior Field
+:Synopsis Moves to and announces next or prior field.
+:Description This keystroke moves to and announces the next or prior field in the document.
+:SearchRank 2
+
+:function GetHeadingSoundFile
+:Description Retrieves the sound file, if any, that is set for the specified heading level in the .smf file currently in use.
+:Param Int The heading level for which a sound file is to be retrieved.
+:Returns String The sound file for the specified heading level, or null if no sound file is associated with the heading level.
+
+:script ListHeadings
+:DisplayName List Headings
+:Synopsis Lists headings in the document.
+:Description Choose a heading from the list to move to its location in the document.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script ListSpellingErrors
+:DisplayName List Spelling Errors
+:Synopsis Lists words marked as spelling errors in the document.
+:Description Choose a spelling error to move directly to its location in the document. Note that the Word options Check Spelling As You Type must be enabled to use this feature.
+:SearchRank 1
+
+:script ListGrammaticalErrors
+:DisplayName List Grammatical Errors
+:Synopsis Lists text marked as grammatical errors in the document.
+:Description Choose a grammatical error to move directly to its location in the document. Note that the Word options Check Grammar As You Type must be enabled to use this feature.
+:SearchRank 1
+
+:Script ListBookmarks
+:DisplayName List Bookmarks
+:Synopsis Lists the bookmarks in the current document.
+:Description Choose a bookmark from the list to move to its location in the document.
+:SearchRank 2
+
+:function announceComment
+:Description Announces the comment at the cursor.
+:param int The output type to be used when announcing the comment.
+
+:script AnnounceComment
+:DisplayName Announce Comment
+:Synopsis Announces the comment at the cursor.
+:Description Announces the comment at the cursor. If pressed twice quickly, shows the comment in the virtual viewer.
+:SearchRank 1
+
+:script ListComments
+:DisplayName List Comments
+:Synopsis Lists the comments in the document.
+:Description Choose a comment from the list to move directly to its location in the document.
+:SearchRank 1
+
+:function announceFootnoteOrEndNote
+:Description Announces the footnote or end note referenced at the cursor location.
+:param int The output type to be used when announcing the footnote or endnote.
+
+:script AnnounceFootnoteOrEndNote
+:DisplayName Announce Footnote Or End Note
+:Synopsis Announce the footnote or endnote at the cursor.
+:Description If pressed twice quickly, shows the footnote or endnote in the virtual viewer.
+:SearchRank 1
+
+:script ListFootnotes
+:DisplayName List Footnotes
+:Synopsis Lists the footnotes in the document.
+:Description Choose a footnote from the list to move directly to the text in the document to which it applies.
+:SearchRank 2
+
+:script ListEndnotes
+:DisplayName List Endnotes
+:Synopsis Lists the endnotes in the document.
+:Description Choose an endnote from the list to move directly to the text in the document to which it applies.
+:SearchRank 2
+
+:Function GetRevisionInfo
+:description Retrieves revision information and text at the cursor position.
+:param int The message output type to be used for the revision information message.
+:param string/byRef The message that will contain the revision information about the author and date.
+:param string/byRef The revision text.
+:returns int True if a revision is at the cursor, and the information and text is retrieved, false otherwise.
+
+:Script AnnounceRevision
+:DisplayName Announce Revision
+:Synopsis Announces the revision at the current cursor location.
+:Description If Track Changes is enabled in Word, announces the revision at the current cursor location. Pressing the key twice quickly shows the revision in the virtual viewer.
+:SearchRank 1
+
+:script ListRevisions
+:DisplayName List Revisions
+:Synopsis Lists the revisions in the document.
+:Description If Track Changes is enabled in Word, displays a list of revisions in the current document. Choose a revision from the list to move directly to its location.
+:SearchRank 1
+
+:script ToggleTrackChanges
+:DisplayName Toggle Track Changes
+:synopsis Toggle the Track Changes option.
+:Description This is the Word keystroke to toggle track changes on and off. Track Changes must be enabled in the document before you can use the JAWS keystrokes for announcing revisions.
+:SearchRank 1
+
+:script ListObjects
+:DisplayName List Objects
+:Synopsis Lists inline objects such as clipart, etc. in the document.
+:Description Choose an object from the list to move directly to its location in the document. The caret will be located as near the object as possible.
+:SearchRank 1
+
+:Script GrowFont1Point
+:Synopsis Increase the font size by one point.
+:Description This is the Microsoft Word keystroke to increase the font size by exactly 1 point.
+
+:Script ShrinkFont1Point
+:Synopsis Decrease the font size by one point.
+:Description This is the Microsoft Word keystroke to decrease the font size by exactly 1 point.
+
+:Script GrowFont
+:DisplayName Grow Font
+:Synopsis Increase font size.
+:Description This is the Microsoft Word keystroke to increase the font size. The new point size of the font may be more than exactly one point greater than the starting font point size.
+:SearchRank 3
+
+:Script ShrinkFont
+:DisplayName Shrink Font
+:Synopsis Decrease font size.
+:Description This is the Microsoft Word keystroke to decrease the font size. The new point size of the font may be more than exactly one point less than the starting point size.
+:SearchRank 3
+
+:script DescribeBorderOfTextUnit
+:Synopsis Describes the border around the current selection.
+:Description Each border is described as it is found, working from the innermost border outward.
+
+:script SayLineAndColumn
+:DisplayName Say Current Line And Column In Document
+:Synopsis Says the current line and column in the document.
+:Description Speaks the current line and column position in the document. This information is also flashed in Braille.
+:SearchRank 1
+
+:Script InsertComment
+:DisplayName Insert Comment
+:Synopsis Insert a comment.
+:Description This is the Word keystroke to insert a comment at the current cursor location in the document.
+:SearchRank 4
+:CommandSearchProductFilter Fusion
+
+:script ToggleBetweenAllAndHeadingsOnly
+:DisplayName Toggle Between All And Headings Only
+:Synopsis In outline view, toggles between displaying all text and headings only
+:Description In outline view, toggles between displaying all text and headings only.
+:SearchRank 2
+
+:script ShowHeading1
+:Synopsis In outline view, shows headings at level 1.
+:Description Shows headings at level 1 in outline view.
+
+:script ShowHeading2
+:Synopsis In outline view, shows headings at level 2.
+:Description Shows headings at level 2 in outline view.
+
+:script ShowHeading3
+:Synopsis In outline view, shows headings at level 3.  In an email message, clicks the "To ..." button.
+:Description Shows headings at level 3 in outline view, or clicks the "To..." button in email messages.
+
+:script ShowHeading4
+:Synopsis In outline view, shows headings at level 4. In an email message, clicks the "CC..." button
+:Description Shows headings at level 4 in outline view, or clicks the "CC..." button in email messages.
+
+:script ShowHeading5
+:Synopsis In outline view, shows headings at level 5.
+:Description Shows headings at level 5 in outline view.
+
+:script ShowHeading6
+:Synopsis In outline view, shows headings at level 6.
+:Description Shows headings at level 6 in outline view.
+
+:script ShowHeading7
+:Synopsis In outline view, shows headings at level 7.
+:Description Shows headings at level 7 in outline view.
+
+:script ShowHeading8
+:Synopsis In outline view, shows headings at level 8.
+:Description Shows headings at level 8 in outline view.
+
+:script ShowHeading9
+:Synopsis In outline view, shows headings at level 9.
+:Description Shows headings at level 9 in outline view.
+
+:Script SelectNextHeadingOrListLevelStyle
+:Synopsis Select the next heading or list level style for the current text.
+:Description This is the MS Word key to selects the next heading level style for the current text. If the JAWS or Invisible cursor is active then this script performs the default mouse movement script.
+
+:Script SelectPriorHeadingOrListLevelStyle
+:Synopsis Select the prior heading or list level style for the current text.
+:Description This is the MS Word key to selects the prior heading or list level style for the current text. If the JAWS or Invisible cursor is active then this script performs the default mouse movement script.
+
+:script MoveItemDown
+:Synopsis Move the current item down.
+:Description This is the MS Word key to move the current item in the document down.
+
+:script MoveItemUp
+:Synopsis Move the current item up.
+:Description This is the MS Word key to move the current item in the document up.
+
+:function SayHorizontalPosition
+:Synopsis Announces the horizontal distance from the edge of the page to the caret.
+:Description Announces the horizontal distance from the edge of the page to the caret.
+
+:script Indent
+:Synopsis Indent text.
+:Description While in a Word document or Email message, this script indents text and reports new cursor position.
+
+:script Outdent
+:Synopsis Remove indent.
+:Description While in a Word document or Email message, this script removes indent and reports new cursor position.
+
+:function sayHangingIndent
+:Synopsis Announces the hanging indent measure for the current paragraph.
+:Description Announces the hanging indent measure for the current paragraph.
+
+:script HangingIndent
+:Synopsis Create hanging indent.
+:Description While in a Word document or Email message, This script creates a hanging indent and reports the new cursor position; otherwise, performs default action.
+
+:script RemoveHangingIndent
+:Synopsis Remove hanging indent.
+:Description While in a Word document or Email message, this script removes a hanging indent and reports the new cursor position.
+
+:script BoldText
+:DisplayName Bold Text
+:Synopsis Toggles the Bold option.
+:Description Toggles the Bold option and speaks the bold state of the highlighted text.
+:SearchRank 4
+
+:script ItalicText
+:DisplayName Italic Text
+:Synopsis Toggles the italic option.
+:Description Toggles the italic option and speaks the italic state of the highlighted text.
+:SearchRank 4
+
+:script UnderlineText
+:DisplayName Underline Text
+:Synopsis Toggles the underline option.
+:Description Toggles the underline option and speaks the underline state of the highlighted text.
+:SearchRank 4
+
+:script LeftJustify
+:DisplayName Left Justify
+:Synopsis Left aligns text that is selected or entered.
+:Description Uses the Word keystroke CTRL+L to left justify the text. This makes the left margin smooth or aligned. Use the Say Font key, usually INSERT+F, to confirm the setting
+:SearchRank 4
+
+:script CenterText
+:DisplayName Center Text
+:Synopsis Center aligns text that is selected or entered.
+:Description Uses the Word keystroke CTRL+E to perform the centering function. Use the Say Font key, usually INSERT+F, to confirm the setting
+:SearchRank 4
+
+:script RightJustify
+:DisplayName Right Justify
+:Synopsis Right aligns text that is selected or entered.
+:Description Uses the Word keystroke CTRL+R to right justify the text. This makes the right margin smooth or aligned. Use the Say Font key, usually INSERT+F, to confirm the setting.
+:SearchRank 4
+
+:script JustifyText
+:DisplayName Justify Text
+:Synopsis Aligns text that is selected or entered.
+:Description Uses the Word keystroke CTRL+J to perform the Justify function. This makes both left and right margins smooth or aligned. Use the Say Font key, usually INSERT+F, to confirm the setting
+:SearchRank 4
+
+:script ConvertShapesToInline
+:Synopsis Converts shapes to inline shapes so %product% can detect them.
+:Description Shapes are in the drawing layer, whereas inline shapes are in the text layer of a document. Shapes are floating objects anchored to a point on a page, making it difficult for %product% to detect when the caret lands on one. Since inline shapes are inline, JFW can detect and describe them as you move the caret through the document.
+
+:script SayLanguageInUse
+:Synopsis Says the language in use.
+:Description This script says the name of the language in use at the current caret location of the document.
+
+:script FocusToFirstFormField
+:DisplayName Focus To First Form Field
+:Synopsis Move to the first form field in the document.
+:Description When moving to the formfield, the selection is collapsed. This is to ensure that the form field content is not accidentally deleted if a character is typed.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Script ShowItemsInVirtualViewer
+:DisplayName Show Items In Virtual Viewer
+:Synopsis Show in the virtual viewer the list of comments, footnotes, endnotes, or revisions in the current document.
+:Description Choose comments, footnotes, endnotes, or revisions from the list to see all occurrences in the document. The Virtual Viewer will open and display each item as a link. Press ENTER on a link to move to it in the document. To display revisions, Track Changes must be enabled in Word.
+:SearchRank 2
+
+:script CloseOfficeAssistant
+:Synopsis Finds and shuts down the Office Assistant, if it is running. (Office 2003 and older)
+:Description The Office Assistant may appear Word version 2003 and earlier. closes, if open, or Office Assistant Not Found is reported
+
+:script ToggleWritingMode
+:Synopsis Toggles between TypeOver and Insert modes in Word.
+:Description %product% speaks the new writing mode state, either Insert or TypeOver.
+
+:script ToggleCase
+:DisplayName Toggle Case
+:synopsis Toggles the case of the word at the cursor or the selected text
+:description This is the Word keystroke to toggle the case of the word at the cursor or the selected text.
+:SearchRank 2
+
+:script DeleteWord
+:DisplayName Delete Word
+:Synopsis Delete the current word and speak the word the PC cursor lands on
+:Description Deletes the word at the position of the caret on the screen. This does not apply to the mouse pointer.
+:SearchRank 4
+
+:script SelectionByUnitMode
+:Synopsis Toggles selection by unit mode.
+:Description When first pressed, turns on extended selection mode in Word. Press again to ncrease the unit of selection.
+
+:script ReduceSelectionUnit
+:Synopsis Reduces the selection unit when extended selection by unit mode is on.
+:Description Reduces the unit of selection of the extended selection mode in Word.
+
+:script SelectionByMovementMode
+:Synopsis Turns on selection by movement mode.
+:Description Turns on selection by movement mode in Word.
+
+:script ShowSmartTagList
+:DisplayName Show Smart Tag List
+:synopsis Lists all Smart Tags in the document.
+:Description Use this key combination to show a list of all the Smart Tags in the document. Use Up/Down arrow to move through the list, then press Enter to move to the smart tag in the document. Pressing Escape will exit the list without moving to any smart tag.
+:SearchRank 4
+
+:script SmartTagActionsMenu
+:DisplayName Smart Tag Actions Menu
+:synopsis Makes the Smart Tag Actions menu appear on-screen.
+:Description Moves the mouse to the location of the smart tag and then issues the Word keystroke to make the Smart Tag Actions menu appear on-screen.
+:SearchRank 4
+
+:Script MarkPlace
+:DisplayName Mark Place
+:Synopsis Marks the current location in the current document.
+:Description This keystroke marks the current location in the current document so that it can be returned to in the future.
+:SearchRank 1
+
+:Script ReturnToMarkedPlace
+:DisplayName Return To Marked Place
+:Synopsis Returns to a marked place in the document.
+:Description This keystroke returns to a marked place in the document, if one exists.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script SelectTextBetweenMarkedPlaceAndCurrentPosition
+:Synopsis Selects all text between the marked place and the current position in the current document.
+:Description This keystroke selects all text between the marked place and the current position in the current document. If no place has been marked, an error message is announced.
+
+:function IsRibbonEditComboDroppedDown
+:description Used to test if an edit combo in a lower ribbon has been dropped down.
+:returns int True if the ribbon edit combo is dropped down, false otherwise.
+
+:function IsToolBarEditComboDroppedDown
+:description Used to test if an edit combo on a toolbar has been dropped down.
+:returns int True if the toolbar edit combo is dropped down, false otherwise.
+
+:function GetUpDownButtonName
+:description Returns "Move up" or "Move down" or null based on the button in focus.  Written for Office Move Up/Down controls.
+:returns string The button name or null if not applicable.
+
+:Script GoForward
+:Synopsis Moves forward from a link in a table of contents and announces new location.
+:Description This keystroke moves forward from a link in a table of contents and announces the new location.
+
+:Script GoBack
+:Synopsis Moves back to a link in a table of contents and announces new location.
+:Description This keystroke moves back to a link in a table of contents and announces the new location.
+
+:Script SpellCheckAccelerators
+:Synopsis One of the keys which are accelerators in SpellCheck dialog. Outside Spellcheck may serve a separate function.
+:Description This keystroke is controlled by the application.
+
+:Script RevisionDetectionToggle
+:DisplayName Revision Detection Toggle
+:Synopsis Toggles revision detection on/off depending on whether document is showing markup.
+:Description This keystroke toggles revision detection on or off in Word documents where Track Changes is enabled.
+:SearchRank 2
+
+:script UpOneLevel
+
+:script IgnoreAllButton
+
+:script SayLookInOrSaveInFolderName
+
+:script EnvelopesDlgKey
+
+:script ReplaceDlgKey
+
+:script FindDlgKey
+
+:script GotoPageDlgKey
+
+:script LabelsDlgKey
+
+:script TabKey
+
+:script ShiftTabKey
+
+:script PreviousItem
+
+:script NextItem
+
+:script PostComment
+:Synopsis Places the comment referenced at the cursor in a dialog.
+:Description This keystroke posts the comment referenced at the cursor in a dialog box.
+
+:script PostFootnoteOrEndNote
+:Synopsis Places the footnote or endnote referenced at the cursor in a dialog.
+:Description This keystroke posts the footnote or endnote  referenced at the cursor in a dialog box.
+
+:script PostRevision
+:Synopsis Places the revision referenced at the cursor in a dialog.
+:Description This keystroke posts the revision referenced at the cursor in a dialog box.
+
+:script ReadMistakeAndSuggestion
+:DisplayName Read Mistake And Suggestion
+:Synopsis Reads the mistake and suggestion when the Spell checker dialog is active, or brings up the link list when in the ddocument window.
+:Description This keystroke reads the mistake and suggestion when the spell checker dialog is active, or brings up the link list when in the ddocument window.
+:SearchRank 1
+
+:script SayColumnTitle
+:DisplayName Say Column Title
+:Synopsis Says the column title for the current column
+:Description This keystroke reads the column title for the current column. The column title is defined as the text of the cell in the current column in the row specified as the Column Titles row
+:SearchRank 1
+
+:script SayRowTitle
+:DisplayName Say Row Title
+:Synopsis Says the row title for the current row
+:Description This keystroke says the row title for the current table row. The row title is defined as the text of the cell in the current row in the column specified as the Row Titles column
+:SearchRank 1
+
+:Script Alt1
+:Synopsis Passes the key through or manages headers when in a composition window.
+:Description Passes the key through or manages headers when in a composition window.
+
+:Script Alt2
+:Synopsis Passes the key through or manages headers when in a composition window.
+:Description Passes the key through or manages headers when in a composition window.
+
+:Script Alt3
+:Synopsis Passes the key through or manages headers when in a composition window.
+:Description Passes the key through or manages headers when in a composition window.
+
+:Script Alt4
+:Synopsis Passes the key through or manages headers when in a composition window.
+:Description Passes the key through or manages headers when in a composition window.
+
+:Script Alt5
+:Synopsis Passes the key through or manages headers when in a composition window.
+:Description Passes the key through or manages headers when in a composition window.
+
+:Script Alt6
+:Synopsis Passes the key through or manages headers when in a composition window.
+:Description Passes the key through or manages headers when in a composition window.
+
+:Script Alt7
+:Synopsis Passes the key through or manages headers when in a composition window.
+:Description Passes the key through or manages headers when in a composition window.
+
+:Script Alt8
+:Synopsis Passes the key through or manages headers when in a composition window.
+:Description Passes the key through or manages headers when in a composition window.
+
+:Script Alt9
+:Synopsis Passes the key through or manages headers when in a composition window.
+:Description Passes the key through or manages headers when in a composition window.
+
+:Script Alt0
+:Synopsis Passes the key through or manages headers when in a composition window.
+:Description Passes the key through or manages headers when in a composition window.
+
+:Script AltF4
+:Synopsis Close office application. Use this keystroke, not the menus or the mouse, to close the currently open Office application.
+:Description Close office application. Use this keystroke, not the menus or the mouse, to close the currently open Office application. If you use the menus or the mouse to exit, JAWS and the application will hang, either may crash.
+
+:script ToggleShowHideNonprintingCharacters
+:DisplayName Toggle Show Hide Nonprinting Characters
+:synopsis Toggles whether nonprinting characters are shown or hidden.
+:description This is the Word keystroke to toggle whether nonprinting characters are shown or hidden.
+:SearchRank 2
+
+:Function GetWordCountDlgStaticText
+:returns string the static text for the Word Count dialog if it exists.
+:Param handle the focused Word Count dialog window.
+:Description Returns text for the Word Count dialog, but we use UIA instead of SDM logic to acquire the text.
+
+:script ShowMathViewer
+:DisplayName Show or Display Math Viewer
+:Synopsis  Shows the Math Viewer if the cursor is on an equation or a formula.  Math Viewer lets you navigate individual parts of an equation or formula.
+:Description Displays the Math Viewer if the cursor is on an equation or a formula. Math Viewer lets you navigate individual parts of an equation like variables, terms, coefficients, exponents, etc. As you navigate to the various components, pressing ENTER will let you drill down into and navigate within that level of the equation using RIGHT and LEFT ARROW. Pressing UP ARROW will move you back to the prior level.
+:KeyWords mathematics, MathML, addition, subtraction, multiplication, division, MathType 
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:function GetHeaderForNewAddressListField
+:Returns string the text that should be used as the edit name
+:Description Gets the header of the currently focused field in the New Address List dialog.
+
+:function GetFirstObjectWithClickablePoint
+:Returns object the first object in the array with clickable point x and y that are not 0
+:Param object/oArray 
+

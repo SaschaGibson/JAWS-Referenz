@@ -1,0 +1,44 @@
+:Function BrailleAddObjectAddressAutoComplete 
+:description Adds the address autocomplete component to the braille output.
+:param int/type The type of the object in focus.
+:returns int True.
+
+:Function BrailleAddObjectFldName
+:description Adds the field name component to the braille output.
+:param int/type The type of the object in focus.
+:returns int True if the field name was added, false otherwise.
+
+:Function BrailleAddObjectFldType
+:description Adds the field type component to the braille output.
+:param int/type The type of the object in focus.
+:returns int True if the field type was added, false otherwise.
+
+:Function BrailleAddObjectFldValue
+:description Adds the field value component to the braille output.
+:param int/type The type of the object in focus.
+:returns int True if the field value was added, false otherwise.
+
+:Function BrailleAddObjectFolderName 
+:description Adds the folder name component to the braille output.
+:param int/type The type of the object in focus.
+:returns int True if the folder name was added, false otherwise.
+
+:Function BrailleAddObjectCrdName 
+:description Adds the card name component to the braille output.
+:param int/type The type of the object in focus.
+:returns int True.
+
+:Function BrailleAddObjectCalendarView 
+:description Adds the calendar view component to the braille output.
+:param int/type The type of the object in focus.
+:returns int True.
+
+:function BrailleAddObjectCalendarTimeSlot 
+:description Adds the calendar time slot component to the braille output.
+:param int/type The type of the object in focus.
+:returns int True.
+
+:function BrailleAddObjectFocusLine
+:description Adds the focus line component to the braille output.
+:param int/type The type of the object in focus.
+:returns int True.

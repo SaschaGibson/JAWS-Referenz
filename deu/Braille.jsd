@@ -1,0 +1,548 @@
+:function BrailleStart
+:description Starts the Braille globals, much like the way an AutoStartEvent would function.  Instead of being called from JAWS, it's called from the default script file.  Overwrite in your app-specific file where you have specific Braille variables/settings.
+:returns void
+
+:Function BrailleNavPriorLine
+:Description Moves to the prior line or string in Speech Box mode.  If a structured line is active, the Braille display will follow the system cursor.
+:Returns void
+
+:Function BrailleNavNextLine
+:Description Moves to the next line or string in Speech Box mode.  If a structured line is active, the Braille display will follow the system cursor.
+:Returns void
+
+:function BrailleNavPanLeft
+:description Displays text to the left on the current line.  If no more text is available, the display wraps to the previous line.
+:returns void
+
+:function BrailleNavPanRight
+:description Displays text to the right on the current line.  If no more text is available, the display wraps to the next line.
+:returns void
+
+:Function MarkingOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the SetBrailleMarking function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:Function BrailleFHPTopEdge
+:Returns int True if FHP display was present and the corresponding TopEdgeEvent helper function was successful
+:Description Calls the FHPTopEdgeHelper function for the Braillex displays only if one is active.
+
+:Function BrailleFhpBottomEdge
+:Returns int True if FHP display was present and the corresponding BottomEdgeEvent helper function was successful
+:Description Calls the FHPBottomEdgeHelper function for the Braillex displays only if one is active.
+
+:Function BrailleMenuModeHelper
+:Description Assistant to MenuModeEvent for Braillex displays.
+:returns void
+
+:Function BrailleRunManagerHelper
+:returns int True if Braille Run Manager was used, false otherwise.
+:Description This function is designed to run specific Manager lists for Braille displays. If a list is run, the function returns True so RunJAWSManager will exit.
+
+:Function SetActiveBrailleMode
+:Returns int The current Braille mode, either Line, Structured, Attribute  or Speechbox.
+:Description Sets the active Braille mode and speaks the mode name either Line, Structured, Attribute or Speechbox.
+
+:Function ToggleBraillePanMode
+:Synopsis The four user pan modes are Automatic, Best Fit, Fixed and Maximize Text.
+:Description Toggles between the four modes for the User Pan setting.
+:Returns int The new mode set
+
+:Function BrailleIncreasePanIncrement
+:Synopsis Increments the amount of cells to pan
+:Description Increases the number of cells to pan when using the Fixed Panning option.  Increments by 5 at a time.
+:Returns int The new number of cells to pan.
+
+:Function BrailleDecreasePanIncrement
+:Synopsis Decrements the amount of cells to pan
+:Description Decreases the number of cells to pan when using the Fixed Panning option.  Decreases by 5 at a time.
+:Returns int The new number of cells to pan.
+
+:function SetBrailleGradeTwoMode
+:returns int The new Braille Grade Two mode
+:Description Sets the Braille Grade Two translation on or off and speaks the new setting.
+
+:Function SetBrailleExpandCurrentWord
+:Returns int The new setting for the Braille ExpandCurrentWord option
+:Description Sets the Braille Expand Current Word option on or off and speaks the new value.
+
+:Function SetBrailleMovesActive
+:Returns int The new setting, either on or off
+:Description Toggles this setting on or off.
+
+:Function SetActiveMovesBraille
+:Returns int the new setting for the ActiveMovesBraille option
+:Description This function toggles whether or not the Braille display will follow the active cursor.
+
+:Function SetBrailleSpeechInterrupt
+:Returns int The new setting, either on or off
+:Description Sets whether or not Braille keys will interrupt speech.  This is a toggle setting.
+
+:Function SetBrailleCharactersOrAttributes
+:Returns int The mode that has been set, either line or Attrib
+:Description Setting to Attrib allows the attributes to be displayed.  Characters for attribute setting are found in the Dot Patterns dialog under Braille Options in Configuration Manager.
+
+:Function BrailleTabKey
+:Description Passes the tab key through to the application.  If the Virtual Cursor is active, the virtual equivalent is used instead.
+:Returns Void
+
+:Function BrailleShiftTabKey
+:Description Passes the shift tab keystroke through to the application.  If the Virtual Cursor is active, the virtual equivalent is used instead.
+:Returns Void
+
+:Function BrailleEnterKey
+:Description Passes the enter key through to the application.  If the Virtual Cursor is active, the virtual equivalent is used instead.
+:Returns Void
+
+:Function BrailleEscapeKey
+:Description Passes the escape key through to the application.
+:Returns Void
+
+:Function BrailleAltTabKey
+:Description Passes the alt tab keystroke through to the application.
+:Returns Void
+
+:Function BrailleNavMoveLeft
+:Description moves to the left on the Braille display.
+:returns void
+
+:Function BrailleNavMoveRight
+:Description moves to the right on the Braille display.
+:returns void
+
+:Function SetBraille8PixelsPerSpace
+:returns int the number of pixels per space that was set
+:Description Sets the pixels per space to 8, allowing the formatting on the screen to be displayed on the Braille display.
+
+:Function SetBrailleUnlimitedPixelsPerSpace
+:returns int the number of pixels per space that was set
+:Description set the pixels per space to 999, or unlimited, creating an environment on the Braille display in which the characters are lined up and easy to read.
+
+:Function BrailleSet8OrUnlimitedPixels
+:Returns int the number of pixels that was set, either 8 or unlimited
+:Description Toggle function which switches between either 8 or unlimited pixels per space.
+
+:Function SetBrailleMarking
+:Returns int the new Braille marking setting
+:description Cycles between the various attribute markings, all or none.  These change what is displayed as a solid line in dots 7 and 8 on the Braille display.
+
+:Function TurnOffBrailleMarking
+:returns void
+:Description Turns off all Braille marking.
+
+:Function BrailleDescribeFontAtCursor
+:returns void
+:Description Speaks the font at the position of the cursor routing button.
+
+:Function Set6Or8Dots
+:Returns int The new setting for 8-dot mode, on or off
+:Description Toggles between 6 or 8-dot mode.
+
+:Function SetSixDotBraille
+:returns void
+:description Sets the eight dot mode JCF option to off, causing JAWS to display six dot Braille.
+
+:Function SetEightDotBraille
+:returns void
+:description Sets the eight dot mode JCF option to on, causing JAWS to display eight dot Braille.
+
+:Function SelectTextWithBraille
+:returns void
+:Description Starts and ends the Braille Text Selection functionality
+
+:function BrailleSelectTextClearValues
+:Synopsis This function clears any information stored by the braille select text script.
+:Description Turns off braille selection and returns the cursor shape to its default.
+:Category Braille
+
+:function BrailleControlLeftMouseClick
+:synopsis allows the user to perform a left mouse click using the Braille Display
+:description This function moves the Braille cursor to the current routing cell and performs a left mouse click.
+:Category Braille
+
+:Function ToggleSpeechHistoryMode
+:Returns int the mode that was set, 0 if was already Speech History mode.
+:Description Toggles the Braille mode to Speech History mode.
+
+:Function BrailleSetToLineMode
+:Returns int Truie if Line Mode was set, false otherwise
+:Description Set the mode to Line Mode if possible.
+
+:Function BrailleDescribeItemAtCursor
+:returns void
+:Description Speaks a description of the item under the Braille cursor
+
+:function RightClickWithBraille
+:returns void
+:Description Performs a right-click at the position of the cursor routing button that was pressed.
+
+:function BrailleSetAllCursorDots
+:Synopsis This function allows the Braille cursor to blink all eight dots.
+:Description The normal braille cursor is a blinking dot seven and eight. This function causes all eight dots to blink in order to indicate the braille cursor location
+:param1 string/PcCursorDots The global string for the PC Cursor dots.
+:param2 string/JAWSCursorDots The global string containing the JAWSCursor dots.
+:param3 string/InvisibleCursorDots Enter the global string for the Invisible Cursor dots.
+
+:Function ToggleShapeOfCursors
+:returns void
+:Description Toggles between the shapes available for the cursors on the Braille display.
+
+:Function BrailleToggleCursorBlinking
+:returns void
+:Description Toggles the Braille cursor blinking on and off.
+
+:function BrailleSaveAllCursorDots
+:Synopsis This function uses the BrailleGetCursorDots to get the current cursor dots settings for each of the cursors; ie the JAWS Cursor, the PC Cursor, and the Invisible Cursor.
+:Description This function stores the global values.  This way they can easily be reset to the original values after being changed.
+
+:function BrailleSetAllCursorsBlinkRate
+:Synopsis This function resets the cursor blink rate for all of the cursors to the value passed to it, as a parameter.
+:Description This function resets the cursor blink rate for all of the cursors to the value passed to it, as a parameter Changes the values in the default .JCF file.
+:Param int/NewBlinkRate The blink rate to which you wish all the cursors to be set
+
+:function BrailleAddObjectName
+:synopsis Add's the object's name to the Braille display
+:description If the Internal code does not add the correct name for an object, this function maybe overridden to add the correct name. If this function adds the name to the display it must return true otherwise the internal code will be used to add the default name for the object. To add the object's name, use BrailleAddString.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectType
+:synopsis Add's the object's type to the Braille display
+:description If the Internal code does not add the correct type for an object, this function maybe overridden to add the correct type. If this function adds the type to the display it must return true otherwise the internal code will be used to add the default type for the object. To add the object's type, use BrailleAddString.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectRowHeader
+:synopsis Add's the object's row header to the Braille display
+:description If the Internal code does not add the correct row header for an object, this function maybe overridden to add the correct row header. If this function adds the row header to the display it must return true otherwise the internal code will be used to add the default row header for the object. To add the object's row header, use BrailleAddString.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectColumnHeader
+:synopsis Add's the object's column header to the Braille display
+:description If the Internal code does not add the correct column header for an object, this function maybe overridden to add the correct column header. If this function adds the column header to the display it must return true otherwise the internal code will be used to add the default column header for the object. To add the object's column header, use BrailleAddString.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectValue
+:synopsis Add's the object's value to the Braille display
+:description If the Internal code does not add the correct value for an object, this function maybe overridden to add the correct value. If this function adds the value to the display it must return true otherwise the internal code will be used to add the default value for the object. To add the object's value, use BrailleAddString.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectState
+:synopsis Add's the object's state to the Braille display
+:description If the Internal code does not add the correct state for an object, this function maybe overridden to add the correct state. If this function adds the state to the display it must return true otherwise the internal code will be used to add the default state for the object. To add the object's state, use BrailleAddString.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectPosition
+:synopsis Add's the object's position information to the Braille display
+:description If the Internal code does not add the correct position information for an object, this function maybe overridden to add the correct position information. If this function adds the position information to the display it must return true otherwise the internal code will be used to add the default position information for the object. To add the object's position information, use BrailleAddString.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectLevel
+:synopsis Add's the object's level to the Braille display
+:description If the Internal code does not add the correct level for an object, this function maybe overridden to add the correct level. If this function adds the level to the display it must return true otherwise the internal code will be used to add the default level for the object. To add the object's level, use BrailleAddString. This is primarily used for Treeviews.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectDlgPageName
+:synopsis Add's the object's Dialog Title to the Braille display
+:description If the Internal code does not add the correct Dialog Title for an object, this function maybe overridden to add the correct Dialog Title. If this function adds the Dialog Title to the display it must return true otherwise the internal code will be used to add the default Dialog Title for the object. To add the object's Dialog Title, use BrailleAddString.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectDlgText
+:synopsis Add's the object's Dialog text to the Braille display
+:description If the Internal code does not add the correct Dialog text for an object, this function maybe overridden to add the correct Dialog text. If this function adds the Dialog text to the display it must return true otherwise the internal code will be used to add the default Dialog text for the object. To add the object's Dialog text, use BrailleAddString.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectContainerName
+:synopsis Add's the object's container name to the Braille display
+:description If the Internal code does not add the correct container name for an object, this function maybe overridden to add the correct container name. If this function adds the container name to the display it must return true otherwise the internal code will be used to add the default container name for the object. To add the object's container name, use BrailleAddString. This is primarily used for GroupBoxes.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectContainerType
+:synopsis Add's the object's container type to the Braille display
+:description If the Internal code does not add the correct container type for an object, this function maybe overridden to add the correct container type. If this function adds the container type to the display it must return true otherwise the internal code will be used to add the default container type for the object. To add the object's container type, use BrailleAddString.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleAddObjectTime
+:synopsis Add's the system time to the Braille display
+:description This function generally won't need to be overridden. If this function adds the time to the display it must return true otherwise the internal code will be used to add the default time for the object. To add the object's time, use BrailleAddString. This is primarily used for the Taskbar.
+:param int/nSubtypeCode
+:returns int true if this script adds the segment, false if internal code should add the segment
+:category Braille
+
+:function BrailleCallbackObjectIdentify
+:synopsis called by system code when a control with subtypecode wt_unknown is detected
+:description this function is called by the system code when the focus lands on an object with subtype code wt_unknown. This function must either return 0, a valid wt_typeCode identifier or a custom control identifier made up of wt_custom_control_base+customControlCode. For example, if a custom control is defined in the jbs in the section [CustomControl1] then the value returned should be wt_custom_control_base+1. Note that if this function returns a non-zero value then the other BrailleAddObjectXX functions must handle the addition of the various components of the control to the display (except for the Type which will be derived from the jbs.
+:returns int the code of the unknown control.
+:category Braille
+
+:function PointNeedsMarking
+:synopsis determines if a character at a point on the screen should be marked
+:description This function determines if a character at a point on the screen should be marked. It is only called if the JCF Option OPT_BRL_CHECK_EXT_MARKING is on.
+:param int/x
+:param int/y
+:returns int True or False
+:category Braille
+
+
+:function ActiveModeOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the SetBrailleMode function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:Function GradeTwoModeOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the SetBrailleGradeTwoMode function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:Function ExpandCurrentWordOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the SetBrailleExpandCurrentWord function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:Function BrailleMovesActiveOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the SetBrailleMovesActive function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:function ActiveMovesBrailleOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the SetActiveMovesBraille function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:function SpeechInterruptOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the SetBrailleSpeechInterrupt function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:function FormatOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the BrailleSet8OrUnlimitedPixels function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:Function SixOrEightDotOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the Set6Or8Dots function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:Function PanModeOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the ToggleBraillePanMode function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:Function IncreasePanIncrementOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the BrailleIncreasePanIncrement function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:Function DecreasePanIncrementOption
+:returns string The new option to display in the list box
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Consistent with the BrailleDecreasePanIncrement function, but puts the item into the dlgSelectFunctionToRun list box.
+
+:function SetMarkingBit
+:Description Use to set a marking bit for the Braille display.  Pass the bit to be set as the parameter.  The function looks at the JCF option, but does not modify the option itself.  The integer for the JCF option with the new bit setting is returned.  If the bit was on, it's turned off; otherwise, it's turned on.
+:param1 int/iBit Enter the constant for the bit to set, e.g. BRL_MARKING_HIGHLIGHT.  These constants are declared in the HjConst.jsh file.
+
+:function MarkOption
+:param1 int/iRetCurVal The int parameter passed to your string function by JAWS
+:param2 int/iOption The constant define for the marking option to be set.
+:returns string The new list item value, either "on" or "off"
+:Description Acts as helper function to all string functions used in the Select Braille Marking Options dialog box
+
+:Function MarkHighlight
+:returns string The new option to display in the list box, either on or off
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Used to display and toggle this marking option.
+
+:Function MarkBold
+:returns string The new option to display in the list box, either on or off
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Used to display and toggle this marking option.
+
+:Function MarkUnderline
+:returns string The new option to display in the list box, either on or off
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Used to display and toggle this marking option.
+
+:Function MarkItalic
+:returns string The new option to display in the list box, either on or off
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Used to display and toggle this marking option.
+
+:Function MarkStrikeOut
+:returns string The new option to display in the list box, either on or off
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Used to display and toggle this marking option.
+
+:Function MarkColor
+:returns string The new option to display in the list box, either on or off
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Used to display and toggle this marking option.
+
+:Function MarkScript
+:returns string The new option to display in the list box, either on or off
+:optional
+:param1 int/iRetCurVal Processed by the internal dlgSelectFunctionToRun function
+:Description Used to display and toggle this marking option.
+
+:Function BrailleZoom
+:Synopsis Toggles the Braille Zoom feature for Adjust Braille Options
+:Description Used in the Adjust Braille Options dialog box.
+:param1 int/iRetCurVal used by JAWS to pass TRUE or FALSE for updating the option
+:Returns string The new or existing value
+
+:Function BrailleShowCoords
+:Synopsis Toggles the Braille Show Coordinates feature for Adjust Braille Options
+:Description Used in the Adjust Braille Options dialog box.
+:param1 int/iRetCurVal used by JAWS to pass TRUE or FALSE for updating the option
+:Returns string The new or existing value
+
+:Function BrailleShowHeaders
+:Synopsis Toggles the Braille Show Headers feature for Adjust Braille Options
+:Description Used in the Adjust Braille Options dialog box.
+:param1 int/iRetCurVal used by JAWS to pass TRUE or FALSE for updating the option
+
+:Function BrailleCoordinates
+:Synopsis Brailles the current table cell coordinates
+:Description Brailles the coordinates of the active Table Cell as: rxcy where x and y are the actual coordinates.
+:Param1 int/iCol the value of nCol from the BrailleAddVirtualTableData function
+:Param2 int/iRow The value of nRow from the BrailleAddVirtualTableData function
+
+:Function BrailleColumnHeader
+:Synopsis Brailles the column header for the active table cell.
+:Description This function depends on the GetColumnHeader () built-in function for its data.  Row and column headers are especially useful in tables in Internet shopping carts.
+
+:Function BrailleRowHeader
+:Synopsis Brailles the row header for the active table cell.
+:Description This function depends on the GetRowHeader () built-in function for its data.  Row and column headers are especially useful in tables in Internet shopping carts.
+
+:function BrailleColumn
+:Synopsis Displays the entire active column on the Braille display.
+:Description Each cell of the column is displayed, separated by a space.  A blank cell is represented by a dash (-).
+:optional
+:param int The column number of the focus cell
+:param int The row number of the focus cell
+
+:function BrailleRow
+:Synopsis Displays the entire active row on the Braille display.
+:Description Each cell of the row is displayed, separated by a space.  A blank cell is represented by a dash (-).
+:optional
+:param int The column number of the focus cell
+:param int The row number of the focus cell
+
+:Function BrailleTableCell
+:Synopsis Brailles the text of the current table cell.
+:Description Displays the text of the current table cell on the Braille display.  No type information (for links, form controls, etc.) is displayed.
+:Param1 int/iCol the value of nCol from the BrailleAddVirtualTableData function
+:Param2 int/iRow The value of nRow from the BrailleAddVirtualTableData function
+
+:function BrailleAppropriateCellData
+:Synopsis Brailles the table data selected in the Braille Options dialog
+:Description Uses the settings selected by the user: Braille entire column, entire row or active cell.
+:Param1 int/nSubType The subtypeCode of the item in the BrailleAddVirtualTableData function
+:Param2 int/iCol the value of nCol from the BrailleAddVirtualTableData function
+:Param3 int/iRow The value of nRow from the BrailleAddVirtualTableData function
+:Returns int True for no further processing, false to let internals handle it.
+
+:Function BrailleTableObjects
+:Synopsis Brailles all table data and information
+:Description Called from the BrailleCallBackObjectIdentify function when a table is active, this function Brailles the table information which can be set from the Adjust JAWS Verbosity dialog when the Virtual Cursor is active.
+:Param1 int/nSubType The subtypeCode of the item in the BrailleAddVirtualTableData function
+:Param2 int/nCol the value of nCol from the BrailleAddVirtualTableData function
+:Param3 int/nRow The value of nRow from the BrailleAddVirtualTableData function
+:Returns int False for benefit of BrailleCallBackObjectIdentify.  It's value is not evaluated.
+
+:Function BrailleAddVirtualTableData
+:Synopsis Braille event function to display table data when inside a table in the Virtual Cursor.
+:Description This function in a manner of speaking acts as the BrailleCallbackObjectIdentify function for tables, except that it fires every time a table is entered, not just on unknown control types.
+:Param1 int/nControlType The type of control under the Virtual Cursor
+:Param2 int/nNestingLevel The current table nesting level, for a table within a table.
+:Param3 int/nCol The table column coordinate
+:Param4 int/nRow The table row coordinate
+
+:Function BrailleToggleTableReading
+:Synopsis Press keystroke to toggle the Table Cell reading feature.
+:Description Toggles between Current Cell, Current Row and Current Column.
+
+:Function BrailleToggleTableHeaders
+:Synopsis Toggles Table Title display
+:Description Toggles whether to display row titles, column titles, both or none.
+
+:Function SelectFromBrailleToPCCursor
+:Synopsis Selects text from Braille cursor to PC cursor
+:Description Limited to what text is in the active document and on screen, this function drags the mouse pointer between the two locations, thus making a drag and drop selection.
+
+:function BrailleAddHTMLAttributes
+:synopsis adds representations for HTML attributes such as OnClick, OnMouseOver etc to the display in Structured Mode
+:description This function is called by internal code if the Virtual Cursor is active and the focus is in an HTML document. It indicates (in Braille) whether the current element has partticular attributes such as OnClick, OnMouseOver etc.
+:returns int True if the function adds text to the display, false otherwise.
+:param int/nSubtypeCode the subtype code of the focused element
+:param string/sAttributes Attribute description as returned by GetElementDescription(5,FALSE)
+
+:script ToggleTypeKeysMode
+:Synopsis Schreibtasten umschalten
+:Description Ist der Schreibmodus aktiviert, dann werden Zeichen, die auf der Braillezeile geschrieben werden, in die Anwendung im Vordergrund eingefügt.
+:Category Braille Keyboard
+:Version JAWS/6.20-11.0
+
+:function CBIEchoCommandAndChars
+:Param string/sKeys the key combo pressed on the display
+:Param string/sChars
+:Synopsis ensures that the appropriate character is spoken when a delete or backspace is issued from the Braille display.
+:Description This function is called from the CBI engine to ensure that the appropriate character is spoken when a delete or backspace is issued from the Braille display.
+:Category Braille Keyboard
+:Version JAWS/12.0
+
+:function BrailleDotPatternToBits
+:description Converts a string representing a dot pattern to an integer representing the dots as bits. Useful when performing set logic on a bit pattern, such as the cursor dots.
+:param string The braille dot pattern string, such as that returned by BrailleGetCursorDots.
+:returns int An integer representing the dots as bits.
+
+:function BitsToBrailleDotPattern
+:description Converts a bit pattern into a braille dot pattern string, such as that returned by BrailleSetCursorDots. Useful when performing set logic on a bit pattern.
+:param int An integer representing a bit pattern of braille dots.
+:returns string A string representing a braille dot pattern.
+
+:Function BrailleCyclePreferredTranslationTable
+:Description Cycles between the Braille Translation tables listed in the delimited key, PreferredTranslationTables, in the Braille section of default.jcf
+:Returns string The new table chosen

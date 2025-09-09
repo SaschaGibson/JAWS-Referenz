@@ -1,0 +1,14 @@
+; Copyright 1995-2018 Freedom Scientific, Inc.
+;Braille structure file for Notepad++
+
+;section for localization and UI display
+
+[CustomControl1]
+components=type,value
+type=lbx
+removed=
+displayname=Autocomplete suggestion
+AlignmentPriority=value,type
+
+[Information]
+Description=Default  Structured Mode view for Notepad++.

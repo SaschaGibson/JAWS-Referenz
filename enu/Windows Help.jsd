@@ -1,0 +1,149 @@
+:function AutoStartEvent
+
+:function GetIEVersion
+:Synopsis Function used to get the version of Internet Explorer
+:Returns int No Return Description
+
+:script MoveToNextLink
+:Synopsis Moves to the next hypertext link or control in the page
+:Description If in a dialog, moves to the next control. If in a Web page, moves to the next hypertext link or control. It is recommended to attach this script to the Tab key. If %product% is unable to find the focused link, it reads the status line
+
+:script MoveToPriorLink
+:Synopsis Moves to the prior hypertext link or control in the page
+:Description If in a dialog, moves to the prior control. If in a Web page, moves to the prior hypertext link or control. It is recommended to attach this script to the SHIFT+TAB keystroke. If %product% is unable to find the focused link, it reads the status line
+
+:script ReadCurrentScreen
+:Synopsis Reads the body of the page from the top with the JAWS Cursor
+:Description This script reads the visible body of the current page with the JAWS cursor. You can stop reading and then begin again from the same place with the standard Say All, INSERT+DOWN ARROW. When you reach the bottom of the screen, CTRL+PAGE DOWN moves to the next screen and continues reading in the same manner
+
+:script ReadNextScreen
+:Synopsis Does a PAGE DOWN and begins reading with the JAWS cursor
+:Description Does a standard PAGE DOWN to bring up the next screen and starts reading from the top with the JAWS cursor. You can stop reading and then begin again from the same place with the standard Say All, INSERT+DOWN ARROW
+
+:script ReadPriorScreen
+:Synopsis Does a PAGE UP and begins reading with the JAWS cursor
+:Description Does a standard PAGE UP to bring up the prior screen and starts reading from the top with the JAWS cursor. You can stop reading and then begin again from the same place with the standard Say All, INSERT+DOWN ARROW
+
+:script ReadDownColumn
+:Synopsis When the JAWS cursor is active, reads the next line of the current column
+
+:script ReadUpColumn
+:Synopsis When the JAWS cursor is active, reads the prior line of the current column
+
+:script ReadColumnLeft
+:Synopsis When the JAWS cursor is active, reads the current line in the prior column
+
+:script ReadColumnRight
+:Synopsis When the JAWS cursor is active, reads the current line in the next column
+
+:function MoveToLink
+:Synopsis Function used to move to the specified link
+:Param int/nNext No Description
+
+:script SaySelectedLink
+:Synopsis Says the link currently with the focus
+
+:function IsLinksList
+:Synopsis Function used to determine if the links list is active
+:Param handle/hwnd No Description
+
+:function IsToolbarList
+:Synopsis function used to determine if the toolbar list is active
+:Param handle/hwnd No Description
+
+:function IsTabList
+:Synopsis Function used to determine if the Tabs list is active
+:Param handle/hwnd No Description
+
+:function FocusChangedEvent
+:Param handle/focusWindow No Description
+:Param handle/prevWindow No Description
+
+:function SayFocusedWindow
+
+:script ReformatDocument
+:Synopsis Reformats multiple column pages to be more readable with speech
+:Description Rearranges multiple column pages to read in a linear fashion. IE columns are read one after another. Available only in IE4
+
+:function NewSelectLink
+:Synopsis Uses the new link list view
+:Description Use when Virtual PC cursor is on
+
+:script SelectALink
+:Synopsis Brings up a dialog containing a list of the links present in the page
+
+:function ieFocusToFirstField
+:Synopsis Function used to move the focus to the first field on a page
+
+:script FocusToFirstField
+:Synopsis Moves to the first input field in the page when using IE 4.0
+:Description Searches for the first input field on the page and speaks it. If no input fields are available, a message is spoken to indicate this to the user. Available only in IE4
+
+:function GetNavigationTreeView
+:Returns handle No Return Description
+:Synopsis Function used to get the tree view
+:Description Useful for determining whether or not you are in the tree view as a starting point in writing scripts
+
+:function GetToolbar
+:Returns handle No Return Description
+:Synopsis Gets the toolbar if it is visible
+:Description Helpful in building the toolbar dialog list
+
+:script ToolBar
+:Synopsis Allows the user to click in a toolbar button by selecting it from a list
+:Description This script brings up a dialog box that contains every button that appears on the toolbar in a list. In this dialog, the user can select one of the buttons on the toolbar and press ENTER to click on it
+
+:function ClickToolBarButton
+:Synopsis Allows the user to click the appropriate toolbar button
+:Param handle/winHandle No Description
+:Param string/buttonLabel No Description
+
+:function GetTabControl
+:Returns handle No Return Description
+:Synopsis Gets the Tab control that currently has focus
+
+:script SelectTab
+:Synopsis Allows the user to select a Tab to click from a dialog list
+
+:function ClickTab
+:Synopsis Function used to click the appropriate Tab
+:Param handle/winHandle No Description
+:Param string/tab No Description
+
+:function GetFrameInHierarchy
+:Synopsis Function used to get the hierarchy of the frames on a page
+:Param int/nIndex No Description
+:Param object/StartWindow No Description
+
+:function AddFramesInWindow
+:Synopsis Function used to add the frames to a window
+:Param object/window No Description
+:Param string/strBuf/ByRef No Description
+
+:function SpeakDocument
+:Synopsis Function used to speak the frame that currently has focus on a page
+:Param object/doc No Description
+
+:script NextDocumentWindow
+
+:script PreviousDocumentWindow
+
+:Function GetTabLabels
+:Returns string The labels for the tab controls delimited for a JAWS list box.
+:Description Retrieves all the labels in a delimited string for a JAWS list box.
+:param handle/hTabControl The window which contains the tab controls.
+
+:function GetToolBarButtons
+:synopsis Builds the list of toolbar buttons
+:description Builds the list of toolbar buttons, along with their on-screen coordinates. Buttons with a white background are unavaialbunavailable, and are not added to the list of buttons.
+:param handle The handle of the toolbar window
+:param string ByRef To hold the delimited list of toolbar button text
+:param string ByRef To hold the on-screen x coordinates of the buttons
+:param int ByRef To hold the on-screen Y coordinate of the row of buttons
+
+:function ClickToolBarButtonByPosition
+:synopsis Clicks a button based on its (x,y) coordinates
+:description Clicks a button based on its on-screen (x,y) coordinates
+:param string The delimited list of button x coordinates
+:param int The number representing which button to use
+:param int  The y coordinate of the button row

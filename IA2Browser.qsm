@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Chrome.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="EditorSettings" Text="Editor Settings">
+			<HelpMsg>
+These settings are associated with edit fields in Chrome.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="EditorSettings.ListNestingLevelAnnouncement" Text="List Nesting Level Announcement">
+			<HelpMsg>
+This option controls whether to announce list nesting levels as edit fields are navigated. The default setting is on.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

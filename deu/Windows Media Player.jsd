@@ -1,0 +1,92 @@
+:script SayNextLine
+:Category Say
+
+:script HotKeyHelp
+
+:function GetFormattedHour
+
+:function HandleCustomWindows
+:Returns int True if no further processing required
+:Param handle/hWnd No Description
+
+:function GetFormattedMinute
+
+:function GetFormattedSecond
+
+:function SayObjectTypeAndText
+
+:function SayNonHighlightedText
+:Param handle/hWnd No Description
+:Param string/sBuffer No Description
+
+:function KeyPressedEvent
+:Param int/nKey No Description
+:Param string/strKeyName No Description
+:Param int/nIsBrailleKey No Description
+:Param int/nIsScriptKey No Description
+
+:function AutoStartEvent
+
+:script SayPriorLine
+:Category Say
+
+:script MoveToMainTree
+:Synopsis Bewegt Fokus auf die Hauptauswahlstruktur
+:Description Bewegt den Fokus auf das Hauptfenster für Auswahlen und Aktionen.
+:Category Positioning
+
+:function SayObjectActiveItem
+
+:script SayLine
+
+:function SayHighlightedText
+:Param handle/hWnd No Description
+:Param string/sBuffer No Description
+:Param int/nAttributes No Description
+
+:script ScreenSensitiveHelp
+
+:function FocusChangedEvent
+
+:function BrailleAddObjectContainerName
+:Returns int No Return Description
+:Category Braille
+:Param int/iSubTypeCode No Description
+
+:function BrailleCallbackObjectIdentify
+
+:script SayListItem
+
+:function HandleCustomAppWindows
+:Returns int True, if custom processing was carried out and no more processing necessary.
+:Category WindowsAndObjects
+:Param handle/hAppMain No Description
+
+:function ProcessBoundaryStrike
+:Synopsis Performs an action indicating that a boundary was reached.
+:Description This function is called by TopEdgeEvent and BottomEdgeEvent to perform an action when a user tries to move past a boundary.
+:Category Cursors
+:Param handle The handle of the window where the edge was reached.
+:Param int The boundary edge which was reached. Currently TopEdge and BottomEdge are defined in HJConst.jsh.
+
+:function GetFormattedTime
+:Returns string No Return Description
+:Param string/sTime No Description
+
+:script MutePlayer
+:Synopsis Schaltet den Player stumm.
+:Category Script
+
+:script MoveToCurrentPlayList
+:Synopsis Bewegt den Fokus auf das erste Fenster der aktuellen Wiedergabe.
+:Description Bewegt den Fokus auf das Fenster der aktuellen Wiedergabe.
+:Category Positioning
+
+:script ScriptFileName
+
+:function HandleCustomRealWindows
+:Returns int True if no further processing required.
+:Param handle/hReal No Description
+
+:function AutoFinishEvent
+:function ActiveItemChangedEvent

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Adobe Acrobat.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="AdobeAcrobatSettings" Text="Adobe Acrobat Settings">
+			<HelpMsg>
+These settings are associated with the application.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="AdobeAcrobatSettings.IgnoreOCRAlert" Text="Ignore OCR Alert In Empty Documents">
+			<HelpMsg>
+Check this box to keep JAWS from automatically asking if you want to OCR when in an inaccessible or graphic PDF document.
+Changes take effect the next time you load a document.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="AdobeAcrobatSettings.BlankLineBetweenParagraphs" Text="Blank Line Between Paragraphs">
+			<HelpMsg>
+This setting controls whether or not paragraphs are separated by a blank line.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

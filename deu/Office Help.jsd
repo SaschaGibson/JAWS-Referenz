@@ -1,0 +1,146 @@
+:script SelectALink
+:Synopsis Wählt den aktuellen Link
+:Description Wählt den Link, auf den der Fokus zur Zeit zeigt.
+
+:script ReadDownColumn
+:DisplayName Spalte Runter lesen
+:Synopsis Liest die nächste Zeile in der Spalte
+:Description Liest die nächste Zeile in der aktuellen Spalte.
+
+:script HotKeyHelp
+
+:function ieFocusToFirstField
+:Synopsis Springt in das erste Eingabefeld
+:Description Springt im aktuellen Dokument in das erste Eingabefeld
+
+:script SaySelectedLink
+:DisplayName Gewählten Link ansagen
+:Synopsis Spricht den gewählten Link
+:Description Spricht den aktuell gewählten Link
+
+:function GetFrameInHierarchy
+
+:function ClickTab
+:param1 handle/WinHandle The handle of the window containing the tab controls
+:param2 string/Tabthe The name of the tab to be clicked
+
+:function IsLinksList
+:Param1 handle/hWnd The handle of the window to check
+:function MoveToLink
+:Param int/iDirection The direction either forwards or backwards. 0 = back, 1 = forward
+:function GetIEVersion
+:Returns int The version of IE on the system recorded in WindowsSystem directory
+
+:script SelectTab
+:DisplayName Registerkarte auswählen
+:Synopsis Springt zum Steuerelement Registerkarte
+:Description Bewegt den Fokus auf das Steuerelement Registerkarte
+
+:script FocusToFirstField
+:Synopsis Springt in das erste Eingabefeld
+:Description Springt im aktuellen Dokument in das erste Eingabefeld
+
+:script ReadNextScreen
+:DisplayName Nächste Bildschirmseite lesen
+:Synopsis Liest den nächsten Bildschirm im Dokument.
+:Description Liest den nächsten Bildschirm, der möglicherweise nicht sichtbar ist.
+
+:script ToolBar
+:DisplayName Symbolleiste
+:Synopsis Erzeugt eine Liste von Symbolleisten-Elementen
+:Description Erzeugt eine Liste von Symbolleisten-Elementen  Mit Pfeil rauf und runter bewegt man sich zwischen den Elementen und mit Eingabe wählt man ein Element aus.
+
+:function SayNonHighlightedText
+
+:script ReadColumnLeft
+:DisplayName Spalte Links lesen
+:Synopsis Liest die Zeile links in einer Spalte
+:Description Springt auf die Zeile in der Spalte, die direkt links neben der aktuellen Position ist, und liest sie.  Liest die Zeile in dieser Spalte, die mit der Zeile in der aktuellen Spalte korrespondiert.
+
+:script ReadUpColumn
+:DisplayName Spalte Rauf lesen
+:Synopsis Liest die vorherige Zeile in der Spalte
+:Description Liest die vorherige Zeile in der aktuellen Textspalte.
+
+:script ReadPriorScreen
+:DisplayName Vorherige Bildschirmseite lesen
+:Synopsis Liest den vorherigen Bildschirm
+:Description Liest den vorherigen Bildschirm des aktuell sichtbaren Dokuments
+
+:function AutoStartEvent
+
+:function SpeakDocument
+
+:function GetTabCountAndInfo
+:Returns int the number of tabs found
+:Synopsis Fragt die Namen und die Anzahl der zur Verfügung stehenden Steuerelemente Registerkarten ab
+:Description Die ersten zwei Parameter, das Handle und int relate des Fensters, in denen die Registerkarten gefunden werden.  Auf den dritten Parameter, Typ String, wird Bezug genommen und er erhält den Wert der Steuerelemente Registerkarten getrennt durch den LIST_ITEM_SEPARATOR Wert
+:Param handle/hWnd the handle of the window in which the tabs are found
+:Param int/iControl the control iD of the window in which the tabs were found
+:Param string/strBuff/ByRef the null string variable to receive the names of the tab controls separated by LIST_ITEM_SEPARATOR
+
+:function GetToolbar
+
+:function GetNavigationTreeView
+
+:function NewSelectLink
+:Synopsis Präsentiert die neue Ansicht Linkliste
+:Description Wenn der virtuelle PC Cursor eingeschaltet ist, rufen Sie diese Funktion auf. Ansonsten wird Ihr Skript ungenau berichten
+
+:script ReadCurrentScreen
+:DisplayName Aktuellen Bildschirm lesen
+:Synopsis Liest den aktuellen Bildschirm
+:Description Liest den aktuell sichtbaren Bildschirm.  
+
+:function GetTabControl
+
+:function SayFocusedWindow
+
+:function IsTabList
+:Param1 handle/hWnd The handle of the window to check
+
+:function IsToolbarList
+:Param1 handle/hWnd The handle of the window to check
+
+:script ScreenSensitiveHelp
+
+:function FocusChangedEvent
+
+:script MoveToPriorLink
+:DisplayName Zum vorherigen Link springen
+:Synopsis Springt zum vorherigen Link
+:Description Springt zum vorherigen Link in HTML
+
+:function AddFramesInWindow
+
+:function ClickToolBarButton
+:param1 handle/WinHandle The handle of the tool bar
+:param2 string/ButtonLabel the label assigned to the button to be clicked
+
+:script ScriptFileName
+
+:script PreviousDocumentWindow
+
+:script ReadColumnRight
+:DisplayName Spalte Rechts lesen
+:Synopsis Liest die Spalte zur rechten
+:Description Springt auf die Zeile in der Spalte, die sich direkt rechts neben der aktuellen Spalte befindet, und liest sie.  Liest die Zeile in dieser Spalte, die mit der aktuellen Zeile in der aktuellen Spalte korrespondiert.
+
+:script MoveToNextLink
+:DisplayName Zum nächsten Link springen
+:Synopsis Springt zum nächsten Link in HTML
+:Description Springt zum nächsten Link in HTML  
+
+:script NextDocumentWindow
+
+:Function GetTabLabels
+:Returns string The labels for the tab controls delimited for a JAWS list box.
+:Description Fragt alle Bezeichnungen in einem abgegrenzten String für ein JAWS Listenfeld ab.
+:param handle/hTabControl The window which contains the tab controls.
+
+:Function AddToString
+:Synopsis Nimmt zwei Strings und fügt den zweiten String zum ersten hinzu
+:Description Fügt den zweiten Stringparameter zum ersten Parameter hinzu und gibt einen neuen String zurück
+:Returns string
+:Param1 String/Base The base string that is to be added to
+:Param2 string/New The string that is to be added to the base

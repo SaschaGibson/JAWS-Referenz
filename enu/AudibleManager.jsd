@@ -1,0 +1,155 @@
+:function AutoStartEvent
+
+:function FocusChangedEvent
+:Param handle No Description
+:Param handle No Description
+
+:function SayFocusedWindow
+
+:function SayNonHighlightedText
+:Param handle/hWnd the handle of the window in which the text was written
+:Param string/buffer the text that was written
+
+:function SayHighLightedText
+:Param handle No Description
+:Param string No Description
+
+:script ScreenSensitiveHelp
+
+:script HotKeyHelp
+
+:script WindowKeysHelp
+
+:script ScriptFileName
+
+:script Enter
+:Synopsis Passes the ENTER key to the system
+:Description Used in stopping and playing audio files
+
+:script Rewind
+:Synopsis Performs the rewind function for the application
+:Description Passes the key to the system
+
+:script FastForward
+:Synopsis Performs the Fast Forward function
+:Description This function only works when you are playing audio
+
+:script PreviousSection
+:Synopsis Performs the Previous Section function
+:Description This function only works when playing audio
+
+:script NextSection
+:Synopsis Performs the NextSection function of the application
+:Description Moves to the next section in the selected audio file. Only works when playing audio
+
+:script PlayAndStop
+:Synopsis Performs the stop/play function of the application
+:Description This only works when playing audio
+
+:script VolumeDown
+:Synopsis Performs the VolumeDown function
+:Description Moves the volume DOWN when playing audio
+
+:script ControlU
+:Synopsis Performs the function of CTRL+U
+:Description When the Desktop Audio player is running and audio is playing, this increases volume. If the focus is in the list or tree view, you are navigated to the Subscriptions folder
+
+:function AddToString
+:Returns string No Return Description
+:Synopsis Takes two strings and adds the second string to the first
+:Description Adds the second string parameter to the first parameter and returns the new string
+:Param string/Base The base string that is to be added to
+:Param string/New The string that is to be added to the base
+
+:function NewTextEvent
+:Param handle No Description
+:Param string No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+:Param string No Description
+
+:function ContextMenuProcessed
+:Returns int No Return Description
+:Param handle/HWND No Description
+
+:script HideDetailView
+:Synopsis closes the detail view of the current book selection
+
+:script ActivateOtisOrTransferProgramList
+:Synopsis Moves focus to list of programs on mobile device or to Transfer List, whichever is showing in the Device Pane
+
+:script ActivateInBoxProgramList
+:Synopsis sets focus to currently-active program list
+
+:script ToggleDevicePane
+:Synopsis verbalizes active or inactive status of device pane
+
+:script ReadDevicePane
+:Synopsis reads contents of Device pane
+
+:script ClickStorageCard
+:Synopsis clicks storage card radio button
+:Description clicks the radio button in the Device Pane that shows status of storage card
+
+:script ClickMainMemory
+:Synopsis Clicks Main Memory radio button
+:Description clicks the radio button in the Device Pane that shows status of main memory
+
+:function KeyPressedEvent
+:Param int No Description
+:Param string No Description
+:Param int No Description
+:Param int No Description
+
+:function GetManagerVersion
+:Returns int No Return Description
+:Synopsis gets the version of Audible Manager being used
+
+:function DescriptionChangedEvent
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+:Param string No Description
+:Param string No Description
+
+:script FocusToDetailPane
+:Synopsis sets focus to Detail for view for selected item in list
+
+:function FindDetailPane
+
+:function AnnounceListStateChange
+
+:function ObjStateChangedEvent
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+:Param int No Description
+
+:function ActiveItemChangedEvent
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+:Param handle No Description
+:Param int No Description
+:Param int No Description
+
+:script SayNextLine
+
+:script SayPriorLine
+
+:function SelectingText
+:Param int No Description
+
+:script SelectNextLine
+:Returns undef No Return Description
+
+:script SelectPriorLine
+:Returns undef No Return Description
+
+:script GoToMyLibrary
+:Returns undef
+

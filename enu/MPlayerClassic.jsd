@@ -1,0 +1,37 @@
+:script ToggleTimeAnnouncing
+:Synopsis Toggles announcing the time while playback.
+:Description Toggles announcing the time elapsed and total while playing the track.
+:Category SpeakingLevel
+
+:function SayActionUnit
+:Returns int Result of operation, TRUE if successful, FALSE otherwise.
+:Synopsis Announces the action unit.
+:Description Announces the action unit without performing the action.
+:Category Positioning
+:Param int/Unit Operation performed as a constant from the hjconst.jsh file.
+
+:script Rewind
+:Synopsis Announces the rewind action.
+:Description Announces and performs the rewind action in Media Player Classic main window.
+:Category Positioning
+
+:script FastForward
+:Synopsis Announcies the fast forward action.
+:Description Announcies and performs the fast forward action in the main window.
+:Category Positioning
+
+:script IncreaseVolume
+:Synopsis Increases the volume.
+:Description Announces and increases the volume in the main Media Classic Window.
+:Category Options
+
+:script DecreaseVolume
+:Synopsis Decreases the volume.
+:Description Announces and decreases the volume in the main Media Player Classic window.
+:Category Options
+
+:script PlayAndPause
+:Synopsis Starts the playback of the track or pauses the track.
+:Description Starts the playback of the active track if not playing or pauses the playback of the track if the track is playing.
+:Category Keyboard
+

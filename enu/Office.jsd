@@ -1,0 +1,150 @@
+:function ShouldReEvaluateWindowCategoryType
+:description Used by function GetWindowCategory to determine whether the cached window category type should be re-evaluated. The Office version assumes that if the window handle hasn't changed then the category does not need re-evaluating.
+:returns int True if the window category type should be re-evaluated, false otherwise.
+
+:function GetWindowCategory
+:returns int the WCAT_ constant from Office.jsh which refers to the context of the foreground window, e.g. WCAT_SDM, WT_TASK_PANE, or for new dialogs, WCAT_SINGLE_CLASS which covers NetUIHWND and DirectUIHWND.
+:description Do not overwrite this function for custom category logic, instead overwrite helper function FindWindowCategoryType. Returns a common office category of window, see WCat constants in Office.jsh for details. Describes the foreground or context, rather than the child. If the window is a link in the Task Pane, it will return WCAT_TASK_PANE for the link's context.
+:optional
+:param handle/hwnd If not filled in, getFocus is used.
+
+:function IsStandardUnknownWindowCategoryType
+:description Used by function FindWindowCategoryType to test typical scenarios for which the window category should be the unknown category type.
+:param handle/hWnd The window handle passed from function FindWindowCategoryType.
+:returns int True if the focus is in a standard location for which no specific category type should be processed for special handling, false otherwise.
+
+:function FindWindowCategoryType
+:returns int the WCAT_ constant from Office.jsh which refers to the context of the foreground window, e.g. WCAT_SDM, WT_TASK_PANE, or for new dialogs, WCAT_SINGLE_CLASS which covers NetUIHWND and DirectUIHWND.
+:description This is the helper function to GetWindowCategory. GetWindowCategory attempts to minimize processing by determining if the category is already known because the window handle is known.  FindWindowCategoryType processes logic to determine that what the category is if the handle has changed since the category was last determined.
+:param handle/hwnd The window handle passed from function GetWindowCategory.
+
+:function getObjectNameOrValue
+:returns string the value if available. If no value, returns name. If no name, returns word
+:Description Returns values from MSAA / UIA. Returns the value if available. If no value, returns name. If no name, returns word
+
+:Function isBackstageView
+:Description This function determines whether a Backstage View control has focus. This is needed so that tutorial help and hotkeys are handled consistently with prior versions of Office for these types of controls, e.g. Tab controls which no longer behave as in prior versions while in backstage view.
+:Param handle/hwnd The window that has the focus.
+:Returns int True if in Backstage view; false otherwise.
+
+:function ScreenSensitiveHelpForOffice
+:description Used to speak screen-sensitive help for common MSOffice elements such as the ribbon, taskpane, status bar toolbar, etc.
+:returns int True if screen-sensitive help for Office was shown, false otherwise.
+
+:function ShowOfficeScreenSensitiveHelp
+:description Adds extra information from the Office application to the screen-sensitive help message, and shows the help message in the virtual viewer.
+:param string The help message for the control.
+
+:function IsQuickAccessToolbarActive
+:description Determines if the focus is on the Quick Access Toolbar.
+:returns int True if focus is on the Quick Access toolbar, false otherwise.
+
+:function ScheduleBrailleFlashMessage
+:description Used to schedule a braille message to flash when the message would otherwise be obliterated by screen updates. If a braille message is already scheduled, the new one is appended to the already scheduled one and the message is re-scheduled.
+:param string The braille message
+:optional
+:param int Delay time for the message to wait before flashing. Default is a half second. If a different delay time is desired then specify it in tenths of a second.
+:param int Specify True if the message requires %KeyFor() substitutions to be made before Brailling.
+
+:function ScheduleBrailleFlashMessageWithSpeechOutput
+:description Used to schedule a braille message to flash when the message would otherwise be obliterated by screen updates. If a braille message is already scheduled, the new one is appended to the already scheduled one and the message is re-scheduled. Tests to determine whether the braille message should speak based on whether speech should speak for the output type.
+:param int Output type to test whether braille should flash a message only if speech spoken using the output type.
+:param string The braille message
+:optional
+:param int Delay time for the message to wait before flashing. Default is a half second. If a different delay time is desired then specify it in tenths of a second.
+:param int Specify True if the message requires %KeyFor() substitutions to be made before Brailling.
+
+:Function ProcessMessage
+:returns void no return description
+:Description Unification of JAWS and MAGic, speak or post the message according to the rules.
+Where MAGic is running without speech, always post the message box.
+Where MAGic has speech enabled, on single key press, speak it, on double key press, post to message box.
+Where MAGic is not present, speak the message.
+All parameters except the message are optional, but they must be filled in in order to work properly.
+They should all be filled in so that everything works as expected for any product. The exception is the voice context flag which may not be necessary.
+:param string/sText The text to be spoken, or what will be the caption text of the dialog. This is the same text. If it contains markup for speech, the markup will be removed before posting to the dialog.
+:Optional
+:Param string/sText_S The short version of the text, null for none.  This is for speech processing only, not dialogs.
+:param int/iOutputType the output type to use when not presented as a dialog.
+:param string/sTitle The title for the dialog
+:param int/iMBFlags the flags to send to the messagebox function declaring the buttons to be used, icon to show, etc.
+:param string/sVCTX The voice context to use. If you fill in this parameter, the string must not contain markup.
+
+:function OnFileTabButton
+:description Determines if if focus is on the File tab button. This is the button located on the ribbon pane which brings up the backstage view pane.
+:returns int True if focus is on the File tab button.
+
+:function OnRibbonButton
+:description Determines if focus is on one of the ribbon pane buttons. These are not the buttons on the lower ribbon, but are buttons such as the one to minimize the ribbons or get Offics Help.
+:returns int True if focus is on one of the ribbon pane buttons.
+
+:function InNUIDialogWindow
+:description Determines if focus is in a window of UIA class NUIDialog, such as the Options dialog for the application.
+:returns int True if focus is in a window of UIA class NUIDialog.
+
+:function getNUIDialogGroupBoxName
+:Synopsis returns the groupbox name for NUIDialog controls
+:Returns string the groupbox name for the NUIDialog control
+
+:function OnBackstageViewPane
+:description Uses UIA to determine if focus is on one the the object in the Backstage View pane.
+:returns int True if focus is on one the the object in the Backstage View pane.
+
+:function GetAppUIAWindowAndPaneTitles
+:description Retrieves the title of the application window, and if it is determined that focus is in a pane other than the document, the title of the pane if one can be found. These titles can be used with the SayWindowTitle script.
+:param string byRef The application title, which is the text that appears on the window's title bar. This typically includes the name of the current document.
+:param string byRef If it can be determined that the focus is in a pane with a name and that pane is not the document pane, the name of the pane.
+
+:function OnNetUIMenuButton
+:description Determines if focus is on a menu button in a NetUIHWND window class window.
+:returns int True if focus is on a menu button in a NetUIHWND window class window.
+
+:function OnVirtualRibbonEditCombo
+:description Determines if the focus is on an editcombo control in the virtual ribbons and the virtual cursor is active. Use InRibbonEditCombo to test if focus is on an edit combo in the ribbons when the virtual cursor is not active, including when forms mode is active in the virtual ribbons.
+:returns int True if the focus is on an editcombo control in the virtual ribbons and forms mode is not active, false otherwise.
+
+:function OnUIAEditCombo
+:description Determines if the focus is on an editcombo control that has been implemented with UIA support.
+:returns int True if the focus is on an editcombo control that has been implemented with UIA support.
+
+:function InRibbonEditCombo
+:description Determines if the focus is on an editcombo control in the ribbons and the virtual cursor is not active. Use function OnVirtualRibbonEditCombo to test if focus is on an edit combo when the virtual cursor is active.
+:returns int True if the focus is on an editcombo control in the ribbons and the virtual cursor is not active, false otherwise.
+
+:function UIAGetEditComboGroupName
+:description Uses UIA to determine the group name of the edit combo control in focus. Invalid if the virtual cursor is active, such as it is in the virtual ribbons before forms mode has been activated.
+:returns string If the focus is on an edit combo and a group name could be determined, returns the group name.
+
+:function UIAGetEditComboName
+:description Uses UIA to determine the name of the edit combo control in focus. Invalid if the virtual cursor is active, such as it is in the virtual ribbons before forms mode has been activated.
+:returns string If the focus is on an edit combo and the name could be determined, returns the name.
+
+:function UIAGetEditComboItemValue
+:description Uses UIA to determine the value in the edit field of the edit combo control in focus. Invalid if the virtual cursor is active, such as it is in the virtual ribbons before forms mode has been activated.
+:returns string If the focus is on an edit combo and the value in the edit field could be determined, returns the value.
+
+:function UIAGetEditComboExpandCollapseState
+:description Uses UIA to determine the expand/collapse state of the edit combo control in focus. Invalid if the virtual cursor is active, such as it is in the virtual ribbons before forms mode has been activated.
+:returns int If the focus is on an edit combo and the expand/collapse state could be determined, returns ExpandCollapseState_Collapsed or ExpandCollapseState_Expanded; otherwise, returns UIAError. See UIA.jsh for these constants.
+
+:function UIAGetEditComboInfo
+:description Uses UIA to retrieve the group name, edit combo name, edit field value, and expand/collapse state of the edit combo in focus. Invalid if the virtual cursor is active, such as it is in the virtual ribbons before forms mode has been activated.
+:param string byRef The edit combo group name.
+:param string byRef The edit combo name.
+:param string byRef The value in the edit field of the edit combo.
+:param int byRef The expand/collapse state of the edit combo if one can be determined; if no state can be determined the value retrieved is UIAError.
+:returns int True if focus is on an edit combo and the UIA object can be instantiated, false otherwise.
+
+:function ProcessedPCCursorNavigationInRibbonEditCombo
+:description Used by cursor navigation scripts to process code for navigating with the PC cursor in ribbon edit combo controls. Determines whether the cursor navigation script should speak, and if so speaks; otherwise it is determined that event functions will process the speech and only the navigation is performed.
+:param int The unitMovement constant for the cursor navigation script.
+:returns int True if the pc cursor navigation and related processing was performed, false otherwise.
+
+:Function GetUIAStatusBarText
+:returns string all the names of the controls on the status bar
+:Description The contents of the status bar as described by UIA.
+
+:function GetOfficePurchaseInfo
+:returns string the app name plus relevant purchase info, for 2016 and later will be retail or subscription. 
+:Description Supply the app name, this will append either Retail or Subscription to the return string for Office 2016 and later. 
+:param string/appName the app or module name, often retrieved from window owner or app name from file path.

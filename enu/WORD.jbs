@@ -1,0 +1,161 @@
+; Copyright 1995-2018 Freedom Scientific, Inc.
+;Braille structure file for Microsoft Word versions prior to later 2016 and O365.
+
+;section for localization and UI display
+[Component Aliases]
+tblInfo=Table Info
+tblRowHdr=Table Row Header
+tblColHdr=Table Column Header
+tblCellContent=Table Cell Content
+frmFldPrompt=Formfield Prompt
+type=type
+frmFldState=Formfield State
+frmFldPosition=Formfield Position
+shapeType=Shape Type
+altText=Alternative Text
+shapeDimensions=Shape Dimensions
+oleName=OleName
+oleType=OleType
+oleValue=OleValue
+oleState=OleState
+olePosition=OlePosition
+
+; Section for edit
+; note that multiline edits will always use line mode if not in a dialog
+[SubtypeCode3]
+components=ContextHelp,name,type,state,ComputerBrailleIndicator,value,hotkey
+type=ed
+removed=
+displayname=
+AlignmentPriority=name,type,state,ComputerBrailleIndicator,value
+; Section for listboxitem
+[SubtypeCode55]
+components=ContextHelp,name,type,state,value,position,hotkey
+removed=
+displayname=
+type=lbx
+AlignmentPriority=name,type,state,value
+
+; for Tables
+[CustomControl1]
+components=tblInfo,tblRowHdr,tblColHdr,tblCellContent
+removed=
+type=
+displayname=table
+
+;for edit formfields
+[CustomControl2]
+components=tblInfo,tblRowHdr,tblColHdr,name,type,ComputerBrailleIndicator,Value
+type=ed
+removed=
+displayname=edit formfield
+AlignmentPriority=name,type,ComputerBrailleIndicator,Value
+
+;for checkbox formfields
+[CustomControl3]
+components=tblInfo,tblRowHdr,tblColHdr,state,name,type
+type=chk
+removed=
+displayname=checkbox formfield
+AlignmentPriority=state,name
+
+;for dropdown formfields
+[CustomControl4]
+components=tblInfo,tblRowHdr,tblColHdr,name,type,Value,position
+type=cbo
+removed=
+displayname=dropdown formfield
+AlignmentPriority=name,type,Value
+
+;for generic fields
+[CustomControl5]
+components=fldName,FldType,FldValue
+type=fld
+removed=
+displayname=field
+
+;for pictures or other generic shape objects
+[CustomControl6]
+components=shapeType,altText,shapeDimensions
+removed=
+displayname=inline shape
+
+; sections for OLE control objects
+;section for OLE checkbox
+[CustomControl8]
+components=oleState,oleName,oleType,oleValue,olePosition
+type=chk
+removed=
+displayname=OLE checkbox
+AlignmentPriority=oleState,oleName
+;section for OLE radio button
+[CustomControl9]
+components=oleState,oleName,oleType
+type=rbtn
+removed=
+displayname=OLE Radio Button
+AlignmentPriority=oleState,oleName
+
+;section for OLE listbox
+[CustomControl10]
+components=oleName,oleType,oleValue,olePosition
+type=lbx
+removed=
+displayname=OLE Listbox
+AlignmentPriority=oleName,oleType,oleValue
+
+;section for all other generic MSForms controls
+[CustomControl11]
+components=oleState,oleName,oleType,oleValue
+type=
+removed=
+displayname=OLE Generic
+AlignmentPriority=oleState,oleName
+
+;unknown, generic ole controls
+[CustomControl12]
+components=oleState,oleName,oleType,oleValue
+type=
+removed=
+displayname=OLE Unknown
+AlignmentPriority=oleState,oleName
+
+;section for information balloons
+[CustomControl13]
+components=name,type
+type=ibln
+removed=
+displayname=Information Balloon
+
+;section for bookmarks
+[CustomControl14]
+components=name,type,value
+removed=
+displayname=bookmark
+type=bk
+AlignmentPriority=name,type,value
+
+;section for smart tags
+[CustomControl15]
+components=SmartTag
+removed=
+displayname=smart tag
+;Please note the line specifier following the component name in the below two sections.
+; is -1 which means don't test it.
+;The reason for this is that the component callback itself handles the line indices when
+;building up the structured data.
+; Leaving blank would default to line 1 which would mean that the components would only be added
+;to line one regardless of the component's callback function 
+;calling BrailleSetLineIndexForNextAddString to set the line indices of the 
+;individual BrailleAddStrings.
+[CustomControl16]
+components=ColTitlesAndCurRow:-1
+removed=
+displayname=Column titles and Current Row
+[CustomControl17]
+components=PrevAndCurrentRow:-1
+removed=
+displayname=Prior and Current Row
+
+[Information]
+Description=Default  Structured Mode view for Microsoft Word.

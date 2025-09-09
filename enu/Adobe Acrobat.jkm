@@ -1,0 +1,27 @@
+[Common Keys]
+Insert+Shift+V=PersonalizeSettings
+JAWSKey+Shift+V=PersonalizeSettings
+JAWSKey+F7=SelectALink
+Control+PageDown=NextPage
+Control+ExtendedPageDown=NextPage
+Control+PageUp=PreviousPage
+Control+ExtendedPageUp=PreviousPage
+Control+Shift+PageUp=SelectPageUp
+Control+Shift+ExtendedPageUp=SelectPageUp
+Control+Shift+PageDown=SelectPageDown
+Control+Shift+ExtendedPageDown=SelectPageDown
+Control+N=GoToPage
+Control+Shift+N=GoToPage
+Control+Shift+5=ChangeReadingOptions
+Control+Shift+6=AccessibilityQuickCheck
+
+[Laptop Keys]
+Insert+F7=SelectALink
+
+[Virtual Keys]
+;  need to overwrite the default assignment
+;  Control+k=DefineATempPlaceMarker
+;  since Control + k is an Acrobat's keystroke.
+Control+k=OpenPreferencesDialog
+
+

@@ -1,0 +1,816 @@
+:function ExcelSelectionChangedWithFocusChange
+:description Determines if an Excel selection change happened at close to the same time as a focus change event.
+:returns int True if an Excel selection change event or sheet activate event fired within a limited time threshold of the focus change event.
+
+:function FocusRedirectedOnFocusChange
+:description Tests whether focus should be reset using SetFocus, and does so if it is determined that focus is in an invalid location.
+:returns int True if focus was redirected with SetFocus, false otherwise.
+
+:function HandleCustomDialogueWindows
+:Description Handles all the dialogues on gaining focus and announces them.
+:Param handle/hWnd Window to handle
+:Returns int TRUE if the dialogue was handled, FALSE otherwise
+
+:function getExcelVersion
+:Description Returns the major version number of the current instance of Excel.exe.
+:Returns int major version number, e.g.  10 for Excel XP, 11 for Excel 2003, 12 for Excel 2007.
+
+:function restoreFocusToWorksheet
+:Description Returns focus to the main Excel worksheet. this function is required because sometimes when dialogs or menus are dismissed for charts the focus is not properly restored to the worksheet area.
+:Returns int true if the set focus was successful
+
+:function StatusBarMode
+:description Determines the mode of the application as displayed on the status bar.
+:returns int One of the status bar modes listed in the Excel header file.
+
+:function IsEditingComment
+:description Determines if the focus is in the edit comment area.
+:returns int True if the focus is in the edit comment area, false otherwise.
+
+:function IsExtendedSelectionMode
+:description Determines if focus is on the spreadsheet and the mode is extended selection.
+:returns int True if focus is on the spreadsheet and extended selection mode is active, false otherwise.
+
+:function IsExtendedSelectionMode
+:description Determines if focus is on the spreadsheet and the mode is add selected range of cells.
+:returns int True if focus is on the spreadsheet and add selected range of cells mode is active, false otherwise.
+
+:function InExcel2007OrLaterFunctionList
+:description Determines if the Excel 2007 or later function list where functions are inserted on the formula bar is active.
+:returns int True if using Excel 2007 or later and the function list for the formula bar is active, false otherwise.
+
+:function OnSpreadSheet
+:description Determines if the focus is on the spreadsheet and not in the comment area.
+:returns int True if the focus is on the spreadsheet, false otherwise.
+
+:script readRow
+:Synopsis reads the current row honouring Title Verbosity.
+:Description Reads the current row and speaks column titles if appropriate.
+
+:script readToEndOfRow
+:Synopsis reads from the current cell to the end of the current row honouring Title Verbosity.
+:Description Reads from the current cell to the end of the current row and speaks column titles if appropriate.
+
+:script readFromStartOfRow
+:Synopsis reads from the start of the current row to the current cell honouring Title Verbosity.
+:Description Reads from the start of the row to the current cell and speaks column titles if appropriate.
+
+:script readColumn
+:DisplayName Say Column With Titles
+:Synopsis reads the current column honouring Title Verbosity.
+:Description Reads the current column and speaks row titles if appropriate.
+:SearchRank 2
+
+:script readToBottomOfColumn
+:Synopsis reads from the current cell to the bottom of the current column honouring Title Verbosity.
+:Description Reads from the current cell to the bottom of the current column and speaks row titles if appropriate.
+
+:script readFromTopOfColumn
+:Synopsis reads from the top of the current column to the current cell honouring Title Verbosity.
+:Description Reads from the top of the column to the current cell and speaks row titles if appropriate.
+
+:script ReadRowTotal
+:DisplayName Say Row Total
+:Synopsis read's the current row's total.
+:Description Reads the current row's total. If the column containing row totals has not been defined then %product% will search from the current column to the edge of the data region looking for a cell whose formula contains a SUM identifier. If a cell is found with a formula containing the SUM identifier then this cell's contents are spoken as the row's total.
+:SearchRank 1
+
+:script ReadColumnTotal
+:DisplayName Say Column Total
+:Synopsis read's the current column's total.
+:Description Reads the current column's total. If the row containing column totals has not been defined then %product% will search from the current row to the bottom of the data region looking for a cell whose formula contains a SUM identifier. If a cell is found with a formula containing the SUM identifier then this cell's contents are spoken as the column's total.
+:SearchRank 1
+
+:script setTotalsColumn
+:DisplayName set Totals Column
+:Synopsis sets the current column as the column containing row totals for the current region.
+:Description Sets the current column as the column containing row totals for the current region.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script setTotalsRow
+:DisplayName set Totals Row
+:Synopsis sets the current row as the row containing column totals for the current region.
+:Description Sets the current row as the row containing column totals for the current region.
+:SearchRank  1
+:CommandSearchProductFilter Fusion
+
+:script sayRowTitle
+:DisplayName say Row Title
+:Synopsis Say row title.
+:Description Speaks the current row's title, or an error message if no row title is defined.
+:SearchRank  1
+
+:script sayColumnTitle
+:DisplayName say Column Title
+:Synopsis Say column title.
+:Description Speaks the current column's title, or an error message if no column title is defined.
+:SearchRank 1
+
+:script setColTitlesRange
+:DisplayName set Column Titles To Row Range
+:Synopsis defines the selected rows as those containing column titles for the current region.
+:Description Defines the selected rows as those containing column titles for the current region. Note the settings are not saved in this function, this is done in the AdjustJAWSOptions script in excel.jss.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script setRowTitlesRange
+:DisplayName set Row Titles To Column Range
+:Synopsis defines the selected columns as those containing row titles for the current region.
+:Description Defines the selected columns as those containing row titles for the current region. Note the settings are not saved in this function, this is done in the AdjustJAWSOptions script in excel.jss.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script ColumnFirstCellFromTop
+:DisplayName Column First Cell From Top
+:Synopsis speaks the contents of the first cell in the current column or navigates backward in the Open or SaveAs dialogs in Excel.
+:Description Speaks the contents of the first cell in the current column or navigates backward in the Open or SaveAs dialogs in Excel.
+:SearchRank 2
+
+:script ColumnSecondCellFromTop
+:DisplayName Column Second Cell From Top
+:Synopsis speaks the contents of the second cell in the current column or navigates up one level in the Open or SaveAs dialogs in Excel.
+:Description Speaks the contents of the second cell in the current column or navigates up one level in the Open or SaveAs dialogs in Excel.
+:SearchRank 2
+
+:script ColumnThirdCellFromTop
+:DisplayName Column Third Cell From Top
+:Synopsis speaks the contents of the third cell in the current column.
+:Description Speaks the contents of the third cell in the current column.
+:SearchRank 2
+
+:script ColumnFourthCellFromTop
+:DisplayName Column Fourth Cell From Top
+:Synopsis speaks the contents of the fourth cell in the current column.
+:Description Speaks the contents of the fourth cell in the current column.
+:SearchRank 2
+
+:script RowFirstCellFromLeft
+:DisplayName Row First Cell From Left
+:Synopsis speaks the contents of the first cell in the current row.
+:Description Speaks the contents of the first cell in the current row.
+:SearchRank 2
+
+:script RowSecondCellFromLeft
+:DisplayName Row Second Cell From Left
+:Synopsis speaks the contents of the second cell in the current row.
+:Description Speaks the contents of the second cell in the current row.
+:SearchRank 2
+
+:script RowThirdCellFromLeft
+:DisplayName Row Third Cell From Left
+:Synopsis speaks the contents of the third cell in the current row.
+:Description Speaks the contents of the third cell in the current row.
+:SearchRank 2
+
+:script RowFourthCellFromLeft
+:DisplayName Row Fourth Cell From Left
+:Synopsis speaks the contents of the fourth cell in the current row.
+:Description Speaks the contents of the fourth cell in the current row.
+:SearchRank 2
+
+:Function SayDataRegion
+:description Processing speaking for the data region movement scripts.
+:param int One of the unit movement directions that specifies the direction of movement in the data region.
+:returns int True if the process was run, false otherwise.
+
+:script DataRegionDown
+:DisplayName Data Region Down
+:Synopsis Moves data region down.
+:Description Moves to the bottom of the current data region, or to the data region immediately below the current region and reads the new cell. If appropriate, new region settings are loaded.
+:SearchRank 4
+
+:script DataRegionUp
+:DisplayName Data Region Up
+:Synopsis Moves data region up.
+:Description Moves to the top of the current data region, or to the data region immediately above the current region and reads the new cell. If appropriate, new region settings are loaded.
+:SearchRank 4
+
+:script DataRegionLeft
+:DisplayName Data Region Left
+:Synopsis Moves data region left.
+:Description Moves to the right edge of the current data region, or to the data region immediately to the left of the current region and reads the new cell. If appropriate, new region settings are loaded. If the caret is visible then moves the caret to the prior word and reads it.
+:SearchRank 4
+
+:script DataRegionRight
+:DisplayName Data Region Right
+:Synopsis Moves data region right.
+:Description Moves to the right edge of the current data region, or to the data region immediately to the right of the current region and reads the new cell. If appropriate, new region settings are loaded. If the caret is visible then moves the caret to the next word and reads it.
+:SearchRank 4
+
+:Script SelectNextRegionRight
+:DisplayName Select Next Region Right
+:Synopsis Selects one data region of cells to the right from the active cell.
+:Description Selects one data region of cells to the right from the current active cell.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Script SelectPriorRegionLeft
+:DisplayName Select Prior Region Left
+:Synopsis Selects one data region of cells to the left from the active cell.
+:Description Selects one data region of cells to the left from the current active cell.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Script SelectNextRegionDown
+:DisplayName Select Next Region Down
+:Synopsis Selects one data region of cells down from the active cell.
+:Description Selects one data region of cells down from the current active cell.
+:SearchRank 2
+
+:Script SelectPriorRegionUp
+:DisplayName Select Prior Region Up
+:Synopsis Selects one data region of cells up from the active cell.
+:Description Selects one data region of cells up from the current active cell.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script MoveToStartOfRow
+:synopsis Moves to the start of the current row.
+:Description Moves to the start of the current row.
+
+:script MoveToEndOfRow
+:Synopsis Moves to the end of the current row.
+:Description Moves to the end of the current row.
+
+:script MoveToTopOfColumn
+:Synopsis Moves to top of current column
+:Description Moves to the top of the current column.
+
+:script MoveToBottomOfColumn
+:Synopsis Moves to bottom of current column.
+:Description Moves to the bottom of the current column.
+
+:Script SelectToBeginningOfWorksheet
+:DisplayName Select To Beginning Of Worksheet
+:Synopsis Selects from the current active cell to the beginning of the current worksheet.
+:Description Selects from the current active cell to the beginning of the current worksheet.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:Script SelectToLastDataCell
+:DisplayName Select To Last Data Cell
+:Synopsis Selects from the current active cell to the last data cell in the current region.
+:Description Selects from the current active cell to the last data cell in the current region.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:Script SelectToBeginningOfRow
+:DisplayName Select To Beginning Of Row
+:Synopsis Selects from the current active cell to the beginning of the current row.
+:Description Selects from the current active cell to the beginning of the current row.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script SelectRow
+:DisplayName Select Row
+:Synopsis selects the entire row and speaks the selection.
+:Description Selects the entire row and speaks the selection.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script SelectColumn
+:DisplayName Select Column
+:Synopsis selects the entire column and speaks the selection.
+:Description Selects the entire column and speaks the selection.
+:SearchRank 3
+
+:script screenRight
+:Synopsis Displays the screen to the right of the current screen.
+:Description Use this keystroke to move focus several columns past the one that is currently focused.  This keystroke is similar to pressing right arrow several times or to scrolling the worksheet to the right.  The number of columns moved is determined by the size of the cells and the number of columns displayed on the screen.  The cell at the current row and new column will be focused. This Microsoft Excel shortcut key is only available starting with Excel version 2007.
+
+:script screenLeft
+:Synopsis Displays the screen to the left of the current screen.
+:Description Use this keystroke to move focus several columns prior to the one that is currently focused. This keystroke is similar to pressing left arrow several times or to scrolling the worksheet to the left.  The number of columns moved is determined by the size of the cells and the number of columns displayed on the screen. If the first column is already displayed on the screen this keystroke will not move focus. The cell at the current row and new column will be focused.  This Microsoft Excel shortcut key is only available starting with Excel version 2007.
+
+:Script SelectPriorScreen
+:Synopsis Selects one screenful of cells up from the active cell.
+:Description Selects one screenful of cells up from the current active cell.
+
+:Script SelectNextScreen
+:Synopsis Selects one screenful of cells down from the active cell.
+:Description Selects one screenful of cells down from the current active cell.
+
+:script NextSheet
+:DisplayName Next Sheet
+:Synopsis moves to the next worksheet in the workbook.
+:Description Moves to the next worksheet in the workbook, speaks the new worksheet's name and loads its settings.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script PriorSheet
+:DisplayName Prior Sheet
+:Synopsis moves to the prior worksheet in the workbook.
+:Description Moves to the prior worksheet in the workbook, speaks the new worksheet's name and loads its settings.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:Script SelectNextSheet
+:DisplayName Select Next Sheet
+:Synopsis Selects and announces next sheet to be grouped.
+:Description Selects and announces the next sheet to be grouped.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script SelectPriorSheet
+:DisplayName Select Prior Sheet
+:Synopsis Selects and announces prior sheet to be grouped.
+:Description Selects and announces the prior sheet to be grouped.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script SayNewSheet
+:DisplayName Say New Sheet
+:Synopsis Says the new sheet name when the native keystroke is pressed to create a new sheet.
+:Description Announces the new sheet name when the native keystroke to create a new sheet is pressed in the main worksheet area.
+:SearchRank 1
+
+:script SelectRegion
+:DisplayName Select Region
+:Synopsis selects the current data region and reads the new selection.
+:Description Selects the current data region and reads the new selection.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script CollapseSelectionToActiveCell
+:DisplayName Collapse Selection To Active Cell
+:Synopsis collapses selection to the active cell.
+:Description collapses selection to the active cell.
+:SearchRank 1
+
+:script SayActiveCellCoordinates
+:DisplayName Say Active Cell Coordinates
+:Synopsis speaks the coordinates of the active cell.
+:Description Speaks the coordinates of the active cell. If title reading is enabled then the appropriate titles are also read.
+:SearchRank 3
+
+:script SayVisibleRangeCoordinates
+:DisplayName Say Visible Range Coordinates
+:Synopsis speaks the coordinates of the range of cells visible in the active window.
+:Description Speaks the coordinates of the range of cells visible in the active window.
+:SearchRank 2
+
+:script DescribeCellBorder
+:DisplayName Describe Cell Border
+:Synopsis describes the border of the active cell.
+:Description Describes the border of the active cell.
+:SearchRank 2
+
+:script SayFont
+:Synopsis speaks font and cell characteristics.
+:Description Speaks font and cell characteristics.
+
+:Script EditCell
+:DisplayName Edit Cell
+:Synopsis Presses the F2 function key to edit a cell.
+:Description Presses the F2 function key in order to edit a cell, which may or may not be a formula cell.
+:SearchRank 4
+
+:Script EditingNote
+:DisplayName Edit Note
+:Synopsis Brings up a dialog where you can edit or add a note to the current cell.
+:Description Use this keystroke to edit or add a note to the current cell. 
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script FormulaMode
+:DisplayName Formula Mode
+:Synopsis speaks a help message when Formula Mode is activated.
+:Description Speaks a help message when Formula Mode is activated.
+:SearchRank 4
+
+:script ReadCellNoteOrComment
+:DisplayName Read Cell note or Comment
+:Synopsis reads a cell's associated note or comment (if it has one).
+:Description Reads a cell's associated note or comment (if it has one). The note or comment is flashed to the Braille display. If the keystroke is pressed twice quickly, the note or comment is posted to the virtual viewer so it can be reviewed by line, word and character.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+:UIMaintainsFocus True
+
+:script readCellHyperlink
+:DisplayName read Cell Hyperlink
+:Synopsis reads a cell's associated hyperlink address (if it has one).
+:Description Reads a cell's associated hyperlink address (if it has one).
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+:UIMaintainsFocus True
+
+:script SayCurrentCellValidationInputMessage
+:DisplayName Say Current Cell Validation Input Message
+:Synopsis Says the input message for the current cell.
+:Description If the current cell has a data validation input title or message, speak the title then the message.
+:SearchRank 2
+
+:script AutoSum
+:DisplayName Auto Sum
+:Synopsis provides a help message when the autoSum feature of Excel is invoked.
+:Description Provides a help message when the autoSum feature of Excel is invoked.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script DateStamp
+:DisplayName Date Stamp
+:Synopsis inserts the date into the current cell and reads it.
+:Description Inserts the date into the current cell and reads it.
+:SearchRank 4
+:CommandSearchProductFilter Fusion
+
+:script TimeStamp
+:DisplayName Time Stamp
+:Synopsis inserts the time into the current cell and reads it.
+:Description Inserts the time into the current cell and reads it.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script SayFormula
+:DisplayName Say Formula
+:Synopsis speaks the formula of the current cell or presents it in a message box for easier review.
+:Description Speaks the formula of the current cell or presents it in a message box for easier review if the attached keystroke is pressed twice quickly.
+:SearchRank 1
+
+:Script SayCellNavigatedToInFormula
+:DisplayName Say Cell Navigated To In Formula
+:Synopsis Speaks the coordinates of the last cell navigated to while creating a formula.
+:Description Speaks the cell coordinates for the last cell that was navigated to while creating a formula. The coordinates of this cell are the last item that appears in the formula bar.
+:SearchRank 4
+
+:Function GetInsertFunctionHelp
+:Description Obtains the static text associated with the currently selected function . It is used by SayWindowPromptAndText to provide extra help for the diagram gallery item. MSAAGetDialogStaticText does not work for this function, nor does SaySDMGetDialogStaticText.
+:returns String  The static help message.
+
+:function GetChartWizardChartTypeHelp
+:Description Obtains the static text associated with the currently selected chart type. It is used by SayWindowPromptAndText to provide extra help for chart type. MSAAGetDialogStaticText does not work for this function, nor does SaySDMGetDialogStaticText.
+:returns String  The static help message.
+
+:Script DisplayActiveChartInvirtualViewer
+:DisplayName Display Active Chart Invirtual Viewer
+:Synopsis Displays the active selected chart in the virtual viewer.
+:Description Displays the active selected chart in the virtual viewer.
+:SearchRank 1
+
+:Script SelectActiveChart
+:DisplayName Select Active Chart
+:Synopsis Selects the chart on the current worksheet.
+:Description  Selects the chart, if any, on the currently active worksheet.
+:SearchRank 1
+
+:script ReportGridlineStatus
+:DisplayName Report Gridline Status
+:Synopsis speaks the status of gridlines in the active window.
+:Description Speaks the status of gridlines in the active window.
+:SearchRank 2
+
+:Script ViewCustomSummary
+:DisplayName View Custom Summary
+:Synopsis Brings up the  custom summary for the current worksheet, if one exists.
+:Description Brings up the  custom summary for the current worksheet, if one exists. If it does not, or if the worksheet is in chart view, or if the cursor is in a menu or dialog, an error message is spoken.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script ListRow
+:DisplayName List Row
+:Synopsis lists cells with data in the current row and allows user to move to selected cell.
+:Description Lists cells with data in the current row and allows the user to move to the selected cell.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script ListColumn
+:DisplayName List Column
+:Synopsis lists cells with data in the current column and allows user to move to selected cell.
+:Description Lists cells with data in the current column and allows the user to move to the selected cell.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script ListVisibleCellsWithData
+:DisplayName List Visible Cells With Data
+:Synopsis lists cells with data visible in the active window and allows user to move to selected cell.
+:Description Lists cells with data visible in the active window and allows the user to move to the selected cell.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script ListCellsWithFormulas
+:DisplayName List Cells With Formulas
+:Synopsis lists cells with formulas visible in the active window and allows user to move to selected cell.
+:Description Lists cells with formulas visible in the active window and allows the user to move to the selected cell.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script ListCellsWithNotes
+:DisplayName List Cells With Notes
+:Synopsis lists cells with notes on the current worksheet and allows user to move to selected cell.
+:Description Lists cells with notes on the current worksheet and allows the user to move to the selected cell. Excel O365 now refers to nonthreaded comments as notes.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script SelectHyperlink
+:DisplayName Select Hyperlink
+:Synopsis lists hyperlinks on the current worksheet and allows user to follow selected hyperlink.
+:Description Lists hyperlinks on the current worksheet and allows the user to follow the selected hyperlink.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Function ProcessHyperLinkOnEnterKeyPress
+:description If the current cell has a hyperlink, activates it.
+:returns int True if cell has a hyperlink, false otherwise.
+
+:script ListCellsAtPageBreaks
+:DisplayName List Cells At Page Breaks
+:Synopsis lists cells at vertical and horizontal page breaks and allows user to move to selected cell.
+:Description Lists cells at vertical and horizontal page breaks and allows the user to move to the selected cell.
+:SearchRank 2
+
+:Script ShowTextboxContent
+:DisplayName Show Textbox Content
+:Synopsis Shows the content of a textbox in the virtual viewer if one exists on the current worksheet.
+:Description Shows the content of a textbox if one exists on the current worksheet. If there are more than one, the list of objects is invoked so that one can be selected.
+:SearchRank 2
+
+:script SelectWorksheetObjects
+:DisplayName Select Worksheet Objects
+:Synopsis lists all shapes on the current worksheet and allows the user to run the OnAction macro associated with the selected shape.
+:Description Lists all shapes on the current worksheet and allows the user to run the OnAction macro associated with the selected shape. Due to a bug in the object model, the selected shape cannot be selected in a meaningful way.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Script ListCellMarkers
+:DisplayName List Cell Markers
+:Synopsis Lists all Cell PlaceMarkers for the current workbook.
+:Description Lists all Cell Markers by sheet name in the current workbook and allows the user to activate any one of them. To move from sheet to sheet, use the Excel native commands Control+PageUp and Control+PageDown respectively. To assign the active cell as the cell PlaceMarker for the current worksheet, press Control+Windows+K. If a cell marker already exists on the current worksheet, a dialog will ask to replace the current cell marker. To move to the cell marker on the current worksheet, press Alt+Windows+K.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script DefineATempPlaceMarker
+:DisplayName Set Cell PlaceMarker On Current Worksheet
+:Synopsis Sets the current cell as a placemarker so that it can be returned to later.
+:Description Sets a PlaceMarker at the current cell. Only one can be assigned per worksheet. If a cell marker already exists on the current worksheet, a dialog will ask to replace the current cell marker. To move from sheet to sheet, use the Excel native commands Control+PageUp and Control+PageDown respectively. To move to the cell marker on the current worksheet, press Alt+Windows+K. To list all cell markers in the current workbook, press Alt+Control+Windows+K.
+:SearchRank 1
+
+:script SpeakPlaceMarkers
+:DisplayName Return To Cell PlaceMarker In Current Sheet
+:Synopsis Returns to the cell that has been marked as a PlaceMarker in the current worksheet.
+:Description This keystroke returns to a cell that has been marked as a PlaceMarker in the current worksheet, if one exists. To assign the active cell as the cell PlaceMarker for the current worksheet, press Control+Windows+K. To select cells between the cell PlaceMarker and the current location, move to the selection end point, and press JAWSKey+Space&M. To move from sheet to sheet, use the Excel native commands Control+PageUp and Control+PageDown respectively. If a cell marker already exists on the current worksheet, a dialog will ask to replace the current cell marker. To list all cell markers in the current workbook, press Alt+Control+Windows+K.
+:SearchRank 1
+
+:script SelectTextBetweenMarkedPlaceAndCurrentPosition
+:DisplayName Select Cells Between Cell PlaceMarker And Current Cell
+:Synopsis Selects cells between the worksheet's Placemarker and current cell
+:Description This command selects cells between the cell Placemarker and current cell. You may then use Control+c to copy the selected text to the clipboard. To assign the active cell as the cell PlaceMarker for the current worksheet, press Control+Windows+K. To move to the cell PlaceMarker on the current worksheet, press Alt+Windows+K.
+:Category HTML
+:Version JAWS/14.0
+:SearchRank 1
+
+:Script SetCellMarker
+:DisplayName Set Cell Marker On Current Worksheet
+:Synopsis Sets the current cell as a placemarker so that it can be returned to later.
+:Description Sets a PlaceMarker at the current cell. Only one can be assigned per worksheet. If a cell marker already exists on the current worksheet, a dialog will ask to replace the current cell marker. To move from sheet to sheet, use the Excel native commands Control+PageUp and Control+PageDown respectively. To move to the cell marker on the current worksheet, press Alt+Windows+K. To list all cell markers in the current workbook, press Alt+Control+Windows+K.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script ReturnToCellMarkerInCurrentSheet
+:DisplayName Return To Cell Marker In Current Sheet
+:Synopsis Returns to the cell that has been marked as a PlaceMarker in the current worksheet.
+:Description Sets the current cell as a placemarker for the current worksheet. To select cells between this PlaceMarker and the current location, move to the selection end point, and press JAWSKey+Space&M. To move from sheet to sheet, use the Excel native commands Control+PageUp and Control+PageDown respectively. To assign the active cell as the cell PlaceMarker for the current worksheet, press Control+Windows+K. If a cell marker already exists on the current worksheet, a dialog will ask to replace the current cell marker. To list all cell markers in the current workbook, press Alt+Control+Windows+K. 
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script ReturnToNextCellMarker
+:Synopsis Returns to the next cell that has been marked as a Cell Marker in a subsequent worksheet, if one exists.
+:Description Returns to the next cell that has been marked as a Cell Marker in a subsequent worksheet, if one exists.
+
+:Script ReturnToPreviousCellMarker
+:Synopsis Returns to the previous cell that has been marked as a Cell Marker in a prior worksheet, if one exists.
+:Description Returns to the previous cell that has been marked as a Cell Marker in a prior worksheet, if one exists.
+
+:script setMonitorCells
+:DisplayName Assign Monitor to a Cell or Range 
+:Synopsis Assigns the cell monitor function to the current cell or the selected range.  
+:Description Assigns the cell monitor function to the current cell or the selected range.  There can be 10 monitors (1 - 10) that can be assigned. The monitor number is determined by the number pressed at the end of the keystroke sequence. To read the assigned monitor cell, use Alt+Shift+<MonitorNumber>. You need to use QuickSettings to clear the assigned monitor cells.
+:Keywords Set Monitor
+:SearchRank 1
+
+:script ReadMonitorCell
+:DisplayName Read Assigned Monitor Cell or Range
+:Synopsis reads one of the ten monitor cells.
+:Description Reads one of the ten assigned monitor cells. The monitor cell to read is determined by the number pressed at the end of the keystroke sequence.  To assign a monitor cell, use JAWSKey+Shift+<MonitorNumber>.  You need to use QuickSettings to clear the assigned monitor cells.
+:SearchRank 1
+
+:script returnToStoredCell
+:DisplayName return To Stored Cell
+:Synopsis returns to the last cell which had focus before moving to a Monitor Cell.
+:Description Returns to the last cell which had focus before moving to a Monitor Cell.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script moveToMonitorCell
+:DisplayName move To Monitor Cell
+:Synopsis lists defined monitor cells and allows user to move to selected cell.
+:Description Lists defined monitor cells and allows the user to move to the selected cell.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script moveToWorksheet
+:DisplayName Move to Worksheet
+:Synopsis lists all the worksheets in the current workbook and allows the user to move directly to the selected sheet.
+:Description Lists all the worksheets in the current workbook, often referred to as Tabs and displayed visually at the bottom of the application window, and allows the user to move directly to the selected sheet. If settings are configured for individual sheets, the new settings are loaded for the selected sheet.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Script ManageWorksheets
+:DisplayName Manage Worksheets
+:Synopsis Brings up the context menu for managing worksheets.
+:Description This keystroke brings up the context menu for managing worksheets, such as renaming the currently active sheet name.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script ToggleExtendedSelectionMode
+:DisplayName Toggle Extended Selection Mode
+:Synopsis Toggles and announces the state of extended selection mode for the current worksheet.
+:Description Toggles the native Excel keystroke for extended selection mode on or off for the current worksheet, and announces the new state.
+:SearchRank 3
+
+:Script ToggleAddSelectedRangeOfCellsMode
+:DisplayName Toggle Add Selected Range Of Cells Mode
+:Synopsis Toggles and announces the state of Add range of selected cells mode for the current worksheet.
+:Description Toggles the native Excel keystroke for Add range of selected cells on or off for the current worksheet, and announces the new state.
+:SearchRank 3
+
+:Script SwitchPanes
+:synopsis switches panes and announces the new pane.
+:description Switches panes and announces the new pane and the item with focus. This is assigned to F6.
+
+:Script switchPanesReverse
+:synopsis switches panes and announces the new pane.
+:description Switches panes in reverse and announces the new pane and the item with focus. This is assigned to Shift+F6.
+
+:Function ReportNewAttributeState
+:description Determines the state of the bold, italics, underline, and strikethrough attributes of the current cell.
+:Param Int/nKey the key that was pressed to toggle the attribute.
+:Returns Void
+
+:function ToggleEditFont
+:Description Toggles a font such as bold, italics or underline when F2 has been used to edit the text in a cell.
+:Param string The key to pass to the application.
+:Param string The button text as it appears on-screen.
+:Param string The name of the button to speak as on or off.
+:Returns Void
+
+:script BoldText
+:DisplayName Bold Text
+:Synopsis toggles Bold on and off for the current cell's text.
+:Description Toggles Bold on and off for the current cell's text.
+:SearchRank 4
+:CommandSearchProductFilter Fusion
+
+:script ItalicText
+:DisplayName Italic Text
+:Synopsis toggles Italics on and off for the current cell's text.
+:Description Toggles Italics on and off for the current cell's text.
+:SearchRank 4
+:CommandSearchProductFilter Fusion
+
+:script UnderlineText
+:DisplayName Underline Text
+:Synopsis toggles Underlineing on and off for the current cell's text.
+:Description Toggles Underlining on and off for the current cell's text.
+:SearchRank 4
+:CommandSearchProductFilter Fusion
+
+:function SayShortcutKey
+:Description Announces the shortcut key for recording a macro. If no shortcut key exists, the "CTRL+" portion only is announced.
+:Returns Void
+
+:script ToggleBrlReadingMode
+:DisplayName Set Braille Reading As Cell, Column Or Row.
+:Synopsis Toggle Braille reading.
+:Description Toggle between active cell, Current row and Current column.
+:SearchRank 4
+
+:Function SpellCheck
+:param handle
+:returns int
+
+:script SpellCheck
+:DisplayName Spell Check
+:Synopsis reads the misspelled word and suggestion when the SpellChecker is active, or brings up a link list when the worksheet is active.
+:Description Reads the misspelled word and suggestion when the SpellChecker is active, or brings up the link list when the worksheet  is active.
+:SearchRank 4
+
+:function FindFilterWindow
+:Synopsis Finds the window for the current cell filter.
+:Description Searches for the window containing the list items for a cell when the cell has a drop-down list and the list is dropped down.
+:Returns handle The handle of the filter window if found, Null otherwise.
+
+:function GetDiagramGalleryHelp
+:Description Obtains the static text associated with the currently selected function . It is used by SayWindowPromptAndText to provide extra help for the diagram gallery item. MSAAGetDialogStaticText does not work for this function, nor does SaySDMGetDialogStaticText.
+:returns String  The static help message.
+
+:function SayDiagramGalleryObject
+:Description Speaks, if appropriate, the current diagram gallery object. In the case where the object is the first item in the list, or when SayLine script is invoked, we speak. Otherwise, arrow movement handles it.
+:Param Handle/hwnd The window with focus.
+:Returns Void
+
+:function F2TogglesBetweenEditModeAndPointMode
+:returns int
+
+:function ExcelHotKeyHelp
+:Description Provides hotkey help for certain SDM dialogs. SDM dialogs do not support the default hotkey help functionality so hotkeys must be hardcoded rather than processed  dynamically.
+:Returns int true if this function supports the current SDM dialog's hotkey help, false otherwise.
+
+:Script FindDlgKey
+:Synopsis If Find And Replace dialog is active and focus is on Replace page, moves to and speaks the  name of Find page in the dialog.
+:Description If Find And Replace dialog is active and focus is somewhere on Replace page, this function moves to the Find page of the dialog, but leaves focus on the edit control for Find What text.
+
+:Script ReplaceDlgKey
+ :Synopsis If Find and Replace dialog is active and focus is on Find page, moves to and speaks the  name of Replace page in the dialog.
+:Description If Find and Replace dialog is active and focus is somewhere on Find page, this function moves to the Replace page of the dialog, but leaves focus on the edit control for Find What text.
+
+:script CloseOfficeAssistant
+:Synopsis closes the Office Assistant if visible. (Office 2003 and older)
+:Description Closes the Office Assistant if visible. (Office 2003 and older)
+
+:function getActiveCellFormulaText
+:returns string the text of the active formula if there is one.
+:Description Used to retrieve the text in the window associated with the active cell formula.
+
+:script JAWSHome
+:Synopsis Move to home.
+:Description In the spreadsheet, Home moves to the first cell in the row.
+
+:script JAWSEnd
+:Synopsis Move to end.
+:Description In the spreadsheet, the End key preceding an up, down, left or right cursor key moves to the edge of the data region.
+
+:script MoveToFirstCell
+:DisplayName Move To First Cell
+:Synopsis Move to top.
+:Description In the spreadsheet, moves to the first cell on the sheet.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script MoveToLastCell
+:DisplayName Move To Last Cell
+:Synopsis Move to bottom.
+:Description In the spreadsheet, moves to the last cell with data on the spreadsheet.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script FirstCellInRegion
+:DisplayName First Cell In Region
+:Synopsis Moves to the first cell in the current region.
+:Description Moves to the first cell in the current region.
+:SearchRank 1
+
+:script LastCellInRegion
+:DisplayName Last Cell In Region
+:Synopsis Moves to the last cell in the current region.
+:Description Moves to the last cell in the current region.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:FUNCTION getExtraHelpFromDialogsOnItemChange
+:returns string the extra help for item change, such as from
+:description Reads extra help on item change such as in the diagram gallery or insert function dialog box.
+
+:function speakHelpMoveByWorksheetInFormula
+:Synopsis speaks a help message when moving by worksheet in formula
+
+:Function speakSmartHelpTypeInFormula
+:Synopsis speaks a smart help message about typing in formula
+
+:function PauseForEditingCellFormula
+:Synopsis delays for up to 4 tenths of a second based on the formula bar text not changing.
+:Description A variable delay is needed because the text is updated at different speeds on different users machines
+
+:script PostColumnTotal
+:Synopsis reads the current column's total
+:Description Reads the current column's total. If the row containing column totals has not been defined then %product% will search from the current row to the bottom of the data region looking for a cell whose formula contains a SUM identifier. If a cell is found with a formula containing the SUM identifier then this cell's contents are spoken as the column's total.
+
+:script PostRowTotal
+:Synopsis Speaks or shows the current row's total
+:Description Speaks or shows the current row's total. If the column containing row totals has not been defined then MAGic will search from the current column to the edge of the data region looking for a cell whose formula contains a SUM identifier. If a cell is found with a formula containing the SUM identifier then this cell's contents are spoken as the row's total.
+
+:script PostRowTitle
+:Synopsis speaks or shows the current row's title
+:Description This script speaks or shows the current row's title.
+
+:script PostColumnTitle
+:Synopsis speaks or shows the current column's title
+:Description Speaks or shows the current column's title.
+
+:script PostFormula
+:Synopsis speaks the formula of the current cell or presents it in a message box for easier review.
+:Description This script speaks the formula of the current cell or presents it in a message box for easier review if the attached keystroke is pressed twice quickly.
+
+:script PostMonitorCell
+:Synopsis Speaks or shows one of the ten monitor cells
+:Description Speaks or shows one of the ten monitor cells. The monitor cell to read is determined from the keystroke used to invoke the script. Only number row keystrokes should thus be assigned to this script. The number is deduced from the right most character of the script key's name. If the right most character is a 0 (when converted to an integer) then it is assumed to refer to the tenth monitor cell.
+
+:Script RecalculateSpreadsheet
+:Synopsis Recalculate spreadsheet,speak and Braille the active cell.
+:Description Recalculates the spreadsheet. This is an Excel command. Follows that up with notifying JAWS to update info about the cell and speak it.
+:SearchRank 4
+
+:Script AltF4
+:Synopsis Close office application. Use this keystroke, not the menus or the mouse, to close the currently open Office application.
+:Description Close office application. Use this keystroke, not the menus or the mouse, to close the currently open Office application. If you use the menus or the mouse to exit, JAWS and the application will hang, either may crash.
+

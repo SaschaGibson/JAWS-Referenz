@@ -1,0 +1,10 @@
+:function AutoStartEvent
+:Synopsis Loads the script file for the corresponding applet
+:Description If the DateTime Properties dialog name is found, will load the DateTime Properties script file
+
+:function getAccName
+:Returns string
+:Param int/self No Description
+
+:function AnnounceState
+

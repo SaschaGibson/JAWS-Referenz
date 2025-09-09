@@ -1,0 +1,792 @@
+:function ListNameGet
+:Returns string Name of the list
+:Synopsis Returns the name of the ListBox with focus
+
+:function IsAClassWeDescribe
+:Returns int 1 if this is a QCButton, edit or radio button
+:Synopsis is this a QCButton, edit or radio button?
+:Description Just used to simplify logic by putting a complex if in one place.
+:Param handle/FocusWindow Window you want to know about
+
+:function isFocusVisible
+:Returns int true or false
+:Synopsis This function determines if the focused control is actually visible
+:Description This function determines if the focused control is actually visible. This is used when focus moves to a datasheet which is not currently on the screen (see My Finances view).
+
+:script SelectALink
+:Synopsis lists links for the current HTML page
+:Description This function gives the user access to the Select Link dialog to enable quick navigation to links on an HTML page.
+
+:script sayNextLine
+:Synopsis ensures that the next line is properly read in certain views
+:Description This function is overridden here to ensure that custom views are spoken correctly when arrowing.
+
+:script hotkeyHelp
+:Synopsis provides hotkey help for certain screens and dialogs
+:Description This script provides hotkey help for specific screens and dialogs in Quicken or it calls the default script if no specific help is available.
+
+:script DataSheetListControls
+:Synopsis Places Data Sheet controls in a list box
+:Description Many of the data sheets have controls associated with them which do not appear in the tab order. This script searches the data sheet with focus for such controls and places them in a list box.  You can use the up and down arrows to select an item.  Press enter to perform the acton, or escape to cancel without executing the control.
+
+:script ButtonsFind3
+
+:function SummarizeDataSheetLine
+:Returns int 1 if focused on an item this function can speak
+:Synopsis speak column titles along with field values on the current  line
+:Description This is for use with edit or combo box fields which are part of a data sheet.  The function finds the title bar and speaks it, one chunk at a time.  With each chunk, it jumps down to the line with focus and finds the chunk which lines up vertically with the present title chunk, and speaks it as well.
+:Param handle/ handle of the QWListViewer field containing the title, Null if you don't know
+
+:script CopySelectedTextToClipboard
+
+:function InvestingCenterExpandCollapse
+:Returns int 1 if we handled this keystroke, 0 if not.
+:Synopsis left and right arrow handling in the investing center.
+:Description These keys expand and collapse entries in the data sheet in the investing center.
+:Param string/sGrapicName Name of the graphic to look for to the left of the text.
+
+:function ieFocusToFirstField
+:Returns int true if a field was found and the refocus was successful.
+:Synopsis places focus on the first FormField on an HTML page
+:Description This script places focus on the first HTML formfield on an HTML Form.
+
+:script windowMyFinances
+:Synopsis default app keystroke
+:Description This function just invokes the app default keystroke Alt+Home and announces the function.
+
+:function isCalculator
+:Returns int true or false
+:Synopsis determines if the Quicken Calculator is in use
+:Description This function determines if the Quicken Deluxe calculator is being used.
+
+:script enter
+:Synopsis first detects if the JAWS cursor is active and located on a link and activates the link otherwise passes Enter key on to Quicken
+:Description This script first detects if the JAWS cursor is active and located on a link and activates the link, otherwise it passes the Enter key on to Quicken.
+
+:script OpenListBox
+
+:script ButtonsFind4
+
+:function MDITitleRowCount
+:Returns int number of header rows
+:Synopsis Returns the number of rows in the title bar of an QWMDI window
+:Param handle/hwnd handle of a QWMDI` window
+:Param int/FirstRow/ByRef Returns vertical pixel address of first title row
+:Param int/SecondRow/ByRef returns vertical pixel address of second title row, 0 if none.
+
+:function QWRClearData
+:Synopsis Reset Registry tracking data
+
+:function QWRRegistryLearnFields
+:Synopsis Learns the names in the current registry and captures the field boundaries
+:Description Adds information to the existing data set
+
+:function MDITitleTextGet
+:Returns string the concatenated title test
+:Synopsis Gets the title text from  a QWMDI
+:Description This is used in the registry summarize feature, to determine if a desired field is present in the current transaction.
+
+:script sayNextCharacter
+
+:script FocusToFirstField
+:Synopsis handles setting up and error conditions for focusing to first formfield
+:Description This script handles the setting up and error conditions when attempting to set focus on the first form field of an HTML form.
+
+:script selectTab
+:Synopsis lists the tabs on the tab toolbar and allows the user to select a tab and places focus on new page
+:Description This script lists the tabs on the tab toolbar and allows the user to select a tab and places focus on new page. This is typically used in the Register to access the Overview and Register tabs.
+
+:function investmentRegisterFieldName
+:Returns string The field name
+:Synopsis Determines the  field name in the Investment Register
+:Description The calling parameter determines whether the field name is spoken, or is simply returned as a string.
+:Param int/speak set to 1 to force speech
+
+:function RegistrySpeakDesiredFields
+:Synopsis Speak desired field names and values in the registries
+:Description Uses global data QWRFieldNames etc.
+
+:function isDescriptiveText
+:Returns int 1 if descripptive text
+:Param handle/hWndStatic No Description
+
+:function SayNonHighlightedText
+:Synopsis Called by NewTextEvent to handle non highlighted text.
+:Param handle/hwnd handle of the window in which the new text was written
+:Param string/buffer string containing the text that was written
+
+:function WriteChecksFocusSay
+:Synopsis says the focused field in the Write Checks view
+:Description This function says the focused field in the Write Checks view.
+
+:function isMyFinancesView
+:Returns int true or false
+:Synopsis determines if the view is My Finances
+:Description This function determines if the current view is the My Finances view.
+
+:function isTransactionRegisterScreen
+:Returns int true or false
+:Synopsis determines if the current screen is the Register Transaction screen
+:Description This function determines if the current screen is the standard Bank Transaction Register screen.
+
+:function savingsCalculatorInfoSpeak
+:Synopsis reads the calculated value in the savings calculator
+:Description This function reads the calculated value in the savings financial calculator.
+
+:function BrailleAddObjectDataSheetName
+
+:script CalcClearDisplay
+:Synopsis Clear the display in the calculator
+:Description Clear the display in the calculator
+
+:function MBSCellGet
+:Returns string The cell contents
+:Synopsis Speaks the current cell in the monthly budget summary
+:Description Uses global var QWMonth, in conjunction with the row with the PC cursor to find the data for the current cell.  The column headers in the parent window help find the cell.
+:Param int/click set to 1 to click the month, but not say anything, 0 otherwise.
+
+:script RegNextEntrySummarize
+:Synopsis Move to next registry entry and summarize
+:Description Move to the next entry in a transaction register and summarize the new entry
+
+:script RegPageUpSummarize
+:Synopsis Page up in the registry and summarize
+:Description Move up in the transaction registry by issuing a pageUp, then summarize the new entry.
+
+:function SayBudgetSummaryRowHeader
+
+:function KeyPressedEvent
+:Synopsis Called whenever a keystroke is pressed, extra code to handle reconcile screen multiselect listboxes when using spacebar to check transactions to read the new transaction with focus
+:Description All key presses cause this function to fire.  If the key is assigned to a script, then KeyPressedEvent is called before the script itself.  Because this function will be called quite frequently, it is recommended that you refrain from intensive tasks that will be performed each time a keystroke is pressed.  For a list of parameters received by KeyPressedEvent and their descriptions, look at the Existing Parameters List box on the Parameters page. It contains extra code to handle reconcile screen multiselect listboxes when using spacebar to check transactions to read the new transaction with focus.
+:Param int/nKey No Description
+:Param string/strKeyName No Description
+:Param int/nIsBrailleKey No Description
+:Param int/nIsScriptKey No Description
+
+:function AutoStartEvent
+:Synopsis Event Function that is triggered when the application is started
+:Description When the application is started this event gets performed.  It also gets performed when the application is switched to or gets focus, as with ALT+TAB.
+
+:script sayPriorLine
+:Synopsis ensures that the prior line is spoken correctly in certain views
+:Description This function is overridden here to ensure that custom views are spoken correctly when arrowing.
+
+:function isSplitTransactionWindow
+:Returns int true or false
+:Synopsis determines if the split transaction window is active
+:Description This function determines if the split transaction window is active.
+
+:function windowDescriptiveStaticTextSay
+:Synopsis says descriptive static text in the current real window
+:Description This function reads all descriptive static text in the current real window.
+
+:function splitTransactionWindowBalancesSay
+:Synopsis says the various balances on the Split Transaction Window
+:Description This function reads the split total, the remaining total and the full transaction total in the Split transaction Window.
+
+:function refinanceInfoSay
+:Synopsis says pertinent info in the Refinance Calculator
+:Description This function says pertinent info in the Refinance Calculator.
+
+:function BrailleAddObjectDataSheetInfo
+
+:function BrailleAddObjectDataSheetPosition
+
+:function RealWindowIs
+:Returns int Returns 1 if the real window name contains the supplied string
+:Synopsis See if the name of the Real Window starts with this string
+:Description The characters supplied must comprise the first n characters of the real window name.
+:Param string/name the first n chars of the real window name to test for
+
+:function BudgetAnalyzeMonitor
+:Synopsis Times out monitoring function if no new text appears
+:Description This is scheduled by the AltNumPad5 script.  If no new text appears, like when the value of the graph is 0, this function returns things back to normal, putting the cursor back, and speaking a 0 value.
+
+:function ToggleControlTypeVerbosity
+:Returns string The name of the current selection
+:Synopsis Used to decide if control types should be spoken
+:Description called from the insert+v verbosity script
+:Category Options
+:Param int/iRetVal set to 1 if we should just return the current value
+
+:function CountOccurrences
+:Returns int number of occurrences
+:Synopsis Determines how many occurrences of arg2 are found in arg1
+:Description Arg2 is intended to be a single character.
+:Param string/s1 The String to search.
+:Param string/s2 The character to look for, limit to one char.
+
+:function SchedTurnEchoBackOn
+:Synopsis When new text stops coming, clear the echo suppress flag
+:Description When the arrow keys are struck and we know a bunch of chatter will result, we set the giSuppressEcho flag. When new text comes, sayNonhighlighted text schedules this function.  If it is allowed to time out and actualy run, this function clears the echo suppress flag, which lets the SayNonHighlighted text function speak again.
+
+:function plannerWindowRead
+:Synopsis reads the planner window
+:Description This function attempts to read the Planner window in a logical order. It does this by reading all non-link (non-underlined) text first and then reads all links.
+
+:function SayNumOfObjects
+:Returns int true if there are objects on the current page such as links or frames.
+:Synopsis Speaks the number of forms, frames, and links
+:Description Useful for letting the user know how many and what type of objects are on the currently loaded page. This does not measure how many are on the screen, but on the page itself
+
+:function getPriorStaticTextHandle
+:Returns handle the handle of the window with static text representing the prompt.
+:Description This function searches back through the windows at the current hierarchical level for a window whose class is Static and returns the handle. This static has been determined to be the prompt for the current control.
+
+:function splitTransactionWindowFocusSay
+:Synopsis says the focused field in the Split Transaction Window
+:Description This function says the focused field in the Split Transaction Window.
+
+:script windowPrior
+:Synopsis default app keystroke to focus on prior window
+:Description This function just calls the default app keystroke and announces the function
+
+:function isMemoBeforeCategory
+:Returns int true if the Memo field is first, false otherwise
+:Synopsis determines if the memo field is being displayed before the category rather than after
+:Description This function determines if the Memo field is displayed before the category field in the Register. To set this up see Edit/Options/Register/Show Memo before Category checkbox.
+
+:function StringEqual
+:Returns int 1 if they are equal, 0 if not
+:Synopsis Checks to see if the first N chars of the longer string exactly match the shorter string
+:Description This is like a StringContains where the short string must start in position one of the long string.
+:Param string/title This is the longer string, like a window title you want to search for a shorter string
+:Param string/test the string you want to test for starting in char 1 of the other string
+
+:function EditDataSheetHeadersGet
+:Returns string list of headers, comma separated
+:Synopsis returns a string containing all the headers of a data sheet.
+:Description Must be focused on an edit or combo box inside a data sheet.
+
+:function ClickCalculatorControl
+:Returns int 1 if control was found
+:Param int/id the integer control ID to be clicked
+:Param string/HelpMessage A string to be spoken when this control is clicked
+
+:script CalcStoreMemory
+
+:function IsMonthlyBudgetDetails
+:Returns int Returns 1 if the monthly budget details windowhas focus
+:Synopsis Detects the monthly budget details window
+
+:function FocusMonitor
+:Synopsis Detects when Quicken is active, but nothing has focus
+:Description This patch is for the apply button in the Budget setup. when it is clicked, JAWS loses focus entirely.  We go back to the last thing that gained focus.
+
+:script sayWindowPromptAndText
+
+:function ComputeDistance
+:Returns int Distance in pixels
+:Synopsis determines distance between nearest edges of two windows
+:Description if the windows have a certain amoutn of parallel interface, this function finds the distance between their nearest parallel edges.
+:Param handle/hDescription handle of the discription
+:Param handle/hControl handle of the control being described
+:Param int/case/ByRef case, see constants at start of this function
+
+:script balancesSay
+:Synopsis says the balances in the current window
+:Description This script determines which screen is active and says the relevant balances. For example, in the Bank Transaction Register, this script will read the current and closing balances.
+
+:function ListButtonsHelper
+:Returns int returns 1 if we found buttons.
+:Synopsis Gets a list of buttons associated with the current control in a data sheet.
+:Description This function searches a data sheet for words on a particular background color which are really buttons, but which do not appear as their own window.  Then, it searches the local hierarchy for QCButtons associated with a data sheet.  It uses a stack to recursively search levels of the window hierarchy. When it is searching a level and finds a static with a child, it saves the handle of the next window of the current level to the stack, then dives down to search the level of the child.  When that level is searched, it pops the handle back from the stack, and continues searching the current level.  It builds a list of names and pixel coordinants which can be used to click a button chosen by the user.
+:Param int/level No Description
+
+:function MonthlyBudgetDetails
+:Synopsis Activates the details for a month from the budget summary
+
+:script TransactionBalanceSay
+:Synopsis Speaks the balance as of the current transaction
+:Description Speaks the running balance to the right of the current transaction
+
+:function RegistryLineSummarize
+:Synopsis For use in the registry - Speaks the transaction
+:Description Speaks each of the field labels, along with their values in the registries.
+:Param int/init Set to 1 to force an incremental learn of the registry
+
+:function qwrGetField
+:Returns string Blank delimitted text, not including the blank characters
+:Synopsis Gets a blank delimmited field where blank is not a space
+:Description Returns the Quicken field at the point of the active cursor. In this case, a field is a string of text delimitted by blank characters other than a space character. That is, the field text can include space characters but no other type of blank. If the active cursor is not at or within the boundary of a field, an empty string is returned.
+:Category Application
+
+:function sayLine
+
+:function SayToEdgeOfWindow
+
+:function transactionCountFromTopGet
+:Returns int transaction count from top of register window
+:Synopsis gets the count of transactions from the top of the window
+:Description This function gets the transaction count from the top of the window. This is used to give the user an indication of whether they have changed transactions when arrowing. The top transaction in a window is 1, the next is 2, etc. When the screen scrolls and you are on the last transaction in the window, the number won't change but this is still better than having no indication.
+
+:function MonthlyBudgetSummary
+:Returns int Returns 1 if this was the monthly summary and we handled it
+:Synopsis Handles the monthly budget summary spreadsheet
+:Description Called from the arrow key functions.  The parameter indicates the arrow invoking this function. This simulates a spreadsheet, by moving a virtual focus around.  Variable QWMonth keeps track of what month we are on, while the line with focus is the row in the table.
+:Param int/action arrow key identifier of caller, 0=speakRowAndColumn, 1=left, 2=right, 3=up and 4=downArrow
+
+:function IsMonthlyBudgetSummary
+:Returns int 1 if so, 0 if not
+
+:function IsEditInsideDataSheet
+:Returns handle the handle of the title bar qwListView class, or null if not
+:Synopsis Determines if this is an edit field inside a data sheet
+:Description Quicken uses edit or combo box windows to move around inside a data sheet.  If this is a data sheet, this function returns the handle of the QWListView which contains the titles,  This condition is denoted by an edit or combo box inside a ListBox, inside a QWListView class window.
+:Param handle/hFocus No Description
+
+:function listButtonCountGet
+:Returns int the number of buttons
+:Synopsis returns the number of buttons associated with a list portion of a QREdit control
+:Description This function returns the number of buttons associated with a list portion of a QREdit control which are accessible via the alt+control+enter JAWS keystroke.
+
+:function doesListContainButton
+:Returns int true or false
+:Synopsis determines if the active edit combo list contains a button associated with it
+:Description This function determines if the active edit combo list contains a button associated with it.
+
+:function sayHighlightedText
+:Synopsis says highlighted text when it is written to the screen
+:Description This function says highlighted text when it is written to the screen but also has code for eliminating doublespeaking etc.
+:Param handle/hWnd handle of window where highlighted text is being written
+:Param string/sBuffer string of highlighted text being written
+
+:function isOneLineTransactionDisplay
+:Returns int true if the register is in one line display mode.
+:Synopsis determines if the transaction register is displaying transactions on one line as opposed to two lines
+:Description This function determines if the transaction register is displaying transactions on one line as opposed to two lines.
+
+:function RetrNumOfObjects
+:Returns string if there are objects on the current page such as links or frames.
+:Synopsis gets the number of forms, frames, and links
+:Description Useful for letting the user know how many and what type of objects are on the currently loaded page. This does not measure how many are on the screen, but on the page itself
+
+:function SummarizeWriteChecksStatus
+:Synopsis composes a status line for the write checks dialog
+
+:function ScreenStabilizedEvent
+
+:function sayFocusedWindow
+:Returns int returns 1 if we spoke something
+:Synopsis called by FocusChangedEvent to say focused window
+:Description This script is called by the focusChangedEvent to read the focused window.
+
+:function SpeakStaticPrompts
+:Returns int Returns 1 if this function encountered a yes no dialog.
+:Synopsis speak the question when yes no buttons are focused
+:Description When focus is placed on a button, like yes, no, ok, cancel etc, JAWS rarely speaks the question to be answered.  This function deals with that, and is usually called from the focusChangedEvent.
+:Param handle/FocusWindow No Description
+:Param handle/PrevFocus window losing focus
+:Param int/SpeakFocusedControl set to 1 to forst control with focus to be spoken
+
+:function isDataSheet
+:Returns int true or false
+:Synopsis determines if the current focus is a datasheet
+:Description This function determines if the current control is a datasheet.
+
+:script sayPriorCharacter
+
+:script screenSensitiveHelp
+:Synopsis provides Quicken specific screen sensitive help
+:Description This script provides Quicken specific screen sensitive help.
+
+:function DefaultBalanceSay
+:Synopsis says the total balance in any of the My Finances Views
+:Description This function says the total balance in any of the My Finances Views.
+
+:function brailleBuildLine
+:Returns int true or false
+:Synopsis builds the Braille line in structured mode
+:Description This function builds the Braille line in structured mode.
+
+:function loanCalculatorInfoSpeak
+:Synopsis speaks appropriate information based on the selected checkbox
+:Description This function speaks the inaccessible information in the Loan Calculator window based on the selection of the radio buttons in this dialog.
+
+:function NormalAppCursor
+:Returns int 1 if the arrows are operating the application
+:Synopsis Checks to see if the PC cursor is active and focus is on the app.
+:Description This returns 0 if not the pc cursor, or a menu or dialog is active, or virtual viewer, or hj dialog or any of those things where you don't want to do special arrow processing.
+
+:script CalcClearEntry
+:Synopsis Clear current entry in the calculator
+:Description When typing an entry in the calculator, use this to discard your entry and start over.
+
+:function RegistryRecordWindow
+:Synopsis Add this window to the register tracking data
+:Description Adds the various aspects of this window and field name to the data used to analyze the registry
+:Param handle/hwnd No Description
+:Param string/FieldName No Description
+
+:function TransactionRegisterFieldLabel
+:Returns string The field name from the title bar
+:Synopsis Gets the name of the field with focus
+:Description For use in transaction register, with a QREdit in focus, and a QWMDI parent.
+:Param int/speak 1 to speak the name, 0 to just return the value
+:Param int/InputLeft Pixel address of left side of field, 0 if not known
+:Param int/InputRight Pixel address of right side of field, 0 if not known
+:Param int/InputTop pixel address of the top of the QREdit with focus, 0 if you don't know
+
+:function ToggleStaticPromptVerbosity
+:Returns string Current setting
+:Synopsis used when user changes the verbosity setting
+:Param int/iRetVal Set to 1 to just read the setting, but not update it
+
+:function datasheetPromptGet
+:Returns string prompt for focused datasheet
+:Synopsis gets the prompt for the current dataSheet
+:Description This function returns the prompt for the current datasheet.
+
+:script tabKey
+:Synopsis ensures focus gets spoken in screens where focus does not actually change
+:Description This script ensures that the focus is spoken when JFW doesn't know it has changed.
+
+:function isAssetLiabilityRegisterScreen
+:Returns int true or false
+:Synopsis determines if the Asset or Liability transaction Register screen is active
+:Description This function determines if the Asset or Liability transaction Register screen is active.
+
+:function retirementCalculatorInfoSpeak
+:Synopsis speaks the calculated values in the retirement calculator
+:Description This function speaks the calculated values in the retirement calculator.
+
+:function BrailleAddObjectName
+
+:function FocusChangedEvent
+:Synopsis runs when focus changes
+:Description does special processing, then invokes the default version from default.jss
+:Param handle/FocusWindow handle of the window gaining focus
+:Param handle/PrevWindow handle of the window losing focus
+
+:function assetLiabilityRegisterFieldName
+:Returns string The name of the field
+:Synopsis determines the focused field in the Asset or Liability register
+:Description This function determines the name of the focused field in the Asset or Liability Transaction Register screen. Special code also determines if the register is in one or two line view.  The caller's parameter controls whether the field name is spoken or simply returned.
+:Category Application
+:Param int/speak set to 1 to cause speech, 0 to just get the name
+
+:script CalcPercent
+:Synopsis Click the percent button in the calculator
+
+:function isQWRFieldDelimiter
+:Returns int 0 if false, 1 if true
+:Synopsis Is the given character a quicken registry field delimiter?
+:Description If the provided character is blank but not a space, then it is a quicken registry field delimiter.
+:Category Application
+:Param string ch Character to test
+
+:script RegPriorEntrySummarize
+:Synopsis Move up one entry in the registry and summarize
+:Description Move up one entry in the registry and summarize the new entry
+
+:script RegPageDownSummarize
+:Synopsis Page down in the registry and summarize
+:Description Move down in the transaction registry by issuing a pageDown, then summarize the new entry.
+
+:function SayMonth
+:Synopsis Used with the budget, monthly summary sheet
+:Description Converts the global month index, QWMonth into a spoken string.
+
+:function reconcileBalanceSay
+:Synopsis says the balances at the bottom of the reconcile screen
+:Description This function says the balances at the bottom of the reconcile screen.
+
+:function VirtualHotKeyHelp
+:Synopsis provides a cutdown version of the Virtual hotkey help available in IE5
+:Description This function provides the relevant hotkey help for HTML views in Quicken 2000. Quicken 2000 uses the IE5 HTML controls so the Virtual cursor should be used for HTML view navigation.
+
+:script shiftTabKey
+:Synopsis ensures focus gets spoken when focus change not triggered
+:Description This script ensures that the focus is spoken when JFW doesn't know focus change has occured.
+
+:script windowKeysHelp
+:Synopsis Provides Quicken Deluxe 2000 keystroke help
+:Description This function provides a summary of many of the Quicken Deluxe 2000 built-in shortcut keys.
+
+:function calculatorDisplayRead
+:Synopsis Reads the contents of the calculator's display
+:Description This script reads the contents of the Quicken Calculator.
+
+:function isAddressBook
+:Returns int true or false
+:Synopsis determines if the address book is active
+:Description This function determines if the active window is the address book. In this window, the listbox does not select items as you cursor. We need to detect the active item differently.
+
+:function isQHIActive
+
+:function AddToString
+:Returns string No Return Description
+:Synopsis Takes two strings and adds the second string to the first
+:Description Adds the second string parameter to the first parameter and returns the new string
+:Param string/Base The base string that is to be added to
+:Param string/New The string that is to be added to the base
+
+:function BrailleCallbackObjectIdentify
+
+:function SpeakDataSheetColumnTitle
+:Returns int returns 1 if this function handled the speaking
+:Param handle/FocusWindow Handle of the window with focus
+
+:function DataSheetHeadersGet
+
+:script CalcRecallMemory
+:Synopsis Recall memory if in the calculator
+
+:script CalcClearMemory
+:Synopsis Clear memory in the calculator
+:Description Clear memory when  using the calculator
+
+:script SummarizeDataSheetFields
+:Synopsis In a datasheet, reads column headers, and values from the current line
+:Description When in a data sheet, even if in a edit field inside a data sheet, this key reads each column header, and the associated value from the current line.
+
+:script windowNext
+:Synopsis default app keystroke
+:Description This function invokes the default app keystroke Alt+Right arrow to move to the next window.
+
+:function isLoanView
+:Returns int true or false
+:Synopsis determines if the loan view is active
+:Description This function determines if the loan accounts view is active.
+
+:function MouseMovedEvent
+:Description This function is passed two integers. The first value specifies the x-coordinate at the position of the mouse pointer. The second parameter specifies the y-coordinate and the position of the mouse pointer. It is overridden in Quicken to detect links when navigating with the JAWS cursor in HTML windows.
+:Param int/x No Description
+:Param int/y No Description
+
+:function WriteChecksFieldNameGet
+:Returns string No Return Description
+
+:function SchedSayFocusedObject
+:Synopsis Say object with focus when new text stops being written
+:Description This helps make the object with focus be the last thing that is spoken when new text is written.  This function is scheduled by NewTextEvent, or a function called by NewTextEvent.
+
+:function DataSheetTitleGet
+:Returns string String containing the title
+:Synopsis Returns the title of this data sheet
+:Param int/announce set to 1 to force the title to be announced
+
+:function ToggleCheckedStatusVerbosity
+:Returns string The message to speak
+:Synopsis Controls whether JAWS says Checked before selected items in multiSelect lists
+:Description Designed in be used by the JAWS verbosity core
+:Param int/iRetVal set to 1 to acquire, but not change the value
+
+:script AdjustJAWSVerbosity
+:Synopsis Adjust Verbosity
+:Description Adjust Verbosity
+
+:script RegCurrentItemSummarize
+:Synopsis Lists the fields in the current registry item
+:Description Reads each of the fields in the registry for the currently highlighted item
+
+:script VirtualizeRealWindow
+:Synopsis An enhanced version of the virtualize real window function
+:Description Puts up the virtual viewer with a listing of the real window. The "click" links will do a mouse click on the button referenced. The "focus" links will set focus on the referenced window.
+
+:function MakeDelimitedList
+:Returns string a vertical bar delimited list
+:Synopsis Makes a vertical bar  delimited list out of a string
+:Description For taking headers, where column titles are separated by more than one space, and making them in to a delimited list
+:Param string/in the list of column headers separated by at least two spaces
+:Param string/delimiter the separator character to use
+:Param int/BlanksAllowed 0 to remove all blanks, 1 to allow one blank
+
+:function HandleSetupCheckboxes
+:Param handle/FocusWindow handle of window with focus
+:Param int/SpeakFocusedControl set to 1 to forse speaking of prompt text
+
+:function listButtonHandleGet
+:Returns handle handle of associated listbox button
+:Synopsis gets the handle to the button associated with the active edit combo's listbox
+:Description This function gets the handle to the button associated with the active edit combo's listbox.
+
+:script readWordInContext
+:Synopsis reads the highlighted word in context
+:Description This function calls the default readWordInContext script except when in the Split Transaction window or Registers in which case it reads the column title and row number of the current cell. Note that in a Register screen, the transaction number is the count from the top of the window, not the count in the database.
+
+:script ToolbarButtonsList
+:Synopsis lists the toolbar buttons and allows the user to click the selected button
+:Description This script lists the toolbar buttons and allows the user to click the selected button.
+
+:function hlBalancesSay
+:Synopsis says the balance and summary information for the current home loan account
+:Description This function says the balance and summary information for the current home loan account.
+
+:function splitTransactionWindowLocationSay
+:Synopsis says the column title and row number of the current cell
+:Description This function says the column title and row number of the current cell in the Split Transaction Window.
+
+:script closeListbox
+
+:function isQHIDetailView
+:Returns int true or false
+:Synopsis determines if the current QHI view is the detailed view
+:Description This function determines if the current view is the Quicken Home Inventory Detailed view.
+
+:function BrailleAddObjectDataSheetHdr
+
+:function IsThisMyDescription
+:Returns int 1 if yes, 0 if no
+:Synopsis decide if a static window describes a given control
+:Description This function analyzes window positions to try to determine if the static window contains a description of a certain control
+:Param handle/hDescription handle of the window containing the description
+:Param handle/hControl handle of the control being described
+
+:function BudgetAnalyzeDetectBarGraphs
+:Synopsis detects new text when the bar graphs are read
+:Description This is used with the Budget Analyze function to read text posted when the mouse cursor is placed on a bar graph.
+:Param string/sBuffer The new text being written
+
+:script SaySentence
+:Synopsis Say Sentence
+:Description unless we are in the Budget Analyze screen, then we say the value of the month under the cursor.
+
+:script SayBottomLineOfWindow
+:Synopsis Speaks a status line depending on the window with focus.
+:Description Different parts of the application present their status information differently.  this script calls functions which figure out what components are relevant to status given the window with focus.
+
+:script CloseDocumentWindow
+:Synopsis close the current window
+
+:function HandleRadioButtons
+:Returns int 1 if we did the speaking.
+
+:function listButtonNamesGet
+:Returns string name/names of available buttons
+:Synopsis gets the name/names of buttons associated with a QREdit dropdown list which are not in the tab order
+:Description This function gets the name/names of buttons associated with a QREdit dropdown list which are not in the tab order but which are accessible via the keystroke alt+control+enter.
+
+:function DataSheetPromptSay
+:Synopsis says the correct static text for listboxes whose parent control is the QWListViewer window
+:Description This function determines the correct static text to speak as the listbox prompt for listboxes whose parent window has class QWListViewer.
+
+:script listButtonActivate
+:Synopsis activates the button associated with edit combo lists in the registers
+:Description This script activates the button associated with edit combo lists in the registers.
+
+:function isDateInFirstColumn
+:Returns int true or false
+:Synopsis determines if the date is before the num/ref field ie in the first column
+:Description This function determines if the date is before the num/ref field ie in the first column of a register.
+
+:function ieServerWindowGet
+:Returns handle handle of window with class "Internet Explorer_server".
+:Synopsis gets the handle of the ie server window starting with a given handle
+:Description This function returns the handle to the IE server window. The handle passed to this function is assumed to be a parent window to the IE Server.
+:Param handle/hWnd handle of a parent window to the IE Server
+
+:function sayCurrentLink
+:Synopsis says the current link in HTML views
+:Description This function says the current link at the JAWS cursor in HTML views.
+
+:function isEditComboActive
+:Returns int true or false
+:Synopsis determines if the dropdown list for qREdit and split transaction edit combos is active
+:Description This function determines if the dropdown list for qREdit and split transaction edit combos is active.
+
+:function collegeCalculatorInfoSpeak
+:Synopsis reads the calculated values in the college calculator
+:Description This function reads the calculated values in the college financial calculator.
+
+:function EditCurrentPaycheck
+:Returns int returns 1 if this was a window we can handle
+:Synopsis Handles the Edit Current PayCheck window
+:Description Speaks name and contents of edit boxes inside a data sheet.
+:Param handle/hFocus No Description
+:Param handle/hPrevious No Description
+
+:script test2
+
+:function ToggleRegistrySummarizeVerbosity
+:Returns string returns the Current setting
+:Param int/iRetVal set to 1 to just return the value, but not change it
+
+:function IsSecondLineOfTransaction
+:Returns int 1 if a second line field, 0 if not
+:Synopsis determines which line of a transaction has focus
+:Description Many entries in the transaction registers are 2 lines tall.  This determines if the field with focus is on the second line.
+
+:function SchedFocusOnNextStep
+:Synopsis Place focus on the Next Step Button
+:Description This is used in the Quicken Guided setup dialog, when focus is on the list of accounts created so far, the tab key will not put focus anywhere else.  This function is scheduled by the tab key, and canceled by the focus changed event.  If it is allowed to execute, and focus is still on that same list, it will place focus on the Next step button, which will allow the tab key to operate again.
+
+:function dataSheetFocusSay
+:Synopsis this function speaks the focus for the current datasheet
+:Description This function speaks the focus in the current data sheet. It also handles the case when a datasheet is empty.
+
+:function DataSheetHeadersSay
+:Synopsis says the header fields at the top of the accounts listbox
+:Description This function reads the text (if any) contained in the QWListViewer class window which is displayed immediately above a listbox. This text represents header fields for the list entries in the listbox. The QWListviewer class is the parent of such listboxes.
+
+:script ScriptFileName
+
+:function editComboListHandleGet
+:Returns handle handle of listbox
+:Synopsis returns the handle to the listbox associated with Quicken edit combos with class edit or QREdit
+:Description This function returns the handle to the listbox associated with Quicken edit combos with class edit or QREdit.
+
+:function SayWord
+
+:script CalcDisplayResult
+:Synopsis Reads the calculator result
+:Description Reads the result when in the Quicken Calculator
+
+:function buttonActivate
+:Synopsis searches for the named button and performs a left mouse click
+:Description This function searches for the named toolbar button and performs a left mouse click to activate the button.
+:Param string/sButtonList delimited list of button names
+:Param int/iChoice a one based index specifying which button name out of the button list to search for and activate
+:Param handle/hWnd The window handle of the toolbar
+
+:function loanScheduleEntrySpeak
+:Synopsis speaks the loan schedule table more meaningfully
+:Description This function speaks the loan schedule table more meaningfully by inserting the appropriate prompt before each entry data item.
+
+:function isInvestmentRegisterScreen
+:Returns int No Return Description
+
+:script ButtonsFind1
+:Synopsis Search for buttons
+
+:function qwrGetFieldNearestBoundaries
+:Returns string String containing field text. Empty string if none is found.
+:Synopsis Get the quicken registry field nearest the specified boundaries.
+:Description Gets the text of any quicken registry field that starts nearest the upper left of the specified rectangle. See function qwrGetField() for definition of a field. If the upper left of the rectangle is in the middle of a field, that field is returned. If the upper left is not in a field, then the first field that starts within the rectangle is returned.
+:Category Application
+:Param int/l Left edge of rectangle
+:Param int/t Top edge of rectangle. It is expected that top and bottom bound a single line.
+:Param int/r Right edge of rectangle.
+:Param int/b Bottom edge of rectangle. It is expected that top and bottom bound a single line.
+
+:function TitleBarBoundaryNext
+:Returns int Pixel column of the right end
+:Synopsis Searches to the right for a color meaning end of title bar segment.
+:Description Assuems the cursor is on the left end of the segment of the title bar, searches to the right until the color is found.  Then puts the cursor back where it was.
+
+:function APlaceWeGetStuck
+:Returns int returns 1 if this is such a window
+:Synopsis Detects windows in which the tab key no longer operates
+:Description In many dialogs, the tab key operates normally until you hit a particular window, at which point it goes no where.  This function is used to identify them.
+:Param handle/h No Description
+
+:function AutoFinishEvent
+
+:function dataSheetHasHeaders
+:Returns int true or false
+:Synopsis determines if the listbox has headers describing the items
+:Description This function determines if the listbox has headers describing the items.
+
+:function isWriteChecksView
+:Returns int true or false
+:Synopsis determines if the Write Checks view is active
+:Description This function determines if the Write Checks view is active.
+
+:function selectALinkQWHTML
+:Synopsis selects a link in a QWHTML View
+:Description This function attempts to list and allow selection of links in the QWHTML View which does not expose the HTML or use the VCursor as in the ie server window.
+
+:function qhiFocusSay
+
+:script Buttonsfind2
+

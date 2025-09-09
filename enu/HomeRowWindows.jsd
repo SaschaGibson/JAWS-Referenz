@@ -1,0 +1,40 @@
+:Function CollectWindowInfo
+:synopsis Collects the technical information about a window.
+:description collects the technical information about a window.
+:param handle The window for which the information will be collected.
+:returns string The information retrieved for the window.
+
+:Function GetRightLeaf
+:synopsis Traverses the window tree to find the right-most leaf window, starting from the specified root window.
+:description Traverses the window tree to find the right-most leaf window, starting from the specified root window.
+:param handle The starting window handle, the root position.
+:param string ByRef The string describing the path from the root to the leaf.
+:param int ByRef The hierarchical x position of the leaf window.
+:param int ByRef The hierarchical y position of the leaf window.
+:returns handle The right-most leaf window handle.
+
+:function GetTreeInfo
+:synopsis Used by TreeCapture script to traverse the window tree and retrieve informatin about each window in the tree.
+:description Used by TreeCapture script to traverse the window tree and retrieve informatin about each window in the tree.
+:param handle The starting window, the root of the window tree to be traversed.
+:returns string The collected technical information about all windows in the tree.
+
+:function AppendToScriptCallStackLog
+:description If script callstack logging is on, adds the script callstack to the log.
+:Category Utility
+:Version JAWS/10.0
+
+:function AppendToScriptCallStackLogEx
+:description If script callstack logging is on, appends the string to the callstack. The string can be some debug output you want written to the log.
+:param string The text to write to the script callstack log.
+:Category Utility
+:Version JAWS/10.0
+
+:script ManageScriptCallStackLogging
+:synopsis Allows management of script callstack logging.
+:description If script callstack logging is not on, turns it on; Once logging is on, it will show a list of choices for managing the callstack.
+
+:script ToggleShowUnknownFunctionCallStack
+:synopsis Toggles on/off displaying of the script call stack when an unexpected unknown function call occurs.
+:description When on, instead of saying that an unknown function has occurred the script call stack will be displayed. The default is off.
+

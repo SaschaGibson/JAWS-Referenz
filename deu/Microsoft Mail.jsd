@@ -1,0 +1,19 @@
+:Function InitUIAAndHookEvents
+:returns void
+:Description Initializer for global UIA objets used by this configuration and adds the relevant event handlers from UIA.
+
+:function ReadMessageHeaders
+:returns void
+:Description Reads outlook message headers info from reading pane headers object when available.
+
+:script BoldText
+:Synopsis Text Fett.
+:Description Anwendungsabhängige Kurztaste für fetten Text, bei Erfolg wird der neue Status An oder Aus angesagt.
+
+:script ItalicText
+:Synopsis Text Kursiv.
+:Description Anwendungsabhängige Kurztaste für kursiven Text, bei Erfolg wird der neue Status An oder Aus angesagt.
+
+:script UnderlineText
+:Synopsis Text Unterstrichen.
+:Description Anwendungsabhängige Kurztaste für unterstrichenen Text, bei Erfolg wird der neue Status An oder Aus angesagt.

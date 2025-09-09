@@ -1,0 +1,62 @@
+[common keys]
+Control+JAWSKey+D=FocusToCalculatorResultsField
+Control+Insert+D=FocusToCalculatorResultsField
+Control+JAWSKey+E=SayCalculatorExpression
+Control+Insert+E=SayCalculatorExpression
+Enter=Enter
+NumPadEnter=Enter
+;Following are the Calculator shortcut keys:
+Slash=minus
+]=Plus
+Shift+]=Multiply
+Shift+7=Divide
+Shift+1=Factorial
+Shift+2=SquareRoot
+Shift+3=Cube
+Shift+8=LeftParen
+Shift+9=RightParen
+Shift+5=PercentOrModulo
+Ctrl+Shift+D=ClearHistory
+Control+G=AntiLog
+L=Log
+Ctrl+L=ClearAllMemory
+Ctrl+M=MemoryStore
+N=NaturalLog
+Control+N=EToTheExponent
+O=Cos
+Control+O=CosH
+P=Pi
+Ctrl+P=MemoryAdd
+Q=Square
+Ctrl+Q=MemorySubtract
+R=Reciprocal
+Ctrl+R=MemoryRecall
+S=Sin
+Control+S=SinH
+T=Tan
+Control+T=TanH
+V=ScientificNotation
+
+[focus Keys]
+Braille Dots 1 4 5 Chord=FocusToCalculatorResultsField
+Braille Dots 1 5 Chord=SayCalculatorExpression
+
+[focus40 Keys]
+Braille Dots 1 4 5 Chord=FocusToCalculatorResultsField
+Braille Dots 1 5 Chord=SayCalculatorExpression
+
+[focus80 Keys]
+Braille Dots 1 4 5 Chord=FocusToCalculatorResultsField
+Braille Dots 1 5 Chord=SayCalculatorExpression
+
+[FocusXT14 Keys]
+Braille Dots 1 4 5 Chord=FocusToCalculatorResultsField
+Braille Dots 1 5 Chord=SayCalculatorExpression
+
+[FocusXT40 Keys]
+Braille Dots 1 4 5 Chord=FocusToCalculatorResultsField
+Braille Dots 1 5 Chord=SayCalculatorExpression
+
+[FocusXT80 Keys]
+Braille Dots 1 4 5 Chord=FocusToCalculatorResultsField
+Braille Dots 1 5 Chord=SayCalculatorExpression

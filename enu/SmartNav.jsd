@@ -1,0 +1,79 @@
+:Function SmartNavStart
+:Description This function is only to be called on config change or autostart, assumes jcf option has just been loaded from disk.
+
+:function SmartNavSettingsReloadFromQuickSettings
+:Description reloads SmartNav settings into global memory for usage. Best use case = after an action like QuickSettings File Write has been completed.
+
+:function ControlIsTreatedAsSingleChar
+:Returns int TRUE or FALSE
+:Synopsis Determines if the object at the cursor is a control which is being treated as a single character.
+:Description This function determines if the object at the cursor is a control which is being treated as a single character for navigational purposes.
+
+:function DecrementSmartNavOnDoublePress
+:Returns int TRUE if a decrement of the level occurs, FALSE otherwise.
+:Synopsis decrements the Smart Navigation level on a double press of the key bound to the script calling this function.
+:Description This function decrements the Smart Navigation level on a double press of the key bound to the script calling this function if appropriate.
+
+:function DecrementSmartNavLevel
+:Synopsis Decrements the Smart Navigation level either by 1 if in a table, or directly to the lowest level if not in a table.
+:Description This function decrements the Smart Navigation level either by 1 if in a table, or directly to the lowest level if not in a table.
+
+:function RestoreSmartNavLevel
+
+:function IncrementSmartNavLevel
+:Synopsis increments the Smart Navigation level either by 1 if in a table, or directly to the level selected by the user in the UI.
+:Description This function increments the Smart Navigation level either by 1 if in a table, or directly to the level selected by the user in the UI.
+
+:function SpeakSmartNavLevelSetting
+
+:function AllowedToRunWithoutChangingSmartNavLevel
+:Returns int
+:Param string/scriptName 
+
+:function ShouldNavigateAndAdjustSmartNavLevelIfNeeded
+:Returns int
+:Param string/scriptName 
+
+:function HandleNavByLineAndAdjustSmartNavLevelAsNeeded
+:Returns int
+:Param int/navForward 
+
+:function IncrementSmartNavLevelOnTableStatusChange
+
+:function DoSmartNavigation
+:Returns int
+:Param string/scriptName 
+
+:function IsSmartNavActive
+:description Determines if smart nav is currently active. Smart nav is currently active if the setting for smart nav is on, the virtual cursor is active and not in the user buffer.
+:returns int True if smart nav is currently active, false otherwise.
+
+:function SmartNavHook
+:Synopsis This hook handles Smart Navigation
+:Description This hook processes keystrokes when Smart Navigation is active and determines how they should respond.
+:Param string/ScriptName No Description
+
+:function DoSmartTableNavIfNeeded
+:Returns int TRUE if table navigation occurs, FALSE otherwise.
+:Synopsis performs the appropriate table navigation and speaking for Smart Navigation
+:Description This function performs the appropriate table navigation and speaking when Smart Navigation is set to Controls and Tables.
+:Param string/ScriptName No Description
+
+:function ClearPriorCellData
+:Synopsis clears the data used for tracking Smart Navigation in and out of tables
+:Description This function clears the data used for tracking Smart Navigation in and out of tables.
+
+:function tableStatusChanged
+:Returns int TRUE or FALSE
+:Synopsis determines if the user has navigated into or out of a table, including nested tables
+:Description This function determines if the user has navigated into or out of a table, including nested tables.
+
+:script SetSmartNavLevel
+:SearchRank 1
+:Synopsis Cycles the Smart Navigation level from Off, to Controls, to Controls and Tables
+:Description This script cycles the Smart Navigation level from Off, to Controls, to Controls and Tables.
+
+:function ToggleSmartNavLevelAndResetDocPresentation
+:Synopsis Toggles the Smart Navigation level from Off to Controls and Tables or vice versa, skipping Controls. When toggling off, resets doc presentation mode to user's preference.
+:Description This function Toggles the Smart Navigation level from Off to Controls and Tables or vice versa, skipping Controls. When toggling off, resets doc presentation mode to user's preference.
+:Returns void

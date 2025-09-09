@@ -1,0 +1,12 @@
+:function CheckForCAISecureBrowser
+:Returns int No Return Description
+:SearchRank 1
+
+:function SpeakBraileInfo
+:SearchRank 1
+:Synopsis Speak infomraiton about the braille display
+
+:script AbortFunction
+:SearchRank 1
+:Synopsis Just beep and exit
+

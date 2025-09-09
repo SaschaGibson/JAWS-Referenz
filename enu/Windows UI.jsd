@@ -1,0 +1,39 @@
+:script MoveTileOrGroupLeft
+:synopsis Move tile or group left
+:description On the Start screen tiles or groups, if the PC cursor is active performs the Windows 8 move action for the selected tiles or groups; otherwise, calls the mouse left movement script.
+:Product JAWS
+
+:script MoveTileOrGroupLeft
+:synopsis Move tile or group left
+:description On the Start screen tiles or groups, performs the Windows 8 move action for the selected tiles or groups.
+:Product MAGic
+
+:script MoveTileOrGroupRight
+:synopsis Move tile or group right
+:description On the Start screen tiles or groups, if the PC cursor is active performs the Windows 8 move action for the selected tiles or groups; otherwise, calls the mouse right movement script.
+:Product JAWS
+
+:script MoveTileOrGroupRight
+:synopsis Move tile or group right
+:description On the Start screen tiles or groups, performs the Windows 8 move action for the selected tiles or groups.
+:Product MAGic
+
+:script MoveTileOrGroupDown
+:synopsis Move tile or group down
+:description On the Start screen tiles or groups, if the PC cursor is active performs the Windows 8 move action for the selected tiles or groups; otherwise, calls the mouse down movement script.
+:Product JAWS
+
+:script MoveTileOrGroupDown
+:synopsis Move tile or group down
+:description On the Start screen tiles or groups, performs the Windows 8 move action for the selected tiles or groups.
+:Product MAGic
+
+:script MoveTileOrGroupUp
+:synopsis Move tile or group up
+:description On the Start screen tiles or groups, if the PC cursor is active performs the Windows 8 move action for the selected tiles or groups; otherwise, calls the mouse up movement script.
+:Product JAWS
+
+:script MoveTileOrGroupUp
+:synopsis Move tile or group up
+:description On the Start screen tiles or groups, performs the Windows 8 move action for the selected tiles or groups.
+:Product MAGic

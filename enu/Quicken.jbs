@@ -1,0 +1,22 @@
+; Quicken JAWS Braille Structure file
+; By James Datray, 05/30/2001
+;
+; defined in qw.jsh:
+; Custom_wt_DataSheet=1
+
+;section for localization and UI display
+[Component Aliases]
+DataSheetName=Name
+DataSheetHdr=Header
+DataSheetInfo=Info
+DataSheetPosition=Position
+
+; For DataSheets
+[CustomControl1]
+components=DataSheetName,DataSheetHdr,DataSheetInfo,DataSheetPosition
+removed=
+type=
+displayname=DataSheet
+
+[Information]
+Description=Default  Structured Mode view for Quicken.

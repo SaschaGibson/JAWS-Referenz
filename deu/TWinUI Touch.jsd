@@ -1,0 +1,3 @@
+:function DetectCharmsWindow
+:description Detects if the object is the charms window, and if so announces it. This is for when focus is on the charms window, not one of the buttons in the window.
+:returns int True if the charms window was detected and spoken, false otherwise.

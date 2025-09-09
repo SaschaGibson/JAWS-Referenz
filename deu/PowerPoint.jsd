@@ -1,0 +1,443 @@
+:Function AutoStartEvent
+:synopsis Ereignis gestartet beim Anwendungsfokus
+:description Diese Ereignisfunktion wird ausgelöst, wenn der Fokus auf Powerpoint wechselt. Es stellt Verfolgungsvariablen usw. auf.
+:returns void
+
+:Function SayNonHighlightedText
+:synopsis Ermittelt, welcher nicht hervorgehobene Text automatisch gesprochen werden soll
+:description Diese Funktion ermittelt, welcher nicht hervorgehobene Text automatisch gesprochen werden soll.
+							  :param handle/hwnd window handle to which text is being written
+							  :param string/buffer text being written
+:returns Void
+
+:Function SayHighLightedText
+:synopsis Ermittelt, welcher hervorgehobene Text automatisch gesprochen werden soll
+:description Diese Funktion ermittelt, welcher hervorgehobene Text automatisch gesprochen werden soll.
+							  :param handle/hwnd window handle to which text is being written
+							  :param string/buffer text being written
+:returns Void
+
+:Script SpellCheck
+:synopsis Spricht das falsch geschriebene Wort und den ersten Vorschlag in dem Rechtschreibüberprüfungsdialog, oder zeigt eine Liste aller Links an.
+:Description Diese Funktion spricht das falsch geschriebene Wort und den ersten Vorschlag, wenn die Rechtschreibprüfung aktiv ist, oder öffnet die Linkliste, wenn man sich im Dokumentfenster befindet.
+
+:Script ScriptFileName
+:synopsis Liest die aktive Skriptgruppe und den ausführbaren Namen.
+:description Dieses Skript spricht die aktive Skriptgruppe und den ausführbaren Namen.
+
+:Function SayUserControl
+:synopsis Liest angepasste Steuerelemente der Klasse UserControl 
+:description Diese Funktion liest angepasste Steuerelemente der Klasse UserControl  
+
+:Function SayFocusedWindow
+:synopsis Liest das fokussierte Steuerelement
+:description Diese Funktion liest das fokussierte Steuerelement. Es wird von FocusChangedEvent aufgerufen.
+:Returns void
+
+:Script SayWindowPromptAndText
+:synopsis Liest den Prompt und die Inhalte eines Fensters
+:description Diese Funktion liest den Prompt und die Inhalte eines Fensters. Diese besondere Implementierung ruft einfach sayFocusedWindow auf.
+
+:Script SayPriorLine
+:Synopsis Springt auf und liest die vorherige Zeile oder das vorherige Objekt.
+:description Dieses Funktion springt auf und liest die vorherige Zeile oder das vorherige Objekt.
+
+:Script SayNextLine
+:Synopsis Springt auf und liest die nächste Zeile oder das nächste Objekt.
+:description Dieses Funktion springt auf und liest die nächste Zeile oder das nächste Objekt.
+
+:Script SayLine
+:synopsis Spricht die aktuelle Zeile oder das fokussierte Objekt
+:description Dieses Skript liest die aktuelle Zeile oder das fokussierte Objekt.
+
+:Script SayPriorCharacter
+:Synopsis Springt auf und liest das vorherige Zeichen oder das vorherige Objekt.
+:description Dieses Funktion springt auf und liest das vorherige Zeichen oder das vorherige Objekt.
+
+:Script SayWord
+:synopsis Spricht das aktuelle Wort oder Objekt
+:description Dieses Funktion liest das aktuelle Wort oder Objekt.
+
+:Script SayCharacter
+:synopsis Spricht das aktuelle Zeichen oder Objekt
+:description Dieses Funktion liest das aktuelle Zeichen oder Objekt.
+
+:Script SayNextCharacter
+:Synopsis Springt auf und liest das nächste Zeichen oder das nächste Objekt.
+:description Dieses Funktion springt auf und liest das nächste Zeichen oder das nächste Objekt.
+
+:Script ReadTableRowByRow
+:synopsis Liest die fokussierte Powerpoint Tabelle reihenweise
+:description Diese Funktion liest die fokussierte Powerpoint Tabelle reihenweise.
+
+:Script ReadTableColumnByColumn
+:synopsis Liest die fokussierte Powerpoint Tabelle spaltenweise
+:description Diese Funktion liest die fokussierte Powerpoint Tabelle spaltenweise.
+
+:Script ReadCurrentSlide
+:synopsis Liest den Text jedes Objektes auf der aktuellen Folie, wobei Objekte beschrieben werden, deren Text nicht gelesen werden kann.
+:description Diese Funktion liest den Text jedes Objektes auf der aktuellen Folie, wobei Objekte beschrieben werden, deren Text nicht gelesen werden kann.
+
+:Script SaySelectedObject
+:synopsis Liest eine Beschreibung und den Text des gewählten Objektes 
+:description Diese Funktion Liest eine Beschreibung und den Text des gewählten Objektes.
+
+:Script SelectShape
+:synopsis Listet die Objekte einer Folie auf, so dass der Anwender auswählen und den Fokus direkt auf ein Objekt setzen kann
+:description Diese Funktion listet die Objekte einer Folie auf, so dass der Anwender auswählen und den Fokus direkt auf ein Objekt setzen kann
+
+:Script SelectHyperlink
+:synopsis Zeigt den ersten Rechtschreibfehler und Vorschlag an, oder listet die Hyperlinks einer Folie auf, so dass der Anwender auswählen und direkt einem Hyperlink folgen kann
+:description Diese Funktion spricht den Rechtschreibfehler und ersten Vorschlag, wenn das Dialogfeld für die Rechtschreibprüfung aktiv ist, oder listet die Hyperlinks einer Folie auf, so dass der Anwender auswählen und direkt einem Hyperlink folgen kann
+
+:Script FollowSelectedHyperlink
+:synopsis Folgt dem Hyperlink des Objektes, falls es über einen verfügt
+:description Diese Funktion folgt dem Hyperlink des Objektes, falls es über einen verfügt. Der Fokus wird auf dem Zieldokument plaziert.
+
+:Script NextObject
+:synopsis Setzt den Fokus auf das nächste Objekt in der Tab-Reihenfolge auf der Folie oder springt in einem Dialog auf das nächste Steuerelement in der Tab-Reihenfolge 
+:description Diese Funktion setzt auf der Folie den Fokus auf das nächste Objekt in der Tab-Reihenfolge oder springt in einem Dialog auf das nächste Steuerelement in der Tab-Reihenfolge 
+
+:Script PriorObject
+:synopsis Setzt den Fokus auf das vorherige Objekt in der Tab-Reihenfolge auf der Folie oder springt in einem Dialog auf das vorherige Steuerelement in der Tab-Reihenfolge 
+:description Diese Funktion setzt auf der Folie den Fokus auf das vorherige Objekt in der Tab-Reihenfolge oder springt in einem Dialog auf das vorherige Steuerelement in der Tab-Reihenfolge 
+
+:Script PriorSlide
+:synopsis Springt auf die vorherige Folie in der Präsentation und liest die Überschrift oder die Zahl. Zusätzlich werden Überblendeffekte angesagt, wenn die Funktion eingeschaltet ist.
+:description Diese Funktion springt auf die vorherige Folie in der Präsentation und liest die Überschrift oder die Zahl. Zusätzlich werden Überblendeffekte angesagt, wenn die Funktion eingeschaltet ist.
+
+:Script NextSlide
+:synopsis Springt auf die nächste Folie in der Präsentation und liest die Überschrift oder die Zahl
+:description Diese Funktion springt auf die nächste Folie in der Präsentation und liest die Überschrift oder die Zahl.
+
+:Script SayFont
+:synopsis Sagt Schrift- und Textausrichtungs-Charakteristika an.
+:description Diese Funktion sagt Schrift- und Textausrichtungs-Charakteristika an.
+
+:Script BoldText
+:synopsis Schaltet Fett ein und aus und berichtet den neuen Status 
+:description Diese Funktion schaltet Fett ein und aus und berichtet den neuen Status 
+
+:Script ItalicText
+:synopsis Schaltet Kursiv ein und aus und berichtet den neuen Status 
+:description Diese Funktion schaltet Kursiv ein und aus und berichtet den neuen Status 
+
+:Script UnderlineText
+:synopsis Schaltet Unterstreichen ein und aus und berichtet den neuen Status 
+:description Diese Funktion schaltet Unterstreichen ein und aus und berichtet den neuen Status 
+
+:Script CenterText
+:synopsis Zentriert Text auf der aktuellen Zeile
+:description Diese Funktion zentriert Text auf der aktuellen Zeile.
+
+:Script LeftJustify
+:synopsis Setzt Text linksbündig auf der aktuellen Zeile
+:description Diese Funktion Setzt Text linksbündig auf der aktuellen Zeile.
+
+:Script RightJustify
+:synopsis Setzt Text rechtsbündig auf der aktuellen Zeile
+:description Diese Funktion setzt Text rechtsbündig auf der aktuellen Zeile.
+
+:Script ScreenSensitiveHelp
+:synopsis Liefert bildschirmabhängige Hilfe für Steuerelemente in Dialogen und Powerpoint Ansichten
+:description Diese Funktion liefert bildschirmabhängige Hilfe für Steuerelemente in Dialogen und Powerpoint Ansichten.
+
+:Script HotkeyHelp
+:synopsis Liefert Kurztastenhilfe in Dialogen und die dazugehörige Skript Tasten Hilfe für Powerpoint Ansichten
+:description Diese Funktion liefert Kurztastenhilfe in Dialogen und die dazugehörige Skript Tasten Hilfe für Powerpoint Ansichten.
+
+:Function GetStatusLineText
+:synopsis Gibt den Text der Statuszeile zurück
+:description Diese Funktion gibt den Text der Statuszeile zurück
+:returns string statusline text
+
+:Script SpeakStatusLine
+:synopsis Liest die Statuszeile
+:description Diese Funktion liest die Statuszeile.
+
+:Script SaySlideInfo
+:synopsis Liest die Informationen über die aktuelle Folie inklusive Layout-, Folien-Charakteristika usw.
+:description Diese Funktion liest die Informationen über die aktuelle Folie inklusive Layout-, Folien-Charakteristika usw.
+
+:Function BrailleBuildDialog
+:synopsis Baut den strukturierten Modus zur Braille-Repräsentation für Dialoge auf
+:description Diese Funktion baut den strukturierten Modus zur Braille-Repräsentation für Dialoge auf.
+:param handle/hwndReal real window handle
+:returns int true if a Braille Structured mode representation exists, false otherwise 
+
+:Function BrailleBuildLine
+:synopsis Wird intern 10 Mal pro Sekunde aufgerufen, um die Braillezeile zu aktualisieren, und die Inhalte des fokussierten Steuerelements oder Objekts anzuzeigen
+:description Diese Funktion wird intern 10 Mal pro Sekunde aufgerufen, um die Braillezeile zu aktualisieren, und die Inhalte des fokussierten Steuerelements oder Objekts anzuzeigen.
+:returns int true if an alternative Braille representation exists, false to use internal representation
+
+:Script RetreatSlideShow
+:synopsis Zieht eine Folien-Show zurück und verfolgt die Animation, um sicherzustellen, dass der korrekte Text gesprochen wird, wenn die Rückschritt-Taste während der Folien-Präsentation gedrückt wird
+:description Diese Funktion zieht eine Folien-Show zurück und verfolgt die Animation, um sicherzustellen, dass der korrekte Text gesprochen wird, wenn die Rückschritt-Taste während der Folien-Präsentation gedrückt wird
+
+:Script VirtualBackspace
+:synopsis Springt in der Diavorführung zurück und verfolgt die Animation, um sicherzustellen, dass der Text korrekt gesprochen wird, wenn während einer Diavorführung die Rücktaste gedrückt wird.
+:description Diese Funktion springt in der Diavorführung zurück und verfolgt die Animation, um sicherzustellen, dass der Text korrekt gesprochen wird, wenn während einer Diavorführung die Rücktaste gedrückt wird.
+
+:script VirtualSpacebar
+:synopsis Springt in der Diavorführung vorwärts und verfolgt die Animation, um sicherzustellen, dass der Text korrekt gesprochen wird, wenn während einer Diavorführung die Leertaste gedrückt wird.
+:description Diese Funktion springt in der Diavorführung vorwärts und verfolgt die Animation, um sicherzustellen, dass der Text korrekt gesprochen wird, wenn während einer Diavorführung die Leertaste gedrückt wird. Befindet sich der virtuelle Cursor auf einem Schalter, Kontrollfeld oder Auswahlschalter, dann wird das Standardverhalten des virtuellen Cursors ausgeführt.
+
+:Script SayAll
+:synopsis Wenn die Schreibmarke sichtbar ist, wird ein sayAll durchgeführt, ansonsten wird der gesamte Text auf der Folie im Fokus gelesen
+:description Diese Funktion führt, wenn die Schreibmarke sichtbar ist, ein sayAll durchgeführt, ansonsten wird der gesamte Text auf der Folie im Fokus gelesen.
+
+:Script UpALevel
+:synopsis Führt ein Escape durch und überprüft, ob die Benutzeroberfläche vom Eingabe-Modus zum Objekt-Modus zurückgekehrt ist.
+:description Diese Funktion führt ein Escape durch und überprüft, ob die Benutzeroberfläche vom Eingabe-Modus zum Objekt-Modus zurückgekehrt ist.
+
+:Script SayObjectDimensionsAndLocation
+:synopsis Liest die Ausmaße des Objekts und die Position in Punkten auf der fokussierten Folie 
+:description Diese Funktion liest die Ausmaße des Objekts und die Position in Punkten auf der fokussierten Folie. Die Position wird von oben links auf der Folie gemessen.
+
+:Script SayShapeAnimationInfo
+:synopsis Spricht die Informationen über Animations-Charakteristika eines Objekts wie zum Beispiel der Effekt beim Erscheinen oder beim Beenden usw.
+:description Diese Funktion spricht die Informationen über Animations-Charakteristika eines Objekts wie zum Beispiel der Effekt beim Erscheinen oder beim Beenden usw.
+
+:Script SwitchPanes
+:synopsis Schaltet in die Normal-Ansicht um und meldet den neuen Bildschirmbereich und den Text auf der Statuszeile
+:description Diese Funktion schaltet in die Normal-Ansicht um und meldet den neuen Bildschirmbereich und den Text auf der Statuszeile. Dies wurde F6 zugewiesen.
+
+:Script SwitchPanesReverse
+:synopsis Schaltet in die Normal-Ansicht um und meldet den neuen Bildschirmbereich und den Text auf der Statuszeile
+:description Diese Funktion schaltet in die Normal-Ansicht um und meldet den neuen Bildschirmbereich und den Text auf der Statuszeile. Dies wurde Umschalt+F6 zugewiesen.
+
+:Script UpCell
+:synopsis Springt auf die vorherige Zelle in der aktuellen Spalte und liest sie
+:description Diese Funktion springt auf die vorherige Zelle in der aktuellen Spalte und liest sie. Dieses Skript wird überschrieben, um sicherzustellen, dass sich die Standard-Tastenkombinationen zum Lesen von Tabellen in normalen Powerpoint Tabellen, eingebetteten Excel Arbeitsblättern und Microsoft Word Tabellen wie erwartet verhalten.
+
+:Script DownCell
+:synopsis Springt auf die nächste Zelle in der aktuellen Spalte und liest sie
+:description Diese Funktion springt auf die nächste Zelle in der aktuellen Spalte und liest sie. Dieses Skript wird überschrieben, um sicherzustellen, dass sich die Standard-Tastenkombinationen zum Lesen von Tabellen in normalen Powerpoint Tabellen, eingebetteten Excel Arbeitsblättern und Microsoft Word Tabellen wie erwartet verhalten.
+
+:Script PriorCell
+:synopsis Springt auf die vorherige Zelle in der aktuellen Reihe und liest sie
+:description Diese Funktion springt auf die vorherige Zelle in der aktuellen Reihe und liest sie. Dieses Skript wird überschrieben, um sicherzustellen, dass sich die Standard-Tastenkombinationen zum Lesen von Tabellen in normalen Powerpoint Tabellen, eingebetteten Excel Arbeitsblättern und Microsoft Word Tabellen wie erwartet verhalten.
+
+:Script NextCell
+:synopsis Springt auf die nächste Zelle in der aktuellen Reihe und liest sie
+:description Diese Funktion springt auf die nächste Zelle in der aktuellen Reihe und liest sie. Dieses Skript wird überschrieben, um sicherzustellen, dass sich die Standard-Tastenkombinationen zum Lesen von Tabellen in normalen Powerpoint Tabellen, eingebetteten Excel Arbeitsblättern und Microsoft Word Tabellen wie erwartet verhalten.
+
+:Script SayCell
+:synopsis Spricht die Inhalte der aktuelle Zelle
+:Description Diese Funktion spricht die Inhalte der aktuellen Tabellenzelle.
+
+:Script SayLookInOrSaveInFolderName
+:synopsis Liest die Verzeichnisse Suchen in oder Speichern unter in den Dialogen Öffnen oder Speichern unter
+:description Diese Funktion liest die Verzeichnisse Suchen in oder Speichern unter in den Dialogen Öffnen oder Speichern unter
+
+:Script ToggleExpandOrCollapseAll
+:synopsis Schaltet um zwischen Gliederung erweitern/verkleinern in der Gliederungsansicht
+:description Diese Funktion schaltet um zwischen Gliederung erweitern/verkleinern in der Gliederungsansicht.
+
+:Script PromoteParagraph
+:synopsis Befördert den aktuellen Absatz auf die vorherige Ebene in der Gliederungsansicht
+:description Diese Funktion befördert den aktuellen Absatz auf die vorherige Ebene in der Gliederungsansicht.
+
+:Script DemoteParagraph
+:synopsis Befördert den aktuellen Absatz auf die nächste Ebene in der Gliederungsansicht
+:description Diese Funktion befördert den aktuellen Absatz auf die nächste Ebene in der Gliederungsansicht.
+
+:Script SelectToEndOfLine
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel bis zum Ende der aktuellen Zeile
+:description Diese Funktion regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel bis zum Ende der aktuellen Zeile
+
+:Script SelectFromStartOfLine
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel bis zum Anfang der aktuellen Zeile
+:description Diese Funktion regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel bis zum Beginn der aktuellen Zeile
+
+:Script SelectNextLine
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel die nächste Zeile
+:description Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel die nächste Zeile.
+
+:Script SelectPriorLine
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel die vorherige Zeile
+:description Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel die vorherige Zeile.
+
+:Script SelectNextCharacter
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel das nächste Zeichen
+:description Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel das nächste Zeichen.
+
+:Script SelectPriorCharacter
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel das vorherige Zeichen
+:description Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel das vorherige Zeichen.
+
+:script SelectNextWord
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel das nächste Wort
+:description Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel das nächste Wort.
+
+:Script SelectPriorWord
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel das vorherige Wort
+:description Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel das vorherige Wort.
+
+:Script SelectNextScreen
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel den nächsten Bildschirm
+:description Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel den nächsten Bildschirm.
+
+:Script SelectPriorScreen
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel den vorherigen Bildschirm
+:description Diese Funktion regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel den vorherigen Bildschirm.
+
+:Script SelectToBottom
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel bis zum Ende des Eingabebereichs
+:description Diese Funktion regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel bis zum Ende des Eingabebereichs.
+
+:Script SelectFromTop
+:synopsis Regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel bis zum Anfang des Eingabebereichs
+:description Diese Funktion regelt sowohl die Auswahl der Folien in der Ansicht Foliensortierung als auch die Standard-Text-Auswahl, markiert zum Beispiel bis zum Anfang des Eingabebereichs.
+
+:Script ReadSpeakersNotes
+:DisplayName Lese Notizen des Sprechers
+:synopsis Liest die Notizen des Sprechers, die der aktuellen Folie zugewiesen sind, wenn eine Präsentation aktiv ist.
+:description Diese Funktion liest die Notizen des Sprechers, die der aktuellen Folie zugewiesen sind, wenn eine Präsentation aktiv ist.
+:SearchRank 1
+
+:Script SetTableReadingMethod
+:Synopsis  Schaltet zwischen vier Methoden, Tabellen zu lesen, um.
+:Description Dieses Skript erlaubt dem Anwender, verschiedene Arten des Lesens von Tabellen umzuschalten: Reihe für Reihe, Spalte für Spalte, nur Tabellenabmessungen, oder ignorieren.
+
+:Script IgnoreButton
+:Synopsis Dieses Vorkommen ignorieren.
+:Description Bewegt den Fokus auf den Schalter Ignorieren, so dass, sobald diese Tastenkombination gedrückt wird, die Sprache nicht verstummt.
+
+:Script IgnoreAllButton
+:Synopsis Alle Vorkommen ignorieren.
+:Description Bewegt den Fokus auf den Schalter Alle Ignorieren, so dass, sobald diese Tastenkombination gedrückt wird, die Sprache nicht verstummt.
+
+:Script ChangeButton
+:Synopsis Dieses Vorkommen ändern.
+:Description Bewegt den Fokus auf den Schalter Ändern, so dass, sobald diese Tastenkombination gedrückt wird, die Sprache nicht verstummt.
+
+:Script ChangeAllButton
+:Synopsis Alle Vorkommen ändern.
+:Description Bewegt den Fokus auf den Schalter Alle ändern, so dass, sobald diese Tastenkombination gedrückt wird, die Sprache nicht verstummt.
+
+:Script SuggestButton
+:Synopsis Änderungen vorschlagen, sofern vorhanden.
+:Description Bewegt den Fokus auf den Schalter Vorschlagen, so dass, sobald diese Tastenkombination gedrückt wird, die Sprache nicht verstummt.
+
+:Script AddToDictionaryButton
+:Synopsis Dieses Vorkommen zum Wörterbuch hinzufügen.
+:Description Bewegt den Fokus auf den Schalter Hinzufügen, so dass, sobald diese Tastenkombination gedrückt wird, die Sprache nicht verstummt.
+
+:Script AutoCorrectButton
+:Synopsis Betätigt den Schalter Autokorrektur.
+:Description Bewegt den Fokus auf den Schalter Autokorrektur, so dass, sobald diese Tastenkombination gedrückt wird, die Sprache nicht verstummt.
+
+:Script NewSlide
+:Synopsis Spricht neuen Folientitel oder Foliennummer.
+:Description Dieses Skript spricht den neuen Folientitel oder die Foliennummer, sobald die Kurztaste gedrückt wurde.
+
+:Script ListComments
+:synopsis Listet die Kommentare einer Folie auf und ermöglicht dem Anwender, einen Kommentar aus der Liste auszuwählen.
+:description Diese Kurztaste listet die Kommentare einer Folie auf und ermöglicht dem Anwender, einen Kommentar aus der Liste auszuwählen und den Fokus direkt auf den Platzhalter des Kommentares zu setzen.
+
+:Function GetPptVersion
+:synopsis returns the major version number
+:description This function returns the major version number of Powerpoint.
+:returns Int major version number, eg 8 for PP97, 9 for PP2000
+
+:Function SpeakSlideChangeInfo
+:Description this function speaks the slide title or index number as well as the position of the slide within the set of slides in the presentation.
+:Param int/bShouldSpeakFocusedObject
+:Returns Void
+
+:Function initializeApplicationSettings
+:synopsis initializes Application specific Verbosity settings including Overlap Detection and Placeholder overflow detection
+:description This function initializes Application specific Verbosity settings including Overlap Detection and Placeholder overflow detection.
+
+:Function SayNewSlideType
+:synopsis reads the selection in the New Slide Type selector control
+:description This function reads the selection in the New Slide Type selector control.
+:returns Void
+
+:Function getDialogPageName
+:synopsis returns the dialog page name in certain situations where the default function of the same name fails
+:description This function returns the dialog page name in certain situations where the default function of the same name fails .
+:returns string the dialog page name
+
+:Function isMultipageDialog
+:synopsis determines if the current window is a multipage dialog
+:description This function determines if the current window is a multipage dialog .
+:returns int true if it is, false if not
+
+:Function toggleTableReadingMethod
+:Synopsis toggles the table reading method from ignore to read table row by row to read table column by column to announce table dimensions only
+:Description This function toggles the table reading method from ignore to read table row by row to read table column by column to announce table dimensions only .
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:Function toggleOverlapAlert
+:synopsis toggles the detection of object overlap on and off
+:description This function toggles the detection of object overlap on and off.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:Function toggleOverflowAlert
+:synopsis toggles the detection of text placeholder overflow on and off
+:description This function toggles the detection of text placeholder overflow on and off.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:Function saveApplicationSettings
+:synopsis saves Application Specific Verbosity Settings to the Powerpoint.jsi file
+:description This function saves Application Specific Verbosity Settings to the Powerpoint.jsi file.
+:returns int true if the save was  successful, false otherwise
+
+:Function loadApplicationSettings
+:synopsis loads Application Specific Verbosity Settings from the Powerpoint.jsi file
+:description This function loads Application Specific Verbosity Settings from the Powerpoint.jsi file  .
+:returns void
+
+:Function SaySymbolPrompt
+:Description Finds and speaks the prompt associated with a customize symbol off the bullets and numbering dialog.
+
+:Function toggleSlideTransitions
+:description This function toggles the detection of slide transitions during a presentation on and off.
+:param int/iRetCurVal TRUE retains setting, FALSE updates it.
+:Returns string the human-readable name of the setting.
+
+:Function toggleDescribeObjects
+:description This function toggles the detection of object types on and off.
+:param int/iRetCurVal TRUE retains setting, FALSE updates it.
+:Returns string the human-readable name of the setting.
+:Function sayCellLineSegment
+:synopsis speaks the line segment within a table cell
+:description This function speaks the line segment within a table cell. This function guesses the line segment to speak and may occasionally be wrong.
+:returns void
+
+:Function ShapeNavCallback
+:synopsis timer-scheduled callback for moving the selected shape on the slide with the arrow keys.
+:Description Companion callback for directional arrow keys designed to indicate any directional changes when the selected shape is moved on the slide with the arrow keys.
+:Returns void No return description
+
+:Script SlideShowNext
+:DisplayName Nächste Folie der Bildschirmpräsentation
+:Synopsis Springt zur nächsten Folie der Bildschirmpräsentation, gleichbedeutend einem Seite Runter.
+:Description Eine Möglichkeit über einen einzelnen Buchstaben die Präsentation zu steuern gibt es in neueren Versionen von PowerPoint. Führt die gleiche Aktion aus wie Seite Runter.
+:SearchRank 1
+
+:Script SlideShowPrevious
+:DisplayName Vorherige Folie der Bildschirmpräsentation
+:Synopsis Springt zur vorherigen Folie der Bildschirmpräsentation, gleichbedeutend einem Seite Rauf.
+:Description Eine Möglichkeit über einen einzelnen Buchstaben die Präsentation zu steuern gibt es in neueren Versionen von PowerPoint. Führt die gleiche Aktion aus wie Seite Rauf.
+:SearchRank 1
+
+:script insertSlide
+:DisplayName Folie einfügen
+:Synopsis Powerpoint-Kurztaste zum Einfügen einer Folie
+:Description Befindet sich der Fokus auf dem letzten Objekt einer Präsentation, dann fügt diese Kurztaste eine neue Folie ein und JAWS sagt die neue Folie und deren Position an.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script ControlEnter
+:DisplayName Mauszeiger zu aktueller Position bewegen
+:Synopsis Bewegt den Mauszeiger zur ungefähren Position des virtuellen Cursors während einer Bildschirmpräsentation.
+:Description Bewegt den Mauszeiger zur ungefähren Position des virtuellen Cursors während einer Bildschirmpräsentation. Nur verfügbar, wenn die UIA Unterstützung in PowerPoint verwendet wird.
+:Category Keyboard
+:SearchRank 1
+

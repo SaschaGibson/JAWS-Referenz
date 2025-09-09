@@ -1,0 +1,99 @@
+:script ScriptFileName
+
+:function AutoStartEvent
+
+:function AutoFinishEvent
+
+:function BuildAccessibleTree
+:Returns object
+:Optional
+:Param handle/window 
+
+:script SayBottomLineOfWindow
+
+:function InDesignerWithCoordinates
+:Returns int
+
+:function GetActiveCppResourceEditorControl
+:Returns handle
+:Param handle/hwnd 
+
+:function ComputeActiveMode
+:Returns int
+
+:function ShouldDeferToDefaultFunction
+:Returns int
+
+:function GetControlCoordinates
+:Returns int
+:Param int/x 
+:Param int/y 
+:Param int/width 
+:Param int/height 
+
+:function SayControlCoordinate
+:Returns int
+:Param int/what 
+
+:function SayCharacterUnit
+:Param int/UnitMovement 
+
+:function SayLineUnit
+:Param int/UnitMovement 
+
+:function SayWordUnit
+:Param int/UnitMovement 
+
+:script SayCharacter
+
+:script SayLine
+
+:script SelectNextLine
+
+:script SelectPriorLine
+
+:script SelectNextCharacter
+
+:script SelectPriorCharacter
+
+:script Tab
+
+:script ShiftTab
+
+:function GetCurrentLineFromObjectModel
+:Returns string
+
+:script DeleteCurrentLine
+
+:script DeletePriorWord
+
+:script DeleteCurrentWord
+
+:function vsOnEnterBreakMode
+:Param int/reason 
+
+:function vsOnEnterRunMode
+
+:function vsOnEnterDesignMode
+
+:function ReportIfBreakPointJustHit
+
+:function vsOnBuildDone
+
+:function InDataGrid
+:Returns int
+
+:script SayVariableValue
+:Synopsis Wenn der PC Cursor während des Debuggens auf dem Namen einer 
+Variablen im Editor steht, dann wir der Wert der Variablen angesagt.
+:Description Wird diese Kurztaste einmal gedrückt, dann wird der Wert der 
+Variablen angesagt.  Wird diese Kurztaste zweimal gedrückt, dann legt
+dieses Skript den Wert der Variablen in den virtuellen Speicher. Bei 
+Positionierung auf dem Namen einer Klasse oder Struktur spricht JAWS 
+die Werte aller übergeordneten Ebenen dieser Struktur.  
+Bei Positionierung auf dem Namen einer untergeordneten Variablen 
+spricht JAWS den Wert der Variablen.
+Ist zum Zeitpunkt des Drückens dieser Kurztaste irgendwelcher Text markiert, dann 
+wird die Markierung als Variablennamen verwendet.  
+Ansonsten wird JAWS den Namen basierend auf der Position des PC Cursors
+herleiten.

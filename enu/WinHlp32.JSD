@@ -1,0 +1,27 @@
+:function AutoStartEvent
+:Synopsis Fired when winhlp32 starts up
+
+:function AutoFinishEvent
+
+:function SayNonHighlightedText
+
+:function SayFocusedWindow
+
+:script ScriptFileName
+
+:script SayTopicsFound
+
+:function SayHighlightedText
+:Param handle/hwnd handle of the window containing the newly written text
+:Param string/buffer string containing the newly written text
+
+:script SayHelpWindow
+
+:script SayPriorScreen
+
+:script SayNextScreen
+
+:script NextControl
+
+:script PriorControl
+

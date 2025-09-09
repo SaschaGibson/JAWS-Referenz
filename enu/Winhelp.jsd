@@ -1,0 +1,30 @@
+:function AutoStartEvent
+
+:function SayNonHighlightedText
+
+:function SayFocusedWindow
+
+:script ScriptFileName
+
+:script ScreenSensitiveHelp
+
+:script HotKeyHelp
+
+:function SayHighlightedText
+
+:script SayHelpWindow
+
+:script SayPriorScreen
+
+:script SayNextScreen
+
+:script WindowKeysHelp
+
+:script TurnOnPCCursorOnEscape
+
+:script TurnOnPCCursorOnF4
+
+:script NextControl
+
+:script PriorControl
+

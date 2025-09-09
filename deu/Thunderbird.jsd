@@ -1,0 +1,65 @@
+:Function ShouldSwitchToLegacySettings
+:description Determines if JAWS should switch to using the Thunderbird legacy configuration.
+:returns int True if the version of Thunderbird is 102 or less, false otherwise.
+
+:Function InReadOnlyMessageBody 
+:description Determines whether or not the focus is in the body of a read-only message.
+:returns int true if the focus is in the body of a read-only message, false otherwise.
+
+:function InMessageList
+:description Determines whether or not focus is in a message list.
+:returns int true if focus is in a message list, false otherwise.
+
+:function InFolderTree
+:description Determines whether or not focus is in the folder tree.
+:returns int true if focus is in the folder tree, false otherwise.
+
+:function OnMessageListHeaderToolBar
+:description Determines whether or not focus is on one of the buttons belonging to the message list column header toolbar.
+:returns int true if focus is on one of the toolbar buttons belonging to the message list header toolbar, false otherwise.
+
+:function OnMessageToolbar
+:description Determines whether or not focus is on a control belonging to the toolbar for an open message.
+:returns int true if focus is on one of the controls belonging to the toolbar in an open message, false otherwise.
+
+:function AnnounceFocusChangeToThunderbirdDialog
+:description Used by the focus change event to announce the dialog name, text and focused control when a Thunderbird dialog gains focus.
+
+:function GetMessageHeaderBannerElement
+:description This helper function retrieves the starting element from which message header elements are descended.
+
+:function FindChildElementWithAutomationID
+:description Iterates through the children of an element to find the child with a specified automationID.
+:param object The UIA element whose children are to be used to find an element with the specified ID.
+:param string The UIA automationID to find.
+:returns object The first found element with the matching AutomationID, or null if no match was found.
+
+:function FindHeaderRoot
+:description Finds an element whose descendants can be used to find other elements related to a message header.
+:param string The automationID of the element which is ancestor to elements related to a header.
+:optional
+:param object The parent of the element which serves as ancestor to elements related to a header in an open message. If multiple headers are to be processed, you can pass in this element so that it does not need to be re-acquired for each header being processed.
+:returns object If found, the element which is an ancestor to elements related to a header.
+
+:function ReadFromHeaderInOpenMessage
+:description Announces the From header for an open message.
+:optional
+:param object The element which serves as the header banner, and from which elements related to message headers are descended. If processing multiple headers, you can opt to pass in this param to avoid the need to re-acquire it for each header being processed.
+
+:function ReadToHeaderInOpenMessage
+:description Announces the To header for an open message.
+:optional
+:param object The element which serves as the header banner, and from which elements related to message headers are descended. If processing multiple headers, you can opt to pass in this param to avoid the need to re-acquire it for each header being processed.
+
+:function ReadSubjectHeaderInOpenMessage
+:description Announces the Subject header for an open message.
+:optional
+:param object The element which serves as the header banner, and from which elements related to message headers are descended. If processing multiple headers, you can opt to pass in this param to avoid the need to re-acquire it for each header being processed.
+
+:function ReadDateAndTimeDataInOpenMessage
+:description Announces the Date header for an open message.
+:optional
+:param object The element which serves as the header banner, and from which elements related to message headers are descended. If processing multiple headers, you can opt to pass in this param to avoid the need to re-acquire it for each header being processed.
+
+:function ReadMessageHeadersInOpenMessage
+:description Reads the from, Date, To and Subject headers for an open message.

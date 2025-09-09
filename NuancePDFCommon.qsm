@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="NuancePDFCommon.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="NuancePDFCommon" Text="Nuance PDF Common Settings">
+			<HelpMsg>
+                These settings are associated with the application.
+            </HelpMsg>
+		</DisplayName>
+		<DisplayName ID="NuancePDFCommon.IgnoreOCRAlert" Text="Ignore OCR Alert In Empty Documents">
+			<HelpMsg>
+                Check this box to keep JAWS from automatically asking if you want to OCR when in an inaccessible or graphic PDF document.
+                Changes take effect the next time you load a document.
+            </HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

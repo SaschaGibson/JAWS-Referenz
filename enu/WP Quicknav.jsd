@@ -1,0 +1,235 @@
+:function QuickNavSayAllRestart
+:returns int true if SayAll should be restarted after relocation.
+
+:function QuickNavKeyTrapping
+:returns int true if quick navigation mode is trapping keys, false otherwise.
+:description Determiens if keys are being trapped due to quick key navigation mode being on.
+
+:function IsTrappableKey
+:param int The key code of a key.
+:returns int true if the key is in the range which may be trapped, false otherwise.
+:description Determines if a key belongs to a set which may be trapped. The set includes all alphanumeris keys, punctuation, Backspace, Enter, space and their shifted equivalents.
+
+:function QuickNavKeyTrapKey
+:param int the key code.
+:param string The key name.
+:param int boolean telling if it is a script key.
+:returns int true if the key was trapped, false otherwise.
+:description If a key is not scripted and if it belongs to a set of keys which may be trapped, traps the key; otherwise, runs the script for the key or sends it through to the application.
+
+:function EnsureQuickNavKeyTrapReleased
+:description releases the key trap set in place by the quick navigation key mode.
+
+:function EstablishQuickNavState
+:description If quick navigation mode has been turned on, makes sure to release key traps when focus leaves an open documetn and the mode is toggled off by the system, and toggles the mode back on when focus returns to an open document.
+
+:Script MoveToPriorTable
+:Synopsis Moves to the previous table in the current document.
+
+:Script MoveToNextTable
+:Synopsis Moves to the next table in the current document.
+
+:Script MoveToPriorHeading
+:Synopsis Moves to the previous heading in the current document.
+
+:Script MoveToNextHeading
+:Synopsis Moves to the next heading in the current document.
+
+:Script MoveToFirstButton
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToLastButton
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToPriorButton
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+ 
+:Script MoveToNextButton
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToPriorEndnote
+:Synopsis Moves to the previous endnote in the current document.
+
+:Script MoveToNextEndnote
+:Synopsis Moves to the next endnote in the current document.
+
+:Script MoveToPriorFootnote
+:Synopsis Moves to the previous footnote in the current document.
+
+:Script MoveToNextFootnote
+:Synopsis Moves to the next footnote in the current document.
+
+:Script MoveToPriorComment
+:Synopsis Moves to the previous comment in the current document.
+
+:Script MoveToNextComment
+:Synopsis Moves to the next comment in the current document.
+
+:Script MoveToFirstGraphic
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToLastGraphic
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToPriorGraphic
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToNextGraphic
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToPriorPage
+:Synopsis Moves to the previous page in the current document.
+
+:Script MoveToNextPage
+:Synopsis Moves to the next page in the current document.
+
+:Script MoveToPriorIndex
+:Synopsis Moves to the previous index in the current document.
+
+:Script MoveToNextIndex
+:Synopsis Moves to the next index in the current document.
+
+:Function SayOrPlayMessage
+:Description This function says or plays a message or sound depending on whether SayAll is in progress. If it is, a sound is played. If it is not, the message is spoken.
+:Param String/smsg_l The long message to be spoken
+:Param String/smsg_s The short message to be spoken
+
+:Script NavigationModeToggle
+:Synopsis Sets Navigation Mode to off or on.
+:Description Navigation Mode refers to single-letter keystrokes on the keyboard used for HTML style element navigation within the document.
+
+:Script MoveToPriorCrossRef
+:Synopsis Moves to the previous cross reference in the current document.
+
+:Script MoveToNextCrossRef
+:Synopsis Moves to the next cross reference in the current document.
+
+:Script MoveToPriorFrame
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToNextFrame
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:script MoveToNextUnvisitedLink
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorUnvisitedLink
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextHeadingLevelN
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorHeadingLevelN
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextDifferentElement
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorDifferentElement
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextNonLinkText
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorNonLinkText
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorPlaceMarker
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextPlaceMarker
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:script JumpToLine
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:Script JumpToTableCell
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:Script JumpReturnFromTableCell
+:Synopsis This key is not available in WordPerfect.
+:Description This key is only available in virtual documents.
+
+:Script MoveToNextList
+:Synopsis Moves to the next list in the current document.
+
+:Script MoveToPriorList
+:Synopsis Moves to the previous list in the current document.
+
+:Script MoveToNextBlockQuote
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToPriorBlockQuote
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToNextVisitedLink
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToPriorVisitedLink
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToNextCheckbox
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToPriorCheckbox
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToNextDivision
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToPriorDivision
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:Script MoveToNextToa
+:Synopsis Moves to the next table of authorities in the current document.
+
+:Script MoveToPriorToa
+:Synopsis Moves to the prior table of authorities in the current document.
+
+:Script MoveToNextToc
+:Synopsis Moves to the next table of contents in the current document.
+
+:Script MoveToPriorToc
+:Synopsis Moves to the prior table of contents in the current document.
+
+:script MoveToNextSameElement
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorSameElement
+:Synopsis This key is not available in WordPerfect. 
+:Description This key is only available in virtual documents.
+
+:script Enter
+:Synopsis Sends the enter key through to the application unless quick key mode is enabled and the active cursor is in the document window.
+:Description Performs the standard behavior of the enter key unless quick key mode is enabled and the active cursor is in the document window.

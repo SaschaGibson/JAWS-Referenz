@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Thunderbird.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="ThunderbirdOptions" Text="Thunderbird Settings">
+			<HelpMsg>
+These are options specific to the application.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ThunderbirdOptions.MessageHeaderFieldWithMessageAnnouncement" Text="Message Header Field With Message Announcement">
+			<HelpMsg>
+This option is used to toggle on or off the announcement of headers when automatic reading of messages occurs.
+The default value is to read headers while automatic reading of messages.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ThunderbirdOptions.AutoReadMessage" Text="Auto Read Message">
+			<HelpMsg>
+This option is used to toggle on or off the automatic reading of messages on opening. The default value is to read messages automatically.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ThunderbirdOptions.IndicateAddressInMessageList" Text="Indicate Address in Message List">
+			<HelpMsg>
+Some items in the message list show the email address in angle brackets.
+This option controls whether that address is indicated in speech and braille.
+The default setting is on.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

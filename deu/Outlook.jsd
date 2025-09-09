@@ -1,0 +1,230 @@
+:Function ShouldMessageHeaderSpeak
+:description Used to retrieve the verbosity setting for speak message header.
+:returns int The verbosity setting for speak message header.
+
+:Function ShouldMessageTypeSpeak
+:description Used to retrieve the verbosity setting for speak message type.
+:returns int The verbosity setting for speak message type.
+
+:Function ShouldMessageSayAll
+:description Used to retrieve the verbosity setting for message say all.
+:returns int The verbosity setting for message say all.
+
+:Function ShouldMessageLinkCountSpeak
+:description Used to retrieve the verbosity setting for message link count announcement.
+:returns int The verbosity setting for message link count announcement.
+
+:Function TypeOfWindow
+:description Returns the type of window retrieved by function DetectTypeOfWindow.
+:returns int The type of window.
+
+:function DetectTypeOfWindow
+:param handle The focus.
+:description Detects the type of window.
+:returns int The type of window.
+
+:function IsCalendarWindow
+:param handle hWnd The window to test.
+:optional
+:param string/className If omitted, retrieved from hWnd.
+:returns int True or false.
+
+:function CurrentFormContainsTimeField
+:param handle focusWindow
+:returns int true or false.
+
+:Function DetectIfInOutlookMainWindow
+:param handle hWnd
+:returns int True or false.
+
+:function GetMessageListItemSayLineText
+:description Retrieved the text used for SayLine in the message list.
+:returns string The text to be spoken for the message list item.
+
+:function GetMessageListItemBrlLineText
+:description Retrieved the text used for braille value in the message list.
+:returns string The text to be brailled for the message list item.
+
+:function GetContactsListItemText
+:description Retrieved the text used for the current item in the contacts list.
+:returns string The text to be used for the current item in the contacts list.
+
+:function ConvertNetUIGalleryButtonTextToColorName
+:description Attempts to convert the RGB text of the net gallery button to a color name.
+:param string/text
+:returns string If possible, the color name.
+
+:function AutoCompleteListItemText
+:description Retrieves the text of the selected item in the autocomplete suggestion list.
+:returns string The text of the selected item in the autocomplete suggestion list.
+
+:function AutoCompleteListHelpText
+:description Retrieves the help text for the autocomplete suggestion list.
+:returns string The help text for the autocomplete suggestion list.
+
+:function GetCalendarViewBrlText
+:description Retrieves the braille text used for the calendar view.
+:returns string The calendar view braille text.
+
+:function GetCalendarTimeSlotText
+:description Retrieves the braille text used for the calendar time slot.
+:returns string The calendar time slot braille text.
+
+:function GetFocusedTreeItemFromUIA
+:description Retrieves the UIA object for the focus treeview item.
+:returns object
+
+:function GetCalendarView
+:description Retrieves the calendar view text.
+:returns string The calendar view text.
+
+:function GetRoomFinderCalendarButtonName
+:description Retrieves the name of the Room Finder calendar button.
+:returns string The name of the Room Finder calendar button.
+
+:function AutoCompleteListItemPosition
+:description Retrieves the position in group text for the selected item in the autocomplete list.
+:returns string the position in group text for the selected item in the autocomplete list.
+	
+:function MoveToFieldUsingHandle
+:Synopsis change focus to a given window and control name
+:Param handle/hndDesiredWindow No Description
+:Param string/strControlName No Description
+
+:function GetUIALabelFromPriorElement
+:description Retrieves the name of the uia element prior to the focus. Used in cases where this is the label of the focus element.
+:returns string The name of the UIA element prior to the focus element.
+
+:script ClickButton
+:Synopsis Sucht und klickt Schalter, der dieser Tastenkombination zugewiesen ist.
+:Description Dieses Skript sucht nach dem für diese Taste zugewiesenen Schalter und klickt ihn an.
+:Category Find
+:Param int/iButtonID No Description
+
+:script GoToMessagesView
+:Synopsis Schaltet die Ansicht in Outlook zur Nachrichtenansicht oder -liste um.
+:Description Bewirkt, dass JAWS den Namen des Fensters spricht, zu dem durch Drücken der Kurztaste umgeschaltet wird. Diese Outlook Kurztaste wird an die Anwendung durchgereicht.
+
+:script GoToContactsView
+:Synopsis Schaltet die Ansicht in Outlook zu den Kontakten um.
+:Description Bewirkt, dass JAWS den Namen des Fensters spricht, zu dem durch Drücken der Kurztaste umgeschaltet wird. Diese Outlook Kurztaste wird an die Anwendung durchgereicht.
+
+:script GoToTasksView
+:Synopsis Schaltet die Ansicht in Outlook zu den Aufgaben um.
+:Description Bewirkt, dass JAWS den Namen des Fensters spricht, zu dem durch Drücken der Kurztaste umgeschaltet wird. Diese Outlook Kurztaste wird an die Anwendung durchgereicht.
+
+:script GoToNotesView
+:Synopsis Schaltet die Ansicht in Outlook zu den Notizen um.
+:Description Bewirkt, dass JAWS den Namen des Fensters spricht, zu dem durch Drücken der Kurztaste umgeschaltet wird. Diese Outlook Kurztaste wird an die Anwendung durchgereicht.
+
+:script GoToCalendarView
+:Synopsis Schaltet die Ansicht in Outlook zum Kalender um.
+:Description Bewirkt, dass JAWS den Namen des Fensters spricht, zu dem durch Drücken der Kurztaste umgeschaltet wird. Diese Outlook Kurztaste wird an die Anwendung durchgereicht.
+
+:script SayMSAAData
+:Synopsis Spricht die MSAA-Daten für aktuellen Listeneintrag.
+:Description Spricht die MSAA-Daten für den aktuellen Listeneintrag, wenn in Nachrichten-, Aktiver Termin-, Kontakt-, Notizen- oder Aufgabenliste.
+
+:script ContactFieldsDialog
+:Synopsis Liste der sichtbaren Felder für aktiven Kontakt.
+:Description Öffnet eine Liste aller sichtbaren Felder im geöffneten Kontaktformular.
+
+:script AnnounceOutlookInfoBar
+:Synopsis Sagt die Outlook Infoleiste an
+:Description Sagt die Outlook Infoleiste an, wenn in diesem Fenster Text angezeigt wird.
+
+:function ReadHeader
+:Description This function when called from SayFocusedWindow, just announces the header information. When called from a script, upon first press, announcess associated Outlook header field; twice moves focus to that field.
+:Param int/iField No Description
+:optional
+:param int ignoreIsSameScript
+
+:script ReadOutlookHeader
+:Synopsis Liest die Outlook Kopfzeile
+:Description Liest die durch die übergebene Nummer angegebene Kopfzeile. Drücken Sie zweimal schnell hintereinander, um den PC Cursor zu aktivieren und ihn auf dieses Steuerelement zu bewegen.
+:Param int/iField No Description
+
+:function GetFieldText
+:Returns string Text of window or field
+:Synopsis Retrieves text in window or field
+:Param int/iControl Control id of field to retrieve
+
+:script GoToOutlookMessageBodyWindow
+:DisplayName Springe in den Nachrichtentext 
+:Synopsis Springt mit dem PC Cursor in die Nachricht
+:Description Bringt den Fokus in den Textbereich der geöffneten Nachricht, des Termins oder der Besprechung.
+:SearchRank 1
+
+:script CallToolBars
+:DisplayName Auflisten der Outlook Werkzeugleistenfunktionen mit Kurztasten
+:Synopsis Zeigt eine Liste der unterstützten Outlook Befehle.
+:Description Diese Liste enthält Outlook Aktionen wie verschieben, kopieren, neu und kennzeichen. Diese Aktionen sind für neue und vorhandene Outlook Elemente. Ein Outlook Element ist eine Nachricht, ein Kontakt, eine Aufgabe, eine Notiz oder andere Elemente in einem Outlook Ordner. Andere Aktionen beinhalten Adressbuch und Kontaktsuche.
+:SearchRank 1
+
+:function TypeOfItem
+:Returns string Item type
+:Synopsis Returns the current item
+:Param int/iIsMessage/ByRef No Description
+:Param int/iIsTask/ByRef No Description
+
+:script MoveBackItem
+:Synopsis Beim Lesen wird ein Element oder eine Nachricht zurück gesprungen; beim Schreiben wird die Schriftgröße verkleinert.
+:Description Beim Lesen wird ein Element oder eine Nachricht zurück gesprungen; beim Schreiben wird die Schriftgröße verkleinert.
+
+:script MoveForwardItem
+:Synopsis Beim Lesen wird ein Element oder eine Nachricht vorwärts gesprungen; beim Schreiben wird die Schriftgröße vergrößert.
+:Description Beim Lesen wird ein Element oder eine Nachricht vorwärts gesprungen; beim Schreiben wird die Schriftgröße vergrößert.
+
+:script OutlookAttachmentsList
+:Synopsis Setzt den Fokus in die Liste der Outlook Dateianhänge
+:Description Bringt den Fokus in die Liste der Outlook Dateianhänge, falls vorhanden.
+
+:script SayMoveForward
+:Synopsis Bewegt sich vorwärts durch die besuchten Ordner.
+:Description Diese Kurztaste bewegt vorwärts durch bereits besuchte Nachrichten-Ordner.
+
+:script SayMoveBack
+:Synopsis Bewegt sich rückwärts durch die besuchten Ordner.
+:Description Diese Kurztaste bewegt rückwärts durch bereits besuchte Nachrichten-Ordner.
+
+:script ReplyDirectlyToSender
+:Synopsis Antwort direkt an den Absender.
+:Description Antwortet direkt an den Absender der Nachricht und nicht an die Liste.
+
+:script GrowFont1Point
+:Synopsis Microsoft Outlook eigene Kurztaste zum Vergrößern der Schriftgröße um genau einen Punkt.
+:Description Diese Kurztaste vergrößert die Schriftgröße um genau einen Punkt.
+
+:script ShrinkFont1Point
+:Synopsis Microsoft Outlook eigene Kurztaste zum Verkleinern der Schriftgröße um genau einen Punkt.
+:Description Diese Kurztaste verkleinern die Schriftgröße um genau einen Punkt.
+
+:script ListHeadings
+:DisplayName Überschriften auflisten
+:Synopsis Listet die Überschriften in einer geöffneten Outlook Nachricht auf.
+:Description Diese Kurztaste listet die Überschriften in einer geöffneten Outlook Nachricht auf, sofern welche vorhanden sind.
+
+:script selectNextHeadingOrListLevelStyle
+:Synopsis Wählt das nächste Überschriften- oder Listenstufenformat für den aktuellen Text, indem Alt+Umschalt+Pfeil rechts an MS Outlook gesendet wird, wenn man sich in einer editierbaren Nachricht befindet.
+:Description Dieses Skript wählt das nächste Überschriften- oder Listenstufenformat für den aktuellen Text, indem Alt+Umschalt+Pfeil rechts an MS Outlook gesendet wird, wenn man sich in einer editierbaren Nachricht befindet. Wenn der %product% oder der Unsichtbarer Cursor aktiv ist, dann führt diese Funktion das Standardskript für Mausbewegung aus.
+
+:script selectPriorHeadingOrListLevelStyle
+:Synopsis Wählt das nächste Überschriften- oder Listenstufenformat für den aktuellen Text, indem Alt+Umschalt+Pfeil rechts an MS Outlook gesendet wird, wenn man sich in einer editierbaren Nachricht befindet.
+:Description Dieses Skript wählt das nächste Überschriften- oder Listenstufenformat für den aktuellen Text, indem Alt+Umschalt+Pfeil rechts an MS Outlook gesendet wird, wenn man sich in einer editierbaren Nachricht befindet. Wenn der %product% oder der Unsichtbarer Cursor aktiv ist, dann führt diese Funktion das Standardskript für Mausbewegung aus.
+
+:script SelectAField
+:DisplayName Formularfeld auswählen
+:Synopsis Listet Formularfelder in einer geöffneten Outlook Nachricht auf.
+:Description Diese Kurztaste listet die Formularfelder in einer geöffneten Outlook Nachricht auf, sofern welche vorhanden sind.
+
+:Script AltF4
+:Synopsis Schließt die Office Anwendung. Nutzen Sie diese Kurztaste, nicht die Menüs oder die Maus, um die aktuell geöffnete Office Anwendung zu schließen.
+:Description Schließt die Office Anwendung. Nutzen Sie diese Kurztaste, nicht die Menüs oder die Maus, um die aktuell geöffnete Office Anwendung zu schließen. Dies trifft speziell auf Office 2016 oder höher zu. Wenn Sie zum Schließen die Menüs oder die Maus verwenden, dann können JAWS und die Anwendung hängen bleiben oder abstürzen.
+
+:script JAWSShiftDelete
+:Synopsis Führt die Umschalt+Löschen Funktion der Anwendung aus.
+:Description Das Ergebnis von Umschalt+Löschen wird von der Anwendung kontrolliert.
+
+:script JAWSDeleteItem
+:Synopsis Führt die Strg+D Funktion der Anwendung aus.
+:Description Das Ergebnis von Strg+D wird von der Anwendung kontrolliert.

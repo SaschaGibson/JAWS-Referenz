@@ -1,0 +1,183 @@
+:function InitMouseSpeech
+:description Initializes UIA and collection variables for supporting mouse speech.
+
+:function EnsureMouseSpeechUIAIsInitialized
+:description Used to ensure that mouse speech UIA and collection initialization has occurred.
+
+:function DetectMethodForObtainingMouseSpeech
+:description Detects if the UIA element will be used when retrieving the current text for mouse speech, if a UIA text range will be used, or if the OSM will be used.
+:param int/X The x coordinate of the location to examine.
+:param int/Y The y coordinate of the location to examine.
+:optional
+:param object/element The UIA element to examine. If omitted, the element at the mouse location is used.
+:param handle/hWnd If already known, the handle of the window containing the location to examine. If omitted, the window at the mouse location is used.
+:param string/appName If already known, the app name containing the location to examine. If omitted, the app name of the window at the mouse location is used.
+:returns int one of the mouse speech method enumerations indicating which method will be used for obtaining the current mouse speech. See hjConst.jsh.
+
+:function UpdateMouseSpeechMovementTracking
+:description Used while the mouse is moving to keep track of the variables used for testing the new mouse location.
+:Param int/nextMethod The method used for obtaining the next element under the mouse
+
+:function ClearMouseSpeechRect
+:Description Clears the mouse speech bounding rectangle.
+
+:function UpdateMouseSpeechRect
+:description Updates the mouse speech bounding rectangle to the current mouse speech location.
+:Param Int/rcMouseSpeechLeft. The left side of the bounding rectangle of text being spoken.
+:Param Int/rcMouseSpeechTop. The top side of the bounding rectangle of text being spoken.
+:Param Int/rcMouseSpeechRight. The right side of the bounding rectangle of text being spoken.
+:Param Int/rcMouseSpeechBottom. The bottom side of the bounding rectangle of text being spoken.
+
+:function IsPointInRect
+:description Determines if the specified point is inside the rectangle.
+:param int/X The x coordinate of the point to check.
+:param int/Y The y coordinate of the point to check.
+:Param Int/Left The left edge coordinate of the rectangle to check.
+:Param Int/Top The top edge coordinate of the rectangle to check.
+:Param Int/Right The right edge coordinate of the rectangle to check.
+:Param Int/Bottom The bottom edge coordinate of the rectangle to check.
+:returns int True if the point is located within the rectangle, false otherwise.
+
+:function GetMouseSpeechUIAElement
+:description Retrieves the UIA element location at the mouse, or of the passed XY coordinates. This element is intended only for the use of implementing mouse speech.
+:optional
+:param int/X The x coordinate of the mouse.
+:param int/Y The y coordinate of the mouse.
+:returns object the UIA element at the specified coordinates which will be used by the MouseSpeechTimerEvent.
+
+:function FindMouseSpeechAncestorElementWithDocumentRange
+:description Used by GetMouseSpeechUIAElement to find a mouse speech element in special cases where an ancestor element contains a document range to be used for obtaining mouse speech.
+:param object The UIA element at the mouse location.
+:param int The X coordinate of the mouse location.
+:param int The Y coordinate of the mouse location.
+:returns object If it is determined that the mouse is in a location where an ancestor element contains a document range to be used for mouse speech, the element which has the document range; Null otherwise.
+
+:function MapMouseSpeechTextTypeToUnit
+:description Retrieves the text unit constant to be used if mouse speech is using the UIA text range, or the item type constant if mouse speech is using the OSM rect.
+:returns int The constant to be used when obtaining mouse speech from a UIA text range or osm rectangle.
+
+:function GetTextRangeForMouseSpeech
+:description If a text range is available for the mouse speech element, retrieves the range object to be used when retrieving the text to be spoken.
+:param object The UIA element from which to get the mouse speech.
+:param int The X coordinate of the mouse location.
+:param int The Y coordinate of the mouse location.
+:returns object The range of the text which will be used for the mouse speech.
+
+:function IsNewTextRangeForMouseSpeech
+:description Determines if the mouse has moved to a new text range.
+:returns int True if the mouse has moved to a new text range, false otherwise.
+
+:function UpdateMouseSpeechTextData
+:description Updates the data used for obtaining the mouse speech.
+
+:function IsExemptFromMouseSpeech
+:description Determines if the location of the mouse will be exempt from mouse speech output. Location exempt from mouse speech output are those where moving the mouse to a new item cause a focus change or an active item change. Mouse speech is exempt from these areas to avoid output of double speech.
+:param int/X the X location to test.
+:param int/Y the Y location to test.
+:param object/element The UIA element at the mouse location.
+:returns int True if the location of the mouse will be exempt from mouse speech output, false otherwise.
+
+:function FilterMouseSpeech
+:Description Filter mouse movements in the last spoken rectangle. Returns TRUE if the mouse movement is unnecessary for triggering mouse speech.  In other words, FALSE means the move should be filtered.
+:Returns int True if the mouse movement should not trigger speech.
+
+:function SayMouseSpeechTextAndUpdateRectUsingOSM
+:description Speaks the mouse speech text using OSM methods, and updates the rectangle used by mouse speech.
+:returns int True if text was spoken, false otherwise.
+
+:function SayMouseSpeechUIAControlTypeAndState
+:description If mouse echo is configured to speak control type and state, speaks the UIA localized control name and any available UIA state information.
+:optional
+:param int/ShouldStopSpeech If true, stops any speech in progress before announcing control type and state. Default is false.
+:returns int True if anything was spoken for the control type and state, false otherwise.
+
+:function SayMouseSpeechHelpAndDescription
+:description If mouse echo is configured to speak help and description, and if help or description text is available and if it does not duplicate the already spoken mouse speech text, speaks it.
+:param string/AlreadySpokenText Used to determine if help or description should be omitted because it duplicates the already spoken mouse speech text.
+:optional
+:param int/ShouldStopSpeech If true, stops any speech in progress before announcing any help or description text. Default is false.
+:returns int True if anything was spoken for the help or description, false otherwise.
+
+:function SayMouseSpeechTextAndUpdateRectUsingUIATextRange
+:description Speaks the mouse speech text using UIA text range methods and updates the rectangle used by mouse speech.
+:returns int True if text was spoken, false otherwise.
+
+:function GetWindowClassAtMouseSpeechElementPosition
+:description Used to retrieve the class name at the position where the mouse speech element is located.
+:returns string The class name of the window containing the point where the mouse speech element is located.
+
+
+:function GetMouseSpeechTextUsingUIAElement
+:description Retrieves the UIA element text at the mouse location.
+:returns string The UIA element text at the mouse location.
+
+:function SayMouseSpeechTextUsingUIAElement
+:description Speaks the mouse speech text corresponding to the UIA element at the mouse location.
+:returns int True if text was spoken, false otherwise.
+
+:function MouseSpeechTimerEvent
+:description Speaks the text at the mouse location.
+:Returns int True if text is spoken.
+
+:function MouseEchoToggle
+:description Toggles mouse echo on and off.
+:returns int If an error occurred when attempting to toggle the mouse echo in MAGic, returns ScriptFunctionReturnError; otherwise, return On or Off to reflect the new setting for the mouse echo.
+
+:function SetMouseEcho
+:description If mouse echo is off,turns it on. Otherwise,cycles through the mouse echo unit settings and the off setting.
+:returns int The new mouse echo setting.
+
+:function SetMouseEchoToUnit
+:description Ensures that mouse speech is set to On, and the speech unit is set to the requested type. See MouseSpeechUnit constants in FSIMouseSpeech.jsh.
+:param int One of the MouseSpeechUnit constants from FSIMouseSpeech.jsh.
+:returns int True if the mouse speech could be set to the requested unit, false otherwise.
+
+:function HasMouseEchoRecentlySpokenUsingUIA
+:description If mouse speech is using UIA, you can use this function to check if the speech occurred within a recent enough time 
+and reduce duplication of speech which may occur if other events speak the same information.
+:returns int True if mouse speech was using UIA and the speech occurred recently enough so that checking may be needed to reduce duplication.
+
+:function StringTrimSpokenMouseEchoTextFromToolTipText
+:description Used to remove any help or description text already spoken by mouse echo. This is used by ToolTipEvent to prevent a double speaking affect when mouse echo speaks help and description and the tooltip text also contains the help and/or description text.
+:param string The text which will be trimmed of any help or description text spoken by the mouse echo.
+:returns string The string parameter trimmed of text recently spoken by the mouse echo.
+
+:function GetMostRecentMouseSpeechUIAElement
+:description Returns the UIA element used by the most recent mouse speech which used UIA for speaking. Note that in many areas of Windows 7, UIA is not used for mouse speech; if this does return an element under Windows 7 it may not represent the most recent mouse speech.
+:returns object The most recent mouse speech UIA element.
+
+:function GetMostRecentMouseSpeechCoordinates
+:param int byRef/X The X coordinate of the location most recently spoken by mouse speech.
+:param int byRef/Y The Y coordinate of the location most recently spoken by mouse speech.
+:description Obtains the most recent coordinates of the location spoken by mouse speech.
+
+:function IsRectInRect
+:Returns int True if the inner rectangle is completely within the outer rectangle, false otherwise.
+:Description Determines if the inner rectangle is completely inside the outer rectangle.
+:Param int/innerLeft The left edge coordinate of the inner rectangle.
+:Param int/innerTop The top edge coordinate of the inner rectangle.
+:Param int/innerRight The right edge coordinate of the inner rectangle.
+:Param int/innerBottom The bottom edge coordinate of the inner rectangle.
+:Param int/outerLeft The left edge coordinate of the outer rectangle.
+:Param int/outerTop The top edge coordinate of the outer rectangle.
+:Param int/outerRight The right edge coordinate of the outer rectangle.
+:Param int/outerBottom The bottom edge coordinate of the outer rectangle.
+
+:function IsSameRect
+:Returns int True if the rectangle 1 has the same coordinates as rectangle 2, false otherwise.
+:Description Determines if two provided rectangles are equal.
+:Param int/Left1 The left edge coordinate of the rectangle 1.
+:Param int/Top1 The top edge coordinate of the rectangle 1.
+:Param int/Right1 The right edge coordinate of the rectangle 1.
+:Param int/Bottom1 The bottom edge coordinate of the rectangle 1.
+:Param int/Left2 The left edge coordinate of the rectangle 2.
+:Param int/Top2 The top edge coordinate of the rectangle 2.
+:Param int/Right2 The right edge coordinate of the rectangle 2.
+:Param int/Bottom2 The bottom edge coordinate of the rectangle 2.
+
+:script ToggleMouseEchoItemDescriptionException
+:DisplayName Elemntbeschreibung des Mausechos umschalten
+:synopsis Schaltet das Sprechen von Elementbeschreibungen für die Anwendung an der Position des Mauszeigers ein oder aus.
+:description Schaltet das Sprechen von Elementbeschreibungen für die Anwendung an der Position des Mauszeigers ein oder aus. Wenn diese Option für eine Anwendung eingeschaltet wird, dann wird die Einstellung der Ansage von Beschreibungen in der Einstellungsverwaltung außer Kraft gesetzt.
+:category Mouse Speech
+:Version JAWS/26.0

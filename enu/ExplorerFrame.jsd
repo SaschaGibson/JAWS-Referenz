@@ -1,0 +1,23 @@
+:Script OCRSelectedFile
+:DisplayName OCR Selected File
+:Synopsis OCR the currently selected file.
+:Description OCR the currently selected file and place its contents in the Results Viewer. This OCR is done on the selected file itself, not on the screen contents.
+:Category Optical Character Recognition
+:SearchRank 1
+
+:Script PictureSmartWithSelectedFile
+:DisplayName  Picture Smart a Selected File
+:Synopsis Describe the currently selected file.
+:Optional
+:Param int/serviceOptions Additional Picture Smart service options. See HJConst.jsh for option constants, all prefixed by PSServiceOptions_.
+:Category Picture Smart
+:Keywords image, photo, picture, photograph, graphic, describe, recognize
+:Version JAWS/20.00
+:SearchRank 1
+
+:script AddressBar
+:DisplayName  Read Breadcrumb Bar or Address Bar
+:Synopsis Reads the breadcrumb bar or address bar.
+:Description In Windows 11, reads the breadcrumb bar. In Windows 10, reads the address bar. Press twice quickly to show in the virtual viewer.
+:Version JAWS/25.00
+:SearchRank 1

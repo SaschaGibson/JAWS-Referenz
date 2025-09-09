@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Lotus Notes.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="LotusNotes" Text="Lotus Notes Settings">
+			<HelpMsg>
+This group contains custom settings for the active application. There is no category-specific help for this group.  There may be help for each item in the group.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="LotusNotes.ReadingStatusLine" Text="Reading Status Line">
+			<HelpMsg>
+When on, JAWS will read changes in the Lotus Notes status line automatically. The default setting is on.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

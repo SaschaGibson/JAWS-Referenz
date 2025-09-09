@@ -1,0 +1,12 @@
+:function CheckForCAISecureBrowser
+:Returns int No Return Description
+:SearchRank 1
+
+:function SpeakBraileInfo
+:SearchRank 1
+:Synopsis Spricht Information der Braillezeile
+
+:script AbortFunction
+:SearchRank 1
+:Synopsis Nur kurzer Ton und beenden
+

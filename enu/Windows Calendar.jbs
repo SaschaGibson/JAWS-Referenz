@@ -1,0 +1,22 @@
+[Component Aliases]
+UnRedStatus=Show Unread Status
+UnRedMsgs=Number of Unread Mesages
+
+; Section for listview
+[SubtypeCode30]
+components=type,UnRedStatus,value,position
+type=lv
+removed=name
+displayname=
+AlignmentPriority=type,UnRedStatus,value
+
+; Section for treeview
+[SubtypeCode31]
+components=ContextHelp,name,type,level,state,value,position,UnRedMsgs
+type=tv
+removed=
+displayname=
+AlignmentPriority=name,type,level,state,value
+
+[Information]
+Description=Default  Structured Mode view for Microsoft Calendar.

@@ -1,0 +1,18 @@
+:function InTimePickerList
+:description Tests if focus is in one of the list of the time picker pane.
+:returns int True if focus is in one of the list of the time picker pane.
+
+:function ListenForSelectionChange
+:description Initiates a UIA event listener for the time picker pane to receive notification of automation events for selection change.
+
+:function IgnoreSelectionChange
+:description Turns off listening for events in the time picker pane.
+
+:function UpdateTimePickerItemText 
+:description Used when focus changes to a time picker list to update the global holding the text of the selected list item.
+
+:function AlarmsClockAutomationEvent
+:description The automation event which receives notification of selection changes.
+:param object The UIA element.
+:param int The UIA event id.
+

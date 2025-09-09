@@ -1,0 +1,8 @@
+[Common Keys]
+Shift+Control+UpArrow=MoveCurrentItemUp
+Shift+Control+ExtendedUpArrow=MoveCurrentItemUp
+Shift+Control+DownArrow=MoveCurrentItemDown
+Shift+Control+ExtendedDownArrow=MoveCurrentItemDown
+; These are needed to read out the new positions for the rules when using the shortcuts to press the buttons
+Alt+U=PressMoveUpButton
+Alt+R=PressMoveDownButton

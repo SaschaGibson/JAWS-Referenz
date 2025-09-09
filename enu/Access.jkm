@@ -1,0 +1,12 @@
+;Copyright 1995-2015 Freedom Scientific, Inc.
+;JAWS Key Map File for Microsoft Access
+
+[Common Keys]
+JAWSKey+F7=SpellCheck
+JAWSKey+C=ReadDataSheetCoordinates
+Ctrl+JAWSKey+r=SayRecordNumber
+
+[Laptop Keys]
+Insert+F7=SpellCheck
+Insert+C=ReadDataSheetCoordinates
+

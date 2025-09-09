@@ -1,0 +1,15 @@
+﻿; Copyright 2022 Freedom Scientific, Inc.
+; JAWS Braille Structure file for the Microsoft Store app
+
+[Component Aliases]
+SuggestionCount=Vorschlag Anzahl
+
+; Section for edit
+[SubtypeCode3]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value,state,description,SuggestionCount,position
+type=ef
+removed=
+displayname=
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für die App Microsoft Store.

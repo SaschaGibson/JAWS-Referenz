@@ -1,0 +1,138 @@
+:function BrailleAddObjectCoordinates
+:Description This function displays cell coordinates in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectLine
+:Description This function displays cell line in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectColHdr
+:Description This function displays column header in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectRowHdr
+:Description This function displays cell row header in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectContent
+:Description This function displays cell content in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectFormula
+:Description This function displays cell formula in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectHyperlink
+:Description This function displays cell hyperlink in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectComment
+:Description This function displays cell comment in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectInputMessage
+:Description This function displays cell's input message in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectRowTotal
+:Description This function displays the row total in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectColTotal
+:Description This function displays the column total in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectColumnContext
+:Description This function displays the column context in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectRowContext
+:Description This function displays the row context in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectStartCoordinates
+:Description This function displays the start coordinates for a range of cells in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectEndCoordinates
+:Description This function displays the end coordinates for a range of cells in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectStartContent
+:Description This function displays the start content for a range of cells in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectEndContent
+:Description This function displays the end content for a range of cells in Braille structured mode.
+:Param int/nType
+:returns int
+
+
+:function BrailleAddObjectDelim
+:Description This function displays the delimiter between the start and end coordinates and content for a range of cells in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectMonitorCells
+:Description This function displays the coordinates for monitor cells in Braille structured mode.
+:Param int/nType
+:returns int
+
+:function BrailleAddObjectAreas
+:Description This function displays coordinates for noncontiguous selected areas in Braille structured mode.
+:Param int/nType
+:returns int
+
+:Function getColTitle
+:synopsis returns the column title of the active cell
+:description This function returns the column title for the active cell.
+:param int True if the column title should be retrieved regardless of verbosity, false if verbosity for column title should be retrieved only when verbosity is Column or Both
+:returns string column title for active cell
+
+:Function getRowTitle
+:synopsis returns the row title for the active cell
+:description This function returns the row title for the active cell.
+:param int True if the column title should be retrieved regardless of verbosity, false if verbosity for column title should be retrieved only when verbosity is Column or Both
+:returns string row title of active cell
+
+:Function GetHyperlinkAddress
+:synopsis returns the address of a hyperlink object 
+:description This function returns the address part of a hyperlink object.
+:param object/hyperlink the hyperlink object
+:returns string the address refered to by the hyperlink object.
+
+:Function getBrLColTitle
+:synopsis returns the Braille column title of the active cell
+:description This function returns the Braille column title for the active cell without markup which can cause anomalies in Braille output.
+:param int True if the column title should be retrieved regardless of verbosity, false if verbosity for column title should be retrieved only when verbosity is Column or Both
+:returns string column title for active cell
+
+:Function getBRLRowTitle
+:synopsis returns the Braille row title for the active cell
+:description This function returns the Braille row title for the active cell without markup which can cause anomalies in Braille output.
+:param int True if the column title should be retrieved regardless of verbosity, false if verbosity for column title should be retrieved only when verbosity is Column or Both
+:returns string row title of active cell
+
+:Function GetMergedCellText
+:Description This function obtains the text of the merged cell  closest to the current cell within the boundaries of the start and end of the title range for the current cell.
+:Param Int/iStart The starting title row or column
+:Param Int/iEnd the ending title row or column
+:Param Int/iCurrentCol The column of the current cell 
+:Param Int/iCurrentRow The row of the current cell
+:Returns String

@@ -1,0 +1,113 @@
+:script ZTZoomTextOnOff
+:DisplayName Toggle ZoomText On/Off
+:Description Toggles ZoomText and all enhancements on and off without exiting the program.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTShowUserInterface
+:DisplayName ZoomText User Interface
+:Description Displays the ZoomText toolbar.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTZoomIn
+:DisplayName Zoom In
+:Description Increases the magnification one level at a time.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTZoomOut
+:DisplayName Zoom Out
+:Description Decreases the magnification one level at a time.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTToggleZoomand1x
+:DisplayName Zoom to 1x (toggle)
+:Description Toggles between the current magnification level and 1x without turning other enhancements and features off.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTScrollUp
+:DisplayName Scroll Up
+:Description Scrolls the magnified view up. Repeated presses of the arrow key increases the panning speed.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTScrollDown
+:DisplayName Scroll Down	
+:Description Scrolls the magnified view down. Repeated presses of the arrow key increases the panning speed.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTScrollLeft
+:DisplayName Scroll Left	
+:Description Scrolls the magnified view left. Repeated presses of the arrow key increases the panning speed.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTScrollRight
+:DisplayName Scroll Right	
+:Description Scrolls the magnified view right. Repeated presses of the arrow key increases the panning speed.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTEnhanceColorsOnOff
+:DisplayName Enhancement Color
+:Description Toggles the selected color enhancement on and off. The default enhancement is invert brightness.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTEnhancePointerOnOff
+:DisplayName Enhancement Pointer
+:Description Toggles the selected mouse or pointer enhancement on and off. 
+:Category ZoomText
+:SearchRank 1
+
+:script ZTEnhanceCursorOnOff
+:DisplayName Enhancement Cursor
+:Description Toggles the selected cursor enhancement on and off.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTEnhanceFocusOnOff
+:DisplayName Enhancement Focus
+:Description Toggles the selected focus highlight enhancement used for better tracking on screen, on and off.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTLaunchAppReaderFromPointer
+:DisplayName Launch AppReader from Pointer
+:Description Starts the AppReader to begin reading at the word under the mouse pointer.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTLaunchAppView
+:DisplayName Launch App View
+:Description Starts AppReader in App View mode, where reading occurs in the source application.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTLaunchTextView
+:DisplayName Launch Text View	
+:Description Starts AppReader in Text View mode, where reading occurs in a high contrast environment.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTLaunchSpeakItTool
+:DisplayName Launch SpeakIt Tool
+:Description Starts AppReader in SpeakIt tool mode, allowing you to read text that you click and drag over.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTLaunchFinder
+:DisplayName Launch Finder
+:Description Start the Finder, allowing you to search, skim, read and navigate document's, email and webpages.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTSwitchActiveView
+:DisplayName Active View (MultiView Local/Global)
+:Description Toggles the active view (monitor) when using MultiView Local and MultiView Global.
+:Category ZoomText
+:SearchRank 1

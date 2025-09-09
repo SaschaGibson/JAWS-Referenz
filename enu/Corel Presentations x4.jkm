@@ -1,0 +1,22 @@
+[Common Keys]
+Tab=Tab
+Shift+Tab=ShiftTab
+pageDown=nextSlide
+ExtendedPageDown=nextSlide
+pageUp=priorSlide
+ExtendedPageUp=priorSlide
+Delete=deleteObject
+ExtendedDelete=deleteObject
+JAWSKey+F8=ToolbarList
+Alt+Shift+t=sayCurrentTool
+Control+Shift+n=readSpeakerNotes
+Control+Shift+s=SaySlideInfo
+JAWSKey+F7=readMisspelledAndSuggestion
+Control+Shift+d=sayObjectDimensionsAndLocation
+
+[Laptop Keys]
+Insert+F8=ToolbarList
+Insert+F7=readMisspelledAndSuggestion
+
+
+

@@ -1,0 +1,407 @@
+:function sayModuleMemberCount
+:Synopsis says the number of members (properties/methods) defined in the current code module
+:Description This function says the number of members (properties/methods) defined in the current code module. It first determines if this information is available as the VBA Environment does not expose this information, only the VB6 IDE. It also handles correct speaking of the number of members detected, ie by saying there is one, or there are x where x is greater than 1 etc.
+
+:function setFocusToVBFormControl
+:Synopsis presents a list of controls on the VBForm designer and attempts to set focus on the selected control
+:Description This function presents a list of controls on the VBForm designer and attempts to set focus on the selected control. It does not currently work as the setFocus method of the vbControl.controlObject does not work in design mode.
+
+:function sayActiveWindowTypeDesc
+:Synopsis says a description of the active VB window, eg CodeWindow, Designer, etc
+:Description This function says a description of the active VB window, eg CodeWindow, Designer, etc. These constants are defined in the Object browser and are listed in vbfunc.hsh. search for constants beginning with vbext_wt_ and their associated msgs in the vb6.jsm file.
+
+:function isAddinDesigner
+:Returns int true or false
+:Synopsis determines if the current ActiveX Designer is the Addin Designer
+:Description This function determines if the current ActiveX Designer is the Addin Designer by looking at the designerId property.
+
+:function sayActiveFormType
+:Synopsis says the active form's type on the open designer
+:Description This function says the type of form being edited on the open designer, eg MDIForm, VBForm, MSForm, etc.
+
+:function readComponentProperties
+:Synopsis reads the name, description and designerId of the component followed by all of the component's properties names and values
+:Description This function reads the name, description and designerId of the component followed by all of the component's properties names and values. It is called when the sayContextInfo script keystroke is used twice quickly. Not all components expose a properties collection.
+
+:function getVBWindowTypeDesc
+:Returns string the descriptive string for the window's type
+:Synopsis returns a string description of a VB window object based on the window's type property
+:Description This function returns a string description of a VB window object based on the window's type property. For example for a window with type vbext_wt_designer the function will return "Designer".
+:Param object/window the window object
+
+:function sayVBFormControl
+:Synopsis says the name property of a vbControl object and tests for overlap of other vbControls in its collection
+:Description This function says the name property of a vbControl object and tests for overlap of other vbControls in its collection. A vbControl has a controlObject property which returns the actual control object from which the name is obtained. VBControls are thus different to standard control objects and hence are handled separately.
+:Param object/VBControl VBControl object.
+
+:function getFormControlCount
+:Returns int the number of non-menu controls on a VBForm or the number of controls on an MSForm.
+:Synopsis gets the number of non menu controls on a VBForm or the number of controls on an MSForm
+:Description This function gets the number of non menu controls on a VBForm or the number of controls on an MSForm. The VBForm or MSForm designer must be the active component.
+
+:function areGridDotsVisible
+:Returns int true or false
+:Synopsis determines if grid dots are visible on the currently active MSForm Designer
+:Description This function determines if grid dots are visible on the currently active MSForm Designer.
+
+:function getFormMenuItemCount
+:Returns int The number of controls on a VBForm with the class Name of Menu.
+:Synopsis returns the number of controls on a VBForm designer which have the class of Menu
+:Description This function returns the number of controls on a VBForm designer which have the class of Menu. It is used by Screen Sensitive Help to describe a VBForm designer and to distinguish between focusable controls during design time and controls which must be edited using the Menu Editor in VB6. Note the VBForm designer must be the active component in the IDE.
+
+:function addMSFormControlToForm
+:Synopsis presents a list of all the controls with class forms.class.x which are intrinsic MSForm controls and creates the selected control on the active MSForm designer
+:Description This function presents a list of all the controls with class forms.class.x which are intrinsic MSForm controls and creates the selected control on the active MSForm designer. Note that the MSForm designer is the default designer used in the VBA Environment started from an instance of an MSOffice 97/2000 application. This function is called from the AddControlToForm function.
+
+:function addVBControlToForm
+:Synopsis presents a list of all the controls with class vb.controlName which are intrinsic VBControl objects and attempts to create the selected control on the active VBForm designer
+:Description This function presents a list of all the controls with class VB.ControlName which are intrinsic VBControls and attempts to create the selected control on the active VBForm designer. It currently does not work because the add method of the VBControls collection of the VBForm designer doesn't seem to work. Note that the VBForm designer is the default designer used in the VB6 IDE when creating a standard EXE or working with standard VB Forms.
+
+:function isPointInRect
+:Returns int true or false
+:Synopsis determines if a point is within the boundary of a rectangle
+:Description This function determines if the supplied coordinates of a point are within the boundary of a rectangle whose top left and bottom right coordinates are also supplied. The point is in the rectangle if it lies within the boundary or is on the boundary.
+:Param int/pointX x-coordinate of point to test
+:Param int/pointY y-coordinate of point to test
+:Param int/topLeftX top left x-coordinate of rectangle
+:Param int/topLeftY top left y-coordinate of rectangle
+:Param int/bottomRightX bottom right x-coordinate of rectangle
+:Param int/bottomRightX bottomRightY bottom right y-coordinate of rectangle
+
+:function setFocusToPriorControl
+:Synopsis sets focus to the prior control on an MSForm designer using the setFocus method
+:Description This function sets focus to the prior control (in the tab order) on an MSForm designer using the setFocus method. it is used to implement keyboard navigation in the VBA environment as their is none built in for navigating an MSForm designer.
+
+:function sayActiveFormname
+:Synopsis says the name of the active form for a designer
+:Description This function says the name of the active form on a designer. This is done by determining if the active component is a designer and then speaking the name of the component.
+
+:function sayActiveControlWidth
+:Synopsis says the active control's width
+:Description This function speaks the active control's width and is used when sizing a control.
+
+:function moveMsFormControlUp
+:Synopsis moves the active control up by a specified number of pixels on an MSForm designer
+:Description This function moves the active control up by a specified number of pixels on an MSForm designer. This is used in the VBA environment to implement control movement where there is no keyboard support for moving controls.
+:Param int/pixels the number of pixels to move
+
+:function moveMsFormControlDown
+:Synopsis moves the active control down by a specified number of pixels on an MSForm designer
+:Description This function moves the active control down by a specified number of pixels on an MSForm designer. This is used in the VBA environment to implement control movement where there is no keyboard support for moving controls.
+:Param int/pixels the number of pixels to move
+
+:function isPropertyWindowVisible
+:Returns int true or false
+:Synopsis determines if the Property window is visible
+:Description This function determines if the Property window is visible.
+
+:function sayActiveControlLeft
+:Synopsis says the active control's top left x coordinate
+:Description This function says the active control's top left x coordinate and is used when moving a control to announce the new horizontal position of the top left corner.
+
+:function sayCodeLineCount
+:Synopsis says the number of code lines in the current code module
+:Description This function says the number of code lines in the current code module. It correctly handles the wording when there is only 0 or 1 line of code.
+
+:function autoStartEvent
+:Synopsis sets up pointer to app object by determining which instance of the VB environment is running
+:Description This function sets up pointer to app object by determining which instance of the VB environment is running. All MSOffice 97/2000 applications can start an instance of the VB environment for implementing VBA interaction. The VB6 IDE also has an instance of this environment whose Object Model is described in the VB6 Extensibility Library of the Object Browser.
+
+:function testControlOverlap
+:Returns int true (the control overlaps at least one other control) or false (the control does not overlap any in the specified collection)
+:Synopsis tests if a control overlaps others on a form
+:Description This function tests the location and dimensions of the specified control against the rest of the controls in a collection and speaks the overlap status. There are ten possible scenarios.
+:Param object/control the control we want to test
+:Param object/collection The collection we want to test against. Note that if the collection contains the control object in param one it is skipped when doing the comparison.
+:Param int/DescribeOverlap Determines if the function speaks the overlap status or just returns the result without speaking anything.
+
+:function getPriorControlInTabOrder
+:Returns object the control whose tabIndex is one less than the currentControl parameter
+:Synopsis given a control, this function returns the prior control in the tab order
+:Description This function given a control, returns the prior control in the tab order from the controls collection on the form. The collection is assumed to be the controls collection on the parent control of the currentControl object.
+:Param object/currentControl the starting control object
+
+:function sayActiveFormDimensions
+:Synopsis says the active form's location and dimensions on the MSForm and VBForm designer
+:Description This function says the active form's location and dimensions on the MSForm and VBForm designer.
+
+:function setFocusToNextControl
+:Synopsis sets focus to the next control on an MSForm designer using the setFocus method
+:Description Thi Sfunction sets focus to the next control (in the tab order) on an MSForm designer using the setFocus method. it is used to implement keyboard navigation in the VBA environment as their is none built in for navigating an MSForm designer.
+
+:function sayActiveControlTop
+:Synopsis says the active control's top left y coordinate
+:Description This function says the active control's top left y coordinate and is used when moving a control to announce the new vertical position of the top left corner.
+
+:function testVBControlOverlap
+:Returns int true (the control overlaps at least one other control) or false (the control does not overlap any in the specified collection)
+:Synopsis tests if a VBControl overlaps others on a VBForm
+:Description This function tests the location and dimensions of the specified VBControl against a collection of VBControls and speaks the overlap status. There are ten possible scenarios. A VBControl is different to a standard control hence the need for handling separately.
+:Param object/VBControl the VBControl we want to test
+:Param object/vbControls The collection we wish to test against
+:Param int/DescribeOverlap Determines if the function speaks the overlap status or just returns the result without speaking anything.
+
+:function getProcLineCount
+:Synopsis returns the number of lines in the current procedure in the code window
+:Description This function returns the number of lines in the current procedure in the code window. The number of lines is actually the number of lines in the procedure plus the number of blank lines above and below the procedure according to VB.
+:returns int the number of code lines in the current procedure
+
+:function isProjectWindow
+:Returns int true or false
+:Synopsis determines if the Project Explorer Window has the focus
+:Description This function determines if the Project Explorer Window has the focus.
+
+:function sayCurrentProcedureName
+:Synopsis says the name of the procedure containing the cursor in the code window
+:Description This function says the name of the procedure containing the cursor in the code window. It will still say the name of the procedure if the cursor is after the end Sub provided it is before the header of the subsequent procedure.
+
+:function sayActiveControl
+:Synopsis says the name of the active control on a designer
+:Description This function determines the designer in use and speaks the name of the active control or selected controls.
+
+:function summarizeProject
+:Synopsis speaks a summary of the open project
+:Description This function speaks the name, description and type of the current project followed by the number and type of each visible window, the number, name, description and type of each component, the number, name and description of each referenced library and the name and description of each addin installed.
+
+:function testActiveControlOverlap
+:Synopsis tests if the active control overlaps others on a designer
+:Description This function determines the designer in use and calls the appropriate test function to test the location and dimensions of the active control or vbControl against the appropriate  collection of controls and speaks the overlap status. There are ten possible scenarios.
+
+:function getNextControlInTabOrder
+:Returns object the control whose tabIndex is one more than the currentControl parameter
+:Synopsis given a control, this function returns the next control in the tab order
+:Description This function given a control, returns the next control in the tab order from the controls collection on the form. The collection is assumed to be the controls collection on the parent control of the currentControl object.
+:Param object/currentControl the starting control object
+
+:function isDataReportDesigner
+:Returns int true or false
+:Synopsis determines if the current ActiveX designer is the Data Report designer
+:Description This function determines if the current ActiveX designer is the Data Report designer. it does this by looking at the designerId property of the active component.
+
+:function isToolboxVisible
+:Returns int true or false
+:Synopsis determines if the MSForm toolbox is visible
+:Description This function determines if the MSForm toolbox is visible in the VBA environment. It does this by looking at the showToolbox property of the active component.
+
+:function getProjectTypeDesc
+:Returns string the description of the project type
+:Synopsis returns a string describing the type of the project
+:Description This function returns a string describing the type of the project. It takes a parameter representing the type property of a project object.
+:Param int/type the type of the project as defined in the object browser, ie one of the vbext_pt_ constants
+
+:function setFocusOnSelectedWindow
+:Synopsis presents a list of visible VB windows and sets focus on the selected window
+:Description This function presents a list of the visible windows in the IDE and allows the user to select a window. Focus is then placed on that window. It is useful when there are no keyboard shortcuts to focus on a particular window.
+
+:function isActiveXDesigner
+:Returns int true or false
+:Synopsis determines if the current component is a generic ActiveX designer
+:Description This function determines if the current component is a generic ActiveX designer.
+
+:function moveMsFormControlLeft
+:Synopsis moves the active control left by a specified number of pixels on an MSForm designer
+:Description This function moves the active control left by a specified number of pixels on an MSForm designer. This is used in the VBA environment to implement control movement where there is no keyboard support for moving controls.
+:Param int/pixels the number of pixels to move
+
+:function getFirstControlInTabOrder
+:Returns object the first control object in the collection with 0 tabIndex property
+:Synopsis gets the first control from a collection whose tab order is 0
+:Description This function gets the first control from a collection whose tab order is 0. It is called by SetFocusOnFirstControl when Control+Home is pressed in the VBA environment's MSForm designer where there is no keyboard support
+:Param object/collection the controls collection to search for a control with 0 tabIndex property
+
+:function getLastControlInTabOrder
+:Returns object the last control object in the collection
+:Synopsis gets the last control in the tab order from a collection
+:Description This function gets the last control in the tab order from a collection. It is called by SetFocusOnLastControl when Control+End is pressed in the VBA environment's MSForm designer where there is no keyboard support
+:Param object/collection the controls collection to search for a control with highest tabIndex property
+
+:function isToolbox
+:Returns int true or false
+:Synopsis determines if the currently focused window is the toolbox (actually the tool window) in VB6 IDE
+:Description This function determines if the window with focus is the toolbox (the tool window) in the VB6 IDE.
+
+:function sayCodeCursorLocation
+:Synopsis says the column and line of the cursor in a code module
+:Description This function says the location of the cursor in a code module, ie the column number and code line number.
+
+:function sayActiveCodeWindowView
+:Synopsis says the code window view for the active code window
+:Description This function determines the view for the active code window and speaks it. The two states are Full Module View or Procedure View.
+
+:function isVBAModeBreak
+:Returns int true or false
+:Synopsis determines if the VB environment is in break mode
+:Description This function determines if the VB environment is in break mode, ie an application being developed was run and then paused.
+
+:function isAppObjectInvalid
+:Returns int true or false
+:Synopsis determines if the application object referenced is no longer accessable
+:Description This function determines if the application object referenced by the oVB global variable is no longer accessable. This occurs when an application is started in the VBA environment and may also occur in the VB6 IDE.
+
+:function isBlank
+:Returns int true or false
+:Synopsis determines if a string is blank
+:Description This function determines if a string is blank ie only contains spaces or tabs or is 0 length.
+:Param string/str string to check
+
+:function getCodeTopLine
+:Returns int the line number
+:Synopsis returns the line number of the top line of code visible in the active code window
+:Description This function returns the line number of the top line of code visible in the active code window. This line can be blank.
+
+:function formContainsSelectedControls
+:Returns int true or false
+:Synopsis returns true if the designer contains at least one selected control
+:Description This function returns true if the designer contains at least one selected control. It applies to the VBForm or MSForm designers only.
+
+:function sayActiveControlHeight
+:Synopsis says the height of the active control
+:Description This function speaks the height of the active control and is used when sizing controls.
+
+:function setAppObject
+:Synopsis calls autoStartEvent to reinitialise the application object pointer if it becomes invalid
+:Description This function calls autoStartEvent to reinitialise the application object pointer if it becomes invalid.
+
+:function setFocusToFormControl
+:Synopsis determines the designer in use and calls the appropriate function to list the controls on the designer and set focus on the selected control
+:Description This function determines the designer in use and calls the appropriate function to list the controls on the designer and set focus on the selected control.
+
+:function closeActiveWindow
+:Synopsis attempts to close the active window without closing the associated component
+:Description This function attempts to close the active window without closing the associated component which would otherwise occur if the Control+F4 keystroke was used. It does this by calling the Close method of the activeWindow object.
+
+:function isInAccessibleDesigner
+:Returns int true or false
+:Synopsis determines if the designer in use is inaccessible
+:Description This function determines if the designer in use is inaccessible. It does this simply by returning true for the following designer types (which may in the future be found to be accessible but weren't at the time of development): vbext_ct_userControl and vbext_ct_docObject
+
+:function readCurrentCodeLine
+:Synopsis reads the current code line, even when not totally visible
+:Description This function reads the current code line, even when not totally visible.
+
+:function sayActiveControlDimensions
+:Synopsis this function says the location and dimensions of the active control on the designer
+:Description This function says the location and dimensions of the active control on the designer. It also tests for control overlap.
+
+:function selectToolboxControl
+:Synopsis determines the designer type and calls the appropriate function to list the controls available to be added to the form and to ad the selected control to the designer form.
+:Description This function determines the designer type and calls the appropriate function to list the controls available to be added to the form and to ad the selected control to the designer form.
+
+:function isVBFormDesigner
+:Returns int true or false
+:Synopsis determines if the active component is a VBForm designer
+:Description This function determines if the selected vbComponent is a VBForm designer. Different designers expose different information and thus interaction with the selected designer is based on the type of designer.
+
+:function isVBAModeDesign
+:Returns int true or false
+:Synopsis determines if the VB environment is in design mode
+:Description This function determines if the VB environment is in design mode, ie an application being developed is not running or is not paused.
+
+:function getVisibleCodeLineCount
+:Returns int the number of visible lines
+:Synopsis returns the number of code lines visible in the active code window
+:Description This function returns the number of visible code lines in the active code window. Blank lines are counted.
+
+:function isProjectActive
+:Returns int true or false
+:Synopsis determines if a project is active or not
+:Description This function determines if a project is loded into the VB environment.
+
+:function isMainWindow
+:Returns int true or false
+:Synopsis determines if the main VB window has focus
+:Description This function determines if the main VB window has focus. This should generally never be the case but may occur if all windows are closed.
+
+:function setFocusOnToolWindow
+:Synopsis sets focus on the first visible tool window
+:Description This function sets focus on the first visible tool window in the VB6 IDE. In VBA, the toolbox is a property of the designer whereas in VB6 it is implemented as a separate tool window. The user can also accomplish this by using the setFocusOnWindow function.
+
+:function setFocusToMSFormControl
+:Synopsis presents a list of the controls on an MSForm designer and sets focus on the selected control
+:Description This function presents a list of the controls on the MSForm designer in the VBA environment. The user can select a control and then focus is placed on the selected control.
+
+:function getControlTabIndex
+:Returns int the tabIndex value (starting at 0)
+:Synopsis returns the tabIndex of the control object passed as a parameter
+:Description This function returns the tabIndex property of the control object passed as a parameter.
+:Param object/control the control whose tabIndex is required
+
+:function setFocusToFirstControl
+:Synopsis sets focus on the first control in the tab order on an MSForm designer
+:Description This function sets focus on the first control in the tab order on an MSForm designer. It is used to help implement keyboard support for designer navigation in the VBA environment where no keyboard support is available without JFW.
+
+:function isCodeWindow
+:Returns int true or false
+:Synopsis determines if the current window is the code window
+:Description This function determines if the current window is the code window however caution and extra logic is used to ensure the value returned is accurate as the property constant is 0 and we need to distinguish if this value is valid. For example, if the window object is not available, and we don't check the validity the value would be erroneous.
+
+:function getComponentTypeDesc
+:Returns string the description of the component type
+:Synopsis returns a string describing the type of the component
+:Description This function returns a descriptive string for the component type passed as a parameter. The type is the type property of the component object and is defined in the object browser and has values starting with vbext_ct_
+:Param int/type the type property for the component whose type description we want
+
+:function sayDeclarationLineCount
+:Synopsis says the number of declaration lines in the current code module
+:Description This function says the number of declaration lines in the current code module.
+
+:function setFocusToLastControl
+:Synopsis sets focus on the last control in the tab order on an MSForm designer
+:Description This function sets focus on the last control in the tab order on an MSForm designer. It is used to help implement keyboard support for designer navigation in the VBA environment where no keyboard support is available without JFW.
+
+:function sayMSFormControl
+:Synopsis says the name and tests for overlap for a given MSForm control
+:Description This function speaks the name property and tests for overlap for a given msForm control object.
+
+:function isVBAModeRun
+:Returns int true or false
+:Synopsis determines if the VB environment is in run mode
+:Description This function determines if the VB environment is in run mode, ie an application being developed is running in the IDE.
+
+:function moveMSFormControlRight
+:Synopsis moves the active control right by a specified number of pixels on an MSForm designer
+:Description This function moves the active control right by a specified number of pixels on an MSForm designer. This is used in the VBA environment to implement control movement where there is no keyboard support for moving controls.
+:Param int/pixels the number of pixels to move
+
+:function isMSFormDesigner
+:Returns int true or false
+:Synopsis determines if the active component is a MSForm designer
+:Description This function determines if the selected vbComponent is a MSForm designer. Different designers expose different information and thus interaction with the selected designer is based on the type of designer.
+
+:function autoFinishEvent
+:Synopsis resets references to global objects when focus switches away from VB
+:Description This event occurs when focus switches away from either the VBA instance or the VB6 IDE and references to any global objects are derefferenced.
+
+:function isPropertiesWindow
+:Returns int true or false
+:Synopsis determines if the focused window is the Property window
+:Description This function determines if the focused window is a property window. The property window usually gains focus when the user presses F4 from the IDE or VBA environment.
+
+:function isCursorInProcedure
+:Returns int true or false
+:Synopsis determines if the cursor is in the body of a procedure in the code window
+:Description This function determines if the cursor is in the body of a procedure in the code window as opposed to being in the declaration section of the code module. This function will still return true however if the cursor is after the End Sub in the blank lines before the subsequent procedure. This is just how VB works and is not a bug in the scripts.
+
+:Function toolboxHelper
+:synopsis 
+:description 
+							  :param int/nLeft 
+							  :param int/nTop 
+							  :param int/nRight 
+							  :param int/nBottom 
+:returns int
+:Function getActiveFormType
+:synopsis returns the type description for the active component
+:description This function returns the type description for the active component (usually a form). 
+:returns string component type description
+
+:Function getActiveCodeWindowView
+:synopsis returns a string describing the code window's current view
+:description This function returns a string describing the code window's current view. A Code Window can be in Full Module view or Procedure view. 
+:returns string view description
+
+:Function getCurrentProcedureName
+:synopsis 
+:description 
+:returns string
+

@@ -1,0 +1,7 @@
+; JAWS 6.10.xx key map file for WLM Admin network tools
+; Copyright 1999-2015  by Freedom Scientific BLV Group, LLC
+[common keys]
+Shift+JAWSKey+T=MoveToServerTreeView 
+Shift+JAWSKey+c=SpeakStaticClientInfo 
+Shift+JAWSKey+l=SpeakStaticLicenseInfo
+JAWSKey+h=WlmHotKeyHelp

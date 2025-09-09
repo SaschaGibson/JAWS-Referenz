@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Default.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="PlaySoundsForAutocomplete" Text="Address List Auto-Complete Play Sounds">
+			<HelpMsg>
+Check this box to hear auto complete sounds when the list appears and disappears.
+The autocomplete list contains suggestions when you type in one of the message header fields such as To and CC.
+This checkbox is checked by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="MessageStatus" Text="Message Status">
+			<HelpMsg>
+This group contains options that control which status information is announced and shown in braille for each item in the message list.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="MessageStatus.IndicateUnread" Text="Indicate Unread">
+			<HelpMsg>
+When this option is checked, JAWS will speak and show in braille if a message is unread.
+It is check by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="MessageStatus.IndicateReplied" Text="Indicate Replied">
+		<HelpMsg>
+When this option is checked, JAWS will speak and show in braille if a message has been replied to.
+It is check by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="MessageStatus.IndicateForwarded" Text="Indicate Forwarded">
+			<HelpMsg>
+When this option is checked, JAWS will speak and show in braille if a message is forwarded.
+It is check by default.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

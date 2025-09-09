@@ -1,0 +1,50 @@
+:script HotKeyHelp
+
+:function AutoStartEvent
+
+:script ClickStop
+:Synopsis Stop Schalter
+:Description Klickt auf den Stop Schalter, um das das Aufnehmen oder das Abspielen zu stoppen
+
+:script ClickPlay
+:Synopsis Play Schalter
+:Description Klickt auf den Play Schalter und startet das Abspielen 
+
+:function PressButton
+:Synopsis Drückt auf den von Ihnen festgelegten Schalter
+:Description Geben Sie die Konstante für die Control ID des gewählten Schalters ein. Konstante sind in SndRec32.jsh zu finden
+:Param int/iButton Use the SndRec32.jsh file as a reference and enter the corresponding control ID
+:Param string/sButton Enter the name of the button to be spoken. Find all button names at the end ofSoundRec.jsm
+
+:script StartRecord
+:Synopsis Aufnahmestart
+:Description Klickt auf den Play Schalter und startet das Aufnehmen.
+
+:script ClickRewind
+:Synopsis Zurückspulen
+:Description Klickt auf den Schalter Zurückspulen, um in der Datei ab der aktuellen Position zurückzugehen
+
+:script ScriptFileName
+
+:script ClickFastForward
+:Synopsis Schnell Vorwärts
+:Description Klickt auf den Schalter Schnell Vorwärts, um in der Datei weiterzugehen
+
+:script SelectAButton
+:Synopsis Drücken Sie, um eine Schalter-Liste zu erhalten, dann drücken Sie EINGABE, um den Schalter auszuwählen
+:Description Mit PFEIL RAUF/RUNTER oder dem Anfangsbuchstaben wählen Sie einen Schalter aus. Drücken Sie EINGABE, um ihn zu aktivieren.
+
+:script LimitSpeech
+:Synopsis Schalten Sie Sprache begrenzen EIN, wenn Sie einen Software-Synthesizer einsetzen
+:Description Begrenzt die Anzahl der gesprochenen Meldungen, wenn eine der Kurztasten für die Schalter gedrückt wird.
+
+:function AutoFinishEvent
+:Synopsis Gibt die normalen Sprachparameter zurück und schließt den Soundrecorder
+:Description Gibt die Sprachparameter zurück, nachdem sie für die Softwaresprache und das Soundrecording vergeben wurden
+
+:Function AddToString
+:Synopsis Nimmt zwei Strings und fügt den zweiten String zum ersten hinzu
+:Description Fügt den zweiten Stringparameter zum ersten Parameter hinzu und gibt einen neuen String zurück
+:Returns string
+:Param1 String/Base The base string that is to be added to
+:Param2 string/New The string that is to be added to the base

@@ -1,0 +1,177 @@
+:Function GetTabLabels
+:Returns string The labels for the tab controls delimited for a JAWS list box.
+:Description Fragt alle Bezeichnungen in einem abgegrenzten String für ein JAWS Listenfeld ab.
+:param handle/hTabControl The window which contains the tab controls.
+
+
+:function AutoStartEvent
+
+:script ScriptFileName
+
+:script MoveToNextLink
+:Synopsis Geht zum nächsten Hyperlink oder Steuerelement auf der Seite
+:Description Springt in einem Dialogfeld auf das nächste Steuerelement. Springt auf einer Webseite auf den nächsten Hypertextlink oder das nächste Steuerelement. Es wird empfohlen, dieses Skript an die Tab Taste anzuhängen. Wenn %product% nicht in der Lage ist, den fokussierten Link zu finden, wird die Statuszeile gelesen
+
+:script MoveToPriorLink
+:Synopsis Springt zum vorherigen Hyperlink oder Steuerelement auf der Seite
+:Description Springt in einem Dialogfeld auf das vorherige Steuerelement. Springt auf einer Webseite auf den vorherigen Hypertextlink oder das vorherige Steuerelement. Es wird empfohlen, dieses Skript an den UMSCHALT+TAB Tastaturbefehl anzuhängen. Wenn %product% nicht in der Lage ist, den fokussierten Link zu finden, wird die Statuszeile gelesen
+
+:script ReadCurrentScreen
+:Synopsis Liest mit dem JAWS Cursor den Bildschirm der Seite von oben
+:Description Dieses Skript liest mit dem JAWS Cursor den sichtbaren Bildschirm der aktuellen Seite. Sie können das Lesen beenden und dann von der gleichen Stelle mit dem Standard-Befehl SayAll fortfahren, EINFÜGEN+PFEIL RUNTER. Wenn das Bildschirmende erreicht wird, springt STRG+SEITE RUNTER auf den nächsten Bildschirm und fährt auf die gleiche Weise mit dem Lesen fort
+
+:script ReadNextScreen
+:Synopsis Führt ein SEITE RUNTER aus und beginnt mit dem JAWS Cursor das Lesen
+:Description Führt den Standard-Befehl SEITE RUNTER aus, um den nächsten Bildschirm anzuzeigen und beginnt mit dem JAWS Cursor das Lesen vom oberen Rand. Sie können das Lesen beenden und dann von der gleichen Stelle mit dem Standard-Befehl SayAll fortfahren, EINFÜGEN+PFEIL RUNTER.
+
+:script ReadPriorScreen
+:Synopsis Führt ein SEITE RAUF aus und beginnt mit dem JAWS Cursor das Lesen
+:Description Führt den Standard-Befehl SEITE RAUF aus, um den vorherigen Bildschirm anzuzeigen und beginnt mit dem JAWS Cursor das Lesen vom oberen Rand. Sie können das Lesen beenden und dann von der gleichen Stelle mit dem Standard-Befehl SayAll fortfahren, EINFÜGEN+PFEIL RUNTER.
+
+:script ReadDownColumn
+:Synopsis Bei aktivem JAWS Cursor wird die nächste Zeile der aktuellen Spalte gelesen
+
+:script ReadUpColumn
+:Synopsis Bei aktivem JAWS Cursor wird die vorherige Zeile der aktuellen Spalte gelesen
+
+:script ReadColumnLeft
+:Synopsis Bei aktivem JAWS Cursor wird die aktuelle Zeile der vorherigen Spalte gelesen
+
+:script ReadColumnRight
+:Synopsis Bei aktivem JAWS Cursor wird die aktuelle Zeile der nächsten Spalte gelesen
+
+:function SayNonHighlightedText
+:Param handle/hwnd No Description
+:Param string/buffer No Description
+
+:function MoveToLink
+:Synopsis Diese Funktion wurde geschrieben, um von Link zu Link zu springen
+:Description Wenn man sich mit Tab durch eine Linkliste bewegt, wird diese Funktion aufgerufen, um den Fokus auf den Link zu setzen
+:Param int/nNext No Description
+
+:script SaySelectedLink
+:Synopsis Liest den aktuellen Link im Fokus
+:Description Dieses Skript spricht den aktuellen Link im Fokus
+
+:script HotKeyHelp
+
+:script ScreenSensitiveHelp
+
+:function IsLinksList
+:Synopsis Diese Funktion wird verwendet, um zu überprüfen, ob die Linkliste aktiv ist
+:Param handle/hwnd No Description
+
+:function IsToolbarList
+:Synopsis Überprüft, ob die Symbolleisten-Liste aktiv ist
+:Param handle/hwnd No Description
+
+:function IsTabList
+:Synopsis Überprüft, ob die Tab-Liste aktiv ist
+:Param handle/hwnd No Description
+
+:function FocusChangedEvent
+:Param handle/focusWindow No Description
+:Param handle/prevWindow No Description
+
+:function SayFocusedWindow
+
+:script ReformatDocument
+:Synopsis Formatiert eine mehrspaltige Seite neu, damit sie mit der Sprachausgabe besser gelesen werden kann
+:Description Ordnet mehrspaltige Seiten neu an, damit sie linear gelesen werden können. IE Spalten werden nacheinander gelesen. Steht nur im IE4 zur Verfügung
+
+:function NewSelectLink
+:Synopsis Präsentiert die neue Ansicht Linkliste
+:Description Nur verwenden, wenn der virtuelle PC Cursor eingeschaltet ist, ansonsten wird nicht ordnungsgemäß wiedergegeben
+
+:script SelectALink
+:Synopsis Öffnet ein Dialogfeld, das eine Liste aller auf der Seite vorhandenen Links enthält
+
+:function ieFocusToFirstField
+:Synopsis Setzt den Fokus auf das erste Steuerelement auf einer Seite
+:Description Wenn sich auf der Seite Mehrfach-Steuerelemente befinden, wie zum Beispiel Eingabefelder, springt diese Funktion in das erste Feld und plaziert den Fokus in diesem Feld
+
+:script FocusToFirstField
+:Synopsis Springt im IE 4.0 in das erste Eingabefeld auf der Seite
+:Description Sucht nach dem ersten Eingabefeld auf der Seite und liest es. Steht nur im IE4 zur Verfügung. Wenn keine Eingabefelder vorhanden sind, wird eine Meldung für den Anwender gesprochen
+
+:function GetNavigationTreeView
+:Returns handle No Return Description
+:Synopsis Diese Funktion wird verwendet, um zu überprüfen, ob die Strukturansicht den aktuellen Fokus besitzt
+
+:function GetToolbar
+:Returns handle No Return Description
+:Synopsis Diese Funktion wird verwendet, um das Handle der Symbolleiste zu erhalten und um zu überprüfen, ob die Symbolleiste sichtbar ist
+
+:script ToolBar
+:Synopsis Erlaubt dem Anwender, in einer Liste auf einen Schalter der Symbolleiste zu klicken.
+:Description Dieses Skript öffnet ein Dialogfeld, das alle Schalter in einer Liste enthält, die auf der Symbolleiste erscheinen. In diesem Dialog kann der Anwender einen der Schalter auf der Symbolleiste auswählen und dann EINGABE drücken, um auf ihn zu klicken
+
+:function ClickToolBarButton
+:Synopsis Diese Funktion wird verwendet, um auf den entsprechenden Schalter auf der Symbolleiste zu klicken
+:Param handle/winHandle No Description
+:Param string/buttonLabel No Description
+
+:function GetTabControl
+:Returns handle No Return Description
+:Synopsis Diese Funktion wird verwendet, um die Registerkarten für ein mehrseitiges Dialogfeld zu erhalten
+
+:script SelectTab
+:Synopsis Baut eine Liste mit Registerkarten in einer Dialogliste auf, so dass der Anwender die gewünschte Registerkarte auswählen kann
+
+:function ClickTab
+:Synopsis Diese Funktion wird verwendet, um auf die entsprechende Registerkarte zu klicken, wenn der Anwender sie aus der Dialogliste ausgewählt hat
+:Param handle/winHandle No Description
+:Param string/tab No Description
+
+:function GetFrameInHierarchy
+:Synopsis Diese Funktion wird verwendet, um die Rahmen-Hierarchie auf einer Seite zu erhalten
+:Param int/nIndex No Description
+:Param object/StartWindow No Description
+
+:function AddFramesInWindow
+:Synopsis Diese Funktion wird verwendet, um die Rahmen eines Fensters für die Dialogliste hinzuzufügen
+:Param object/window No Description
+:Param string/strBuf/ByRef No Description
+
+:function SpeakDocument
+:Synopsis Diese Funktion wird verwendet, um das Dokument zu lesen, nachdem man auf einen bestimmten Rahmen gesprungen ist
+:Param object/doc No Description
+
+:script NextDocumentWindow
+
+:script PreviousDocumentWindow
+
+:Function AddToString
+:Synopsis Nimmt zwei Strings und fügt den zweiten String zum ersten hinzu
+:Description Fügt den zweiten Stringparameter zum ersten Parameter hinzu und gibt einen neuen String zurück
+:Returns string
+:Param1 String/Base The base string that is to be added to
+:Param2 string/New The string that is to be added to the base
+
+:function GetToolBarButtons
+:synopsis Erzeugt eine Liste der Schalter der Symbolleiste
+:description Erzeugt eine Liste der Schalter der Symbolleiste, zusammen mit den dazugehörigen Bildschirm-Koordinaten
+:param handle The handle of the toolbar window
+:param string ByRef To hold the delimited list of toolbar button text
+:param string ByRef To hold the on-screen x coordinates of the buttons
+:param int ByRef To hold the on-screen Y coordinate of the row of buttons
+
+:function ClickToolBarButtonByPosition
+:synopsis Klickt einen Schalter basierend auf seine (x,y) Koordinaten
+:description Klickt einen Schalter basierend auf seine (x,y) Koordinaten
+:param string The delimited list of button x coordinates
+:param int The number representing which button to use
+:param int  The y coordinate of the button row
+
+:script GoBack
+:Synopsis Lädt das vorherige Hilfethema
+:Description Leitet ALT+PFEIL LINKS an die Hilfe weiter und lädt das vorherige Hilfethema
+
+:script GoForward
+:Synopsis Lädt das nächste Hilfethema.
+:Description Leitet ALT+PFEIL RECHTS an die Hilfe weiter und lädt das nächste Hilfethema
+
+:function SayLine
+:Description This says a line of text where the active cursor is located. JAWS must interpret whether text that has a similar vertical position is on the same line. When the PC cursor is active, it only reads the information that is within the active child window. When it is used with other cursors, then it reads from one edge of the application window to the other.
+:Optional
+:Param Int/iDrawHighlights Optional parameter added in JAWS 7.1 / MAGic 10.0.  Used to indicate whether or not the line should be highlighted by the MAGic engine as the text is being spoken.  The possible values are as follows:  If the parameter is not present or is equal to 0, do nothing; If the parameter is equal to 1, highlight each word as it is being spoken; If the parameter is equal to 2, highlight the entire line.  NOTES: (1) This functionality is not currently supported in all applications.  (2) The highlight rectangles will only be drawn if MAGic is running.

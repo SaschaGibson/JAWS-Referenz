@@ -1,0 +1,17 @@
+; Section for Subtype ROW
+[SubtypeCode80]
+components=ContextHelp,name,type,value
+type=row
+removed=
+displayname=Row
+; here are the keys used for replacing the message flags to abbreviated Braille names
+; the first in the key name goes the component name, not all components are supported, only value for now
+; the colon is used as a delimeter
+; the second goes the name that is to be replaced by the key value
+value:Has Attachment=Atch
+value:Starred=*
+value:Junk=jnk
+value:Unread=Un
+
+[Information]
+Description=Default  Structured Mode view for Thunderbird.

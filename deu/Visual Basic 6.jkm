@@ -1,0 +1,31 @@
+[common keys]
+Control+Shift+B=selectToolboxControl
+Tab=tabKey
+Shift+Tab=ShiftTabKey
+JAWSKey+Delete=sayContextInfo
+JAWSKey+ExtendedDelete=sayContextInfo
+Control+j=ActivatePropertiesAndMethodsList
+Control+Shift+j=activateConstantsList
+Control+i=quickInfo
+Control+Shift+i=ParameterInfo
+Control+Shift+F4=closeActiveWindow
+Alt+i=setFocusOnMenuItemList
+Control+space=completeCode
+
+[Laptop Keys]
+Insert+Delete=sayContextInfo
+Insert+ExtendedDelete=sayContextInfo
+;Removed from Common to prevent conflicts with MAGIc
+Control+Shift+L=setFocusTOFormControl
+Control+Shift+s=summarizeOpenProject
+Control+Shift+w=setFocusOnWindow
+Control+Shift+x=setFocusOnToolWindow
+;End of Remove from Common to prevent conflicts with MAGIc
+
+[Desktop Keys]
+;Removed from Common to prevent conflicts with MAGIc
+Control+Shift+L=setFocusTOFormControl
+Control+Shift+s=summarizeOpenProject
+Control+Shift+w=setFocusOnWindow
+Control+Shift+x=setFocusOnToolWindow
+;End of Remove from Common to prevent conflicts with MAGIc

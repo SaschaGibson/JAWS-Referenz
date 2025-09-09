@@ -1,0 +1,99 @@
+:function ZTGetZOM
+:Returns object A ZoomText.Application interface
+:description Creates and returns a ZoomText.Application object.
+This object can be used to implement any ZoomText scripting functionality for which functions are not provided in ZTUtil.jss.
+
+:function ZTCreateRect
+:Returns object A ZoomText rectangle object
+:Param int/iLeft The left coordinate for the rectangle
+:Param int/iTop The top coordinate for the rectangle
+:Param int/iRight The right coordinate for the rectangle
+:Param int/iBottom The bottom coordinate for the rectangle
+:description Creates a ZoomText.Rectangle object using the supplied coordinates.
+
+:function ZTCreateRectFromWindow
+:Returns object A ZoomText rectangle object
+:Param handle/hWnd Handle of the window for which the rectangle should be created
+:description Creates a ZoomText.Rectangle object using coordinates attained from the window of the supplied handle.
+This function returns null if rectangle coordinates cannot be attained using the supplied handle.
+
+:function ZTCreateRectFromUIAElement
+:Returns object A ZoomText rectangle object
+:Param object/oElement UIA element for which the rectangle should be created
+:description Creates a ZoomText.Rectangle object using coordinates attained from the BoundingRectangle property of the supplied UIA element.
+
+:function ZTGetRectHeight
+:Returns int The difference between the top and bottom coordinate of the provided rectangle
+:Param object/oRect The rectangle for which the height is desired
+:description Used to get the height of the supplied rectangle.
+
+:function ZTGetRectWidth
+:Returns int The difference between the left and right coordinate of the provided rectangle
+:Param object/oRect The rectangle for which the width is desired
+:description Used to get the width of the supplied rectangle.
+
+:function ZTSetTetheredViewFocusLocation
+:Param object/oTethered/ByRef The tethered view scenario for wich the focus location is being set.
+:Param object/oRect A rectangle used for setting the focus location.
+:description Used by ZTTetheredViewUpdateLocations to set the FocusLocation property of the supplied TetherViewScenario using the supplied ZoomText.Rectangle object.
+FocusLocation is the unmagnified screen location of the current focus object. It will be used in the calculation of the final destination location if the destination location is not explicitly set.
+It is recommended to use the ZTTetheredViewUpdateLocations function rather than calling this function directly.
+
+:function ZTSetTetheredViewSourceLocation
+:Param object/oTethered/ByRef The tethered view scenario for wich the source location is being set.
+:Param object/oRect A rectangle used for setting the source location.
+:description Used by ZTTetheredViewUpdateLocations to set the SourceLocation property of the supplied TetherViewScenario using the supplied ZoomText.Rectangle object.
+SourceLocation is the unmagnified screen location of the source to be displayed in the tethered view.
+It is recommended to use the ZTTetheredViewUpdateLocations function rather than calling this function directly.
+
+:function ZTSetTetheredViewDestinationLocation
+:Param object/oTethered/ByRef The tethered view scenario for wich the destination location is being set.
+:Optional
+:Param object/oRect A rectangle used for setting the destination location. If no rectangle is provided, the destination location will be calculated according to the ZTCalculateTetheredViewDestinationLocation function.
+:description Used by ZTTetheredViewUpdateLocations to set the DestinationLocation property of the supplied TetherViewScenario using the supplied ZoomText.Rectangle object.
+DestinationLocation is the unmagnified screen location of the destination location for the tethered view.
+If no rectangle is supplied, the destination location will be calculated using the ZTCalculateTetheredViewDestinationLocation function.
+When not supplying a destination rectangle it is important to set or update the focus and source locations prior to calling this function.
+It is recommended to use the ZTTetheredViewUpdateLocations function rather than calling this function directly.
+
+:function ZTCalculateTetheredViewDestinationLocation
+:Returns object A ZoomText rectangle object
+:Param object/oTethered/ByRef The tethered view scenario for wich the destination location is being calculated.
+:description Used to calculate the DestinationLocation for a TetheredViewScenario when the DestinationLocation is not explicitly set.
+The focus and source locations must be set prior to this function being called.
+
+:function ZTTetheredViewUpdateLocations
+:Param object/oTethered/ByRef The tethered view scenario for which the locations should be updated
+:Param object/oFocusRect A ZoomText rectangle representing the focus location
+:Optional
+:Param object/oSourceRect A ZoomText rectangle representing the source location. This can be omitted if SourceLocation is already set and has not changed.
+:Param object/oDestinationRect A ZoomText rectangle representing the destination location. This will be calculated if not provided.
+:description Sets/updates the focus, source, and destination properties of the supplied TetheredViewScenario using the supplied rectangle parameters.
+
+:function ZTTetheredViewWindowContainingSource
+:Param object/oTethered/ByRef The tethered view scenario
+:Param handle/hWnd The handle of the window that the source location will be clipped by
+:description If a window is specified, the source location will be clipped against the window location.
+
+:function ZTShowTetheredViewScenario
+:Description Shows the supplied TetheredViewScenario, if the scenario has not been disabled in the ZoomText UI
+:Param object/oTethered/ByRef The tethered view scenario to show
+
+:function ZTHideTetheredViewScenario
+:Description Hides the supplied TetheredViewScenario.
+:Param object/oTethered/ByRef The tethered view scenario to hide
+
+:function ZTCurrentTetheredViewScenario
+:Returns string The name of the current tethered view scenario
+:description If tethered view is active the name of the current scenario is returned.
+
+:function ZTGetTetheredViewScenario
+:Returns object An existing TetheredViewScenario if one exists, a new one otherwise.
+:Param string/sScenarioName The name of the desired scenario
+:description Gets the TetheredViewScenario corresponding to the supplied name.
+If no TetheredViewScenario exists with the supplied name,
+a new TetheredViewScenario is created and registered with the ZoomText UI using the supplied name.
+
+:function ZTIsTetheredViewEnabled
+:Returns int True if tethered view is enabled, false otherwise.
+:description Returns the enabled state of tethered view.

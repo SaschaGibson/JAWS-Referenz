@@ -1,0 +1,56 @@
+:function ToggleMeetingRequestVerbosity
+:Returns string text describing the current state of the meeting request indication option.
+:Synopsis Controls whether meeting requests should be indicated when speaking meeting requests in the Outlook inbox.
+:Description This function controls whether meeting requests should be indicated when speaking meeting requests in the Outlook inbox. This function can only be used in versions of Outlook greater than 9 (2000) as the function relies on MSAA to determine when a meeting request is encountered. This must be formatted exactly like the other toggle verbosity functions in default.jss
+:Param int/iRetVal set to 1 to return current value but not change it.
+
+:function ToggleForwardedFlagVerbosity
+:Returns string text describing the current state of the Forwarded flag indication option.
+:Synopsis Controls whether Forwarded flags should be indicated in the Outlook inbox.
+:Description This function controls whether Forwarded flags should be indicated in the Outlook inbox.  This function can only be used in versions of Outlook greater than 9 (2000) as the function relies on MSAA to determine when a message has a Forwarded  flag.
+:Param int/iState set to 1 to return current value but not change it.
+
+:function ToggleRepliedFlagVerbosity
+:Returns string text describing the current state of the Replied flag indication option.
+:Synopsis Controls whether Replied flags should be indicated in the Outlook inbox.
+:Description This function controls whether Replied flags should be indicated in the Outlook inbox.  This function can only be used in versions of Outlook greater than 9 (2000) as the function relies on MSAA to determine when a message has a Replied  flag.
+:Param int/iState set to 1 to return current value but not change it.
+
+:function ToggleAutoCompleteVerbosity
+:Returns string text describing the current state of the address list auto-complete indication option.
+:Synopsis Controls whether address list auto-completes should announce as user types in address and incremental progress matches with entry.
+:Param int/iRetVal set to 1 to return current value but not change it.
+
+:function ToggleMessageTitleVerbosity
+:Param int/iState No Description
+
+:function ToggleMessageFlagVerbosity
+:Returns string text describing the current state of the message flag indication option.
+:Synopsis Controls whether Message flags should be indicated in the Outlook inbox.
+:Description This function controls whether message flags should be indicated in the Outlook inbox.  This function can only be used in versions of Outlook greater than 9 (2000) as the function relies on MSAA to determine when a message has a flag.
+:Param int/iState set to 1 to return current value but not change it.
+
+:function ToggleFollowUpFlagVerbosity
+:Returns string text describing the current state of the FollowUp flag indication option.
+:Synopsis Controls whether FollowUp flags should be indicated in the Outlook inbox.
+:Description This function controls whether FollowUp flags should be indicated in the Outlook inbox.  This function can only be used in versions of Outlook greater than 9 (2000) as the function relies on MSAA to determine when a message has a FollowUp flag.
+:Param int/iState set to 1 to return current value but not change it.
+
+:function ToggleAttachmentsVerbosity
+:Returns string text describing the current state of the attachments icon indication option.
+:Synopsis Controls whether Attachments should be indicated in the Outlook message list.
+:Description This function controls whether attachment icon should be indicated in the Outlook Message list.  This function can only be used in versions of Outlook greater than 9 (2000) as the function relies on MSAA to determine when a message has an attachment.
+:Param int/iState set to 1 to return current value but not change it.
+
+:function ToggleMessageStatusVerbosity
+:Returns string text describing the current state
+:Synopsis controls whether unread should be spoken when speaking unread messages in the inbox
+:Description This must be formatted exactly like the other toggle verbosity functions in default.jss
+:Param int/iRetVal set to 1 to return current value but not change it.
+
+
+:function ToggleReadingPaneVerbosity
+:Returns string text describing the current state of the Reading Pane Reads Automatically option.
+:Synopsis Controls whether the Reading Pane should read automatically when navigating the message list.
+:Description This function controls whether the Reading Pane automatically reads when navigating the message list.
+:Param int/iRetVal set to 1 to return current value but not change it.

@@ -1,0 +1,156 @@
+:function SettingsReminder
+:SearchRank 1
+:Synopsis This is called by the accompanying script to advise of User Preferences.
+
+:function ProcessNameOfSpeaker
+:SearchRank 1
+
+:script SayAlert
+:DisplayName Say Most Recent Alert
+:SearchRank 1
+:Synopsis Speaks the most recent Alert irrespective of its type.
+:Description Alerts are items such as, X has entered the room, or, Y has raised their hand.
+:CommandSearchProductFilter Fusion
+
+:script ToggleAlerts
+:DisplayName Alerts On or Off
+:SearchRank 1
+:Synopsis Toggles the state of whether Alerts are spoken or sent to Braille.
+:Description Alerts are items such as, X has entered the room, or, Y has raised their hand.
+:CommandSearchProductFilter Fusion
+
+:script ToggleChatMessages
+:DisplayName Chat Messages Only, Or Chat Messages And System Alerts
+:SearchRank 1
+:Synopsis Toggles whether only Chat messages are spoken.
+:Description Chat messages are those sent from one person to another rather than System alerts.
+:CommandSearchProductFilter Fusion
+
+:function sayNotification
+:SearchRank 1
+
+:script SayNotification1
+:DisplayName Say Most Recent Notification
+:SearchRank 1
+:Synopsis Reports the most recent Alert or message.
+:Description Speaks the most recent alert or message.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification2
+:DisplayName Say Second Most Recent Notification
+:SearchRank 1
+:Synopsis Reports the second most recent Alert or message.
+:Description Speaks the second most recent alert or message.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification3
+:DisplayName Say Third Most Recent Notification
+:SearchRank 1
+:Synopsis Reports the third most recent Alert or message.
+:Description Speaks the third most recent alert or message.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification4
+:DisplayName Say Fourth Most Recent Notification
+:SearchRank 1
+:Synopsis Reports the fourth most recent Alert or message.
+:Description Speaks the fourth most recent alert or message.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification5
+:DisplayName Say Fifth Most Recent Notification
+:SearchRank 1
+:Synopsis Reports the fifth most recent Alert or message.
+:Description Speaks the fifth most recent alert or message.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification6
+:DisplayName Say Sixth Most Recent Notification
+:SearchRank 1
+:Synopsis Reports the Sixth most recent Alert or message.
+:Description Speaks the Sixth most recent alert or message.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification7
+:DisplayName Say Seventh Most Recent Notification
+:SearchRank 1
+:Synopsis Reports the seventh most recent Alert or message.
+:Description Speaks the seventh most recent alert or message.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification8
+:DisplayName Say Eighth Most Recent Notification
+:SearchRank 1
+:Synopsis Reports the eighth most recent Alert or message.
+:Description Speaks the eighth most recent alert or message.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification9
+:DisplayName Say Ninth Most Recent Notification
+:SearchRank 1
+:Synopsis Reports the ninth most recent Alert or message.
+:Description Speaks the ninth most recent alert or message.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification10
+:DisplayName Say tenth Most Recent Notification
+:SearchRank 1
+:Synopsis Reports the tenth most recent Alert or message.
+:Description Speaks the tenth most recent alert or message.
+:CommandSearchProductFilter Fusion
+
+:function IsParticipantsList
+:SearchRank 1
+
+:function getDataFromCustomComboBoxes
+:SearchRank 1
+:Description There are a couple combo box types which contain the name and value data strings as part of the object name. Typically, the value is in parentheses, and the name comes before. The name strings get modified when the text before the open parentheses is not a sensible name.
+:Param string/ControlName/ByRef Variable to receive the modified control name for the combo box.
+:Param string/ControlValue/ByRef Variable to receive the modified control value for the combo box.
+
+:script ZoomNotifyCurrentSpeaker
+:DisplayName Announce Current Speaker
+:SearchRank 1
+:Synopsis Current Speaker Notification.
+:Description Corresponds to the Zoom Software keystroke control+2, which causes Zoom to send a notification telling you who's talking.
+
+:script AnnounceJAWSSettingsForZoom
+:DisplayName Announce JAWS Settings For Zoom
+:SearchRank 1
+:Synopsis Announce JAWS settings for notifications and chats in Zoom.
+:Description This announcement used to appear every time you pressed insert+tab. It is now moved to its own script to free up insert tab and isolate this announcement.
+:CommandSearchProductFilter Fusion
+:UIMaintainsFocus True
+
+:script SayNextLine
+:SearchRank 1
+
+:script ToggleRecording
+:DisplayName Toggle Recording
+:SearchRank 1
+:Synopsis Attached to ALT+R to announce the recording status.
+:Description Attached to ALT+R to announce the recording status.
+
+:script TogglePause
+:DisplayName Pause or Resume Recording
+:SearchRank 1
+:Synopsis Attached to ALT+P to announce the paused status.
+:Description Attached to ALT+P to announce the paused status.
+
+:script ALTKey
+:SearchRank 1
+:Synopsis Traps this keystroke.
+:Description Do not reassign. Keeps nonexistent menu from being notified by JAWS.
+
+:function CheckedOrNot
+:SearchRank 1
+
+:script ToggleMuteAudio
+:DisplayName Mute or Unmute Audio
+:SearchRank 1
+:Synopsis Mute or Unmute.
+:Description Mute or unmute.
+
+:script SayLine
+:SearchRank 1
+

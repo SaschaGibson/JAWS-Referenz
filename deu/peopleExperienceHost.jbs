@@ -1,0 +1,10 @@
+﻿; Section for tab control, added to accomodate position in group
+[SubtypeCode29]
+components=ContextHelp,name,type,state,position,description
+type=rk
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,state
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für die App People.

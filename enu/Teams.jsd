@@ -1,0 +1,42 @@
+:Script BackButton
+:DisplayName Back Button
+:Synopsis Press the Back button
+:Description In Microsoft Teams, the back button moves to the previous screen. This function in Teams is context-sensitive.
+:SearchRank 1
+
+:Script SelectATab
+:DisplayName Select A Tab Control
+:Synopsis List of Tab Controls
+:Description Teams uses tab controls to subcategorize screens. Available tabs for each team may differ. This function in Teams is context-sensitive.
+:SearchRank 1
+
+:Script SelectAButton
+:DisplayName Select A Button
+:Synopsis Buttons List.
+:Description List of buttons on the current Teams screen.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script FocusToTabN
+:DisplayName Go To Tab By Number
+:Synopsis Activate tab by number, 1 through 5.
+:Description Teams uses tab controls to subcategorize screens. Available tabs for each team may differ. This function in Teams is context-sensitive.
+:SearchRank 1
+
+:Script GoToTree
+:DisplayName Go To Tree In Teams View
+:Synopsis Go to Tree Listing Teams And Their Channels
+:Description In Teams View, the Teams Tree contains your list of teams. Expand each team to discover the channels inside where the messages reside. Press enter on your selection to activate it. Arrow keys move to the item, Enter selects it.
+:SearchRank 1
+
+:Script LaunchKeyboardShortcutsDialog
+:DisplayName Launch Keyboard Shortcuts Dialog
+:Synopsis Launches Teams Keyboard shortcuts dialog. Press insert+w instead to view Teams keystrokes in Window Keys Help.
+:Description A faster way of accessing the keyboard shortcuts in the Launch Keyboard Shorcuts dialog is just to press insert+w, for Window Keys Help.
+:SearchRank 1
+
+:Script RecentMessage
+:DisplayName Read Recent Message
+:Synopsis Reads the most recent messages, 1 through 9.
+:Description When in an open chat, reads the most recent messages, 1 through 9. Press twice quickly to display the message in the virtual viewer.
+:SearchRank 1

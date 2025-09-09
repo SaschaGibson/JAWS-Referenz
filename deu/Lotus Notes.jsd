@@ -1,0 +1,125 @@
+:function SayTreeViewItem
+:Synopsis Speaks the active item in the Lotus Tree view
+:Description Speaks the status assigned to the item, followed by the name, followed by its state (either open or closed, if possible)
+
+:function AutoStartEvent
+
+:function AutoFinishEvent
+
+:function SayObjectActiveItem
+
+:script sayline
+
+:function DocumentLoadedEvent
+
+:function saynonhighlightedtext
+
+:function SayHighlightedText
+
+:function isNotesWindow
+
+:function focuschangedevent
+
+:script ScriptFileName
+
+:script ScreenSensitiveHelp
+
+:script HotKeyHelp
+
+:script WindowKeysHelp
+
+:script SayPriorCharacter
+
+:script SayNextCharacter
+
+:script MoveToNextSelectedDocument
+:Synopsis Springt zum nächsten gewählten Dokument 
+
+:script MoveToPrevSelectedDocument
+:Synopsis Springt zum vorherigen gewählten Dokument
+
+:script MoveToNextUnreadDocument
+:Synopsis Springt zum nächsten ungelesenen Dokument
+
+:script MoveToPrevUnreadDocument
+
+:script JAWSDelete
+
+:script JAWSBackspace
+
+:script ExpandAll
+:Synopsis Erweitert alle Elemente in einer Strukturansicht.
+:Description In einer Strukturansicht werden alle Unterpunkte angezeigt.
+
+:script CollapseAll
+:Synopsis Reduziert alle Elemente in einer Strukturansicht.
+:Description In einer Strukturansicht werden keine Unterpunkte angezeigt.
+
+:script SayFieldHelp
+
+:script ReadMistakeAndSuggestion
+:Synopsis Liest und buchstabiert das falsch geschriebene Wort und liest und buchstabiert den Vorschlag.
+:Description Standardmäßig ist kein Vorschlag in der Liste hervorgehoben.  Es wird immer der erste Vorschlag gesprochen und buchstabiert, solange bis ein Vorschlag hervorgehoben ist.
+
+:script SelectALink
+:Synopsis Zeigt alle Links des aktiven Dokuments in einer Liste an
+:Description Nutzen Sie Pfeil Rauf und Pfeil Runter, um einen Link nach Wahl auszuwählen und drücken Sie EINGABE.  Dieses funktioniert nur mit dem Inline Notes Internet Explorer
+
+:function AddToString
+:Returns string No Return Description
+:Synopsis Takes two strings and adds the second string to the first
+:Description Adds the second string parameter to the first parameter and returns the new string
+:Param string/Base The base string that is to be added to
+:Param string/New The string that is to be added to the base
+
+:script ActionButtons
+:Synopsis Zeigt eine Liste der Schalter an, die in der Aktionsleiste verfügbar sind
+:Description Die verfügbaren Aktionsschalter variieren von Fenster zu Fenster und sind ein bequemer Weg, schnell auf Notes Optionen zuzugreifen.
+
+:function ActiveItemChangedEvent
+
+:script SayNextLine
+
+:script SayPriorLine
+
+:script MoveToNextRadioButton
+
+:script MoveToPriorRadioButton
+
+:script MoveToNextCombo
+
+:script MoveToPriorCombo
+
+:script MoveToNextCheckbox
+
+:script MoveToPriorCheckbox
+
+:script MoveToNextButton
+
+:script MoveToPriorButton
+
+:script AdjustJAWSOptions
+
+:function ToggleReadingStatusLine
+
+:function ToggleReadingStatusLineHlp
+:Returns string No Return Description
+
+:script TopOfFile
+
+:script BottomOfFile
+
+:function IsPageTab
+
+:script NextDocumentWindow
+
+:script PreviousDocumentWindow
+
+:function ObjStateChangedEvent
+
+:function IsLotusMultilineEdit
+
+:function FocusChangedEventEx
+
+:function SayTutorialHelp
+

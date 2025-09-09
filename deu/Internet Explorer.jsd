@@ -1,0 +1,368 @@
+:script ReadDownColumn
+:DisplayName Spalte Runter lesen
+:Synopsis Bei aktivem JAWS Cursor wird die nächste Zeile der aktuellen Spalte gelesen
+:Description Bei aktivem JAWS Cursor wird die aktuelle Spalte von oben nach unten zeilenweise gelesen
+:SearchRank 3
+
+:script HotKeyHelp
+:Synopsis Sagt die Kurztasten für den IE 5 an und meldet die %product% Kurztasten in Dialogfeldern
+:Description In einem Dialogfeld liest es die Kurztasten und Beschriftungen der Elemente in dem Dialogfeld, oder besondere Anweisungen für die Anwendung, oder grundlegende %product% Funktionen. Für den Internet Explorer 5 steht eine spezielle Kurztasten-Hilfe zur Verfügung
+
+:function GetIEVersion
+:Synopsis Gibt die eingesetzte Version des Internet Explorers zurück
+:Description Wenn diese Funktion aus dem AutoStartEvent aufgerufen wird, wird die Versionsinformation abgefragt und für den Einsatz in anderen Skripts zur Verfügung gestellt. Funktionen werden aufgerufen basierend auf der Versionsinformation
+:returns int
+
+:function MoveToLink
+:Synopsis Wird verwendet, um den Fokus auf den nächsten oder vorherigen Link auf einer Webseiten oder auf das nächste oder vorherige Steuerelement in Dialogfeldern zu bewegen
+:Description Führt ein MoveToLink passend für die aktive Version des InterNetExplorer durch, gefunden im GetIeVersion. Geben Sie den Wert ein, der für das nächste oder vorherige Steuerelement signifikant ist.
+:Param int/nNext 0 = previous, 1 = next
+
+:script SaySelectedLink
+:DisplayName Gewählten Link lesen
+:Synopsis Spricht den Link oder das Steuerelement im Fokus
+:Description In einem Dialogfeld wird das aktuelle Steuerelement angesagt. Auf einer Webseite wird der Link oder das Steuerelement im Fokus angesagt.
+:SearchRank 4
+
+:script SayWindowPromptAndText
+:Synopsis Sagt den fokussierten Link oder das fokussierte Element
+:Description Liest den Prompt für das Fenster oder das Steuerelement im Fokus, den Fenstertyp und den Text im Fenster. Ist der virtuelle PC Cursor aktiv, und befinden Sie sich auf einer Webseite, so wird das aktuelle Element mit der aktuellen Ausführlichkeitsstufe gesprochen. Weitere Ausführungen durch dieselbe Tastenkombination sprechen das Steuerelement erneut, was sich unterschiedlich anhören kann, gefolgt von einer Meldung in der Meldungsstimme, welche Ausführlichkeitseinstellung verwendet wurde.
+
+:function FindString
+:Returns int No Return Description
+:Synopsis Spezielle FindString Funktion, um die Grafikbezeichnungen auf der Werkzeugleiste zu einzubeziehen
+:Description FindString sucht nach einer Textfolge in einem bestimmten Fenster. Wenn der Text gefunden wurde, wird der JAWS Cursor am Anfang der Textfolge plaziert
+:Param handle/hwnd Specify a window handle. Geben Sie den Namen einer Variablen ein oder wählen Sie eine Skript-Funktion aus, um das Fenster-Handle bereitzustellen, das gesucht werden soll.
+:Param string/str Specify the text that is to be located. Geben Sie einen Textstring ein oder einen Variablennamen oder wählen Sie eine Skriptfunktion aus, die den Text bereitstellen kann. Textstrings müssen in Anführungszeichen stehen. Es kann sich dabei auch um Grafiken auf der Symbolleiste handeln
+:Param int/direction Indicate the search direction. Geben Sie den Namen eines konstanten Wertes ein, um die Suchrichtung festzulegen: S_TOP or S_BOTTOM.
+:Param int/restriction Indicate search restriction. Geben Sie den Namen eines konstanten Wertes ein, um anzugeben, ob die Suche auf das aktive Fenster beschränkt werden soll oder ob sie auf alle Kindfenster der aktiven Anwendung ausgeweitet werden soll. Geben Sie S_UNRESTRICTED ein, um alle Anwendungsfenster zu durchsuchen oder S_RESTRICTED, um die Suche auf das aktive Kindfenster zu beschränken.
+
+:function IsLinksList
+:Returns int true or false
+:Synopsis Ermittelt, ob die Linkliste sichtbar ist oder nicht
+:Description Rufen Sie dies in einem Skript auf, wo Sie wissen müssen, ob die Linkliste sichtbar ist oder nicht. Returns True or False
+:Param handle/hwnd Enter the handle of the window in which the links list may be found
+
+:function ieFocusToFirstField
+:Returns int true or false
+:Synopsis Gibt zurück, ob auf der Seite ein Eingabefeld vorhanden ist oder nicht
+:Description Prüft, ob ein Eingabe-Steuerelement für ein Fomular im aktuellen Dokument vorhanden ist
+
+:Function ieFocusToFirstFieldHelper
+:Synopsis Wird aufgerufen von IEFocusToFirstField
+:Description Unterstützt die IEFocusToFirstField Funktion.
+:param1 object/Doc The object pointing to the current IE (html) document.
+:Returns int True if successful, false otherwise
+:SeeAlso IEFocusToFirstFormField
+
+:function GetFrameInHierarchy
+:Returns object The actual frame
+:Synopsis Ruft einen Rahmen basierend auf seiner Position in der Hierarchie ab
+:Description Ruft den gewünschten Rahmen ab, basierend auf seiner hierarchischen Position, normalerweise in der HTML Reihenfolge
+:Param int/index Position in the hierarchy
+:Param object/startWindow the object of the main document of Internet Explorer
+
+:script ReadNextScreen
+:DisplayName Nächste Bildschirmseite lesen
+:Synopsis Führt ein SEITE RUNTER aus und beginnt mit dem JAWS Cursor das Lesen
+:Description Führt den Standard-Befehl SEITE RUNTER aus, um den nächsten Bildschirm anzuzeigen und beginnt mit dem JAWS Cursor das Lesen vom oberen Rand. Sie können das Lesen beenden und dann von der gleichen Stelle mit dem Standard-Befehl SayAll fortfahren.
+:SearchRank 4
+
+:function SayNonHighlightedText
+:Description Ruft die zutreffende SayNonHighlightedText Funktion für die eingesetzte Internet Explorer Version auf
+:Param handle/hwnd handle of the window in which the new text was written
+:Param string/buffer string containing the text that was written
+
+:script ToolBar
+:DisplayName Symbolleiste
+:Synopsis Ermöglicht dem Anwender, auf einen Schalter in der Symbolleiste zu klicken, indem man ihn in einer Liste auswählt.
+:Description Diese Tastenkombination öffnet ein Dialogfeld, das alle Schalter in einer Liste enthält, die auf der Symbolleiste erscheinen.
+In diesem Dialog kann der Anwender einen der Schalter auf der Symbolleiste auswählen und dann EINGABE drücken, um auf ihn zu klicken.
+Damit dieses Skript die Symbolleiste finden kann, muss man im IE Ansichtsmenü unter Symbolleisten die Befehlsleiste aktiviert haben.
+:SearchRank 2
+
+:function AutoStartEvent
+:Synopsis Ereignis-Funktion, die ausgelöst wird, wenn die Anwendung gestartet wird. Erhält die Internet Explorer Version, die eingesetzt wird
+:Description Wenn die Anwendung gestartet wird, wird dieses Ereignis ausgeführt. Es wird auch durchgeführt, wenn die Anwendung gewechselt wird, oder den Fokus mit ALT+TAB erhält. Die Versions-Informationen, die vom AutoStartEvent gesammelt wurden, werden von vielen Skripts in dieser Anwendung verwendet, um zu ermitteln, welche Funktionen aufgerufen werden sollen
+
+:script ReadPriorScreen
+:DisplayName Vorherige Bildschirmseite lesen
+:Synopsis Führt ein SEITE RAUF aus und beginnt mit dem JAWS Cursor das Lesen
+:Description Führt den Standard-Befehl SEITE RAUF aus, um den vorherigen Bildschirm anzuzeigen und beginnt mit dem JAWS Cursor das Lesen vom oberen Rand. Sie können das Lesen beenden und dann von der gleichen Stelle mit dem Standard-Befehl SayAll fortfahren.
+:SearchRank 4
+
+:script ReadUpColumn
+:DisplayName Spalte Rauf lesen
+:Synopsis Bei aktivem JAWS Cursor wird die vorherige Zeile der aktuellen Spalte gelesen
+:Description Bei aktivem JAWS Cursor wird die aktuelle Spalte von oben nach unten zeilenweise gelesen
+:SearchRank 3
+
+:script ReadColumnLeft
+:DisplayName Spalte Links lesen
+:Synopsis Bei aktivem JAWS Cursor wird die aktuelle Zeile der vorherigen Spalte gelesen
+:Description Bei aktivem JAWS Cursor, um auf die aktuelle Zeile der vorherigen Spalte zu springen und sie zu lesen, ansonsten wird ein STRG+PFEIL LINKS, SayPriorWord, durchgeführt
+:SearchRank 3
+
+:function ScreenSensitiveHelp4
+:Synopsis Führt eine spezielle Bildschirmabhängige Hilfe für den IE4 aus
+:Description Wird vom Skript ScreenSensitiveHelp aufgerufen, wenn der IE4 die aktive Version ist
+
+:function GetToolbar
+:Returns handle the handle of the toolbar
+:Synopsis Gibt das Fensterhandle der Symbolleiste zurück
+:Description Fragt das Handle der Symbolleiste ab, falls sie auf dem Bildschirm sichtbar ist
+
+
+:function GetIEServerWindow
+:Returns handle the handle of the main IE4 document window
+:Synopsis Gibt das Handle des aktuellen IEServer Fensters zurück
+:Description Wird verwendet, um das Handle des Hauptdokument-Fensters des Internet Explorers abzurufen. Sie können auf dieses Handle bezug nehmen, wenn versucht wird, bestimmte Steuerelemente oder Kindfenster in einem Fenster zu lesen, wie zum Beispiel Steuerelemente auf einer Webseite oder in Dialogfeldern
+:Param handle/hwnd Enter a function to retrieve the handle of the main document window in Internet Explorer
+
+:function GetNavigationTreeView
+:Returns handle the handle of the tree view with focus
+:Synopsis Gibt das Handle der sichtbaren Strukturansicht zurück
+:Description Nützlich für die Active Desktop Plattform in Windows 98 und/oder den Active Desktop, der in 95 mit dem Internet Explorer 4 installiert wird. Gibt das Handle von Strukturansichten im Fokus zurück
+
+:function SpeakDocument
+:Synopsis Liest die gewünschte Seite oder den gewünschten Rahmen
+:Description Geben Sie das Ojekt des Dokumentfensters oder Rahmens ein, das gelesen werden soll. Diese Funktion kann aufgerufen werden, um sowohl individuelle Rahmen als auch gesamte HTML Dokumente zu lesen
+:Param object/doc the document object to be spoken
+
+:script ReadCurrentScreen
+:DisplayName Aktuellen Bildschirm lesen
+:Synopsis Startet das Querlesen von der aktuellen Cursorposition.
+:Description Startet das Querlesen von der aktuellen Cursorposition aus unter Verwendung der Regeln, die Sie festgelegt haben. Ist der virtuelle Cursor ausgeschaltet, wird mit dieser tastenkombination der sichtbare Teil der Webseite mit dem JAWS Cursor gelesen. Sie können das Querlesen stoppen und mit normalem lesen von der dann aktuellen Position fortsetzen, indem Sie den Befehl für Alles Lesen starten. Wenn Sie das Ende des Bildschirms erreichen, bewegt Sie Strg+Seite Runter zum nächsten Bildschirm und setzt das Lesen in derselben Weise fort
+:SearchRank 4
+
+:script AddressBar
+:DisplayName Adresszeile lesen
+:Synopsis Liest die Adresse der aktiven Webseite.
+:Description Liest die Adresse oder URL der aktuellen Webseite.
+:SearchRank 1
+
+:script NextFrame
+:Synopsis Nächste Registerseite.
+:Description Springt zur nächsten Registerseite, wenn mehrere Seiten geöffnet sind.
+
+:function IsToolbarList
+:Returns int true or false
+:Synopsis Ermittelt, ob die Symbolleisten-Liste aktiv ist oder nicht
+:Description Wird verwendet, um zu ermitteln, ob das Dialogfeld Symbolleiste aktiv ist oder nicht. Returns True or False
+:Param handle/hwnd Enter the handle of the window in which the toolbar list may be found
+
+:function GetFrameNumber
+:Synopsis Ermittelt den Index des aktiven Rahmens in der Rahmensammlung des aktuellen Dokuments
+:Param object/all the elements of the document
+:Param int/item the index of the current element
+
+:script JAWSBackspace
+:Synopsis Liest das Zeichen oder das Element links vom Cursor, das soeben gelöscht wurde
+:Description Liest das Zeichen oder das Element links vom Cursor, das soeben gelöscht wurde
+
+:function FocusChangedEvent
+:Synopsis Wird ausgelöst, wenn der Fokus von einem Steuerelement zum nächsten bewegt wird
+:Description Die Fenster-Handle des vorherigen und aktuellen Fensters werden an diese Funktion weitergereicht. Wenn der Internet Explorer 4 geladen ist, wird die entsprechende FocusChangedEvent Funktion geladen
+:Param handle/focusWindow the handle of the window that has received the focus
+:Param handle/prevWindow the handle of the window that had the focus
+
+:function SaySelectedLink4
+:Synopsis Liest den Link oder das Steuerelement im Fokus
+:Description Wird von der MoveToLink Funktion aufgerufen, wenn der IE4 aktiv ist. Liest den Link oder das Steuerelement im Fokus
+
+:script PriorFrame
+:Synopsis Vorherige Registerseite.
+:Description Springt zur vorherigen Registerseite, wenn mehrere Seiten geöffnet sind.
+
+:script WindowKeysHelp
+
+:script MoveToPriorLink
+:DisplayName Zum vorherigen Link springen
+:Synopsis Springt zum vorherigen Hyperlink oder Steuerelement auf der Seite
+:Description Springt in einem Dialogfeld auf das vorherige Steuerelement. Springt auf einer Webseite auf den vorherigen Hypertextlink oder das vorherige Steuerelement. Es wird empfohlen, dieses Skript an den UMSCHALT+TAB Tastaturbefehl anzuhängen. Wenn %product% nicht in der Lage ist, den fokussierten Link zu finden, wird die Statuszeile gelesen
+
+:function SelectALink4
+:Synopsis Öffnet ein Dialogfeld alten Stils, das eine Liste aller auf der Seite vorhandenen Links enthält
+:Description Rufen Sie diese Funktion auf, wenn der virtuelle PC Cursor nicht aktiv ist. Wenn diese Funktion aufgerufen wird und der virtuelle PC Cursor aktiv ist, ist diese Funktion nicht in der Lage, die Hyperlinks auf der Seite zu finden
+
+:function ClickToolBarButton
+:Synopsis Sucht und klickt auf den Schalter Ihrer Wahl auf der Symbolleiste
+:Description Diese Funktion hat zwei Parameter. Die erste ist die Handhabung der Symbolleiste, auf der der Schalter, den Sie drücken möchten, gefunden werden kann. Die zweite ist der Name des Schalters, den Sie drücken möchten, exakt so geschrieben, wie er im Automatischen Grafikbezeichner erscheint
+:Param handle/winHandle The window handle of the toolbar in which to search for the graphic
+:Param string/buttonLabel The label of the graphic you wish to click, exactly as it appears in the graphics file
+
+:function SayWindowTypeAndTextForNonstandardDialogs
+:Synopsis Für die Dialogfelder Alarm und andere nicht-standard Dialogfelder
+:Description SayWindowTypeAndText Funktion, die speziell unter Berücksichtigung der IE4 Security Alert Dialogfelder geschrieben wurde. Bewirkt, dass das fokussierte Steuerelement und sein echtes Fenster gelesen werden. Geben Sie das Handle gefolgt vom Fensternamen des zu lesenden Dialogfeldes ein. Diese Funktion sorgt dafür, dass das Steuerelement im Fokus gelesen wird
+:Param handle/hwnd the handle of the dialog window to be spoken
+:Param string/name the name of the dialog window to be spoken
+
+:function AddFramesInWindow
+:Synopsis Fügt hinzu/kompiliert eine Liste aller Rahmen in dem Fenster
+:Description Verwendet das oberste Objekt im IE4 Fenster, eine Rahmenliste wird kompiliert und in die von Ihnen festgelegte String Buffer Variable kopiert
+:Param object/window Input the top-level object of the IE4 main document window
+:Param string/strBuf/ByRef Enter the string variable to which the list of frame names are to be copied
+
+:script SelectAFrame
+:Synopsis Öffnet ein Dialogfeld, das eine Liste aller auf der Seite vorhandenen Rahmen enthält
+:Description Wählen Sie einen Rahmen aus der Liste und drücken Sie EINGABE. Der Fokus wird auf den gewählten Rahmen springen und seinen Inhalt lesen.
+
+:script GoBack
+:Synopsis Lädt die zuvor geöffnete Webseite
+:Description Reicht ein ALT+PFEIL LINKS an den IE weiter, um die vorherige Seite zu laden und kündigt sie an
+
+:function AutoFinishEvent
+:Synopsis Ereignisfunktion, die gestartet wird, wenn die Anwendung den Fokus verliert. Schaltet die Cursorbeschränkung aus
+:Description Wenn die Anwendung beendet wird, wird dieses Ereignis ausgeführt. Es wird ebenso ausgeführt, wenn die Anwendung gewechselt wird oder den Fokus verliert, wie zum Beispiel mit ALT+TAB. Stellt sicher, dass die Cursorbeschränkung, die in einigen Skripts für diese Anwendung verwendet wird, ausgeschaltet ist
+
+:script MoveToNextLink
+:DisplayName Zum nächsten Link springen
+:Synopsis Geht zum nächsten Hyperlink oder Steuerelement auf der Seite
+:Description Springt in einem Dialogfeld auf das nächste Steuerelement. Springt auf einer Webseite auf den nächsten Hypertextlink oder das nächste Steuerelement. Es wird empfohlen, an die TAB Taste zu befestigen. Wenn %product% nicht in der Lage ist, den fokussierten Link zu finden, wird die Statuszeile gelesen
+:SearchRank 2
+
+:script GoForward
+:Synopsis Lädt die nächste geöffnete Webseite.
+:Description Reicht ein ALT+PFEIL RECHTS an den IE weiter, um die nächste Seite zu laden und kündigt sie an
+
+:script ReadColumnRight
+:DisplayName Spalte Rechts lesen
+:Synopsis Bei aktivem JAWS Cursor wird die aktuelle Zeile der nächsten Spalte gelesen
+:Description Bei aktivem JAWS Cursor, um auf die aktuelle Zeile der nächsten Spalte zu springen und sie zu lesen, ansonsten wird ein STRG+PFEIL RECHTS, SayNextWord, durchgeführt
+:SearchRank 3
+
+:function AddToString
+:param1 string/sFirstString the first string or base string
+:param2 string/sSeconString The string to be concatenated on the end of string 1.
+:Returns string The concatenatede string
+:Description Verknüpft zwei Strings, und fügt eine Leerzeile zwischen beiden ein.
+
+
+:function GetToolBarButtons
+:synopsis Retrieves a list of buttons for a given toolbar.
+:description This function uses the passed window handle for a given tool bar to retrieve all the buttons found on the toolbar. The list does not include those buttons which do not have text labels or that have been given JAWS labels. A list of the indeces that correspond to each button in the list is also returned by reference. If the toolbar is not visible or the passed window handle is 0, then an error message is spoken and the function exits.
+:returns string List of all of the buttons found on the toolbar delimited by the | symbol.
+:param handle hWnd The window handle for the tool bar for which the buttons are to be retrieved.
+:param  string/ByRef/sToolBarItemsIndex List of the indeces of all the buttons contained in the returned string delimited by the | symbol.
+
+:function DetermineToolBarButtonIndex
+:synopsis Determines the index of a button in a given toolbar.
+:description This function displays a dialog containing a list of all the buttons found in a given toolbar. Once a button is selected from the list, the function uses the passed list of button indeces to determine the index of the button that is then passed back to the calling script or function. If the dialog is exited without making a choice, then the function returns 0.
+:returns int The index of the selected toolbar button.
+:param string sDialogName The name of the dialog used to display the list of toolbar buttons.
+:param string  sButtonList The delimited list of buttons for a given toolbar. This is generally retrieved using the GetToolBarButtons function.
+:param string sButtonIndex The delimited list of button indeces that corresponds to those buttons passed in the first parameter.
+
+:function SayContextHelp
+:description If not in forms mode, speaks any context help belonging to the current object.
+
+:function InRSSFeedFilterEdit
+:description Determines if in an RSS feed edit filter.
+:returns int True if in forms mode and the focus is on an RSS feed filter edit, false otherwise.
+
+:Function RSSFeedAvailable
+:description Determines if RSS feeds are available on the current page
+:returns int true if RSS feeds are available on the current page, false otherwise
+
+:function CheckForRSSFeedAvailability
+:description Determines if rss feed availability should be announced for the current page.
+:param int True if RSS feed availability should be announced only if the page address has changed since the previous announcement of RSS feed ability, false if RSS feed availability should be unconditionally announced.
+:returns int true if any RSS feeds were found and availability should be announced, false otherwise.
+
+:function CheckForInformationBar
+:synopsis checks to determine if the information bar is present.
+:returns string If found, the text of the information bar window; null otherwise.
+
+:function IsIE7SearchEdit
+:synopsis determines if the window is the IE7 search control edit.
+:param handle The window to test.
+:returns int True if the window is the IE7 search edit, false otherwise.
+
+:function NavigatingIETabControl
+:description Called by FocusChangedEventEx to determine if navigation is on the IE tab page tab control.
+:param handle The focus window
+:param handle The prior focus window.
+:returns int True if navigating on the IE tab page tab control, false otherwise.
+
+
+:function InVistaControlPanelShellView
+:Description Used to determine if the focus is in a Vista Control Panel applet which runs in the shellview of BrowseUI.
+:returns int True if the focus is in a Vista Control Panel applet running in the shellview, false otherwise.
+
+:function SayVistaControlPanelShellViewStaticText
+:description Used to speak the static text which should be spoken when entering a Vista Control Panel shellview applet.
+
+:function getAccName
+:Returns string the true msaa name of the object with focus
+
+:function IE9FindNotificationBar
+:Description From the focus window, finds the IE9 Notification Bar window.
+:Returns handle 
+
+:Function CheckIE9NotificationBar
+:Description Checks to see if the IE9 Notification Bar is visible and speaks a warning message and the notification text.
+:Returns void
+
+:function SayViewDownloadsListItem
+:description Manages speaking of list items and their associated controls in the View Downloads list.
+:optional
+:param int True if the type should be spoken for the listbox item, or if the list item name should be spoken for the controls associated with the name. Default is false.
+:returns int True if in the View Downloads dialog list and the item was spoken, false otherwise.
+
+:function GetBrowserName
+:description Retrieves the name of the browser currently being used.
+:optional
+:param int If true, returns the name Microsoft Internet Explorer, otherwise returns the name Internet Explorer.
+:returns string The name of the browser.
+
+:function IsWindows10FlyOutDialog
+:description Determines if the focus window is a Windows 10 flyout dialog.
+:optional
+:param handle The focus window.
+:param handle The application window.
+:param handle The real window.
+:returns int True if the focus window is a Windows 10 flyout dialog, false otherwise.
+
+:function GetUIAForFlyOutDialog
+:description Creates a UIA object and treewalker to use for accessing the UIA structure of a flyout dialog.
+:param object byRef The FSUIA object to be created.
+:param object byRef The treewalker to be created and used with the FSUIA object.
+:optional
+:param handle The native window handle of a UIA element. If not provided, the focus window is assumed.
+:returns int True if the UIA object and treewalker were created, false otherwise.
+
+:function GetFlyOutDialogText
+:description Retrieves the dialog text belonging to a Windows 10 flyout dialog.
+:param object The FSUIA object to be used when accessing the UIA structure of the flyout dialog.
+:param object The treewalker to use when traversing the UIA structure of the flyout dialog.
+:returns string The dialog text belonging to a Windows 10 flyout dialog.
+
+:function SayFlyOutDialogText
+:description Speaks the dialog text belonging to a Windows 10 flyout dialog.
+:optional
+:param handle The native window handle of an element belonging to the flyout dialog. If not provided, the focus is assumed.
+
+:function ReadFlyOutDialogFocusableControls
+:description Used by ReadBoxInTabOrder to find and read the focusable controls belonging to a Windows 10 flyout dialog.
+:param object The FSUIA object used for accessing the dialog.
+:param object The element which is the starting or root position for finding the focusable controls.
+
+:function ReadFlyOutDialog
+:description Used by ReadBoxInTabOrder to read the dialog name, text and focusable controls in a Windows 10 flyout dialog.
+:optional
+:param handle The native window handle of an element in a Windows 10 flyout dialog. If not provided, the focus is assumed.
+:returns int True if focus is in a Windows 10 flyout dialog and the contents were read, false otherwise.
+
+:function AnnounceGroupBoxInChangeDepth
+:description Called by FocusChangedEventEx to announce any named group which is found to be within the depth of the focus change.
+:param int/nChangeDepth The depth of change received by the focus change event.
+
+:script PictureSmartWithControl
+:DisplayName Picture Smart eines Steuerelements
+:Synopsis Beschreibt ein fokussiertes bildliches Steuerelement.
+:Optional
+:Param int/serviceOptions Additional Picture Smart service options. See HJConst.jsh for option constants, all prefixed by PSServiceOptions_.
+:Category Picture Smart
+:Keywords Abbildung, Foto, Bild, Fotografie, Grafik, beschreiben, erkennen
+:Version JAWS/20.00
+:SearchRank 1

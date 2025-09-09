@@ -1,0 +1,39 @@
+:script MoveTileOrGroupLeft
+:synopsis Kachel oder Gruppe nach links bewegen
+:description Auf dem Startbildschirm der Kacheln oder Gruppen wird bei aktiven PC Cursor der Windows 8 Befehl zum Bewegen der gewählten Kacheln oder Gruppen ausgeführt; ansonsten wird die Maus per Skript nach links bewegt.
+:Product JAWS
+
+:script MoveTileOrGroupLeft
+:synopsis Kachel oder Gruppe nach links bewegen
+:description Auf dem Startbildschirm der Kacheln oder Gruppen wird der Windows 8 Befehl zum Bewegen der gewählten Kacheln oder Gruppen ausgeführt.
+:Product MAGic
+
+:script MoveTileOrGroupRight
+:synopsis Kachel oder Gruppe nach rechts bewegen
+:description Auf dem Startbildschirm der Kacheln oder Gruppen wird bei aktiven PC Cursor der Windows 8 Befehl zum Bewegen der gewählten Kacheln oder Gruppen ausgeführt; ansonsten wird die Maus per Skript nach rechts bewegt.
+:Product JAWS
+
+:script MoveTileOrGroupRight
+:synopsis Kachel oder Gruppe nach rechts bewegen
+:description Auf dem Startbildschirm der Kacheln oder Gruppen wird der Windows 8 Befehl zum Bewegen der gewählten Kacheln oder Gruppen ausgeführt.
+:Product MAGic
+
+:script MoveTileOrGroupDown
+:synopsis Kachel oder Gruppe nach unten bewegen
+:description Auf dem Startbildschirm der Kacheln oder Gruppen wird bei aktiven PC Cursor der Windows 8 Befehl zum Bewegen der gewählten Kacheln oder Gruppen ausgeführt; ansonsten wird die Maus per Skript nach unten bewegt.
+:Product JAWS
+
+:script MoveTileOrGroupDown
+:synopsis Kachel oder Gruppe nach unten bewegen
+:description Auf dem Startbildschirm der Kacheln oder Gruppen wird der Windows 8 Befehl zum Bewegen der gewählten Kacheln oder Gruppen ausgeführt.
+:Product MAGic
+
+:script MoveTileOrGroupUp
+:synopsis Kachel oder Gruppe nach oben bewegen
+:description Auf dem Startbildschirm der Kacheln oder Gruppen wird bei aktiven PC Cursor der Windows 8 Befehl zum Bewegen der gewählten Kacheln oder Gruppen ausgeführt; ansonsten wird die Maus per Skript nach oben bewegt.
+:Product JAWS
+
+:script MoveTileOrGroupUp
+:synopsis Kachel oder Gruppe nach oben bewegen
+:description Auf dem Startbildschirm der Kacheln oder Gruppen wird der Windows 8 Befehl zum Bewegen der gewählten Kacheln oder Gruppen ausgeführt.
+:Product MAGic

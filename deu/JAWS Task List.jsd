@@ -1,0 +1,27 @@
+:function AutoStartEvent
+:Synopsis Erkennt einen Befehl, der durch die Tasktasten aufgerufen wird
+:Description Die globale Variable dient als Befehl, um auf eine bestimmte Aufgabe umzuschalten.  Wenn sie null ist, dann wird sie auf die normale Weise aktiviert, damit der Anwender sich mit den Pfeiltasten bewegen kann.  Aber ein Nicht-Null-Befehl bedeutet, dass wir eine Aufgabe für ihn finden müssen.  Die Zahl zeigt an, welche Aufgabe erwünscht ist.  Löschen Sie den Befehl, nachdem sie ihn verwendet haben.
+
+:function TrimTaskName
+:Returns string the trimmed name
+:Synopsis Entfernt den Fensterstatus vom Ende des Aufgabennamens.
+:Param string/in a task name from the task list
+
+:function SwitchToTask
+:Synopsis Schaltet zum vorhandenen Aufgabennamen um
+:Param string/name name of the application to switch to
+
+:script AssignTask1
+:Synopsis Weisen Sie diese Aufgabe Slot 1 zu
+
+:script AssignTask2
+:Synopsis Weisen Sie diese Aufgabe Slot 2 zu
+
+:script AssignTask3
+:Synopsis Weisen Sie diese Aufgabe Slot 3 zu
+
+:script AssignTask4
+:Synopsis Weisen Sie diese Aufgabe Slot 4 zu
+
+:script test
+

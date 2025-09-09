@@ -1,0 +1,50 @@
+:script HotKeyHelp
+
+:function AutoStartEvent
+
+:script ClickStop
+:Synopsis Stop Button
+:Description Clicks the stop button to stop record or playing
+
+:script ClickPlay
+:Synopsis Play button
+:Description Clicks the play button to begin playing
+
+:function PressButton
+:Synopsis Presses the button you specify
+:Description Enter the constant for the Control ID of the selected button. Constants are located in SndRec32.jsh
+:Param int/iButton Use the SndRec32.jsh file as a reference and enter the corresponding control ID
+:Param string/sButton Enter the name of the button to be spoken. Find all button names at the end ofSoundRec.jsm
+
+:script StartRecord
+:Synopsis Start record
+:Description Clicks the start record button to begin recording.
+
+:script ClickRewind
+:Synopsis Rewind
+:Description Clicks the rewind button to go back from current  position in  the file
+
+:script ScriptFileName
+
+:script ClickFastForward
+:Synopsis Fast Forward
+:Description Clicks the fast forward button to advance in file
+
+:script SelectAButton
+:Synopsis Press to get a list of buttons, then press ENTER to choose the button
+:Description Use the UP/DOWN ARROWS or the first letter to select a button. Press ENTER to choose it
+
+:script LimitSpeech
+:Synopsis Turn Limit Speech ON if you are using a software synthesizer
+:Description Limits the number of messages spoken when running one of the hot keys for the buttons
+
+:function AutoFinishEvent
+:Synopsis Return normal speech parameters and close sound recorder
+:Description Puts speech parameters back after having set them up for software speech and sound recording
+
+:Function AddToString
+:Synopsis Takes two strings and adds the second string to the first
+:Description Adds the second string parameter to the first parameter and returns the new string 
+:Returns string
+:Param1 String/Base The base string that is to be added to
+:Param2 string/New The string that is to be added to the base

@@ -1,0 +1,27 @@
+:function AutoStartEvent
+:Synopsis detects a command when invoked by the task keys
+:Description The global var serves as a command to switch to a certain task.  If it is zero, then this is just activated in the normal way for the user to arrow around.  But, a nonzero command means we should find a task for himn.  The number indicates which task is wanted.  Clear the command after using it.
+
+:function TrimTaskName
+:Returns string the trimmed name
+:Synopsis Removes window state from the end of the task name.
+:Param string/in a task name from the task list
+
+:function SwitchToTask
+:Synopsis Switch to the task name provided
+:Param string/name name of the application to switch to
+
+:script AssignTask1
+:Synopsis Assign this task to slot 1
+
+:script AssignTask2
+:Synopsis Assign this task to slot 2
+
+:script AssignTask3
+:Synopsis Assign this task to slot 3
+
+:script AssignTask4
+:Synopsis Assign this task to task 4
+
+:script test
+

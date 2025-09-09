@@ -1,0 +1,19 @@
+:function AnnounceSearchResults
+:Synopsis Announces the search results from the search box
+:Description Announces search results from the search box to let the user know what actually was found
+:Category Say
+
+:script F6Key
+:Synopsis Used to handle pressing of F6 key
+:Description Script is used to handle a press of the F6 key and either announce correct information about the right pane or simply pass the key to the  Settings Center.
+:Category Keyboard
+
+:script ActivateSearchBox
+:Synopsis Activates the search box
+:Description Activates the Search Box on pressing the Control+E keystroke as in most products with search boxes
+:Category Windows
+
+:script ChangeToDefault
+:Synopsis Semds a message causing Settings Center to load a default file
+:Description Sends a message to the settings center window causing settings center to load a default configuration
+:Category Application

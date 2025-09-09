@@ -1,0 +1,23 @@
+﻿;braille structure file for Win8People
+
+;section for localization and UI display
+[Component Aliases]
+;Item Header contains name and time of when tweet or message was posted
+ItemHeader=Item Header
+;Item Text contains the tweet or message text
+ItemText=Item Text
+;Item Origin contains the origin (Twitter or FaceBook),
+ItemOrigin=Item Origin
+;Item Info contains info such as favorited/liked, replies/comments count, retweet status
+ItemInfo=Item Info
+
+; Section for tweet item list
+[CustomControl1]
+components=type,itemHeader,itemText,ItemOrigin,ItemInfo,position
+removed=
+displayname=Tweet and Message List
+type=lbx
+AlignmentPriority=itemText,itemHeader,type,ItemOrigin,itemInfo,position
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Windows People.

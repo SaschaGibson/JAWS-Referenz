@@ -1,0 +1,35 @@
+:script BackButton
+:DisplayName Skype Drücke Zurück Schalter
+:Synopsis Drücke den Zurück Schalter.
+:Description Drückt den Zurück Schalter, wenn verfügbar. Skype 8.33 und höher verfügen über einen Zurück Schalter, sobald Sie eine Unterhaltung öffnen, den Sie drücken müssen, um zum Hauptbildschirm zurückzukehren und die Liste der Unterhaltungen zu sehen.
+:SearchRank 1
+
+:Script MoveToChatEntryField
+:DisplayName Springe in Skype Eingabefeld der Unterhaltung
+:Synopsis Springt in das Skype Eingabefeld des Unterhaltungsfensters
+:Description Setzt den Fokus auf das Eingabefeld der Unterhaltung, falls verfügbar.
+:SearchRank 1
+
+:Script MoveToChatHistoryList
+:DisplayName Springe in Skype Unterhaltungsverlauf
+:Synopsis Springt in die Verlaufsliste der aktuellen Unterhaltung
+:Description Setzt den Fokus in die Verlaufsliste der aktuellen Unterhaltung, falls verfügbar. Die Verlaufsliste enthält die letzten Nachrichten und Aufzeichnungen von Skype-Anrufen der aktuellen Verbindung.
+:SearchRank 1
+
+:Script MoveToConversationsList
+:DisplayName Springe in Skype Liste der Unterhaltungen
+:Synopsis Springt in die Liste der Unterhaltungen
+:Description Setzt den Fokus in die Liste der Unterhaltungen, falls verfügbar. Die Liste der Unterhaltungen sind Ihre Kontakte.
+:SearchRank 1
+
+:Script SkypeLayerHelp 
+:DisplayName Hilfe zur Skype-Ebene
+:Synopsis Hilfe zur Skype-Ebene
+:Description Spricht eine Hilfemeldung, die die verfügbaren Befehle dieser Tastenebene beschreibt.
+:SearchRank 1
+
+:Script SkypeKeystrokesList
+:DisplayName Skype Kurztastenliste
+:Synopsis Liste der JAWS Befehle für Skype.
+:Description JAWS Befehle springen in Bereiche innerhalb der Skype Anwendung. Dieses beinhaltet Liste der Unterhaltungen, Unterhaltung Eingabefenster und Unterhaltungsverlauf.
+:SearchRank 1

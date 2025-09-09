@@ -1,0 +1,370 @@
+:function WindowCreatedEvent
+:Synopsis This function is triggered when a window is created.
+:Description You should not include processor consuming code within this function. The code within this function is processed very frequently.
+:Category Window
+:Param handle/hWindow Handle of the window just created.
+:Param int/nLeft left edge of the window.
+:Param int/nTop top edge of the window.
+:Param int/nRight right edge of the window.
+:Param int/nBottom bottom edge of the window.
+
+:function WindowDestroyedEvent
+:Synopsis This function is triggered when a window is destroyed.
+:Description Can be modified for application specific needs.
+:Category Window
+:Param handle/hWindow The handle of the window that is about to be destroyed.
+
+
+:function ToggleAutoCorrectDetection
+:Returns string No Return Description
+:Param int/iRetCurVal No Description
+
+:function ToggleSmartTagsDetection
+:Returns string No Return Description
+:Param int/iRetCurVal No Description
+
+:function DetectSmartTag
+:Param object oAppObj
+
+:function SmartTagsCount
+:Returns int No Return Description
+:Param object oAppObj
+
+:function StrCmp
+:Returns int True if matched, false if not
+:Synopsis Compares two strings passed as parameters
+:Description This function compares two strings and returns flag indicating comparison
+:Category String
+:Param string/sFirst No Description
+:Param string/sSecond No Description
+
+:function FilterSmartTag
+:Returns int True if smart tag should be filtered from displayed list, false otherwise
+:Param string/sName The name of the smart tag
+
+:function ShowSmartTagListDialog
+:Param object/oApp No Description
+
+:function SayTreeViewLevel
+:Synopsis This function is used in a Tree view control to notify the user if the Tree view level changes.
+:Description This function announces new tree view levels as they are encountered. 0 represents the left-most level of the tree view. This is usually the highest level in a tree view
+:Category Dialog Controls
+:Optional
+:Param int If true, only announces position information if treeview level has changed since previous call to SayTreeViewLevel.
+
+:function ScreenSensitiveHelpForOffice
+:Returns int True if function spoke a message specific to MSOffice, false otherwise
+
+:function SayLine
+:Description This says a line of text where the active cursor is located. JAWS must interpret whether text that has a similar vertical position is on the same line. When the PC cursor is active, it only reads the information that is within the active child window. When it is used with other cursors, then it reads from one edge of the application window to the other.
+:Category Screen Text
+:Optional
+:Param int/iDrawHighlights Optional parameter added in JAWS 7.1 / MAGic 10.0.  Used to indicate whether or not the line should be highlighted by the MAGic engine as the text is being spoken.  The possible values are as follows:  If the parameter is not present or is equal to 0, do nothing; If the parameter is equal to 1, highlight each word as it is being spoken; If the parameter is equal to 2, highlight the entire line.  NOTES: (1) This functionality is not currently supported in all applications.  (2) The highlight rectangles will only be drawn if MAGic is running.
+:Param int/bSayingLineAfterMovement set to TRUE if calling from sayNext/Prior line to avoid speaking the prompt when arrowing over forms mode controls whose prompt is already spoeken from the prior line. This parameter is available starting with JAWS version 10 and MAGic version 12.
+
+:function SaySDMStaticHelp
+:Returns int True if window name is found, false otherwise.
+:Description This function speaks the static text associated with the Help About or form field help SDM dialog.
+:Param string/The window name to check.
+
+:function ActiveItemChangedEvent
+:Synopsis This function is triggered when the active element in an object changes.
+:Description The MSAAMode flag must be set to 2 in the [Options] section of your application-specific jcf file to enable this function.  This function receives the following parameters: the handle for the window containing the current object, the iD of the object, the iD of the child object, the handle of the previous window, the iD of the previous object, and the iD of the previous child object.
+:Category Object Model And MSAA
+:Param handle/curHwnd the handle of the window containing the current object.
+:Param int/curObjectId the iD of the current object.
+:Param int/curChildId the iD of the current child.
+:Param handle/prevHwnd the handle of the window containing the previous object.
+:Param int/prevObjectId The iD or the previous object.
+:Param int/prevChildId the iD of the previous child.
+
+:function InRibbons
+:Returns int True if the window is on the ribbon bar or on a lower ribbon, false otherwise.
+:Synopsis determines if the window is in the ribbons
+:Param handle The window to be used when testing
+
+:function IsStatusBarToolBar
+:Returns int True if the window is the status bar tool bar, false otherwise
+:Synopsis determines if the window is the status bar tool bar
+:Param handle The window to be used when testing
+
+:function InOptionsDialog
+:Returns int True if the window is in the Options dialog, false otherwise
+:Synopsis determines if the window is in the Options dialog
+:Param handle The window to be used when testing
+
+:function SpeakRibbonItem
+:Synopsis Speaks the current ribbon item
+:Optional
+:Param int The level depth
+
+:function SpeakStatusBarToolBarItem
+:Synopsis Speaks the current status bar tool bar item
+:Optional
+:Param int The level depth
+
+:function FocusChangedEventEx
+:Synopsis This function is triggered when focus moves between applications, dialogs, dialog controls, or to another item within a control with child items.
+:Description Processes all types of focus change, and calls the proper event to handle the change according to the type of focus change which occurred.
+:Category Window
+:Param handle/hwndFocus The handle of the window that has received the focus.
+:Param int/nObject The number of the object that has received the focus.
+:Param int/nChild The number of the current child object.
+:Param handle/hwndPrevFocus The handle of the window that previously had the focus.
+:Param int/nPrevObject The number of the object that previously had the focus.
+:Param int/nPrevChild The number of the child object which previously had focus.
+:Param int/nChangeDepth The change depth, or number of levels effected by the change.
+
+:function DescriptionChangedEvent
+:Synopsis This function is triggered when a change of Description of an object occurs.
+:Description This function receives the following parameters: The window handle of the window containing the current object, The ID number of the Object, The ID number of the Child Object, The type of the Object, The old Description of the object, and The current Description of the Object.
+:Category Object Model and MSAA
+:Param handle/hwnd The window handle of the window containing the current object.
+:Param int/objId The ID number of the Object.
+:Param int/childId The ID number of the Child Object.
+:Param int/nObjType The type of the Object.
+:Param string/sOldDescription The old Description of the object.
+:Param string/sNewDescription The current Description of the object.
+
+:script SayCurrentAccessKey
+:Synopsis Says the access Key short cut for the current item.
+:Description Says the underlined letter in the name or prompt for the current item in a dialog box or window.  Use this letter with the Alt key to choose that item even when it does not have the focus.
+:Category Dialog Controls
+
+:function OnRecentDocumentsPushPin
+:Returns int true if the focus is on a push pin for the Recent Documents list on the menu, false otherwise.
+:Description Determines if the focus is on a push pin for the Recent Documents list on the menu.
+
+:function ObjStateChangedEvent
+:Synopsis Fires whenever the state of an object changes.
+:Description By default, this function will now speak the checked and not checked status as the object's state changes.  In doing so, we are no longer reliant on the KeyPressedEvent function.
+:Category Object Model and MSAA
+:Param handle/hObj Handle of the window whose state, or whose child object's state, has changed.
+:Optional
+:Param int/iObjType The type of the object.
+:Param int/nChangedState The changed state, which is the difference between the old state and the current state.
+:Param int/nState The current state.
+:Param int/nOldState The old state.
+
+:function BrailleAddObjectState
+:Returns int true if this script adds the segment, false if internal code should add the segment
+:Synopsis Add's the object's state to the Braille display
+:Description If the Internal code does not add the correct state for an object, this function maybe overridden to add the correct state. If this function adds the state to the display it must return true otherwise the internal code will be used to add the default state for the object. To add the object's state, use BrailleAddString.
+:Category Braille
+:Param int/nSubtypeCode No Description
+
+:function ShowScreenSensitiveHelp
+:Synopsis Shows the screen-sensitive help message along with hot key links in the virtual viewer.
+:Description Use this function if you want to add extra information to the screen-sensitive help message.
+:Category Help
+:Param string The help message.
+
+:function GetCustomTutorMessage
+:Returns string Null if no custom tutor message is to be spoken, otherwise the custom tutor message.:Version JAWS/7.00
+:Synopsis Retrieves a custom tutor message to be spoken by SayTutorialHelp.
+:Description Retrieves a custom tutor message to be spoken by SayTutorialHelp. Overwrite this function in applications where you want a custom tutor message to be substituted instead of the usual tutor message. This function is processed after GetFrameTutorMessage and before any of the usual tutor messages are processed.
+:Category Help
+
+:function ScreenSensitiveHelpForKnownClasses
+:Synopsis Says the help messages for the standard window types.
+:Description Information on the standard window class, such as the name, what it is used for, and what keys to use.
+:Category Help
+:Param int/nSubTypeCode The TypeCode of the window
+
+:function IsDocumentPropertiesPane
+:Returns int True if the window with focus  has the virtual cursor turned on and is the document properties pane or the window with focus is the Internet Explorer_Server class.
+:Description This function determines whether focus is in the document properties pane with the virtual pc cursor turned on or the Internet Explorer_Server class.
+:Param handle/hwnd the window with focus.
+
+:script SayWindowTitle
+:Synopsis Says the title of the active window within an application or the application title itself.
+:Description Says the application title, dialog box title, and item with focus.
+:Category Window
+
+:function InNonDroppedContextMenu
+:Returns int true if the focus is in a context menu which is not yet dropped down, false otherwise.
+:Description Determines if the focus is in a context menu which has not yet been dropped down.
+
+:function MenuActiveProcessed
+:Returns int True if menus are inactive and the actions for the menu mode were performed, false otherwise.
+:Synopsis This function performs processes when MenuModeEvent fires and the mode is MENUS_ACTIVE.
+:Category Menus
+:Param int The current menu mode.
+:Param handle The handle of the window passed to MenuModeEvent.
+
+
+:function BrailleCallbackObjectIdentify
+:Returns int the code of the unknown control.
+:Synopsis called by system code when a control with subtypecode wt_unknown is detected
+:Description this function is called by the system code when the focus lands on an object with subtype code wt_unknown. This function must either return 0, a valid wt_typeCode identifier or a custom control identifier made up of wt_custom_control_base+customControlCode. For example, if a custom control is defined in the jbs in the section [CustomControl1] then the value returned should be wt_custom_control_base+1. Note that if this function returns a non-zero value then the other BrailleAddObjectXX functions must handle the addition of the various components of the control to the display (except for the Type which will be derived from the jbs.
+:Category Braille
+
+:function BrailleAddObjectValue
+:Returns int true if this script adds the segment, false if internal code should add the segment
+:Synopsis Add's the object's value to the Braille display
+:Description If the Internal code does not add the correct value for an object, this function maybe overridden to add the correct value. If this function adds the value to the display it must return true otherwise the internal code will be used to add the default value for the object. To add the object's value, use BrailleAddString.
+:Category Braille
+:Param int/nSubtypeCode No Description
+
+:function BrailleAddObjectUpperRibbon
+:Returns int TRUE if upper ribbon controls have focus.
+:Description This function adds upper ribbon Braille cursor line controls to display
+:Param int/nType the sub type code of the window that is currently in focus
+
+:function BrailleAddObjectName
+:Returns int true if this script adds the segment, false if internal code should add the segment
+:Synopsis Add's the object's name to the Braille display
+:Description If the Internal code does not add the correct name for an object, this function maybe overridden to add the correct name. If this function adds the name to the display it must return true otherwise the internal code will be used to add the default name for the object. To add the object's name, use BrailleAddString.
+:Category Braille
+:Param int/nSubtypeCode No Description
+
+:function BrailleAddObjectContainerName
+:Returns int true if this script adds the segment, false if internal code should add the segment
+:Synopsis Add's the object's container name to the Braille display
+:Description If the Internal code does not add the correct container name for an object, this function maybe overridden to add the correct container name. If this function adds the container name to the display it must return true otherwise the internal code will be used to add the default container name for the object. To add the object's container name, use BrailleAddString. This is primarily used for GroupBoxes.
+:Category Braille
+:Param int/nSubtypeCode No Description
+
+:function GetNonhighlightedWindowText
+:Returns string The text found.
+:Description This function attempts to get the text within a focus rectangle. For windows  where the text can be unhighlighted, strikeout, or highlighted and the default SayLine function fails or gets too much information. This occurs mainly in Excel in numerous edit combos where the main spreadsheet area is actually being navigated as the user presses arrow keys. However, it also occurs in dialogs where the text does not get highlighted until a focus change occurs as when the user tabs or shift+tabs into the edit combo control.
+:Param handle/hwnd The window of interest.
+
+:function TutorMessageEvent
+:Synopsis Event fired to speak tutor or access key messages.
+:Description this event is triggered after the FocusChangedEvent and when the focus moves between menu items. It is always called after NewTextEvent and hence SayHighlightedText.
+:Category Help
+:Param handle/hwndFocus the focus window.
+:Param int/nMenuMode the menu mode.
+
+:function SmartTagTest
+:Returns string No Return Description
+:Param object oObj
+
+:function BrailleAddObjectType
+:Returns int true if this script adds the segment, false if internal code should add the segment
+:Synopsis Add's the object's type to the Braille display
+:Description If the Internal code does not add the correct type for an object, this function maybe overridden to add the correct type. If this function adds the type to the display it must return true otherwise the internal code will be used to add the default type for the object. To add the object's type, use BrailleAddString.
+:Category Braille
+:Param int/nSubtypeCode No Description
+
+:function FocusChangedEvent
+:Synopsis This function is triggered when focus moves between applications, dialogs, and dialog controls.
+:Description The window handles of the previous and current windows are passed to this function. This function calls either SayWindowTypeAndText SayFocusedWindow or SayFocusedObject in order to ensure that the active control is properly spoken.
+:Category Window
+:Param handle/FocusWindow the handle of the window that has received the focus.
+:Param handle/PrevWindow the handle of the window that previously had the focus.
+
+:function InTemporaryContextMenu
+:Returns int True if in a temporary context menu, false otherwise
+
+:function ValueChangedEvent
+:Synopsis This function is triggered when a change of value of a MSAA object occurs.
+:Description The MSAA flag must be turned on in your application-specific jcf file to enable this function.  This function receives the following parameters: The window handle of the window containing the current MSAA object, The ID number of the MSAA Object, The ID number of the MSAA Child Object, The type of the MSAA Object, The name of the MSAA object, and The current value assigned to the MSAA Object.
+:Param Handle/hwnd The window handle of the window containing the current MSAA object.
+:Param Int/objId The ID number of the MSAA Object.
+:Param Int/childId The ID number of the MSAA Child Object.
+:Param Int/nObjType The type of the MSAA Object.
+:Param String/sObjName The name of the MSAA object.
+:Param String/sObjValue The current value assigned to the MSAA Object.
+:Param Int/nIsFocusObject
+
+:Function SpeakNetUIHwndWindowControl
+:Description This function speaks controls in the NetUIHwnd class windows. Default FocusChangedEventEx does not properly capture certain control types such as submenu and submenu grids properly.
+:Param Int/iObjType The object subtype code since window subtype codes are always  unknown for this window class.
+:Param Int/nLevel The change depth of the control.
+:Returns Void
+
+:Function GetControlColorValue
+:Description This function obtains the color value from the object name for some split button controls off the ribbons where the value is an RG string.
+:Param string/sColorName The portion of the object name that is an RGB string
+:Returns String
+
+
+:Function IsClipboardDialog
+:Description This function determines whether the Office Clipboard window has focus.
+:Param Handle The window with focus.
+:Returns Int True if the window has focus, false otherwise.
+
+:Function SpeakClipboardDialogControl
+:Description This function announces the window with focus as the Office clipboard, then announces the specific control within the window that has focus.
+:Param Int/nLevel The depth change.
+:Returns Void
+
+:Function IsResearchBoolbar
+:Description This function determines whether the Office Research window has focus.
+:Param Handle The window with focus.
+:Returns Int True if the window has focus, false otherwise.
+
+:Function SpeakResearchToolbarControl
+:Description This function announces the window with focus as Office research, then announces the specific control within the window that has focus.
+:Param Int/nLevel The depth change.
+:Returns Void
+
+:Function InApplyStylesDialog
+:Description This function determines whether the Apply Styles dialog has focus.
+:Param Handle The window with focus.
+:Returns Int True if the window has focus, false otherwise.
+
+:Function SpeakApplyStylesDialogControl
+:Description This function announces the window with focus as Apply Styles dialog, then announces the specific control within the window that has focus.
+:Param Int/nLevel The depth change.
+:Returns Void
+
+:Function InStylesDialog
+:Description This function determines whether the Styles dialog, rather than the Apply Styles dialog,  has focus.
+:Param Handle The window with focus.
+:Returns Int True if the window has focus, false otherwise.
+
+:Function SpeakOptionsDlgControl
+:Description This function speaks the control in the Office Options  dialog.
+:Param Handle/The handle of the window with focus.
+:Param Int/The current level depth.
+:Returns Void
+
+:Function SayLBItemObjectState
+:Description This function speaks the checked state when focused on a listbox item that includes checkboxes.
+:Param int/iAttrib The current control attribute
+:Returns Void
+
+:function SayObjectActiveItem
+:Description Says the active element in certain controls. For example in a list view, it will say the selected item. In a menu, it will say the active menu item. In a dialog box, it will say the selected tab.
+:Returns Void
+:Optional
+:Param int/AnnouncePosition As of JAWS 8.0, TRUE if you wish to have JAWS announce positional information such as n of m items, FALSE otherwise.
+
+:function SayVistaPathProcessed
+:Returns int TRUE if the announcement took place and no further processing is needed
+:Synopsis Processes the announcement of the path to the current folder in Vista standard dialogues
+:Description Processes the announcement of full path to the currently active folder in Vista 'Save as' and 'Open' dialogues
+:Param handle/hWnd Handle of window to start with, GetFocus can be used to provide the window handle
+
+:Function BrailleAddObjectHotkey
+:Description This function ensures that hotkeys are shown for Office 2007 and above ribbons.
+:Param int/nType The type of item to be checked for whether a hotkey should be Brailled.
+:Returns Int True if a hotkey should be Brailled, false otherwise.
+
+:function BrailleFindHotKey
+:Synopsis Searches for the hotkey of the current window.
+:Description Searches for the hotkey and prompt of the current window.
+:Returns string The hotkey, if found.
+:Optional
+:Param string/sPrompt/ByRef Include this parameter if the window prompt should also be retrieved.
+
+:Function isBackstageView
+:Description This function determines whether a Backstage View control has focus. This is needed so that tutorial help and hotkeys are handled consistently with prior versions of Office for these types of controls, e.g. Tab controls which no longer behave as in prior versions while in backstage view.
+:Param handle/hwnd The window that has the focus.
+:Returns int True if in Backstage view; false otherwise.
+
+:Function SayRibbonState
+:Description This function announces the state of the ribbon for the currently active Office application when the ribbon state is toggled between expanded and collapsed states.
+:Returns Void
+
+:Script ToggleRibbonState
+:Synopsis Toggles and announces the state of the ribbon between expanded and collapsed for the current Office application.
+:Description This script Toggles and announces the state of the ribbon between expanded and collapsed for the current Office application.
+
+:Function ProcessAccessibilityCheckerDialogStaticText
+:Description This function speaks the static text of the accessibility checker window. Focus cannot be placed in this window in order to process the information in it.
+:Param handle/hwnd The window whose grandparent's name is the Accessibility checker window
+:Returns Void

@@ -1,0 +1,11 @@
+:script NextLibraryWindow
+:Synopsis Move between windos in the WinAmp library.
+:Description This script moves the focus from the windows contained in the WinAmp library. These windows can include the tree view, the IE Server controls window and the IE Server window.
+:Category keyboard
+
+:function FocusRedirected
+
+:script Space
+:Synopsis Emulates correct pressing of Space on a button in WinAMP library.
+:Description Enulates the correct pressing of a Space bar on a button in a WinAMP library window.
+:Category Keyboard

@@ -1,0 +1,295 @@
+:script sayActiveCursor
+:Synopsis says the active cursor and its position. If in a designer then says the coordinates of the top left of the focused control.
+:Description Says the name of the active cursor and its position by pixel.  If in a designer then says the coordinates of the top left of the focused control.
+
+:script sayNextLine
+:Synopsis correctly handles custom controls such as designers and also handles correct reading when the Methods and Properties list is active in the code window
+:Description This script is overridden to handle custom controls such as designers and to handle the code window correctly when the Methods and Properties list is active.
+
+:script hotkeyHelp
+:Synopsis VB hotkey help
+:Description Provides context sensitive Hotkey Help in components and Hotkey help in Dialogs.
+
+:script sayWindowTitle
+:Synopsis speaks the window title in the current dialog and handles the New Project dialog in particular
+:Description This script speaks the window title and correctly handles the New Project Dialog which would otherwise not have its title and dialog page read correctly.
+
+:function saySubMenuLevel
+:Synopsis says the submenu level of a menu editor item in the list of items
+:Description This function says the submenu level of a menu editor item in the list of items.
+
+:function getDialogPageName
+:Returns string the name of the current dialog page
+:Synopsis returns the correct dialog page name in a multipage dialog
+:Description This function returns the dialog page name in a multipage dialog. It correctly handles the New Project Dialog which would otherwise not be spoken correctly.
+
+:function NewTextEvent
+:Synopsis handles new text written to the screen and the correct calling of the screenStableEvent
+:Description This function is overridden here because it provides access to a new event called screenStableEvent which is required for automatically speaking new wizard screens.
+:Param handle/hwnd Handle of the window containing the text that was written
+:Param string/buffer String containing the text that was written
+:Param int/nAttributes The attributes of the text that was written
+:Param int/nTextColor The foreground color of the text that was written
+:Param int/nBackgroundColor The background color of the text that was written
+:Param int/nEcho The echo setting associated with this text
+:Param string/sFrameName The name of the frame containing the newly written text if applicable
+
+:script sayNextCharacter
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers.
+
+:script sayContextInfo
+:Synopsis Speaks extra information about the active component
+:Description This script speaks extra information about the current component. For example, if the current component is an MSForm or VBForm designer then information about the active control including overlap details are spoken along with the dimentions of the host form. If a code module is active then the current cursor location, the current procedure name, the number of lines in the current procedure, the number of members in the module (VB6 only) and the number of total code lines in the module are spoken. It is very useful for gaining important information about the current component without switching focus to the various windows and controls to gain the same information. If the keystroke is pressed twice then the properties for the selected component will be announced along with their values.
+
+:script sayPriorParagraph
+:Synopsis correctly handles custom controls such as designers and moves to and speaks the name of the prior procedure in the code window
+:Description This script is overridden here to handle the movement of controls on the designer and to move to and speak the name of the prior procedure in the code window.
+
+:function SayNonHighlightedText
+:Synopsis handles speaking of nonHighlighted text and the vbBuble tooltip class in particular
+:Description This function is overridden here primarily so that toolbox tooltips with the VBBubble class are spoken automatically.
+:Param handle/hwnd handle of the window in which the new text was written
+:Param string/buffer string containing the text that was written
+
+:script sayPriorLine
+:Synopsis correctly handles custom controls such as designers and also handles correct reading when the Methods and Properties list is active in the code window
+:Description This script is overridden to handle custom controls such as designers and to handle the code window correctly when the Methods and Properties list is active.
+
+:script setFocusOnWindow
+:Synopsis presents a list of visible windows and sets focus on the one selected
+:Description This script presents a list of the visible windows to the user and the selected window is then given focus. This gives access to windows which would otherwise have no keyboard access.
+
+:function autoStartEvent
+:Synopsis handles setting up of globals when the IDE or VBA Editor is switched to
+:Description This function is executed when focus lands on the VB6 IDE or a VBA Editor session started from an Office Application such as MSWord. It handles the setting up of globals used by the script set.
+
+:function downLines
+:Synopsis moves the active cursor down the specified number of lines
+:Description This function moves the active cursor down the specified number of lines. It is used by the Speak Wizard function.
+:Param int/num the number of lines to move down
+
+:script selectPriorCharacter
+:Synopsis Selects the prior character. If in VB6 designer, decreases the width of the selected control.
+:Description Sends a SHIFT+LEFT ARROW to the system.  The result is controlled by the application.  In most edit controls, the character to the left of the PC cursor is selected. This script can also be used for selecting items in multiple column list views. If in VB6 designer, decreases the width of the selected control.
+
+:script activateConstantsList
+:Synopsis activates the constants list
+:Description This script activates the Constants list for a property which must be set to a constant value and which preceeds the equals sign just typed.
+
+:script sayCharacter
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers.
+
+:script ActivatePropertiesAndMethodsList
+:Synopsis in the code window this sets focus on the Properties and Methods list
+:Description This script sets focus on the Methods and Properties list when in a code pane.
+
+:script mouseRight
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers. When used on an MSForm designer and the PCCursor is active, the selected control will be moved by approximately 20 pixels in the stated direction.
+
+:script saySelectedText
+:Synopsis says the correct selected text in the code window
+:Description This script says the correct selected text in the code window as the window name would otherwise be spoken along with the selected text in the window as it is highlighted.
+
+:script setFocusOnMenuItemList
+:Synopsis This script returns focus to the Menu Item list in the Menu Editor
+:Description This script places focus on the list of menu items defined in the Menu Editor. It is useful when activating another button in this dialog takes focus away from this list and you wish to return to it without tabbing through all the controls.
+
+:script sayWindowPromptAndText
+:Synopsis calls sayFocusedWindow
+:Description This script just calls sayFocusedWindow
+
+:function sayHighlightedText
+:Synopsis handles screens with multiple listboxes where changing one listbox causes a change in another
+:Description This function is overridden here so that screens containing more than one listbox do not cause non-focused items to be spoken when changing one listbox causes a change in another listbox which would otherwise be echoed.
+
+:script summarizeOpenProject
+:Synopsis speaks the name, description, list of active windows, list of components, list of referenced libraries, list of addins etc for the current project
+:Description This script speaks the name, description, list of active windows, list of components, list of referenced libraries, list of addins etc for the current project. It is useful for giving the user a quick overview of what is open on the screen without having to switch focus to the various controls to get the same information.
+
+:script sayNextWord
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers. When on an MSForm or VBForm designer, it moves the selected control by one pixel or one grid position in the stated direction.
+
+:function sayLine
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers.
+
+:script sayPriorCharacter
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers.
+
+:script screenSensitiveHelp
+:Synopsis provides screen sensitive help for all screens and components of VB and VBA
+:Description This script provides screen sensitive help for all screens and components of VB and VBA.
+
+:function sayFocusedWindow
+:Synopsis says the focused control
+:Description This function is overridden to handle custom controls such as wizard screens and designer objects.
+
+:script bottomOfFile
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers. When an MSForm designer is active focus is moved to the last control in the tab order.
+
+:script quickInfo
+:Synopsis activates Quick Info and reads tip
+:Description This function activates Quick Info and reads the tip. If the script is activated twice quickly then the tip is presented in a message box for review by the JAWS or Invisible cursors.
+
+:function brailleBuildLine
+:Returns int true if a Structured Mode representation for a focus situation exists, false otherwise.
+:Synopsis Implements the Structured Mode Braille support for the Code and Designer windows
+:Description This function Implements the Structured Mode Braille support for the Code and Designer windows as well as the standard Braille Structured Mode support.
+
+
+
+:script selectPriorLine
+:Synopsis Selects the text from the cursor position to the same position on the prior line. If in VB6 designer, decreases the height of the selected control.
+:Description Sends a SHIFT+UP ARROW to the system.  The result is controlled by the application.  In most edit controls, the line above the PC cursor is selected. This script can also be used for selecting contiguous items in list boxes or list views. If in VB6 designer, decreases the height of the selected control.
+
+:Function ToggleReadWholeCodeLine
+:Synopsis toggles the setting for reading the entire code line regardless of visibility
+:Description This function toggles the setting for reading the entire code line regardless of visibility. When on, and a code line is only partially visible, JFW will still read the entire line. When off JFW will only read the visible portion of the line. This saves scrolling when lines are spaced out for visual effect.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:script tabKey
+:Synopsis ensures newly focused controls are spoken on designers
+:Description This function ensures that the next control in the tab order on a designer correctly gains focus and speaks the new control.
+
+:function FocusChangedEvent
+:Synopsis handles setting of flag which is used for detecting when focus change occurs when tabbing in designers
+:Description This function is overridden here so that a flag can be set which is checked in the Tab and ShiftTab scripts for determining if the event was triggered as a result of tabbing in a designer.
+
+:script windowKeysHelp
+:Synopsis provides VB specific keystroke help
+:Description This function provides VB specific keystroke help.
+
+:script closeActiveWindow
+:Synopsis closes the active window without closing the whole component
+:Description This script attempts to close the active window without closing the whole component as would be the case if one used control+f4. It is very useful for removing clutter when JFW is getting confused about the number of open windows.
+
+:script shiftTabKey
+:Synopsis ensures that controls receive the focus and get spoken when shift tabbing on a designer
+:Description This script ensures that controls correctly receive focus and get spoken when shift tabbing on designers.
+
+:script mouseDown
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers. If on an MSForm designer the selected control will be moved by approximately 20 pixels in the stated direction.
+
+:script setFocusToFormControl
+:Synopsis presents a list of controls on an MSForm and allows user to select one
+:Description This script presents a list of controls on an MSForm designer. The user is then focused on the selected control. This currently does not work for VBForm designers due to a bug in the Object Model.
+
+:script ParameterInfo
+:Synopsis activates and reads the Parameter Info tip
+:Description This function activates and reads the Parameter Info tip in the Code Window.
+
+:Function incrementMovementUnit
+:Synopsis increments the movement unit to be used when moving MSForm controls on the MSForm designer in VBA
+:Description This function increments the movement unit to be used when moving MSForm controls on the MSForm designer in VBA. The max and min units allowable are set in vb6.jsh and default to 10 and 100 respectively. The measure is in pixels.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:script AdjustJAWSVerbosity
+:Synopsis presents the Adjust JAWS Verbosity dialog including extra items for the VB environment
+:Description This script presents the Adjust JAWS Verbosity dialog including extra items for the VB environment. The extra items are defined in vb6.jsh.
+
+:function screenStableEvent
+:Synopsis triggered when a screen is finished being written
+:Description This event function is triggered once the screen has been stable for a given length of time. This length is determined by the stabilizeTime constant in vb6.jsh. It is used to begin speaking new wizard screens once they have finished being written.
+
+:script sayPriorWord
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers. If on an MSForm or VBForm designer the selected control is moved by either a pixel or grid unit in the stated direction.
+
+:script selectToolboxControl
+:Synopsis presents a list of the standard tools in the MSForm toolbox or VBForm toolbox
+:Description This script presents a list of the standard tools in the MSForm toolbox or VBForm toolbox. The selected tool is then created on the designer form. (This currently only works for the MSForm designer when using VBA).
+
+:function isMultiPageDialog
+:Synopsis correctly reports the status of the New Project Dialog as being a multipage dialog
+:Description This function is overridden so that the New Project Dialog is correctly reported as a multipage dialog.
+
+:function getPropertiesAndMethodsListHandle
+:Synopsis returns the handle to the Properties and Methods listbox or the Constants listbox when active in the code window
+:Description This function returns the handle of the Properties and Methods or constants listbox when it is visible in the code window. This can be used for quickly selecting members to insert into code.
+
+:script mouseUp
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers. If on an MSForm designer the selected control will be moved by approximately 20 pixels in the stated direction provided the PCCursor is active.
+
+:script selectNextLine
+:Synopsis Selects the text from the cursor position to the same position on the next line. If in VB6 designer, increases the height of the selected control.
+:Description Sends a SHIFT+DOWN ARROW to the system.  The result is controlled by the application.  In most edit controls, the line below the PC cursor is selected. This script can also be used for selecting contiguous items in list boxes or list views. If in VB6 designer, increases the height of the selected control.
+
+:function loadApplicationSettings
+
+:function saveApplicationSettings
+
+:script completeCode
+:Synopsis completes the partialy typed code
+:Description This script completes the partially typed expression and reads the completed expression.
+
+:Function toggleOverlapAlert
+:Synopsis toggles alert of overlapping objects on and off
+:Description This function toggles the automatic alert of object overlap on and off. It is called from the JFW Verbosity dialog but may have its own keystroke assigned.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:script setFocusOnToolWindow
+:Synopsis sets focus on the tool window (toolbox) in VB6
+:Description This script sets focus on the first visible tool window when using VB6. This is usually the toolbox. It saves the user from using the setFocusOnWindow script and locating the appropriate window.
+
+:script selectNextCharacter
+:Synopsis Selects next character. If in VB6 designer, increases the width of the selected control.
+:Description Sends a SHIFT+RIGHT ARROW to the system.  The result is controlled by the application.  In most edit controls, the character to the right of the PC cursor is selected. This script can also be used for selecting items in multiple column list views. If in VB6 designer, increases the width of the selected control.
+
+:function getMenuEditorItemLevel
+:Returns int 0 topleevel, increment by one for each submenu level, eg file/new would return 1.
+:Synopsis determines the menu item's level in the list of menu items in the menu editor
+:Description This function determines the menu item's level in the list of menu items in the menu editor. It is used to determine if a menu item is a submenu item, a subsubmenu item etc.
+
+:script sayWord
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers.
+
+:script ScriptFileName
+:Synopsis says the active script set name and exe name.
+:Description This script announces the current script set and name of running exe.
+
+:script sayNextParagraph
+:Synopsis correctly handles custom controls such as designers and moves to and speaks the name of the next procedure in the code window
+:Description This script is overridden here to handle the movement of controls on the designer and to move to and speak the name of the next procedure in the code window.
+
+:script mouseLeft
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers. If on an MSForm designer the selected control will be moved by 20 pixels in the stated direction. The pcCursor must be active.
+
+:function speakWizardTextAndFocus
+:Synopsis speaks newly written wizard text and handles controls which do not have prompts
+:Description This function is called from the screenStableEvent and the sayFocusedWindow event. It handles speaking of wizard text when screens change and also handles controls which would otherwise not have their prompts spoken.
+
+:function initializeApplicationSettings
+:Synopsis initializes VB6 specific verbosity settings to default values
+:Description This function initializes the VB6 and VBA 6.0 specific Verbosity settings to their default values.
+
+:function inAppWizard
+
+:Function decrementMovementUnit
+:Synopsis decrements the movement unit to be used when moving MSForm controls on the MSForm designer in VBA
+:Description This function decrements the movement unit to be used when moving MSForm controls on the MSForm designer in VBA. The max and min units allowable are set in vb6.jsh and default to 10 and 100 respectively. The measure is in pixels.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:script topOfFile
+:Synopsis handles speaking of custom controls such as designers
+:Description This script is overridden here to handle custom controls such as designers.
+
+:Function AddToString
+:Synopsis Takes two strings and adds the second string to the first
+:Description Adds the second string parameter to the first parameter and returns the new string 
+:Returns string
+:Param1 String/Base The base string that is to be added to
+:Param2 string/New The string that is to be added to the base

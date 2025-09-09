@@ -1,0 +1,31 @@
+[Component Aliases]
+coordinates=Grid Coordinates
+GridName=Grid Name
+Group=Group
+Subgroup=Subgroup
+DefaultResult=Default Result
+
+; for Start Screen tiles
+[CustomControl1]
+components=state,gridname,type,coordinates,value
+removed=
+type=
+displayname=Start Screen
+AlignmentPriority=state,gridname
+; for  App list
+[CustomControl2]
+components=ContextHelp,name,type,group,subgroup,value,position
+removed=
+type=lbx
+displayname=App List
+AlignmentPriority=name,type,group,subgroup,value
+; for  Search edit
+[CustomControl3]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value,defaultResult
+type=ed
+removed=
+displayname=Search Edit
+AlignmentPriority=name,type,ComputerBrailleIndicator,value
+
+[Information]
+Description=Default  Structured Mode view for Microsoft Windows UI.

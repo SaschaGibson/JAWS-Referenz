@@ -1,0 +1,9 @@
+[Common Keys]
+Alt=ApplicationMenu
+Enter=Enter
+F7=MutePlayer
+F8=VolumeDown
+F9=VolumeUp
+Alt+Control+L=MoveToCurrentPlayList
+Alt+Control+M=MoveToMainTree
+Control+JAWSKey+T=SayCurrentlyPlayingTrack

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Default.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="OutlookReadOnlyMsgsUseUIA" Text="Use UIA for Read-Only Message support">
+			<HelpMsg>
+When this checkbox is unchecked, JAWS uses the legacy DOM  exclusively to render read-only messages. When checked, JAWS uses  UIA to render  read-only  messages instead.
+Restart Outlook for the change to take effect.
+			</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="MessageFlags" Text="Message Flags">
+			<HelpMsg>
+This group contains options that control which message flags are announced while navigating the message list. Types of flags include: attachments, follow-up, read status, priority, etc.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="MessageFlags.MessageFollow-upFlagIndication" Text="Message Follow-up Flag Indication">
+			<HelpMsg>
+When turned on, JAWS announces if a follow-up flag has been applied to the selected e-mail message. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="MessageFlags.MessageForwardedFlagIndication" Text="Message Forwarded Flag Indication">
+			<HelpMsg>
+When turned on, JAWS announces if a forward flag has been applied to the selected e-mail message. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions" Text="Reading Options">
+			<HelpMsg>
+This group contains options used for reading Microsoft Outlook messages.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.AddressListAuto-CompleteAnnouncement" Text="Address List Auto-Complete Announcement">
+			<HelpMsg>
+When turned on, this option lets JAWS announce suggestions for names and e-mail addresses as you type in the To, CC, or BCC edit boxes. The suggestions are based on previous entries that you have made.
+When turned off, JAWS does not announce suggestions. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.InformationBarMessagesAnnouncement" Text="Information Bar Messages Announcement">
+			<HelpMsg>
+The Information Bar provides details about an open e-mail message, such as if you previously replied or forwarded the message.
+When this option is turned on, JAWS announces this type of information if it applies to the e-mail. Use the SPACEBAR to turn this option on or off.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.MessageHeaderFieldWithMessageAnnouncement" Text="Message Header Field With Message Announcement">
+			<HelpMsg>
+When turned on, JAWS announces the sender's e-mail address and the subject title of the message.
+The default setting is Off for Office365 and newer versions, On for classic versions.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.MessageTypeAnnouncement" Text="Message Type Announcement">
+			<HelpMsg>
+When turned on, JAWS announces the sender's message type, e. g. HTML or Plain Text.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.WebLinkCountIndication" Text="Link Count Announcement">
+			<HelpMsg>When turned on, JAWS indicates the number of links that appear in the e-mail message. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.MessagesAutomaticallyRead" Text="Messages Automatically Read">
+			<HelpMsg>
+When turned on, JAWS reads the message when you open an e-mail. The default setting is On for Office365 and newer versions, Off for classic versions.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.UseVPCInsteadOfEnhancedEditModeForReadOnlyDocs" Text="Use Virtual Cursor for ReadOnly Messages">
+			<HelpMsg>
+Use this option to have JAWS render read-only messages in the virtual buffer. E-mail messages that contain complex tables and formatting are often difficult to read when using Outlook 2007 or later. This is due to Word being used to render the HTML content. By default, the check box is selected and read-only messages will be rendered in the virtual buffer for ease of reading. Clear the check box if you want to interact directly with the Word Editor rather than reading the message in the Virtual Buffer.</HelpMsg>
+		</DisplayName>
+		<!-- For Outlook 2013 and later: -->
+		<DisplayName ID="ReadingOptions.UseJAWSCustomization" Text="Use JAWS Customization for Lists">
+			<HelpMsg>
+This option controls whether or not JAWS customization applies to lists, such as messages and contacts lists.
+When this option is disabled, the raw information is presented through JAWS similar to how Narrator reads the text. This impacts both speech and Braille.
+If you are reordering columns in the list, you may want to disable this option so that JAWS will read each item as is. 
+Most users who are accustomed to how JAWS reads Outlook list items will want to leave this item checked.
+This option is checked by default.</HelpMsg>
+		</DisplayName>
+		<!-- For modern Outlook versions Office 2016 build 16.0.10000 and higher -->
+		<DisplayName ID="ReadingOptions.AnnounceGroupChangeInLists" Text="Announce Group Change In Lists">
+			<HelpMsg>
+This option controls whether or not JAWS announces the group change in message and other Outlook lists.
+Group changes are often, but not always, date or conversation changes.
+When this option is checked, group changes are announced by JAWS similar to how Narrator reads them. This impacts both speech and Braille.
+Group change is announced when the group changes, or when the window gains focus.
+When this checkbox is not checked, Outlook will ignore group name changes in lists.
+
+By default, this checkbox is not checked.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.SpeakWindowTitlesForReadOnlyMessagesAutomatically " Text="Speak Window Titles For Read-Only Messages Automatically ">
+			<HelpMsg>
+When turned on, JAWS automatically speaks the title of the message window when a read-only message opens or gains focus.
+When off, JAWS immediately begins reading the message when it gains focus without reading the window title. The subject is still announced when navigating the Inbox.
+This setting is off by default.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

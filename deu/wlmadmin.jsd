@@ -1,0 +1,43 @@
+:function FormatServerInformation 
+:synopsis Formats the server information
+:description This function retrieves all static server information, formats it, and returns it as a string to be displayed in the virtual viewer.  
+:returns string Formatted server information
+:function FormatFeatureInformation 
+:synopsis Formats the feature information
+:description This function retrieves all static feature information, formats it, and returns it as a string to be displayed in the virtual viewer.  
+:returns string Formatted feature information
+
+:function FormatServerStatistics  
+:synopsis Formats the server statistic information
+:description This function retrieves all static server statistic information, formats it, and returns it as a string to be displayed in the virtual viewer.  
+:returns string Formatted server statistic information
+
+:function FormatOtherFeatureInformation 
+:synopsis Formats other feature information
+:description This function retrieves all other feature information not retrieved by the FormatFeatureInformation function, , formats it, and returns it as a string to be displayed in the virtual viewer.  
+:returns string Formatted other feature information
+
+:function DisplayServerInformation 
+:synopsis Displays all static server information
+:description This function displays all formatted server information in the virtual viewere for review. This function is called any time the server Information group box receives the focus 
+
+:function GetLvItem 
+:synopsis Retrieves both columns of list view information
+:description This function retrieves both columns of information in either the client or license list view. The formatted information is then returned as a string used by the SayLine and SayHighlightedText functions.
+:returns string Formatted list view column information
+
+:script SpeakStaticClientInfo 
+:synopsis Speak static client information
+:description Speaks the static client information in the Client Information page of the WLM Admin multi page dialog. Focus must be in the client information list view in order for %product% to speak the static information.
+
+:script SpeakStaticLicenseInfo 
+:synopsis Speak static license information
+:description Speaks the static license information in the License  Information page of the WLM Admin multi page dialog. Focus must be in the license  information list view in order for %product% to speak the static information.
+
+:script MoveToServerTreeView 
+:synopsis Moves to the server tree view
+:description Moves the focus from either of the WLM Admin multi page dialog pages to the server tree view.
+
+:script WLMHotKeyHelp
+:Synopsis Zeigt Kurztasten für %product% im Virtuellen Betrachter.
+:Description %product% Kurztasten sind Tastenkombinationen in %product%, die wir anbieten. Meistens stehen diese Kurztasten in keinem Konflikt mit Kurztasten in Ihren anderen Anwendungen.

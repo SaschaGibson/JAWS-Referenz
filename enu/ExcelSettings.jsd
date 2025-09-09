@@ -1,0 +1,682 @@
+:Function getWorkbookJSIName
+:synopsis returns the workbook's jsi name where workbook specific settings are saved
+:description This function determines the workbook's jsi name.
+:returns string the jsi (JAWS Script Initialization) file name
+
+:function UpdateWorkbookPointer
+:description Updates the settings pointer to point to settings for the active workbook. This should be called on workbook change, so the new settings may be in effect. If no specific settings have been set, a placeholder collection is created to store data or settings.
+:optional
+:param int/nptrSetting POINTER_DEFAULT, POINTER_DELETE, or POINTER_REPLACE
+
+:function UpdateWorksheetPointer
+:description Updates the worksheet settings pointer to point to the settings for the active worksheet. This should be called on worksheet change, so the new settings may be in effect. If no specific settings have been set, a placeholder collection is created to store data or settings.
+:optional
+:param int/nptrSetting POINTER_DEFAULT, POINTER_DELETE, or POINTER_REPLACE
+
+:function UpdateRegionPointer
+:description Updates the region settings pointer to point to the settings for the active region. This should be called on region change, so the new settings may be in effect. If no specific settings have been set, a placeholder collection is created to store data or settings.
+:optional
+:param int/nptrSetting POINTER_DEFAULT, POINTER_DELETE, or POINTER_REPLACE
+
+:function obliterateSheetDataFromCurrentWorkbook
+:returns int TRUE if data removed from jsi file, FALSE otherwise.
+:description Scrubs out all data related to the sheet specified by the name passed as parameter. This should only be called on Delete. This is independent of the on Sheet Update settings pointer update. You may end up with an empty or null pointer after this is called, if sheet was deleted but there has been no Sheet change. This data includes all region and Cell Markers data belonging to this sheet.
+:param string/sheetName the name of the sheet which is to be deleted. This should be the same name as used to create the sheet name in the workbook collection.
+
+:function loadUserDefaults
+:description Loads user-specified application settings, and takes copies of all the default settings user has not changed, creating the user's application settings collection.
+
+:Function UpdateSettingsCollections
+:description force update workbook, worksheet and region settings pointers to ensure all settings point to the active workbook, worksheet and region.  This is a forced update, not to be used on change of a particular item.
+
+:function findSettingLocation
+:returns collection the collection in which the setting resides.
+:description for settings without dependencies, this function will return the collection in which the setting lives. Searches for string names in AppSettings, DocSettings, SheetSettings and RegionSettings.
+
+:function UpdateSettingLocation
+:description for settings who have defaults in user collection  but can be worksheet-specific. Generally default is 1 and worksheet is established as 0. Use UpdateSettingLocation in combo with findSettingLocation see ToggleFormulas and other funcs for usage
+:returns collection the pointer to the collection where the new setting now lives.
+
+:function DisplayChartInVirtualViewer
+:returns int TRUE if chart should be displayed in virtual viewer, FALSE OTHERWISE.
+:description Returns DisplayChartInVirtualViewer setting.
+
+:function CellBorderVerbosity
+:returns int the setting
+:description returns the value set by the toggleCellBorderVerbosity function.
+
+:function toggleCellBorderVerbosity
+:Returns string description of value used to populate DlgSelectTreeFunctionToRun  list item's value
+:Synopsis toggles the detection of cell border changes on and off
+:Description toggles the detection of cell border changes on and off. it is called from the AdjustJAWSOptions script where the setting is saved to the jsi.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:Function MultipleRegionSupport
+:returns int the setting.
+:description Returns the value set by toggleMultipleRegionSupport function.
+
+:function toggleMultipleRegionSupport
+:Returns string description of value used to populate DlgSelectTreeFunctionToRun  list item's value
+:Synopsis toggles the multiple region support feature on and off
+:Description toggles the multiple region support feature on and off. When off, each worksheet is treated as a single region effectively behaving as in JAWS 3.5., ie no naming of regions is necessary even when the sheet contains blank rows and columns. When on, each region is defined either by a contiguous block of cells or by a named area.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function getAssignedMonitorCells
+:Returns string a list of the numbers of the assigned Monitor Cells
+:Synopsis returns a string containing the numbers of all of the assigned Monitor Cells
+:Description This function returns a string containing the numbers of all of the assigned Monitor Cells. It is used for displaying the assigned numbers in DlgSelectTreeFunctionToRun  and is returned from the setNextAvailableMonitorCell function.
+
+:function getMonitorCell
+:returns string The address of the specified monitor cell.
+:description Returns the cell address of the specified monitor cell by number, entries are marked 1 through 10.
+:param int/number the number of the specified cell, 1 through 10.
+
+:function getListOfMonitorCells
+:returns string the list of available monitor cells, separated by bell char LIST_ITEM_SEPARATOR.
+:description Returns a list of cell coordinates set by the user as monitor cells.
+
+:function getActiveSelectionRange
+:description Gets the active selection's range.
+:returns string the range of the active selection.
+
+:function setMonitorCell
+:returns int TRUE if successfully written to file, FALSE otherwise.
+:Description Assigns the address of the active cell to the number you specify. Numbers are 1 through 10.
+:param int/number the number of the specified cell, 1 through 10.
+:optional
+:param int/nWriteDestination The destination of the update
+:param string/address Optional address to assign to this monitor cell (do not attempt to use a blank value; call removeMonitorCell for that)
+
+:function removeMonitorCell
+:returns int TRUE if successfully removed from file, FALSE otherwise.
+:description removes the monitor cell based on the number specified.
+:param int/number the number of the monitor cell to be removed. Numbers are 1 through 10.
+:optional
+:param int/nWriteDestination The destination of the update
+
+:function getCellMarker
+:returns string the address for the cell marker based on the specified sheet.
+:Description Returns the address of the cell marker for the specified sheet.
+:param string/sheetName The name of the sheet whose cell marker is to be retrieved.
+
+:function getActiveCellMarker
+:returns string the address for the cell marker on the active sheet.
+:Description Returns the address of the cell marker for the active sheet.
+
+:function setCellMarker
+:param string/SheetName The name of the sheet onto which to set the cell marker.
+:param string/address The address of the cell to which the cell marker pertains.
+:description Sets cell marker based on the specified parameters. You must supply a sheet and a cell address.
+:returns int TRUE if successfully written to file, FALSE otherwise.
+
+:function setActiveCellMarker
+:returns int TRUE if written to file, FALSE otherwise
+:description Sets cell marker using the active sheet name and active cell address.
+
+:function DeleteCellMarker
+:returns int TRUE if Cell Marker successfully deleted from file, FALSE otherwise.
+:description Deletes cell marker on the specified sheet.
+:param string/sheetName the name for the sheet whose cell marker is to be deleted.
+
+:function DeleteActiveCellMarker
+:returns int TRUE if Cell Marker successfully deleted from file, FALSE otherwise.
+:description deletes the cell marker from the active sheet.
+
+:function getListOfCellMarkers
+:returns string a printable list of cell markers for the current workbook. Items separated by bell char (LIST_ITEM_SEPARATOR)
+:description Returns a printable list of cell markers for the current workbook.
+
+:function getListOfSheetsWithCellMarkers
+:returns string A segmented list containing all the sheet names where cell markers are defined.
+:description Returns a segmented list containing all the sheet names where cell markers are defined.
+
+:function GetNumberOfCellMarkers
+:returns int The number of cell markers in the workbook.
+:description Retrieves the number of cell markers in the workbook.
+
+:Function setNextAvailableMonitorCell
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis searches for the next free monitor cell to define
+:Description searches for the next free monitor cell to define and defines it as refering to the current cell or selected range.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function NumberFormatVerbosity
+:returns int the setting
+:description Returns the value set by the toggleNumberFormatVerbosity function.
+
+:function toggleNumberFormatVerbosity
+:Returns string description of value used to populate DlgSelectTreeFunctionToRun  list item's value
+:Synopsis toggles the detection of Number Format changes on and off
+:Description toggles the detection of Number Format changes on and off. it is called from the AdjustJAWSOptions script where the setting is saved to the jsi.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function TitleReadingVerbosity
+:returns int the setting
+:description Returns the value set by toggleTitleReadingVerbosity.
+
+:function toggleTitleReadingVerbosity
+:Returns string description of value used to populate DlgSelectTreeFunctionToRun  list item's value
+:Synopsis toggles title reading for the current region between off, read column titles, read row titles and read both titles
+:Description toggles title reading for the current region between off, read column titles, read row titles and read both titles. is called from the AdjustJAWSOptions script where the settings are actually saved.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function SelectionReadingVerbosity
+:returns int the setting.
+:description Returns the value set by the toggleSelectionReadingVerbosity function.
+
+:function toggleSelectionReadingVerbosity
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis toggles the selection reading Verbosity from reading the contents of all of the selected cells to reading the contents of only the first and last cells in the selected range
+:Description toggles the selection reading Verbosity from reading the contents of all of the selected cells to reading the contents of only the first and last cells in the selected range. It is called from the AdjustJAWSOptions script where the setting is saved to the jsi file.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function clearRegionDefinitions
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis clears all title and total definitions for the current data region
+:Description clears all title and total definitions for the current data region.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function BrlStructuredMode
+:returns int the excel-specific setting.
+:description Returns the value set by the ToggleBrlStructuredMode function.
+
+:function ToggleBrlStructuredMode
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:Description This function returns the Braille structured mode.
+:returns string
+
+:function function MonitorCellTitles
+:returns int the setting
+:description Returns the value of the toggleMonitorCellTitles function.
+
+:function ToggleMonitorCellTitles
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis toggles monitor cell title announcement on/off, on by default.
+:Description This function toggles monitor cell title announcement on/off without affecting title reading verbosity for other cells or when just reading a cell that happens to be a monitor cell by navigating to it. It only affects title announcement when the ReadMonitor Cell scripts are invoked by user.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:Function clearMonitorCells
+:Synopsis clears monitor cell definitions for the current worksheet
+:Description This function clears monitor cell definitions for the current worksheet.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:Returns String
+
+:function CellReadingVerbosity
+:returns int the setting.
+:description the value set by ToggleCellReadingVerbosity
+
+:function ToggleCellReadingVerbosity
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis toggles cell reading Verbosity from reading cell coordinates and content to content only
+:Description toggles cell reading Verbosity from reading cell coordinates and content to content only. is called from the AdjustJAWSOptions script.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+int function OverrideDocNamedTitles
+:returns int the setting
+:description Returns the value set by the ToggleOverrideDocNamedTitles setting.
+
+:Function ToggleOverrideDocNamedTitles
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis toggles the detection of document named titles on and off
+:Description This function toggles the detection of document named titles on and off. it is called from the AdjustJAWSOptions script where the setting is saved to the jsi.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function TitleSpeaksForCells
+:returns int the setting
+:description Returns the value set by the ToggleTitleSpeaksForCells function.
+
+:function ToggleTitleSpeaksForCells
+:Description This function toggles title restriction between "All data cells" and "cells to the right and below the title cells", which is the default.
+:Param Int/iRetCurVal
+
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function AnnounceTextVisible
+:returns int the setting.
+:description Returns the value set by the ToggleAnnounceTextVisible function.
+
+:Function ToggleAnnounceTextVisible
+:Description This function toggles whether to announce that text is partially visible when the column width is too narrow.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function FormulasAnnounce
+:returns int the setting.
+:description Returns the value of the toggleFormulas function.
+
+:function toggleFormulas
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis toggles the detection of cell formulas.
+:Description This function toggles the detection of cell formulas. it is called from the AdjustJAWSOptions script where the setting is saved to the jsi. If a cell or merged cell has either one, it is announced by default. This toggle allows the user to turn this announcement off and on at will.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function CommentsAnnounce
+:returns int the setting
+:description Returns the value of the toggleComments function.
+
+:function toggleComments
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis toggles the detection of cell comments.
+:Description This function toggles the detection of cell comments. it is called from the AdjustJAWSOptions script where the setting is saved to the jsi. If a cell or merged cell has either one, it is announced by default. This toggle allows the user to turn this announcement off and on at will.
+
+:function CellShadingChangesAnnounce
+:returns int the setting.
+:description Returns the value set by the toggleCellShadingChanges function.
+
+:Function ToggleCellShadingChanges
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:Description This function toggles whether to announce changes in cell shading.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function FontChangesAnnounce
+:returns int the setting
+:description Returns the value set by the toggleFontChanges function.
+
+:Function ToggleFontChanges
+:Description This function toggles whether to announce changes in font color, name, size, and attributes.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function MergedCellsAnnounce
+:returns int the setting
+:description returns the value set by the toggleMergedCells function.
+
+:function toggleMergedCells
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis toggles the detection of merged cell.
+:Description This function toggles the detection of merged cell. it is called from the AdjustJAWSOptions script where the setting is saved to the jsi. If a cell or merged cell has either one, it is announced by default. This toggle allows the user to turn this announcement off and on at will.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function function DetectFormatConditions
+:returns int the setting
+:description Returns the value set by the toggleDetectFormatConditions function.
+
+:Function ToggleDetectFormatConditions
+:Description This function toggles whether to announce whether a cell is conditionally formatted .
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function ObjectCountDetection
+:returns int the setting.
+:description Returns the value set by the ToggleObjectCountDetection function.
+
+:Function ToggleObjectCountDetection
+:Description This function determines whetehr the number of embedded objects in the currently active worksheet should be detected and announced by JAWS.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate DlgSelectTreeFunctionToRun  function item's value.
+
+:function function FormControlsDetection
+:returns int the setting.
+:description Returns the value set by the ToggleFormControlsDetection function.
+
+:Function ToggleFormControlsDetection
+:Description This function determines whetehr JAWS should detect form controls as the currently active worksheet is navigated. The setting is workbook-specific.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate DlgSelectTreeFunctionToRun  function item's value.
+
+:function PagebreaksDetection
+:returns int the setting
+:description Returns the value set by the TogglePagebreaksDetection function.
+
+:Function TogglePagebreaksDetection
+:Description This function determines whetehr JAWS should detect pagebreaks as the currently active worksheet is navigated. The setting is workbook-specific.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate DlgSelectTreeFunctionToRun  function item's value.
+
+:function FilteredColumnsAndRowsDetection
+:returns int the setting
+:description Returns the value set by the ToggleFilterDetection function.
+
+:Function ToggleFilterDetection
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis Toggles the detection of column and row filters on and off
+:Description toggles the detection of column and row filters on and off. it is called from the AdjustJAWSOptions script where the setting is saved to the jsi.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function HyperlinkAddressAnnouncement
+:returns int the setting
+:description Returns the value set by the ToggleHyperlinkAddressAnnouncement function.
+
+:Function ToggleHyperlinkAddressAnnouncement
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis Toggles the announcement of a hyperlink  address for a cell that has a hyperlink when the address is a worksheet address.
+:Description toggles the announcement of a hyperlink address for a cell that has a hyperlink when the address is a worksheet address.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function OrientationIndication
+:returns int the setting
+:description Returns the value set by the ToggleOrientationIndication function.
+
+:Function ToggleOrientationIndication
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis Toggles the indication of orientation for a cell that has been rotated.
+:Description toggles the indication of orientation for a cell that has been rotated.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function TitleCellFontAndFormattingIndication
+:returns int the setting
+:description Returns the value set by the ToggleTitleCellFontAndFormattingIndication function.
+
+:Function ToggleTitleCellFontAndFormattingIndication
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+:Synopsis Toggles the indication of font and formatting of the title cell for a cell that has a designated title column or row header.
+:Description toggles the indication of font and formatting of the title cell for a cell that has a designated title column or row header.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function getColTitleSettings
+:returns int TRUE if settings were found, FALSE otherwise.
+:description Gets title row range for the current column as set in setColTitlesToRowRange function.
+:param int/byRef/nStart The start of the range.
+:param int/byRef/nEnd The end point of the range.
+
+:function setColumnTitles
+:description Sets title row range for the current column as set in setColTitlesToRowRange function.
+:param int/byRef/nStart The start of the range.
+:param int/byRef/nEnd The end point of the range.
+
+:function setColTitlesToRowRange
+:synopsis defines the selected rows as those containing column titles for the current region
+:description This function defines the selected rows as those containing column titles for the current region. Note the settings are not saved in this function, this is done in the adjustJAWSVerbosity script in excel.jss.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:function getRowTitleSettings
+:returns int TRUE if settings were found, FALSE otherwise.
+:description Gets title column range for the current row as set in setRowTitlesToColumnRange function.
+:param int/byRef/nStart The start of the range.
+:param int/byRef/nEnd The end point of the range.
+
+:function setRowTitles
+:description Sets title column range for the current rowas set in setRowTitlesToColumnRange function.
+:param int/byRef/nStart The start of the range.
+:param int/byRef/nEnd The end point of the range.
+
+:function setRowTitlesToColumnRange
+:synopsis defines the selected columns as those containing row titles for the current region
+:description This function defines the selected columns as those containing row titles for the current region. Note the settings are not saved in this function, this is done in the adjustJAWSVerbosity script in excel.jss.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:function getTotalsRowSetting
+:returns int the row number to act as the column's total. 0 = automatic.
+:Description returns the row number to act as totals row, as set by the setTotalsRowToCurrent function.
+
+:function SetTotalsRowSetting
+:description Sets the totals row to the specified row number.
+:param int The row for the totals.
+:optional
+:param int True if the setting is to be stored in memory only, false otherwise.
+
+:function setTotalsRowToCurrent
+:synopsis defines the totals row as the current row
+:description This function defines the totals row as the current row. Ie, when a sayColumnTotal command is issued, the contentts of the cell in the current column in this row will be used. Settings are not saved in this function. Settings are saved in the adjustJAWSVerbosity script in excel.jss.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:function getTotalsColumnSetting
+:returns int the column number to act as the row's total. 0 = automatic.
+:Description returns the column number to act as totals column, as set by the setTotalsColumnToCurrent function.
+
+:function SetTotalsColumnSetting
+:description Sets the totals column to the specified column number.
+:param int The column for the totals.
+:optional
+:param int True if the setting is to be stored in memory only, false otherwise.
+
+:function setTotalsColumnToCurrent
+:synopsis defines the totals column as the current column
+:description This function defines the totals column as the current column. Ie, when a sayRowTotal command is issued, the contentts of the cell in the current row in this column will be used. Settings are saved in the adjustJAWSVerbosity script in excel.jss.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:function ExcelReadingOptionsHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ExcelBrailleOptionsHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function FormattingHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function CellAppearanceHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function TitleReadingHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function MonitoringCellsHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function PropertiesOfCellsHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function WorkbookSettingsHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleNumberFormatVerbosityHLP
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleFormulasHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleCommentsHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function toggleMergedCellsHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleCellBorderVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleCellshadingChangesHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleFontChangesHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleMultipleRegionSupportHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleTitleReadingVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleTitleSpeaksForCellsHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function SetColTitlesToRowRangeHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function SetRowTitlesToColumnRangeHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function SetTotalsColumnToCurrentHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function SetTotalsRowToCurrentHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function SetNextAvailableMonitorCellHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleMonitorCellTitlesHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ClearMonitorCellsHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ClearRegionDefinitionsHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function DocSettingsAssoc
+:returns int the setting
+:description Returns the value set by the ToggleDocSettingsAssoc function.
+
+:function ToggleDocSettingsAssocHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleOverrideDocNamedTitlesHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleAnnounceTextVisibleHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleDetectFormatConditionsHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleCellReadingVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function SelectionReadingVerbosityHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleBrlStructuredModeHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:script AdjustJAWSOptions
+:Synopsis adjusts JAWS options including Excel specific options
+:Description adjusts JAWS options including Excel-specific options. For Excel specific options, changed settings are saved to the jsi file in this script.
+
+
+
+:Function ToggleSmartTagsIndicationHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ExcelCustomLabelSetHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleObjectCountDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleFormControlsDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function TogglePagebreaksDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleFilterDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleHyperlinkAddressAnnouncementHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function GetDefaultOptionsLists
+:Description This function compiles the lists of all default options not specific to the application or workbook settings into one list. It is called by IsDefaultOption to determine whether to set the gbDefaultOption flag which is tested in AdjustJAWSOptions script to determine whether settings should be saved to the application or workbook.
+:Returns String
+
+:Function IsDefaultOption
+:Description This function is called in ActiveItemChangedEvent in the branch that tests for HJ dialog. If the gbDefaultOption flag is set to true when this function is called, the test in AdjustJAWSOptions will cause JAWS not to save settings to the application- or workbook-specific .jsi.
+:Param Handle The handle of the window with focus.
+:Returns Int True if  the test comparing the currently highlighted option to the default options list passes, faulse otherwise.
+
+:Function ToggleOrientationIndicationHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleTitleCellFontAndFormattingIndicationHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function UpdateCustomLabelsCollectionsFromFile
+:returns void no return values.
+:description updates the workbook-style collection with the items for custom labels from the workbook-style ini file.
+:param string/strFile the ini-style file assumed to be in the user's personalized settings folder
+:param collection/byRef/workbook the workbook-style collection which will receive the new section collections with labels for the sheets in the workbook
+
+:function HasCustomLabels
+:param string The sheet name to test for having custom labels.
+:returns int True if the sheet has custom labels, false otherwise.
+:description Tests if custom labels exist for the specified sheet.
+
+:function GetCustomLabelCollection
+:param string the sheet name where the custom labels exist.
+:param collection/byRef The collection of custom label data for the specified sheet.
+:returns int True if a custom label collection exists for the specified sheet, false otherwise.
+:description Retrieves a collection of custom label data belonging to the specified sheet. This is a copy of the settings collection, rather than a pointer to it, so you may modify its items with no ill effect on settings.
+
+:function manageCustomLabels
+:Description Empties out existing labels from settings collection, runs internal Custom Labels dialog, then reads the section back in which corresponds to the active sheet's labels.
+
+:function saveApplicationSettings
+:description writes to settings files from collections data in excelSettings.
+:returns int TRUE if settings were successfully saved (or cleared), false otherwise.
+
+:function getNamedRegionTitleSettings
+:returns string the title row and column data associated with the named region.
+:description gor display only: retrieves row and colun data for Named Region title cells.
+:optional
+:param int/nFilterSettings 0 = get any possible settings, otherwise specify the bits you want e.g. RedRowTitles, ReadColumnTitles.
+

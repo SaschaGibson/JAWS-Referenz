@@ -1,0 +1,74 @@
+:function AttachToSkypeComAPI
+:Returns int TRUE if successfull, FALSE otherwise
+:Synopsis Tryes to attach to Skype COM API
+:Description Tryes to attach to Skype COM API and returns TRUE if successfull and FALSE on failure and tryes to attach later forever
+:Category Application
+
+:function SkypeStart
+:Returns int TRUE if the Skype object model initialized successfully, FALSE otherwise
+:Synopsis Initializes Skype Object model
+:Description Initializes Skype object model and according to the result adds or removes Skype branch in default JAWS Options dialogue
+:Category Application
+
+:function SkypeEventCallStatus
+:Returns int Result of operation
+:Synopsis Function is invoked when the call status is changed - for example someone calls you
+:Description Event handler of call status change like someone is calling you or looses the connection
+:Category Script
+:Param object/oCall/ByRef Object representing a call which has changed status
+:Param string/sStatus/ByRef Status of a call changed
+
+:function SkypeEventOnlineStatus
+:Returns int TRUE if the event was held successfully, FALSE otherwise.
+:Synopsis Skype Event firing on status change of the contact in the contact list
+:Description Skype Event that is firing on any contact change of any contact in the contact list
+:Category Script
+:Param object/oUser/ByRef No Description
+
+:function IsSkypeActive
+:Returns int TRUE if Skype is active and launched
+:Synopsis Finds out if Skype is active
+:Description Finds out if Skype application is active and launched
+:Category Application
+
+:function GetCurrentSkypeMajorVersion
+:Returns int Resulting major version of Skype client running.
+:Synopsis Gets the current Skype client major version
+:Description Gets the current Skype client major version by finding the window belonging to Skype and analyzing the version
+:Category System
+
+:function LoadApplicationSettings
+:Returns int TRUE if the options were successfully loaded or the defaults assigned, FALSE otherwise
+:Synopsis Loads application specific settings for Skype
+:Description Loads application specific settings for Skype and places them in appropriate global variables
+:Category Options
+
+:function StatusAnnouncementToggle
+:Returns string The selected result for placing in the JAWS Options dialogue
+:Synopsis Toggles the announcement of Skype contacts status
+:Description Toggles the announcement of the Skype contacts status either to announce all status changes, only change to online or to suppress the announcement of all Skype status changes
+:Category Options
+:Param int/iRetCurVal The flag marking if the value should toggle or simply read
+
+:function ChatAnnouncementToggle
+:Returns string The selected result for placing in the JAWS Options dialogue
+:Synopsis Toggles the announcement of Skype chat messages
+:Description Toggles the announcement of the Skype chat messages either to announce incoming chat messages or to suppress the announcement
+:Category Options
+:Param int/iRetCurVal The flag marking if the value should toggle or simply read
+
+:function TreeCoreGetDefaultSkypeOptions
+:Returns string Skype branch ready for usage
+:Synopsis Gets the Skype branch for user options
+:Description Gets the Skype branch ready for announcing in JAWS Options dialogue
+:Category Options
+
+:function SayLastCallInfo
+:Synopsis Announces the last call info
+:Description Announces the last call info - i. e. the caller name and status of the call in progress or finished
+:Category Say
+
+:function DebugEnum
+:Returns int No Return Description
+:Param handle/hWnd No Description
+

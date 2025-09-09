@@ -1,0 +1,77 @@
+﻿:script MoveToGoogleMainToolBar
+:DisplayName Springe zu Google Hauptsymbolleiste
+:synopsis Bewegt den Focus in die Google Hauptsymbolleiste die zum Dokumentbereich gehört.
+:description Sucht nach der Hauptsymbolleiste in Google Docs, Tabellen oder Präsentationen und setzt, wenn gefunden, den Fokus auf ein Element in der Symbolleiste.
+:SearchRank 1
+
+:script MoveToGoogleModeAndViewToolBar
+:DisplayName Springe zu Google Symbolleiste Modus und Ansicht
+:synopsis Bewegt den Focus in die Google Symbolleiste Modus und Ansicht die zum Dokumentbereich gehört.
+:description Sucht nach der Symbolleiste Modus und Ansicht in Google Docs, Tabellen oder Präsentationen und setzt, wenn gefunden, den Fokus auf ein Element in der Symbolleiste.
+:SearchRank 1
+
+:script moveToMisspelledWord
+:DisplayName Springe zu falsch geschriebenem Wort
+:synopsis Springt zum nächsten oder vorherigen falsch geschriebenen Wort und liest dieses.
+:description Befinden sich in Ihrem Dokument Rechtschreibfehler, dann springt dieses Skript, in Abhängigkeit der gedrückten Kurztaste, zum nächsten oder vorherigen Rechtschreibfehler und liest ihn vor. Steuerung+Apostroph springt vorwärts, Steuerung+Semikolon springt rückwärts.
+:SearchRank 1
+
+
+:Script MoveToNextSpellingError
+:DisplayName Springe zu nächstem Rechtschreibfehler
+:Synopsis Springt zum nächsten Rechtschreibfehler.
+:description Springt zum nächsten Rechtschreibfehler im Dokument.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToPriorSpellingError
+:DisplayName Springe zu vorherigem Rechtschreibfehler
+:Synopsis Springt zum vorherigen Rechtschreibfehler.
+:description Springt zum vorherigen Rechtschreibfehler im Dokument.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToPriorComment
+:DisplayName Springe zu vorherigem Kommentar
+:Synopsis Springt zu vorherigem Kommentar.
+:description Springt zu vorherigem Kommentar im Dokument.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToNextComment
+:DisplayName Springe zu nächstem Kommentar
+:Synopsis Springt zu nächstem Kommentar.
+:description Springt zu nächstem Kommentar im Dokument.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script SpeakComment
+:DisplayName Spreche Kommentar beim Cursor
+:Synopsis Spricht den Kommentar beim Cursor.
+:description Spricht den Kommentar an der Cursorposition.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script QuickKeysLayerHelp
+:DisplayName Grundlegende Hilfe zur Ebene
+:Synopsis Hilfe zur Ebene.
+:Description Spricht eine Hilfemeldung, die die verfügbaren Befehle dieser Tastenebene beschreibt.
+:SearchRank 1
+
+:function GoogleDocumentType
+:description Used to identify the type of Google document in focus.
+:returns int One of the types of Google document: Google_Docs, Google_Sheets, google_Slides, Google_Drive or Google_unknown if not one of the preceding types.
+
+:function SpeakGoogleBrailleModeTip
+:description Speaks a tip for the Google braille mode setting, if it is detected that the current braille mode is unrecommended. This tip is spoken only once per the lifetime of a JAWS run.
+
+:function ManageBrailleModeTipAnnouncement
+:description Handles scheduling and unscheduling of the check for and announcement of the braille mode tip.
+:optional
+:param int True if the check for and announcement of the braille mode tip should be scheduled or rescheduled. False to only ensure that any scheduled checking and announcement of the tip should be cancelled.
+
+:script SayBottomLineOfWindow
+:DisplayName Cursorposition ansagen
+:synopsis Sagt die Cursorposition in einem Google Doc an.
+:description Sagt die Cursorposition in einem Google Doc an. Liest auch den Aktivitätsindikator, falls vorhanden. Befinden Sie sich nicht in einem Google Doc, dann wird das Standardskript SayBottomLineOfWindow ausgeführt.
+:SearchRank 1

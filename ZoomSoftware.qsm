@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Adobe Acrobat.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="ZoomSettings" Text="Zoom Settings">
+			<HelpMsg>
+These settings are associated with the application.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ZoomSettings.Alerts" Text="Announce Alerts">
+			<HelpMsg>
+When checked, users will hear all incoming alerts from Zoom when the
+application has focus. It is suggested that the User consider using the command
+Alt+WindowsKey+S to toggle off these alerts. When using this keystroke, option
+only applies this to session of JAWS so you will get alerts the next time as
+expected.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ZoomSettings.AlertFilter" Text="Alerts Spoken On Control With Number Keys">
+			<HelpMsg>
+Select to announce All alerts or chats only when pressing control plus the number keys.
+By default, this setting is set to cause JAWS to identify all alerts. This setting is temporary and is set to provide full alerts when JAWS is restarted.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ZoomSettings.AlertFilter.0" Text="All Alerts" />
+		<DisplayName ID="ZoomSettings.AlertFilter.1" Text="Chats Only" />
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

@@ -1,0 +1,295 @@
+:script sayActiveCursor
+:Synopsis Diese Funktion speichert den aktiven Cursor und seine Position. Wenn man sich in einem Designer befindet, sagt sie die linken oberen Koordinaten des fokussierten Steuerelements an.
+:Description Spricht den Namen des aktiven Cursors und seiner Position in Bildpunkten.  Wenn man sich in einem Designer befindet, sagt sie die linken oberen Koordinaten des fokussierten Steuerelements an.
+
+:script sayNextLine
+:Synopsis Behandelt angepasste Steuerelemente wie zum Beispiel Designer korrekt und regelt auch das Lesen ordnungsgemäß, wenn die Methoden- und Eigenschaftsliste im Code-Fenster aktiv ist.
+:Description Dieses Skript wird überschrieben, um angepasste Steuerelemente wie zum Beispiel Designer zu behandeln und um das Code-Fenster ordnungsgemäß zu behandeln, wenn die Methoden- und Eigenschaftsliste aktiv ist.
+
+:script hotkeyHelp
+:Synopsis VB Kurztasten Hilfe
+:Description Liefert kontextabhängige Kurztasten-Hilfe in Komponenten und Kurztasten-Hilfe in Dialogen.
+
+:script sayWindowTitle
+:Synopsis Liest die Fenstertitel im aktuellen Dialog und regelt den Dialog Neues Projekt im besonderen
+:Description Dieses Skript liest die Fenstertitel und steuert den Dialog Neues Projekt Dialog ordnungsgemäß, bei dem ansonsten der Titel und die Dialogseite nicht ordnungsgemäß gelesen würden.
+
+:function saySubMenuLevel
+:Synopsis Liest die Ebene des Untermenüs eines Menüeditor-Elements in der Liste der Elemente
+:Description Diese Funktion liest die Ebene des Untermenüs eines Menüeditor-Elements in der Liste der Elemente.
+
+:function getDialogPageName
+:Returns string the name of the current dialog page
+:Synopsis Gibt den korrekten Namen der Dialogseite in einem mehrseitigen Dialogfeld zurück
+:Description Diese Funktion gibt den korrekten Namen der Dialogseite in einem mehrseitigen Dialogfeld zurück. Es steuert korrekt den Dialog Neues Projekt, der ansonsten nicht ordnungsgemäß gesprochen werden würde.
+
+:function NewTextEvent
+:Synopsis Behandelt neu auf den Bildschirm geschriebenen Text und den ordnungsgemäßen Aufruf von screenStableEvent
+:Description Diese Funktion wird hier überschrieben, weil sie den Zugang zu dem neuen Ereignis screenStableEvent ermöglicht, das zum automatischen Sprechen der neuen Assistenten-Bildschirme erforderlich ist.
+:Param handle/hwnd Handle of the window containing the text that was written
+:Param string/buffer String containing the text that was written
+:Param int/nAttributes The attributes of the text that was written
+:Param int/nTextColor The foreground color of the text that was written
+:Param int/nBackgroundColor The background color of the text that was written
+:Param int/nEcho The echo setting associated with this text
+:Param string/sFrameName The name of the frame containing the newly written text if applicable
+
+:script sayNextCharacter
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel Designer
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel Designer zu steuern.
+
+:script sayContextInfo
+:Synopsis Liest extra Informationen über die aktive Komponente
+:Description Dieses Skript liest extra Informationen über die aktive Komponente. Wenn es sich zum Beispiel bei der aktuellen Komponente um eine MSForm oder VBForm Designer handelt, dann werden die Informationen über das aktive Steuerelement inklusive Überlappungs-Details gemeinsam mit den Dimensionen des Host Form gesprochen. Wenn ein Code-Modul aktiv ist, dann wird die Cursor Position, der aktuelle Prozedur-Name, die Zeilenanzahl der aktuellen Prozedur, die Anzahl der Mitglieder in dem Modul (nur VB6) und die Anzahl der gesamten Code-Zeilen im Modul gesprochen. Es ist besonders nützlich, um wichtige Informationen über die aktuelle Komponente zu erhalten, ohne den Fokus auf die verschiedenen Fenster und Steuerelemente zu bewegen, um die gleichen Informationen zu erhalten. Wenn die Tastenkombination zweimal gedrückt wird, dann werden die Eigenschaften für die ausgewählte Komponente zusammen mit ihren Werten angesagt.
+
+:script sayPriorParagraph
+:Synopsis Behandelt angepasste Steuerelemente wie zum Beispiel Designer ordnungsgemäß und springt auf und liest den Namen der vorherigen Prozedur im Code-Fenster
+:Description Dieses Skript wird hier überschrieben, um das Bewegen von Steuerelementen auf dem Designer zu steuern und um im Code-Fenster auf den Namen der vorherigen Prozedur zu springen und ihn zu lesen.
+
+:function SayNonHighlightedText
+:Synopsis Steuert das Lesen von nicht-hervorgehobenem Text und die vbBuble Tooltip Klasse im besonderen
+:Description Diese Funktion wird hier hauptsächlich überschrieben, so dass die Tooltips der Werkzeugbox mit der VBBubble Klasse automatisch gesprochen werden.
+:Param handle/hwnd handle of the window in which the new text was written
+:Param string/buffer string containing the text that was written
+
+:script sayPriorLine
+:Synopsis Behandelt angepasste Steuerelemente wie zum Beispiel Designer korrekt und regelt auch das Lesen ordnungsgemäß, wenn die Methoden- und Eigenschaftsliste im Code-Fenster aktiv ist.
+:Description Dieses Skript wird überschrieben, um angepasste Steuerelemente wie zum Beispiel Designer zu behandeln und um das Code-Fenster ordnungsgemäß zu behandeln, wenn die Methoden- und Eigenschaftsliste aktiv ist.
+
+:script setFocusOnWindow
+:Synopsis Präsentiert eine Liste von sichtbaren Fenstern und setzt den Fokus auf das ausgewählte
+:Description Dieses Skript präsentiert dem Anwender eine Liste der sichtbaren Fenster und das ausgewählte Fenster erhält dann den Fokus. Dadurch wird der Zugang zu Fenstern ermöglicht, auf die ansonsten nicht mit Tastenkombinationen zugegriffen werden kann.
+
+:function autoStartEvent
+:Synopsis Steuert das Setzen von Globalen, wenn auf den IDE oder VBA Editor geschaltet wird
+:Description Diese Funktion wird ausgeführt, wenn der Fokus auf dem VB6 IDE landet oder eine VBA Editor Sitzung aus einer Office Anwendung wie zum Beispiel MSWord gestartet wird. Sie steuert das Setzen von Globalen, die von der Skript-Gruppe verwendet werden.
+
+:function downLines
+:Synopsis Bewegt den aktiven Cursor um die festgelegte Anzahl von Zeilen nach unten
+:Description Diese Funktion bewegt den aktiven Cursor um die festgelegte Anzahl von Zeilen nach unten. Sie wird von der Funktion Speak Wizard verwendet.
+:Param int/num the number of lines to move down
+
+:script selectPriorCharacter
+:Synopsis Markiert das vorherige Zeichen. Im VB6 Designer wird die Breite des markierten Steuerelements verringert.
+:Description Sendet ein UMSCHALT+PFEIL LINKS an das System.  Das Ergebnis wird von der Anwendung kontrolliert.  In fast allen Eingabefeldern wird das Wort links vom PC Cursor markiert. Dieses Skript kann auch zum Markieren von Elementen in mehrspaltigen Listenansichten verwendet werden. Im VB6 Designer wird die Breite des markierten Steuerelements verringert.
+
+:script activateConstantsList
+:Synopsis Aktiviert die Liste der Konstanten
+:Description Dieses Skript Aktiviert die Liste der Konstanten für eine Eigenschaft, die auf einen konstanten Wert gesetzt werden muss und die dem soeben eingegebenen Gleichheitszeichen voransteht.
+
+:script sayCharacter
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel Designer
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel Designer zu steuern.
+
+:script ActivatePropertiesAndMethodsList
+:Synopsis Im Code-Fenster setzt dieses Skript den Fokus auf die Eigenschaften- und Methodenliste
+:Description Dieses Skript setzt den Fokus auf die Eigenschaften- und Methodenliste, wenn man sich in einem Code-Bereich befindet.
+
+:script mouseRight
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel Designer
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel Designer zu steuern. Wenn in einem MSForm Designer eingesetzt und bei aktivem PC Cursor, wird das ausgewählte Steuerelement um ungefähr 20 Pixel in die festgelegte Richtung bewegt.
+
+:script saySelectedText
+:Synopsis Liest den korrekt markierten Text im Code-Fenster
+:Description Dieses Skript liest den korrekt markierten Text im Code-Fenster, da ansonsten der Fenstername zusammen mit dem markierten Text in dem Fenster gelesen werden würde, da er hervorgehoben ist.
+
+:script setFocusOnMenuItemList
+:Synopsis Dieses Skript gibt den Fokus an die Liste der Menü-Einträge im Menü-Editor zurück
+:Description Dieses Skript plaziert den Fokus auf die Liste der Menü-Einträge, die im Menü-Editor definiert sind. Das ist nützlich, wenn ein durch das Aktivieren eines anderen Schalters in diesem Dialog den Fokus von der Liste entfernt und Sie zu ihr zurückkehren möchten, ohne mit TAB auf alle Steuerelemente springen zu müssen.
+
+:script sayWindowPromptAndText
+:Synopsis Ruft sayFocusedWindow auf
+:Description Dieses Skript ruft nur sayFocusedWindow auf
+
+:function sayHighlightedText
+:Synopsis Steuert Bildschirme mit Mehrfach-Listenfeldern, bei denen das Verändern eines Listenfeldes die Veränderung eines anderen Listenfeldes zur Folge hätte
+:Description Diese Funktion wird hier überschrieben, so dass Bildschirme, die mehr als ein Listenfeld enthalten, nicht bewirken, dass Einträge, die nicht im Fokus sind, gesprochen werden, wenn das Verändern eines Listenfeldes das Verändern eines anderen Listenfeldes zur Folge hat, was ansonsten geschehen würde.
+
+:script summarizeOpenProject
+:Synopsis Liest den Namen, die Beschreibung, die Liste der aktiven Fenster, die Liste der Komponenten, die Liste der verwiesenen Bibliotheken, die Liste der Addins usw. für das aktuelle Projekt
+:Description Dieses Skript liest den Namen, die Beschreibung, die Liste der aktiven Fenster, die Liste der Komponenten, die Liste der verwiesenen Bibliotheken, die Liste der Addins usw. für das aktuelle Projekt. Das ist nützlich, um dem Anwender einen schnellen Überblick darüber zu geben, was auf dem Bildschirm geöffnet ist, ohne den Fokus auf die unterschiedlichen Steuerelemente setzen zu müssen, um die gleichen Informationen zu erhalten.
+
+:script sayNextWord
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel Designer
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel Designer zu steuern. In einem MSForm oder VBForm Designer wird das markierte Steuerelement um einen Pixel oder eine Gitterlinien-Position in der festgelegten Richtung bewegt.
+
+:function sayLine
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel Designer
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel Designer zu steuern.
+
+:script sayPriorCharacter
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel Designer
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel Designer zu steuern.
+
+:script screenSensitiveHelp
+:Synopsis Liefert bildschirmabhängige Hilfe für alle Bildschirme und Komponenten von VB und VBA
+:Description Dieses Skript liefert bildschirmabhängige Hilfe für alle Bildschirme und Komponenten von VB und VBA.
+
+:function sayFocusedWindow
+:Synopsis Liest das fokussierte Steuerelement
+:Description Diese Funktion wird überschrieben, um angepasste Steuerelemente wie zum Beispiel Assistenten-Bildschirme und Designer Objekte zu steuern.
+
+:script bottomOfFile
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel Designer
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel Designer zu steuern. Wenn ein MSForm Designer aktiv ist, wird der Fokus auf das letzte Steuerelement in Tab-Reihenfolge gesetzt.
+
+:script quickInfo
+:Synopsis Aktiviert Quick Info und liest Tipps
+:Description Diese Funktion aktiviert Quick Info und liest Tipps. Wenn das Skript zweimal schnell hintereinander aktiviert wird, dann wird der Tipp in einem Meldungsfenster präsentiert, damit er vom %product% oder unsichtbaren Cursor überprüft werden kann.
+
+:function brailleBuildLine
+:Returns int true if a Structured Mode representation for a focus situation exists, false otherwise.
+:Synopsis Führt die Braille-Unterstützung im strukturierten Modus für das Code- und Designer-Fenster aus
+:Description Diese Funktion führt die Braille-Unterstützung im strukturierten Modus für das Code- und Designer-Fenster aus, wie auch die Standard Braille Unterstützung im strukturierten Modus.
+
+
+
+:script selectPriorLine
+:Synopsis Markiert den Text vom Cursor bis zur gleichen Position auf der vorherigen Zeile. Im VB6 Designer wird die Höhe des markierten Steuerelements verringert.
+:Description Sendet ein UMSCHALT+PFEIL RAUF an das System.  Das Ergebnis wird von der Anwendung kontrolliert.  In fast allen Eingabefeldern wird die Zeile über dem PC Cursor markiert. Dieses Skript kann auch zum Markieren von aufeinanderfolgenden Elementen in Listenfeldern oder Listenansichten verwendet werden. Im VB6 Designer wird die Höhe des markierten Steuerelements verringert.
+
+:Function ToggleReadWholeCodeLine
+:Synopsis Schaltet die Einstellung für das Lesen der gesamten Code-Zeile um, unabhängig davon, ob sichtbar oder nicht
+:Description Schaltet die Einstellung für das Lesen der gesamten Code-Zeile um, unabhängig davon, ob sichtbar oder nicht. Wenn eingeschaltet und wenn eine Code-Zeile nur teilweise sichtbar ist, dann wird JAWS dennoch die gesamte Zeile lesen. Wenn ausgeschaltet, dann liest JAWS nur den sichtbaren Teil der Zeile. Dies erspart das Rollen des Bildschirms, wenn die Zeilen aus optischen Gründen spationiert sind.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:script tabKey
+:Synopsis Stellt sicher, dass neu fokussierte Steuerelemente auf Designern gesprochen werden
+:Description Diese Funktion Stellt sicher, dass das nächste Steuerelement in der Tab-Reihenfolge auf einem Designer ordnungsgemäß den Fokus erhält und das neue Steuerelement liest.
+
+:function FocusChangedEvent
+:Synopsis Steuert das Setzen vom Flag, der für das Erkennen verwendet wird, wenn sich der Fokus beim Navigieren mit der Tab-Taste in Designern verändert.
+:Description Diese Funktion wird hier überschrieben, so dass ein Flag gesetzt werden kann, dass in den Tab- und ShiftTab-Skripts dahingehend auf die Ermittlung überprüft werden kann, ob das Ereignis aufgrund der Navigation mit der Tab-Taste in einem Designer ausgelöst wurde.
+
+:script windowKeysHelp
+:Synopsis Liefert VB spezifische Hilfe zu Tastaturkombinationen
+:Description Diese Funktion liefert VB spezifische Hilfe zu Tastaturkombinationen.
+
+:script closeActiveWindow
+:Synopsis Schließt das aktive Fenster, ohne die gesamte Komponente zu schließen
+:Description Dieses Skript versucht, das aktive Fenster zu schließen, ohne die gesamte Komponente zu schließen, wie es geschehen würde, wenn man STRG+4 verwenden würde. Dies ist sehr nützlich, um Konfusion zu verhindern, wenn %product% mit der Anzahl der geöffneten Fenster durcheinander kommt.
+
+:script shiftTabKey
+:Synopsis Stellt sicher, dass Steuerelemente den Fokus erhalten und gesprochen werden, wenn man auf einem Designer mit Umschalt Tab navigiert
+:Description Dieses Skript stellt sicher, dass Steuerelemente ordnungsgemäß den Fokus erhalten und gesprochen werden, wenn man auf einem Designer mit Umschalt Tab navigiert.
+
+:script mouseDown
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel auf Designern
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel auf Designern zu steuern. Auf dem MSForm Designer wird das markierte Steuerelement um ungefähr 20 Pixel in der festgelegten Richtung verschoben.
+
+:script setFocusToFormControl
+:Synopsis Präsentiert eine Liste von Steuerelementen auf einem MSForm und ermöglicht dem Anwender, eine zu markieren
+:Description Dieses Skript präsentiert eine Liste von Steuerelementen auf einem MSForm Designer. Der Anwender wird dann auf dem markierten Steuerelement fokussiert. Von Zeit zu Zeit funktioniert dies nicht für VBForm Designer aufgrund eines Fehlers im Object Model.
+
+:script ParameterInfo
+:Synopsis Aktiviert und liest den Parameter-Infotipp
+:Description Diese Funktion aktiviert und liest den Parameter-Infotipp im Code-Fenster.
+
+:Function incrementMovementUnit
+:Synopsis Erhöht die Bewegungseinheit, damit sie verwendet wird, wenn MSForm Steuerelemente auf dem MSForm Designer in VBA verschoben werden
+:Description Diese Funktion erhöht die Bewegungseinheit, damit sie verwendet wird, wenn MSForm Steuerelemente auf dem MSForm Designer in VBA verschoben werden. Die erlaubten max. und min. Einheiten werden in der Datei vb6.jsh gesetzt und sind standardmäßig 10 beziehungsweise 100. Die Maßeinheit ist Pixel.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:script AdjustJAWSVerbosity
+:Synopsis Öffnet den JAWS Ausführlichkeitsdialog inklusive zusätzlichen Elementen für die VB Umgebung
+:Description Dieses Skript öffnet den JAWS Ausführlichkeitsdialog inklusive zusätzlichen Elementen für die VB Umgebung. Die zusätzlichen Elemente werden in der Datei vb6.jsh definiert.
+
+:function screenStableEvent
+:Synopsis Ausgelöst, wenn ein Bildschirm fertig geschrieben ist
+:Description Diese Ereignisfunktion wird ausgelöst, sobald der Bildschirm für eine vorgegebene Zeitspanne stabil bleibt. Diese Zeitspanne wird festgelegt von der Konstanten stabilizeTime in der Datei vb6.jsh. Sie wird dazu verwendet, das Lesen des neuen Assistenten-Bildschirms zu starten, sobald das Schreiben beendet ist.
+
+:script sayPriorWord
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel auf Designern
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel auf Designern zu steuern. Auf einem MSForm oder VBForm Designer wird das markierte Steuerelement entweder um eine Pixel- oder Gitternetz-Einheit in der festgelegten Richtung bewegt.
+
+:script selectToolboxControl
+:Synopsis Präsentiert eine Liste von Standard-Werkzeugen in der MSForm oder VBForm Werkzeugleiste
+:Description Dieses Skript präsentiert eine Liste von Standard-Werkzeugen in der MSForm oder VBForm Werkzeugleiste. Das ausgewählte Werkzeug wird dann auf dem Designerblatt erzeugt. (Dies funktioniert zur Zeit nur für den MSForm Designer, wenn VBA verwendet wird).
+
+:function isMultiPageDialog
+:Synopsis Meldet ordnungsgemäß den Status des Dialogs Neues Projekt, da es sich um einen mehrseitigen Dialog handelt
+:Description Diese Funktion wird überschrieben, so dass das Dialogfeld Neues Projekt korrekt als ein mehrseitiger Dialog gemeldet wird.
+
+:function getPropertiesAndMethodsListHandle
+:Synopsis Gibt das Handle an das Eigenschaften- und Methoden-Listenfeld oder das Konstanten-Listenfeld zurück, wenn im Code-Fenster aktiv
+:Description Diese Funktion gibt das Handle an das Eigenschaften- und Methoden-Listenfeld oder das Konstanten-Listenfeld zurück, wenn es im Code-Fenster sichtbar ist. Dies kann dazu verwendet werden, um schnell Mitglieder auszuwählen, damit sie in den Code eingefügt werden können.
+
+:script mouseUp
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel auf Designern
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel auf Designern zu steuern. Auf dem MSForm Designer wird das markierte Steuerelement um ungefähr 20 Pixel in der festgelegten Richtung verschoben, vorausgesetzt, der PC Cursor ist aktiv.
+
+:script selectNextLine
+:Synopsis Markiert den Text vom Cursor bis zur gleichen Position auf die nächste Zeile. Im VB6 Designer wird die Höhe des markierten Steuerelements erhöht.
+:Description Sendet ein UMSCHALT+PFEIL RUNTER an das System.  Das Ergebnis wird von der Anwendung kontrolliert.  In fast allen Eingabefeldern wird die Zeile unter dem PC Cursor markiert. Dieses Skript kann auch zum Markieren von aufeinanderfolgenden Elementen in Listenfeldern oder Listenansichten verwendet werden. Im VB6 Designer wird die Höhe des markierten Steuerelements erhöht.
+
+:function loadApplicationSettings
+
+:function saveApplicationSettings
+
+:script completeCode
+:Synopsis Vervollständigt den teilweise eingegebenen Code
+:Description Dieses Skript vervollständigt den teilweise eingegebenen Ausdruck und liest den vervollständigten Ausdruck.
+
+:Function toggleOverlapAlert
+:Synopsis Schaltet das Erkennen von überlappenden Objekten ein und aus
+:Description Diese Funktion schaltet das automatische Erkennen von Objekt-Überlappungen ein und aus. Es wird vom JAWS Ausführlichkeitsdialog aufgerufen, kann aber über eine eigene Tastenkombination verfügen.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:script setFocusOnToolWindow
+:Synopsis Setzt den Fokus auf das Werkzeugfenster (Werkzeugleiste) in VB6
+:Description Dieses Skript setzt den Fokus auf das erste sichtbare Werkzeugfenster, wenn man VB6 verwendet. Dabei handelt es sich in der Regel um die Werkzeugleiste. Dies erspart dem Anwender, das Skript setFocusOnWindow aufzurufen und das entsprechende Fenster zu suchen.
+
+:script selectNextCharacter
+:Synopsis Markiert das nächste Zeichen. Im VB6 Designer wird die Höhe des markierten Steuerelements erhöht.
+:Description Sendet ein UMSCHALT+PFEIL RECHTS an das System.  Das Ergebnis wird von der Anwendung kontrolliert.  In fast allen Eingabefeldern wird das Zeichen rechts vom PC Cursor markiert. Dieses Skript kann auch zum Markieren von Elementen in mehrspaltigen Listenansichten verwendet werden. Im VB6 Designer wird die Breite des markierten Steuerelements erhöht.
+
+:function getMenuEditorItemLevel
+:Returns int 0 topleevel, increment by one for each submenu level, eg file/new would return 1.
+:Synopsis Ermittelt die Ebene des Menüeintrags in der Liste der Menüeinträge im Menü-Editor
+:Description Diese Funktion ermittelt die Ebene des Menüeintrags in der Liste der Menüeinträge im Menü-Editor Sie wird verwendet, um zu ermitteln, ob es sich bei einem Meinüeintrag um einen Untermenü-Eintrag beziehungsweise Unteruntermenü-Eintrag usw. handelt.
+
+:script sayWord
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel auf Designern
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel auf Designern zu steuern.
+
+:script ScriptFileName
+:Synopsis Liest den Namen der aktiven Skript-Gruppe und den exe Namen.
+:Description Dieses Skript meldet die aktuelle Skript-Gruppe und den Namen der laufenden exe.
+
+:script sayNextParagraph
+:Synopsis Behandelt angepasste Steuerelemente wie zum Beispiel Designer ordnungsgemäß und springt auf und liest den Namen der nächsten Prozedur im Code-Fenster
+:Description Dieses Skript wird hier überschrieben, um das Bewegen von Steuerelementen auf dem Designer zu steuern und um im Code-Fenster auf den Namen der nächsten Prozedur zu springen und ihn zu lesen.
+
+:script mouseLeft
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel auf Designern
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel auf Designern zu steuern. Auf dem MSForm Designer wird das markierte Steuerelement um 20 Pixel in der festgelegten Richtung verschoben. Der PC Cursor muss aktiv sein.
+
+:function speakWizardTextAndFocus
+:Synopsis Liest neu geschriebenen Assistenten-Text und kümmert sich um Steuerelemente, die keine Prompts besitzen
+:Description Diese Funktion wird von screenStableEvent und dem Ereignis sayFocusedWindow aufgerufen. Sie steuert das Lesen des Assistenten-Textes, wenn sich der Bildschirm verändert und behandelt ebenso Steuerelemente, deren Prompts ansonsten nicht gesprochen werden würden.
+
+:function initializeApplicationSettings
+:Synopsis Initialisiert VB6 bezogene Ausführlichkeitseinstellungen auf Standard-Werte
+:Description Diese Funktion initialisiert VB6 bezogene Ausführlichkeitseinstellungen auf Standard-Werte.
+
+:function inAppWizard
+
+:Function decrementMovementUnit
+:Synopsis Verringert die zu verwendende Bewegungseinheit, wenn MSForm Steuerelemente auf dem MSForm Designer in VBA verschoben werden
+:Description Diese Funktion verringert die die zu verwendenden Bewegungseinheit, wenn MSForm Steuerelemente auf dem MSForm Designer in VBA verschoben werden. Die erlaubten max. und min. Einheiten werden in der Datei vb6.jsh gesetzt und sind standardmäßig 10 beziehungsweise 100. Die Maßeinheit ist Pixel.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:script topOfFile
+:Synopsis Steuert das Lesen von angepassten Steuerelementen wie zum Beispiel auf Designern
+:Description Dieses Skript wird hier überschrieben, um angepasste Steuerelemente wie zum Beispiel auf Designern zu steuern.
+
+:Function AddToString
+:Synopsis Nimmt zwei Strings und fügt den zweiten String zum ersten hinzu
+:Description Fügt den zweiten Stringparameter zum ersten Parameter hinzu und gibt einen neuen String zurück
+:Returns string
+:Param1 String/Base The base string that is to be added to
+:Param2 string/New The string that is to be added to the base

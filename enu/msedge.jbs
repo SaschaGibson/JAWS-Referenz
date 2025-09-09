@@ -1,0 +1,29 @@
+[Component Aliases]
+FlexibleWebActiveRules=Flexible Web Active Rules
+
+; Section for treeview
+[SubtypeCode31]
+components=ContextHelp,name,type,level,value,state,FlexibleWebActiveRules,position,description
+type=tv
+removed=hotkey
+displayname=
+AlignmentPriority=type,level,value,state,name
+
+; Section for treeviewitem
+[SubtypeCode56]
+components=ContextHelp,name,type,level,value,state,FlexibleWebActiveRules,position,description
+type=tv
+removed=
+displayname=
+AlignmentPriority=type,level,value
+
+;Section for buttons in browser UI dialogs:
+;When a button in a browser UI dialog gains focus,
+;the code for adding dialog components is not run.
+;This custom control adds those components to the button components.
+[CustomControl1]
+components=ContextHelp,state,name,type,description,dlgText,dlgType,dlgName
+type=btn
+removed=hotkey
+displayname=Chrome Dialog Button
+AlignmentPriority=state,name

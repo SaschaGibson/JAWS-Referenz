@@ -1,0 +1,11 @@
+; Windows 11 Enoji Panel and Clipboard Viewer
+; It doesn't process injected keys so Jaws won't block hotkey and will pass it to application
+[Common Keys]
+#Tab=Tab
+#Shift+Tab=ShiftTab
+#RightArrow=SayNextCharacter
+#LeftArrow=SayPriorCharacter
+#UpArrow=SayPriorLine
+#DownArrow=SayNextLine
+#BackSpace=JAWSBackspace
+#Escape=UpALevel

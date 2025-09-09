@@ -1,0 +1,433 @@
+:function InitWin8People
+:description Initializes UIA objects and events needed for the Win8People scripts.
+
+:function Win8PeopleAutomationEvent
+:description The UIA automation event.
+:param object element The UIA element receiving the automation event.
+:param int eventID The UIA event ID indicating the type of automation event.
+
+:function Win8PeoplePropertyChangedEvent
+:description The property change automation event.
+:param object element The UIA element receiving the property change event.
+:param int propertyID The UIA property ID indicating the type of property change.
+:param variant newValue If available, the new value passed by the event.
+
+:function ShouldAnnounceStatusBarCharacterCount
+:description Tests if the status bar character count should be announced after it updated.
+:returns int True if the status bar character count should be announced after it updated.
+
+:function AnnounceStatusBarCharacterCount
+:description Announces character count displayed on the status bar when editing a tweet.
+
+:function GetSelectedItemTextFromList
+:description Retrieves the text of the selected list item in the list.
+:param object element The UIA element which is the list element.
+:param string ByRef If there is a selected list item, the text which is the name of the selected list item.
+:returns int A return code indicating the success. 1 if a selected item was found, 0 if the UIA list element exists but has no items to select, -1 if the UIA element was invalid.
+
+:function GetSearchResultsCountInfo
+:description Retrieves the text displayed on screen for search results where editing in a search field displays a result count or filter rather than selected item in a list.
+:param object element The Search edit element.
+:returns string The text displayed for the search results count or filter.
+
+:function AnnounceSearchResults
+:description Used to announce search results information when editing in a search edit field. Search results may be the selected item in a list, or text indicating the count of items found.
+
+:function AnnounceTileSelection
+:description Used to speak the selected tile from the Tile Selection picker item list when Prev and Next buttons are used to change the selected tile for pinning to the Start Screen.
+
+:function ActOnTweetFavoriteButtontoggle
+:description Refreshes and announces the updated status of the favorite button for individual tweets.
+
+:function StringTrimExcessChars
+:description Removes excess unprintable characters from the string that cause whitespace to appear on the braille display, and trims whitespace from the start and end of the string.
+:param string The string to be trimmed.
+:returns string The string with leading and trailing whitespace and unprintable Unicode characters removed.
+
+:function GetUsableObjectName
+:description Looks for and retrieves text first looking for the MSAA object name, then help then description.
+:returns string Text to be used for the name of the object, if any can be found.
+
+:function GetTextInRange
+:description Uses UIA to get text in range for the text child of an element.
+:param object The UIA element from which to get its text in range.
+:optional
+:param int The maximum length of text to retrieve.
+:returns string The text in range if any can be found.
+
+:function OnGroupWhichShouldBeSilentForFocusObject
+:description Used by SayObjectTypeAndText to test various conditions for groups to determine if the group information should be silent.
+:optional
+:param int level If specified, tests for the type of group at a specific level; otherwise, any level is valid.
+:returns int True if SayObjectTypeAndText should not speak the group information at the specified level.
+
+:function IsItemPickerWindow
+:description Determines if the window is used as an item picker.
+:param handle The handle of the window to test.
+:returns int True if the window is an item picker, false otherwise.
+
+:function IsFloatingBarHost
+:description Determines if the window is used as an floating bar host.
+:param handle The handle of the window to test.
+:returns int True if the window is a floating bar host, false otherwise.
+
+:function ListenForTileSelectionChange
+:description Creates a short-term property listener to be used when attempting to detect a change in the Tile Selector.
+
+:function ListenForReactionToTweet
+:description Creates a short-term property listener to be used when attempting to detect usage of any of the reaction buttons for a tweet.
+
+:function IgnorePropertyChanges
+:description Removes the short-term property listener that is used when detecting property changes.
+
+:function IsPopupMenu
+:description Tests if the element is a popup menu.
+:optional
+:param object Element to test. If not supplied, the cached focus element is tested.
+:returns int True if the element is a popup menu.
+
+:function OnSettingsMenuWithoutFocus
+:description Tests if The Settings dialog is active, and a menu is active but no menu item has focus.
+:returns int True if The Settings dialog is active, and a menu is active but no menu item has focus.
+
+:function MenuInactiveIsMovingToSettingsDialog
+:description Tests if the menu is being deactivated because focus is moving to a Settings dialog.
+:returns int True if the menu is being deactivated because focus is moving to a Settings dialog.
+
+:function InOptionsSettingsDialog
+:description Tests if focus is in the Options Settings dialog.
+:returns int True if focus is in the Options Settings dialog.
+
+:function GetFocusElement
+:description Retrieves the UIA element at the deepest focus level.
+:returns object The UIA element at the deepest focus level.
+
+:function GetParentElement
+:description Gets the parent object of the element parameter.
+:param object the element for whom the parent element is to be retrieved.
+:returns object The parent object of the element parameter.
+
+:function UpdateUIAFocusData
+:description Used to update cached data relative to the focus UIA object when focus changes.
+
+:function ClearAutomationEventActions
+:description Unschedules any actions that were scheduled due to an automation change related to the focus object, such as announcing the changed character count for tweets or announcing the selected item for a search.
+
+:function IsCommonFocusException
+:description Used as a module to test common exceptions to the focus condition, such as menu mode, user buffer active, or in HJ dialog.
+:returns int True if one of the commonly tested for conditions is true when testing the focus.
+
+:function PaneNameIsRedundant
+:description Test if the name of the pane is a repetition of an ancestor and therefore redundant.
+:param int The MSAA depth of the pane object.
+:returns int True if the pane name is redundant and therefore should not be spoken.
+
+:function GroupTextIsRedundantForDialog
+:param int The MSAA depth of the group object.
+:returns int True if the text is a repeat of its descendants and therefore redundant information.
+
+
+:function OnApplicationPagePane
+:description Tests if focus is on the application pane and not a descendant. This typically happens when moving back to to a prior screen.
+:returns int True if focus is on the application pane and not on one of its descendants.
+
+:function OnPopupDialogText
+:description Tests if focus is on text of a popup window.
+:returns int True if focus is on popup window text.
+
+:function OnUnNamedCheckBox
+:description Tests if focus is on a checkbox which has no programatically designated name.
+:returns int True if focus is on a checkbox which has no programatically designated name.
+
+:function GetNameForUnNamedCheckBox
+:description Retrieves a name for a checkbox which has no programatically designated name.
+:returns string The text which is the apparent name of the checkbox.
+
+:function SayUnNamedCheckBoxTypeAndText
+:description Customized processing of SayObjectTypeAndText for checkboxes with no programatically designated name.
+
+:function InMainScreenFavoritesGroup
+:description Tests if focus is on a control belonging to the Favorites group on the application's main screen.
+:returns int True if focus is on a control belonging to the Favorites group on the application's main screen.
+
+:function OnMainScreenFavoritesListItem
+:description Tests if focus is on a list item belonging to the Favorites list of the application's main screen.
+:returns int True if focus is on a list item belonging to the Favorites list of the application's main screen.
+
+:function OnAddFavoriteButton
+:description Tests if focus is on the Add Favorites button of the application's main screen.
+:returns int True if focus is on the Add Favorites button of the application's main screen.
+
+:function OnButtonWithRedundantGroupName
+:description Tests if focus is on a button where the group container name is repeated in the name of the button.
+:returns int True if focus is on a button where the group container name is repeated in the name of the button.
+
+:function SayButtonTypeAndText
+:description Customized processing of SayObjectTypeAndText for buttons.
+:returns int True if the button was announced and no further processing should be performed by SayObjectTypeAndText, false otherwise.
+
+:function InAllContactsGroup
+:description Tests if focus is in the All Contacts group of the application's main screen.
+:returns int True if focus is in the All Contacts group of the application's main screen.
+
+:function OnAllContactsPage
+:description Tests if focus is on the All Contacts screen of the application.
+:returns int True if focus is on the All Contacts screen of the application.
+
+:function InContactList
+:description Tests if focus is in the contacts list belonging to the All Contacts screen.
+:returns int True if focus is in the contacts list belonging to the All Contacts screen.
+
+:function GetFocusListNameFromUIA
+:description Uses UIA in an attempt to retrieve the name of the focus list.
+:returns string If a name for the focus list can be obtained using UIA, the name of the list.
+
+:function GetResultsListElement
+:description When focus is on the search edit, looks for a search results list and if found returns the list element.
+:returns object If found, the list control element which contains the search results.
+
+:function SaySearchEditTypeAndText
+:description Speaks the type and text for the search edit.
+
+:function SayPeopleExtendedSelectListItemTypeAndText
+:description Used to say the type and text of the extended selection list for people in contacts.
+
+:function InPeopleExtendedSelectList
+:description Tests if focus is in the extended selection list belonging to people in contacts.
+:returns int True if focus is in the extended selection list belonging to people in contacts.
+
+:function InFavoritesSelectionBasket
+:description Tests if focus is in the favorites selection basket list.
+:returns int True if focus is in the favorites selection basket list.
+
+:function SayItemPickerListItemTypeAndText
+:description Speaks the list type and item text of the item picker list.
+
+:function InItemPickerBasket
+:description Tests if focus is in the item picker basket list.
+:returns int True if focus is in the item picker basket list.
+
+:function OnPanelErrorText
+:description Tests if focus is on panel error text.
+:returns int True if focus is on panel error text.
+
+:function InNotificationsList
+:description Tests if focus is in the Notifications list.
+:returns int True if focus is in the Notifications list.
+
+:function SayNotificationsListTypeAndText
+:description Customized announcement of type and text for the notifications list items.
+
+:function InPhotosList
+:description Tests if focus is in the Photos list.
+:returns int True if focus is in the Photos list.
+
+:function SayPhotosListTypeAndText
+:description Customized announcement of type and text for the photos list items.
+
+:function InLayoutList
+:description Tests if focus is in a list that is a layout list.
+:returns int True if focus is in a list that is a layout list.
+
+:function OnListItemSeparator
+:description Tests if focus is on a separator in a list.
+:returns int True if focus is on a separator in a list.
+
+:function OnTweetReactionButton
+:description Tests if focus is on a tweet reaction button for an individual tweet.
+:returns int True if focus is on a tweet reaction button for an individual tweet.
+
+:function function InReactionList
+:description Tests if focus is in a tweet reaction list for an individual tweet.
+:returns int True if focus is in a tweet reaction list for an individual tweet.
+
+:function SayReactionListTypeAndText
+:description Customized announcement of items in the tweet reaction lists.
+
+:function InSearchEdit
+:description Tests if focus is in the edit field of the Search control.
+:returns int True if focus is in the edit field of the Search control.
+
+:function ElementIsSearchControl
+:description Tests if the element belongs to the group of Search controls.
+:param object The element to test.
+:returns int True if the element belongs to the group of Search controls.
+
+:function InMessageEdit
+:description Tests if focus is in an edit field for a tweet or message.
+:returns int True if focus is in an edit field for a tweet or message.
+
+:function InDescriptiveLinkForButton
+:description Tests if focus is on an element which is a descriptive link for a button.
+:returns int True if focus is on an element which is a descriptive link for a button.
+
+:function SayDescriptiveLinkForButtonTypeAndText
+:description Customized announcement of descriptive links for buttons.
+
+:function InTileSelectorList
+:description Tests if focus is in the Tile Selector list for choosing a tile to pin to the Start Screen.
+:returns int True if focus is in the Tile Selector list for choosing a tile to pin to the Start Screen.
+
+:function SayTileSelectorListTypeAndText
+:description Customized announcement of tiles in the tile selector list.
+
+:function onTileSelectorButton
+:description Tests if focus is on a button for choosing a tile to pin to the Start Screen.
+:returns int True if focus is on a button for choosing a tile to pin to the Start Screen.
+
+:function SayPaneNameTypeAndText
+:description Customized processing of SayObjectTypeAndText for the application pane.
+:optional
+:param int True if the type of the pane should be announced; default is false.
+
+:function GetReadOnlyPageText
+:description Gets the read-only text that applies to the current page.
+:returns string Read-only text for the page.
+
+:function AnnouncePageReadOnlyText
+:description Speaks read-only text which applies to the current page, or screen pane.
+
+:function SayMainScreenFavoritesListItem
+:description Says the list item of the Favorites list on the application's main screen.
+:param int True if only the active item should be spoken, not include the list name and type.
+
+
+:function OnTweetListItem
+:description Tests if focus is on a tweet list item.
+:returns int True if focus is on a tweet list item.
+
+:function NavigatingTweets
+:description Tests if navigating from one tweet list item to another.
+:returns int True if navigating from one tweet list item to another.
+
+:function ParseTweetToCollection
+:description Used on focus change to parse tweet list items into useful pieces.
+
+:function SayTweetItem
+:description Speaks the current tweet item. Optionally allows reduction of output if desired, typically less output may be desired when navigating the tweet list.
+:optional
+:param int True if tweet is to be trimmed to reduce redundancy. This should be true if navigating tweets, but false if the whole tweet item is to be spoken. Default is false.
+
+:function ButtonMenuIsInTransition
+:description Tests if the button menu is in the process of expanding or collapsing.
+:returns int True if the button menu is in the process of expanding or collapsing.
+
+:function InContactProfile
+:description Tests if the focus is on a control in the contact profiles.
+:returns int True if the focus is on a control in the contact profiles.
+
+:function GetContactProfileHeaderText
+:description Retrieves the text of the header preceding the contact profile control with focus.
+:returns string The text of the header preceding the contact profile control with focus.
+
+:function InEditContact
+:description Tests if the focus is on a control in the screen to edit a contact.
+:returns int True if the focus is on a control in the screen to edit a contact.
+
+:function OnButtonMenuWithPopup
+:description Tests if focus is on a button menu with popup or flyout list.
+:returns int True if focus is on a button menu with popup or flyout list.
+
+:function SayButtonMenuWithPopup
+:description Speaks a collapsed button menu with popup.
+
+:function OnGroupParentOfLink
+:description Tests if focus is on a group element which is a parent to a link.
+:returns int True if focus is on a group element which is a parent to a link.
+
+:function OnFlyoutMenuItem
+:description Tests if focus is on a menu item belonging to a flyout.
+:returns int True if focus is on a menu item belonging to a flyout.
+
+:function InCommunicationCommandLinkGroup
+:description Tests if focus is on a link belonging to the group for communicating with a contact.
+:returns int True if focus is on a link belonging to the group for communicating with a contact.
+
+:function IsNavigatingCommunicationCommandLink
+:description Tests if navigating between the links belonging to the group of links used for communicating with a contact.
+:returns int True if navigating between the links belonging to the group of links used for communicating with a contact.
+
+:function SayCommunicateGroupTypeAndText
+:description Speaks the name of the communication group and the current link in the communication group on the contact page.
+
+:function SayPopupMenuTypeAndText
+:description Speaks the name and type of a popup menu.
+
+:function OnSettingsAccountListItem
+:description Tests if focus is on an account list item in the Settings dialog.
+:returns int True if focus is on an account list item in the Settings dialog.
+
+:function SayAccountListItemTypeAndText
+:description Speaks the type and item text for the account list.
+
+:function OnAccountLinkingListItem
+:description Tests if focus is on a list item in the list where accounts can be linked.
+:returns int True if focus is on a list item in the list where accounts can be linked.
+
+:function SayAccountLinkingItemListTypeAndText
+:description Speaks the type and text for the account linking list item.
+
+:function OnAccountLinkingLink
+:description Tests if focus is on a link in the list where accounts can be linked.
+:returns int True if focus is on a link in the list where accounts can be linked.
+
+:function SayLinkObjectTypeAndText
+:description Custom SayObjectTypeAndText for links.
+
+:function InDropDownList
+:description Tests if focus is in a dropdown list belonging to a combo box.
+:returns int True if focus is in a dropdown list belonging to a combo box.
+
+:function OnAccountSignInUserNameEdit
+:description Determines if focus is on the edit field for signing in with a user name.
+:returns int True if focus is on the edit field for signing in with a user name.
+
+:function SayAccountSignInUserNameEditTypeAndText
+:description Customized SayObjectTypeAndText for account sign in user name edit.
+
+:function OnAccountSignInPasswordEdit
+:description Determines if focus is on the password edit field for signing in with a user name.
+:returns int True if focus is on the password edit field for signing in with a user name.
+
+:function SayAccountSignInPasswordEditTypeAndText
+:description Customized SayObjectTypeAndText for account sign in password edit.
+
+
+:function OnAccountProofConfirmationComboBox
+:description Determines if focus is on the conbo box for choosing type of account proof confirmation.
+:returns int True if focus is on the conbo box for choosing type of account confirmation.
+
+:function SayAccountProofConfirmationComboBoxTypeAndText
+:description Customized SayObjectTypeAndText for account proof confirmation combo box.
+
+:function OnAccountProofVerificationEdit
+:description Determines if focus is on the edit field for verifying the account proof.
+:returns int True if focus is on the edit field for verifying the account proof.
+
+:function SayAccountProofVerificationEditTypeAndText
+:description Customized SayObjectTypeAndText for account verification proof edit field.
+
+:function OnAccountProofCodeEdit
+:description Determines if focus is on the edit field for entering the code to verify the account.
+:returns int True if focus is on the edit field for entering the code to verify the account.
+
+:function SayAccountProofCodeEditTypeAndText
+:description Customized SayObjectTypeAndText for account verification code edit field.
+
+:function FindStatusBarElement
+:description Used to find a UIA status bar element.
+:returns object If present, the UIA status bar element.
+
+:function GetStatusBarText
+:description Gets the text belonging to a UIA status bar element.
+:optional
+:param object The status bar element. If not supplied, will call FindStatusBarElement to determine if one can be found.
+:returns string If a UIA status bar is found, the text of the element; otherwise null.
+
+:function CheckForMessageBarStatusBar
+:description Manually checks for existence of a UIA status bar and if found, speaks it. This is used to speak any status bar text that occurred before the UIA automation event was established to listen for and announce status bar updates.
+
+:function GetClickablePointForFocusElement
+:description Obtains the clickable point for the focus element.
+:param int/byRef The X coordinate of the point.
+:param int/byRef The y coordinate of the point.

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="word.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="EditingOptions.SpellingBuzzer" Text="Spelling Buzzer on mistyped words">
+			<DisabledMsg>Now found in Settings Center, Text Processing, Proofing Options.</DisabledMsg>
+			<HelpMsg>
+JAWS will make a short buzzing sound when the squiggly line appears as you type, indicating a misspelling.
+This checkbox is checked by default.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

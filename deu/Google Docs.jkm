@@ -1,0 +1,144 @@
+[Common Keys]
+;Table nav keys removed due to conflicts with native Google Docs keys:
+Alt+Control+Shift+LeftArrow=
+Alt+Control+Shift+ExtendedLeftArrow=
+Alt+Control+Shift+RightArrow=
+Alt+Control+Shift+ExtendedRightArrow=
+;end of removed conflicting keys.
+f8=SelectHTMLElement
+control+;=MoveToMisspelledWord
+control+'=MoveToMisspelledWord
+JAWSKey+F8=MoveToGoogleMainToolBar
+Insert+F8=MoveToGoogleMainToolBar
+JAWSKey+F9=MoveToGoogleModeAndViewToolBar
+Insert+F9=MoveToGoogleModeAndViewToolBar
+JAWSKey+Control+M=SpeakComment
+Insert+Control+M=SpeakComment
+Alt+Shift+Apostrophe=SpeakComment
+JAWSKey+Space&G&Escape=ExitQuickNavLayer
+Insert+Space&G&Escape=ExitQuickNavLayer
+JAWSKey+Space&G&C*=MoveToNextComment
+Insert+Space&G&C*=MoveToNextComment
+JAWSKey+Space&G&Shift+C*=MoveToPriorComment
+Insert+Space&G&Shift+C*=MoveToPriorComment
+JAWSKey+Space&G&S*=SpeakComment
+Insert+Space&G&S*=SpeakComment
+JAWSKey+Space&G&U*=MoveToNextSuggestion
+Insert+Space&G&U*=MoveToNextSuggestion
+JAWSKey+Space&G&Shift+U*=MoveToPriorSuggestion
+Insert+Space&G&Shift+U*=MoveToPriorSuggestion
+JAWSKey+Space&G&H*=MoveToNextHeading
+Insert+Space&G&H*=MoveToNextHeading
+JAWSKey+Space&G&Shift+H*=MoveToPriorHeading
+Insert+Space&G&Shift+H*=MoveToPriorHeading
+; headings at level 1 through 9
+JAWSKey+Space&G&1*=MoveToNextHeadingLevelN
+JAWSKey+Space&G&2*=MoveToNextHeadingLevelN
+JAWSKey+Space&G&3*=MoveToNextHeadingLevelN
+JAWSKey+Space&G&4*=MoveToNextHeadingLevelN
+JAWSKey+Space&G&5*=MoveToNextHeadingLevelN
+JAWSKey+Space&G&6*=MoveToNextHeadingLevelN
+JAWSKey+Space&G&7*=MoveToNextHeadingLevelN
+JAWSKey+Space&G&8*=MoveToNextHeadingLevelN
+JAWSKey+Space&G&9*=MoveToNextHeadingLevelN
+Insert+Space&G&1*=MoveToNextHeadingLevelN
+Insert+Space&G&2*=MoveToNextHeadingLevelN
+Insert+Space&G&3*=MoveToNextHeadingLevelN
+Insert+Space&G&4*=MoveToNextHeadingLevelN
+Insert+Space&G&5*=MoveToNextHeadingLevelN
+Insert+Space&G&6*=MoveToNextHeadingLevelN
+Insert+Space&G&7*=MoveToNextHeadingLevelN
+Insert+Space&G&8*=MoveToNextHeadingLevelN
+Insert+Space&G&9*=MoveToNextHeadingLevelN
+; now for prior
+JAWSKey+Space&G&Shift+1*=MoveToPriorHeadingLevelN
+JAWSKey+Space&G&Shift+2*=MoveToPriorHeadingLevelN
+JAWSKey+Space&G&Shift+3*=MoveToPriorHeadingLevelN
+JAWSKey+Space&G&Shift+4*=MoveToPriorHeadingLevelN
+JAWSKey+Space&G&Shift+5*=MoveToPriorHeadingLevelN
+JAWSKey+Space&G&Shift+6*=MoveToPriorHeadingLevelN
+JAWSKey+Space&G&Shift+7*=MoveToPriorHeadingLevelN
+JAWSKey+Space&G&Shift+8*=MoveToPriorHeadingLevelN
+JAWSKey+Space&G&Shift+9*=MoveToPriorHeadingLevelN
+Insert+Space&G&Shift+1*=MoveToPriorHeadingLevelN
+Insert+Space&G&Shift+2*=MoveToPriorHeadingLevelN
+Insert+Space&G&Shift+3*=MoveToPriorHeadingLevelN
+Insert+Space&G&Shift+4*=MoveToPriorHeadingLevelN
+Insert+Space&G&Shift+5*=MoveToPriorHeadingLevelN
+Insert+Space&G&Shift+6*=MoveToPriorHeadingLevelN
+Insert+Space&G&Shift+7*=MoveToPriorHeadingLevelN
+Insert+Space&G&Shift+8*=MoveToPriorHeadingLevelN
+Insert+Space&G&Shift+9*=MoveToPriorHeadingLevelN
+;lists 
+JAWSKey+Space&G&L*=MoveToNextList
+Insert+Space&G&L*=MoveToNextList
+JAWSKey+Space&G&Shift+L*=MoveToPriorList
+Insert+Space&G&Shift+L*=MoveToPriorList
+JAWSKey+Space&G&T*=MoveToNextTable
+Insert+Space&G&T*=MoveToNextTable
+JAWSKey+Space&G&Shift+T*=MoveToPriorTable
+Insert+Space&G&Shift+T*=MoveToPriorTable
+JAWSKey+Space&G&Control+Home*=TopOfFile
+Insert+Space&G&Control+Home*=TopOfFile
+JAWSKey+Space&G&Control+End*=BottomOfFile
+Insert+Space&G&Control+End*=BottomOfFile
+JAWSKey+Space&G&Control+UpArrow*=ControlUpArrow
+Insert+Space&G&Control+UpArrow*=ControlUpArrow
+JAWSKey+Space&G&Control+DownArrow*=ControlDownArrow
+Insert+Space&G&Control+DownArrow*=ControlDownArrow
+JAWSKey+Space&G&Space*=ControlDownArrow
+Insert+Space&G&Space*=ControlDownArrow
+JAWSKey+Space&G&Shift+Space*=ControlUpArrow
+Insert+Space&G&Shift+Space*=ControlUpArrow
+JAWSKey+Space&G&M*=MoveToNextSpellingError
+Insert+Space&G&M*=MoveToNextSpellingError
+JAWSKey+Space&G&Shift+M*=MoveToPriorSpellingError
+Insert+Space&G&Shift+M*=MoveToPriorSpellingError
+Insert+Space&G&Shift+Dash=QuickKeysLayerHelp
+JAWSKey+Space&G&Shift+Dash=QuickKeysLayerHelp
+JAWSKey+Space&G&RightArrow*=SayNextCharacter
+JAWSKey+Space&G&LeftArrow*=SayPriorCharacter
+JAWSKey+Space&G&NumPad5*=SayCharacter
+JAWSKey+Space&G&UpArrow*=SayPriorLine
+JAWSKey+Space&G&DownArrow*=SayNextLine
+JAWSKey+Space&G&JAWSKey+UpArrow*=SayLine
+JAWSKey+Space&G&JAWSKey+PageUp*=SayFromCursor
+JAWSKey+Space&G&JAWSKey+Home*=SayToCursor
+JAWSKey+Space&G&Control+NumPad5*=SayParagraph
+JAWSKey+Space&G&JAWSKey+RightArrow*=SayNextWord
+JAWSKey+Space&G&Control+RightArrow*=SayNextWord
+JAWSKey+Space&G&JAWSKey+LeftArrow*=SayPriorWord
+JAWSKey+Space&G&Control+LeftArrow*=SayPriorWord
+JAWSKey+Space&G&JAWSKey+NumPad5*=SayWord
+Insert+Space&G&RightArrow*=SayNextCharacter
+Insert+Space&G&LeftArrow*=SayPriorCharacter
+Insert+Space&G&NumPad5*=SayCharacter
+Insert+Space&G&UpArrow*=SayPriorLine
+Insert+Space&G&DownArrow*=SayNextLine
+Insert+Space&G&JAWSKey+UpArrow*=SayLine
+Insert+Space&G&JAWSKey+PageUp*=SayFromCursor
+Insert+Space&G&JAWSKey+Home*=SayToCursor
+Insert+Space&G&Control+NumPad5*=SayParagraph
+Insert+Space&G&JAWSKey+RightArrow*=SayNextWord
+Insert+Space&G&Control+RightArrow*=SayNextWord
+Insert+Space&G&JAWSKey+LeftArrow*=SayPriorWord
+Insert+Space&G&Control+LeftArrow*=SayPriorWord
+Insert+Space&G&JAWSKey+NumPad5*=SayWord
+
+[ML20 Keys]
+Braille F2+F3+F6=GoogleDocsToolBar
+
+[ML40 Keys]
+Braille F2+F3+F6=GoogleDocsToolBar
+
+[tplite Keys]
+Braille F2+F3+F6=GoogleDocsToolBar
+
+[blite18 Keys]
+Braille F2+F3+F6=GoogleDocsToolBar
+
+[blite40 keys]
+Braille F2+F3+F6=GoogleDocsToolBar
+
+[Focus Keys]
+Braille Shift2+dots 2 3 6=GoogleDocsToolBar

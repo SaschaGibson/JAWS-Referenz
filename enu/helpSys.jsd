@@ -1,0 +1,53 @@
+:Function IsSearchOrIndexWindow
+:synopsis handles the speaking of controls in Search or Index page of Help System
+:description This function handles the speaking of controls in Search or Index page of Help System. If one of these controls has focus then its control ID is returned from the function so that this function can be called to determine if we are focused on any of the controls in either of these two pages of the Help System.
+							  :param handle/hWnd current window handle
+							  :param int/iShouldSpeak if true, will speak the correct information for controls in the Search or Index page of the Help System. If false, the ID will be returned if appropriate but no speech will be generated.
+:returns Int the Control ID of a Search or Index page control if focus is on one of these controls, otherwise returns 0.
+
+:Function ConvertAttribToState
+:Returns string The state, either opened, closed or nothing, of the active tree view item.
+:Description Used by functions determining whether to speak book or topic.
+:param1 int/iAttrib Enter the value from GetControlAttributes () to check.
+
+:function sayLine
+:synopsis speaks the current line or object, correctly handling the book/topic treeview and Search and Index controls
+:description This function speaks the current line or object, correctly handling the book/topic treeview and Search and Index controls. It is overridden here so that no changes need be made to the script file which uses this binary.
+:Optional
+:Param Int/iDrawHighlights Optional parameter added in JAWS 7.1 / MAGic 10.0.  Used to indicate whether or not the line should be highlighted by the MAGic engine as the text is being spoken.  The possible values are as follows:  If the parameter is not present or is equal to 0, do nothing; If the parameter is equal to 1, highlight each word as it is being spoken; If the parameter is equal to 2, highlight the entire line.  NOTES: (1) This functionality is not currently supported in all applications.  (2) The highlight rectangles will only be drawn if MAGic is running.
+:Param int/bSayingLineAfterMovement set to TRUE if calling from sayNext/Prior line to avoid speaking the prompt when arrowing over forms mode controls whose prompt is already spoeken from the prior line. This parameter is available starting with JAWS version 10 and MAGic version 12.
+:returns void
+
+:Function KeyPressedEvent
+:synopsis resets flag used to suppress doublespeaking when book/topic treeview gains focus
+:description This event resets the flag used to suppress doublespeaking when book/topic treeview gains focus.
+							  :param int/nKey keycode
+							  :param string/strKeyName keyname
+							  :param int/nIsBrailleKey true if attached to Braille key
+							  :param int/nIsScriptKey true if attached to script key
+:returns Void
+
+:script screenSensitiveHelp
+:synopsis provides screen sensitive help specific to Search and Index page controls of Help System
+:description This script provides screen sensitive help specific to Search and Index page controls of Help System.
+:function brailleBuildOther
+:synopsis overrides default to correctly braille controls in help system
+:description This function overrides the default function to correctly braille controls in the Help System such as the book/topic treeview and the search/index controls
+:returns int true or the result of calling the default function
+
+:function brailleBuildTreeview
+:synopsis handles brailling of the book/topic treeview
+:description This function handles brailling of the book/topic treeview control on the Contents page of the Help System.
+:returns int true
+
+:function GetTreeObjectName
+:synopsis Retrieves the object name for the tree items
+:description Retrieves the object at point and uses the .accName property of the MSAA object
+:returns string The name
+:Function GetTabLabels
+:Returns string The labels for the tab controls delimited for a JAWS list box.
+:Description Retrieves all the labels in a delimited string for a JAWS list box.
+:param handle/hTabControl The window which contains the tab controls.
+
+:function GetHelpTabName
+:returns string

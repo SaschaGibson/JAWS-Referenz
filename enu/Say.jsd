@@ -1,0 +1,177 @@
+:Function IndicateControlState
+:Synopsis identifies the scontrol state using the Speech Markup rules
+:Description Allows your custom scripts to take advantage of the scheme the user has set up.
+:param1 int/iType Enter the JFW Subtype Code for which this applies.  See WT_ constants in HjConst.jsh.
+:Param2 int nState Either use GetControlAttributes function or one of the CTRL_ constants from HjConst.jsh if you need to specify the state yourself.
+:Optional
+:Param3 string/sOptionalText If for some reason, you need to have different text spoken you can use this parameter to enter text to be spoken.  It will be marked up as any other text would be.
+:Returns void No need to return anything.
+
+:Function IndicateControlType
+:Synopsis Indicates the control type using Speech Markup.
+:Description Pass the correct control type you want to be spoken for the window or control to speak.  This will honor the speech markup.
+:param1 int/iType Enter the type of control to be spoken.
+:Optional
+:Param2 string sControlName Enter the name of the control to be spoken, if you have a custom name for this control.  This would be true if the wrong name is spoken, or perhaps none at all, and you are customizing this control to speak.  An example would be an edit that just says Edit without the control's name.
+:param3 string/ControlText Enter the text or value of the control to be spoken, if it doesn't happen already.  Most edits, lists, etc. already do it, but if you need to change this here's where.
+
+:Function SayMessageWithMarkup
+:Synopsis Like SayMessage but assumes string is marked up
+:Description This function assumes that the strings are marked up. If it is instructed to redirect to the user buffer or if it needs to send the messages as Flash messages, the markup is automatically stripped out.
+:Param int/iOutputType output type to speak message
+:Param string/sLong long message
+:Optional
+:Param string/sShort short message
+:Optional
+:Param int/doNotBraille if this is set, the message will not braille.
+:Returns void
+
+:Function BeginFlashMessage
+:Synopsis Call this function to alert JAWS to append all of the say commands in this block (until the EndFlashMessage) into a single Flash message.
+:Returns void
+:Optional
+:Param Int/tiMS number of milliseconds to wait before displaying the flash message.  Use this parameter when other Braille or cursor movement calls are immediately erasing your flash message, so the flash message will post after those calls.  Use -1 for the default value(5 milliseconds).
+
+:Function EndFlashMessage
+:Synopsis Call this function to alert JAWS that this is the end of the block of say commands which should be flashed as a single message.
+:Returns void
+
+:Function ShouldAppendFlashMessage
+:Synopsis Called from the overridden say commands to determine whether or not to append this text as a Flash message or to start a new one. The end user should never call this function as it changes the state of global variables.
+:returns int TRUE or FALSE
+
+:function TypeFormattedString
+:Description Types a Formatted string you specify with the messages received as  subsequent parameters.  The message to be formatted must be delimited with the parameter place holder delimiters, such as %1 %2 %3 %4 %5.
+:Returns Int The number of keystrokes simulated.
+:Param String/Message string containing text intermingled with parameter place holders.
+:Optional
+:Param String item to be substituted in place of %1 every time it appears in Message.
+:Param String item to be substituted in place of %2 every time it appears in Message.
+:Param String item to be substituted in place of %3 every time it appears in Message.
+:Param String item to be substituted in place of %4 every time it appears in Message.
+:Param String item to be substituted in place of %5 every time it appears in Message.
+:Param String item to be substituted in place of %6 every time it appears in Message.
+:Param String item to be substituted in place of %7 every time it appears in Message.
+:Param String item to be substituted in place of %8 every time it appears in Message.
+:Param String item to be substituted in place of %9 every time it appears in Message.
+
+:function FormatOutputMessage
+:description Formats a short or long message, based on the output type and using the supplied replaceable parameters. To be used where both the short and long message take an identical parameter list.
+:param int The output type to use.
+:param int True if a newline is to be appended to the end of the message, false otherwise.
+:param string The long message to be formatted.
+:param string The short message to be formatted.
+:optional
+:param string The first replaceable parameter in the formatted message.
+:param string The second replaceable parameter in the formatted message.
+:Param string The third replaceable parameter in the formatted message.
+:param string The fourthreplaceable parameter in the formatted message.
+:param string The fifth replaceable parameter in the formatted message.
+:param string The sixth replaceable parameter in the formatted message.
+:param string The seventh replaceable parameter in the formatted message.
+:param string The eighth replaceable parameter in the formatted message.
+:param string The ninth replaceable parameter in the formatted message.
+:returns string The short or long formatted message, based on the output type.
+
+:Function GetDebugLevelName
+:Synopsis Gets the Debug Level name.
+:Description This function gets the Debug Level name for the specified Debug Level.
+:Returns String The debug level name.
+:Param int/level The debug level. See debug level constants in HJConst.jsh.
+:Category Utility
+
+:Function ToggleSpeakingOfDebugMessages
+:Synopsis Toggles the speaking of debug messages by either enabling or disabling the OT_DEBUG output mode.
+:Description This function toggles the speaking of debug messages by either enabling or disabling the OT_DEBUG output mode.
+:Returns Void
+:Category Utility
+
+:Function SetDebugLevel
+:Synopsis Sets the global debug level to the specified level.
+:Description This function sets the global debug level to the specified level.
+:Returns Void
+:Param int/level The debug level. See debug level constants in HJConst.jsh.
+:Category Utility
+
+:Function ChangeDebugLevel
+:Synopsis Increments the Debug Level.
+:Description This function increments the Debug Level. If the result would be above LEVEL_MAX, the Debug Level is set to LEVEL_SEVERE.
+:Returns Void
+:Category Utility
+
+:Function ShouldOutputDebugString
+:Synopsis Determines if the OutputDebugString family of functions should send the string to the debugger for display.
+:Description This function determines if the OutputDebugString family of functions should send the string to the debugger for display.
+:Returns Int True if the OutputDebugString family of functions should send the string to the debugger for display. False otherwise.
+:Param int/level The debug level. See debug level constants in HJConst.jsh.
+:Category Utility
+
+:Function OutputDebugString
+:Synopsis Sends a string to the debugger for display if the OT_DEBUG output mode is enabled.
+:Description Sends a string to the debugger for display if the OT_DEBUG output mode is enabled. The debugger may be a utility program such as DBGVIEW.EXE.
+:Returns Void
+:Param string/message String to be sent to the debugger for display.
+:Category Utility
+
+:Function OutputDebugStringL
+:Synopsis Sends a string to the debugger for display if the OT_DEBUG output mode is enabled and the Level is less than or equal to the current Debug Level.
+:Description Sends a string to the debugger for display if the OT_DEBUG output mode is enabled and the Level is less than or equal to the current Debug Level. The debugger may be a utility program such as DBGVIEW.EXE.
+:Returns Void
+:Param string/message String to be sent to the debugger for display.
+:Param int/level The debug level. See debug level constants in HJConst.jsh.
+:Category Utility
+
+:Function FormattedOutputDebugString
+:Synopsis Sends a formatted string to the debugger for display if the OT_DEBUG output mode is enabled.
+:Description Sends a formatted string to the debugger for display if the OT_DEBUG output mode is enabled. The debugger may be a utility program such as DBGVIEW.EXE.
+:Returns Void
+:Param string/message String to be sent to the debugger for display. This string may contain text intermingled with parameter place holders. The FormatString function will be used to build the message string that is sent to the debugger for display.
+:Optional
+:Param Variant item to be substituted in place of %1 every time it appears in Message.
+:Param Variant item to be substituted in place of %2 every time it appears in Message.
+:Param Variant item to be substituted in place of %3 every time it appears in Message.
+:Param Variant item to be substituted in place of %4 every time it appears in Message.
+:Param Variant item to be substituted in place of %5 every time it appears in Message.
+:Param Variant item to be substituted in place of %6 every time it appears in Message.
+:Param Variant item to be substituted in place of %7 every time it appears in Message.
+:Param Variant item to be substituted in place of %8 every time it appears in Message.
+:Param Variant item to be substituted in place of %9 every time it appears in Message.
+:Category Utility
+
+:Function FormattedOutputDebugStringL
+:Synopsis Sends a formatted string to the debugger for display if the OT_DEBUG output mode is enabled and the Level is less than or equal to the current Debug Level.
+:Description Sends a formatted string to the debugger for display if the OT_DEBUG output mode is enabled and the Level is less than or equal to the current Debug Level. The debugger may be a utility program such as DBGVIEW.EXE.
+:Returns Void
+:Param string/message String to be sent to the debugger for display. This string may contain text intermingled with parameter place holders. The FormatString function will be used to build the message string that is sent to the debugger for display.
+:Param int/level The debug level. See debug level constants in HJConst.jsh.
+:Optional
+:Param Variant item to be substituted in place of %1 every time it appears in Message.
+:Param Variant item to be substituted in place of %2 every time it appears in Message.
+:Param Variant item to be substituted in place of %3 every time it appears in Message.
+:Param Variant item to be substituted in place of %4 every time it appears in Message.
+:Param Variant item to be substituted in place of %5 every time it appears in Message.
+:Param Variant item to be substituted in place of %6 every time it appears in Message.
+:Param Variant item to be substituted in place of %7 every time it appears in Message.
+:Param Variant item to be substituted in place of %8 every time it appears in Message.
+:Param Variant item to be substituted in place of %9 every time it appears in Message.
+:Category Utility
+
+:function SayNotification
+:Description Handles speaking of a notification, applying the rule that the user created for the notification.
+:param collection/notificationRuleActions a collection describing which actions should be taken both for speech and braille. SpeechActionType and BrailleActionType members describe what kind of actions need to be taken, SpeechActionParameter and BrailleActionParameter members are the parameters tied to those actions. ExcludeFromNotificationHistory describes if a notification should be excluded from history.
+:param int/outputType The output type of the resulting speech/braille output
+:optional
+:param int/containsSpeechMarkup Is set to true if the speech string contain speech markup, false otherwise.
+:Returns void
+
+:Function DisplayOrSpeakMessage
+:Description This function will either display a message using the OptionalTaskDialog function or speak the message.
+:Param string/title The title of the Task Dialog.
+:Param string/message The message to be displayed in the Task Dialog or spoken.
+:Param int/outputType The output type to use if the message is spoken.
+:Param string/option The option that is used to determine if the message is displayed or spoken. The option is stored in the NonJCFOptions section of the specified settings file. If the option is set to 1, the message will be spoken instead of being displayed.
+:Optional
+:Param int/doNotBraille If this is set, the message will not braille.
+:Param int/fileType The file type of the settings file or FT_DEFAULT_JCF if not specified.
+:Param string/fileName The name of the settings file.
+:Returns void

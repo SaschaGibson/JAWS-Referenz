@@ -1,0 +1,249 @@
+:function AutoStartEvent
+
+:script ScriptFileName
+
+:function GetNormalField
+:Returns string No Return Description
+
+:function GetTitleLine
+:Returns string No Return Description
+:Synopsis Gets the top line of an NSElite screen
+
+:function GetDW0Prompt
+:Returns string No Return Description
+:Synopsis Handles table prompts on the DWO pages
+
+:function GetProblematicField
+:Returns string No Return Description
+:Description Uses constants for prompts that are defined in NSPrompts.jsh
+:Param string/strNormal The normally acquired field
+
+:function GetCurrentField
+
+:script ReadCurrentField
+
+:function NSTermHotKeyHelp
+:Returns int No Return Description
+:Synopsis Called from HotKeyHelpDefaultLoop to handle troublesome dialogs
+
+:function HotKeyHelpDefaultLoop
+
+:function SayHighlightedText
+
+:function EnableAutoJump
+:Param int/nEnable Value set to True or False
+
+:function KeyPressedEvent
+
+:script test
+
+:function LookForAutoJump
+:Returns int No Return Description
+:Synopsis Detects when the cursor has just jumped significantly
+:Description Observes SIG_H_MOVE and SIG_V_MOVE to determine if the movement is significant enough to read the field. Global variables holding the last movement are gnLastHPos and gnLastVPos. Returns TRUE if the movement is significant, otherwise returns FALSE
+
+:function SayNSNonHighlightedText
+:Param handle/hwnd handle of the window containing the newly written text
+:Param string/buffer the newly written text
+
+:function ScreenChanged
+:Returns int No Return Description
+
+:function NewTextEvent
+
+:script SayLastRed
+
+:script SayWindowTitle
+
+:script SayScreenTitle
+:Synopsis Spricht den Titel des Bildschirms
+
+:function IsKeyPhrase
+:Returns int No Return Description
+:Synopsis Return TRUE if the phrase written in "buffer" is a key phrase
+:Param string/buffer buffer containing the prospective key phrase
+
+:function IsTSS
+:Returns int No Return Description
+:Synopsis Save the TSS line for future reference
+:Param string/buffer The string that is to be tested for TSO
+
+:script SayTSS
+:Synopsis Liste den TSS Speicher
+:Description Wenn ein TSS Speicher auf dem Monitor angezeigt wird, dann wird dieser im TSS Speicher gespeichert.
+
+:function IsJustOneChar
+:Param1 string/phrase no description
+:function IsStatusLineWindow
+:Returns int No Return Description
+:Synopsis Checks to see if the handle of the window given is the status line window
+:Param handle/hwnd handle of the window to be tested
+
+:function GetStatusLineWindow
+:Returns handle No Return Description
+:Synopsis Gets the handle of the status line window
+
+:function FocusChangedEvent
+:Param handle/FocusWindow handle of the window receiving the focus
+:Param handle/PrevWindow Handle of the window loosing the focus
+
+:script ColumnModeToggle
+
+:script SayPriorLine
+
+:script SayNextLine
+
+:function SayColumnLine
+:Synopsis Reads the prior line according to a given rule
+:Param int/nUp Determines whether the cursor should be moved up or down before reading the line
+
+:script JAWSCursor
+
+:script AutoRouteToggle
+
+:function SayWord
+:Synopsis If in JAWS Find, does a SayFromCursor() otherwise does a SayWord
+
+:script ReadChoices
+
+:function FREQ
+
+:function APPTS
+
+:function MFQM
+
+:function PIAE
+
+:function DEQY
+
+:function SSQM
+
+:function PHUS
+
+:function DEQM
+
+:function MISM
+
+:function CNQY
+
+:function RQSL
+
+:function PBRQ
+
+:function HIQR
+
+:function MDBS
+
+:function MMQS
+
+:function ACLM
+
+:function MAIN
+
+:function PEMU
+
+:function PESL
+
+:function PETS
+
+:function PENC
+
+:function PEPR
+
+:function PEDT
+
+:function PEDD
+
+:function PEAN
+
+:function PEAR
+
+:function PEHS
+
+:function PEST
+
+:function MSSI
+
+:function ESMU
+
+:function DMMU
+
+:script MCALReadCALForCLMTypes
+
+:script ReadRemarks
+
+:script ReadAddress
+
+:script ReadOfficeHours
+
+:script ReadPhoneNumbers
+
+:script HotKeyHelp
+
+:function MCALH
+
+:function INFOH
+
+:function FREQH
+
+:function APPTSH
+
+:function MFQMH
+
+:function PIAEH
+
+:function DEQYH
+
+:function SSQMH
+
+:function PHUSH
+
+:function DEQMH
+
+:function MISMH
+
+:function CNQYH
+
+:function RQSLH
+
+:function PBRQH
+
+:function HIQRH
+
+:function MDBSH
+
+:function MMQSH
+
+:function ACLMH
+
+:function MAINH
+
+:function PEMUH
+
+:function PESLH
+
+:function PETSH
+
+:function PENCH
+
+:function PEPRH
+
+:function PEDTH
+
+:function PEDDH
+
+:function PEANH
+
+:function PEARH
+
+:function PEHSH
+
+:function PESTH
+
+:function MSSIH
+
+:function ESMUH
+
+:function DMMUH
+
+

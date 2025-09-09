@@ -1,0 +1,410 @@
+:Function AutoStartEvent
+:synopsis triggered when MSAccess receives focus
+:description This event function is triggered when MSAccess receives focus. It sets up a global pointer to the MSAccess application object through which all Object Model calls are made.
+:returns void
+
+:Function AutoFinishEvent
+:synopsis triggered when MSAccess loses focus or is closed
+:description This event function is triggered when MSAccess loses focus or is closed. It releases the global MSAccess application pointer variable.
+:returns void
+
+:function isFormDesignView
+:synopsis determines if the current Access Form is in Form Design view
+:description This function determines if the current Access Form is in Form Design view.
+:returns int true or false
+
+:function isFormActive
+:synopsis determines if an Access form is active
+:description This function determines if an Access form is active ie has focus. The form may be in Design, Form or Datasheet views.
+:returns int true or false
+
+:function isReportActive
+:synopsis determines if an Access Report is active
+:description This function determines if an Access Report is active ie has focus. The Report may be in Design or  Datasheet views.
+:returns int true or false
+
+:function isFormFormView
+:synopsis determines if the current Access Form is in Form View
+:description This function determines if the current Access Form is in Form View.
+:returns int true or false
+
+:function isFormDatasheetView
+:synopsis determines if the current Acceess Form is in Datasheet view
+:description This function determines if the current Acceess Form is in Datasheet view.
+:returns int true or false
+
+:function getFormName
+:synopsis returns the name of the currently active Access Form
+:description This function returns the name of the currently active Access Form.
+:returns string name of active form
+
+:Function getReportName
+:Synopsis Name of active report.
+:Description Returns the name of the active report.
+:Returns string The name for the active data sheet.
+
+:Function getDataSheetName
+:Synopsis Name of active data sheet`.
+:Description Gets the name for the active data sheet.
+:returns string the name of the  active data sheet.  If this returns nothing, try getFormName or getReporqNam"e.
+
+:Function inMacroProperties
+:synopsis determines if the focus is in the Macro Properties sheet
+:description This function determines if the focus is in the Macro Properties sheet of the Macros dialog.
+:returns int true or false
+
+:Function InTblProperties
+:synopsis determines if focus is in the Table Design view Properties sheet
+:description This function determines if focus is in the Table Design view Properties sheet of the Table Design view screen.
+:returns int true or false
+
+:Function isFormView
+:synopsis determines if the current view is Form View
+:description This function determines if the current view is Form View. It does this by looking at the View menu to see if the Form View option is checked.
+:returns int true or false
+
+:Function IsDatasheetView
+:synopsis determines if the current view is Datasheet view
+:description This function determines if the current view is Datasheet view. It does this by looking at the View menu to see if the datasheet option is checked.
+:returns int true or false
+
+:Function IsDesignView
+:synopsis determines if the current view is Design view
+:description This function determines if the current view is Design view. It does this by looking at the View menu to see if the Design View option is checked.
+:returns int true or false
+
+:Function IsSQLView
+:synopsis determines if the current view is SQL view
+:description This function determines if the current view is SQL view. It does this by looking at the View menu to see if the SQL View option is checked.
+:returns int true or false
+
+:function isAccessControl
+:synopsis determines if the current focus can be accessed via the Object Model
+:description This function determines if the current focus can be accessed via the Object Model.
+:returns int true or false
+
+:function getFieldName
+:synopsis returns the name of the current Access Focus via the Object Model
+:description This function returns the name of the current Access Focus via the Object Model.
+:returns string name of Access screen control with focus
+
+:Function GetFieldCaption
+:synopsis Gets caption property of active field
+:description DOM gets caption property of active field
+:returns string the caption 
+
+:function getFieldText
+:synopsis Retrieve value text for table cell
+:description  Returns vaue of current control 
+:returns string The text of the current control.
+
+:function isAccessCheckbox
+:synopsis determines if the current Access focus is an Access checkbox
+:description This function determines if the current Access focus is an Access checkbox. This is used for reporting the state of Access Form checkboxes as opposed to dialog checkboxes.
+:returns int true or false
+
+:function getParentControlName
+:synopsis returns the name of the parent control to the Access screen control with focus
+:description This function returns the name of the parent control to the Access screen control with focus. It is used to get the name of the table for a given field in Table Datasheet view.
+:returns string parent name of Access screen control with focus
+
+:function ReadDataSheetCoordinates
+:synopsis speaks the column and row of the current datasheet cell with focus
+:description This function speaks the column and row of the current datasheet cell with focus.
+:returns Void
+
+:Function ControlIsDetachedLabel
+:synopsis determines if the given control is a detached label
+:description This function determines if the given control is a detached label. Such a control is a label whose parent property does not point to another control on the same form. This usually determines if a label provides descriptive text for a form rather than labeling a control on a form.
+ :param object/form the form containing the labels
+ :param object/label the label control to check
+:returns Int true or false
+
+:Function stripHKMarker
+:synopsis strips the & sign out of a caption
+:description This function strips the & sign out of a caption which marks a hotkey. (note this only removes the first occurance of an & sign).
+							:Param string/caption caption of control containing & sign
+:returns String caption minus the & sign
+
+:Function GetDialogPageName
+:synopsis returns the dialog page name in a Multipage dialog including the Database window
+:description This function returns the dialog page name in a Multipage dialog including the Database window. For the database window, the Database Objects menu is searched for the checked option which represents the currently active dialog page.
+:returns String name of current dialog page
+
+:Function IsMultiPageDialog
+:synopsis returns true if the current dialog or screen is a multipage dialog
+:description This function returns true if the current dialog or screen is a multipage dialog. It returns true for the main Database window.
+:returns int true or false
+
+:Function GetControlTypeAndState
+:synopsis returns a string containing the given Access control's type and state
+:description This function returns a string containing the given Access control's type and state. The type and state are constructed based on the Output Types which are enabled. For example, if Ot_ITEM_STATE is disabled then a checkbox's state will not be included in the return string.
+							:Param object/control control whose type and state are to be returned
+							:Param int/InOptionGroup true if the control is in an Option Group (groupbox)
+:returns String type and state of control
+
+:Function GetControlState
+:synopsis returns the state of a control
+:description This function returns the state of a control. The state of a control is more general than that returned by getControlTypeAndState in that the state also includes the value of text boxes etc. The state is returned regardless of the Output Types.
+:param object/control control whose state is required
+:param int/InOptionGroup true if the control is in an Option Group (groupbox)
+:returns String state or value of control
+
+:Function GetBrlControlTypeAndState
+:synopsis returns the Structured mode Braille representation of a given control
+:description This function returns the Structured mode Braille representation of a given control. The entire type and state are returned regardless of Output Type settings. Correct symbology is returned for checkboxes and radio buttons.
+ :param object/control control whose type and state are required
+:param int/InOptionGroup true if the control is in an Option Group (groupbox)
+:returns String Braille representation of control for Structured mode output
+
+:Function stringsEqual
+:synopsis determines if two strings are equal based on content and length
+:description This function determines if two strings are equal based on content and length. Internally, strings are equal if the longer one contains the shorter one as a prefix which is undesireable in this situation.
+ :param string/str1 string 1
+							:Param string/str2 string 2
+:returns Int true or false
+
+:Function GetControlLabel
+:synopsis returns a label for a given control on an Access form
+:description This function returns a label for a given control on an Access form. It does this by first looking at the control's caption, if this is non-blank then it returns it. If the caption is blank then it looks at the toolTipText. If the toolTipText is non-blank then this is returned. If the toolTipText is blank and Label search is off then the programmatic name of the control is returned as its label and any designator characters such as txt, frm, lst, cbo etc are stripped off the front of the name. If label search is on then the form is searched for a label control whose parent points to the control whose label we are searching for.
+							:Param object/form form object
+							:Param object/control control object whose label we are searching for
+:returns String label of the control
+
+:Function getControlLabelHotKey
+:synopsis returns the hotkey (underlined letter) associated with a control's label
+:description This function returns the hotkey (underlined letter) associated with a control's label. It does this by searching for the control's label as in getControlLabel function and then looks for the hotkey designator symbol & and returns the character following this designator.
+							:Param object/form form object
+							:Param object/control control whose hotkey we are searching for
+:returns string a string containing the label of the control, and the words "Alt+" and the hotkey itself. This string can then be spoken directly (ie without any further processing).
+
+:Function getSubformLabel
+:synopsis returns the label of a subform control
+:description This function returns the label of a subform control.
+							:Param object/subform subform object
+:returns String label of subform control
+
+:Function ReadOptionGroupActiveItem
+:synopsis reads the selected option in an option group
+:description This function reads the selected option in an option group.
+:param object/gb option group (groupbox) object
+:Param Int true if output type is to be user buffer, false otherwise.
+:returns Void
+
+:Function SayActiveItem
+:synopsis speaks the active item in an Access control
+:description This function speaks the active item in an Access control. For example it will speak the state of a checkbox or the selected item in a listbox.
+:returns Void
+
+:Function ReadSubSubForm
+:synopsis reads the controls on a subsubform
+:description This function reads the controls on a subsubform. Since JScript does not support recursion we only consider forms, subforms and subsubforms.
+:param object/Subform subform object
+:Param Int true if output type is to be user buffer, false otherwise.
+:returns Void
+
+:Function ReadSubForm
+:synopsis reads the controls on a subform
+:description This function reads the controls on a subform.  Since JScript does not support recursion we only consider forms, subforms and subsubforms.
+:param object/subForm
+:Param Int true if output type is to be user buffer, false otherwise.
+:returns Void
+
+:function ReadFormInControlOrder
+:synopsis reads the controls on a form
+:description This function reads the controls on a form.  Since JScript does not support recursion we only consider forms, subforms and subsubforms. This function reads each control's label, the control's type and the control's text for each control in control order on an Access Form.
+:returns void
+
+:function ReadActiveReport
+:synopsis reads the labels and text of controls on a report object
+:description This function reads the labels and text of controls on a report object.
+:returns void
+
+:Function SelectSubformControl
+:synopsis presents the controls on a subform in a list and sets focus on the selected control
+:description This function presents the controls on a subform in a list and sets focus on the selected control. This function is called from the selectFormControl function when a subform object is chosen from a main form.
+							:Param object/form form object
+:returns Void
+
+:function SelectFormControl
+:synopsis presents all the controls on an Access form in a list and sets focus on the selected control
+:description This function presents all the controls on an Access form in a list and sets focus on the selected control. If the selected control is a subform then the selectSubformControl function is called.
+:returns void
+
+:function sayDatasheetControl
+:synopsis speaks the active datasheet control and sets a global variable to track the active control
+:description This function speaks the active datasheet control and sets a global variable to track the active control. this global is used in Braille support.
+:returns void
+
+:function SayFocusedControlLabel
+:synopsis speaks the MSAccess focus control label via the Object Model
+:description This function speaks the MSAccess control label with focus via the Object Model.
+:returns void
+
+:function SayFocusedControl
+:synopsis speaks the MSAccess focus via the Object Model
+:description This function speaks the MSAccess focus via the Object Model.
+:returns void
+
+:Function HotKeyHelpDefaultLoop
+:synopsis loops through all controls in a dialog or Access Form and speaks the associated hotkeys
+:description This function loops through all controls in a dialog or Access Form and speaks the associated hotkeys.
+:returns Void
+
+:Function RefreshDatabases
+:synopsis refreshes the Object Model representation of all databases associated with the running instance of MSAccess
+:description This function refreshes the Object Model representation of all databases associated with the running instance of MSAccess.
+:returns Void
+
+:function SpeakDatabaseSummary
+:synopsis speaks a database summary
+:description This function speaks a database summary. This summary includes the number and type of each database component defined by the user.
+:returns void
+
+:Function GetFieldType
+:synopsis given a field type, returns a string describing the type
+:description This function, given a field type, returns a string describing the type.
+							:Param int/Type field type as declared in the Object Browser
+:returns String description of type suitable for speaking
+
+:Function SpeakFieldInfo
+:synopsis speaks information about the current field
+:description This function speaks information about the current field. This information includes the name, data type, size, ordinal position, required/optional status etc.
+:returns Void
+
+:function SpeakTableSummary
+:synopsis speaks a summary of the current table
+:description This function speaks a summary of the current table. This summary includes the names, types and sizes of all fields defined in the table.
+:returns void
+
+:Function GetSectionName
+:synopsis given a section constant, returns the appropriate string describing the constant
+:description This function, given a section constant, returns the appropriate string describing the constant.
+							:Param int/Section section type
+:returns String description of section type
+
+:Function GetSection
+:synopsis determines the correct section constant for the selected onscreen section
+:description This function determines the correct section constant for the selected onscreen section.
+:returns Int section constant
+
+:Function GetParentName
+:synopsis allows the user to select a parent control from a list of controls when creating controls on a report or form
+:description This function allows the user to select a parent control from a list of controls when creating controls on a report or form.
+							:Param int/HostType host type constant, eg acReport or acForm
+:returns string name of control to be set as the parent to the control being created
+
+:function SelectToolboxControl
+:synopsis presents a list of controls which can be added to a form or report and creates the selected control
+:description This function presents a list of controls which can be added to a form or report and creates the selected control. If the control can have a parent then the function allows the user to select the parent control. A label control is also created if appropriate.
+:returns void
+
+:Function SpeakRelationship
+:synopsis speaks the fields and tables participating in a relationship
+:description This function speaks the fields and tables participating in a relationship. The function determines which field and table has focus in the relationships dialog window and then looks in the Object Model for the matching other half of the relationship.
+:returns Void
+
+:Function isFieldNameInFieldsCollection
+:synopsis determines if a field name is present in a fields collection
+:description This function determines if a field name is present in a fields collection. This function is used by DeleteRelationship to find the correct relationship to delete.
+							:Param string/fieldName field name
+							:Param object/fields fields collection
+							:Param int/foreignName true if the field name is a forign key, false if it is a primary key
+:returns Int true or false
+
+:function deleteRelationship
+:synopsis deletes the selected relationship from the relationships collection
+:description This function deletes the selected relationship from the relationships collection. It does not update the screen so the window must be closed and reopened to see the results visually.
+:returns int true if the selected relationship was successfully deleted from the relationships collection.
+
+:Function sayColumnHeader
+:synopsis speaks the column header for the current datasheet cell
+:description This function speaks the column header for the current datasheet cell. It is overridden to ensure that the default table reading keystrokes behave as expected.
+:returns void
+
+:function getDatasheetRow
+:synopsis returns the current datasheet row
+:description This function returns the current datasheet row.
+:returns int the current row in the datasheet
+
+:function getDatasheetRowCouhnt
+:synopsis returns the number of records and hence rows in the datasheet
+:description 																			  This function returns the number of records and hence rows in the datasheet.
+:returns int row count
+
+:function getDatasheetColumn
+:synopsis returns the current column in the active datasheet
+:description This function returns the current column in the active datasheet.
+:returns int current column number
+
+:function getDatasheetColumnCount
+:synopsis returns the number of columns in the datasheet
+:description This function returns the number of columns in the datasheet.
+:returns int column count
+
+:function sayCell
+:synopsis speaks the contents of the current datasheet cell
+:description This function speaks the contents of the current datasheet cell.
+:returns void
+
+:function isDatasheetActive
+:synopsis determines if a datasheet is active
+:description This function determines if a datasheet is active.
+:returns int true or false
+
+:function sayFormHotKey
+:synopsis speaks the hotkey for the focused control on an Access form (if it has one)
+:description This function speaks the hotkey for the focused control on an Access form (if it has one).
+:returns int true if the control has a hotkey, false otherwise
+
+:function hasAccessControlChanged
+:synopsis determines if the focused Access control has changed since the last call to this function
+:description This function determines if the focused Access control has changed since the last call to this function.
+:returns int true or false
+
+:Function InTable
+:Description Determines whether or not the active cursor is inside of a table
+:Returns int TRUE if in a table, FALSE otherwise
+
+:function IsFormDataEntryMode
+:synopsis Determines if data entry is allowed in the current record of the form
+:description Determines if data entry is allowed in the current record of the form
+:returns int true/false
+
+:function InitOAccess
+:synopsis Initializes the access application object
+:description Initializes the access application object, which is no longer run at start-up. It sets a flag to indicate that DOM is loaded.
+
+:Function DomStatus
+:Synopsis Determines whether DOM should be loaded and sets DomActive flag.
+:Description This function is called by FocusChangedEvent to determine whether DOM should be loaded if it is not already loaded. This prevents sluggishness in dialogs such as initial opening dialog, SDM, NON-SDM, and database objects dialogs where DOM induces sluggishness. It sets a DOmActive flag to true if DOM is initialized, to false if not.
+:Returns void
+
+:Function UnloadDom
+:Synopsis Unloads document object model to prevent sluggishness in certain dialogs.
+:Description This Function releases the global MSAccess application pointer variable and resets its flag to false.     The function is called whenever a dialog of window class #32770 or SDM dialog or database objects dialog have focus.
+:Returns void
+
+:Function getCurrentView
+:description Gets active or current view in Access.  -1 is reason code for no active view.
+:Returns int the active view
+
+:Function getViewName
+:Description returns name for current Access view
+:Param int/nView the view whose name to get.
+:Returns string Name of view presented in param1.
+
+
+:function DataSheetCoordinates
+:description Obtains the current datasheet coordinates.
+:Param int/byRef/nCol
+:Param int/byRef/nRow
+:Returns Void
+
+:function IsAppObjInvalid
+:description Determines whether pointer to application object is invalid.
+:Returns Int True if invalid, false otherwise.
+
+:Function DesignFieldType
+:Description This function returns a design field type, 1, 2, or 3, if in design table view. Otherwise, returns false.
+:Returns Int A field type if in design table view, false otherwise.

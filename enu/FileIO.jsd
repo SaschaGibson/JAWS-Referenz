@@ -1,0 +1,78 @@
+:function collectionItemsCount
+:returns int the number of items in the collection. Doesn't walk down child collections just checks member count.
+:description Returns the number of members in the specified collection. Great for determining if a collection member is itself a collection: collectionItemsCount (c.a)
+:param collection/list the variable to test for members.
+
+:function iniReadToCollection
+:returns collection A collection representing the ini-style file, whose members are collections representing the sections. Each section member is comprised of key,item pairs where member name = key and item = value.
+:Param String/strFile The path to the ini style file.  This value must either be a variable or contained in quotes.  If a directory is not specified, it will write the file under the <JFW>\Settings directory.
+:Param Int/iLocationCode Determines the directory where the file is located.
+
+:function iniReadSectionToCollection
+:returns collection A collection containing the key,item pairs in the given section of the specified file.
+:Param string/ SectionName The name of the section containing the desired key,item pairs.  This value must either be a variable or contained in quotes.
+:Param String/strFile The path to the ini style file.  This value must either be a variable or contained in quotes.  If a directory is not specified, it will write the file under the <JFW>\Settings directory.
+:Param Int/iLocationCode Determines the directory where the file is located.
+
+:function iniReadAndLayerSectionToCollection
+:returns collection A collection containing the key,item pairs in the given section of the specified file, layerd over the default settings which were passed in the default collection parameter.
+:param collection/Defaultcollection/byRef The default collection on which the newly read settings will layer. This collection is modified and returned with the changed or added settings.
+:Param string/ SectionName The name of the section containing the desired key,item pairs.  This value must either be a variable or contained in quotes.
+:Param String/strFile The path to the ini style file.  This value must either be a variable or contained in quotes.  If a directory is not specified, it will write the file under the <JFW>\Settings directory.
+:Param Int/iLocationCode Determines the directory where the file is located.
+
+:function settingReadToCollection
+:returns collection A collection representing the ini-style settings file, whose members are collections representing the sections. Each section member is comprised of key,item pairs where member name = key and item = value.
+:Param String/strFile The path to the settings file.  This value must either be a variable or contained in quotes.  If a directory is not specified, it will write the file under the <JFW>\Settings directory.
+:param int/nFileType The FT_ constant from hjConst.jsh, usually either FT_CURRENT_JCF or FT_JSI
+:Optional
+:param int/nReadSource The RS constant from hjConst.jsh
+
+:function settingReadSectionToCollection
+:returns collection A collection containing the key,item pairs in the given section of the specified file.
+:Param string/ SectionName The name of the section containing the desired key,item pairs.  This value must either be a variable or contained in quotes.
+:Param String/strFile The path to the settings file.  This value must either be a variable or contained in quotes.  If a directory is not specified, it will write the file under the <JFW>\Settings directory.
+:param int/nFileType The FT_ constant from hjConst.jsh, usually either FT_CURRENT_JCF or FT_JSI
+:Optional
+:param int/nReadSource The RS constant from hjConst.jsh
+
+:function iniWriteFromCollection
+:returns int
+:description Writes the given collection into the given ini-style file. The collection must be in the same form as the one created by iniReadToCollection. That is, its members must themselves be collections representing the ini-style sections. Each member collection must contain ini-style key, item pairs where key = member name and item = member value.
+:param collection/sectionList the parent collection which contains the list of collections representing the ini-style sections.
+:Param String/strFile the ini-style file
+:param int/iLocationCode The FLOC_ constant representing the location of the file.
+
+:function iniWriteSectionFromCollection
+:returns int
+:description Writes the given collection into the given ini-style file.
+:param collection/section the section collection containing the key,item pairs.
+:Param string/ SectionName The name of the section containing the desired key,item pairs.  This value must either be a variable or contained in quotes.
+:Param String/strFile the ini-style file
+:param int/iLocationCode The FLOC_ constant representing the location of the file.
+
+:function settingWriteFromCollection
+:returns int
+:description Writes the given collection into the given settings file. The collection must be in the same form as the one created by iniReadToCollection. That is, its members must themselves be collections representing the ini-style sections. Each member collection must contain ini-style key, item pairs where key = member name and item = member value.
+:param collection/sectionList The file-shaped collection, a master collection containing child collections, who contain key,item pairs.
+:param string/strFile The settings file to write to
+:param int/nFileType One of the FT_Constants from hjConst.jsh, either FT_JSI or FT_CURRENT_JCF
+:param int/nWriteDestination One of the write destination WD) constants found in hjConst.jsh
+
+:function settingWriteSectionFromCollection
+:returns int
+:description Writes the given collection into the given ini-style file.
+:param collection/section the section collection containing the key,item pairs.
+:Param string/ SectionName The name of the section containing the desired key,item pairs.  This value must either be a variable or contained in quotes.
+:param string/strFile The settings file to write to
+:param int/nFileType One of the FT_Constants from hjConst.jsh, either FT_JSI or FT_CURRENT_JCF
+:param int/nWriteDestination One of the write destination WD) constants found in hjConst.jsh
+
+:function xmlGetXMLObjectFromXMLString
+:Returns object the xml object containing the the xml document or gragment specified by the string.
+:Description a JAWS Script wrapper for the most common functions and property setting to handle a in-process string and turn it into a MSXML6.0 object for use.
+:Param string/sXMLString the string in memory containing the xml fragment or document.  This is not a URI or path string to a file, but for in-memory processing.
+:Optional
+:Param int/bPreserveWhiteSpace bool TRUE or FALSE to preserve the actual white space and tab characters especially if you want to look at the xml output for some reason, xmlobj.xml
+
+

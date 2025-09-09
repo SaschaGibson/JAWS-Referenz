@@ -1,0 +1,11 @@
+[Common Keys]
+control+Insert+B=BackButton
+control+JAWSKey+B=BackButton
+control+Insert+E=MoveToChatEntryField
+control+JAWSKey+E=MoveToChatEntryField
+Control+Insert+Z=MoveToChatHistoryList
+control+JAWSKey+Z=MoveToChatHistoryList
+control+Insert+N=MoveToConversationsList
+control+JAWSKey+N=MoveToConversationsList
+insert+F8=SkypeKeystrokesList
+JAWSKey+F8=SkypeKeystrokesList

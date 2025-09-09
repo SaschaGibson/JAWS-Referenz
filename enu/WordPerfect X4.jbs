@@ -1,0 +1,20 @@
+; Braille structure file for WordPerfect
+; RG 06/25/2001
+
+[Component Aliases]
+CellCoordinates=Table Cell Coordinates
+; selection array
+[CustomControl1]
+DisplayName=Selection Array
+components=name,type,value
+removed=
+type=Selection Array
+
+[CustomControl2]
+DisplayName=Table Cell
+components=type,CellCoordinates,value
+removed=
+type=tbl
+
+[Information]
+Description=Default  Structured Mode view for WordPerfect.

@@ -1,0 +1,113 @@
+:script ZTZoomTextOnOff
+:DisplayName ZoomText Ein/Aus
+:Description Schaltet ZoomText und alle Verstärkungen ein und aus ohne das Programm zu beenden.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTShowUserInterface
+:DisplayName ZoomText Benutzeroberfläche
+:Description Zeigt die ZoomText Werkzeugleiste.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTZoomIn
+:DisplayName ReinZoomen
+:Description Erhöht die Vergrößerung um jeweils eine Stufe.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTZoomOut
+:DisplayName RausZoomen
+:Description Verringert die Vergrößerung um jeweils eine Stufe.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTToggleZoomand1x
+:DisplayName Zoom auf 1x (Umschalter)
+:Description Wechselt zwischen aktueller Vergrößerungsstufe und 1x, ohne andere Verstärkungen oder Funktionen abzuschalten.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTScrollUp
+:DisplayName Scrollen nach oben
+:Description Scrollt die vergrößerte Ansicht nach oben. Wiederholtes Drücken der Pfeiltaste erhöht die Scrollgeschwindigkeit.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTScrollDown
+:DisplayName Scrollen nach unten
+:Description Scrollt die vergrößerte Ansicht nach unten. Wiederholtes Drücken der Pfeiltaste erhöht die Scrollgeschwindigkeit.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTScrollLeft
+:DisplayName Scrollen nach links
+:Description Scrollt die vergrößerte Ansicht nach links. Wiederholtes Drücken der Pfeiltaste erhöht die Scrollgeschwindigkeit.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTScrollRight
+:DisplayName Scrollen nach rechts
+:Description Scrollt die vergrößerte Ansicht nach rechts. Wiederholtes Drücken der Pfeiltaste erhöht die Scrollgeschwindigkeit.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTEnhanceColorsOnOff
+:DisplayName Farbverstärkung
+:Description Schaltet die gewählte Farbverstärkung an und aus. Die Standard-Verstärkung ist Helligkeit invertieren.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTEnhancePointerOnOff
+:DisplayName Mausverstärkung
+:Description Schaltet die gewählte Mauszeigerverstärkung an und aus. 
+:Category ZoomText
+:SearchRank 1
+
+:script ZTEnhanceCursorOnOff
+:DisplayName Cursorverstärkung
+:Description Schaltet die gewählte Cursorverstärkung an und aus.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTEnhanceFocusOnOff
+:DisplayName Fokusverstärkung
+:Description Schaltet die gewählte Verstärkung der Fokushervorhebung an und aus, für eine bessere  Verfolgung auf dem Bildschirm.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTLaunchAppReaderFromPointer
+:DisplayName AppReader beim Mauszeiger starten
+:Description Startet den AppReader und beginnt mit dem Lesen beim Wort unter dem Mauszeiger.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTLaunchAppView
+:DisplayName App Ansicht starten
+:Description Startet den AppReader im Modus App Ansicht, wo das Lesen in der Anwendung durchgeführt wird.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTLaunchTextView
+:DisplayName Textansicht starten
+:Description Startet den AppReader im Modus Text Ansicht, wo das Lesen in einer kontrastreichen Umgebung durchgeführt wird.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTLaunchSpeakItTool
+:DisplayName Sprich Das Werkzeug starten
+:Description Startet den AppReader im Sprich Das Modus, dies ermöglicht das Lesen von Text auf den man klickt oder drüberfährt.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTLaunchFinder
+:DisplayName Sucher starten
+:Description Startet den Sucher, ermöglicht das Suchen, Querlesen, Lesen und Navigieren in Dokumenten, E-Mails und Webseiten.
+:Category ZoomText
+:SearchRank 1
+
+:script ZTSwitchActiveView
+:DisplayName Aktive Ansicht (MultiView Lokal/Global)
+:Description Schaltet die aktive Ansicht (Monitor) um, wenn MultiView Lokal und MultiView Global verwendet werden.
+:Category ZoomText
+:SearchRank 1

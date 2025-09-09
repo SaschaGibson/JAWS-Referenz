@@ -1,0 +1,16 @@
+:function InitSystemSettingsUIA
+:description Initializes UIA objects used in the SystemSettings scripts.
+:returns int True if the UIA objects for SystemSettings were initialized, false otherwise.
+
+:function SystemSettingsFocusChangedEvent
+:description UIA focus change event.
+:param object The UIA element receiving the focus.
+
+:function OnUpdateHistoryLink
+:description Determines if the focus is on a Windows update history event link.
+:returns int true if the focus is on a Windows update history event link, false otherwise.
+
+:function GetNameOfFocusAndPredecessorObjects
+:description Retrieves the name of the focus object prepended with the name of the object which precedes it.
+The history event link name is spoken and displayed in braille using the names of both the focus and its preceding object.
+:returns string The name of the focus object prepended with the name of the object which precedes it.

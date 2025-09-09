@@ -1,0 +1,14 @@
+[COMMON Keys]
+Control+M=Menu
+Control+Shift+V=SayVerticalPercent
+
+[Laptop Keys]
+; Begin Removed from Common to prevent keyboard conflicts with MAGic
+Control+Shift+H=SayHorizontalPercent
+; End Removed from Common to prevent keyboard conflicts with MAGic
+
+[DESKTOP Keys]
+; Begin Removed from Common to prevent keyboard conflicts with MAGic
+Control+Shift+H=SayHorizontalPercent
+; End Removed from Common to prevent keyboard conflicts with MAGic
+

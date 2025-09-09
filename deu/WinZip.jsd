@@ -1,0 +1,34 @@
+:script HotKeyHelp
+
+:function HandleCustomWindows
+
+:function SayNonHighlightedText
+
+:script ShiftTab
+
+:function AutoStartEvent
+
+:function KeyPressedEvent
+
+:script SayWindowPromptAndText
+
+:function SayHighlightedText
+
+:script ScreenSensitiveHelp
+
+:script ReadPropertiesWindow
+:Synopsis Liest die Informationen im Dialogfeld Zip Eigenschaften
+:Description Dieser Befehl liest die Eigenschaften-Information im Dialogfeld Zip Eigenschaften. Sie können die Umschalt-Taste drücken, um sich schnell auf jedes Element zu bewegen
+
+:function FocusChangedEvent
+
+:script ToolbarList
+:Synopsis Liefert eine Liste von Symbolleisten-Schaltern, die man auswählen kann
+:Description Wählen Sie den Schalter, den Sie aus der Liste aktivieren möchten und drücken Sie Eingabe, um ihn zu aktivieren
+
+:script ScriptFileName
+
+:script Tab
+
+:function HandleCustomRealWindows
+

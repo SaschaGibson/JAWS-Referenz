@@ -1,0 +1,25 @@
+﻿;Braille structure file for Windows 10 Calculator
+
+;section for localization and UI display
+[Component Aliases]
+;in the calculator calendar, the day grid items have headers for the week day names:
+Header=Header
+
+;Section for the collapsed calendar button, in Date Calculation mode:
+[CustomControl1]
+components=Name,Value,Type
+removed=
+type=Sltr
+displayname=Kalender
+AlignmentPriority=Value
+
+; Section for Calendar, Day grid items, in Date Calculation mode:
+[CustomControl2]
+components=Name,header
+removed=
+type=
+displayname=Element Tagegitter
+AlignmentPriority=Name
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Microsoft Rechner.

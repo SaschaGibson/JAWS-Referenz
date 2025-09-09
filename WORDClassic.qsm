@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="word.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="WordSettings" Text="Word Settings">
+			<HelpMsg>
+These are options specific to the application.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Formatting" Text="Formatting">
+			<HelpMsg>
+This group of options controls which formatting changes are detected while reading the document.
+Types of changes include: bullet types, extra help, shading changes in tables, measurement units, and style.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Formatting.BulletTypeIndication" Text="Bullet Type Indication">
+			<HelpMsg>
+This option controls whether to indicate bullet types while reading through the document.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<!-- 0 = on or show all, 1 = off or generalize -->
+		<DisplayName ID="WordSettings.Formatting.BulletTypeIndication.0" Text="On" />
+		<DisplayName ID="WordSettings.Formatting.BulletTypeIndication.1" Text="Off" />
+		<DisplayName ID="WordSettings.Formatting.F1HelpPrompt" Text="F1 Help Prompt">
+			<HelpMsg>
+This option controls whether to detect F1 help information for formfields, such as Help that has been written into the form template by its author. The option has three states:
+
+Off - No F1 help prompt is announced when a formfield containing F1 Help gains focus.
+
+On - The message, "Press F1 for help." is announced when a formfield containing F1 help gains focus.
+
+On with Formfield - The F1 help message associated with a formfield that contains F1 help is announced when the formfield gains focus.
+
+This means that the prompt that F1 help is available is announced when a formfield containing F1 help gains focus.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Formatting.HeadingsAnnounce" Text="Headings Announce">
+			<HelpMsg>
+This option controls how JAWS announces headings in Word documents.
+Select between Off, On, and Heading and Level. If you want all styles to be indicated instead of just headings, choose the Style Changes option rather than Headings Announce from the QuickSettings dialog.
+The default setting is Heading and Level. </HelpMsg>
+			<DisabledMsg>Cannot set headings announcement when Style changes is on</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Formatting.HeadingsAnnounce.0" AliasID="VirtualCursorOptions.HeadingAndFrameOptions.HeadingsAnnounce.0" />
+		<DisplayName ID="WordSettings.Formatting.HeadingsAnnounce.1" AliasID="VirtualCursorOptions.HeadingAndFrameOptions.HeadingsAnnounce.1" />
+		<DisplayName ID="WordSettings.Formatting.HeadingsAnnounce.2" AliasID="VirtualCursorOptions.HeadingAndFrameOptions.HeadingsAnnounce.2" />
+		<DisplayName ID="WordSettings.Formatting.MeasurementUnits"  Text="Measurement Units">
+			<HelpMsg>
+This option allows the user to set a desired unit of measure without affecting the application's current setting. For example, if the application is set to inches but centimeters is preferred,  this option allows the user to change the desired unit of measure so that indentation levels are read in that measurement unit.
+
+In Microsoft Word, fonts are proportionally spaced. So if the user chooses the Spaces option , the measurement unit would normally be announced as pixels. In this case, JAWS announces tab stops instead to provide a clearer understanding of where the cursor is on the page.
+
+The default setting is whatever the application setting is for the current locale. In the U.S., for example, this means the default is set to inches.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Formatting.ShadingDetection" Text="Shading Detection">
+			<HelpMsg>
+This option controls whether to detect changes in shading while navigating table cells .
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Formatting.StyleChanges" Text="Style Changes">
+			<HelpMsg>
+This option controls whether to detect style changes while reading through the document.
+
+The two other options include:
+always announced - Style changes are announced regardless of what scheme is used.
+
+Detected only by scheme - Style changes are announced when the scheme is of type, Classic. Such schemes include Classic, WordClassic, Classic with Quotes, etc.
+
+If Detected Only by Scheme is in effect, style changes are not announced when the scheme is something other than type Classic. In that case, the scheme itself handles the way a style is detected. For example, in the proofreading with attributes scheme, headings are detected in a different voice, but the announcement of that style is not heard.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Tables" Text="Tables">
+			<HelpMsg>
+This group of options controls how JAWS behaves when reading and navigating tables.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Tables.AutomaticTableTitles" Text="Automatic Table Titles">
+			<HelpMsg>
+This option controls how titles are read when you did not specify your own table titles settings under Word Settings -> Document Specific Settings -> Tables.
+In Office 365 and later, table headers can be gathered automatically from the accessible information provided by Word itself.
+This option is not document-specific.
+
+Select 'Off' to have no automatic titles announced.
+
+You can select row, column, or both row and column. 
+As you navigate, only the changed title matching your title announcement choice is spoken.
+The default setting is Both Row And Column.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Tables.AutomaticTableTitles.0" Text="Off" />
+		<DisplayName ID="WordSettings.Tables.AutomaticTableTitles.1" Text="Column" />
+		<DisplayName ID="WordSettings.Tables.AutomaticTableTitles.2" Text="Row" />
+		<DisplayName ID="WordSettings.Tables.AutomaticTableTitles.3" Text="Both Row and Column" />
+		<DisplayName ID="WordSettings.Tables.HeaderAndContentOrder" Text="Cell Header and Content">
+			<HelpMsg>
+Use this option to set whether table column and row titles are announced before content or content is announced before titles in tables.
+This option is not document-specific.
+
+The default is to announce titles before content.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Tables.HeaderAndContentOrder.0" Text="Speak titles before content" />
+		<DisplayName ID="WordSettings.Tables.HeaderAndContentOrder.1" Text="Speak content before titles" />
+		<DisplayName ID="WordSettings.Tables.CellCoordinatesAnnouncement" Text="Cell Coordinates Announcement">
+			<HelpMsg>
+This option controls whether JAWS announces cell coordinates for tables as the document is navigated.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Tables.TableDetection" Text="Table Detection">
+			<HelpMsg>
+This option controls whether JAWS detects that you are entering or exiting a table while reading through the document. This means that when you enter a table , JAWS indicates this by announcing table number, cell content, etc., and by displaying relevant table information in Braille. When you exit a table,JAWS also indicates that the table has been exited. If the option is turned off, the table can still be navigated normally, but JAWS does not indicate when you enter or exit a table or anything about the table itself, its number, type, number of rows and columns it contains, etc.
+The default setting is On. </HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.Tables.Description" Text="Description">
+			<HelpMsg>
+This option controls whether descriptive information about the current table is announced as the table is navigated. This includes column and row position information for columns and rows that do not have a header asociated with them.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.SpeechAndSoundSchemes" Text="Speech and Sound Schemes">
+			<HelpMsg>
+This option controls whether the currently active scheme is always the same for all Word files or the scheme is document-specific.
+
+If you change the default scheme for all of JAWS and that scheme is something other than Classic, Word also changes to that scheme. But this is only in effect if all Word documents are set to use the same scheme. If Word is set to have document-specific schemes, changing the scheme setting for the rest of JAWS does not impact which Word schemes are in effect. As you load different documents in Word, whatever scheme is set for each document remains in effect.
+The default setting is Always the Same.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.EditingOptions" Text="Editing Options">
+			<HelpMsg>
+This group of options controls whether JAWS detects various types of objects while you are editing Text in the document. Types of objects in Word include autocorrect, spelling and grammatical errors, and revisions. The group also contains options  that control how JAWS behaves when you are editing Text in general.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.EditingOptions.AutoCorrectDetection" Text="AutoCorrect Detection">
+			<HelpMsg>
+This option controls whether to detect that Word is autocorrecting spelling errors.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.EditingOptions.SpellingErrorDetection" Text="Spelling Error Detection">
+			<!-- <DisabledMsg>Spelling Buzzer on mistyped words must be disabled and Autocorrect must be enabled</DisabledMsg> -->
+			<DisabledMsg>Now found in Settings Center, Text Processing, Proofing Options.</DisabledMsg>
+			<HelpMsg>
+This option controls whether to detect spelling errors while reading through the document.
+If Spelling Buzzer on mistyped words is checked, this option cannot be changed in QuickSettings and is automatically turned on.
+
+Options include:
+Off - No spelling errors are detected.
+On - Errors are detected as the document is navigated.
+On plus count - Errors are detected along with the number of errors on the current line as the document is navigated by line.
+
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.EditingOptions.GrammaticalErrorDetection" Text="Grammatical Error Detection">
+			<!-- <DisabledMsg>Autocorrect must be enabled</DisabledMsg> -->
+			<DisabledMsg>Now found in Settings Center, Text Processing, Proofing Options.</DisabledMsg>
+			<HelpMsg>
+This option controls whether to detect grammatical errors while reading through the document.
+
+Options include:
+Off - No grammatical errors are detected.
+On - Errors are detected as the document is navigated.
+On plus count - Errors are detected along with the number of errors on the current line as the document is navigated by line.
+The default setting is Off. If Braille is in use, the default is not to mark grammatical errors in Braille.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.EditingOptions.SpellingBuzzer" Text="Spelling Buzzer on mistyped words">
+			<DisabledMsg>Now found in Settings Center, Text Processing, Proofing Options.</DisabledMsg>
+			<HelpMsg>
+JAWS will make a short buzzing sound when the squiggly line appears as you type, indicating a misspelling.
+When checked, Spelling Error Detection will automatically be enabled, announcing spelling errors during navigation.
+This checkbox is checked by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.EditingOptions.NewLinesAndParagraphsIndication" Text="New Lines and Paragraphs Indication">
+			<HelpMsg>
+Select this option to have JAWS announce new lines and paragraph marks in a document. The default setting is Off. Before using this option, paragraph marks and other formatting symbols must first be visible in the document. In Word 2007 or later, press ALT+H, and then 8. In earlier Word versions, select the Formatting Mark check box, located in the View tab under Options in the Tools menu. Once this is done, select a setting for this option to determine if and how JAWS announces new line and paragraph marks as you read the document.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.EditingOptions.TABMeasurementIndication" Text="TAB Measurement Indication">
+			<HelpMsg>
+This option controls whether to indicate the new measurement from the left margin when the TAB key is pressed. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.EditingOptions.TrackChanges" Text="Track Changes">
+			<HelpMsg>
+Use this option to set how JAWS detects and announces insertions, deletions, or formatting changes made in a document that uses Word's Track Changes feature.
+In Office365, the "Speak type plus count" setting only works if your document is set to All markup.
+To check what markup your document is set to, press Alt+r , T, d. 
+The default setting is Speak Type.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.GeneralOptions" Text="General Options">
+			<HelpMsg>
+This group contains options that control overall JAWS behavior.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.GeneralOptions.DocumentPresentation" Text="Document Presentation">
+			<HelpMsg>
+This option controls how JAWS formats tables in Microsoft Word or messages in Microsoft Outlook 2007 or later. There are two modes, Simple and Screen Layout.
+
+Simple Layout displays only the current cell, with special Braille formatting in Structured mode to indicate the current table, row, and column numbers. As cells are navigated by any movement unit, including by line, only the current cell's content is spoken and displayed in Braille.
+
+Screen Layout is line-by-line format, much as you might see in a Braille book. Columns in a table follow each other in linear format. This is the way table text appears on screen. A line contains an entire row, rather than a single cell. Cell padding, or borders, are indicated with a | (vertical bar or pipe) symbol. As table cells are navigated by line, entire rows of text are spoken and displayed in Braille. As table cells are navigated by other movement units, only the current relevant information is spoken but the entire current row is still displayed in Braille.
+
+The default setting is Simple Layout. This means that only the current cell is spoken and displayed in Braille. This is the case even in JAWS 14 and later where Outlook messages are presented as virtualized messages by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.GeneralOptions.FloatingToolbarsDock.0" Text="Off for next time" />
+		<DisplayName ID="WordSettings.GeneralOptions.FloatingToolbarsDock.1" Text="On for next time" />
+		<DisplayName ID="WordSettings.ReadingOptions" Text="Reading Options">
+			<HelpMsg>
+This group of options controls whether JAWS detects various types of objects while reading through a document. Types of objects specific to Word include bookmarks, borders, comments, footnotes, and end notes, breaks for pages, columns, and sections, pictures, and  smart tags. The group also controls how JAWS behaves when reading and navigating Text in general.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.OutlineLevelIndication" Text="Outline Level Indication">
+			<HelpMsg>
+This option controls whether to indicate the outline level while reading through the document. The default setting is checked.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.BookmarkIndication" Text="Bookmark Indication">
+			<HelpMsg>
+This option controls whether to detect bookmarks while reading through the document. On means that bookmarks are announced and shown in Braille as the document is navigated by character or word. On With Text means that when the bookmark is detected while navigating the document by character or word, the Text of the bookmark itself is also announced. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.BorderChanges" Text="Border Changes">
+			<HelpMsg>
+This option controls whether to detect changes in borders while reading a Word document or Outlook message. This option is not available in Outlook messages when the Virtual PC cursor is enabled. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.CommentsFootnotesEndnotesDetection" Text="Comments, Footnotes, and Endnotes Detection">
+			<HelpMsg>
+This option controls whether to detect comments, footnotes, and end notes  while reading the document.
+
+Options include:
+Off - No comments, footnotes, or end notes are detected.
+On - Comments, footnotes, and end notes are detected as the document is navigated.
+On With Text - The text of the comment, footnote, or endnote is announced when the item is detected as the document is navigated by line.
+On plus count - The number of Comments, footnotes, and end notes on the current line is detected as the document is navigated by line.
+
+If a Braille display is attached, the footnote or endnote reference along with its text appears in Braille to the left of its number. For a comment, the text of the comment appears along with its reference.
+
+It is important to note, however, that a comment, footnote, or endnote are not actually located at the place where their references appear in the document. To edit or review the text of such references, the view of the document must be changed to the reference type. So for example, to view footnotes or endnotes, change the view to Footnotes. For comments, bring up the context menu and choose "Edit Comment".
+
+To return to document reading:
+From footnotes or endnotesview, change the view back to Normal (or Draft for  Word 2007), or Print Layout.
+From the Comment pane, press F6 until "document pane 1" is heard.
+
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.ItemCounts" Text="Item Counts">
+			<HelpMsg>
+This option controls whether JAWS announces item counts before or after speaking Text. The default setting is to speak them before Text.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.LineSpacingDetection" Text="Line Spacing Detection">
+			<HelpMsg>
+This option controls whether JAWS announces and displays in Braille document line spacing changes. The default setting in Microsoft Word is single-spaced. But part or all of a document can be double-spaced, triple-spaced, even set to fractional  line spacing. To hear when such changes occur in a document, turn on the setting. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.IncludeBlankParagraphsForParagraphNavigation" Text="Include Blank Paragraphs For Paragraph Navigation">
+			<HelpMsg>
+This option controls whether navigation by Control+Up and Control+Down arrows includes blank paragraphs. When set to On, navigation in the Word document using Control+Up and Control+Down arrow keys will include blank lines as well as paragraphs with text. When set to Off, blank lines are skipped.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.NavigationQuickKeys" Text="Navigation Quick Keys">
+			<HelpMsg>
+Use this option to toggle Navigation Quick Keys on or off in Microsoft Word. The default setting is Off when using Word. (Note that On is the default setting for any application where the Virtual Cursor is active.) You can also press INSERT+Z to quickly toggle Navigation Quick Keys on or off.
+The insert+Z method for changing Navigation Quick Keys is temporary. However, If you use the insert+z method, that setting will be reflected in QuickSettings, but not Settings Center. This means that if you toggle the setting using Insert+Z but then wish to make it permanent, go into QuickSettings and reset it by toggling the state twice. This means go into QuickSettings after you turned the setting on using insert+Z and you'll see that it's on. Press space twice to turn it off then on again. This preserves the integrity of the temporary nature of insert+z while causing QuickSettings to reflect the current state instead of what's written to the file.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.NonbreakingSymbolsIndication" Text="Nonbreaking Symbols Indication">
+			<HelpMsg>
+This option controls whether JAWS  detects nonbreaking symbols while navigating a Word document or Outlook message. When turned off, all nonbreaking symbols are treated as their standard counterparts: i.e., nonbreaking spaces as spaces, nonbreaking hyphens as hyphens, etc. The options include navigating the document by:
+1. Characters
+2. Characters and words
+3. Characters, words, lines, sentences, and paragraphs
+4. Even during Say All
+
+Pressing the SayCurrentCharacter  keystroke three times quickly always indicates the symbol's true value even when the feature is turned off.
+
+The default setting in Word is by characters only. This means that when navigating only by character, the nonbreaking symbols are detected.
+
+The default setting in Outlook is off. </HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.NonbreakingSymbolsIndication.0" Text="Off" />
+		<DisplayName ID="WordSettings.ReadingOptions.NonbreakingSymbolsIndication.1" Text="by characters only" />
+		<DisplayName ID="WordSettings.ReadingOptions.NonbreakingSymbolsIndication.2" Text="by characters and words" />
+		<DisplayName ID="WordSettings.ReadingOptions.NonbreakingSymbolsIndication.3" Text="by characters, words, lines, sentences, and paragraphs" />
+		<DisplayName ID="WordSettings.ReadingOptions.NonbreakingSymbolsIndication.4" Text="during Say All" />
+		<DisplayName ID="WordSettings.ReadingOptions.PageSectionAndMultipleColumnBreaks" Text="Page, Section, And Multiple Column Breaks">
+			<HelpMsg>
+This option controls whether JAWS detects page, section, and column breaks while reading through the document. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.DetectHeadersFooters" Text="Header and Footer Detection">
+			<HelpMsg>
+This option controls whether JAWS detects and announces headers and footers in the current section of the currently opened document. The default setting is On.
+
+when the option is on, as a document opens, JAWS announces the presence of headers and footers in the current section of the document.
+
+If the option for Page, Section, And Multiple Column Breaks is set to on, the presence of headers and footers in a section will be announced when the section change is announced.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.ReadingOptions.SmartTagsIndication" Text="Smart Tags Indication">
+			<HelpMsg>
+This option controls whether to detect that Word is marking smart tags. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.BrailleOptions" Text="Braille Options">
+			<HelpMsg>
+This group contains options and groups of options that control your braille display. These include options for panning, translated braille output, braille marking, 8-dot braille, and more.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.BrailleOptions.BrailleBulletTypeIndication" Text="Braille Bullet Type Indication">
+			<HelpMsg>
+This option controls whether JAWS detects bullets in Braille with a single-cell indicator - the asterisk (*), or with multi-cell abbreviations that represent different bullet types. The default setting is On. This means that the multi-cell bullet abrreviations are displayed. This option works only if "Active Follows Braille" is on.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.BrailleOptions.MarkProofreadingIndicationInBraille" Text="Mark Proofreading Indication in Braille">
+			<HelpMsg>
+This option controls whether to show Braille proofreading marks for spelling errors only, grammatical errors only, both, or neither. The default setting is Off. This means that no Braille marking for spelling or grammatical errors is shown in Braille.
+
+Mark Proofreading Indication in Braille works only if "Active Follows Braille" is on.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.BrailleOptions.MarkProofreadingIndicationInBraille.0" Text="No Spelling or Grammatical Errors" />
+		<DisplayName ID="WordSettings.BrailleOptions.MarkProofreadingIndicationInBraille.1" Text="Spelling Errors" />
+		<DisplayName ID="WordSettings.BrailleOptions.MarkProofreadingIndicationInBraille.2" Text="Grammatical Errors" />
+		<DisplayName ID="WordSettings.BrailleOptions.MarkProofreadingIndicationInBraille.3" Text="Spelling and Grammatical Errors" />
+		<DisplayName ID="WordSettings.BrailleOptions.TableOptions" Text="Table Options">
+			<HelpMsg>
+This group contains options that control table presentation on your braille display.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.BrailleOptions.TableOptions.TableNumberDisplay" Text="Table Number Display">
+			<HelpMsg>
+Select this option to display table numbers in braille. It is independent of whether or not cell coordinates display in braille. When the option is selected, table numbers display as "tbl" followed by the number of the table where the cursor is located. When the option is off, only "tbl" displays to indicate that the cursor is within a table. This check box is selected by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.DocumentSettings" Text="Document-Specific Settings">
+			<HelpMsg>
+This group contains categories of settings which are saved on a document-specific basis.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.DocumentSettings.Tables" AliasID="WordSettings.Tables" />
+		<DisplayName ID="WordSettings.DocumentSettings.Tables.DefinedBookmarkTableColumnAndRowTitlesOverride" Text="Defined Bookmark Table Column and Row Titles Override">
+			<HelpMsg>
+The Override setting allows you to manually assign rows and columns as titles. If this setting is off, title-related settings are not visible in the tree view. After changing the Override setting, press OK to close the dialog, and then press INSERT+V to reopen it, showing your newly-available title settings.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WordSettings.DocumentSettings.Tables.TableTitlesAnnounce" Text="Table Titles Announce">
+			<HelpMsg>This option controls whether JAWS detects row and column title while reading tables cells in the document.  If the option for overriding defined bookmark table titles is turned off, the default setting is to Announce Only Marked Headers. This means that JAWS detects only the defined bookmarked headers in each table. You cannot manually change the setting.</HelpMsg>
+			<DisabledMSG>Change the Defined Bookmark Table Column and Row Titles Override option to set the current setting manually.</DisabledMSG>
+		</DisplayName>
+		<DisplayName ID="WordSettings.DocumentSettings.Tables.ColumnTitlesRowSet" Text="Column Titles Row Set">
+			<HelpMsg>
+This document-specific option allows the user manually to define the currently selected cell or group of cells as a title row.
+
+In order to use this feature, you first need to change the default setting for "Defined Bookmark Table Column and Row Titles Override". That feature is off by default. This means that JAWS honors named titles for columns and rows already present in the document itself, if such bookmark named titles exist. The bookmark named titles must be of a certain form for JAWS to recognize them. For example, for Table 1 row and column titles, the bookmark name would be, "Title1". For only column titles, it would be, "ColumnTitle1", and for only row titles, it would be, "RowTitle1".
+
+To learn more about how to use Defined Bookmark Table Column and Row Titles, see the Help topic for the feature.
+
+To set the current title row(s) manually, first move up to the Defined Table Bookmark Titles Override option in the list. Then press SPACEBAR to toggle the override on. Choose either "On for all files" or "On for the current file".
+
+Now move back down the list to define the current title row(s) and press SpaceBar. Press Enter to save the setting changes you have made.</HelpMsg>
+			<DisabledMSG>Change the Defined Bookmark Table Column and Row Titles Override option to set the current setting manually.</DisabledMSG>
+		</DisplayName>
+		<DisplayName ID="WordSettings.DocumentSettings.Tables.RowTitlesColumnSet" Text="Row Titles Column Set">
+			<HelpMsg>
+This document-specific option allows the user manually to define the currently selected cell or group of cells as a title column.
+
+In order to use this feature, you first need to change the default setting for "Defined Bookmark Table Column and Row Titles Override". That feature is off by default. This means that JAWS honors named titles for columns and rows already present in the document itself, if such bookmark named titles exist. The bookmark named titles must be of a certain form for JAWS to recognize them. For example, for Table 1 row and column titles, the bookmark name would be, "Title1". For only column titles, it would be, "ColumnTitle1", and for only row titles, it would be, "RowTitle1".
+
+To learn more about how to use Defined Bookmark Table Column and Row Titles, see the Help topic for the feature.
+
+To set the current title column(s) manually, first move up to the Defined Table Bookmark Titles Override option in the list. Then press SPACEBAR to toggle the override on. Choose either "On for all files" or "On for the current file".
+
+Now move back down the list to define the current title column(s) and press SpaceBar. Press Enter to save the setting changes you have made.</HelpMsg>
+			<DisabledMSG>Change the Defined Bookmark Table Column and Row Titles Override option to set the current setting manually.</DisabledMSG>
+		</DisplayName>
+		<DisplayName ID="WordSettings.DocumentSettings.Tables.TitleDefinitionsClear" Text="Title Definitions Clear">
+			<HelpMsg>
+This option allows the user to clear all table row and column definitions explicitly set. It has no effect on document named bookmark table headers.</HelpMsg>
+			<DisabledMSG>Change the Defined Bookmark Table Column and Row Titles Override option to set the current setting manually.</DisabledMSG>
+		</DisplayName>
+		<DisplayName ID="SayAllOptions.SayAllReadsBy" Text="Say All Reads By">
+			<HelpMsg>
+This option controls how JAWS reads when you perform a Say All.
+The available settings are:  Line With Pauses, Line Without Pauses, Sentence, and Paragraph.
+The default setting is Sentence.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.TopAndBottomEdge" Text="Top And Bottom Edge">
+			<HelpMsg>
+Use this option to control if JAWS beeps and rereads the first or last line when it encounters a top or bottom boundary in a Word document or Outlook 2007 or later message.  This occurs when navigating using the UP ARROW or DOWN ARROW keys. The default setting is Alert with Sound.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

@@ -1,0 +1,73 @@
+:function AutoStartEvent
+:Synopsis This event Function is triggered when the application is started
+:Description When the application is started this event function is performed. It also is performed when the application is switched to or gets focus, as with ALT+TAB. This function is primarily used for the initialization of any global variables that are used and to cause JFW to speak the message strings that announce that the script set has been loaded and inform the user of methods that may be used to get help on using the current application
+
+:function ReadStaticTextWindows
+:Returns int Returns 1 if the function read the static windows that make up the dialog box. Returns 0 if the default processing done by Focus Changed Event should read the windows.
+:Synopsis Controls the speaking of static text windows that make up the currently active dialog box
+:Description This function controls the speaking of static text windows found within the dialog boxes that make up the installation program for QuickTime 3.0. This function is also used to control what is spoken when the dialog box first gains focus. This function is called by Focus Changed Event if the real window has changed since the last time that Focus Changed Event was called. If the active real window is one of the dialog boxes in which the default processing of Focus Changed Event is not sufficient, this function reads the text of the real window and returns 1. Otherwise it returns 0 and Focus Changed Event is allowed to control the speaking of the real window by way of a function call to Say Window Type And Text
+
+:function ReadCustomControls
+:Returns int Returns 1 if this function handled the speaking of the active control, returns 0 otherwise.
+:Synopsis Controls speaking of various controls in which the standard reading functions are not sufficient
+:Description This function controls the speaking of various controls in which the standard reading functions are not sufficient. It is used in Say Focused Window, Say Window Type And Text, Say Line, and Say Word
+
+:function SayFocusedWindow
+:Synopsis This function says the window that just gained focus
+:Description Called by Focus Changed Event or keys that report the item that has focus such as INSERT+TAB. This function is designed to be replaced by application-specific script files that may be required to do special handling for the window with focus without replacing the entire Focus Changed Event
+
+:function FocusChangedEvent
+:Synopsis This function is triggered when focus moves between applications, dialogs, and dialog controls
+:Description The window handles of the previous and current windows are passed to this function. This function calls either SayWindowTypeAndText SayFocusedWindow or SayFocusedObject in order to ensure that the active control is properly spoken
+:Param handle/FocusWindow the handle of the window that has received the focus
+:Param handle/PrevWindow the handle of the window that previously had the focus
+
+:script HotKeyHelp
+:Synopsis Says Hot Key shortcuts for %product% and dialog boxes
+:Description If in a dialog box it will read the hot keys and labels for the items in that dialog, or special instructions for the application, or basic %product% functions
+
+:function ScreenSensitiveHelpForKnownClasses
+:Synopsis Says the Help messages for the standard window types
+:Description Provides information on the standard window class such as the name, what it is used for, and which keys to use
+:Param int/nSubTypeCode The TypeCode of the window
+
+:script ScreenSensitiveHelp
+:Synopsis Says specific information related to the current item or control
+:Description Says the type of the current window or control, what it is used for, and what keys to use within it. If %product% does not recognize the type, then it will say, "custom." You might use the class synonym to reclass it. Use this frequently when learning Windows
+
+:script ScriptFileName
+:Synopsis Says the currently loaded script file name and application name
+:Description Used to identify the script file being used and the currently active application
+
+:script SayWindowPromptAndText
+:Synopsis Says the current window and the associated prompt label
+:Description Says the prompt for the window or control that has focus, the type of the window, and the text in the window
+
+:script SayLine
+:Synopsis Says the line at the active cursor
+:Description If the PC cursor is active, reading is restricted to the current item or window. Otherwise, reading includes all text on approximately the same line, even if it is outside the current control or window, unless JAWS cursor Restriction is on
+
+:script SayWord
+:Synopsis Says the word at the active cursor
+:Description Reads the word or graphic symbol at the active cursor. If the PC cursor is active, JAWS looks for the visible caret or the light bar. If the JAWS cursor is active, it speaks the word or graphic at the mouse pointer. If pressed twice quickly the word at the active cursor is spelled
+
+:script ReviewDestinationDirectory
+:Synopsis Allows the user to review the destination directory
+:Description This script allows the user to review the destination directory information displayed in the Setup Type dialog of the QuickTime 3.0 installation program
+
+:script ReviewPlugInDirectories
+:Synopsis Allows the user to review the QuickTime plugin directories
+:Description This script allows the user to review the QuickTime plugin directory information displayed in the QuickTime Plugin Options dialog box of the QuickTime 3.0 Installation program
+
+:script ReviewSpaceRequirements
+:Synopsis Allows the user to review the space requirements information
+:Description This script allows the user to review the space requirements information that is displayed in the installation components and subcomponents dialog of the QuickTime 3.0 installation program
+
+:script ReadComponentDescription
+:Synopsis Allows the user to read the description of the currently selected component
+:Description This script allows the user to read the description of the currently selected component in the Components multi select list box found in the Installation components and subcomponents dialog of the QuickTime 3.0 installation program
+
+:script ReviewDialogText
+:Synopsis Designed to allow the user to review the static text that is displayed in the active dialog box
+:Description This script is designed to allow the user to review the static text that is displayed in the active dialog box. This script is most useful in dialog boxes that are based on a graphical background and therefore lack text that can be reviews by the JAWS cursor or by calling Read Box In Tab Order
+

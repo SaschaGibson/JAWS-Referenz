@@ -1,0 +1,20 @@
+; Copyright 1995-2015 by Freedom Scientific, Inc.
+; JAWS 8.0
+;  Braille structure file for Borland Developer Studio
+
+; For the VCL form designer
+[CustomControl1]
+Components=Name,Type
+Removed=
+type=frm
+DisplayName=VCL Form Designer
+
+; For the code editor
+[CustomControl2]
+Components=ComputerBrailleIndicator,Line,CodeCompletion,CodeInsight,ErrorInsight
+Removed=
+Type=
+DisplayName=Code Editor
+
+[Information]
+Description=Default  Structured Mode view for Borland Developer Studio.

@@ -1,0 +1,26 @@
+[common keys]
+Alt+7=SpeakTransLine
+Alt+8=SayStyleName
+Alt+9=SayLocation
+Alt+U=ReadLineInBrailleDocToggle
+Alt+I=ReadStyleChangeToggle
+Control+PageUp=ChangeLine
+F2=F2Press
+Alt+F3=AltF3Press
+Control+F8=ControlF8Press
+Control+PageDown=ChangeLine
+Alt+0=SayDocName
+Alt+P=EchoBrailleCharsToggle
+Shift+F3=ChangeCase
+Control+H=Highlighting
+Alt+,=SayLinePosition
+Alt+.=SayTotalAndLeftOffset
+Alt+SemiColon=TransLineCursorToggle
+Alt+/=SpeakLastWord
+Control+UpArrow=ChangeLine
+Control+DownArrow=ChangeLine
+Control+Home=ChangeLine
+Control+End=ChangeLine
+[Laptop Keys]
+Control+PageDown=JAWSPageDown
+Control+PageUp=JAWSPageUp

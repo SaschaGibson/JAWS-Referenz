@@ -1,0 +1,14 @@
+:function FindScintillaSuggestionsWindow
+:Returns handle
+:SearchRank 1
+
+:function SayCurrentSuggestion
+:Returns int
+:SearchRank 1
+
+:function ClearScintillaCompletionGlobals
+:SearchRank 1
+
+:function IsInteractingWithAutoComplete
+:Returns int
+:SearchRank 1

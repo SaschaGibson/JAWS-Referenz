@@ -1,0 +1,28 @@
+:script ScriptFileName
+
+:function GetWindowDims
+:Synopsis Gets the dimensions of the real window
+:Param int/nLeft/ByRef The left edge of the window
+:Param int/nTop/ByRef The top edge of the window
+:Param int/nRight/ByRef The right edge of the window
+:Param int/nBottom/ByRef The bottom edge of the window
+
+:function MoveToPercent
+:Synopsis Moves to a position based on a h percent and a v percent
+:Description H Percent is a percentage of the window horizontally. V percent is a percentage of the window vertically. This script uses the percentages of the real window to obtain a pixel coordinate
+:Param int/nHPercent No Description
+:Param int/nVPercent No Description
+:Param int/nLeft No Description
+:Param int/nTop No Description
+:Param int/nRight No Description
+:Param int/nBottom No Description
+
+:script Menu
+:Synopsis Open up the main menu
+
+:script SayHorizontalPercent
+:Description Calculates what percentage the cursor is across the real window horizontally
+
+:script SayVerticalPercent
+
+

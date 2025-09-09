@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Chrome.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="DocsTableOptions" Text="Table Options">
+			<HelpMsg>
+These settings are used for tables in the Google Docs document.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="DocsTableOptions.TableTitles" Text="Table Titles">
+			<HelpMsg>
+This option controls which table header titles are to be announced when a table cell is spoken.
+
+Select 'Off' to have no titles announced.
+
+You can select row, column, both row and column, or only marked headers. If you choose only marked headers, only the explicitly marked headers will be spoken for the row or column title.
+
+If you choose row, column or both headers, JAWS will first look for the explicitly marked headers for the row or column title. If marked headers are not found, JAWS will guess which row or column to use for the title.
+
+As you navigate, only the changed title matching your title announcement choice is spoken.
+If you use the SayCell script, all titles matching your announcement choice are spoken.
+The default setting is Only Marked Headers.</HelpMsg>
+			<DisabledMsg>
+				This option is unavailable because Table Show Start and End is turned off.
+			</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="DocsTableOptions.TableTitles.0" Text="Off" />
+		<DisplayName ID="DocsTableOptions.TableTitles.1" Text="Row" />
+		<DisplayName ID="DocsTableOptions.TableTitles.2" Text="Column" />
+		<DisplayName ID="DocsTableOptions.TableTitles.3" Text="Both Row and Column" />
+		<DisplayName ID="DocsTableOptions.TableTitles.4" Text="Only Marked Headers" />
+		<DisplayName ID="DocsTableOptions.HeaderAndContentOrder" Text="Cell Header and Content">
+			<HelpMsg>
+Use this option to set whether headers are announced before content or content is announced before headers in tables.
+
+The default is to announce headers before content.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="DocsTableOptions.HeaderAndContentOrder.0" Text="Speak headers before content" />
+		<DisplayName ID="DocsTableOptions.HeaderAndContentOrder.1" Text="Speak content before headers" />
+		<DisplayName ID="DocsTableOptions.CellCoordinatesAnnouncement" Text="Cell Coordinates Announcement">
+			<HelpMsg>
+This option controls whether or not cell coordinates are announced when table navigation is used. When selected, table cell coordinates are announced after the cell content. This check box is selected by default.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

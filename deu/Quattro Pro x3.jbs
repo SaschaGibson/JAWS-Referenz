@@ -1,0 +1,47 @@
+﻿;Quattro Pro Braille Structure File
+;by Rob G. 6/20/2001
+
+;section for Component Aliases
+[Component Aliases]
+Prompt=Name
+coordinates=Cell Coordinates
+colHdr=Column Title
+rowHdr=Row Title
+content=Cell Content
+formula=Cell Formula
+rowTotal=Row Total
+coltotal=Column total
+monitorCells=Monitor Cells
+startCoordinates=Starting Cell Coordinates
+StartColTitle=Starting Cell Column Title
+StartRowTitle=Starting Cell Row Title
+startContent=Starting Cell Content
+delim=Selection Delimiter
+endCoordinates=Ending Cell Coordinates
+EndColTitle=Ending Cell Column Title
+EndRowTitle=Ending Cell Row Title
+endContent=Ending Cell Content
+
+;cell (when navigating)
+[CustomControl1]
+displayName=Cell
+components=coordinates,rowHdr,colHdr,content,formula,rowTotal,monitorCells
+removed=colTotal
+type=
+
+;Cell Selection
+[CustomControl2]
+displayname=Selected Cells
+components=type,startCoordinates,StartColTitle,StartRowTitle,startContent,delim,endCoordinates,EndColTitle,EndRowTitle,endContent
+removed=
+type=sel:
+
+;custom dialog
+[CustomControl3]
+displayname=
+components=Name,DlgPageName,State,Prompt,Type,Value
+removed=
+type=
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Quattro Pro.

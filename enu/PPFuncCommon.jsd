@@ -1,0 +1,791 @@
+:function getPptBuild
+:Returns string the build number of the current PowerPoint version.
+:Description Returns the build number for the current PowerPoint version.
+
+:function PowerPointIsInitialized
+:synopsis Determines if the PowerPoint application object is initialized
+:description Determines if the PowerPoint application object is initialized
+:returns int True if the PowerPoint application object is initialized, false otherwise
+
+:function getFontObjAttributes
+:synopsis converts a font object's attributes to flags understood by JAWS 
+:description This function determines the font's attributes and convert them to flags understood by JAWS. 
+:param object/oFont font object 
+:returns int ored attribute flags such as attrib_bold etc.
+
+:function getScreenLocation
+:synopsis called when populating User buffer to determine approximate screen location of text 
+:description This function uses the Object Model to determine the approximate screen location of the text in the textRange object.   
+:param object/oTextRange text range object from text frame of shape. 
+:param int/x/byRef x coordinate 
+:param int/y/byRef y coordinate 
+:returns void
+
+:function movePointer
+:synopsis determines the presentation's pointer and moves it to the approximate location of the text under the cursor in the User Buffer 
+:description This function determines the presentation's pointer and moves it to the approximate location of the text under the cursor in the User Buffer. The coordinates are obtained when the user buffer is populated.  
+:param int/x x coordinates in screen pixels 
+:param int/y y coordinate in screen pixels 
+:returns void
+
+:Function GetSlideShowPointerType
+:synopsis returns a string describing the slideshow pointer  
+:description this function returns a string describing the slide show pointer (eg pen, arrow, none etc).
+:returns string the slideshow pointer description
+
+:Function isSlideShow
+:synopsis determines if a slide show is running in the UI
+:description This function determines if a slide show is running in the UI.
+:returns int true if a slide show is running, false otherwise
+
+:Function isSlideShowDone
+:synopsis determines if a slide show has just finished and is displaying the closing screen
+:description This function determines if a slide show has just finished and is displaying the closing screen.
+:returns int true or false
+
+:Function detectSlideShowStart
+:synopsis determines if a slide show has just started
+:description This function determines if a slide show has just started. It does this by checking to see if a slide show is running and that its elapsed time is 0 seconds. This function is used to start tracking a new slide show and its animations. 
+:returns int true or false
+
+:Function getShowElapsedTime
+:synopsis returns the number of seconds since the slide show began running
+:description This function returns the number of seconds since the slide show began running.
+:returns int time elapsed in seconds since start of show
+
+:function isPPTEditMode
+:synopsis determines if the UI is in shape textFrame edit mode
+:description This function determines if the UI is in shape textFrame edit mode (eg the user presses Enter when a text placeholder is selected).
+:returns int true or false
+
+:Function GetSlideShowPointerType
+:synopsis returns a string describing the slideshow pointer  
+:description this function returns a string describing the slide show pointer (eg pen, arrow, none etc).
+:returns string the slideshow pointer description
+
+:Function SaySlideShowState
+:synopsis speaks the slideshow state
+:description This function speaks the slideshow state, eg black screen, show running, show done, white screen etc.
+:returns void
+
+:Function sayActivePaneView
+:synopsis speaks the active pane's view type
+:description This function speaks the active pane's view type, eg slide view pane, notes view pane or outline view pane.
+:returns void
+
+:Function getPptView
+:synopsis returns a string describing the current view 
+:description This function returns a string describing the current Powerpoint UI view. 
+:returns string the view name
+
+:Function GetExcel97WorksheetCell
+:synopsis returns a string containing the embedded Excel worksheet's selected cell's coordinates and content
+:description This function returns a string containing the embedded Excel worksheet's selected cell's coordinates and content.
+:param object/OleObj the embedded object representing the Excel Worksheet
+:returns string the coordinates and content of the active cell
+
+:Function getChartTypeDescription
+:synopsis returns a string describing the active chart
+:description This function returns a string describing the active chart.
+:param object/theChart the chart object 
+:returns string a description as listed in the XLINTL32.dll file shipped with MSOffice 97/2000.
+
+:function SelectChartTitle
+:synopsis called from the User Buffer when the mouse is clicked on the Chart's Title
+:description This function selects the real chart title when the title is clicked in the User Buffer.
+:returns void
+:param object/chart the chart object
+
+:function SelectCategoryAxisTitle
+:synopsis called from the User Buffer when the mouse is clicked on the Chart's category axis Title
+:description This function selects the real chart category axis title when the title is clicked in the User Buffer.
+:returns void
+:param object/chart the chart object
+
+:function SelectValueAxisTitle
+:synopsis called from the User Buffer when the mouse is clicked on the Chart's value axis Title
+:description This function selects the real chart value axis title when the title is clicked in the User Buffer.
+:returns void
+:param object/chart the chart object
+
+:Function describeExcelChart
+:synopsis describes a chart object, its series and points based on information passed as parameters defining the parts of the chart  
+:description This function describes a chart object, its series and points based on information passed as parameters defining the parts of the chart  .
+:param object/theChart the chart object 
+:param string/seriesDescription series description, ie generic term describing what all of the series represent, eg distinct sets of bars, lines etc
+:param string/seriesUnit series unit, ie singular term for each series, eg set of bars, line, etc
+:param string/pointDescription point description, eg point, bar, column 
+:param string/pointDescriptionPlural eg points, bars, columns 
+:param int/sayPercentageContribution true if JAWS should calculate and report the percentage contribution a series makes to the entire set of series
+:returns void
+
+:Function readExcelChart
+:synopsis determines the type of chart and passes the relevant information to the describeExcelChart function to be spoken
+:description This function determines the type of chart and passes the relevant information to the describeExcelChart function to be spoken.
+:returns void
+
+:Function describeMSGraphChart
+:synopsis describes an MSGraph chart based on parameters defining the parts of the chart
+:description This function describes an MSGraph chart based on parameters defining the parts of the chart.
+:param object/theChart the chart object 
+:param string/seriesDescription generic term for the sets of series on the chart, eg x distinct sets of bars, lines etc 
+:param string/seriesUnit individual series description, eg set of bars, line, etc  
+:param string/pointDescription description of what a point represents, eg a point, a bar, a vertical column etc
+:param string/pointDescriptionPlural the plural term for the individual point, eg points, bars, columns etc  
+:param int/sayPercentageContribution true if JAWS is to calculate and report the percentage contribution of each series to the total of all series  
+:returns void
+
+:Function readMSGraphChart
+:synopsis reads an MSGraph chart passing all the relevant information to describeMSGraphChart to be spoken 
+:description This function reads an MSGraph chart passing all the relevant information to describeMSGraphChart to be spoken .
+:returns void
+
+:Function GetOleObjDescription
+:synopsis returns a string describing an OLE object's type 
+:description This function returns a string describing an OLE object's type .
+:param object/shape OLE shape object 
+:returns string description of OLE object represented by the shape object
+
+:Function GetShapePlaceHolderDescription
+:synopsis returns a string describing a placeholder object's type 
+:description This function returns a string describing a placeholder object's type .
+:param object/shape placeholder shape object 
+:returns string description of the placeholder represented by the shape object 
+
+:Function GetAutoshapeDescription
+:synopsis returns a string describing an autoshape object
+:description This function returns a string describing an autoshape object.
+:param object/shape autoshape shape object 
+:returns string description of autoshape represented by shape object
+
+:Function getTableDimensions
+:synopsis returns a string containing the number of columns and rows in a Powerpoint native table object
+:description This function returns a string containing the number of columns and rows in a Powerpoint native table object.
+:param object/table Powerpoint 2000 native table object (PP97 didn't support native tables)   
+:returns string X columns and Y rows
+
+:Function readTable
+:synopsis reads a table either row by row or column by column or just announces the dimensions, depending on the table reading method
+:description This function reads a table either row by row or column by column or just announces the dimensions, depending on the table reading method.
+:param object/table Powerpoint native table object to read
+:param int/readingMethod see powerpnt.jsh for currently defined values
+:param string/voice the voice string to use to speak the table contents, see hjconst.jsh for allowable values 
+:Param int/iRedirectToUserBuffer TRUE to send to user buffer, FALSE to read by voice only.
+:returns void
+
+:function readTableRowByRow
+:synopsis reads a Powerpoint native table row by row
+:description This function reads a Powerpoint native table row by row.
+:returns void
+
+:function readTableColumnByColumn
+:synopsis reads a Powerpoint native table column by column 
+:description This function reads a Powerpoint native table column by column .
+:returns void
+
+:Function GetShapeDescription
+:synopsis determines the type of shape and returns the relevant description by calling other helper functions such as getOleObjDescription, getAutoshapeDescription etc
+:description This function determines the type of shape and returns the relevant description by calling other helper functions such as getOleObjDescription, getAutoshapeDescription etc.
+:param object/shape shape object
+:returns string description of shape
+
+:Function GetHyperlinkAddress
+:synopsis returns the address or subaddress (if the address is blank) for an hyperlink object
+:description This function returns the address or subaddress (if the address is blank) for an hyperlink object.
+:param object/hyperlink hyperlink object 
+:returns string Hyperlink Address/subaddress
+							  
+:Function GetShapeSummaryText
+:synopsis determines the shape type and returns a portion of its text
+:description This function determines the shape type and returns a portion of its text. This is used when listing shapes to select from, ie called from the selectShape function when constructing the list
+:param object/shape the shape object to summarize 
+:returns String part of the shape's text or its description or name
+
+:Function getParagraphAlignment
+:synopsis returns a string describing the paragraph object's alignment
+:description This function returns a string describing the paragraph object's alignment.
+:param object/para paragraph object 
+:returns string alignment description
+
+:Function getShapeAnimatedParagraphCount
+:synopsis returns the number of animated paragraphs in a shape object
+:description This function returns the number of animated paragraphs in a shape object.
+:param object/shape  the shape object
+:returns Int the number of animated paragraphs
+
+:Function getShapeParagraphCount
+:synopsis returns the number of paragraphs in a shape
+:description This function returns the number of paragraphs in a shape.
+:param object/shape 
+:returns Int number of paragraphs
+
+:Function readParagraphs
+:synopsis reads the paragraphs in a shape's text frame
+:description This function reads the paragraphs in a shape's text frame. It speaks alignment and outline levels if the textOnly parameter is false and the jcf option for formatAndText is enabled. A global pointer to the last paragraph spoken is maintained. This pointer is set to the index in the paragraphs collection of the last paragraph actually spoken.  
+:param object/shape shape object 
+:param int/TextOnly  read text or read text and announce paragraph levels, bullets etc, true if text only
+:Param int/iRedirectToUserBuffer TRUE to send to user buffer, FALSE to read by voice on output type OT_LINE.
+:returns Void
+
+:Function SayShape
+:synopsis speak's a shape's description and text
+:description This function speak's a shape's description and text. If the textOnly parameter is true then only the text will be read. 
+:param object/shape shape object
+:param int/textOnly true if only  text should be read, false if shape should be described and text read 
+:Param int/iRedirectToUserBuffer TRUE to send to user buffer, FALSE to read by voice on output type OT_LINE.
+:returns Void
+
+:Function getCellCoordinateString
+:synopsis gets the appropriate coordinates for the particular focused table 
+:description This function returns the coordinates of the focused table, whether it be a Powerpoint table, MSWord table or Excel worksheet.
+:returns string coordinates of a Powerpoint Cell, MSWord table cell or Excel worksheet cell
+
+:Function getCellContents
+:synopsis returns the text of the appropriate cell object
+:description This function returns the text of the appropriate cell object. This could be a native Powerpoint table cell, an embedded Excel worksheet cell or an embedded MSWord table cell.
+:returns string text of cell
+
+:Function SaySelectedShape
+:synopsis Speaks the selected shape
+:Description Speaks the selected shape.
+:Returns  Int True if selection is found, false if not.
+
+:Function GetSlideWithFocus
+:synopsis returns the slide object with focus
+:description This function returns the slide object with focus. This may be the slide object from a running slide show or it may be a slide object from a design view. 
+:returns object slide object
+
+:Function GetShapeWithFocus
+:synopsis returns the shape object with focus
+:description This function returns the shape object with focus. The function uses the column and row location of the cursor to determine and return the shape containing the PC cursor.
+:returns object shape object
+
+:Function updateNavigationGlobals
+:Synopsis set all navigation globals for shape movement
+:Description These globals are used in the measurement of shape points, assumes that globals will be checked in relatively near future.
+
+:Function dumpNavigationGlobals
+:Description Nulls all shape navigation globals used for navigation measurements.
+
+:Function getShapeNavInfoBitsAndCoords
+:Description get comparative results of navigation movement, e.g. direction(s) and distance for each direction moved.  This assumes as the shape is being repositioned on the UI / slide, multiple directions can be updated, e.g. up and left
+:returns int nBits the SHAPE_NAV_ bit(s) corresponding to the directions(s), or rectangle coordinates, that have changed.
+:Param int/byRef/iNavLeft Local variable to be updated if the corresponding coordinate has changed.
+:Param int/byRef/iNavTop Local variable to be updated if the corresponding coordinate has changed.
+:Param int/byRef/iNavRight Local variable to be updated if the corresponding coordinate has changed.
+:Param int/byRef/iNavBottom Local variable to be updated if the corresponding coordinate has changed.
+:Param int/byRef/nExceedslideBounds the number of points (if any) the shape overlaps the slide boundary.
+
+:Function getShapeNavInfoString
+:Description gets the human-readable 'info' string that reflects the coordinates that have changed.  Pass the bit set and coordinates returned from getShapeNavInfoBitsAndCoords.
+:Returns string sInfo the human-readable string representing the coordinate or coordinates that have changed.
+:Param int/navBits the bits returned from getShapeNavInfoBitsAndCoords.
+:Param int/nLeft The corresponding rectangle coordinate.
+:Param int/nTop The corresponding rectangle coordinate.
+:Param int/nRight The corresponding rectangle coordinate.
+:Param int/nBottom The corresponding rectangle coordinate.
+:Param int/nExceedslideBounds if the appropriate bits have been set to show exceeded slide boundary, this contains the number of points out of range.  If the relevant bits are not set, this parameter is ignored.  Relevant bits are one of the slide boundary bits + the bit to exceed.
+
+:Function GetSlideHeader
+:synopsis returns the slide object's header
+:description This function returns the slide object's header.
+:param object/slide slide object
+:returns String header text
+
+:function getSlideName
+:synopsis returns the name of the current slide
+:description This function returns the name of the current slide. this is the programmatic name rather than the slide's title. This is primarily used to see if there is a valid slide in the UI.  
+:returns string name of slide with focus
+
+:Function GetSlideTitleOrIndexNumber
+:synopsis returns a slide's title text if it has a title or it returns the words "slide x" where x is the slide index number  
+:description This function returns a slide's title text if it has a title or it returns the words "slide x" where x is the slide index number  .
+:param object/slide slide object
+:returns String title or index number
+
+:Function GetCurrentSlideTitleOrNumber
+:synopsis returns the current slide's title or a string containing the words "slide X" where X is the slide's index number
+:description This function returns the current slide's title or a string containing the words "slide X" where X is the slide's index number.
+:returns string title of slide or slide number
+
+:Function GetSlideFooter
+:synopsis returns the footer of a slide object
+:description This function returns the footer of a slide object.
+:param object/slide slide object
+:returns string footer text
+
+:Function GetSlideDateAndTime
+:synopsis returns the date and time of the slide object (if visible)
+:description This function returns the date and time of the slide object (if visible). The date and time is part of the headersfooters collection of the slide object.
+:param object/slide slide object
+:returns String date and time
+
+:Function GetSlideEntryEffect
+:synopsis returns a string describing the slide entry effect when the slide show is run
+:description This function returns a string describing the slide entry effect when the slide show is run.
+:param object/slide slide object
+:returns String entry effect description
+
+:Function SayCurrentSlideTransition
+:synopsis speaks a slide's transition information
+:description This function speaks a slide's transition information. This information includes the slide's entry effect and advance method, ie by mouse click or time (and the time in seconds).
+:returns void
+
+:function ReloadSlideShowScreen
+:synopsis repopulates the User Buffer with the current state of the Presentation Screen
+:description This function is called after the User Buffer has been used for another task to repopulate it with the state of the running slide show's current slide. It must determine how much of the real slide is currently visible based on a heap of global pointers. 
+:returns void
+
+:Function readSlideUpToShapeAndPara
+:synopsis reads the text on a slide upto a particular shape and paragraph number 
+:description This function reads the text on a slide upto a particular shape and paragraph number . This function is necessary because though a slide object is accessible, it does not follow that all of its shapes and paragraphs are visible on the screen. The scripts need to track which shapes and paragraphs have been animated so that when the user requests that a slide be read, only the visible portion of the slide is read.
+:param object/slide slide object
+:param int/lastShapeIndex the last shape index, ie the last shape which should be spoken
+:param int/lastParaIndex the paragraph index of the last shape, ie where to stop reading in the paragraphs collection of the last shape
+:param int/textOnly true if only text should be read, false if outline level and alignment should also be spoken
+:param int/iRedirectToUserBuffer true if the text should be redirected to the User Buffer
+:returns Void
+
+:Function ReadSlide
+:synopsis reads a slide's text and describes its shape objects upto a specified shape index and paragraph number
+:description This function reads a slide's text and describes its shape objects upto a specified shape index and paragraph number.
+:param object/slide the slide object
+:param int/TextOnly true if only text should be read, false if shape objects should also be described and outline levels and text alighnment should be spoken (the latter two also depend on the formatAndText jcf option).
+:param int/upToShapeIndex last shape index to be spoken
+:param int/upToParaIndex last paragraph index to be spoken
+:returns void
+
+:function ReadCurrentSlide
+:synopsis reads the current slide
+:description This function reads the current slide.
+:returns void
+
+:function SaySelectedObject
+:synopsis speaks the selected slide object'sdescription and text
+:description This function speaks the selected slide object'sdescription and text.
+:returns void
+:Optional
+:Param int/bSpell Whether or not to spell the object. TRUE or FALSE
+
+
+:Function GetSlideLayout
+:synopsis returns a string describing a slide's layout as defined by the new slide dialog 
+:description This function returns a string describing a slide's layout as defined by the new slide dialog .
+:param object/slide slide object
+:returns string layout description
+
+:Function SayCurrentSlideLayout
+:synopsis speaks the layout of the current slide
+:description This function speaks the layout of the current slide.
+:Optional
+:param Int/iOutputType Output type for a message if needed.
+:returns Void
+
+:function selectShape
+:synopsis lists all the shapes on the current slide and allows the user to select and set focus on the selected shape 
+:description This function lists all the shapes on the current slide and allows the user to select and set focus on the selected shape . This function makes use of the getShapeSummaryText() function to provide a short string for the list. 
+:returns void
+
+:function SelectHyperlink
+:synopsis lists the hyperlinks on a slide and allows the user to follow the selected hyperlink
+:description This function lists the hyperlinks on a slide and allows the user to follow the selected hyperlink. The getHyperlinkAddress() function is used to obtain each shape's hyperlink on a slide (if it has one).
+:returns void
+
+:function FollowSelectedHyperlink
+:synopsis follows the selected shape's hyperlink (if it has one) to the target document
+:description This function follows the selected shape's hyperlink (if it has one) to the target document. Focus is left on the target document if the hyperlink is followed successfully.
+:returns void
+
+:function saySlideTitleOrIndexNumber
+:synopsis speaks the current slide's title (if it has one) or the slide's index number  
+:description This function speaks the current slide's title (if it has one) or the slide's index number   eg "slide 3".
+:Optional
+:param int/ bSpellOnQuickChange set to TRUE when the schedule didn't happen aka during SayLine.  Keeps things from spelling on move
+:returns void
+
+:Function GetAdditionalFontInfo
+:Description returns font info from object.
+:Param object/oTextRange textRange Object
+:Returns string the font info
+
+:function ButtonIsPressed
+:synopsis determines if a toolbar button is pressed or not
+:description This function determines if a toolbar button is pressed or not.
+:param object/controls controls collection of commandbar object
+:param string/strButtonName name of button to report status of 
+:returns int true if the button's state is pressed
+
+:function PPTScreenSensitiveHelp
+:synopsis provides screen sensitive help for Powerpoint objects and views
+:description This function provides screen sensitive help for Powerpoint objects and views.
+:returns void
+
+:function isSlideActive
+:synopsis determines if a slide has focus in the UI
+:description This function determines if a slide has focus in the UI.
+:returns int true or false
+
+:function isValidView
+:synopsis determines if the current state of the UI is a valid view
+:description This function determines if the current state of the UI is a valid view. A valid view means that a slide show is not running and that the UI is in one of the design views defined in ppFunc.hsh, eg  Normal, Outline, Slide Master, etc.
+:returns int true if in a valid view
+
+:function isSlideShowFullScreen
+:synopsis determines if a slide show is running in full screen mode
+:description This function determines if a slide show is running in full screen mode.
+:returns int true or false
+
+:Function getFirstAnimatedShapeIndex
+:synopsis returns the index of the first shape in a slide's shapes collection which is animated during a slide show
+:description This function returns the index of the first shape in a slide's shapes collection which is animated during a slide show.
+:param object/slide slide object
+:returns int the index of the first animated shape in the slide's shapes collection 
+
+:Function getLastAnimatedShapeIndex
+:synopsis returns the index of the last shape in a slide's shapes collection which is animated during a slide show
+:description This function returns the index of the last shape in a slide's shapes collection which is animated during a slide show.
+:param object/slide slide object
+:returns int the index of the last animated shape in the slide's shapes collection 
+
+:Function getAnimatedShapeCount
+:synopsis returns the number of animated shapes for a given slide
+:description This function returns the number of animated shapes for a given slide.
+:param object/slide slide object
+:returns int number of animated shapes
+
+:Function getNextAnimatedShapeIndex
+:synopsis returns the index of the next shape in the slide's shapes collection which is animated
+:description This function returns the index of the next shape in the slide's shapes collection which is animated.
+:param object/startingShape the starting shape object after which the search should begin
+:returns Int the index of the next animated shape
+
+:Function getPriorAnimatedShapeIndex
+:synopsis returns the index of the prior shape in the slide's shapes collection which is animated
+:description This function returns the index of the prior shape in the slide's shapes collection which is animated.
+:param object/startingShape the starting shape object before which the search should begin
+:returns Int the index of the prior animated shape
+
+:Function GetShapeEntryEffect
+:synopsis returns a shape's animation entry effect as a descriptive string
+:description This function returns a shape's animation entry effect as a descriptive string.
+:param object/shape shape object
+:returns string description of animation entry effect
+
+:Function readAnimatedText
+:synopsis reads animated text from a shape determined by global and parametarized pointers specifying what to read
+:description This function reads animated text from a shape determined by global and parametarized pointers specifying what to read.
+:param object/shape the shape object
+:param int/TextOnly true if only text should be read, false if outline level and text alignment should also be announced
+:param int/ParaIndexPointer/byRef the index pointer pointing to the paragraph to start at. This pointer is updated to point to the last paragraph spoken. 
+:param int/textLevelEffect the text level effect governing how many paragraphs to read, eg all paragraphs at level 2 and beyond.
+:param int/reversed true if the shape is being animated in reverse and hence the paragraphs need to be read in reverse order
+:param int/iRedirectToUserBuffer TRUE to send to user buffer, FALSE to read by voice with output type OT_LINE
+:returns Void
+
+:Function getShapeTextLevelEffect
+:synopsis returns the shape's animation text level effect
+:description This function returns the shape's animation text level effect.
+:param object/shape shape object
+:returns string description of text level effect
+
+:Function getAnimationTextUnitEffect
+:synopsis returns the text unit effect for an animated shape
+:description This function returns the text unit effect for an animated shape. The text unit effect determines how many paragraphs to read when a shape is animated, eg all paragraphs at level 2 and beyond etc. 
+:param object/shape shape object
+:returns String the unit's description, eg 1st level paragraphs, etc 
+:Function getShapeAfterEffect
+:synopsis returns a description of the shape's animation after effect
+:description This function returns a description of the shape's animation after effect.
+:param object/shape shape object
+:returns string after effect description
+
+
+:Function sayAnimationInfo
+:synopsis speaks information about a shape's animation characteristics
+:description This function speaks information about a shape's animation characteristics. These characteristics include the shape's animation entry effect, text level and text unit, after effect and animation advance method, eg mouse click or time (the time given in seconds).
+:param object/shape shape object
+:param string/voice the voice to use when describing the information (see hjconst.jsh)
+:param int/iRedirectToUserBuffer TRUE to send text to user buffer, FALSE to read by voice using output type OT_HELP
+:returns Void
+
+:Function SayAnimatedShape
+:synopsis speaks an animated shape during a slide show 
+:description This function speaks an animated shape during a slide show .
+:param object/shape shape object
+:param int/textOnly true if text is to be read only, false if outline level and text alignment is to be spoken as well. The latter two also depend on the formatAndText jcf option.  
+:param int/startingParaIndex/byRef index of paragraph to start reading at which is updated to point to the last paragraph spoken  
+:param int/textLevelEffect the text level effect governing how many text units to speak
+:param int/reversed true if the shape is animated in reverse
+:Param int/iRedirectToUserBuffer TRUE to send text to user buffer, FALSE to read by voice using output type OT_LINE
+:returns Void
+
+:Function ReadSlideShowSlide
+:synopsis reads the focused slide during a slide show accounting for animations and advances/retreats in the show
+:description This function reads the focused slide during a slide show accounting for animations and advances/retreats in the show.
+:param int/textOnly true if only text should be read, false if shapes should be described and text outline level and alignment should be spoken. The latter two also depend on the FormatAndText jcf option.
+:param int/waitForTrigger true if a mouse click is required to trigger an animation, false if the animation proceeds after a specified time
+:returns Void
+
+:Function advanceSlideShow
+:synopsis after a slideshow is advanced, handles the tracking and speaking of the new slide or animation
+:description This function after a slideshow is advanced, handles the tracking and speaking of the new slide or animation.
+:returns Void
+
+:Function firstNonblankParagraphIndex
+:synopsis returns the first nonblank paragraph index from a paragraphs collection of a shape object
+:description This function returns the first nonblank paragraph index from a paragraphs collection of a shape object.
+:param object/shape shape object
+:returns Int first nonblank paragraph index
+
+:Function findPriorParagraphAtLevel
+:synopsis finds the index of the prior paragraph at the given level in a paragraphs collection of a shape object 
+:description This function finds the index of the prior paragraph at the given level in a paragraphs collection of a shape object .
+:param int/startIndex starting index to begin searching
+:param int/textLevelEffect text level effect governing search
+:param object/shape shape object whose paragraph's collection is being searched
+:returns Int the index of the prior paragraph at the specified outline level
+
+:function processSlideShowRetreat
+:synopsis after a slide show is retreated, handles tracking and speaking of the new slide or animation
+:description This function after a slide show is retreated, handles tracking and speaking of the new slide or animation.
+:returns void
+
+:function PPTSayAll
+:synopsis speaks the appropriate slide text when sayAll is invoked when no caret is visible and the PCCursor is active 
+:description This function speaks the appropriate slide text when sayAll is invoked when no caret is visible and the PCCursor is active .
+:returns void
+
+:function isObjectLevel
+:synopsis determines if the UI is at the Object Level
+:description This function determines if the UI is at the Object Level. The Object Level is our term for being in shape selection mode as opposed to text or slide selection mode. 
+:returns int true if the UI is in shape selection mode
+
+:function enterKey
+:synopsis passes the Enter key to the application and reports the status of any view change in the UI
+:description This function passes the Enter key to the application and reports the status of any view change in the UI.
+:returns void
+
+:function getSelectedShapeTopLeftX
+:synopsis returns the top left X coordinate of the selected shape
+:description This function returns the top left X coordinate of the selected shape in points relative to the left edge of the slide .
+:returns int top left X 
+
+:function getSelectedShapeTopLeftY
+:synopsis returns the top left Y coordinate of the selected shape
+:description This function returns the top left Y coordinate of the selected shape in points relative to the top edge of the slide .
+:returns int top left Y
+
+:Function getSelectedSlideTopLeftX
+:Description The coordinate of the slide, or active document window.
+:Returns int the relevant coordinate.
+
+:Function getSelectedSlideTopLeftY
+:Description The coordinate of the slide, or active document window.
+:Returns int the relevant coordinate.
+
+:Function getSelectedSlideBottomRightX
+:Description The coordinate of the slide, or active document window.
+:Returns int the relevant coordinate.
+
+:function getSelectedSlideBottomRightY
+:Description The coordinate of the slide, or active document window.
+:Returns int the relevant coordinate.
+
+:function noSelectedShape
+:synopsis determines if there is currently no selected shape
+:description This function determines if there is currently no selected shape.
+:returns int true or false
+
+:function getSelectedShapeDescription
+:synopsis returns the description of the selected shape object
+:description This function returns the description of the selected shape object.
+:returns string the description of the selected shape
+
+:function getSelectedShapeWidth
+:synopsis returns the width of the selected shape
+:description This function returns the width of the selected shape in points.
+:returns int width of selected shape in points 
+
+:function getSelectedShapeHeight
+:synopsis returns the height of the selected shape
+:description This function returns the height of the selected shape in points.
+:returns int height of selected shape in points
+
+:function isSelectedShapeAnimated
+:synopsis determines if the selected shape will be animated during a slideshow 
+:description This function determines if the selected shape will be animated during a slideshow .
+:returns int true or false
+
+:function isAnimationTriggeredOnMouseClick
+:synopsis determines if the selected shape's animation is triggered by a mouse click (or key press)
+:description This function determines if the selected shape's animation is triggered by a mouse click (or key press).
+:returns int true or false
+
+:function isAnimationTriggeredOnTime
+:synopsis determines if the selected shape's animation is triggered after a specified time
+:description This function determines if the selected shape's animation is triggered after a specified time.
+:returns int true or false
+
+:function isShapeAnimatedInReverse
+:synopsis determines if the selected shape is animated in reverse
+:description This function determines if the selected shape is animated in reverse.
+:returns int true or false
+
+:function getSelectedShapeAnimationTime
+:synopsis returns the animation time for the selected shape
+:description This function returns the animation time for the selected shape in seconds.
+:returns int time in seconds before the shape is animated automatically
+
+:function getSelectedShapeEntryEffect
+:synopsis returns the selected shape's animation entry effect
+:description This function returns the selected shape's animation entry effect.
+:returns string selected shape's entry effect description
+
+:function getSelectedShapeTextUnit
+:synopsis returns the selected shape's animation text unit 
+:description This function returns the selected shape's animation text unit .
+:returns string selected shape's animation text unit
+
+:function getSelectedShapeTextLevelEffect
+:synopsis returns the selected shape's animation text level effect
+:description This function returns the selected shape's animation text level effect.
+:returns string selected shape's animation text level effect description
+
+:function getSelectedShapeAfterEffect
+:synopsis returns the selected shape's animation after effect
+:description This function returns the selected shape's animation after effect.
+:returns string selected shape's animation after effect description
+
+:function isNormalView
+:synopsis returns true if the UI is in Normal view
+:description This function returns true if the UI is in Normal view.
+:returns int true or false
+
+:function isSlideSorterView
+:synopsis returns true if the UI is in Slide Sorter view
+:description This function returns true if the UI is in Slide Sorter view.
+:returns int true or false
+
+:function isOutlineView
+:synopsis returns true if the UI is in Outline view
+:description This function returns true if the UI is in Outline view.
+:returns int true or false
+
+:function getExpandAllState
+:synopsis returns the state of the Expand All commandbar button 
+:description This function returns the state of the Expand All commandbar button .
+:returns int true if the button is pressed
+
+:function getCollapseAllState
+:synopsis returns the state of the Collapse All commandbar button
+:description This function returns the state of the Collapse All commandbar button.
+:returns int true if the button is pressed
+
+:function getParagraphIndentLevel
+:synopsis returns the paragraph indent level for the paragraph containing the cursor
+:description This function returns the paragraph indent level for the paragraph containing the cursor.
+:returns int paragraph level
+
+:Function getCellCoordinates
+:synopsis gets the appropriate coordinates for the particular focused table 
+:description This function returns the coordinates of the focused table, whether it be a Powerpoint table, MSWord table or Excel worksheet.
+:param int/col cell column
+:param int/row cell row
+:optional 
+:param int/mode if mode is greater than 0 the cell will be selected
+:returns string coordinates of a Powerpoint Cell, MSWord table cell or Excel worksheet cell
+
+:Function getCellRowIndex
+:synopsis returns the cell row index for the current cell in a native Powerpoint table 
+:description This function returns the cell row index for the current cell in a native Powerpoint table .
+:returns int row index
+
+:Function getCellColumnIndex
+:synopsis returns the cell column index for the current cell in a native Powerpoint table 
+:description This function returns the cell column index for the current cell in a native Powerpoint table .
+:returns int column index
+
+:Function isCaretInTable
+:synopsis returns true if the caret is in a table
+:description This function returns true if the caret is in a table. This table can be a native Powerpoint table, an embedded Excel worksheet or an embedded MSWord table. 
+:returns Int true or false
+
+:Function detectTooMuchInfo
+:synopsis detects when a text placeholder becomes full, over full or under full
+:description This function detects when a text placeholder becomes full, over full or under full. It reports the state of the placeholder according to the value of the parameters.
+:param int/announceRemainingLines true will report under full or full
+:param int/announceOverflow true will report over full or full
+:returns Int true if over full
+
+:Function isPointInRect
+:synopsis returns true if the specified point is within a given rectangle
+:description This function returns true if the specified point is within a given rectangle. This function is used by the TestShapeOverlap function.
+:param int/pointX X coordinate of test point
+:param int/pointY Y coordinate of test point
+:param int/topLeftX top left X of rectangle
+:param int/topLeftY top left Y of rectangle
+:param int/bottomRightX bottom right X of rectangle
+:param int/bottomRightY bottom right Y of rectangle
+:returns int true if point is within the rectangle 
+
+:Function testShapeOverlap
+:synopsis tests the specified shape object's position on the slide to see if it overlaps any other shapes on the slide  
+:description This function tests the specified shape object's position on the slide to see if it overlaps any other shapes on the slide  . The description may be spoken or silenced (and the status just returned) according to a parameter. The descriptions include partial covering, being covered by or covering another shape etc.   
+:param object/shape shape to test
+:param object/collection collection of shapes from the host slide 
+:param int/DescribeOverlap true if the overlap should be described, false to keep silent but just return the status 
+:param string/voice voice to use when describing (see hjconst.jsh)
+:returns Int true if the specified shape overlaps at least one other shape on the slide 
+
+:function doShapeOverlapTest
+:synopsis calls the shape overlap test with the current slide and selected object as parameters
+:description This function calls the shape overlap test with the current slide and selected object as parameters. The description is spoken but the function return value is ignored. 
+:returns void
+
+:function PostSlideToUserBuffer
+:synopsis called from withihn readSpeakersNotes to post the current speaker's notes page to the User Buffer
+:description This function is called from withihn readSpeakersNotes to post the current speaker's notes page to the User Buffer. 
+:param object/slide 
+:returns Int ; true if notes are found, false otherwise.
+
+:function readSpeakersNotes
+:synopsis reads the speaker's notes associated with the current slide 
+:description This function reads the speaker's notes associated with the current slide . If no notes are found, an error message is announced and displayed in Braille and the slide screen is reloaded.
+:returns void
+
+:function resetSlideShowPointers
+:synopsis resets all slideshow pointers used for tracking animation
+:description This function resets all slideshow pointers used for tracking animation during a slideshow.
+:returns void
+
+:function GetSelectionType
+:synopsis Determines the type of the current selection
+:description Determines the type of the current selection
+:returns int The type of the current selection
+
+:Function GetInchesFromPoints
+:Description This function converts points to inches since PowerPoint does not provide a means to accomplish this through the object model.
+:Param Int The points to convert.
+:Returns String  The converted nubber in inches.
+
+:Function GetCentimetersFromPoints
+:Description This function converts points to centimeters, with a margin of error of approximately 0.3 CM, since PowerPoint does not provide a means to accomplish this through the object model.
+:Param Int The points to convert.
+:Returns String  The converted nubber in approximate centimeters.
+
+:Function GetActivePaneView
+:Description This function returns the view type of the active pane.
+:Returns String
+
+:Function IsSlideHidden
+:Description This function determines whether the current slide will be hidden during an active slideshow.
+:Returns Int True if the current slide is hidden, false otherwise.
+
+:Function SayObjectDescription
+:Description This function announces the type of objects found on the current slide. Object types include charts, pictures, etc. Placeholder descriptions are not included in this description.
+:Returns Void
+
+:function SaySlidePosition
+:Description This function announces the slide position within the total number of slides.
+:Returns Void
+

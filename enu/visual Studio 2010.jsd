@@ -1,0 +1,97 @@
+:script ScriptFileName
+
+:function AutoStartEvent
+
+:function AutoFinishEvent
+
+:function BuildAccessibleTree
+:Returns object
+:Optional
+:Param handle/window 
+
+:script SayBottomLineOfWindow
+
+:function InDesignerWithCoordinates
+:Returns int
+
+:function GetActiveCppResourceEditorControl
+:Returns handle
+:Param handle/hwnd 
+
+:function ComputeActiveMode
+:Returns int
+
+:function ShouldDeferToDefaultFunction
+:Returns int
+
+:function GetControlCoordinates
+:Returns int
+:Param int/x 
+:Param int/y 
+:Param int/width 
+:Param int/height 
+
+:function SayControlCoordinate
+:Returns int
+:Param int/what 
+
+:function SayCharacterUnit
+:Param int/UnitMovement 
+
+:function SayLineUnit
+:Param int/UnitMovement 
+
+:function SayWordUnit
+:Param int/UnitMovement 
+
+:script SayCharacter
+
+:script SayLine
+
+:script SelectNextLine
+
+:script SelectPriorLine
+
+:script SelectNextCharacter
+
+:script SelectPriorCharacter
+
+:script Tab
+
+:script ShiftTab
+
+:function GetCurrentLineFromObjectModel
+:Returns string
+
+:script DeleteCurrentLine
+
+:script DeletePriorWord
+
+:script DeleteCurrentWord
+
+:function vsOnEnterBreakMode
+:Param int/reason 
+
+:function vsOnEnterRunMode
+
+:function vsOnEnterDesignMode
+
+:function ReportIfBreakPointJustHit
+
+:function vsOnBuildDone
+
+:function InDataGrid
+:Returns int
+
+:script SayVariableValue
+:Synopsis When debugging, and the PC Cursor is positioned on the name of a
+variable in the editor, speaks the value of that variable.
+:Description When this key is pressed once, the script will speak the
+variable value.  When this key is pressed twice quickly, the script
+will put the value in the virtual buffer.  When positioned on the name
+of a class or structure, JAWS will speak the values of all top-level
+members of that structure.  When positioned on the name of a member
+variable, JAWS will speak the value of that variable.
+If any text is selected at the time this key is pressed, the selection
+is used as the variable name.  Otherwise, JAWS deduces the name based
+on the position of the PC cursor.

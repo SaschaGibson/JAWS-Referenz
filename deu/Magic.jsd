@@ -1,0 +1,14 @@
+:function ScreenMagnifiedEvent
+:Synopsis Event function that runs every time magnification is activated, deactivated, or the magnification level changes
+:Description This function first sets the value of two global variables, GlobalMagState and GlobalMagLevel. These values are set according to the values passed to the function as parameters. Once the global variables have been defined, the function runs FocusChangedMagEvent twice in effort to ensure that the activated item is brought into focus
+:Category MAGic Event
+:Param int/nOn This value indicates whether or not magnification is active. This value is equal to one when magnification is active and 0 otherwise.
+:Param int/nLevel This value indicates the level of magnification
+
+:function GetMagLevelMessage
+:Returns string The level translated into a string
+:Param int nLevel the untranslated integer representing the level
+
+:function MagGetState
+:Returns int 0 = MAGic not loaded 1 = MAGic is loaded with no magnification 2-20 = MAGic is loaded and the return value indicates the magnification level.
+:Synopsis Indicates if MAGic is loaded or if the screen is magnified

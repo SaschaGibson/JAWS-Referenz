@@ -1,0 +1,42 @@
+:Script BackButton
+:DisplayName Zurück Schalter
+:Synopsis Aktiviert den Zurück Schalter
+:Description In Microsoft Teams springt der Zurückschalter zum vorherigen Bildschirm. Diese Funktion in Teams ist kontextabhängig.
+:SearchRank 1
+
+:Script SelectATab
+:DisplayName Registerkarte auswählen
+:Synopsis Liste der Registerkarten
+:Description Teams nutzt Registerkarten, um Bildschirminhalte zu kategorisieren. Verfügbare Registerkarten für jedes Team können sich unterscheiden. Diese Funktion in Teams ist kontextabhängig.
+:SearchRank 1
+
+:Script SelectAButton
+:DisplayName Schalter auswählen
+:Synopsis Schalterliste.
+:Description Liste der Schalter des aktuellen Teams Bildschirms.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script FocusToTabN
+:DisplayName Springe auf Registerkarte nach Nummer
+:Synopsis Aktiviert Registerkarten anhand der Nummer, 1 bis 5.
+:Description Teams nutzt Registerkarten, um Bildschirminhalte zu kategorisieren. Verfügbare Registerkarten für jedes Team können sich unterscheiden. Diese Funktion in Teams ist kontextabhängig.
+:SearchRank 1
+
+:Script GoToTree
+:DisplayName Zur Strukturansicht in der Teams Ansicht springen
+:Synopsis Springt zur Strukturliste der Teams und ihrer Kanäle
+:Description In der Teams Ansicht enthält die Team Struktur Ihre Liste der Teams. Erweitern Sie jedes Team, um die Kanäle zu entdecken, innerhalb derer sich die Nachrichten befinden. Drücken Sie auf Ihrer Auswahl die Eingabetaste, um diese zu aktivieren. Mit den Pfeiltasten bewegt man sich zwischen Elementen, mit der Eingabetaste werden diese ausgewählt.
+:SearchRank 1
+
+:Script LaunchKeyboardShortcutsDialog
+:DisplayName Dialogfenster der Tastenkombinationen aufrufen
+:Synopsis Ruft das Dialogfenster der Tastenkombinationen auf. Drücken Sie stattdessen Einfügen+W, um die Hilfe zu den Teams Tastenkombinationen des Fensters anzusehen.
+:Description Ein schnellerer Weg für den Zugriff auf Tastenkombinationen als über den Dialog Tastenkombinationen ist stattdessen Einfügen+W zu drücken, um die Hilfe zum Fenster aufzurufen.
+:SearchRank 1
+
+:Script RecentMessage
+:DisplayName Letzte Nachrichten lesen
+:Synopsis Liest die letzten Nachrichten, 1-9.
+:Description Befinden Sie sich in einem geöffneten Chat, werden die letzten Nachrichten, 1 bis 9 gelesen. Drücken Sie die Kurztaste 2 mal schnell hintereinander, um die Nachricht im virtuellen Betrachter anzuzeigen.
+:SearchRank 1

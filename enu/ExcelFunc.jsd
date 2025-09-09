@@ -1,0 +1,1632 @@
+:function EnableMagicCaretObjectLocationChangeEventProcessing
+:Description Used to enable or disable the processing of caret object location change events by MAGic's MSAA event hook.  This function is intended to be used any time a function is used that has the side effect of generating extraneous caret object location changed events to prevent MAGic from drawing the focus enhancement rectangle in unexpected locations.
+:param int/enable Indicates whether the processing of caret object location change events should be enabled or disabled.
+:Returns Void
+
+:Function CheckRTLReadingStatus
+:Description This function is called just before a cell is edited and Excel goes into formula mode. Once in formula mode, it is not possible to get cell information. So in this function, we determine
+the reading order of the cell and save it in case we need it during the formula mode.
+:Returns Int The cached reading order state.
+
+:function WaitForLoad
+:Description Waits up to 50 pauses for Excel to load, then returns true if Excel is loaded, false otherwise.
+:returns int True if Excel is loaded, false otherwise.
+
+:Function InitializeOExcel
+:description Sets a pointer to the Excel Application Object.
+:returns Object If the pointer is properly set, the pointer to the Excel ap object; otherwise, a null pointer.
+
+:Function isAppObjInvalid
+:Description Ddetermines if the application object has not been obtained or has been derreferenced.
+:returns int True if the pointer to the Excel application object in null, false otherwise.
+
+:function GetExcelVersionString
+:description Retrieves the Excel Version from the Excel application Object Model.
+:returns string The Excel version string.
+
+:function GetExcelAppName
+:description Retrieves the full Excel Application name from the Object Model.
+:returns string The Application Name.
+
+:function AttachXLEvents
+:description Attaches script functions to events fired by the Excel application.
+:returns int TRUE if the events have been attached, FALSE otherwise.
+
+:function CloseOfficeAssistant
+:description Closes the Office Assistant.
+:returns void
+
+:function InitNewCollections
+:description Creates the collections for storing Excel data.
+:returns void
+
+:function IsUpdatingWorkbookData
+:description Tests if the data for the workbook is being updated.
+:returns int True if the workbook data is being updated, false otherwise.
+
+:function xlApp_WorkbookActivate
+:description Event fired when a new Excel workbook is activated.
+:returns void
+
+:function xlApp_WorkbookDeactivate
+:description Event fired when a Excel workbook is deactivated.
+:returns void
+
+:function xlApp_SheetActivate
+:description Event fired when a new Excel worksheet is activated, except in the case that a sheet becomes active due to a new workbook being activee.
+:param object The newly active sheet.
+:returns void
+
+:function xlApp_SheetSelectionChange
+:description Event fired when selection changes on a worksheet, but not when selection changes to a different worksheet.
+:param object The cell where the selection change occurred.
+:returns void
+
+:function xlApp_SheetChange
+:description Event fired when cell content changes.
+:param object The cell where the change occurred.
+:returns void
+
+:function UpdateCXLActiveWorkbook
+:description Updates the collection data and object pointers when a new workbook becomes active.
+In addition to workbook data, active sheet, region, cell and selection data and pointers are also updated.
+:returns void
+
+:function UpdateCXLWorkbookNamedTitles
+:description Updates the collection of named titles belonging to the Excel workbook.
+:returns void
+
+:function CountNumOfNamedTitleRegionsOnActiveSheet
+:description Counts the number of defined names on the active sheet that JAWS recognizes as named title regions.
+:returns int The number of defined names on the active sheet that JAWS recognizes as named title regions.
+
+:function NumOfNamedTitleRegionsOnCXLActiveSheet
+:description Retrieves the number of defined names stored in the active sheet collection that JAWS recognizes as named title regions.
+:returns int The number of defined names in the active sheet collection that JAWS recognizes as named title regions.
+
+:function UpdateCXLActiveSheet
+:description Updates the collection data and object pointers when a new worksheet becomes active.
+In addition to worksheet data and pointer, region, active cell and selection data and pointers are also updated.
+:returns void
+
+:function GetActiveNamedTitlesRegionUsedRangeEndAddress
+:description Gets the address of the last cell in the used range of a named titles region.
+:param int The index number of the defined named titles.
+:returns string The address of the last cell in the used range.
+
+:function UpdateCXLCurrentRegion
+:description Updates the collection data and object pointers when a new region becomes active.
+:returns void
+
+:function UpdateColumnTotalText
+:description Updates and stores the text of the totals row for the current column.
+:param int The setting for the totals row.
+:returns void
+
+:function UpdateCXLColumn
+:description Updates the collection of data for the column from the object cell information.
+:param collection/byRef The collection of data for the column.
+:param object A cell object.
+:param object/region The current region.
+:returns void
+
+:function UpdateCXLCurrentColumn
+:description Updates the collection of data for the current column from the active cell object.
+:param object/region The current region.
+:returns void
+
+:function UpdateRowTotalText
+:description Updates and stores the text of the totals column for the current row.
+:param int The setting for the totals column.
+:returns void
+
+:function UpdateCXLRow
+:description Updates the collection of data for the row from the object cell information.
+:param collection/byRef The collection of data for the row.
+:param object A cell object.
+:param object/region The current region.
+:returns void
+
+:function UpdateCXLCurrentRow
+:description Updates the collection of data for the current row from the active cell object.
+:param object/region The current region.
+:returns void
+
+:function UpdateCXLRange
+:description Updates the collection of data for the range or cell from the object range or cell information.
+:param collection/byRef The collection of data for the range or cell.
+:param object The range or cell object.
+:returns void
+
+:function UpdateCXLActiveCell
+:description Updates the collection of data for the active cell. The data retrieved into the collection is dependent on the settings for user options, so that only the data of interest is retrieved.
+:returns void
+
+:function RefreshCXLActiveCell
+:description Updates the cached object for the active cell and the active cell collection data.
+:returns void
+
+:function UpdateCXLRangeAllData
+:description Updates the collection of data for the range or cell. All object data is retrieved into the collection, regardless of user settings.
+:param collection/byRef The collection of data for the range or cell.
+:param object The range or cell object.
+:returns void
+
+:function UpdateCXLActiveCellTitles
+:description Updates the active cell collection with the title text of the row and column,
+according to the settings for which titles should be read.
+:returns void
+
+:function UpdateCXLSelection
+:description Updates the collection of data for the selection.
+:returns void
+
+:function UpdateCXLBorder
+:description Updates the collection of data for a border.
+:param collection/byRef The collection of data for the border.
+:param object The border object.
+:returns void
+
+:function UpdateCXLRangeBorders
+:description Updates the data for the borders collection.
+:param collection/byRef The borders collection.
+:param object  The borders object.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLActiveCellBorders
+:description Updates the data for the borders collection of the active cell.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLComment
+:description Updates the collection of data for a note or comment.
+:param collection/byRef The collection of data for the note or comment.
+:param object The note or comment object.
+:param int A constant indicating whether this is an old-style comment (NoteCommentType) or a threaded comment (ThreadedCommentType). 
+:returns void
+
+:function UpdateCXLRangeComment
+:description Updates the data for the comment collection.
+:param collection/byRef The comment collection.
+:param object  The comment object.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLActiveCellComment
+:description Updates the data for the comment collection of the active cell.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLFont
+:description Updates the collection of data for the Font.
+:param collection/byRef The collection of data for the Font.
+:param object The Font object.
+:returns void
+
+:function UpdateCXLRangeFont
+:description Updates the data for the Font collection.
+:param collection/byRef The Font collection.
+:param object  The Font object.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLActiveCellFont
+:description Updates the data for the Font collection of the active cell.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLFormatCondition
+:description Updates the collection of data for the FormatCondition.
+:param collection/byRef The collection of data for the FormatCondition.
+:param object The FormatCondition object.
+:returns void
+
+:function UpdateCXLRangeFormatConditions
+:description Updates the data for the FormatConditions collection.
+:param collection/byRef The FormatConditions collection.
+:param object  The FormatConditions object.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLActiveCellFormatConditions
+:description Updates the data for the FormatConditions collection of the active cell.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLHyperlink
+:description Updates the collection of data for the Hyperlink.
+:param collection/byRef The collection of data for the Hyperlink.
+:param object The Hyperlink object.
+:returns void
+
+:function UpdateCXLRangeHyperlinks
+:description Updates the data for the Hyperlinks collection.
+:param collection/byRef The Hyperlinks collection.
+:param object  The Hyperlinks object.
+:returns void
+
+:function UpdateCXLActiveCellHyperlinks
+:description Updates the data for the Hyperlinks collection of the active cell.
+:returns void
+
+:function UpdateCXLInterior
+:description Updates the collection of data for the Interior.
+:param collection/byRef The collection of data for the Interior.
+:param object The Interior object.
+:returns void
+
+:function UpdateCXLRangeInterior
+:description Updates the data for the Interior collection.
+:param collection/byRef The Interior collection.
+:param object  The Interior object.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLActiveCellInterior
+:description Updates the data for the Interior collection of the active cell.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLList
+:description Updates the collection of data for the List.
+:param collection/byRef The collection of data for the List.
+:param object The List object.
+:returns void
+
+:function UpdateCXLShape
+:description Updates the collection of data for the Shape.
+:param collection/byRef The collection of data for the Shape.
+:param object The Shape object.
+:returns void
+
+:function UpdateCXLRangeShapes
+:description Updates the data for the Shapes collection.
+:param collection/byRef The Shapes collection.
+:param object  The Shapes object.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLStyle
+:description Updates the collection of data for the Style.
+:param collection/byRef The collection of data for the Style.
+:param object The Style object.
+:returns void
+
+:function UpdateCXLRangeStyle
+:description Updates the data for the Style collection.
+:param collection/byRef The Style collection.
+:param object  The Style object.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLActiveCellStyle
+:description Updates the data for the Style collection of the active cell.
+:param int True if the collection is to be updated with new data, false if old data is to be deleted and new data is not to be retrieved.
+:returns void
+
+:function UpdateCXLValidation
+:description Updates the collection of data for the Validation.
+:param collection/byRef The collection of data for the Validation.
+:param object The Validation object.
+:returns void
+
+:function UpdateCXLRangeValidation
+:description Updates the data for the Validation collection.
+:param collection/byRef The Validation collection.
+:param object  The Validation object.
+:returns void
+
+:function UpdateCXLActiveCellValidation
+:description Updates the data for the Validation collection of the active cell.
+:returns void
+
+:Function IsSelectedRangeTooLarge
+:description Used to restrict the maximum allowable number of cells to process in a range to an arbitrary limit when making object model calls to a large number of cells will cause undue sluggishness or crashing.
+:returns int True if the number of cells in the selected range is larger exceeds the arbitrary limit, false otherwise.
+
+:Function CellSelectionStatus
+:Description Determines whether more than one cell is currently selected.
+If the current cell is active but not selected, the function returns 0.
+:Returns Int The number of selected cells.
+
+:Function getVisibleSelection
+:description Gets the range object spanning the visible selection.
+This is used because at times there may be very many cells selected but we are only interested in speaking visible cells otherwise JAWS may lock up.
+:returns object The range of cells which are selected and visible on the screen
+
+:function IsNamedRegionTitleString
+:description Determines if the name matches a defined name title region used by JAWS.
+:param string The name of an Excel defined name.
+:optional
+:param int If named region titles is true, the type of titles to read.
+:returns int True if the name matches a defined name title region used by JAWS, false otherwise.
+
+:function IsCellInNamedTitlesRegion
+:description Determines if the cell located on the sheet and at the specified coordinates is in a named title region recognized by JAWS as a doc named title region. If the named titles region has no end point set, then the cell will be considered to be in the region at any point to the right or below the starting point.
+:param string The sheet name where the cell is located.
+:param int The row coordinates of a cell.
+:param int The column coordinates of a cell.
+:optional
+:param int/byRef If the cell is in a named titles region,
+the number indicating which of the items in the collection of named titles region in which the cell was located.
+:returns int true if the cell having the passed coordinates is in a defined named region that uses the title region convention recognized by JAWS, false otherwise.
+
+:function ActiveCellIsInUsedRangeOfNamedTitlesRegion
+:description Determines if the active cell is within a named titles region, and is not outside of the used range of a named titles region where no end point is defined for the region.
+:returns int the index of the names titles region if the active cell is within the used range of a named titles region, 0 otherwise.
+
+:function IsNamedTitlesRegionActive
+:description Determines if the active cell is in an area specified by an Excel name definition using a named title region convention recognized by JAWS.
+:returns int True if the active cell is in an area specified by an Excel name definition using a named title region convention recognized by JAWS, false otherwise.
+
+:function RangesAreIdentical
+:description Determines if two ranges are identical in that they span the same set of cells.
+:param object The first range of cells.
+:param object The second range of cells.
+:returns int true if the ranges are identical and span the same cells, false otherwise.
+
+:Function hasWorkbookOrWorksheetChanged
+:description Determines if the workbook or worksheet changed to a different workbook or worksheet between the previously active cell and the currently active cell.
+:returns int True if the previously active cell belongs to a different workbook or worksheet than the currently active cell, false otherwise.
+
+:function HasRegionChanged
+:description Determines if the region changed between the previously active cell and the currently active cell.
+:returns int True if the previously active cell belongs to a different region than the currently active cell, false otherwise.
+
+:function RegionChangeIsSignificant
+:description Determines if a region change is one that may be announced.
+:returns int True if the region change is one that qualifies for announcement, false otherwise.
+
+:Function getNamedRegionRangeObject
+:description Returns the range spanning the entire named region which contains the supplied subrange.
+This function will fail if the workbook has its structure protected as the names collection is unavailable when this is true.
+:param object/oRange the subrange
+:returns Object the entire range whose name matches that of the subrange.
+
+:function getActiveWorkbookName
+:description Retrieves the name of the active workbook.
+:returns string The name of the active workbook.
+
+:function getActiveWorkbookNameFromCollection
+:description Retrieves the name of the active workbook from the cached collection.
+:returns string The name of the active workbook from the cached collection.
+
+:function getActiveSheetName
+:description Retrieves the name of the active worksheet.
+:returns string The name of the active worksheet.
+
+:Function GetActiveSheetNumber
+:description Retrieves the number of the active worksheet.
+:returns int The number of the active worksheet.
+
+:function GetArrayOfSheetNames
+:description Retrieves an array of all the sheets names in the active workbook, where the index is the sheet number and the string at that index is the sheet name.
+:param StringArray/byRef The array which will contain the names of the worksheets.
+:param int Count The count of worksheets in the active workbook.
+:returns void
+
+:function FindSheetNameInArray
+:description Finds the index in the array where the sheet name in the array matches the sheet name parameter.
+:param StringArray The array of sheet names.
+:param int The count of sheets in the array.
+:param string The name of the sheet to find.
+:returns int If the sheet name was found in the array, the index where the sheet name is located; otherwise, 0 is returned.
+
+:Function GetSheetNumber
+:description Retrieves the number of the worksheet whose name is passed as the parameter.
+:param string The name of the worksheet whose number is to be retrieved.
+:returns int The number of the specified worksheet.
+
+:Function getWorkbookAndWorksheetName
+:description Retrieves the name of the active workbook and worksheet.
+:returns string The name of the active workbook and worksheet.
+
+:function IsFirstSheet
+:description Determines if the currently active worksheet is the first one in the workbook.
+:returns int True if the currently active worksheet is the first one in the workbook, false otherwise.
+
+:function IsLastSheet
+:description Determines if the currently active worksheet is the last one in the workbook.
+:returns int True if the currently active worksheet is the last one in the workbook, false otherwise.
+
+:Function SheetsAreGrouped
+:Description Determines whether more than one sheet is currently selected.
+:Returns Int True if more than one sheet is currently selected, false otherwise.
+
+:Function GetGroupedSheetNames
+:Description Gets the names of the sheets that are currently grouped or selected.
+:Returns String The number of sheets selected and their names.
+
+:function getCurrentRegionTopLeft
+:description Retrievs the address of the top left cell of the current region.
+:returns string the address of the top left cell in the current region
+
+:function getCurrentRegionBottomRight
+:description Retrievs the address of the bottom right cell of the current region.
+:returns string the address of the bottom right cell in the current region
+
+:function getCurrentRegionTop
+:description Retrievs the number of the first row of the current region.
+:returns int the number of the first row in the current region.
+
+:function getCurrentRegionLeft
+:description Retrievs the number of the first column of the current region.
+:returns int the number of the first column in the current region.
+
+:function getCurrentRegionBottom
+:description Retrievs the number of the last row of the current region.
+:returns int the number of the last row in the current region.
+
+:function getCurrentRegionRight
+:description Retrievs the number of the last column of the current region.
+:returns int the number of the last column in the current region.
+
+:function IsMergedCells
+:description Determines if the active cell is merged.
+:returns int True if the active cell is a merged cell, false otherwise.
+
+:Function SayNumberOfEmbeddedWorksheetObjects
+:description If worksheet has embedded object, announces how many.
+:returns void
+
+:function CellHasSmartTag
+:description Determines if the cell collection has any smart tags.
+:param collection The cell collection.
+:returns int True if the cell ahs at least one smart tag, false otherwise.
+
+:Function countCellsWithDataInVisibleRange
+:description Counts the number of cells containing data in the visible window.
+:returns int the number of currently visible non-blank cells.
+
+:Function GetContentOfCells
+:Description Gets the text of the cell or range of cells.
+:param string sAddress The address of the range of cells.
+:param string The sheet name where the cells are.
+:Returns String The text in the cells.
+
+:function getRangeText
+:description Retrieves the cell text from the specified range, up to a maximum of 100 cells.
+:param string the range address, either a single cell address or a range of two addresses separated by a colon.
+:returns string All the text from the cells in the range, up to a maximum limit of 100 cells.
+
+:function GetMergedCellTextAtCoordinates
+:description Retrieves the text of merged cells.
+:param int The coordinates column.
+:param int The coordinates row.
+:returns string the cell text.
+
+:function GetActiveCellText
+:description Retrieves the text of the active cell.
+:returns string The cell text.
+
+:function GetObjectCellAddress
+:description Retrieves the address of a cel object.
+:param object The cell object.
+:returns string The address.
+
+:Function GetActiveCellCoordinates
+:description Retrieves the row and column numbers of the active cell.
+:param int/byRef The row number of the active cell.
+:param int/byRef The column number of the active cell.
+:returns void
+
+:Function GetActiveCellAddress
+:description Retrieves the address of the active cell.
+:returns string The address of the active cell.
+
+:function IsSelectionContiguous
+:description Determines if the selected cells are contiguous.
+:returns int True if selection contains only contiguous cells, false otherwise.
+
+:function GetSelectionCellCount
+:description Retrieves the number of selected cells.
+:returns int the number of selected cells.
+
+:function GetSelectionAreaCount
+:description Retrieves the number of selected areas.
+:returns int the number of selected areas.
+
+:function getSelectionAddress
+:description Retrieves the address of the selection.
+:returns string The address of the selection.
+
+:function GetSelectionAddressRange
+:description Retrieves the address of the first and last cells in the selection.
+:param string/byRef The address of the first cell in the selection.
+:param string/byRef The address of the last cell in the selection.
+:returns void
+
+:function GetSelectionAreaRanges
+:description Retrieves a list of ranges for each area in the selection.
+:returns string The list of selected area ranges.
+
+:function GetSelectionFirstAndLastCellText
+:description Retrieves the text of the first and last cells in the selection
+:param string/byRef The text of the first cell in the selection.
+:param string/byRef The text of the last cell in the selection.
+:returns void
+
+:function DocNamedTitleReadingVerbosity
+:description When doc named titles override is off, determines if titles should be read and if so, which--both, column or row.
+:returns int The type of titles to be read when doc named titles override is off.
+
+:function ShouldReadTitles
+:description Determines whether titles should be read and if so which titles. This tests title reading both when doc named titles override is off and when it is on.
+:returns int The type of titles which should be read.
+
+:function GetTitleLocation
+:description Gets the start and end column or row number of a row or column title. Used for both doc named titles and use specified titles.
+:param int The row number of the cell whose title is wanted.
+:param int The column number of the cell whose title is wanted.
+:param int One of the title types, RowType or ColumnType.
+:param int/byRef The Starting location of the title.
+:param int/byRef The Ending location of the title.
+:returns void
+
+:function GetActiveRowTitleLocation
+:description Retrieves the start and end column locations of the row title for the active cell.
+:param int/byRef The starting column number.
+:param int/byRef the ending column number.
+:returns void
+
+:function GetActiveColumnTitleLocation
+:description Retrieves the start and end row locations of the column title for the active cell.
+:param int/byRef The starting row number.
+:param int/byRef the ending row number.
+:returns void
+
+:Function GetTitleObject
+:description Retrieves the range object for the title of the cell at the row and column location.
+:param int The row number of the cell.
+:param int The column of the cell.
+:param int The type of title, RowType or ColumnType.
+:returns object the range object of the title for the cell.
+
+:function GetCellTitleText
+:description Retrieves the text of the title for the cell located at the specified row and column.
+:param string The sheet name of the cell.
+:param int The row number of the cell.
+:param int The column number of the cell.
+:param int The type of title, RowType or ColumnType.
+:optional
+:param int True if title text should be retrieved even though the active cell is the title cell. This overrides the user's setting for Read Title Cells.
+:returns string The text of the title.
+
+:function GetActiveCellRowTitleText
+:description Retrieves the text of the row title for the active cell.
+:returns string The text of the row title for the active cell.
+
+:function GetActiveCellColumnTitleText
+:description Retrieves the text of the column title for the active cell.
+:returns string The text of the column title for the active cell.
+
+:function GetValueToSetTitleRow
+:description Gets the start and end row numbers in the range for setting the column title.
+If only one row is selected, the start and end row numbers are the same;
+otherwise, the start number is the number of the first row in the selection and the end number is the number of the last row in the selection.
+:param int/byRef The row number where the column title starts.
+:param int/byRef The row number where the column title ends.
+:returns void
+
+:function GetValueToSetTitleColumn
+:description Gets the start and end column numbers in the range for setting the row title.
+If only one column is selected, the start and end column numbers are the same;
+otherwise, the start number is the number of the first column in the selection and the end number is the number of the last column in the selection.
+:param int/byRef The column number where the row title starts.
+:param int/byRef The column number where the row title ends.
+:returns void
+
+:function GetDefaultValueToSetTitleRow
+:description Gets the default start and end row numbers in the range for setting the column title.
+The default value is used when the user sets the title without setting the row value.
+The start row is the row at the region top.
+The end row is the same unless the cell at the region top left is merged,
+in which case it is the last row in the merged cell.
+:param int/byRef The row number where the column title starts.
+:param int/byRef The row number where the column title ends.
+:returns void
+
+:function GetDefaultValueToSetTitleColumn
+:description Gets the default start and end column numbers in the range for setting the row title.
+The default value is used when the user sets the title without setting the column value.
+The start column is the column at the region left.
+The end column is the same unless the cell at the region top left is merged,
+in which case it is the last column in the merged cell.
+:param int/byRef The column number where the row title starts.
+:param int/byRef The column number where the row title ends.
+:returns void
+
+:function GetBrlRowContextData
+:description Retrieves a segmented string delimited by cscListSeparator, containing the text of cells in the current row up to 4 cells in either direction from the active cell. This string is used to populate the row data for the braille row view.
+:param int/byRef iActiveCellPosition The segment in the segmented string containing text of the active cell.
+:returns string A segmented string containing the row text up to 4 cells in either direction.
+
+:function GetBrlColumnContextData
+:description Retrieves a segmented string delimited by cscListSeparator, containing the text of cells in the current column up to 4 cells in either direction from the active cell. This string is used to populate the column data for the braille column view.
+:param int/byRef iActiveCellPosition The segment in the segmented string containing text of the active cell.
+:returns string A segmented string containing the column text up to 4 cells in either direction.
+
+:Function ColumnNumberToLetter
+:description Converts a column number to the column letter portion of a cell address.
+:param int The column number.
+:returns string The column letter conversion usable in constructing a cell address.
+
+:Function GetColumnNumberFromAddress
+:description Converts the column letter portion of a cell address to a column number.
+:param string The cell address or address portion containing the column letter location.
+:returns int The converted column number.
+
+:Function GetRowNumberFromAddress
+:description Extracts the row number from a cell address.
+:param string The cell address.
+:returns int The row number portion of the cell address.
+
+:function GetAddressSpellString
+:description Converts the address into a spell string, so that the returned address may be spoken with the column letters spelled out.
+:param string The address to convert.
+:returns string The cell address suitable for speaking with column letters spelled out.
+
+:function ConvertAInAddressToUpperCase
+:description converts the "a" letter in the address to uppercase.
+:param string The address.
+:returns string The address with the letter A converted to uppercase.
+
+:Function GetNonRegionTitleRangeName
+:description Retrieves the range name for the specified range of cells, excluding those names that are specially used to define named titled areas.
+It does this by looking through the names collection to see if the refered to range includes the supplied range.
+This function will fail if a workbook has its structure protected as the names collection is inaccessible when this occurs.
+:param object/oRange the range of cells whose name you want
+:returns String the name of the range
+
+:function GetCurrentRegionName
+:description Retrieves the region name if one exists, otherwise the cell span of the range.
+:returns string The name of the range, or the address over which the range spans.
+
+:Function GetRegionSectionName
+:description Gets the region or sheet name, depending on whether multiple region support is on or off, to be used for the user region-specific settings.
+:returns string The region name to be used by the user-specific settings.
+
+
+:function worksheetHasFocus
+:description Determines if the worksheet has the focus.
+:returns int True if the worksheet has focus, false otherwise.
+
+:Function isCXLAutoFilterMode
+:Description Determines if autofiltermode is on for the active worksheet.
+:Returns int True if autofiltermode is on, false otherwise.
+
+:Function GetDescriptionOfAutofilterSort
+:Description Retrieves the type of autofilter sort and its orientation, whether columns or rows.
+:returns string the description of the type of autofilter mode.
+
+:Function GetWorksheetWindowView
+:Description Determines whether the active worksheet is in a FreezePanes or Split window view or both.
+It is used to determine whether to provide an error message to user when attempting to list cells with certain types of data, or when user is requesting screen-ssensitive help about the active worksheet.
+:Returns String The type of window view, either FreezePanes, Split, or both.
+
+:function getCXLFontAttributes
+:description Retrieves a flagset representing the font attributes when in the worksheet.
+:param collection The font collection.
+:returns int The flagset of the font attributes.
+
+:Function GetFontColors
+:description Retrieves the foreground and background colors of the selected cells.
+:param int/byRef The text or foreground color.
+:param int/byRef The background color.
+:returns void
+
+:Function GetColorDescription
+:description converts the color integer to a color name.
+:param int the color integer.
+:returns string The name of the color.
+
+:Function GetCXLRangeShadingInfo
+:description Retrieves a description of the shading information from the collection data.
+:param collection The range collection.
+:returns string The text describing the shading.
+
+:function GetCXLRangeTextAndBackgroundColors
+:description Retrieves the text and background color from the range collection data.
+:param collection The range collection.
+:param int/byRef iTextColor
+:param int/byRef The background color.
+:returns void
+
+:Function GetCXLRangeNumberFormatDescription
+:description Retrieves a description of the number format from the range collection data.
+:param collection The range collection.
+:returns string The description of the number format.
+
+:Function GetCXLActiveCellHorizontalAlignmentInfo
+:description Retrieves a description of the active cell's horizontal allignment.
+:returns string The description of the active cell's horizontal allignment.
+
+:Function GetCXLActiveCellVerticalAlignmentInfo
+:description Retrieves a description of the active cell's vertical allignment.
+:returns string The description of the active cell's vertical allignment.
+
+:function ConvertOrientationToDegrees
+:description Converts the excel orientation constant to a useable degrees value.
+:param int The excel orientation constant.
+:returns int the orientation converted to number of degrees.
+
+:function GetCXLRangeFontUnderlineAndEffectInfo
+:description Retrieves descriptions of any effects such as strike strike through, superscript and subscript, and any underlining.
+:param collection The range object.
+:param string The delimiter that will appear between the description parts.
+:returns string A message with any font effects described.
+
+:function GetCXLRangeFontInfo
+:description Retrieves a description of the font for the specified range.
+:param collection The range collection.
+:param int True if the range is the active cell, false otherwise.
+:param int True if the cell is a title cell, false otherwise.
+:param string The delimiter that will be used to separate components of the description message.
+:param int The type of message to be constructed, short or long.
+:returns string A description of the font.
+
+:Function GetTitleCellFontAndFormattingInfo
+:description Retrieves font and formating information about the cell.
+:param object The Excel cell object.
+:param int True if the information is to be displayed in the user buffer, false otherwise.
+:returns string A description of the font and formating information.
+
+:function ActiveCellHasValidationInputMessage
+:description Determines if the active cell has a validation input message.
+:returns int True if the active cell has a validation messge, false otherwise.
+
+:function ActiveCellValidationShowInput
+:description If the active cell has a validation message, dtermines the Excel ShowInput property of the message.
+:returns int the value of the Excel ShowInput property.
+
+:Function GetValidationMessage
+:description Retrieves a text description of the type of validation.
+:param int iType A validation type as specified by the Excel DOM.
+:optional
+:param int One of the message types SpeechMsgType or BrlMsgType, depending on whether the speech or braille message is wanted. If omitted, returns the speech message.
+:returns string The text describing the validation type.
+
+:function GetValidationOperatorMessage
+:description Retrieves a text message for the type of operator.
+:param int The operator type as specified by the Excel DOM.
+:returns string
+:function GetFormatConditionTypeAndOperator
+:Description Retrieves the type and operator for the currently active cell's format condition, if applicable.
+:param collection The condition collection.
+:param string/byRef The condition type.
+:param string/byRef The condition operator.
+:returns void
+
+:function isChartActive
+:description Determines if a chart has focus.
+:returns int True if a chart is active, false otherwise.
+
+:Function IsFormulaObjectCell
+:description Determines if the cell object has a formula.
+:param object The cell object.
+:returns int True if the cell has a formula, false otherwise.
+
+:Function IsFormulaCXLCell
+:description Determines if the cell collection has a formula.
+:param collection The cell collection.
+:returns int True if the cell has a formula, false otherwise.
+
+:function ActiveCellIsFormulaCell
+:description Determines if the active cell has a formula.
+:returns int True if the active cell has a formula, false otherwise.
+
+:function getActiveCellFormula
+:description Retrieves the text of the formula in the active cell.
+:returns string the formula text in the active cell.
+
+:Function ActiveCellHasHyperlinkFormula
+:description Determines if the active cell has a hyperlink formula.
+:returns int True if the active cell has a hyperlink formula, false otherwise.
+
+
+:Function GetHyperlinkObjectAddress
+:description Retrieves the address of the hyperlink.
+:param object The hyperlink object.
+:returns string The address of the hyperlink.
+
+:Function GetHyperlinkAddress
+:description Retrieves the address of the hyperlink.
+:param collection The hyperlink collection.
+:returns string The address of the hyperlink.
+
+:Function GetActiveCellHyperlinkAddress
+:description Retrieves the address of the hyperlink in the active cell.
+:returns string The address of the hyperlink in the active cell.
+
+:function ActiveCellHasHyperlinks
+:description Determines if the active cell has hyperlinks.
+:returns int True if the active cell has hyperlinks, false otherwise.
+
+:Function TrimSheetNameFromHyperlinkAddress
+:description Trims the sheet name out of the hyperlink address.
+:param string The hyperlink address.
+:returns string The hyperlink address with the sheet name stripped out.
+
+:Function GetShapeObjectTopLeftAndBottomRight
+:description Retrieves a description of the range that a shape spans.
+:param object The shape object.
+:returns string The range spanned, top left to bottom right, of the shape.
+
+:Function GetShapeRangeInfo
+:description Retrieves a description of the range that a shape spans.
+:param collection The shape collection.
+:returns string The description of the range spanned by the shape.
+
+:Function getObjectFormControlDescription
+:param object The shape object.
+:returns string
+
+:Function GetObjectOleObjDescription
+:description Retrieves a description for an ole object.
+An ole object is a particular kind of shape object.
+:param object A shape object.
+:returns string The description of the ole shape object.
+
+:Function GetObjectAutoShapeDescription
+:description Retrieves a description for an autoshape object.
+:param object An autoshape object.
+:returns string The autoshape description.
+
+:Function GetShapeObjectDescription
+:description Determines the type of shape and retrieves the appropriate description using the other shape description helper functions.
+:param object The shape object.
+:returns string The appropriate description for the shape object.
+
+:function SayUsingVoiceOrBuffer
+:description Speaks the text using the specified output type or redirects the text to the user buffer.
+:param string The voice to use if text is spoken.
+:param string Text text to speak or redirect.
+:param int The output type. If the output type is ot_user_buffer, redirects the text to the User buffer.
+:returns void
+
+:function sayWorkbookName
+:description Speaks the name of the active workbook.
+:returns void
+
+:function SayActiveSheet
+:description Speaks the active sheet using the document name output type.
+:optional
+:param int True if sheet is to be announced as new, false otherwise. When announced as new, extra information may be announced if appropriate such as announcing that the sheet has a custom summary or embedded objects.
+:returns void
+
+:function SayCellText
+:description speaks the text in the cell, announces blank in the messing voice if the cell has no text or obscured if the text exists but is obscured.
+:param string The text in the cell to be spoken.
+:returns void
+
+:function BrailleCellText
+:description Posts the text in the cell to the Braille display, Brailles blank if the cell has no text or obscured if the text exists but is obscured.
+:param string The text in the cell to be Brailled.
+:returns void
+
+:function GetSpellStringCoordinatesFromAddress
+:description Used to convert a cell address into a spell sgring form, where the letters in the column are separated by spaces for speaking the column characters.
+:param string The cell address.
+:returns string The address with column letters in spell form.
+
+:function SayCellCoordinates
+:description Speaks the coordinates of the cell using the specified output type.
+:param collection The cell collection.
+:param int The output type to use when speaking.
+:returns void
+
+:function sayActiveCellCoordinates
+:description Speaks the coordinates of the active cell.
+:returns void
+
+:function spellActiveCellCoordinates
+:description Spells out the coordinates of the active cell.
+:returns void
+
+:Function SpellActiveCellCoordinatesPhonetic
+:description Phonetically spells out the coordinates of the active cell.
+:returns void
+
+:Function SayActiveCellCoordinatesInfo
+:description Speaks the active cell coordinates. If on the formula bar, speaks the cell coordinates and sheet name of the cell currently being edited. If a chart is active, speaks the chart caption.
+:returns void
+
+:function SpellActiveCellText
+:description Spells out the text in the active cell.
+:returns void
+
+:Function SpellActiveCellTextPhonetic
+:description Phonetically spells out the text in the active cell.
+:returns void
+
+:function SayCurrentRowTitle
+:description Speaks the title of the current row.
+:returns void
+
+:Function SayRowHeader
+:description Speaks the title of the current row using the header voice alias.
+:returns void
+
+:function SayCurrentColumnTitle
+:description Speaks the title of the current column.
+:returns void
+
+:Function SayColumnHeader
+:description Speaks the title of the current column using the header voice alias.
+:returns void
+
+:function sayRowTitleOnDemand
+:description Speaks and flashes in braille the title of the row, even if the active cell is the title cell.
+:returns void
+
+:function sayColumnTitleOnDemand
+:description Speaks and flashes in braille the title of the column, even if the active cell is the title cell.
+:returns void
+
+:function sayActiveCellTitles
+:description Speaks the titles of the active cell according to the user's title verbosity setting and using the header voice alias.
+:returns void
+
+:function SaySelectionRangeTitles
+:description Says the titles of the first and last cells in the range.
+:param int True if extended selection mode is active, false otherwise.
+:returns void
+
+:Function SaySelectedRange
+:description Speaks the coordinates of the starting and ending cells of the selected range, and if the option to speak the selected content is on speaks the cell text.
+If the selected range is too large, only the visible range content is spoken.
+:optional
+:param int True if coordinates should be announced regardless of user verbosity settings.
+:returns void
+
+:function SayGroupedSheetNames
+:description If sheets are grouped, speaks the number of sheets in the group and the name of each sheet.
+:returns void
+
+:Function ManageWorksheets
+:description Right clicks on the active worksheet.
+:returns void
+
+:Function SayCurrentRegion
+:description Speaks the region name if one exists, and the cell addresses spanned by the region.
+:param int the output type to use when speaking.
+:returns void
+
+:function SayVisibleRangeCoordinates
+:description Speaks the cell coordinates of the range of visible cells.
+:returns void
+
+:function DescribeActiveCellFont
+:description describes information about the font of the active cell. If called in the context of an IsSameScript, shows the information in the user buffer along with title font information if the user has that option turned on.
+:returns void
+:Function ReportFontStatus
+:description Reports the status of the fonts in Excel.
+:param string The font button name.
+:returns void
+
+:Function SayCXLValidationFormulaInfo
+:description Speaks information about the formula validation.
+:param collection The validation collection.
+:param int The type of validation.
+:returns void
+
+:function SayCXLValidationInfo
+:description Speaks the information describing the validation type and message.
+:param collection The validation collection.
+:returns void
+
+:Function GetActiveCellValidationBrlMessage
+:description Retrieves the message to be shown in braille when the active cell has a validation message.
+:returns string The message to be shown in braille when the active cell has a validation message.
+
+:function SayCXLValidationInputMessage
+:description Speaks the validation input message.
+:param collection The validation collection.
+:returns void
+
+:function SayActiveCellValidationInputMessage
+:description Speaks the validation input message for the active cell.
+:returns void
+
+:Function GetInputMessageTutorHelp
+:description Gets a tutor message for the input validation.
+:returns string the tutor messge.
+
+:Function GetScreenSensitiveHelpInputMessage
+:description Gets a screen sensitive help message for the input validation.
+:returns string The screen sensitive help message.
+
+:Function GetCXLBorderInfo
+:description Retrieves text describing the border.
+:param collection The collection data for a border.
+:param int The type of border.
+:optional
+:param int The border edge grouping. If the type of border parameter is 0, this specifies that some borders will be reported as a group.
+:returns string
+
+:function DescribeActiveCellBorders
+:description Describes the border of the active cell.
+:returns void
+
+:Function detectActiveCellBorderChange
+:description Detects and describes changes between the border of the previously active cell and the currently active cell.
+:returns void
+
+:function DetectActiveCellFormatChange
+:description Detects and describes changes in the format of the previously active cell and the currently active cell.
+:returns void
+
+:function getActiveCellCommentText
+:description If comments are being detected during navigation, retrieves the text of the comment.
+:returns string The comment text, if the comment is being contextually detected during navigation.
+
+:function ReadActiveCellNoteOrComment
+:description Speaks the note or comment in the active cell, or in the context of IsSameScript shows it in the user buffer.
+:returns void
+
+:function SayActiveCellHyperlinkAddress
+:description Speaks the address of the hyperlink belonging to the active cell.
+:returns void
+
+:function GotoHyperlink
+:description Activates the hyperlink in the current cell.
+:returns void
+
+:Function DetectCXLRangeHyperLink
+:description Detects if a hyperlink exists, and if so notifies that it exists or speaks the address based on user settings.
+:param collection The hyperlinks collection.
+:returns void
+
+:function DetectActiveCellHyperLink
+:description Detects if a hyperlink exists in the active cell, and if so notifies that it exists or speaks the address based on user settings.
+:returns void
+
+:function FindAutoTotalLocation
+:description Searches a row or column of cells to find a cell containing a total formula.
+:param object The range of cells to search.
+:param int The starting cell number.
+:param int The type of total, RowType or ColumnType.
+:returns int If a cell containing a totla was found, the cell number.
+
+:function GetAutoRowTotalText
+:description Searches the current row for a cell containing a sum formula.
+:returns string the text of the column in the current row determined to have a sum formula.
+
+:function GetAutoColumnTotalText
+:description Searches the current column for a cell containing a sum formula.
+:returns string the text of the row in the current column determined to have a sum formula.
+
+:function GetRowTotalText
+:description If a column is designated for the row total, returns the text of the cell in that row and column location.
+:returns string The text of the total cell.
+
+:function GetColumnTotalText
+:description If a row is designated for the column total, returns the text of the cell in that row and column location.
+:returns string The text of the total cell.
+
+:function ReadRowTotal
+:description Speaks the text in the totals column for the current row.
+:returns void
+
+:function ReadColumnTotal
+:description Speaks the text in the totals row for the current column.
+:returns void
+
+:function ReportGridlineStatus
+:description Reports the status of gridlines (on or off) in the active window.
+:returns void
+
+:function SayRangeInfo
+:description Describes in details information about the first cell in the range.
+:param object The range object.
+:returns void
+
+:Function IsCellTextCroppedRight
+:Description Determines if the text of the current cell is partially cropped on the right.
+:param object The cell object.
+:param collection The cell collection.
+:param int The length of the cell text in points.
+:param string/byRef If cropped, the cell address where the cropping is located.
+:returns int True if the cell text is cropped right, false otherwise.
+
+:Function IsCellTextCroppedLeft
+:Description Determines if the text of the current cell is partially cropped on the left.
+:param object The cell object.
+:param collection The cell collection.
+:param int The length of the cell text in points.
+:param string/byRef If cropped, the cell address where the cropping is located.
+:returns int True if the cell text is cropped left, false otherwise.
+
+:Function IsCellTextOverlappingRight
+:Description Determines if the text of the current cell is partially overlapping on the right.
+:param object The cell object.
+:param collection The cell collection.
+:param int The length of the text in points.
+:param string/byRef If overlapping, the address of the cell where the overlap occurs.
+:returns int True if the cell text is overlapping right, false otherwise.
+
+:Function IsCellTextOverlappingLeft
+:Description Determines if the text of the current cell is partially overlapping on the left.
+:param object The cell object.
+:param collection The cell collection.
+:param int The length of the text in points.
+:param string/byRef If overlapping, the address of the cell where the overlap occurs.
+:returns int True if the cell text is overlapping left, false otherwise.
+
+:function GetCellTextVisibilityInfo
+:description Retrieves a description of the cell text visibility traits such as cropping and overlapping.
+:param object The cell object.
+:param collection The cell collection.
+:param int The length of the text in points.
+:returns string The description of the visibility information for the cell.
+
+:function 	SayDetectedFontChanges
+:description Speaks detected changes in font between the previously active cell and the currently active cell.
+:param collection The cell collection.
+:returns void
+
+:Function SayFormControl
+:description Announces the type of form control linked to the cell at the specified address.
+:param string The cell address.
+:returns void
+
+:Function GetPagebreakType
+:description Determines if the cell has pagebreaks, and if so the type of pagebreaks.
+:param collection The cell collection.
+:param string/byRef A message describing the type of pagebreak.
+:returns int True if pagebreaks were detected, false otherwise.
+
+:Function HasPagebreak
+:description Determines if the cell has pagebreaks, and if so the type of pagebreak.
+:param collection The cell collection.
+:param string/byRef A message describing the type of pagebreak.
+:returns int True if the cell has pagebreaks, false otherwise.
+
+:Function GetPagebreakAtActiveCell
+:description If the active cell has pagebreaks, returns a message describing the type of pagebreak.
+:returns string A message describing the pagebreaks.
+
+:Function IsFilteredRangeConsecutive
+:Description Determines whether a range of filtered rows or columns is consecutive in order to report filtered mode status most concisely.
+:Param string The list of filtered rows or columns to check. This list is converted to numerical format for easier processing.
+:Param int Whether the list to check is rows or columns. If columns, the alphabetic references need to be converted to numbers in order to check them. True if columns, false if rows.
+:Returns Int True if the list is consecutive, false otherwise.
+
+:Function SayFilterTypeControl
+:Description Determines whether the autofilter range is sorted and reports it has a dropdown if so.
+:returns void
+:Function GetFilterOperator
+
+:Function SayFilterModeStatus
+:Description Announces the state of Autofilter for the active worksheet.
+If Custom Filter is on, a message is announced.
+If Autofilter is on, whether for all or for top ten, Autofilter message is announced.
+:Returns Void
+
+:Function SayFilterScreenSensitiveHelp
+:Description Speaks information for screen-sensitive  help when autofiltermode is on, including the number of filters and their operators.
+:Returns Void
+
+:Function SayCXLCellOrientation
+:description Announces the cell orientation.
+:param collection The cell collection.
+:returns void
+
+:function GetCellTextLengthInPoints
+:description Determines the length of the cell text in points.
+:param collection The cell collection.
+:returns int The length, in points, of the cell text.
+
+:function DescribeCellTextAppearance
+:description Displays details about the cell text appearance in the user buffer.
+:param object The cell object.
+:param collection The range collection.
+:param int The length of the cell text in points.
+:returns void
+
+:function DescribeActiveCellTextAppearance
+:description Displays details about the text appearance of the active cell in the user buffer.
+:returns void
+
+:function SayObjectCellInfo
+:description Describes detailed information about the cell.
+:param object The cell object.
+:returns void
+
+:function ReadSelectedMultipleAreas
+:description If the selection spans multiple areas, describes the selection range.
+:returns int True if the selection spans multiple areas, false otherwise.
+:optional
+:param int True if coordinates should be announced regardless of user verbosity settings.
+
+:function ReadSelectedMultipleCellsInSingleArea
+:description If the selection spans multiple cells, describes the selected range.
+:optional
+:param int True if cell user buffer should describe the cell appearance, false otherwise.
+:param int True if coordinates should be announced regardless of user verbosity settings.
+:returns int True if the selection spans multiple cells, false otherwise.
+
+:function DetectTitleChangeDuringNavigation
+:description Determines if column and/or row titles should be announced when navigation occurs, and if so announces them.
+:param int The title verbosity setting.
+:returns void
+
+:function ReadActiveCell
+:description Describes the active cell according to the user's verbosity settings.
+:optional
+:param int True if coordinates should be announced regardless of user verbosity settings.
+:returns void
+:Function ReadSelectedCells
+:description Describes the active cell or selected cells.
+:optional
+:param int True if cell details should be shown in the user buffer, false otherwise.
+:param int True if coordinates should be announced regardless of user verbosity settings.
+:returns void
+
+:function RemoveDuplicateAddressInfo
+:returns string the cell address where the range was one cell but the range spec had a duplicate of the same coordinates.
+:description useful for output via speech or Braille preventing the output of a1 a1 but without changing the range itself.
+:param string/sRange The address range to check.
+
+:Function readModifiedSelection
+:description Speaks the change in selection when selecting cells in a workbook.
+:param int Direction of selection.
+:returns void
+
+:function readColumn
+:Description Reads the text of visible cells in the column.
+:optional
+:param int The number of the row to start reading from.
+:param int The number of the row to end the reading.
+:returns void
+
+:function readRow
+:Description Reads the text of visible cells in the row.
+:optional
+:param int The number of the column to start reading from.
+:param int The number of the column to end the reading.
+:returns void
+
+:Function ReadToBottomOfColumn
+:description Reads the visible column starting at the current cell.
+:returns void
+
+:function readFromTopOfColumn
+:description Reads the visible column up to the current cell.
+:returns void
+
+:Function readToEndOfRow
+:description Reads the visible row starting at the current cell.
+:returns void
+
+:function readFromStartOfRow
+:description Reads the visible row up to the current cell.
+:returns void
+
+:function SayColumnFirstCellFromTop
+:description Speaks the text of the first cell in the current column.
+:returns void
+
+:function SayColumnSecondCellFromTop
+:description Speaks the text of the second cell in the current column.
+:returns void
+
+:function SayColumnThirdCellFromTop
+:description Speaks the text of the third cell in the current column.
+:returns void
+
+:function SayColumnFourthCellFromTop
+:description Speaks the text of the fourth cell in the current column.
+:returns void
+
+:function SayRowFirstCellFromLeft
+:description Speaks the text of the first cell in the current row.
+:returns void
+
+:function SayRowSecondCellFromLeft
+:description Speaks the text of the second cell in the current row.
+:returns void
+
+:function SayRowThirdCellFromLeft
+:description Speaks the text of the third cell in the current row.
+:returns void
+
+:function SayRowFourthCellFromLeft
+:description Speaks the text of the fourth cell in the current column.
+:returns void
+
+:function ListRow
+:description Lists cells with data in the current row, and allows user to move to the cell chosen in the list.
+:returns void
+
+:function ListColumn
+:description Lists cells with data in the current column, and allows user to move to the cell chosen in the list.
+:returns void
+
+:function FirstCellInRegion
+:description If in a region, moves to the first cell in the region; otherwise, moves to the first cell on the worksheet.
+:returns void
+
+:function LastCellInRegion
+:description If in a region, moves to the last cell in the region; otherwise, moves to the last cell on the worksheet.
+:returns void
+
+:Function SayDataRegionDir
+:Description Determines which message to announce when navigating by data region.
+:Param Int/xDir The horizontal direction, left/right across the spreadsheet.
+:Param Int/yDir The vertical direction, up/down on the spreadsheet.
+:Returns Void
+
+:function EscapeToPriorSheet
+:description Escapes the virtual viewer and moves to the prior sheet.
+:returns void
+
+:function EscapeToNextSheet
+:description Escapes the virtual viewer and moves to the next sheet
+:returns void
+
+:function AddSheetLinks
+:description adds links to prior and/or next sheet to the virtual viewer.
+:returns void
+
+:function getFontObjAttributes
+:description Translates a Font Object's attributes into a set of bit flags understandable to JAWS.
+:param object/oFont the font object whose attributes are to be determined.
+:returns int set of attributes ored together, attributes supported are listed in hjconst.jsh prefixed with attrib_.
+
+:function GetActiveChartName
+:description Retrieves the name or title of the active chart.
+:returns string The title or name of the chart.
+
+:Function GetChartTypeDescription
+:description Retrieves a description for a given chart type.
+:param object The chart object whose description is to be retrieved.
+:returns string The chart type description.
+
+:Function DescribeChart
+:description Describes a chart object using supplied criteria.
+:param object The chart object to be described.
+:param string Each series on a chart can be described in a certain way, eg a series may define a set of lines, a set of bars, etc.
+:param string Each series representing say a set of lines or bars can be broken down into units, eg set, line etc.
+:param string A point may represent an actual point or it may represent an area or a bar or column.
+:param string The plural version of the point description, eg bars, columns, points.
+:param int True if the percentage contribution should be calculated and spoken, false otherwise. This is used for certain kinds of charts such as pi and doughnot charts.
+:returns void
+
+:Function ReadChart
+:description Determines the chart type and reads the chart using the helper function describeChart.
+:param object The chart to read.
+:returns void
+
+:Function ReadActiveChart
+:description Determines the chart type of the active chart and reads the chart using the helper function describeChart.
+:returns void
+
+:function SelectChartTitle
+:description This function selects the real chart title when the title is clicked in the User Buffer.
+:param object The chart object.
+:returns void
+
+:function SelectCategoryAxisTitle
+:description Selects the real chart category axis title when the title is clicked in the User Buffer.
+:param object The chart object.
+:returns void
+
+:function SelectValueAxisTitle
+:description Selects the real chart value axis title when the title is clicked in the User Buffer.
+:param object The chart object.
+:returns void
+
+:Function SelectActiveChart
+:Description Activates and selects the chart on the current worksheet.
+:Returns Void
+
+:function ReadMonitorCell
+:description This function reads the address and contents of a monitor cell range.
+:param string The address of the monitor cell range.
+:returns void
+:Function GetAddressOfNextOrPriorCellType
+:Description Returns the address of the next cell containing the type of item being sought, starting from the location of the active cell. If no next cell having the specified type is found, attempts to return the closest prior cell of the specified type.
+:Param object The active cell object.
+:Param object The collection of object of the specified type.
+:Param Int/iCount The number of cell objects of the type being sought.
+:Returns String The cell address of the next or prior cell containing the type of item sought.
+
+:function GetObjectDataFromItem
+:description Used by GetObjectDataFromList to retrieve the data for each item of the specified type.
+:param object The objects item for which the data is to be acquired.
+:param int The type of object, see the enumerated types of objects.
+:returns string The data for the item.
+
+:function GetObjectDataFromList
+:description Used by the list functions to retrieve data information for the objects in the list.
+:param object The list of objects for which the data is to be acquired.
+:param int The count of items in the object list.
+:param int The type of objects in the list, see the enumerated types of objects.
+:optional
+:param int If an index is to be shown in the list, the type of index.
+:param string/byRef List of object collection indexes. If the list object contains items which are to be ignored, the list of indexes can be used to list all indexes that are not ignored. This is useful if the index into the object collection is needed.
+:returns string The list of address and text information for each object in the list.
+
+:function ListCellsWithNotes
+:description Lists cells with notes visible on the current screen and allows user to move to a cell selected from the list.
+:returns void
+
+:function ListVisibleCellsWithData
+:description List cells with data visible on the current screen and allows user to move to the selected cell.
+:returns void
+
+:function ListHyperlinks
+:description Lists hyperlinks on the worksheet and follows the selected link.
+:returns void
+
+:function ListWorksheetObjects
+:description Lists the worksheet shapes and allows the user to select one. JAWS then attempts to set focus on the selected shape and run its onAction macro.
+:returns void
+
+:function ListCellsWithFormulas
+:description Lists cells with formulas visible on the current screen and allows user to move to the selected cell.
+:returns void
+
+:function ListCellsAtPageBreaks
+:description Lists cells at horizontal and vertical page breaks and allows user to move to the selected cell.
+:returns void
+
+:function ListWorksheets
+:description Lists all worksheets and allows user to select and set focus on chosen sheet.
+:returns void
+
+:function ListSmartTags
+:description List clickable smart tags and allows user to move the selection to the smart tag in the list.
+:returns void
+
+:Function ShowTextBoxContent
+:description If the current worksheet has a single textbox, show the text belonging to the box. If more than one textbox is on the sheet, anounces the number of textboxes then runs the functions to list worksheet objects.
+:returns void
+
+:function returnFromMonitorCell
+:description If a monitor cell has been moved to using the list monitor cells feature, jumps back to the cell location before the monitor cell was moved to.
+:returns void
+
+:function ListMonitorCells
+:description Lists all the monitor cells defined on the active worksheet and allows the user to move to the chosen cell.
+:returns void
+
+:function GetNumberOfEmbeddedWorksheetObjects
+:description Gets the number of embedded worksheet objects, excluding notes, comments and dropdowns.
+:returns int the number of embeded worksheet objects linked to a cells.
+
+:Function ListCellMarkers
+:description Lists the defined cell markers, and allows the user to move to the chosen cell marker.
+:returns void
+
+:Function GetNameOfSheetWithNextOrPriorCellMarker
+:description Finds the next or prior sheet in the workbook where a cell marker is defined.
+:param int One of the movement directions, UnitMove_Next or UnitMove_Prior.
+:returns string If a sheet with a cell marker is found, the name of the sheet; otherwise, null.
+
+:function MoveToCellMarker
+:description Depending on the specified movement, moves to a cell marker on the current sheet, or to a cell marker on the next or prior sheet.
+:param int One of the movement directions, UnitMove_Current, UnitMove_Next or UnitMove_Prior.
+:returns int True if a cell marker was found and the move occurred, false otherwise.
+
+:function MoveToCellMarkerOnCurrentSheet
+:description If a cell marker is found on the currently active sheet, moves to it; otherwise, speaks an error message saying that no cell marker is found.
+:returns void
+
+:function MoveToCellMarkerOnNextSheet
+:description If a cell marker is found on a succeeding sheet to the currently active sheet in the workbook, moves to it; otherwise, speaks an error message saying that no cell marker is found.
+:returns void
+
+:function MoveToCellMarkerOnPriorSheet
+:description If a cell marker is found on a preceding sheet to the currently active sheet in the workbook, moves to it; otherwise, speaks an error message saying that no cell marker is found.
+:returns void
+
+:Function MoveToCell
+:description Moves to the specified cell address on the sheet with the specified name.
+:param string The cell address.
+:param string The sheet name.
+:returns void
+
+:Function GetDefaultCustomSummaryLabel
+:description Retrieves a default text value for the label to pass to the dialog that creates the custom summary label.
+:returns string The default label text for the custom summary label dialog.
+
+:Function GetAllCustomLabelsInWorkbook
+:description Retrieves all the custom labels for all the worksheets in the workbook.
+:param collection/byRef The collection of custom labels for the workbook.
+:returns void
+
+:function AddCustomSummaryInfoToUserBuffer
+:description Formats the custom summary information and adds it to the user buffer.
+:param int The type of custom summary information.
+:param string The text to display in the custom summary.
+:optional
+:param string If the item is a link in the user buffer, the function call run when the link is used.
+:param string If the item is a link in the user buffer, the display text of the link.
+:returns void
+
+:Function ViewCustomSummary
+:description Displays a summary of all the custom labels defined in the active workbook. The summary includes links for jumping to the custom labels.
+:returns void
+
+:function IsCustomSummaryActive
+:description Determines if the custom summary user buffer window is active.
+:returns int True if the custom summary is active, false otherwise.
+
+:Function ScreenSensitiveHelpCustomSummary
+:Description Provides screen-sensitive help for the custom summary dialog specific to each control in the dialog.
+:Param String The name of the window that has the focus.
+:Param Int The subtype code of the current control.
+:Returns Void
+:function ExcelScreenSensitiveHelp
+:description Provides screen-sensitive help specific to the Excel worksheet area.
+:returns void
+
+:function GetActiveWorkbook
+:description Obtains the active workbook object.
+:returns object The active workbook object if it could be obtained, null otherwise.
+
+:function GetActiveSheet
+:description Obtains the active worksheet object.
+:returns object The active worksheet object if it could be obtained, null otherwise.
+
+:function GetActiveCell
+:description Obtains the active cell object.
+:returns object The active cell object if it could be obtained, null otherwise.
+
+:function GetSelection
+:description Obtains the selection object.
+:returns object The selection object if it could be obtained, null otherwise.
+
+:function getCurrentSelection
+:Returns object returns the current cached selection
+:Synopsis returns the current cached selection
+
+:function inTextBox
+:Returns int returns true if a textbox is selected
+:Synopsis returns true if a textbox is selected
+
+:function UpdateUIAFocusElementCache
+:returns void
+:Description Updates the cached UIA focus element. This means we don't need to collect copious instances of UIA focused elements. You still need to collect your own UIA focus element if you need the deepest focus element where ancestor and child both have focus, need to use the functions from UIA.jss.
+
+:function getCachedUIAFocusElement
+:returns object the UIA focused element, either from cache or having rebuilt the cache and returned it.
+:Description retrieves the UIA focus element cache, and if cache is null gets the latest element. If the cache is a valid element but out of date, this does not refresh. 
+
+:Function getCachedUIAFocusElementStatusText
+:returns string the itemStatus property text from the cached UIA element.
+:Description Allows us to dynamically consume new UIA content in Office as supplied by the .ItemStatus property.
+
+:function onFormulaBarUIAEditItem
+:returns int TRUE or FALSE
+:Description Modern versions of Excel have parts of the formula bar in the Excel7 classic spreadsheet window, even if the class of the UIA object is the formula bar Excel6.
+
+:function getFocusUIAElementText
+:returns string the text from the element text range.
+:Description gets the element text for the focused formula bar edit in from UIA.
+
+:function FindFormulaBarElement
+:description Retrieves the UIA object which contains the formula bar text.
+:returns object The UIA element with the formula bar text.
+
+:Function SayEditingCellFormula
+:Description Says The content of the formula bar being populated by arrowing in this other workbook while editing a cell. It is only called when another workbook is navigated to while editing a cell.
+:Returns Void
+:optional
+:param object/Element the UIA element containing the formula bar text as its text range. If not supplied, the element will be searched for using UIA.
+
+:function GetSheetID
+:description Gets the sheetID from the internal focus cache.
+:returns string The sheetID text, or null if none could be determined.
+
+:function GetCurrentRegionOfCell
+:description Retrieves the Excel DOM object representing a cell's current region.
+:param object The cell whose current region is to be retrieved.
+:returns object the Excel DOM object representing a cell's current region.
+
+:function GetActiveCellCurrentRegion
+:description Retrieves the Excel DOM object representing the active cell current region.
+:returns object the Excel DOM object representing the active cell current region.

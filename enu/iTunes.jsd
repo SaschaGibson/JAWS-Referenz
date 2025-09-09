@@ -1,0 +1,3 @@
+:script iTunesFind
+:synopsis In the iTunes Store, performs a virtual find. Otherwise, performs the default action.
+:description Used to perform a virtual find when in the iTunes store. Elsewhere in iTunes, it will perform the default action in iTunes.

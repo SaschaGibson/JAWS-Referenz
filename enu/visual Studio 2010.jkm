@@ -1,0 +1,9 @@
+[common keys]
+;Unassign Ctrl+Shift+] because it conflicts with the Visual Studio
+;command assigned to this key that selects to the next matching brace
+Ctrl+Shift+]=
+Ctrl+l=DeleteCurrentLine
+Ctrl+Delete=DeleteCurrentWord
+Ctrl+ExtendedDelete=DeleteCurrentWord
+Ctrl+Backspace=DeletePriorWord
+Ctrl+Shift+/=SayVariableValue

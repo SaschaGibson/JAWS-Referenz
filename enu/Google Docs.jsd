@@ -1,0 +1,77 @@
+:script MoveToGoogleMainToolBar
+:DisplayName Move to google Main Toolbar
+:synopsis Move the focus to the Google main toolbar belonging to the document area.
+:description Looks for the main toolbar in Google Docs, Sheets or slides, and if found sets focus to an item on the toolbar.
+:SearchRank 1
+
+:script MoveToGoogleModeAndViewToolBar
+:DisplayName Move to google Mode and view Toolbar
+:synopsis Move the focus to the Google Mode and View toolbar belonging to the document area.
+:description Looks for the Mode and view toolbar in Google Docs, Sheets or slides, and if found sets focus to an item on the toolbar.
+:SearchRank 1
+
+:script moveToMisspelledWord
+:DisplayName Move to misspelled word
+:synopsis Moves to and speaks the next or prior spelling error.
+:description If there are spelling errors in your document, this script moves to and speaks the next or prior error, depending on the keystroke used to invoke the script. Control+apostrophe moves forward, Control+semicolon moves backward.
+:SearchRank 1
+
+
+:Script MoveToNextSpellingError
+:DisplayName Move To Next Spelling Error
+:Synopsis Moves to the next spelling error.
+:description Moves to the next spelling error in the document.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToPriorSpellingError
+:DisplayName Move To Prior Spelling Error
+:Synopsis Moves to the prior spelling error.
+:description Moves to the prior spelling error in the document.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToPriorComment
+:DisplayName Move To Prior Comment
+:Synopsis Moves to the prior comment.
+:description Moves to the prior comment in the document.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script MoveToNextComment
+:DisplayName Move To Next Comment
+:Synopsis Moves to the next comment.
+:description Moves to the next comment in the document.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script SpeakComment
+:DisplayName Speak Comment At Cursor
+:Synopsis Speaks the comment at the cursor.
+:description Speaks the comment at the cursor location.
+:KeyWords Quick Key
+:SearchRank 1
+
+:Script QuickKeysLayerHelp
+:DisplayName Basic Layer Help
+:Synopsis layer help
+:Description Speaks a help message describing available commands in this key layer.
+:SearchRank 1
+
+:function GoogleDocumentType
+:description Used to identify the type of Google document in focus.
+:returns int One of the types of Google document: Google_Docs, Google_Sheets, google_Slides, Google_Drive or Google_unknown if not one of the preceding types.
+
+:function SpeakGoogleBrailleModeTip
+:description Speaks a tip for the Google braille mode setting, if it is detected that the current braille mode is unrecommended. This tip is spoken only once per the lifetime of a JAWS run.
+
+:function ManageBrailleModeTipAnnouncement
+:description Handles scheduling and unscheduling of the check for and announcement of the braille mode tip.
+:optional
+:param int True if the check for and announcement of the braille mode tip should be scheduled or rescheduled. False to only ensure that any scheduled checking and announcement of the tip should be cancelled.
+
+:script SayBottomLineOfWindow
+:DisplayName Announce Cursor Location
+:synopsis Announces the cursor location if in a Google Doc.
+:description Announces the cursor location in a Google Doc. Also reads the activity indicator, if present. If not in a Google Doc, performs the default SayBottomLineOfWindow script.
+:SearchRank 1

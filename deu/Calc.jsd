@@ -1,0 +1,465 @@
+:function DeactivateAnyActiveVirtualDisplay
+:description Deactivates persistent virtual windows.
+
+
+:function DeactivateBitsDisplay
+:description Deactivates virtualization of the Bits display window.
+
+:function PadPositionIndicators
+:description Used to expand the bits position numbers so that they can be used to properly indicate bit positions for the previous line of bits from the bits display window.
+:param string The bits position numbers retrieved from the bits display window.
+:returns string The bits position line, padded with spaces so that allignment is correct.
+
+:Function ActivateBitsDisplay
+:description Virtualized the bits display window.
+
+:function IsNonBasicDialogActive
+:description Determines if the basic controls are not active because one of the dialogs is open.
+:returns int True if one of the dialogs are open and the basic controls are not active, false otherwise.
+
+:function MonitorCalculatorModeChangedOnFocusChange
+:description Used to determine if the calculator mode has changed when the focus changed. If the mode did change, then the new mode is spoken.
+:param handle The application window from FocusChangedEvent.
+:param handle The real window from FocusChangedEvent.
+:param handle The focus window from FocusChangedEvent.
+
+:function GetDateValueChange
+:description Used by ValueChangedEvent to determine which segment of a date string changed. Assumes that only one segment changed.
+:param string The original date to be used in the comparison.
+:param string The new date to be used in the comparison.
+:returns string The segment, mm dd or yyyy, of the new date which is different from the original date.
+
+:function getCalculatorModeName
+:description Used to retrieve the name of the current calculator mode.
+:param int True if the current calculator mode should be refreshed, false otherwise
+:returns string The name of the calculator mode
+
+:function SayScheduledCalculatorModeName
+:description Schedule this function to announce the calculator mode after a period of time has passed.
+
+:function SayCalculatorModeName
+:description Speaks the name of the current calculator mode.
+:param int The outputType to use when speaking.
+
+:Function GetHandle
+:param int The control ID of one of the basic calculator controls.
+:returns handle The handle belonging to the control which matches the control ID.
+
+:function getCalculatorMode
+:description Retrieves a numeric value matching one of the calculator modes.
+:returns int One of the four basic calculator modes.
+
+:function InStatisticsBox
+:description Determines if the statistics listbox is in focus.
+:returns int True if the statistics listbox is in focus, false otherwise.
+
+:function GetStatisticsListBoxCountStatus
+:description Retrieves the displayed string showing the count of items in the statistics listbox.
+:returns string The on-screen which displays the count of items in the statistics listbox.
+
+:function IsHistoryActive
+:description Determines if the History is showing.
+:returns int True if the History is showing, false otherwise.
+
+:function GetNameFromObject
+:description Used to retrieve the name of an object belonging to a window. Intended for windows which have only one object.
+:param handle The window handle from which the object should be retrieved.
+:returns string The name of the object in the window.
+
+:function GetCalculatorControlInfo
+:description Retrieves information about the calculator controls.
+:param int The control ID of the control for which you want information.
+:param handle ByRef The handle of the window belonging to the control.
+:param string ByRef The name of the control.
+:param int ByRef The subtype code of the control.
+:returns int True if the control information could be retrieved, false otherwise.
+
+:function ClickFunctionButton
+:description Clicks, or activates the key associated with, a basic calculator control.
+:param int The control ID of the calculator control to click.
+:param int True if the display content should be announced after clicking the control, false otherwise.
+:returns int True if the control could be clicked, false otherwise.
+
+:Function ReadCalculatorDisplay
+:description Speaks the calculator's display window.
+
+:function UpdateCalculatorMode
+:description When the calculator mode changes, evaluates whether the mode should be scheduled for announcement and if so schedules it; otherwise, the focus change will announce the new mode.
+:param int The new mode.
+:param int The previous mode.
+:optional
+:param handle The focus window of the previous mode.
+
+:function GetSelectedRadioButton
+:description Given the first radio button in a group, determines which one is the selected radio button.
+:param int The control ID of the first radio button in the group.
+:returns handle The handle of the selected radio button.
+
+:script StandardMode
+:synopsis Standard Modus
+:description Setzt den Rechnermodus auf Standard.
+
+:script ScientificMode
+:synopsis Wissenschaftlicher Modus
+:description Setzt den Rechnermodus auf Wissenschaftlich.
+
+:script ProgrammerMode
+:synopsis Programmierer Modus
+:description Setzt den Rechnermodus auf Programmierer.
+
+:script StatisticsMode
+:synopsis Statistik Modus
+:description Setzt den Rechnermodus auf Statistik.
+
+:script BasicCalculatorDisplay
+:synopsis Basismodus
+:description Schließt alle offenen Berechnungsdialoge und kehrt zum Basismodus zurück.
+
+:Script OneButton
+:synopsis 1 Schalter
+:description Drückt den Schalter 1.
+
+:Script TwoButton
+:synopsis 2 Schalter
+:description Drückt den Schalter 2.
+
+:Script ThreeButton
+:synopsis 3 Schalter
+:description Drückt den Schalter 3.
+
+:Script FourButton
+:synopsis 4 Schalter
+:description Drückt den Schalter 4.
+
+:Script FiveButton
+:synopsis 5 Schalter
+:description Drückt den Schalter 5.
+
+:Script SixButton
+:synopsis 6 Schalter
+:description Drückt den Schalter 6.
+
+:Script SevenButton
+:synopsis 7 Schalter
+:description Drückt den Schalter 7.
+
+:Script EightButton
+:synopsis 8 Schalter
+:description Drückt den Schalter 8.
+
+:Script NineButton
+:synopsis 9 Schalter
+:description Drückt den Schalter 9.
+
+:Script ZeroButton
+:synopsis 0 Schalter
+:description Drückt den Schalter 0.
+
+:Script HexAOrAverageButton
+:synopsis Hex A, oder Durchschnitt Schalter
+:description Im Programmierermodus wird der Schalter Hexadezimal A gedrückt. Im Statistikmodus wird der Schalter Durchschnitt gedrückt.
+
+:Script HexBButton
+:synopsis Hex B Schalter
+:description Drückt den Hexadezimal B Schalter.
+
+:Script HexCButton
+:synopsis Hex C Schalter
+:description Drückt den Hexadezimal C Schalter.
+
+:Script HexDOrModButton
+:synopsis Hex D, oder Mod Schalter
+:description Im Programmierermodus wird der Schalter Hexadezimal D gedrückt. Im Wissenschaftlichen Modus wird der Schalter Mod gedrückt.
+
+:Script HexEButton
+:synopsis Hex E Schalter
+:description Drückt den Hexadezimal E Schalter.
+
+:Script HexFButton
+:synopsis Hex F Schalter
+:description Drückt den Hexadezimal F Schalter.
+
+:script DecimalSeparatorButton
+:synopsis Dezimal Separator.
+:description Drückt den Dezimal Separator Schalter.
+
+:Script LeftParenButton
+:synopsis Runde Klammer auf Schalter
+:description Drückt den Schalter Runde Klammer auf.
+
+:Script RightParenButton
+:synopsis Runde Klammer zu Schalter
+:description Drückt den Schalter Runde Klammer zu.
+
+:Script EqualsButton
+:synopsis Gleichheitszeichen Schalter
+:description Drückt den Schalter Gleichheitszeichen.
+
+:Script Enter
+:synopsis Eingabe, oder Gleichheitszeichen Schalter.
+:description Im Standard, Wissenschaftlichen und Programmierermodus wird das Gleichheitszeichen gedrückt. Andernfalls wird die Standardfunktion der Eingabetaste durchgeführt.
+
+:Script BackspaceButton
+:synopsis Rückschritt Schalter.
+:description Drückt den Schalter Rückschritt.
+
+:Script ClearButton
+:Synopsis Aktiviert den Löschen Schalter.
+:Description Aktiviert den Löschen Schalter.
+
+:Script ClearEntryButton
+:Synopsis Aktiviert den Eintrag löschen Schalter.
+:Description Aktiviert den Eintrag löschen Schalter
+
+:Script MemoryClearButton
+:synopsis Aktiviert den Speicher löschen Schalter.
+:description Aktiviert den Speicher löschen Schalter.
+
+:Script MemoryAddButton
+:synopsis Aktiviert den Zu Speicher addieren Schalter.
+:description Aktiviert den Zu Speicher addieren Schalter.
+
+:script MemorySubtractButton
+:synopsis Aktiviert den Vom Speicher subtrahieren Schalter.
+:description Aktiviert den Vom Speicher subtrahieren Schalter.
+
+:Script MemoryStoreButton
+:synopsis Im Speicher ablegen Schalter.
+:description Aktiviert den Schalter Im Speicher ablegen.
+
+:Script MemoryRecallButton
+:synopsis Speicheraufruf Schalter.
+:description Drückt den Schalter Speicheraufruf.
+
+:Script AddButton
+:Synopsis Aktiviert den Addition Schalter.
+:Description Aktiviert den Addition Schalter.
+
+:Script SubtractButton
+:Synopsis Aktiviert den Subtrahieren Schalter.
+:Description Aktiviert den Subtrahieren Schalter.
+
+:Script MultiplyButton
+:Synopsis Aktiviert den Multiplizieren Schalter.
+:Description Aktiviert den Multiplizieren Schalter.
+
+:Script DivideButton
+:Synopsis Aktiviert den Dividieren Schalter.
+:Description Aktiviert den Dividieren Schalter.
+
+:Script NegateButton
+:synopsis Negieren Schalter.
+:description Aktiviert den Negieren Schalter.
+
+:Script ReciprocalButton
+:synopsis Reciprocal Schalter.
+:description Aktiviert den Reciprocal Schalter.
+
+:Script IntegerPartButton
+:synopsis IntegerPart Schalter.
+:description Aktiviert den Integer Part Schalter.
+
+:Script PercentOrModuloButton
+:synopsis Prozent, oder Modulo Schalter.
+:description Im Programmierermodus wird der Modulo Schalter Aktiviert. Ansonsten wird der Prozent Schalter aktiviert.
+
+:Script AndButton
+:synopsis Und Schalter
+:description Aktiviert den Und Schalter.
+
+:Script OrButton
+:synopsis Oder Schalter
+:description Aktiviert den Oder Schalter.
+
+:Script XOrButton
+:synopsis Exklusiver Oder Schalter
+:description Aktiviert den Exklusiven Oder Schalter.
+
+:Script NotButton
+:synopsis Nicht Schalter
+:description Aktiviert den Nicht Schalter.
+
+:Script LeftShiftButton
+:synopsis Linke Umschalt Schalter
+:description Aktiviert den Linken Umschalt Schalter.
+
+:Script RightShiftButton
+:synopsis Rechter Umschalt Schalter
+:description Aktiviert den Rechten Presses Umschalt Schalter.
+
+:Script RotateLeftButton
+:synopsis Links rotieren Schalter
+:description Aktiviert den Links rotieren Schalter.
+
+:Script RotateRightButton
+:synopsis Rechts rotieren Schalter
+:description Aktiviert den Recht rotieren Schalter.
+
+:Script AverageOfSquareButton
+:synopsis Durchschnitt der Quadrat Schalter
+:description Aktiviert den Durchschnitt der Quadrate Schalter.
+
+:Script SumButton
+:synopsis Summen Schalter
+:description Aktiviert den Summen Schalter.
+
+:Script PiButton
+:synopsis Pi Schalter
+:description Aktiviert den Pi Schalter.
+
+:Script DMSButton
+:synopsis Grad Minuten Sekunden Schalter
+:description Aktiviert den Grad Minuten Sekunden Schalter.
+
+:Script SineOrSumButton
+:synopsis Sin, oder Sum Schalter
+:description Im Wissenschaftlichen Modus wird der Sin Schalter aktiviert. Im Statistikmodus wird der Sum Schalter aktiviert.
+
+:Script HyperbolicSineButton
+:synopsis Hyperbolic Sin Schalter
+:description Aktiviert den Hyperbolic Sin Schalter.
+
+:Script CosineButton
+:synopsis Cos Schalter
+:description Aktiviert den Cos Schalter.
+
+:Script HyperbolicCosineButton
+:synopsis Hyperbolic Cos Schalter
+:description Aktiviert den Hyperbolic Cos Schalter.
+
+:Script TangentOrStandardDeviationButton
+:synopsis Tan, oder Standard Abweichung Schalter
+:description Im Wissenschaftlichen Modus wird der Tan Schalter aktiviert. Im Statistikmodus wird der Standard Abweichung Schalter aktiviert.
+
+:Script HyperbolicTangentOrStandardDeviationPopulationButton
+:synopsis Hyperbolic Tan, oder Standard Abweichung Bevölkerung Schalter
+:description Im Wissenschaftlichen Modus wird der Hyperbolic Tan Schalter aktiviert. Im Statistikmodus wird der Standard Abweichung Bevölkerung Schalter aktiviert.
+
+:Script CommonLogButton
+:synopsis Log Schalter
+:description Aktiviert den Log Schalter.
+
+:Script AntiLogButton
+:synopsis Anti Log Schalter
+:description Aktiviert den Anti Log Schalter.
+
+:Script NaturalLogButton
+:synopsis Natural Log Schalter
+:description Aktiviert den Natural Log Schalter.
+
+:Script FactorialButton
+:synopsis Faktoren Schalter
+:description Aktiviert den Faktoren Schalter.
+
+:Script SquareRootButton
+:synopsis Quadratwurzel Schalter
+:description Aktiviert den Quadratwurzel Schalter.
+
+:Script SquareButton
+:synopsis Quadrat Schalter
+:description Aktiviert den Quadrat Schalter.
+
+:Script CubeRootButton
+:synopsis Kubikwurzel Schalter
+:description Aktiviert den Kubikwurzel Schalter.
+
+:Script CubeButton
+:synopsis Kubik Schalter
+:description Aktiviert den Kubik Schalter.
+
+:Script ExponentialButton
+:synopsis Exponent Schalter
+:description Aktiviert den Exponent Schalter.
+
+:Script RaisedToYPowerButton
+:synopsis X hoch Y Schalter
+:description Aktiviert den X hoch Y Schalter.
+
+:script OrderOfYRootButton
+:synopsis Anforderung der Y Wurzel Schalter
+:description Aktiviert den Anforderung der Y Wurzel Schalter.
+
+:Script CADButton
+:synopsis Löschen aller Datenwerte Schalter
+:description Aktiviert den Löschen aller Datenwerte Schalter.
+
+:script DegreesOrWordRadioButton
+:synopsis Grade, oder Wort Auswahl Schalter
+:description Im Wissenschaftlichen Modus wird der Grad Schalter aktiviert. Im Programmierermodus wird der Wort Auswahlschalter aktiviert.
+
+:script RadiansOrByteRadioButton
+:synopsis Winkel oder Byte Auswahlschalter
+:description Im Wissenschaftlichen Modus wird der Radians Auswahlschalter aktiviert. Im Programmierermodus wird der Byte Auswahlschalter aktiviert.
+
+:Script HexidecimalOrGradsRadioButton
+:synopsis Grade oder Hexadezimal Auswahlschalter
+:description Im Wissenschaftlichen Modus wird der Grade Auswahlschalter aktiviert. Im Programmierermodus wird der Hexadezimal Auswahlschalter aktiviert.
+
+:Script DecimalRadioButton
+:synopsis Dezimal Auswahlschalter
+:description Aktiviert den Dezimal Auswahlschalter.
+
+:Script OctalRadioButton
+:synopsis Oktal Auswahlschalter
+:description Aktiviert den Oktal Auswahlschalter.
+
+:Script BinaryRadioButton
+:synopsis Binär Auswahlschalter
+:description Aktiviert den Binär Auswahlschalter.
+
+:Script QWortdRadioButton
+:synopsis QWord Auswahlschalter
+:description Aktiviert den QWord Auswahlschalter.
+
+:script DWordRadioButtonOrEdit
+:synopsis DWord Auswahlschalter oder Eingabemodus.
+:description Im Programmierermodus wird der DWord Auswahlschalter aktiviert. Ansonsten wird der Eingabemodus für den Verlauf aktiviert, sofern vorhanden.
+
+:Script InverseFunctionsCheckBox
+:synopsis Invers Funktionskontrollfeld umschalten
+:description Schaltet das Kontrollfeld für Invers ein oder aus.
+
+:Script ExponentialNotationCheckbox
+:synopsis Exponentiale Darstellung Kontrollfeld umschalten
+:description Schaltet das Kontrollfeld für exponentiale Darstellung ein oder aus.
+
+:Script SayFunctionModifiers
+:Synopsis Berichtet den Status des Funktionswechslers
+:Description Berichtet den Status der inv und hyp Kontrollfelder
+
+:script ToggleHistory
+:synopsis Verlauf umschalten
+:description Schaltet die Verlaufsliste ein oder aus. Das Verlaufslistenfeld steht nur für Standard und Wissenschaftlichem Modus zur Verfügung.
+
+:script ClearHistory
+:synopsis Verlauf löschen
+:description Löscht aller Werte in der Verlaufsliste.
+
+:Script ReportCalculatorView
+:synopsis Sagt die Rechneransicht an
+:description Im Basismodus wird die aktuell genutzte Rechneransicht angesagt.
+
+:script Tab
+:synopsis Tastatur Tab
+:description Innerhalb des Basismodus wird auf das nächste fokussierbare Element gesprungen; ansonsten wird die normale Funktion der Tastaturtaste TAB ausgeführt.
+
+:script ShiftTab
+:synopsis Tastatur Umschalt Tab
+:description Innerhalb des Basismodus wird auf das vorherige fokussierbare Element gesprungen; ansonsten wird die normale Funktion der Tastaturtaste Umschalt TAB ausgeführt.
+
+:function ExemptFromFunctionsList
+:description Used to determine if a control should be exempt from inclusion when building the list of functions to be displayed in the functions list.
+:param handle The handle of a calculator control.
+:returns int True if the control should be exempt from inclusion in the functions list, false otherwise.
+
+:Script ListCalculatorFunctions
+:synopsis Liste der Rechnerfunktionen
+:description Listet die aktuell verfügbaren Funktionen auf. Die Basisoperatoren für Addition, Subtraktion, Multiplikation und Division sind ebenso wie Ziffern, Dezimalpunkt, Klammern und Ist Gleich Funktionen nicht inbegriffen.
+
+:Script ReportMemoryIndicator
+:synopsis Speicheranzeiger ansagen
+:description Sagt an, ob Wert im Speicher hinterlegt sind.
+
+:script ReportParenNestingLevel
+:synopsis Sagt die Einklammerungsstufe an
+:description Sagt die aktuelle Position der Umklammerungsstufe für die Berechnung an.

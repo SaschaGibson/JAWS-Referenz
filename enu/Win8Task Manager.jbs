@@ -1,0 +1,9 @@
+; for Task Manager grid items
+[CustomControl1]
+components=Name,Value,state
+removed=
+type=
+displayname=Grid Item
+
+[Information]
+Description=Default  Structured Mode view for Windows Task Manager.
