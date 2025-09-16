@@ -1,0 +1,543 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zoomtext2024\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: zoomtext2024\n"
+"X-Crowdin-Project-ID: 611785\n"
+"X-Crowdin-Language: it\n"
+"X-Crowdin-File: GetVoices.po\n"
+"X-Crowdin-File-ID: 2605\n"
+"Language-Team: Italian\n"
+"PO-Revision-Date: 2023-09-05 17:26\n"
+
+#. Models\VoiceServer.cs: 15,
+msgid "Unable to communicate with the server. Check your Internet connection and try again. If the problem persists, contact technical support for assistance."
+msgstr "Impossibile comunicare con il server. Controllate la vostra connessione Internet e riprovate. Se il problema persiste, contattate l'assistenza tecnica."
+
+#. Models\VoiceServer.cs: 16,
+msgid "\\n\\nError Code:  {0}"
+msgstr "\\n\\nCodice Errore: {0}"
+
+#. ViewModels\GetVoicesViewModel.cs: 131,
+msgid "Selection Required"
+msgstr "Selezione richiesta"
+
+#. ViewModels\GetVoicesViewModel.cs: 132,
+msgid "You must select one or more new voices from the list before installation can begin."
+msgstr "Dovete selezionare una o più nuove voci dall'elenco prima che l'installazione possa iniziare."
+
+#. ViewModels\GetVoicesViewModel.cs: 155,
+msgid "No Voices"
+msgstr "Nessuna voce"
+
+#. ViewModels\GetVoicesViewModel.cs: 156,
+msgid "There are no Vocalizer Expressive 2 voices installed on the system."
+msgstr "Non ci sono voci Vocalizer Expressive 2 installate sul sistema."
+
+#. ViewModels\GetVoicesViewModel.cs: 192,
+msgid "No Compact Voices"
+msgstr "Nessuna voce compatta"
+
+#. ViewModels\GetVoicesViewModel.cs: 193,
+msgid "There are no Vocalizer Expressive 2 Compact voices installed on the system."
+msgstr "Non ci sono voci compatte Vocalizer Expressive 2 installate sul sistema."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 18,
+msgid "An error has occurred while downloading the {0} voice. Check your Internet connection and try again. If the problem persists, contact technical support for assistance."
+msgstr "Si è verificato un errore durante il download della voce {0}. Controllate la vostra connessione Internet e riprovate. Se il problema persiste, contattate l'assistenza tecnica."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 19,
+msgid "Download Error"
+msgstr "Errore durante il download"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 20,
+msgid "Downloading {0}"
+msgstr "Download di {0} in corso"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 22,
+msgid "An error has occurred and installation could not continue. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Si è verificato un errore e l'installazione non può continuare. Riprovate più tardi. Se il problema persiste, contattate l'assistenza tecnica."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 23,
+msgid "Error"
+msgstr "Errore"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 24,
+msgid "An error has occurred while installing the {0} voice. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Si è verificato un errore durante l'installazione della voce {0}. Riprovate più tardi. Se il problema persiste, contattate l'assistenza tecnica."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 25,
+msgid "Install Error"
+msgstr "Errore di installazione"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 26,
+msgid "Installing {0}"
+msgstr "Installazione di {0} in corso"
+
+#. ViewModels\RemoveAVoiceViewModel.cs: 52, RemoveSelectedVoices
+msgid "You must select one or more voices from the list before uninstallation can begin."
+msgstr "Dovete selezionare una o più voci dall'elenco prima che la disinstallazione possa iniziare."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 15,
+msgid "An error has occurred and uninstallation could not continue. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Si è verificato un errore e la disinstallazione non può continuare. Riprovate più tardi. Se il problema persiste, contattate l'assistenza."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 17,
+msgid "An error has occurred while uninstalling the {0} voice. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Si è verificato un errore durante la disinstallazione della voce {0}. Riprovate più tardi. Se il problema persiste, contattate l'assistenza tecnica."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 18,
+msgid "Uninstall Error"
+msgstr "Errore nella disinstallazione"
+
+#. ViewModels\RemovingVoicesViewModel.cs: 19,
+msgid "Removing {0}"
+msgstr "Rimozione di {0} in corso"
+
+#. ViewModels\RemovingVoicesViewModel.cs: 20,
+msgid "\\n\\nError Code: {0}"
+msgstr "\\n\\nCodice Errore: {0}"
+
+#. ViewModels\VoiceInstallOption.cs: 60, UpdateDisplayName
+msgid ", Already installed."
+msgstr ", Già installata."
+
+#. ViewModels\VoiceUninstallOption.cs: 23,
+msgid "Compact"
+msgstr "Compatta"
+
+#. Views\GetVoicesWindow.xaml.cs: 36, InstallVoices
+msgid "You are about to install a Vocalizer Expressive version 2 voice.  Your existing version 1 voices shall be unavailable while version 2 voices are installed.  Are you sure you want to continue?"
+msgstr "State per installare una voce Vocalizer Expressive versione 2. Le voci Vocalizer Expressive 1 esistenti non saranno disponibili mentre sono installate voci Vocalizer Expressive 2. Siete sicuri di voler continuare?"
+
+#. Views\GetVoicesWindow.xaml.cs: 37, InstallVoices
+msgid "Confirmation Required"
+msgstr "Conferma Richiesta"
+
+#. Views\GetVoicesWindow.xaml.cs: 65, RemoveVoices
+msgid "Are you sure you want to remove all Vocalizer Expressive 2 Compact voices?"
+msgstr "Siete sicuri di voler rimuovere tutte le voci Vocalizer Expressive 2 compatte?"
+
+#. Views\GetVoicesWindow.xaml.cs: 66, RemoveVoices
+msgid "Are you sure you want to remove all Vocalizer Expressive 2 voices?"
+msgstr "Siete sicuri di voler rimuovere tutte le voci Vocalizer Expressive 2?"
+
+#. Views\GetVoicesWindow.xaml.cs: 68, RemoveVoices
+msgid "Remove Voices"
+msgstr "Rimuovi voci"
+
+#. Views\InstallingVoicesWindow.xaml.cs: 41, ShowSuccess
+msgid "Your voices have been successfully installed."
+msgstr "Le voci sono state installate con successo."
+
+#. Views\InstallingVoicesWindow.xaml.cs: 42, ShowSuccess
+#. Views\RemovingVoicesWindow.xaml.cs: 41, ShowSuccess
+msgid " You must restart {0} in order for these changes to take effect."
+msgstr " Dovete riavviare {0} affinché le modifiche abbiano effetto."
+
+#. Views\InstallingVoicesWindow.xaml.cs: 44, ShowSuccess
+msgid "Installation Complete"
+msgstr "Installazione completata"
+
+#. Views\InstallingVoicesWindow.xaml.cs: 45, ShowSuccess
+msgid "_Finish"
+msgstr "_Fine"
+
+#. Views\RemovingVoicesWindow.xaml.cs: 40, ShowSuccess
+msgid "Your voices have been successfully removed."
+msgstr "Le voci sono state rimosse con successo."
+
+#. Views\RemovingVoicesWindow.xaml.cs: 43, ShowSuccess
+msgid " Some changes will not take effect until you restart your computer."
+msgstr " Alcune modifiche non avranno effetto finché non riavviate il computer."
+
+#. Views\RemovingVoicesWindow.xaml.cs: 45, ShowSuccess
+msgid "Uninstall Complete"
+msgstr "Disinstallazione completata"
+
+#. Views\SimpleDialog.xaml.cs: 54, ApplyStyle
+msgid "_Yes"
+msgstr "_Si"
+
+#. Views\SimpleDialog.xaml.cs: 55, ApplyStyle
+msgid "_No"
+msgstr "_No"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:AdditionalOptionsGroup"
+msgid "Additional Options:"
+msgstr "Opzioni aggiuntive:"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 20, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveAVoiceButton"
+msgid "_Remove a Voice..."
+msgstr "_Rimuovi una voce"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 24, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveCompactVoicesButton"
+msgid "Remove All Co_mpact Voices"
+msgstr "Rimuovi tutte le voci Co_mpatte"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 29, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveAllVoicesButton"
+msgid "Remove _All Voices"
+msgstr "Rimuovi _Tutte le voci"
+
+#. GetVoices\Views\GetVoicesWindow.xaml: 11, LocalizeExtension
+msgctxt "GetVoices.Views.GetVoicesWindow:MainWindow"
+msgid "Add/Remove Vocalizer Expressive Voices"
+msgstr "Aggiungi/Rimuovi voci Vocalizer Expressive"
+
+#. GetVoices\Views\GetVoicesWindow.xaml: 44, LocalizeExtension
+msgctxt "GetVoices.Views.GetVoicesWindow:CloseButton"
+msgid "_Close"
+msgstr "_Chiudi"
+
+#. GetVoices\Views\InstallingVoicesWindow.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.InstallingVoicesWindow:MainWindow"
+msgid "Installing Voices"
+msgstr "Installazione voci in corso"
+
+#. GetVoices\Views\InstallingVoicesWindow.xaml: 50, LocalizeExtension
+msgctxt "GetVoices.Views.InstallingVoicesWindow:CancelButton"
+msgid "_Cancel"
+msgstr "_Annulla"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 13, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:MainWindow"
+msgid "Remove a Voice"
+msgstr "Rimuovi una voce"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:InstalledVoicesLabel"
+msgid "Installed _Voices:"
+msgstr "Voci_Installate:"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 60, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:RemoveSelectedVoicesButton"
+msgid "_Remove Selected Voices"
+msgstr "_Rimuovi le voci selezionate"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 72, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:CloseButton"
+msgid "_Close"
+msgstr "_Chiudi"
+
+#. GetVoices\Views\RemovingVoicesWindow.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.RemovingVoicesWindow:MainWindow"
+msgid "Removing Voices"
+msgstr "Rimozione voci in corso"
+
+#. GetVoices\Views\RemovingVoicesWindow.xaml: 49, LocalizeExtension
+msgctxt "GetVoices.Views.RemovingVoicesWindow:CancelButton"
+msgid "_Cancel"
+msgstr "_Annulla"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 18, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:SelectLanguageLabel"
+msgid "Select a _Language:"
+msgstr "Seleziona una _Lingua:"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:SelectVoicesLabel"
+msgid "Premium _Voices:"
+msgstr "Voci_Premium:"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 62, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:PlaySampleButton"
+msgid "_Play Sample"
+msgstr "_Ascolta Esempio"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 66, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:InstallSelectedVoicesButton"
+msgid "_Install Selected Voices"
+msgstr "_Installa le voci selezionate"
+
+#. GetVoices\Views\SimpleDialog.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.SimpleDialog:OKButton"
+msgid "_OK"
+msgstr "_OK"
+
+#. GetVoices\Views\SimpleDialog.xaml: 38, LocalizeExtension
+msgctxt "GetVoices.Views.SimpleDialog:CancelButton"
+msgid "_Cancel"
+msgstr "_Annulla"
+
+#. voices.ve2.json
+msgid "Arabic"
+msgstr "Arabo"
+
+#. voices.ve2.json
+msgid "Basque"
+msgstr "Basco"
+
+#. voices.ve2.json
+msgid "Bengali"
+msgstr "Bengalese"
+
+#. voices.ve2.json
+msgid "Bulgarian"
+msgstr "Bulgaro"
+
+#. voices.ve2.json
+msgid "Bhojpuri"
+msgstr "Bhojpuri"
+
+#. voices.ve2.json
+msgid "Catalan"
+msgstr "Catalano"
+
+#. voices.ve2.json
+msgid "Cantonese"
+msgstr "Cantonese"
+
+#. voices.ve2.json
+msgid "Czech"
+msgstr "Ceco"
+
+#. voices.ve2.json
+msgid "Danish"
+msgstr "Danese"
+
+#. voices.ve21.json
+msgid "Dongbei Chinese"
+msgstr "Cinese Dongbei"
+
+#. voices.ve2.json
+msgid "Dutch"
+msgstr "Olandese"
+
+#. voices.ve2.json
+msgid "Belgian Dutch"
+msgstr "Olandese belga"
+
+#. voices.ve2.json
+msgid "English"
+msgstr "Inglese"
+
+#. voices.ve2.json
+msgid "English Australian"
+msgstr "Inglese Australiano"
+
+#. voices.ve2.json
+msgid "English Irish"
+msgstr "Inglese irlandese"
+
+#. voices.ve2.json
+msgid "English British"
+msgstr "Inglese britannico"
+
+#. voices.ve2.json
+msgid "English Indian"
+msgstr "Inglese Indiano"
+
+#. voices.ve2.json
+msgid "English Scottish"
+msgstr "Inglese scozzese"
+
+#. voices.ve2.json
+msgid "English United States"
+msgstr "Inglese Stati Uniti"
+
+#. voices.ve2.json
+msgid "English South African"
+msgstr "Inglese sudafricano"
+
+#. voices.ve21.json
+msgid "Farsi"
+msgstr "Farsi"
+
+#. voices.ve2.json
+msgid "Finnish"
+msgstr "Finlandese"
+
+#. voices.ve2.json
+msgid "French"
+msgstr "Francese"
+
+#. voices.ve21.json
+msgid "French Belgian"
+msgstr "Francese Belga"
+
+#. voices.ve2.json
+msgid "French Canadian"
+msgstr "Francese Canadese"
+
+#. voices.ve2.json
+msgid "German"
+msgstr "Tedesco"
+
+#. voices.ve2.json
+msgid "Galician"
+msgstr "Galiziano"
+
+#. voices.ve2.json
+msgid "Greek"
+msgstr "Greco"
+
+#. voices.ve2.json
+msgid "Hebrew"
+msgstr "Ebraico"
+
+#. voices.ve2.json
+msgid "Hindi"
+msgstr "Hindi"
+
+#. voices.ve2.json
+msgid "Croatian"
+msgstr "Croato"
+
+#. voices.ve2.json
+msgid "Hungarian"
+msgstr "Ungherese"
+
+#. voices.ve2.json
+msgid "Indonesian"
+msgstr "Indonesiano"
+
+#. voices.ve2.json
+msgid "Italian"
+msgstr "Italiano"
+
+#. voices.ve2.json
+msgid "Japanese"
+msgstr "Giapponese"
+
+#. voices.ve2.json
+msgid "Kannada"
+msgstr "Kannada"
+
+#. voices.ve2.json
+msgid "Korean"
+msgstr "Coreano"
+
+#. voices.ve2.json
+msgid "Marathi"
+msgstr "Marathi"
+
+#. voices.ve2.json
+msgid "Chinese"
+msgstr "Cinese"
+
+#. voices.ve2.json
+msgid "Mandarin Chinese"
+msgstr "Cinese Mandarino"
+
+#. voices.ve2.json
+msgid "Taiwanese"
+msgstr "Taiwanese"
+
+#. voices.ve2.json
+msgid "Mandarin Taiwanese"
+msgstr "Mandarino Taiwanese"
+
+#. voices.ve21.json
+msgid "Malay"
+msgstr "Malese"
+
+#. voices.ve2.json
+msgid "Norwegian"
+msgstr "Norvegese"
+
+#. voices.ve2.json
+msgid "Polish"
+msgstr "Polacco"
+
+#. voices.ve2.json
+msgid "Portuguese"
+msgstr "Portoghese"
+
+#. voices.ve2.json
+msgid "Brazilian Portuguese"
+msgstr "Portoghese Brasiliano"
+
+#. voices.ve2.json
+msgid "Romanian"
+msgstr "Rumeno"
+
+#. voices.ve2.json
+msgid "Russian"
+msgstr "Russo"
+
+#. voices.ve21.json
+msgid "Shanghainese Chinese"
+msgstr "Cinese Scianganese"
+
+#. voices.ve21.json
+msgid "Sichuanese Chinese"
+msgstr "Cinese Sichuanese"
+
+#. voices.ve2.json
+msgid "Slovakian"
+msgstr "Slovacco"
+
+#. voices.ve21.json
+msgid "Slovenian"
+msgstr "Sloveno"
+
+#. voices.ve2.json
+msgid "Spanish"
+msgstr "Spagnolo"
+
+#. voices.ve2.json
+msgid "Spanish Argentinian"
+msgstr "Spagnolo Argentino"
+
+#. voices.ve2.json
+msgid "Spanish Columbian"
+msgstr "Spagnolo Colombiano"
+
+#. voices.ve2.json
+msgid "Spanish Castilian"
+msgstr "Spagnolo Castigliano"
+
+#. voices.ve2.json
+msgid "Spanish Chilean"
+msgstr "Spagnolo Cileno"
+
+#. voices.ve2.json
+msgid "Spanish Latin American"
+msgstr "Spagnolo Latino Americano"
+
+#. voices.ve2.json
+msgid "Swedish"
+msgstr "Svedese"
+
+#. voices.ve21.json
+msgid "Shaanxi Chinese"
+msgstr "Cinese Shaanxi"
+
+#. voices.ve2.json
+msgid "Tamil"
+msgstr "Tamil"
+
+#. voices.ve2.json
+msgid "Telugu"
+msgstr "Telugu"
+
+#. voices.ve2.json
+msgid "Thai"
+msgstr "Tailandese"
+
+#. voices.ve2.json
+msgid "Turkish"
+msgstr "Turco"
+
+#. voices.ve21.json
+msgid "Ukrainian"
+msgstr "Ucraino"
+
+#. voices.ve2.json
+msgid "Valencian"
+msgstr "Valensiano"
+
+#. voices.ve21.json
+msgid "Vietnamese"
+msgstr "Vietnamita"
+

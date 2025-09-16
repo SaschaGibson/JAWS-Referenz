@@ -1,0 +1,44 @@
+| binary.sct 1;1 - scan control tbl, for strictly binary files
+| Copyright 1988 Duxbury Systems, Inc.  All rights reserved.
+| see model.sct for fuller description of entries
+| 1;1 1988-2-18/20 JES
+-ninit 6
+2 |   binmod 2 = transparent (binary)
+1 | eliminate trailing blanks on line (0=no, 1=yes) (moot here)
+$ | flag char (input) for scan/format controls (moot here)
+. | fullstop char for 'sentence' mode (moot here)
+1 | 1 = newline treated as space (moot here)
+|021 | ff subst. string (|021=error) (moot here)
+P | auto-par insertion (moot here)
+3 | par on either ($par) (moot here)
+0 | 0=no rejoining hyphens (moot here)
+0 | 0=compress spaces (moot here)
+2 | number of spaces to expand tabs to (-1 = tabs are errors)(<= 9999) (moot here)
+1 | ninmod: 1= binary pass-through; rest are moot here:
+2 | leave chars alone (moot)
+2 | leave chars in ctl words (moot)
+0 | "upper case" cessation normal (moot)
+0 | 0 = DON'T map special chars when upcasing (moot)
+ | (spare)
+ | (spare)
+ | nsnqt - input flag for quoted word
+|028 | nsoqt - output flag for quoted word (moot)
+|029 | nsofm - output flag for whole-word format word (moot)
+|030 | nsof2 - output flag for 2-char format word (moot)
+ | nsocp - capitalization flag output (moot)
+ | nsotn - cap termination flag output (moot)
+ | (spare)
+ | RUNNING (moot)
+ | SPACING (moot)
+ | MARKING (moot)
+ | AS-IS (moot)
+ | COMPRESS (moot)
+ | SENTENCE (moot)
+ | AUTO-TAB (moot)
+ | PAR (moot)
+ | NO-PAR (moot)
+ | PAR-SKP (moot)
+ | PAR-IND (moot)
+ | (spare)
+ | (spare)
+*** | required table terminator

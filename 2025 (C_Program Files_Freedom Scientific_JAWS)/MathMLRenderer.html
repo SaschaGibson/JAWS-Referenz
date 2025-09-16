@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+	<style>
+		#MathMLExpressionSpan {
+		}
+	</style>
+	<script>
+
+		function reloadPage(fontSize) {
+			window.external._reloadPage(fontSize);
+		}
+
+		function onUnload() {
+			if (window.external) {
+				window.external._jsOnMathJaxUnloaded();
+			}
+			return null;
+		}
+
+		function addToDebug(debugStr) {
+			window.external._debugTrace(debugStr);
+		}
+		
+		function highlightSelectedChildNodes(nodes, startNode, endNode)
+        {
+            if(!nodes)
+            {
+                return;
+            }
+            if(!nodes.children)
+            {
+                return;
+            }
+            for(var index = 0; index < nodes.children.length; index++)
+            {
+                var hlOffsetAttribute = nodes.children[index].getAttribute("hlOffset");
+                if(hlOffsetAttribute && hlOffsetAttribute >= startNode && hlOffsetAttribute <= endNode)
+                {
+                    nodes.children[index].style.color = "red";
+                }
+                else
+                {
+                    nodes.children[index].style.color = "";
+                }
+
+ 
+
+                highlightSelectedChildNodes(nodes.children[index], startNode, endNode);
+            }
+        }
+		
+		function highlightMathJaxNodes(startNode, endNode)
+        {
+          try{
+            var mathMLSpan = document.getElementById('MathMLExpressionSpan');
+            if(!mathMLSpan)
+            {
+                addToDebug("Unable to get MathML span");
+                return;
+            }
+            highlightSelectedChildNodes(mathMLSpan, startNode, endNode);
+          }
+          catch(err)
+          {
+            addToDebug("fatal: highlightNodes threw an exception. Further calls will fail.");
+            return false;
+          }
+          addToDebug( " Highlight Node" + startNode.toString() + "," + endNode.toString() );
+          //needed to prevent visual patches in the UI.
+          forceRedrawMathMLExpression();
+          return true;
+        }
+
+		function highlightSelectedNodesById(nodes, nodeId, force)
+        {
+            if(!nodes)
+            {
+                return;
+            }
+            if(!nodes.children)
+            {
+                return;
+            }
+            for(var index = 0; index < nodes.children.length; index++)
+            {
+                var id = nodes.children[index].getAttribute("id");
+                if((id && id == nodeId) || force)
+                {
+					if (nodes.children[index].style)
+                    	nodes.children[index].style.color = "red";
+					highlightSelectedNodesById(nodes.children[index], nodeId, true);
+                }
+                else
+                {
+					if (nodes.children[index].style)
+						nodes.children[index].style.color = "";
+					highlightSelectedNodesById(nodes.children[index], nodeId, false);
+                }
+            }
+        }
+
+		function highlightMathJaxNodesById(nodeId)
+        {
+          try{
+            var mathMLSpan = document.getElementById('MathMLExpressionSpan');
+            if(!mathMLSpan)
+            {
+                addToDebug("Unable to get MathML span");
+                return;
+            }
+            highlightSelectedNodesById(mathMLSpan, nodeId, false);
+          }
+          catch(err)
+          {
+            addToDebug("fatal: highlightNodes threw an exception. Further calls will fail.");
+            return false;
+          }
+          addToDebug( " Highlight Node " + nodeId );
+          //needed to prevent visual patches in the UI.
+          forceRedrawMathMLExpression();
+          return true;
+        }
+		
+        function forceRedrawMathMLExpression()
+        {
+          var mathMLSpan = document.getElementById('MathMLExpressionSpan');
+          if(!mathMLSpan)
+              return;
+          var oriStyle =   mathMLSpan.style.display;
+          mathMLSpan.style.display = "none";
+          mathMLSpan.style.display = oriStyle;
+		  addToDebug("Force Redraw Called")
+        }
+	</script>
+	<script>
+		window.MathJax = {
+			chtml: {
+				matchFontHeight: true
+			},
+			options: {
+				renderActions: {
+					addMenu: [0, '', '']
+				}
+			},
+			startup: {
+				pageReady: function () {
+					window.MathJax.startup.defaultPageReady();
+					//The minimum font size in percentage we will allow for math equations to be displayed.
+					var MIN_FONT_SIZE = 75;
+					var mathMLSpan = document.getElementById('MathMLExpressionSpan');
+					if (!mathMLSpan)
+						return;
+					var currentFontSize = parseInt(mathMLSpan.currentStyle['font-size']);
+					if (window.external) {
+						addToDebug("Tilebar Height" + window.external._titleBarHeight().toString() + " border width " + window.external._borderSize().toString() + "current font size:" + currentFontSize.toString());
+						var body = document.getElementsByTagName('body')[0];
+						addToDebug("Rendered MathSpan" + mathMLSpan.offsetWidth + " " + mathMLSpan.offsetHeight);
+						var documentWidth = mathMLSpan.offsetWidth + mathMLSpan.offsetLeft * 2;
+						var documentHeight = mathMLSpan.offsetHeight + mathMLSpan.offsetTop * 2;
+						var nonClientAreaWidth = window.external._borderSize() * 2;
+						var nonClientAreaHeight = window.external._titleBarHeight() + window.external._borderSize() * 2;
+						var width = documentWidth + nonClientAreaWidth;
+						var height = documentHeight + nonClientAreaHeight;
+						var screenWidthRatio = 1.0;
+						var screenHeightRatio = 1.0;
+						var resizeNeeded = false;
+						var horizontalResizeNeeded = false;
+						var verticalResizeNeeded = false;
+
+						if (width > screen.availWidth) {
+							resizeNeeded = true;
+							horizontalResizeNeeded = true;
+							var screenWidthRatio = screen.availWidth / width;
+							addToDebug("Width Resize Needed. Width " + width + "AvailWidth " + screen.availWidth + "screenWidthRatio " + screenWidthRatio);
+						}
+						if (height > screen.availHeight) {
+							resizeNeeded = true;
+							verticalResizeNeeded = true;
+							var screenHeightRatio = screen.availHeight / height;
+							addToDebug("Height Resize Needed. Height " + height + "AvailHeight " + screen.availHeight + "screenHeightRatio" + screenHeightRatio);
+						}
+
+						if (resizeNeeded && currentFontSize > MIN_FONT_SIZE) {
+							//We need the smaller ratio so that we get the smallest current font size needed.
+							var reduceFontSizeBy = screenWidthRatio < screenHeightRatio ? screenWidthRatio : screenHeightRatio;
+							//Shrink font size another 5% to account for MathJax padding
+							currentFontSize = Math.floor(currentFontSize * reduceFontSizeBy) - 5;
+							addToDebug("reduceFontSizeBy " + reduceFontSizeBy + " currentFontSize " + currentFontSize);
+							if (currentFontSize < MIN_FONT_SIZE)
+								currentFontSize = MIN_FONT_SIZE;
+							document.getElementById('MathMLExpressionSpan').style.fontSize = currentFontSize.toString() + "%";
+							addToDebug("Resize current Font size" + currentFontSize + " MathMLExpressionSpan " + document.getElementById('MathMLExpressionSpan').style.fontSize);
+							reloadPage(currentFontSize);
+							return;
+						}
+						addToDebug("_jsOnMathJaxReady called");
+						window.external._jsOnMathJaxReady(documentWidth, documentHeight);
+					}
+					return;
+				}
+			}
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/mml-chtml.js" id="MathJax-script"></script>
+</head>
+<body onunload="onUnload()" scroll="no">
+	<span id="MathMLExpressionSpan" style="font-size:{2}%;display:inline-block;width:auto">
+		{1}
+	</span>
+
+</body>
+</html>

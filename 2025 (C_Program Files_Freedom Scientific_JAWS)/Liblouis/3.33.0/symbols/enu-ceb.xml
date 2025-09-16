@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Symbol file for Contracted English Braille. -->
+<Symbols>
+    <Special>
+        <NumberSign>#</NumberSign>
+        <NumberDelimiters>13.'/-</NumberDelimiters>
+        <Ellipsis Glyph="&apos;" Name="dot" />
+    </Special>
+    <Symbol Type="number" Glyph="j" Name="zero" />
+    <Symbol Type="number" Glyph="a" Name="one" />
+    <Symbol Type="number" Glyph="b" Name="two" />
+    <Symbol Type="number" Glyph="c" Name="three" />
+    <Symbol Type="number" Glyph="d" Name="four" />
+    <Symbol Type="number" Glyph="e" Name="five" />
+    <Symbol Type="number" Glyph="f" Name="six" />
+    <Symbol Type="number" Glyph="g" Name="seven" />
+    <Symbol Type="number" Glyph="h" Name="eight" />
+    <Symbol Type="number" Glyph="i" Name="nine" />
+    <Symbol Type="character" Glyph=" " Name="space" />
+    <Symbol Type="character" Glyph="!" Name="T H E sign" />
+    <Symbol Type="character" Glyph="&quot;" Name="dot 5" />
+    <Symbol Type="character" Glyph="#" Name="number sign" />
+    <Symbol Type="character" Glyph="$" Name="e d sign" />
+    <Symbol Type="character" Glyph="%" Name="s h sign" />
+    <Symbol Type="character" Glyph="&amp;" Name="and sign" />
+    <Symbol Type="character" Glyph="&apos;" Name="apostrophe" />
+    <Symbol Type="character" Glyph="(" Name="o f sign" />
+    <Symbol Type="character" Glyph=")" Name="with sign" />
+    <Symbol Type="character" Glyph="*" Name="c h sign" />
+    <Symbol Type="character" Glyph="+" Name="i n g sign" />
+    <Symbol Type="character" Glyph="," Name="dot 6" />
+    <Symbol Type="character" Glyph="-" Name="dots 3 6" />
+    <Symbol Type="character" Glyph="." Name="dots 4 6" />
+    <Symbol Type="character" Glyph="/" Name="s t sign" />
+    <Symbol Type="character" Glyph="0" Name="low j" />
+    <Symbol Type="character" Glyph="1" Name="dot 2" />
+    <Symbol Type="character" Glyph="2" Name="low b" />
+    <Symbol Type="character" Glyph="3" Name="low c" />
+    <Symbol Type="character" Glyph="4" Name="low d" />
+    <Symbol Type="character" Glyph="5" Name="e n sign" />
+    <Symbol Type="character" Glyph="6" Name="low f" />
+    <Symbol Type="character" Glyph="7" Name="low g" />
+    <Symbol Type="character" Glyph="8" Name="low h" />
+    <Symbol Type="character" Glyph="9" Name="i n sign" />
+    <Symbol Type="character" Glyph=":" Name="w h sign" />
+    <Symbol Type="character" Glyph=";" Name="dots 5 6" />
+    <Symbol Type="character" Glyph="&lt;" Name="g h sign" />
+    <Symbol Type="character" Glyph="=" Name="f o r sign" />
+    <Symbol Type="character" Glyph="&gt;" Name="A r sign" />
+    <Symbol Type="character" Glyph="?" Name="t h sign" />
+    <Symbol Type="character" Glyph="@" Name="dot 4L" />
+    <Symbol Type="character" Glyph="[" Name="o w sign" />
+    <Symbol Type="character" Glyph="\" Name="o u sign" />
+    <Symbol Type="character" Glyph="]" Name="e r sign" />
+    <Symbol Type="character" Glyph="^" Name="dots 4 5" />
+    <Symbol Type="character" Glyph="_" Name="dots 4 5 6" />
+    <Symbol Type="character" Glyph="{" Name="o w sign" />
+    <Symbol Type="character" Glyph="|" Name="o u sign" />
+    <Symbol Type="character" Glyph="}" Name="e r sign" />
+    <Symbol Type="character" Glyph="~" Name="dots 4 5" />
+    <Symbol Type="character" Glyph="" Name="dots 4 5 6" />
+</Symbols>

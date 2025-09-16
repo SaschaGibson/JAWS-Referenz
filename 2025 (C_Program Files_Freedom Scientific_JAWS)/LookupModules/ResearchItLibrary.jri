@@ -1,0 +1,80 @@
+(: Copyright 2009-2015 Freedom Scientific, Inc. :)
+
+(:------------------ NAMESPACES ------------------:)
+module namespace fsi = "http://freedomscientific.com/ResearchItImports";
+
+(:------------------ FUNCTIONS ------------------:)
+(: Given a sequence of nodes to be output as text, build an output  :)
+(: string consisting of each node's text, normalized and followed   :)
+(: by a newline.					            :)
+declare function fsi:output-clean-lines($lines as node()*) as xs:string*
+{
+   for $line in $lines
+   return (concat(normalize-space(data($line)), $fsi:new_line))
+};
+
+(: remove false tags produced by generated systems using entity references, :)
+(: Or the results viewer will show the html :)
+(: end game is to remove all html tags and attributes while leaving all inner text intact. :)
+declare function fsi:clean-entity-reference-tags ($items as xs:string*) as xs:string*
+{
+	for $item in $items
+		let $result := replace ($item, '&lt;.*?&gt;', '')
+		(: let $result := concat (normalize-space ($result), fsi:new_line) :)
+		return $result
+};
+
+(: Strip trailing punctuation off of the input string.		    :)
+declare function fsi:strip-trailing-punct($input as xs:string) as xs:string
+{
+   replace($input, '\W+$', '')
+};
+
+(: Given a string containing a date, parse it and return a sequence of strings  :)
+(: where the first sequence element is the month, second is the day, third is   :)
+(: the year. Assumed input format is US date format, MM/DD/YYYY, year optional, :)
+(: with supported separator characters of /, ., -, or space.			:)
+declare function fsi:parse-us-date($date as xs:string) as xs:string*
+{
+   (: First, determine if this is even a date string at all. The length must be :)
+   (: <= 10 characters (max length including separators), and it much match     :)
+   (: some recognized date format, and not be preceded or followed by non-date  :)
+   (: characters.								:)
+   let $date_regex := '^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])([- /.](((19|20)\d\d)|\d\d))?)$'
+   return   
+   if (matches($date, $date_regex))
+   then tokenize($date, '[/ -.]')
+   else ""
+};
+
+declare function fsi:month-name-en ($month-num as xs:anyAtomicType?) as xs:string?
+{
+  let $month-sequence := ('January', 'February', 'March', 'April', 'May', 'June',
+   'July', 'August', 'September', 'October', 'November', 'December')
+  return $month-sequence[number($month-num)]
+};
+
+declare function fsi:month-as-number-en ($month as xs:anyAtomicType?) as xs:string
+{
+  let $month-sequence := ('january', 'february', 'march', 'april', 'may', 'june',
+   'july', 'august', 'september', 'october', 'november', 'december')
+  let $result := for $item at $count in $month-sequence
+  	return if ($item = lower-case (string($month))) then
+  		if ($count >= 1 and $count <= 12) then
+  			if ($count < 10) then
+  				concat ('0', string($count))
+  			else
+  				string($count)
+  		else ''
+  	else ()
+  return string ($result)
+};
+
+declare function fsi:add-head ($refNode as xs:string*) as node()?
+	{	<head><title>{$refNode}</title></head>
+	};
+
+(:------------------ VARIABLES ------------------:)
+
+declare variable $fsi:new_line := '
+';

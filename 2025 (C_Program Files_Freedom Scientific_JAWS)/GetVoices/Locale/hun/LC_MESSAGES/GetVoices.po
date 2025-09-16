@@ -1,0 +1,598 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7 FS\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#. Models\VoiceServer.cs: 15,
+msgid ""
+"Unable to communicate with the server. Check your Internet connection and "
+"try again. If the problem persists, contact technical support for assistance."
+msgstr ""
+"Nem lehet kommunikálni a szerverrel. Ellenőrizze az internetkapcsolatát és "
+"próbálkozzon újra. Ha a hiba továbbra is fennáll, forduljon segítségért a "
+"technikai támogató szolgálathoz."
+
+#. Models\VoiceServer.cs: 16,
+msgid "\\n\\nError Code:  {0}"
+msgstr "\\n\\nHibakód:  {0}"
+
+#. ViewModels\GetVoicesViewModel.cs: 131,
+msgid "Selection Required"
+msgstr "Kiválasztás szükséges"
+
+#. ViewModels\GetVoicesViewModel.cs: 132,
+msgid ""
+"You must select one or more new voices from the list before installation can "
+"begin."
+msgstr ""
+"A listából ki kell választani egy vagy több új hangot, mielőtt a telepítés "
+"megkezdődhetne."
+
+#. ViewModels\GetVoicesViewModel.cs: 155,
+msgid "No Voices"
+msgstr "Nincsenek hangok"
+
+#. ViewModels\GetVoicesViewModel.cs: 156,
+msgid "There are no Vocalizer Expressive 2 voices installed on the system."
+msgstr "Nincsenek Vocalizer Expressive 2 hangok telepítve ezen a rendszeren."
+
+#. ViewModels\GetVoicesViewModel.cs: 192,
+msgid "No Compact Voices"
+msgstr "Nincsenek Compact hangok"
+
+#. ViewModels\GetVoicesViewModel.cs: 193,
+msgid ""
+"There are no Vocalizer Expressive 2 Compact voices installed on the system."
+msgstr ""
+"Nincsenek Vocalizer Expressive 2 Compact hangok telepítve ezen a rendszeren."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 18,
+msgid ""
+"An error has occurred while downloading the {0} voice. Check your Internet "
+"connection and try again. If the problem persists, contact technical support "
+"for assistance."
+msgstr ""
+"A(z) {0} hang letöltése közben hiba lépett fel. Ellenőrizze az "
+"internetkapcsolatát és próbálkozzon újra. Ha a hiba továbbra is fennáll, "
+"forduljon segítségért a technikai támogató szolgálathoz."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 19,
+msgid "Download Error"
+msgstr "Letöltési hiba"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 20,
+msgid "Downloading {0}"
+msgstr "{0} letöltése"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 22,
+msgid ""
+"An error has occurred and installation could not continue. Please try again "
+"later. If the problem persists, contact technical support for assistance."
+msgstr ""
+"Hiba lépett fel és a telepítés nem tudott folytatódni. Próbálja meg később "
+"ismét. Ha a hiba továbbra is fennáll, forduljon segítségért a technikai "
+"támogató szolgálathoz."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 23,
+msgid "Error"
+msgstr "Hiba"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 24,
+msgid ""
+"An error has occurred while installing the {0} voice. Please try again "
+"later. If the problem persists, contact technical support for assistance."
+msgstr ""
+"A(z) hang telepítése közben hiba lépett fel. Próbálja meg később újból. Ha a "
+"hiba továbbra is fennáll, forduljon segítségért a technikai támogató "
+"szolgálathoz."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 25,
+msgid "Install Error"
+msgstr "Telepítési hiba"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 26,
+msgid "Installing {0}"
+msgstr "{0} telepítése"
+
+#. ViewModels\RemoveAVoiceViewModel.cs: 52, RemoveSelectedVoices
+msgid ""
+"You must select one or more voices from the list before uninstallation can "
+"begin."
+msgstr ""
+"Egy vagy több hangot ki kell választani a listából, hogy az eltávolítás "
+"megkezdődhessen."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 15,
+msgid ""
+"An error has occurred and uninstallation could not continue. Please try "
+"again later. If the problem persists, contact technical support for "
+"assistance."
+msgstr ""
+"Hiba lépett fel és az eltávolítás nem tudott folytatódni. Próbálja meg "
+"később újra. Ha a hiba továbbra is fennáll, forduljon segítségért a "
+"technikai támogató szolgálathoz."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 17,
+msgid ""
+"An error has occurred while uninstalling the {0} voice. Please try again "
+"later. If the problem persists, contact technical support for assistance."
+msgstr ""
+"A(z) hang eltávolításakor hiba lépett fel. Próbálja meg később újra. Ha a "
+"hiba továbbra is fennáll, forduljon segítségért a technikai támogató "
+"szolgálathoz."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 18,
+msgid "Uninstall Error"
+msgstr "Eltávolítási hiba"
+
+#. ViewModels\RemovingVoicesViewModel.cs: 19,
+msgid "Removing {0}"
+msgstr "{0} eltávolítása"
+
+#. ViewModels\RemovingVoicesViewModel.cs: 20,
+msgid "\\n\\nError Code: {0}"
+msgstr "\\n\\nHibakód: {0}"
+
+#. ViewModels\VoiceInstallOption.cs: 60, UpdateDisplayName
+msgid ", Already installed."
+msgstr ", már telepítve van."
+
+#. ViewModels\VoiceUninstallOption.cs: 23,
+msgid "Compact"
+msgstr "Compact"
+
+#. Views\GetVoicesWindow.xaml.cs: 36, InstallVoices
+msgid ""
+"You are about to install a Vocalizer Expressive version 2 voice.  Your "
+"existing version 1 voices shall be unavailable while version 2 voices are "
+"installed.  Are you sure you want to continue?"
+msgstr ""
+"Egy 2. generációs Vocalizer Expressive hangot készül telepíteni.  A már "
+"meglévő 1. generációs hangok nem lesznek elérhetőek, amíg 2. generációs "
+"hangok telepítve vannak.  Biztosan folytatni kívánja?"
+
+#. Views\GetVoicesWindow.xaml.cs: 37, InstallVoices
+msgid "Confirmation Required"
+msgstr "Megerősítés szükséges"
+
+#. Views\GetVoicesWindow.xaml.cs: 65, RemoveVoices
+msgid ""
+"Are you sure you want to remove all Vocalizer Expressive 2 Compact voices?"
+msgstr ""
+"Biztosan el kívánja távolítani az összes Vocalizer Expressive 2 Compact "
+"hangot?"
+
+#. Views\GetVoicesWindow.xaml.cs: 66, RemoveVoices
+msgid "Are you sure you want to remove all Vocalizer Expressive 2 voices?"
+msgstr ""
+"Biztosan el kívánja távolítani az összes Vocalizer Expressive 2 hangot?"
+
+#. Views\GetVoicesWindow.xaml.cs: 68, RemoveVoices
+msgid "Remove Voices"
+msgstr "Hangok eltávolítása"
+
+#. Views\InstallingVoicesWindow.xaml.cs: 41, ShowSuccess
+msgid "Your voices have been successfully installed."
+msgstr "A hangok sikeresen telepítve lettek."
+
+#. Views\InstallingVoicesWindow.xaml.cs: 42, ShowSuccess
+#. Views\RemovingVoicesWindow.xaml.cs: 41, ShowSuccess
+msgid " You must restart {0} in order for these changes to take effect."
+msgstr ""
+" A {0} újraindítása szükséges, hogy ezek a változtatások érvénybe lépjenek."
+
+#. Views\InstallingVoicesWindow.xaml.cs: 44, ShowSuccess
+msgid "Installation Complete"
+msgstr "A telepítés kész"
+
+#. Views\InstallingVoicesWindow.xaml.cs: 45, ShowSuccess
+msgid "_Finish"
+msgstr "_Befejezés"
+
+#. Views\RemovingVoicesWindow.xaml.cs: 40, ShowSuccess
+msgid "Your voices have been successfully removed."
+msgstr "A hangok sikeresen el lettek távolítva."
+
+#. Views\RemovingVoicesWindow.xaml.cs: 43, ShowSuccess
+msgid " Some changes will not take effect until you restart your computer."
+msgstr " Néhány változtatás újraindítás után fog érvénybe lépni."
+
+#. Views\RemovingVoicesWindow.xaml.cs: 45, ShowSuccess
+msgid "Uninstall Complete"
+msgstr "Az eltávolítás kész"
+
+#. Views\SimpleDialog.xaml.cs: 54, ApplyStyle
+msgid "_Yes"
+msgstr "_Igen"
+
+#. Views\SimpleDialog.xaml.cs: 55, ApplyStyle
+msgid "_No"
+msgstr "_Nem"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:AdditionalOptionsGroup"
+msgid "Additional Options:"
+msgstr "További beállítások:"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 20, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveAVoiceButton"
+msgid "_Remove a Voice..."
+msgstr "Egy hang _eltávolítása..."
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 24, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveCompactVoicesButton"
+msgid "Remove All Co_mpact Voices"
+msgstr "Minden Co_mpact hang eltávolítása"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 29, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveAllVoicesButton"
+msgid "Remove _All Voices"
+msgstr "_Minden hang eltávolítása"
+
+#. GetVoices\Views\GetVoicesWindow.xaml: 11, LocalizeExtension
+msgctxt "GetVoices.Views.GetVoicesWindow:MainWindow"
+msgid "Add/Remove Vocalizer Expressive Voices"
+msgstr "Vocalizer Expressive hangok hozzáadása/eltávolítása"
+
+#. GetVoices\Views\GetVoicesWindow.xaml: 44, LocalizeExtension
+msgctxt "GetVoices.Views.GetVoicesWindow:CloseButton"
+msgid "_Close"
+msgstr "_Bezárás"
+
+#. GetVoices\Views\InstallingVoicesWindow.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.InstallingVoicesWindow:MainWindow"
+msgid "Installing Voices"
+msgstr "Hangok telepítése"
+
+#. GetVoices\Views\InstallingVoicesWindow.xaml: 50, LocalizeExtension
+msgctxt "GetVoices.Views.InstallingVoicesWindow:CancelButton"
+msgid "_Cancel"
+msgstr "_Mégse"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 13, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:MainWindow"
+msgid "Remove a Voice"
+msgstr "Egy hang törlése"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:InstalledVoicesLabel"
+msgid "Installed _Voices:"
+msgstr "Telepített _hangok:"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 60, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:RemoveSelectedVoicesButton"
+msgid "_Remove Selected Voices"
+msgstr "A kiválasztott hang _eltávolítása"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 72, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:CloseButton"
+msgid "_Close"
+msgstr "_Bezárás"
+
+#. GetVoices\Views\RemovingVoicesWindow.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.RemovingVoicesWindow:MainWindow"
+msgid "Removing Voices"
+msgstr "Hangok eltávolítása"
+
+#. GetVoices\Views\RemovingVoicesWindow.xaml: 49, LocalizeExtension
+msgctxt "GetVoices.Views.RemovingVoicesWindow:CancelButton"
+msgid "_Cancel"
+msgstr "_Mégse"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 18, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:SelectLanguageLabel"
+msgid "Select a _Language:"
+msgstr "Egy _nyelv kiválasztása:"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:SelectVoicesLabel"
+msgid "Premium _Voices:"
+msgstr "Premium _hangok:"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 62, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:PlaySampleButton"
+msgid "_Play Sample"
+msgstr "Minta _lejátszása"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 66, LocalizeExtension
+msgctxt ""
+"GetVoices.Views.SampleAndSelectVoicesControl:InstallSelectedVoicesButton"
+msgid "_Install Selected Voices"
+msgstr "Kiválasztott hangok _telepítése"
+
+#. GetVoices\Views\SimpleDialog.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.SimpleDialog:OKButton"
+msgid "_OK"
+msgstr "_OK"
+
+#. GetVoices\Views\SimpleDialog.xaml: 38, LocalizeExtension
+msgctxt "GetVoices.Views.SimpleDialog:CancelButton"
+msgid "_Cancel"
+msgstr "_Mégse"
+
+#. voices.ve2.json
+msgid "Arabic"
+msgstr "arab"
+
+#. voices.ve2.json
+msgid "Basque"
+msgstr "baszk"
+
+#. voices.ve2.json
+msgid "Bengali"
+msgstr "bengáli"
+
+#. voices.ve2.json
+msgid "Bulgarian"
+msgstr "bolgár"
+
+#. voices.ve2.json
+msgid "Bhojpuri"
+msgstr "bhodzspuri"
+
+#. voices.ve2.json
+msgid "Catalan"
+msgstr "katalán"
+
+#. voices.ve2.json
+msgid "Cantonese"
+msgstr "kantoni"
+
+#. voices.ve2.json
+msgid "Czech"
+msgstr "cseh"
+
+#. voices.ve2.json
+msgid "Danish"
+msgstr "dán"
+
+#. voices.ve21.json
+msgid "Dongbei Chinese"
+msgstr "dongbei kínai"
+
+#. voices.ve2.json
+msgid "Dutch"
+msgstr "holland"
+
+#. voices.ve2.json
+msgid "Belgian Dutch"
+msgstr "belga holland"
+
+#. voices.ve2.json
+msgid "English"
+msgstr "angol"
+
+#. voices.ve2.json
+msgid "English Australian"
+msgstr "ausztrál angol"
+
+#. voices.ve2.json
+msgid "English Irish"
+msgstr "ír angol"
+
+#. voices.ve2.json
+msgid "English British"
+msgstr "brit angol"
+
+#. voices.ve2.json
+msgid "English Indian"
+msgstr "indiai angol"
+
+#. voices.ve2.json
+msgid "English Scottish"
+msgstr "skót angol"
+
+#. voices.ve2.json
+msgid "English United States"
+msgstr "amerikai angol"
+
+#. voices.ve2.json
+msgid "English South African"
+msgstr "dél-afrikai angol"
+
+#. voices.ve21.json
+msgid "Farsi"
+msgstr "fárszi"
+
+#. voices.ve2.json
+msgid "Finnish"
+msgstr "finn"
+
+#. voices.ve2.json
+msgid "French"
+msgstr "francia"
+
+#. voices.ve21.json
+msgid "French Belgian"
+msgstr "belga francia"
+
+#. voices.ve2.json
+msgid "French Canadian"
+msgstr "francia kanadai"
+
+#. voices.ve2.json
+msgid "German"
+msgstr "német"
+
+#. voices.ve2.json
+msgid "Galician"
+msgstr "galiciai"
+
+#. voices.ve2.json
+msgid "Greek"
+msgstr "görög"
+
+#. voices.ve2.json
+msgid "Hebrew"
+msgstr "héber"
+
+#. voices.ve2.json
+msgid "Hindi"
+msgstr "hindi"
+
+#. voices.ve2.json
+msgid "Croatian"
+msgstr "horvát"
+
+#. voices.ve2.json
+msgid "Hungarian"
+msgstr "magyar"
+
+#. voices.ve2.json
+msgid "Indonesian"
+msgstr "indonéz"
+
+#. voices.ve2.json
+msgid "Italian"
+msgstr "olasz"
+
+#. voices.ve2.json
+msgid "Japanese"
+msgstr "japán"
+
+#. voices.ve2.json
+msgid "Kannada"
+msgstr "kannada"
+
+#. voices.ve2.json
+msgid "Korean"
+msgstr "koreai"
+
+#. voices.ve2.json
+msgid "Marathi"
+msgstr "maráthi"
+
+#. voices.ve2.json
+msgid "Chinese"
+msgstr "kínai"
+
+#. voices.ve2.json
+msgid "Mandarin Chinese"
+msgstr "kínai mandarin"
+
+#. voices.ve2.json
+msgid "Taiwanese"
+msgstr "tajvani"
+
+#. voices.ve2.json
+msgid "Mandarin Taiwanese"
+msgstr "tajvani mandarin"
+
+#. voices.ve21.json
+msgid "Malay"
+msgstr "maláj"
+
+#. voices.ve2.json
+msgid "Norwegian"
+msgstr "norvég"
+
+#. voices.ve2.json
+msgid "Polish"
+msgstr "lengyel"
+
+#. voices.ve2.json
+msgid "Portuguese"
+msgstr "portugál"
+
+#. voices.ve2.json
+msgid "Brazilian Portuguese"
+msgstr "brazil portugál"
+
+#. voices.ve2.json
+msgid "Romanian"
+msgstr "román"
+
+#. voices.ve2.json
+msgid "Russian"
+msgstr "orosz"
+
+#. voices.ve21.json
+msgid "Shanghainese Chinese"
+msgstr "sanghaji kínai"
+
+#. voices.ve21.json
+msgid "Sichuanese Chinese"
+msgstr "szecsuáni kínai"
+
+#. voices.ve2.json
+msgid "Slovakian"
+msgstr "szlovák"
+
+#. voices.ve21.json
+msgid "Slovenian"
+msgstr "szlovén"
+
+#. voices.ve2.json
+msgid "Spanish"
+msgstr "spanyol"
+
+#. voices.ve2.json
+msgid "Spanish Argentinian"
+msgstr "argentin spanyol"
+
+#. voices.ve2.json
+msgid "Spanish Columbian"
+msgstr "kolumbiai spanyol"
+
+#. voices.ve2.json
+msgid "Spanish Castilian"
+msgstr "kasztíliai spanyol"
+
+#. voices.ve2.json
+msgid "Spanish Chilean"
+msgstr "chilei spanyol"
+
+#. voices.ve2.json
+msgid "Spanish Latin American"
+msgstr "latin-amerikai spanyol"
+
+#. voices.ve2.json
+msgid "Swedish"
+msgstr "svéd"
+
+#. voices.ve21.json
+msgid "Shaanxi Chinese"
+msgstr "senhszi kínai"
+
+#. voices.ve2.json
+msgid "Tamil"
+msgstr "tamil"
+
+#. voices.ve2.json
+msgid "Telugu"
+msgstr "telugu"
+
+#. voices.ve2.json
+msgid "Thai"
+msgstr "thai"
+
+#. voices.ve2.json
+msgid "Turkish"
+msgstr "török"
+
+#. voices.ve21.json
+msgid "Ukrainian"
+msgstr "ukrán"
+
+#. voices.ve2.json
+msgid "Valencian"
+msgstr "valenciai"
+
+#. voices.ve21.json
+msgid "Vietnamese"
+msgstr "vietnámi"
+
+#~ msgctxt "GetVoices.Views.RemoveAVoiceWindow:CancelButton"
+#~ msgid "_Cancel"
+#~ msgstr "_Mégse"

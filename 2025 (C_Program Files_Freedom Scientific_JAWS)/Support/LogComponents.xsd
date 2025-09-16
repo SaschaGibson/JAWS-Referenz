@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+  <xs:element name="ComponentDefinitions">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="Product" minOccurs="1" maxOccurs="unbounded">
+      <xs:complexType>
+	    <xs:sequence>
+	      <xs:element name="Component" minOccurs="1" maxOccurs="unbounded">
+	      <xs:complexType>
+		    <xs:sequence>
+		      <xs:element name="Subcomponent" minOccurs="0" maxOccurs="31">
+                      <xs:complexType>
+                        <xs:attribute name="Name" use="required" />
+                        <xs:attribute name="Bit"  use="required" />
+			<xs:attribute name="LogLevel" use="optional" />
+			<xs:attribute name="Selected" use="optional" />
+                      </xs:complexType>
+		      </xs:element>
+		    </xs:sequence>
+		    <xs:attribute name="Name" use="required" />
+		    <xs:attribute name="Guid" use="required" /> 
+		    <xs:attribute name="LogLevel" use="optional" />
+		    <xs:attribute name="Selected" use="optional" />
+	      </xs:complexType>
+	      </xs:element>
+	    </xs:sequence>
+            <xs:attribute name="Name" use="required" />
+            <xs:attribute name="Selected" use="optional" />
+	</xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="LogFileName" use="optional" />
+    <xs:attribute name="LiveLogging_ShowUI" use="optional" />
+    <xs:attribute name="LiveLogging_Enable" use="optional" />
+    <xs:attribute name="LiveLogging_ReaderIPAddress" use="optional" />
+    <xs:attribute name="LiveLogging_ReaderPort" use="optional" />
+    <xs:attribute name="LiveLogging_LogToFileAlso" use="optional" />
+  </xs:complexType>
+  </xs:element>
+   
+</xs:schema>

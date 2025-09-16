@@ -1,0 +1,543 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zoomtext2024\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+"Plural-Forms: nplurals=3; plural=(n==0 ? 0 : n%10==1 && n%100!=11 ? 1 : 2);\n"
+"X-Crowdin-Project: zoomtext2024\n"
+"X-Crowdin-Project-ID: 611785\n"
+"X-Crowdin-Language: lv\n"
+"X-Crowdin-File: GetVoices.po\n"
+"X-Crowdin-File-ID: 2605\n"
+"Language-Team: Latvian\n"
+"PO-Revision-Date: 2023-09-08 17:19\n"
+
+#. Models\VoiceServer.cs: 15,
+msgid "Unable to communicate with the server. Check your Internet connection and try again. If the problem persists, contact technical support for assistance."
+msgstr "Nevar sazināties ar serveri. Pārbaudiet interneta savienojumu un mēģiniet vēlreiz. Ja problēma joprojām pastāv, sazinieties ar tehnisko atbalstu, lai saņemtu palīdzību."
+
+#. Models\VoiceServer.cs: 16,
+msgid "\\n\\nError Code:  {0}"
+msgstr "\\n\\nKļūdas kods:  {0}"
+
+#. ViewModels\GetVoicesViewModel.cs: 131,
+msgid "Selection Required"
+msgstr "Nepieciešama atlase"
+
+#. ViewModels\GetVoicesViewModel.cs: 132,
+msgid "You must select one or more new voices from the list before installation can begin."
+msgstr "Lai varētu sākt instalēšanu, sarakstā ir jāatlasa viena vai vairākas jaunas balsis."
+
+#. ViewModels\GetVoicesViewModel.cs: 155,
+msgid "No Voices"
+msgstr "Nav balsu"
+
+#. ViewModels\GetVoicesViewModel.cs: 156,
+msgid "There are no Vocalizer Expressive 2 voices installed on the system."
+msgstr "Sistēmā nav instalētas Vocalizer Expressive 2 balsis."
+
+#. ViewModels\GetVoicesViewModel.cs: 192,
+msgid "No Compact Voices"
+msgstr "Nav kompaktu balsu"
+
+#. ViewModels\GetVoicesViewModel.cs: 193,
+msgid "There are no Vocalizer Expressive 2 Compact voices installed on the system."
+msgstr "Sistēmā nav instalētas Vocalizer Expressive 2 Compact balsis."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 18,
+msgid "An error has occurred while downloading the {0} voice. Check your Internet connection and try again. If the problem persists, contact technical support for assistance."
+msgstr "Lejupielādējot {0} balsi, radās kļūda. Pārbaudiet interneta savienojumu un mēģiniet vēlreiz. Ja problēma joprojām pastāv, sazinieties ar tehnisko atbalstu, lai saņemtu palīdzību."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 19,
+msgid "Download Error"
+msgstr "Lejupielādes kļūda"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 20,
+msgid "Downloading {0}"
+msgstr "Notiek {0} lejupielāde"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 22,
+msgid "An error has occurred and installation could not continue. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Radās kļūda, un instalēšanu nevarēja turpināt. Lūdzu, pamēģiniet vēlreiz vēlāk. Ja problēma joprojām pastāv, sazinieties ar tehnisko atbalstu, lai saņemtu palīdzību."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 23,
+msgid "Error"
+msgstr "Kļūda"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 24,
+msgid "An error has occurred while installing the {0} voice. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Instalējot {0} balsi, radās kļūda. Lūdzu, pamēģiniet vēlreiz vēlāk. Ja problēma joprojām pastāv, sazinieties ar tehnisko atbalstu, lai saņemtu palīdzību."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 25,
+msgid "Install Error"
+msgstr "Instalēšanas kļūda"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 26,
+msgid "Installing {0}"
+msgstr "Notiek {0} instalēšana"
+
+#. ViewModels\RemoveAVoiceViewModel.cs: 52, RemoveSelectedVoices
+msgid "You must select one or more voices from the list before uninstallation can begin."
+msgstr "Lai varētu sākt atinstalēšanu, sarakstā ir jāatlasa viena vai vairākas balsis."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 15,
+msgid "An error has occurred and uninstallation could not continue. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Radās kļūda, un atinstalēšanu nevarēja turpināt. Lūdzu, pamēģiniet vēlreiz vēlāk. Ja problēma joprojām pastāv, sazinieties ar tehnisko atbalstu, lai saņemtu palīdzību."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 17,
+msgid "An error has occurred while uninstalling the {0} voice. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Atinstalējot {0} balsi, radās kļūda. Lūdzu, pamēģiniet vēlreiz vēlāk. Ja problēma joprojām pastāv, sazinieties ar tehnisko atbalstu, lai saņemtu palīdzību."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 18,
+msgid "Uninstall Error"
+msgstr "Atinstalēšanas kļūda"
+
+#. ViewModels\RemovingVoicesViewModel.cs: 19,
+msgid "Removing {0}"
+msgstr "Notiek {0} noņemšana"
+
+#. ViewModels\RemovingVoicesViewModel.cs: 20,
+msgid "\\n\\nError Code: {0}"
+msgstr "\\n\\nKļūdas kods: {0}"
+
+#. ViewModels\VoiceInstallOption.cs: 60, UpdateDisplayName
+msgid ", Already installed."
+msgstr ", Jau instalēts."
+
+#. ViewModels\VoiceUninstallOption.cs: 23,
+msgid "Compact"
+msgstr "Kompakts"
+
+#. Views\GetVoicesWindow.xaml.cs: 36, InstallVoices
+msgid "You are about to install a Vocalizer Expressive version 2 voice.  Your existing version 1 voices shall be unavailable while version 2 voices are installed.  Are you sure you want to continue?"
+msgstr "Jūs gatavojaties instalēt Vocalizer Expressive 2 versijas balsi. Jūsu esošās 1. versijas balsis nebūs pieejamas, kamēr būs instalētas 2. versijas balsis. Vai tiešām vēlaties turpināt?"
+
+#. Views\GetVoicesWindow.xaml.cs: 37, InstallVoices
+msgid "Confirmation Required"
+msgstr "Nepieciešams apstiprinājums"
+
+#. Views\GetVoicesWindow.xaml.cs: 65, RemoveVoices
+msgid "Are you sure you want to remove all Vocalizer Expressive 2 Compact voices?"
+msgstr "Vai tiešām vēlaties noņemt visas Vocalizer Expressive 2 Compact balsis?"
+
+#. Views\GetVoicesWindow.xaml.cs: 66, RemoveVoices
+msgid "Are you sure you want to remove all Vocalizer Expressive 2 voices?"
+msgstr "Vai tiešām vēlaties noņemt visas Vocalizer Expressive 2 balsis?"
+
+#. Views\GetVoicesWindow.xaml.cs: 68, RemoveVoices
+msgid "Remove Voices"
+msgstr "Noņemiet balsis"
+
+#. Views\InstallingVoicesWindow.xaml.cs: 41, ShowSuccess
+msgid "Your voices have been successfully installed."
+msgstr "Jūsu balsis ir veiksmīgi instalētas."
+
+#. Views\InstallingVoicesWindow.xaml.cs: 42, ShowSuccess
+#. Views\RemovingVoicesWindow.xaml.cs: 41, ShowSuccess
+msgid " You must restart {0} in order for these changes to take effect."
+msgstr " Lai šīs izmaiņas stātos spēkā, jums ir jārestartē {0}."
+
+#. Views\InstallingVoicesWindow.xaml.cs: 44, ShowSuccess
+msgid "Installation Complete"
+msgstr "Instalācija pabeigta"
+
+#. Views\InstallingVoicesWindow.xaml.cs: 45, ShowSuccess
+msgid "_Finish"
+msgstr "_Pabeigt"
+
+#. Views\RemovingVoicesWindow.xaml.cs: 40, ShowSuccess
+msgid "Your voices have been successfully removed."
+msgstr "Jūsu balsis ir veiksmīgi noņemtas."
+
+#. Views\RemovingVoicesWindow.xaml.cs: 43, ShowSuccess
+msgid " Some changes will not take effect until you restart your computer."
+msgstr " Dažas izmaiņas stāsies spēkā tikai pēc datora restartēšanas."
+
+#. Views\RemovingVoicesWindow.xaml.cs: 45, ShowSuccess
+msgid "Uninstall Complete"
+msgstr "Atinstalēšana pabeigta"
+
+#. Views\SimpleDialog.xaml.cs: 54, ApplyStyle
+msgid "_Yes"
+msgstr "_Jā"
+
+#. Views\SimpleDialog.xaml.cs: 55, ApplyStyle
+msgid "_No"
+msgstr "_Nē"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:AdditionalOptionsGroup"
+msgid "Additional Options:"
+msgstr "Papildu opcijas:"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 20, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveAVoiceButton"
+msgid "_Remove a Voice..."
+msgstr "_Noņemt balsi..."
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 24, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveCompactVoicesButton"
+msgid "Remove All Co_mpact Voices"
+msgstr "Noņemiet visas Co_mpact balsis"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 29, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveAllVoicesButton"
+msgid "Remove _All Voices"
+msgstr "Noņemt _Visas balsis"
+
+#. GetVoices\Views\GetVoicesWindow.xaml: 11, LocalizeExtension
+msgctxt "GetVoices.Views.GetVoicesWindow:MainWindow"
+msgid "Add/Remove Vocalizer Expressive Voices"
+msgstr "Pievienot/noņemt Vocalizer Expressive balsis"
+
+#. GetVoices\Views\GetVoicesWindow.xaml: 44, LocalizeExtension
+msgctxt "GetVoices.Views.GetVoicesWindow:CloseButton"
+msgid "_Close"
+msgstr "_Aizvērt"
+
+#. GetVoices\Views\InstallingVoicesWindow.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.InstallingVoicesWindow:MainWindow"
+msgid "Installing Voices"
+msgstr "Balsu instalēšana"
+
+#. GetVoices\Views\InstallingVoicesWindow.xaml: 50, LocalizeExtension
+msgctxt "GetVoices.Views.InstallingVoicesWindow:CancelButton"
+msgid "_Cancel"
+msgstr "_Atcelt"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 13, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:MainWindow"
+msgid "Remove a Voice"
+msgstr "Noņemiet balsi"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:InstalledVoicesLabel"
+msgid "Installed _Voices:"
+msgstr "Instalētas _Balsis:"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 60, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:RemoveSelectedVoicesButton"
+msgid "_Remove Selected Voices"
+msgstr "_Noņemt atlasītās balsis"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 72, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:CloseButton"
+msgid "_Close"
+msgstr "_Aizvērt"
+
+#. GetVoices\Views\RemovingVoicesWindow.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.RemovingVoicesWindow:MainWindow"
+msgid "Removing Voices"
+msgstr "Balsu noņemšana"
+
+#. GetVoices\Views\RemovingVoicesWindow.xaml: 49, LocalizeExtension
+msgctxt "GetVoices.Views.RemovingVoicesWindow:CancelButton"
+msgid "_Cancel"
+msgstr "_Atcelt"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 18, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:SelectLanguageLabel"
+msgid "Select a _Language:"
+msgstr "Izvēlieties _valodu:"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:SelectVoicesLabel"
+msgid "Premium _Voices:"
+msgstr "Premium _Balsis:"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 62, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:PlaySampleButton"
+msgid "_Play Sample"
+msgstr "_Atskaņot paraugu"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 66, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:InstallSelectedVoicesButton"
+msgid "_Install Selected Voices"
+msgstr "_Instalējiet atlasītās balsis"
+
+#. GetVoices\Views\SimpleDialog.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.SimpleDialog:OKButton"
+msgid "_OK"
+msgstr "_Labi"
+
+#. GetVoices\Views\SimpleDialog.xaml: 38, LocalizeExtension
+msgctxt "GetVoices.Views.SimpleDialog:CancelButton"
+msgid "_Cancel"
+msgstr "_Atcelt"
+
+#. voices.ve2.json
+msgid "Arabic"
+msgstr "Arābu"
+
+#. voices.ve2.json
+msgid "Basque"
+msgstr "Basku"
+
+#. voices.ve2.json
+msgid "Bengali"
+msgstr "Bengāļu"
+
+#. voices.ve2.json
+msgid "Bulgarian"
+msgstr "Bulgāru"
+
+#. voices.ve2.json
+msgid "Bhojpuri"
+msgstr "Bhojpuri"
+
+#. voices.ve2.json
+msgid "Catalan"
+msgstr "Katalāņu"
+
+#. voices.ve2.json
+msgid "Cantonese"
+msgstr "Kantonas"
+
+#. voices.ve2.json
+msgid "Czech"
+msgstr "Čehu"
+
+#. voices.ve2.json
+msgid "Danish"
+msgstr "Dāņu"
+
+#. voices.ve21.json
+msgid "Dongbei Chinese"
+msgstr "Dongbei ķīniešu"
+
+#. voices.ve2.json
+msgid "Dutch"
+msgstr "Holandiešu"
+
+#. voices.ve2.json
+msgid "Belgian Dutch"
+msgstr "Beļģijas holandiešu"
+
+#. voices.ve2.json
+msgid "English"
+msgstr "Angļu"
+
+#. voices.ve2.json
+msgid "English Australian"
+msgstr "Angļu austrāliešu"
+
+#. voices.ve2.json
+msgid "English Irish"
+msgstr "Anglu īru"
+
+#. voices.ve2.json
+msgid "English British"
+msgstr "Angļu britu"
+
+#. voices.ve2.json
+msgid "English Indian"
+msgstr "Angļu indiešu"
+
+#. voices.ve2.json
+msgid "English Scottish"
+msgstr "Angļu skotu"
+
+#. voices.ve2.json
+msgid "English United States"
+msgstr "Angļu Amerikas"
+
+#. voices.ve2.json
+msgid "English South African"
+msgstr "Angļu Dienvidāfrikas"
+
+#. voices.ve21.json
+msgid "Farsi"
+msgstr "Persiešu"
+
+#. voices.ve2.json
+msgid "Finnish"
+msgstr "Somu"
+
+#. voices.ve2.json
+msgid "French"
+msgstr "Franču"
+
+#. voices.ve21.json
+msgid "French Belgian"
+msgstr "Beļģu franču"
+
+#. voices.ve2.json
+msgid "French Canadian"
+msgstr "Kanādas franču"
+
+#. voices.ve2.json
+msgid "German"
+msgstr "Vācu"
+
+#. voices.ve2.json
+msgid "Galician"
+msgstr "Galisiešu"
+
+#. voices.ve2.json
+msgid "Greek"
+msgstr "Grieķu"
+
+#. voices.ve2.json
+msgid "Hebrew"
+msgstr "Ebreju"
+
+#. voices.ve2.json
+msgid "Hindi"
+msgstr "Hindi"
+
+#. voices.ve2.json
+msgid "Croatian"
+msgstr "Horvātu"
+
+#. voices.ve2.json
+msgid "Hungarian"
+msgstr "Ungāru"
+
+#. voices.ve2.json
+msgid "Indonesian"
+msgstr "Indonēziešu"
+
+#. voices.ve2.json
+msgid "Italian"
+msgstr "Itāļu"
+
+#. voices.ve2.json
+msgid "Japanese"
+msgstr "Japāņu"
+
+#. voices.ve2.json
+msgid "Kannada"
+msgstr "Kanādiešu"
+
+#. voices.ve2.json
+msgid "Korean"
+msgstr "Korejiešu"
+
+#. voices.ve2.json
+msgid "Marathi"
+msgstr "Maratu"
+
+#. voices.ve2.json
+msgid "Chinese"
+msgstr "Ķīniešu"
+
+#. voices.ve2.json
+msgid "Mandarin Chinese"
+msgstr "Mandarīnu ķīniešu"
+
+#. voices.ve2.json
+msgid "Taiwanese"
+msgstr "Taivāņu"
+
+#. voices.ve2.json
+msgid "Mandarin Taiwanese"
+msgstr "Taivānas mandarīnu"
+
+#. voices.ve21.json
+msgid "Malay"
+msgstr "Malajiešu"
+
+#. voices.ve2.json
+msgid "Norwegian"
+msgstr "Norvēģu"
+
+#. voices.ve2.json
+msgid "Polish"
+msgstr "Poļu"
+
+#. voices.ve2.json
+msgid "Portuguese"
+msgstr "Portugāļu"
+
+#. voices.ve2.json
+msgid "Brazilian Portuguese"
+msgstr "Brazīlijas portugāļu"
+
+#. voices.ve2.json
+msgid "Romanian"
+msgstr "Rumāņu"
+
+#. voices.ve2.json
+msgid "Russian"
+msgstr "Krievu"
+
+#. voices.ve21.json
+msgid "Shanghainese Chinese"
+msgstr "Šanhajas ķīniešu"
+
+#. voices.ve21.json
+msgid "Sichuanese Chinese"
+msgstr "Sičuānas ķīniešu"
+
+#. voices.ve2.json
+msgid "Slovakian"
+msgstr "Slovāku"
+
+#. voices.ve21.json
+msgid "Slovenian"
+msgstr "Slovēņu"
+
+#. voices.ve2.json
+msgid "Spanish"
+msgstr "Spāņu"
+
+#. voices.ve2.json
+msgid "Spanish Argentinian"
+msgstr "Spāņu argentīnas"
+
+#. voices.ve2.json
+msgid "Spanish Columbian"
+msgstr "Spāņu kolumbijas"
+
+#. voices.ve2.json
+msgid "Spanish Castilian"
+msgstr "Spāņu kastīliešu"
+
+#. voices.ve2.json
+msgid "Spanish Chilean"
+msgstr "Spāņu čīliešu"
+
+#. voices.ve2.json
+msgid "Spanish Latin American"
+msgstr "Spāņu Latīņamerikas"
+
+#. voices.ve2.json
+msgid "Swedish"
+msgstr "Zviedru"
+
+#. voices.ve21.json
+msgid "Shaanxi Chinese"
+msgstr "Shaanxi ķīniešu"
+
+#. voices.ve2.json
+msgid "Tamil"
+msgstr "Tamilu"
+
+#. voices.ve2.json
+msgid "Telugu"
+msgstr "Telugu"
+
+#. voices.ve2.json
+msgid "Thai"
+msgstr "Taizemiešu"
+
+#. voices.ve2.json
+msgid "Turkish"
+msgstr "Turku"
+
+#. voices.ve21.json
+msgid "Ukrainian"
+msgstr "Ukraiņu"
+
+#. voices.ve2.json
+msgid "Valencian"
+msgstr "Valensiešu"
+
+#. voices.ve21.json
+msgid "Vietnamese"
+msgstr "Vjetnamiešu"
+

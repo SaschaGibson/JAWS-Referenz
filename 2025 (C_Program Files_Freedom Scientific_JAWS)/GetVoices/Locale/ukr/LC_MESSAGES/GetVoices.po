@@ -1,0 +1,543 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zoomtext2024\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: zoomtext2024\n"
+"X-Crowdin-Project-ID: 611785\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: GetVoices.po\n"
+"X-Crowdin-File-ID: 2605\n"
+"Language-Team: Ukrainian\n"
+"PO-Revision-Date: 2023-09-08 17:19\n"
+
+#. Models\VoiceServer.cs: 15,
+msgid "Unable to communicate with the server. Check your Internet connection and try again. If the problem persists, contact technical support for assistance."
+msgstr "Не вдається зв'язатися із сервером. Перевірте підключення до Інтернету та повторіть спробу. Якщо проблема не зникає, зверніться до технічної підтримки."
+
+#. Models\VoiceServer.cs: 16,
+msgid "\\n\\nError Code:  {0}"
+msgstr "\\n\\nКод помилки:  {0}"
+
+#. ViewModels\GetVoicesViewModel.cs: 131,
+msgid "Selection Required"
+msgstr "Потрібно вибрати"
+
+#. ViewModels\GetVoicesViewModel.cs: 132,
+msgid "You must select one or more new voices from the list before installation can begin."
+msgstr "Ви повинні вибрати один або кілька нових голосів зі списку перед початком встановлення."
+
+#. ViewModels\GetVoicesViewModel.cs: 155,
+msgid "No Voices"
+msgstr "Ніяких голосів"
+
+#. ViewModels\GetVoicesViewModel.cs: 156,
+msgid "There are no Vocalizer Expressive 2 voices installed on the system."
+msgstr "У системі не встановлено голоси Vocalizer Expressive 2."
+
+#. ViewModels\GetVoicesViewModel.cs: 192,
+msgid "No Compact Voices"
+msgstr "Немає компактних голосів"
+
+#. ViewModels\GetVoicesViewModel.cs: 193,
+msgid "There are no Vocalizer Expressive 2 Compact voices installed on the system."
+msgstr "У системі не встановлено голоси Vocalizer Expressive 2."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 18,
+msgid "An error has occurred while downloading the {0} voice. Check your Internet connection and try again. If the problem persists, contact technical support for assistance."
+msgstr "Під час завантаження {0} голосу сталася помилка. Перевірте підключення до Інтернету та повторіть спробу. Якщо проблема не зникне, зверніться за допомогою до служби технічної підтримки."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 19,
+msgid "Download Error"
+msgstr "Помилка завантаження"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 20,
+msgid "Downloading {0}"
+msgstr "Завантажено {0}"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 22,
+msgid "An error has occurred and installation could not continue. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Сталася помилка, і інсталяцію неможливо продовжити. Будь-ласка спробуйте пізніше. Якщо проблема не зникає, зверніться по допомогу до технічної підтримки."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 23,
+msgid "Error"
+msgstr "Помилка"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 24,
+msgid "An error has occurred while installing the {0} voice. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Під час встановлення голосу {0} сталася помилка. Будь-ласка спробуйте пізніше. Якщо проблема не зникає, зверніться по допомогу до технічної підтримки."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 25,
+msgid "Install Error"
+msgstr "Помилка інсталяції"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 26,
+msgid "Installing {0}"
+msgstr "Інстальовано {0}"
+
+#. ViewModels\RemoveAVoiceViewModel.cs: 52, RemoveSelectedVoices
+msgid "You must select one or more voices from the list before uninstallation can begin."
+msgstr "Ви повинні вибрати один або кілька голосів зі списку, перш ніж можна буде розпочати видалення."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 15,
+msgid "An error has occurred and uninstallation could not continue. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Сталася помилка, і видалення не вдалося продовжити. Будь-ласка спробуйте пізніше. Якщо проблема не зникає, зверніться по допомогу до технічної підтримки."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 17,
+msgid "An error has occurred while uninstalling the {0} voice. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Під час видалення голосу {0} сталася помилка. Будь-ласка спробуйте пізніше. Якщо проблема не зникає, зверніться по допомогу до технічної підтримки."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 18,
+msgid "Uninstall Error"
+msgstr "Помилка видалення"
+
+#. ViewModels\RemovingVoicesViewModel.cs: 19,
+msgid "Removing {0}"
+msgstr "Видалення{0}"
+
+#. ViewModels\RemovingVoicesViewModel.cs: 20,
+msgid "\\n\\nError Code: {0}"
+msgstr "\\n\\nКод помилки: {0}"
+
+#. ViewModels\VoiceInstallOption.cs: 60, UpdateDisplayName
+msgid ", Already installed."
+msgstr ", Вже встановлено."
+
+#. ViewModels\VoiceUninstallOption.cs: 23,
+msgid "Compact"
+msgstr "Компактний"
+
+#. Views\GetVoicesWindow.xaml.cs: 36, InstallVoices
+msgid "You are about to install a Vocalizer Expressive version 2 voice.  Your existing version 1 voices shall be unavailable while version 2 voices are installed.  Are you sure you want to continue?"
+msgstr "Ви збираєтеся встановити голос Vocalizer Expressive версії 2.  Ваші теперішні голоси версії 1 будуть недоступні під час встановлення голосів версії 2.  Ви впевнені, що хочете продовжити?"
+
+#. Views\GetVoicesWindow.xaml.cs: 37, InstallVoices
+msgid "Confirmation Required"
+msgstr "Потребується підтвердження"
+
+#. Views\GetVoicesWindow.xaml.cs: 65, RemoveVoices
+msgid "Are you sure you want to remove all Vocalizer Expressive 2 Compact voices?"
+msgstr "Ви впевнені, що хочете видалити всі компактні голоси Vocalizer Expressive версії 2?"
+
+#. Views\GetVoicesWindow.xaml.cs: 66, RemoveVoices
+msgid "Are you sure you want to remove all Vocalizer Expressive 2 voices?"
+msgstr "Ви впевнені, що хочете видалити всі голоси Vocalizer Expressive версії 2?"
+
+#. Views\GetVoicesWindow.xaml.cs: 68, RemoveVoices
+msgid "Remove Voices"
+msgstr "Видалення голосів"
+
+#. Views\InstallingVoicesWindow.xaml.cs: 41, ShowSuccess
+msgid "Your voices have been successfully installed."
+msgstr "Ваші голоси успішно встановлені."
+
+#. Views\InstallingVoicesWindow.xaml.cs: 42, ShowSuccess
+#. Views\RemovingVoicesWindow.xaml.cs: 41, ShowSuccess
+msgid " You must restart {0} in order for these changes to take effect."
+msgstr " Ви повинні перезапустити {0} для того, щоб ці зміни набрали чинності."
+
+#. Views\InstallingVoicesWindow.xaml.cs: 44, ShowSuccess
+msgid "Installation Complete"
+msgstr "Установка завершена"
+
+#. Views\InstallingVoicesWindow.xaml.cs: 45, ShowSuccess
+msgid "_Finish"
+msgstr "Готово"
+
+#. Views\RemovingVoicesWindow.xaml.cs: 40, ShowSuccess
+msgid "Your voices have been successfully removed."
+msgstr "Ваші голоси були успішно видалені."
+
+#. Views\RemovingVoicesWindow.xaml.cs: 43, ShowSuccess
+msgid " Some changes will not take effect until you restart your computer."
+msgstr " Деякі зміни не наберуть чинності, поки ви не перезавантажите комп'ютер."
+
+#. Views\RemovingVoicesWindow.xaml.cs: 45, ShowSuccess
+msgid "Uninstall Complete"
+msgstr "Видалення завершено"
+
+#. Views\SimpleDialog.xaml.cs: 54, ApplyStyle
+msgid "_Yes"
+msgstr "Так"
+
+#. Views\SimpleDialog.xaml.cs: 55, ApplyStyle
+msgid "_No"
+msgstr "Ні"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:AdditionalOptionsGroup"
+msgid "Additional Options:"
+msgstr "Додаткові опції:"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 20, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveAVoiceButton"
+msgid "_Remove a Voice..."
+msgstr "Видалити голос..."
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 24, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveCompactVoicesButton"
+msgid "Remove All Co_mpact Voices"
+msgstr "Видалення всіх компактних голосів"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 29, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveAllVoicesButton"
+msgid "Remove _All Voices"
+msgstr "Видалити усі голоси"
+
+#. GetVoices\Views\GetVoicesWindow.xaml: 11, LocalizeExtension
+msgctxt "GetVoices.Views.GetVoicesWindow:MainWindow"
+msgid "Add/Remove Vocalizer Expressive Voices"
+msgstr "Додавання/видалення Голосів Vocalizer Expressive"
+
+#. GetVoices\Views\GetVoicesWindow.xaml: 44, LocalizeExtension
+msgctxt "GetVoices.Views.GetVoicesWindow:CloseButton"
+msgid "_Close"
+msgstr "Закрити"
+
+#. GetVoices\Views\InstallingVoicesWindow.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.InstallingVoicesWindow:MainWindow"
+msgid "Installing Voices"
+msgstr "Встановлення голосів"
+
+#. GetVoices\Views\InstallingVoicesWindow.xaml: 50, LocalizeExtension
+msgctxt "GetVoices.Views.InstallingVoicesWindow:CancelButton"
+msgid "_Cancel"
+msgstr "Скасувати"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 13, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:MainWindow"
+msgid "Remove a Voice"
+msgstr "Видалити голос"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:InstalledVoicesLabel"
+msgid "Installed _Voices:"
+msgstr "Встановлені голоси:"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 60, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:RemoveSelectedVoicesButton"
+msgid "_Remove Selected Voices"
+msgstr "Видалити вибрані голоси"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 72, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:CloseButton"
+msgid "_Close"
+msgstr "Закрити"
+
+#. GetVoices\Views\RemovingVoicesWindow.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.RemovingVoicesWindow:MainWindow"
+msgid "Removing Voices"
+msgstr "Видалення голосів"
+
+#. GetVoices\Views\RemovingVoicesWindow.xaml: 49, LocalizeExtension
+msgctxt "GetVoices.Views.RemovingVoicesWindow:CancelButton"
+msgid "_Cancel"
+msgstr "Скасувати"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 18, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:SelectLanguageLabel"
+msgid "Select a _Language:"
+msgstr "Обрати мову:"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:SelectVoicesLabel"
+msgid "Premium _Voices:"
+msgstr "Преміум голоси:"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 62, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:PlaySampleButton"
+msgid "_Play Sample"
+msgstr "Відтворити зразок"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 66, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:InstallSelectedVoicesButton"
+msgid "_Install Selected Voices"
+msgstr "Встановіть вибрані голоси"
+
+#. GetVoices\Views\SimpleDialog.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.SimpleDialog:OKButton"
+msgid "_OK"
+msgstr "Ок"
+
+#. GetVoices\Views\SimpleDialog.xaml: 38, LocalizeExtension
+msgctxt "GetVoices.Views.SimpleDialog:CancelButton"
+msgid "_Cancel"
+msgstr "Скасувати"
+
+#. voices.ve2.json
+msgid "Arabic"
+msgstr "Арабська"
+
+#. voices.ve2.json
+msgid "Basque"
+msgstr "Баскська"
+
+#. voices.ve2.json
+msgid "Bengali"
+msgstr "Бенгальська"
+
+#. voices.ve2.json
+msgid "Bulgarian"
+msgstr "Болгарська"
+
+#. voices.ve2.json
+msgid "Bhojpuri"
+msgstr "Бходжпурі"
+
+#. voices.ve2.json
+msgid "Catalan"
+msgstr "Каталанська"
+
+#. voices.ve2.json
+msgid "Cantonese"
+msgstr "Кантонській"
+
+#. voices.ve2.json
+msgid "Czech"
+msgstr "Чеська"
+
+#. voices.ve2.json
+msgid "Danish"
+msgstr "Данський"
+
+#. voices.ve21.json
+msgid "Dongbei Chinese"
+msgstr "Донг бей китайський"
+
+#. voices.ve2.json
+msgid "Dutch"
+msgstr "Голландська"
+
+#. voices.ve2.json
+msgid "Belgian Dutch"
+msgstr "Голландська Бельгія"
+
+#. voices.ve2.json
+msgid "English"
+msgstr "Англійська"
+
+#. voices.ve2.json
+msgid "English Australian"
+msgstr "Англійська Австралія"
+
+#. voices.ve2.json
+msgid "English Irish"
+msgstr "Англійська Ірландія"
+
+#. voices.ve2.json
+msgid "English British"
+msgstr "Англійська Великобританія"
+
+#. voices.ve2.json
+msgid "English Indian"
+msgstr "Англійська Індія"
+
+#. voices.ve2.json
+msgid "English Scottish"
+msgstr "Англійська Шотландія"
+
+#. voices.ve2.json
+msgid "English United States"
+msgstr "Англійська Сполучені Штати"
+
+#. voices.ve2.json
+msgid "English South African"
+msgstr "Англійська Південноафриканська"
+
+#. voices.ve21.json
+msgid "Farsi"
+msgstr "Фарсі"
+
+#. voices.ve2.json
+msgid "Finnish"
+msgstr "Фінська"
+
+#. voices.ve2.json
+msgid "French"
+msgstr "Французька"
+
+#. voices.ve21.json
+msgid "French Belgian"
+msgstr "Французька Бельгія"
+
+#. voices.ve2.json
+msgid "French Canadian"
+msgstr "Французька Канада"
+
+#. voices.ve2.json
+msgid "German"
+msgstr "Німецька"
+
+#. voices.ve2.json
+msgid "Galician"
+msgstr "Галісійська"
+
+#. voices.ve2.json
+msgid "Greek"
+msgstr "Грецька"
+
+#. voices.ve2.json
+msgid "Hebrew"
+msgstr "Іврит"
+
+#. voices.ve2.json
+msgid "Hindi"
+msgstr "Хінді"
+
+#. voices.ve2.json
+msgid "Croatian"
+msgstr "Хорватська"
+
+#. voices.ve2.json
+msgid "Hungarian"
+msgstr "Угорська"
+
+#. voices.ve2.json
+msgid "Indonesian"
+msgstr "Індонезійська"
+
+#. voices.ve2.json
+msgid "Italian"
+msgstr "Італійська"
+
+#. voices.ve2.json
+msgid "Japanese"
+msgstr "Японська"
+
+#. voices.ve2.json
+msgid "Kannada"
+msgstr "Канадська"
+
+#. voices.ve2.json
+msgid "Korean"
+msgstr "Корейська"
+
+#. voices.ve2.json
+msgid "Marathi"
+msgstr "Маратхі"
+
+#. voices.ve2.json
+msgid "Chinese"
+msgstr "Китайська"
+
+#. voices.ve2.json
+msgid "Mandarin Chinese"
+msgstr "Мандарин Китай"
+
+#. voices.ve2.json
+msgid "Taiwanese"
+msgstr "Тайванський"
+
+#. voices.ve2.json
+msgid "Mandarin Taiwanese"
+msgstr "Мандарин Тайвань"
+
+#. voices.ve21.json
+msgid "Malay"
+msgstr "Малайська"
+
+#. voices.ve2.json
+msgid "Norwegian"
+msgstr "Норвезька"
+
+#. voices.ve2.json
+msgid "Polish"
+msgstr "Польська"
+
+#. voices.ve2.json
+msgid "Portuguese"
+msgstr "Португальська"
+
+#. voices.ve2.json
+msgid "Brazilian Portuguese"
+msgstr "Бразильська Португалія"
+
+#. voices.ve2.json
+msgid "Romanian"
+msgstr "Румунська"
+
+#. voices.ve2.json
+msgid "Russian"
+msgstr "Російська"
+
+#. voices.ve21.json
+msgid "Shanghainese Chinese"
+msgstr "Китайська Шанхай"
+
+#. voices.ve21.json
+msgid "Sichuanese Chinese"
+msgstr "Китайська Сіньхуа"
+
+#. voices.ve2.json
+msgid "Slovakian"
+msgstr "Словацька"
+
+#. voices.ve21.json
+msgid "Slovenian"
+msgstr "Словенська"
+
+#. voices.ve2.json
+msgid "Spanish"
+msgstr "Іспанська"
+
+#. voices.ve2.json
+msgid "Spanish Argentinian"
+msgstr "Іспанська Аргентина"
+
+#. voices.ve2.json
+msgid "Spanish Columbian"
+msgstr "Іспанська Колумбія"
+
+#. voices.ve2.json
+msgid "Spanish Castilian"
+msgstr "Іспанська Кастиль"
+
+#. voices.ve2.json
+msgid "Spanish Chilean"
+msgstr "Іспанська Чилі"
+
+#. voices.ve2.json
+msgid "Spanish Latin American"
+msgstr "Іспанська Латинська Америка"
+
+#. voices.ve2.json
+msgid "Swedish"
+msgstr "Шведська"
+
+#. voices.ve21.json
+msgid "Shaanxi Chinese"
+msgstr "Китайська Шеньсі"
+
+#. voices.ve2.json
+msgid "Tamil"
+msgstr "Тамільська"
+
+#. voices.ve2.json
+msgid "Telugu"
+msgstr "Телугу"
+
+#. voices.ve2.json
+msgid "Thai"
+msgstr "Тайська"
+
+#. voices.ve2.json
+msgid "Turkish"
+msgstr "Турецька"
+
+#. voices.ve21.json
+msgid "Ukrainian"
+msgstr "Українська"
+
+#. voices.ve2.json
+msgid "Valencian"
+msgstr "Валенсійська"
+
+#. voices.ve21.json
+msgid "Vietnamese"
+msgstr "В'єтнамська"
+

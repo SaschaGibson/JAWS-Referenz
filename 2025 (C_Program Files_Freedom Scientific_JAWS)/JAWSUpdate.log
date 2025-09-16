@@ -1,0 +1,127 @@
+2025/3/15 - 15:44:2:165 - *** Update - Start. *** 
+2025/3/15 - 15:44:2:218 - Init - OpenSession result: 0 
+2025/3/15 - 15:44:2:260 - Init - Product ID: 0. 
+2025/3/15 - 15:44:2:294 - Init - Parent product name: JAWS. 
+2025/3/15 - 15:44:2:313 - Init - GetProductVersion(versionFile) result: 0; File version: 26.1.7. 
+2025/3/15 - 15:44:2:350 - Init - GetProductVersion(versionProduct) result: 0; Product version: 2025.2412.50. 
+2025/3/15 - 15:44:2:374 - IsUpdatesAllowed - CanBeLocalAdmin result: 1. 
+2025/3/15 - 15:44:2:408 - IsUpdatesAllowed - IsRemotelyConnected result: 0. 
+2025/3/15 - 15:44:2:429 - IsUpdatesAllowed - AllowUpdates value: 1. 
+2025/3/15 - 15:44:2:452 - IsUpdatesAllowed - AutoUpdatesEnabled value: 1. 
+2025/3/15 - 15:44:2:453 - Init - IsUpdatesAllowed result: 1. 
+2025/3/15 - 15:44:2:458 - OpenUrlConnection - URL: http://www.freedomscientific.com 
+2025/3/15 - 15:44:2:459 - OpenUrlConnection - Flags: 2214604800 
+2025/3/15 - 15:44:2:459 - OpenUrlConnection - InternetOpenUrl error code 997. 
+2025/3/15 - 15:44:2:460 - OpenUrlConnection - InternetOpenUrl waiting for m_hRequestCompleteEvent 
+2025/3/15 - 15:44:3:327 - OpenUrlConnection - m_hRequestCompleteEvent result: 13369356. 
+2025/3/15 - 15:44:3:330 - OpenUrlConnection - m_hRequestCompleteEvent Error code: 0. 
+2025/3/15 - 15:44:3:475 - OpenUrlConnection - InternetGetLastResponseInfo: . 
+2025/3/15 - 15:44:3:540 - OpenUrlConnection - Result: 0 
+2025/3/15 - 15:44:3:596 - CloseUrlConnection - InternetCloseHandle succeeded with error: 0. 
+2025/3/15 - 15:44:3:665 - CheckInternetConnection - Result: 0. 
+2025/3/15 - 15:44:3:666 - InitProductUpdates - Update Dll source from registry: https://components.vfo.digital/AutoUpdate/%7B46fe7e6b-ade4-4e3b-92df-76b2bf669d8a%7D/FSUpdate.dll. 
+2025/3/15 - 15:44:3:670 - GetUpdates - Update Dll source: https://components.vfo.digital/AutoUpdate/%7B46fe7e6b-ade4-4e3b-92df-76b2bf669d8a%7D/FSUpdate.dll. 
+2025/3/15 - 15:44:3:670 - GetUpdates - Product ID: 0, Version number: 26.1.7 
+2025/3/15 - 15:44:3:677 - GetUpdates - CoInitialize result: 0 
+2025/3/15 - 15:44:3:678 - GetUpdates - Collection info loop 1. 
+2025/3/15 - 15:44:3:679 - GetUpdateDll - Update Dll location: https://components.vfo.digital/AutoUpdate/%7B46fe7e6b-ade4-4e3b-92df-76b2bf669d8a%7D/FSUpdate.dll. 
+2025/3/15 - 15:44:3:679 - GetUpdateDll - Update Dll location for x64: https://components.vfo.digital/AutoUpdate/%7B46fe7e6b-ade4-4e3b-92df-76b2bf669d8a%7D/FSUpdate64.dll. 
+2025/3/15 - 15:44:3:680 - GetFileSize - File path is C:\Users\Sascha.Gibson\AppData\Roaming\Freedom Scientific\Shared\AutoUpdate\v2\FSUpdate.dll 
+2025/3/15 - 15:44:3:681 - GetFileSize - CreateFile result: 1916 
+2025/3/15 - 15:44:3:682 - GetFileSize - CreateFile error code: 183 
+2025/3/15 - 15:44:3:683 - GetFileSize - GetFileSize result: 235936 
+2025/3/15 - 15:44:3:683 - GetFileSize - GetFileSize error code: 183 
+2025/3/15 - 15:44:3:684 - OpenUrlConnection - URL: https://components.vfo.digital/AutoUpdate/%7B46fe7e6b-ade4-4e3b-92df-76b2bf669d8a%7D/FSUpdate64.dll 
+2025/3/15 - 15:44:3:685 - OpenUrlConnection - Flags: 2214592512 
+2025/3/15 - 15:44:3:687 - OpenUrlConnection - InternetOpenUrl error code 997. 
+2025/3/15 - 15:44:3:688 - OpenUrlConnection - InternetOpenUrl waiting for m_hRequestCompleteEvent 
+2025/3/15 - 15:44:3:801 - OpenUrlConnection - m_hRequestCompleteEvent result: 13369356. 
+2025/3/15 - 15:44:3:822 - OpenUrlConnection - m_hRequestCompleteEvent Error code: 0. 
+2025/3/15 - 15:44:3:823 - OpenUrlConnection - InternetGetLastResponseInfo: . 
+2025/3/15 - 15:44:3:828 - OpenUrlConnection - Result: 0 
+2025/3/15 - 15:44:3:832 - OpenUrlConnection - URL: https://components.vfo.digital/AutoUpdate/%7B46fe7e6b-ade4-4e3b-92df-76b2bf669d8a%7D/FSUpdate64.dll 
+2025/3/15 - 15:44:3:834 - OpenUrlConnection - Flags: 2214592512 
+2025/3/15 - 15:44:3:836 - CloseUrlConnection - InternetCloseHandle succeeded with error: 0. 
+2025/3/15 - 15:44:3:841 - OpenUrlConnection - InternetOpenUrl error code 997. 
+2025/3/15 - 15:44:3:843 - OpenUrlConnection - InternetOpenUrl waiting for m_hRequestCompleteEvent 
+2025/3/15 - 15:44:3:966 - OpenUrlConnection - m_hRequestCompleteEvent result: 13369356. 
+2025/3/15 - 15:44:3:987 - OpenUrlConnection - m_hRequestCompleteEvent Error code: 0. 
+2025/3/15 - 15:44:3:988 - OpenUrlConnection - InternetGetLastResponseInfo: . 
+2025/3/15 - 15:44:3:991 - OpenUrlConnection - Result: 0 
+2025/3/15 - 15:44:3:999 - GetUpdateDll - DownloadFile result: 0. 
+2025/3/15 - 15:44:4:81 - LoadUpdateDll - Loaded the Update library. 
+2025/3/15 - 15:44:4:95 - InitUpdateDll - Proc address of CollectInformation: 0x8000de30; Result: 0. 
+2025/3/15 - 15:44:4:103 - InitUpdateDll - Proc address of GetCount: 0x800020f4; Result: 0. 
+2025/3/15 - 15:44:4:105 - InitUpdateDll - Proc address of HasNext: 0x800020fc; Result: 0. 
+2025/3/15 - 15:44:4:111 - InitUpdateDll - Proc address of GetNext: 0x80002110; Result: 0. 
+2025/3/15 - 15:44:4:112 - InitUpdateDll - Proc address of SetLogin: 0x80002170; Result: 0. 
+2025/3/15 - 15:44:4:114 - GetUpdateDll - InitUpdateDll result: 0 
+2025/3/15 - 15:44:4:117 - GetUpdates - GetUpdateDll result: 0 
+2025/3/15 - 15:44:5:45 - GetUpdates - CollectionInformation result: 0 
+2025/3/15 - 15:44:5:54 - GetUpdates - Number of updates: 10 
+2025/3/15 - 15:44:5:55 - GetUpdates - Update 0: GetNext result: 0 
+2025/3/15 - 15:44:5:56 - GetUpdates - Update 1: GetNext result: 0 
+2025/3/15 - 15:44:5:56 - GetUpdates - Update 2: GetNext result: 0 
+2025/3/15 - 15:44:5:57 - GetUpdates - Update 3: GetNext result: 0 
+2025/3/15 - 15:44:5:57 - GetUpdates - Update 4: GetNext result: 0 
+2025/3/15 - 15:44:5:59 - GetUpdates - Update 5: GetNext result: 0 
+2025/3/15 - 15:44:5:60 - GetUpdates - Update 6: GetNext result: 0 
+2025/3/15 - 15:44:5:60 - GetUpdates - Update 7: GetNext result: 0 
+2025/3/15 - 15:44:5:61 - GetUpdates - Update 8: GetNext result: 0 
+2025/3/15 - 15:44:5:62 - GetUpdates - Update 9: GetNext result: 0 
+2025/3/15 - 15:44:5:65 - InitProductUpdates - GetUpdates result 0. 
+2025/3/15 - 15:51:52:142 - DownloadUpdates - Downloading update #0. 
+2025/3/15 - 15:51:52:165 - DownloadUpdates - Installer location: https://software.vfo.digital/JAWS/2025/2025.2503.39.400/3E2738B2-D45A-4E75-A80F-4E384CE786A0/J2025.2503.39.400-any.exe. 
+2025/3/15 - 15:51:52:175 - DownloadUsingHTTP - Source: https://software.vfo.digital/JAWS/2025/2025.2503.39.400/3E2738B2-D45A-4E75-A80F-4E384CE786A0/J2025.2503.39.400-any.exe. 
+2025/3/15 - 15:51:52:177 - DownloadUsingHTTP - Target: C:\Users\SASCHA~1.GIB\AppData\Local\Temp\J2025.2503.39.400-any.exe. 
+2025/3/15 - 15:51:52:177 - OpenUrlConnection - URL: https://software.vfo.digital/JAWS/2025/2025.2503.39.400/3E2738B2-D45A-4E75-A80F-4E384CE786A0/J2025.2503.39.400-any.exe 
+2025/3/15 - 15:51:52:178 - OpenUrlConnection - Flags: 2214592512 
+2025/3/15 - 15:51:52:182 - CloseUrlConnection - InternetCloseHandle succeeded with error: 0. 
+2025/3/15 - 15:51:52:183 - OpenUrlConnection - InternetOpenUrl error code 997. 
+2025/3/15 - 15:51:52:183 - OpenUrlConnection - InternetOpenUrl waiting for m_hRequestCompleteEvent 
+2025/3/15 - 15:51:52:420 - OpenUrlConnection - m_hRequestCompleteEvent result: 13369356. 
+2025/3/15 - 15:51:52:426 - OpenUrlConnection - m_hRequestCompleteEvent Error code: 0. 
+2025/3/15 - 15:51:52:426 - OpenUrlConnection - InternetGetLastResponseInfo: . 
+2025/3/15 - 15:51:52:427 - OpenUrlConnection - Result: 0 
+2025/3/15 - 15:51:52:428 - AuthenticateUser - HttpSendRequest error code 997. 
+2025/3/15 - 15:51:52:429 - AuthenticateUser - HttpSendRequest waiting for m_hRequestCompleteEvent 
+2025/3/15 - 15:51:54:718 - AuthenticateUser - HttpSendRequest result 0. 
+2025/3/15 - 15:51:54:726 - AuthenticateUser - InternetQueryOption - HTTP handle type: 13. 
+2025/3/15 - 15:51:54:727 - AuthenticateUser - HttpQueryInfo - HTTP status code: 200. 
+2025/3/15 - 15:51:54:734 - AuthenticateUser - Authentication done or not required. 
+2025/3/15 - 15:51:59:163 - HttpGet - GetFileSize result: 15119056. 
+2025/3/15 - 15:51:59:174 - HttpGet - ReadFile result: 1. Bytes read: 15119056. 
+2025/3/15 - 15:51:59:177 - HttpGet - Result: 0 
+2025/3/15 - 15:51:59:178 - DownloadUpdateDll - HttpGet result: 0 
+2025/3/15 - 15:51:59:179 - GetFileSize - File path is C:\Users\SASCHA~1.GIB\AppData\Local\Temp\J2025.2503.39.400-any.exe 
+2025/3/15 - 15:51:59:180 - GetFileSize - CreateFile result: 2800 
+2025/3/15 - 15:51:59:181 - GetFileSize - CreateFile error code: 183 
+2025/3/15 - 15:51:59:181 - GetFileSize - GetFileSize result: 15119056 
+2025/3/15 - 15:51:59:183 - GetFileSize - GetFileSize error code: 183 
+2025/3/15 - 15:51:59:183 - DownloadUsingHTTP - GetFileSize result: 15119056 
+2025/3/15 - 15:51:59:184 - CloseUrlConnection - InternetCloseHandle succeeded with error: 0. 
+2025/3/15 - 15:51:59:184 - DownloadFile - DownloadUsingHTTP result: 0. 
+2025/3/15 - 15:51:59:185 - OpenUrlConnection - URL: https://software.vfo.digital/JAWS/2025/2025.2503.39.400/3E2738B2-D45A-4E75-A80F-4E384CE786A0/J2025.2503.39.400-any.exe 
+2025/3/15 - 15:51:59:185 - OpenUrlConnection - Flags: 2214592512 
+2025/3/15 - 15:51:59:186 - OpenUrlConnection - InternetOpenUrl error code 997. 
+2025/3/15 - 15:51:59:187 - OpenUrlConnection - InternetOpenUrl waiting for m_hRequestCompleteEvent 
+2025/3/15 - 15:51:59:230 - OpenUrlConnection - m_hRequestCompleteEvent result: 13369356. 
+2025/3/15 - 15:51:59:240 - OpenUrlConnection - m_hRequestCompleteEvent Error code: 0. 
+2025/3/15 - 15:51:59:241 - OpenUrlConnection - InternetGetLastResponseInfo: . 
+2025/3/15 - 15:51:59:242 - OpenUrlConnection - Result: 0 
+2025/3/15 - 15:51:59:244 - DownloadUpdates - DownloadFile result: 0. 
+2025/3/15 - 15:51:59:245 - InstallSelected - DownloadUpdates result: 1. 
+2025/3/15 - 15:51:59:347 - RunUpdates - Installing update #0. 
+2025/3/15 - 15:52:0:218 - Run - Launching file "C:\Users\SASCHA~1.GIB\AppData\Local\Temp\J2025.2503.39.400-any.exe" with arguments "". 
+2025/3/15 - 17:3:7:453 - Run - Process returned. 
+2025/3/15 - 17:3:7:467 - Run - Exit code: 0. 
+2025/3/15 - 17:3:7:468 - RunUpdates - Run result: 0. 
+2025/3/15 - 17:3:7:470 - RunUpdates - Updates installed: 1. 
+2025/3/15 - 17:3:7:471 - InstallSelected - RunUpdates result: 1. 
+2025/3/15 - 17:3:7:477 - ShowFinish - Finish message: 
+Die folgenden Updates wurden erfolgreich installiert: 
+   - JAWS 2025.2503.39
+
+. 
+2025/3/15 - 17:3:9:970 - CloseUrlConnection - InternetCloseHandle succeeded with error: 0. 
+2025/3/15 - 17:3:10:37 - CloseSession - InternetCloseHandle succeeded with error: 0. 

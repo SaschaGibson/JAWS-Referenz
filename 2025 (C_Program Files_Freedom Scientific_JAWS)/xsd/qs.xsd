@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SettingType">
+        <xs:sequence>
+            <xs:element name="Values" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Value" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="ID" type="xs:string" use="required" />
+                                <xs:attribute name="Index" type="xs:string" use="optional" />
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Dependents" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Dependent" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="ID" type="xs:string" use="required" />
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="SettingsFile" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attribute name="FileName" type="xs:string" use="optional" />
+                    <xs:attribute name="Section" type="xs:string" use="optional" />
+                    <xs:attribute name="Name" type="xs:string" use="optional" />
+                    <!-- This value may be a negative number for JAWS settings, so must be signed -->
+                    <xs:attribute name="DefaultValue" type="xs:Byte" use="optional" />
+                    <xs:attribute name="DefaultIsSettingValue" type="xs:string" use="optional" />
+                    <xs:attribute name="ReadValuesEvent" type="xs:string" use="optional" />
+                    <xs:attribute name="WriteValuesEvent" type="xs:string" use="optional" />
+                    <xs:attribute name="OnDependeeChangedEvent" type="xs:string" use="optional" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="ID" type="xs:string" use="required" />
+        <xs:attribute name="Type" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="List" />
+                    <xs:enumeration value="Boolean" />
+                    <xs:enumeration value="Information" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+  <xs:complexType name="CategoryType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Setting" type="SettingType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Category" type="CategoryType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="ID" type="xs:string" use="required" />
+        <xs:attribute name="DocumentNode" type="xs:boolean" use="optional" />
+    </xs:complexType>
+  <xs:complexType name="IncludesType">
+        <xs:sequence>
+            <xs:element name="Include" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="File" type="xs:string" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+  <xs:complexType name="VariablesType">
+        <xs:sequence>
+            <xs:element name="Variable" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="ID" type="xs:string" use="required" />
+                    <xs:attribute name="Callback" type="xs:string" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+  <xs:complexType name="ExcludesType">
+    <xs:sequence>
+      <xs:element name="Exclude" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="ID" type="xs:string" use="required" />
+          <xs:attribute name="ShowConditionEvent" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CategoryOrderType">
+    <xs:sequence>
+      <xs:element name="Category" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="ID" type="xs:string" use="required" />
+          <xs:attribute name="Location" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuickSettings">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Includes" type="IncludesType" minOccurs="0" maxOccurs="1" />
+                <xs:element name="VariableBlock" type="VariablesType" minOccurs="0" maxOccurs="1" />
+                <xs:element name="QuickSettingsDefinitions" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Category" type="CategoryType" minOccurs="1" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Excludes" type="ExcludesType" minOccurs="0" maxOccurs="1" />
+                <xs:element name="CategoryOrder" type="CategoryOrderType" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

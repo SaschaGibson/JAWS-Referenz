@@ -1,0 +1,125 @@
+﻿@charset "utf-8";
+html, body{
+    height: 100%;
+    margin: 0;
+}
+#block-body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 10pt;
+}
+#block-content {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    flex: 1;
+    overflow-y: auto;
+}
+#block-links {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-top: 15px;
+}
+#block-chat {
+    display: none;
+    flex-direction: column;
+    margin-top: 15px;
+}
+#thumbnail {
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+#chat-log {
+    display: flex;
+    flex-direction: column;
+}
+#chat-input {
+    resize: none;
+    height: 2em;
+    width: auto;
+}
+.chat-description {
+}
+.chat-question {
+    font-size: 10pt;
+    font-weight: normal;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    align-self: flex-end;
+    background-color: #d4e7ef;
+    border-radius: 1.15rem;
+    max-width: 75%;
+    padding: 0.5rem .875rem;
+    position: relative;
+    word-wrap: break-word;
+}
+.chat-response {
+    align-self: flex-start;
+    background-color: #e5e5ea;
+    border-radius: 1.15rem;
+    max-width: 75%;
+    padding: 0.5rem .875rem;
+    position: relative;
+    word-wrap: break-word;
+}
+.chat-waitindicator {
+    display: flex;
+    flex-direction: column;
+}
+.loading-dots {
+    margin: 25px 0px 0px 25px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    animation: loading-dots 750ms infinite linear alternate;
+}
+@keyframes loading-dots {
+    0% {
+        box-shadow: 10px 0 #0002, 20px 0 #0002;
+        background: #000
+    }
+    25% {
+        box-shadow: 10px 0 #0005, 20px 0 #0002;
+        background: #0005
+    }
+    50% {
+        box-shadow: 10px 0 #000, 20px 0 #0002;
+        background: #0002
+    }
+    75% {
+        box-shadow: 10px 0 #0005, 20px 0 #0005;
+        background: #0002
+    }
+    100% {
+        box-shadow: 10px 0 #0002, 20px 0 #000;
+        background: #0002
+    }
+}
+.collapsible-button {
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.collapsible-icon{
+    font-weight: bold;
+    font-size: 15px;
+}
+.alert-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}

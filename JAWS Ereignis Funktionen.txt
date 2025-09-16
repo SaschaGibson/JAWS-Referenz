@@ -1,0 +1,27 @@
+ Application Info Events: Ereignisse, die Informationen über Anwendungen bereitstellen.
+Clipboard Events: Ereignisse im Zusammenhang mit der Zwischenablage.
+Connection Events: Ereignisse, die Verbindungen betreffen.
+Cursors Events: Ereignisse im Zusammenhang mit Cursorbewegungen.
+Dialogs Events: Ereignisse, die Dialogfenster betreffen.
+Help Events: Ereignisse im Zusammenhang mit Hilfefunktionen.
+HTML Events: Ereignisse, die in HTML-Anwendungen auftreten.
+Keyboard Events: Ereignisse im Zusammenhang mit Tastatureingaben.
+Menus Events: Ereignisse, die Menüs betreffen.
+Mouse Events: Ereignisse im Zusammenhang mit Mausaktionen.
+Object Model And MSAA Events: Ereignisse, die das Objektmodell und Microsoft Active Accessibility betreffen.
+Optical Character Recognition Events: Ereignisse im Zusammenhang mit optischer Zeichenerkennung.
+SayAll Events: Ereignisse, die das Vorlesen von Text betreffen.
+Screen Text Events: Ereignisse im Zusammenhang mit Bildschirmtext.
+Scripts Events: Ereignisse, die Skriptaktivitäten betreffen.
+Secondary Focus Events and Helpers: Ereignisse im Zusammenhang mit sekundären Fokusänderungen.
+Selection Events: Ereignisse, die Auswahländerungen betreffen.
+Settings Events: Ereignisse im Zusammenhang mit Einstellungen.
+Window Events: Ereignisse, die Fensteränderungen betreffen.
+Beispiele für spezifische Ereignis-Handler:
+FocusChangedEvent: Wird aufgerufen, wenn der Fokus zwischen Anwendungen, Dialogen und Steuerelementen wechselt.
+NewTextEvent: Wird aufgerufen, wenn neuer Text auf dem Bildschirm erscheint.
+AutoStartEvent: Wird aufgerufen, wenn eine Anwendung gestartet oder aktiv wird.
+BottomEdgeEvent: Wird aufgerufen, wenn der aktive Cursor den unteren Rand eines Fensters erreicht.
+DocumentLoadedEvent: Ein HTML-Ereignis, das aufgerufen wird, wenn ein Dokument geladen wird.
+ForegroundWindowChangedEvent: Wird aufgerufen, wenn das Vordergrundfenster geändert wird.
+Diese Ereignis-Handler bieten eine flexible Möglichkeit, Skripte zu erstellen, die auf Benutzerinteraktionen und Systemänderungen reagieren. Sie können in Ihren Skripten definiert werden, um spezifische Anpassungen vorzunehmen, die auf die Bedürfnisse der Benutzer zugeschnitten sind.

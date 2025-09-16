@@ -1,0 +1,543 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zoomtext2024\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: zoomtext2024\n"
+"X-Crowdin-Project-ID: 611785\n"
+"X-Crowdin-Language: et\n"
+"X-Crowdin-File: GetVoices.po\n"
+"X-Crowdin-File-ID: 2605\n"
+"Language-Team: Estonian\n"
+"PO-Revision-Date: 2023-09-08 17:19\n"
+
+#. Models\VoiceServer.cs: 15,
+msgid "Unable to communicate with the server. Check your Internet connection and try again. If the problem persists, contact technical support for assistance."
+msgstr "Ei suuda serveriga ühendust luua. Kontrolli internetiühendust ja proovi uuesti. Kui probleem püsib, võta abi saamiseks ühendust tehnilise toega."
+
+#. Models\VoiceServer.cs: 16,
+msgid "\\n\\nError Code:  {0}"
+msgstr "\\n\\nVeakood:  {0}"
+
+#. ViewModels\GetVoicesViewModel.cs: 131,
+msgid "Selection Required"
+msgstr "Valik on nõutav"
+
+#. ViewModels\GetVoicesViewModel.cs: 132,
+msgid "You must select one or more new voices from the list before installation can begin."
+msgstr "Loetelust tuleb valida üks või mitu uut häält, enne kui paigaldamine saab alata."
+
+#. ViewModels\GetVoicesViewModel.cs: 155,
+msgid "No Voices"
+msgstr "Pole hääli"
+
+#. ViewModels\GetVoicesViewModel.cs: 156,
+msgid "There are no Vocalizer Expressive 2 voices installed on the system."
+msgstr "Süsteemi pole paigaldatud ühtegi Vocalizer Expressive 2 häält."
+
+#. ViewModels\GetVoicesViewModel.cs: 192,
+msgid "No Compact Voices"
+msgstr "Pole kompaktseid hääli"
+
+#. ViewModels\GetVoicesViewModel.cs: 193,
+msgid "There are no Vocalizer Expressive 2 Compact voices installed on the system."
+msgstr "Süsteemi pole paigaldatud ühtegi Vocalizer Expressive 2 kompaktset häält."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 18,
+msgid "An error has occurred while downloading the {0} voice. Check your Internet connection and try again. If the problem persists, contact technical support for assistance."
+msgstr "Juhtus viga hääle {0} allalaadimise ajal. Kontrolli internetiühendust ja proovi uuesti. Kui viga püsib, võta abi saamiseks ühendust tehnilise toega."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 19,
+msgid "Download Error"
+msgstr "Allalaadimise viga"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 20,
+msgid "Downloading {0}"
+msgstr "Laadin alla {0}"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 22,
+msgid "An error has occurred and installation could not continue. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Juhtus viga ja paigaldamine ei saa jätkuda. Palun proovi hiljem uuesti. Kui viga püsib, võta abi saamiseks ühendust tehnilise toega."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 23,
+msgid "Error"
+msgstr "Viga"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 24,
+msgid "An error has occurred while installing the {0} voice. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Juhtus viga hääle {0} paigaldamisel. Palun proovi hiljem uuesti. Kui probleem püsib, võta abi saamiseks ühendust tehnilise toega."
+
+#. ViewModels\InstallingVoicesViewModel.cs: 25,
+msgid "Install Error"
+msgstr "Paigaldamise viga"
+
+#. ViewModels\InstallingVoicesViewModel.cs: 26,
+msgid "Installing {0}"
+msgstr "Paigaldan: {0}"
+
+#. ViewModels\RemoveAVoiceViewModel.cs: 52, RemoveSelectedVoices
+msgid "You must select one or more voices from the list before uninstallation can begin."
+msgstr "Pead loetelust valima ühe või mitu häält, enne kui eemaldamine saab alata."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 15,
+msgid "An error has occurred and uninstallation could not continue. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Juhtus viga ja eemaldamine ei saa jätkuda. Palun proovi hiljem uuesti. Kui probleem püsib, võta abi saamiseks ühendust tehnilise toega."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 17,
+msgid "An error has occurred while uninstalling the {0} voice. Please try again later. If the problem persists, contact technical support for assistance."
+msgstr "Juhtus viga hääle {0} eemaldamisel. Palun proovi hiljem uuesti. Kui probleem püsib, võta abi saamiseks ühendust tehnilise toega."
+
+#. ViewModels\RemovingVoicesViewModel.cs: 18,
+msgid "Uninstall Error"
+msgstr "Eemaldamise viga"
+
+#. ViewModels\RemovingVoicesViewModel.cs: 19,
+msgid "Removing {0}"
+msgstr "Eemaldan: {0}"
+
+#. ViewModels\RemovingVoicesViewModel.cs: 20,
+msgid "\\n\\nError Code: {0}"
+msgstr "\\n\\nVeakood: {0}"
+
+#. ViewModels\VoiceInstallOption.cs: 60, UpdateDisplayName
+msgid ", Already installed."
+msgstr ", Juba paigaldatud."
+
+#. ViewModels\VoiceUninstallOption.cs: 23,
+msgid "Compact"
+msgstr "Kompaktne"
+
+#. Views\GetVoicesWindow.xaml.cs: 36, InstallVoices
+msgid "You are about to install a Vocalizer Expressive version 2 voice.  Your existing version 1 voices shall be unavailable while version 2 voices are installed.  Are you sure you want to continue?"
+msgstr "Oled paigaldamas Vocalizer Expressive versioon 2 häält.  Praegu paigaldatud versioon 1 hääled on mittekättesaadavad, ajal mil versioon 2 hääled on paigaldatud.  Oled kindel, et soovid jätkata?"
+
+#. Views\GetVoicesWindow.xaml.cs: 37, InstallVoices
+msgid "Confirmation Required"
+msgstr "Nõutav on kinnitus"
+
+#. Views\GetVoicesWindow.xaml.cs: 65, RemoveVoices
+msgid "Are you sure you want to remove all Vocalizer Expressive 2 Compact voices?"
+msgstr "Oled kindel, et soovid eemaldada kõik Vocalizer Expressive 2 kompaktsed hääled?"
+
+#. Views\GetVoicesWindow.xaml.cs: 66, RemoveVoices
+msgid "Are you sure you want to remove all Vocalizer Expressive 2 voices?"
+msgstr "Oled kindel, et soovid eemaldada kõik Vocalizer Expressive 2 hääled?"
+
+#. Views\GetVoicesWindow.xaml.cs: 68, RemoveVoices
+msgid "Remove Voices"
+msgstr "Häälte eemaldamine"
+
+#. Views\InstallingVoicesWindow.xaml.cs: 41, ShowSuccess
+msgid "Your voices have been successfully installed."
+msgstr "Hääled on edukalt paigaldatud."
+
+#. Views\InstallingVoicesWindow.xaml.cs: 42, ShowSuccess
+#. Views\RemovingVoicesWindow.xaml.cs: 41, ShowSuccess
+msgid " You must restart {0} in order for these changes to take effect."
+msgstr " Pead taaskäivitama rakenduse {0}, et tehtud muudatused hakkaks tööle."
+
+#. Views\InstallingVoicesWindow.xaml.cs: 44, ShowSuccess
+msgid "Installation Complete"
+msgstr "Paigaldamine valmis"
+
+#. Views\InstallingVoicesWindow.xaml.cs: 45, ShowSuccess
+msgid "_Finish"
+msgstr "_Valmis"
+
+#. Views\RemovingVoicesWindow.xaml.cs: 40, ShowSuccess
+msgid "Your voices have been successfully removed."
+msgstr "Hääled on edukalt eemaldatud."
+
+#. Views\RemovingVoicesWindow.xaml.cs: 43, ShowSuccess
+msgid " Some changes will not take effect until you restart your computer."
+msgstr " Mõned muudatused ei hakka tööle enne, kui arvuti taaskäivitatakse."
+
+#. Views\RemovingVoicesWindow.xaml.cs: 45, ShowSuccess
+msgid "Uninstall Complete"
+msgstr "Eemaldamine valmis"
+
+#. Views\SimpleDialog.xaml.cs: 54, ApplyStyle
+msgid "_Yes"
+msgstr "_Jah"
+
+#. Views\SimpleDialog.xaml.cs: 55, ApplyStyle
+msgid "_No"
+msgstr "_Ei"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:AdditionalOptionsGroup"
+msgid "Additional Options:"
+msgstr "Lisavalikud:"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 20, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveAVoiceButton"
+msgid "_Remove a Voice..."
+msgstr "_Eemalda hääl..."
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 24, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveCompactVoicesButton"
+msgid "Remove All Co_mpact Voices"
+msgstr "Eemalda kõik ko_mpaktsed hääled"
+
+#. GetVoices\Views\AdditionalOptionsControl.xaml: 29, LocalizeExtension
+msgctxt "GetVoices.Views.AdditionalOptionsControl:RemoveAllVoicesButton"
+msgid "Remove _All Voices"
+msgstr "Eem_alda kõik hääled"
+
+#. GetVoices\Views\GetVoicesWindow.xaml: 11, LocalizeExtension
+msgctxt "GetVoices.Views.GetVoicesWindow:MainWindow"
+msgid "Add/Remove Vocalizer Expressive Voices"
+msgstr "Lisa/Eemalda Vocalizer Expressive hääli"
+
+#. GetVoices\Views\GetVoicesWindow.xaml: 44, LocalizeExtension
+msgctxt "GetVoices.Views.GetVoicesWindow:CloseButton"
+msgid "_Close"
+msgstr "_Sule"
+
+#. GetVoices\Views\InstallingVoicesWindow.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.InstallingVoicesWindow:MainWindow"
+msgid "Installing Voices"
+msgstr "Häälte paigaldamine"
+
+#. GetVoices\Views\InstallingVoicesWindow.xaml: 50, LocalizeExtension
+msgctxt "GetVoices.Views.InstallingVoicesWindow:CancelButton"
+msgid "_Cancel"
+msgstr "_Loobu"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 13, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:MainWindow"
+msgid "Remove a Voice"
+msgstr "Eemalda hääl"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:InstalledVoicesLabel"
+msgid "Installed _Voices:"
+msgstr "Paigaldatud _hääled:"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 60, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:RemoveSelectedVoicesButton"
+msgid "_Remove Selected Voices"
+msgstr "_Eemalda valitud hääled"
+
+#. GetVoices\Views\RemoveAVoiceWindow.xaml: 72, LocalizeExtension
+msgctxt "GetVoices.Views.RemoveAVoiceWindow:CloseButton"
+msgid "_Close"
+msgstr "_Sule"
+
+#. GetVoices\Views\RemovingVoicesWindow.xaml: 14, LocalizeExtension
+msgctxt "GetVoices.Views.RemovingVoicesWindow:MainWindow"
+msgid "Removing Voices"
+msgstr "Häälte eemaldamine"
+
+#. GetVoices\Views\RemovingVoicesWindow.xaml: 49, LocalizeExtension
+msgctxt "GetVoices.Views.RemovingVoicesWindow:CancelButton"
+msgid "_Cancel"
+msgstr "_Loobu"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 18, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:SelectLanguageLabel"
+msgid "Select a _Language:"
+msgstr "Vali kee_l:"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:SelectVoicesLabel"
+msgid "Premium _Voices:"
+msgstr "Premium _hääled:"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 62, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:PlaySampleButton"
+msgid "_Play Sample"
+msgstr "_Mängi näidet"
+
+#. GetVoices\Views\SampleAndSelectVoicesControl.xaml: 66, LocalizeExtension
+msgctxt "GetVoices.Views.SampleAndSelectVoicesControl:InstallSelectedVoicesButton"
+msgid "_Install Selected Voices"
+msgstr "_Paigalda valitud hääled"
+
+#. GetVoices\Views\SimpleDialog.xaml: 32, LocalizeExtension
+msgctxt "GetVoices.Views.SimpleDialog:OKButton"
+msgid "_OK"
+msgstr "_OK"
+
+#. GetVoices\Views\SimpleDialog.xaml: 38, LocalizeExtension
+msgctxt "GetVoices.Views.SimpleDialog:CancelButton"
+msgid "_Cancel"
+msgstr "_Loobu"
+
+#. voices.ve2.json
+msgid "Arabic"
+msgstr "Araabia"
+
+#. voices.ve2.json
+msgid "Basque"
+msgstr "Baski"
+
+#. voices.ve2.json
+msgid "Bengali"
+msgstr "Bengali"
+
+#. voices.ve2.json
+msgid "Bulgarian"
+msgstr "Bulgaaria"
+
+#. voices.ve2.json
+msgid "Bhojpuri"
+msgstr "Bhodžpuri"
+
+#. voices.ve2.json
+msgid "Catalan"
+msgstr "Katalaani"
+
+#. voices.ve2.json
+msgid "Cantonese"
+msgstr "Kantoni"
+
+#. voices.ve2.json
+msgid "Czech"
+msgstr "Tšehhi"
+
+#. voices.ve2.json
+msgid "Danish"
+msgstr "Taani"
+
+#. voices.ve21.json
+msgid "Dongbei Chinese"
+msgstr "Dongbei hiina"
+
+#. voices.ve2.json
+msgid "Dutch"
+msgstr "Hollandi"
+
+#. voices.ve2.json
+msgid "Belgian Dutch"
+msgstr "Belgia hollandi"
+
+#. voices.ve2.json
+msgid "English"
+msgstr "Inglise"
+
+#. voices.ve2.json
+msgid "English Australian"
+msgstr "Austraalia inglise"
+
+#. voices.ve2.json
+msgid "English Irish"
+msgstr "Iiri inglise"
+
+#. voices.ve2.json
+msgid "English British"
+msgstr "Briti inglise"
+
+#. voices.ve2.json
+msgid "English Indian"
+msgstr "India inglise"
+
+#. voices.ve2.json
+msgid "English Scottish"
+msgstr "Šoti inglise"
+
+#. voices.ve2.json
+msgid "English United States"
+msgstr "USA inglise"
+
+#. voices.ve2.json
+msgid "English South African"
+msgstr "Lõuna-Aafrika inglise"
+
+#. voices.ve21.json
+msgid "Farsi"
+msgstr "Farsi"
+
+#. voices.ve2.json
+msgid "Finnish"
+msgstr "Soome"
+
+#. voices.ve2.json
+msgid "French"
+msgstr "Prantsuse"
+
+#. voices.ve21.json
+msgid "French Belgian"
+msgstr "Belgia prantsuse"
+
+#. voices.ve2.json
+msgid "French Canadian"
+msgstr "Kanada prantsuse"
+
+#. voices.ve2.json
+msgid "German"
+msgstr "Saksa"
+
+#. voices.ve2.json
+msgid "Galician"
+msgstr "Galeegi"
+
+#. voices.ve2.json
+msgid "Greek"
+msgstr "Kreeka"
+
+#. voices.ve2.json
+msgid "Hebrew"
+msgstr "Heebria"
+
+#. voices.ve2.json
+msgid "Hindi"
+msgstr "Hindi"
+
+#. voices.ve2.json
+msgid "Croatian"
+msgstr "Horvaatia"
+
+#. voices.ve2.json
+msgid "Hungarian"
+msgstr "Ungari"
+
+#. voices.ve2.json
+msgid "Indonesian"
+msgstr "Indoneesia"
+
+#. voices.ve2.json
+msgid "Italian"
+msgstr "Itaalia"
+
+#. voices.ve2.json
+msgid "Japanese"
+msgstr "Jaapani"
+
+#. voices.ve2.json
+msgid "Kannada"
+msgstr "Kannada"
+
+#. voices.ve2.json
+msgid "Korean"
+msgstr "Korea"
+
+#. voices.ve2.json
+msgid "Marathi"
+msgstr "Marathi"
+
+#. voices.ve2.json
+msgid "Chinese"
+msgstr "Hiina"
+
+#. voices.ve2.json
+msgid "Mandarin Chinese"
+msgstr "Mandariini"
+
+#. voices.ve2.json
+msgid "Taiwanese"
+msgstr "Taiwani"
+
+#. voices.ve2.json
+msgid "Mandarin Taiwanese"
+msgstr "Taiwani mandariini"
+
+#. voices.ve21.json
+msgid "Malay"
+msgstr "Malai"
+
+#. voices.ve2.json
+msgid "Norwegian"
+msgstr "Norra"
+
+#. voices.ve2.json
+msgid "Polish"
+msgstr "Poola"
+
+#. voices.ve2.json
+msgid "Portuguese"
+msgstr "Portugali"
+
+#. voices.ve2.json
+msgid "Brazilian Portuguese"
+msgstr "Brasilia portugali"
+
+#. voices.ve2.json
+msgid "Romanian"
+msgstr "Rumeenia"
+
+#. voices.ve2.json
+msgid "Russian"
+msgstr "Vene"
+
+#. voices.ve21.json
+msgid "Shanghainese Chinese"
+msgstr "Shanghai hiina"
+
+#. voices.ve21.json
+msgid "Sichuanese Chinese"
+msgstr "Sichuani hiina"
+
+#. voices.ve2.json
+msgid "Slovakian"
+msgstr "Slovaki"
+
+#. voices.ve21.json
+msgid "Slovenian"
+msgstr "Sloveenia"
+
+#. voices.ve2.json
+msgid "Spanish"
+msgstr "Hispaania"
+
+#. voices.ve2.json
+msgid "Spanish Argentinian"
+msgstr "Argentina hispaania"
+
+#. voices.ve2.json
+msgid "Spanish Columbian"
+msgstr "Colombia hispaania"
+
+#. voices.ve2.json
+msgid "Spanish Castilian"
+msgstr "Kastiilia hispaania"
+
+#. voices.ve2.json
+msgid "Spanish Chilean"
+msgstr "Tšiili hispaania"
+
+#. voices.ve2.json
+msgid "Spanish Latin American"
+msgstr "Ladina-Ameerika hispaania"
+
+#. voices.ve2.json
+msgid "Swedish"
+msgstr "Rootsi"
+
+#. voices.ve21.json
+msgid "Shaanxi Chinese"
+msgstr "Shaanxi hiina"
+
+#. voices.ve2.json
+msgid "Tamil"
+msgstr "Tamili"
+
+#. voices.ve2.json
+msgid "Telugu"
+msgstr "Telugu"
+
+#. voices.ve2.json
+msgid "Thai"
+msgstr "Tai"
+
+#. voices.ve2.json
+msgid "Turkish"
+msgstr "Türgi"
+
+#. voices.ve21.json
+msgid "Ukrainian"
+msgstr "Ukraina"
+
+#. voices.ve2.json
+msgid "Valencian"
+msgstr "Katalaani"
+
+#. voices.ve21.json
+msgid "Vietnamese"
+msgstr "Vietnami"
+

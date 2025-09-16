@@ -1,0 +1,36 @@
+(: (C) Informatika a Latasserultekert Alapitvany 2010 :)
+(:(C) Laszlo Papp :)
+
+module namespace infoalap = "http://www.infoalap.eu/infoalapresearchit";
+
+(:Function to convert datetime values to the Hungarian format:)
+(:used in queries where the $URL variable point to an RSS channel:)
+declare function infoalap:parse-xml-date($date as xs:string) as xs:string*
+{
+let $date := replace ($date, "Jan", "01")
+let $date := replace ($date, "Feb", "02")
+let $date := replace ($date, "Mar", "03")
+let $date := replace ($date, "Apr", "04")
+let $date := replace ($date, "May", "05")
+let $date := replace ($date, "Jun", "06")
+let $date := replace ($date, "Jul", "07")
+let $date := replace ($date, "Aug", "08")
+let $date := replace ($date, "Sep", "09")
+let $date := replace ($date, "Oct", "10")
+let $date := replace ($date, "Nov", "11")
+let $date := replace ($date, "Dec", "12")
+
+let $date := tokenize ($date, ' ')
+
+let $date := if (string-length ($date[2]) = 1) then xs:string(concat($date[4], '-', $date[3], '-0', $date[2], 'T', $date[5])) else xs:string(concat($date[4], '-', $date[3], '-', $date[2], 'T', $date[5]))
+
+let $date := replace($date, "-", ".")
+let $date := replace($date, "T", " ")
+
+return
+concat($date, '
+')
+
+};
+
+

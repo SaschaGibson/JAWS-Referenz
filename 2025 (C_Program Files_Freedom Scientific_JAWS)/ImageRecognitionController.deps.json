@@ -1,0 +1,94 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0/win-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {},
+    ".NETCoreApp,Version=v8.0/win-x64": {
+      "ImageRecognitionController/1.0.0": {
+        "dependencies": {
+          "FSLogDotNetCore": "1.0.0",
+          "LocalizerDotNetCoreAPI": "1.0.0",
+          "Magick.NET-Q16-AnyCPU": "14.7.0",
+          "Magick.NET.Core": "14.7.0"
+        },
+        "runtime": {
+          "ImageRecognitionController.dll": {}
+        }
+      },
+      "Magick.NET-Q16-AnyCPU/14.7.0": {
+        "dependencies": {
+          "Magick.NET.Core": "14.7.0"
+        },
+        "runtime": {
+          "lib/net8.0/Magick.NET-Q16-AnyCPU.dll": {
+            "assemblyVersion": "14.7.0.0",
+            "fileVersion": "14.7.0.0"
+          }
+        },
+        "native": {
+          "runtimes/win-x64/native/Magick.Native-Q16-x64.dll": {
+            "fileVersion": "7.1.2.0"
+          }
+        }
+      },
+      "Magick.NET.Core/14.7.0": {
+        "runtime": {
+          "lib/net8.0/Magick.NET.Core.dll": {
+            "assemblyVersion": "14.7.0.0",
+            "fileVersion": "14.7.0.0"
+          }
+        }
+      },
+      "FSLogDotNetCore/1.0.0": {
+        "runtime": {
+          "FSLogDotNetCore.dll": {
+            "assemblyVersion": "26.6.24.0",
+            "fileVersion": "26.6.24.0"
+          }
+        }
+      },
+      "LocalizerDotNetCoreAPI/1.0.0": {
+        "runtime": {
+          "LocalizerDotNetCoreAPI.dll": {
+            "assemblyVersion": "1.0.9368.35062",
+            "fileVersion": "26.6.24.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ImageRecognitionController/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Magick.NET-Q16-AnyCPU/14.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uriLW6a9r6bS4bKRTap88vTY2WqxDhNlYBGgb/tbEkn6He65/Uo3Tut4KTeEAHhI9Tr+hku62g0YgVeKtTNgkQ==",
+      "path": "magick.net-q16-anycpu/14.7.0",
+      "hashPath": "magick.net-q16-anycpu.14.7.0.nupkg.sha512"
+    },
+    "Magick.NET.Core/14.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eXNEgZwUQ+QerJgIoAe9BlFolm3RzQ0k677AK5PLiLh701XQX1p878mt+jEQYJD58Jwcayto1UtFvtvnChyGyg==",
+      "path": "magick.net.core/14.7.0",
+      "hashPath": "magick.net.core.14.7.0.nupkg.sha512"
+    },
+    "FSLogDotNetCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LocalizerDotNetCoreAPI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,105 @@
+; File name: FSBrlDsp.inf
+; Copyright (c) Freedom Scientific BLV Group, LLC. All rights reserved.
+; Date: October 15, 2004
+; IMPORTANT NOTE: If you modify this file, you will need to change "DriverVer" under [Version] in order for the JAWS
+; installer to be more efficient.  The date must be specified in month/day/year order. The month and day must contain
+; two digits, and the year must contain four digits.
+; JAWS relies on this information to determine whether the driver needs to be installed.
+; Previous versions of JAWS were uninstalling the current driver when the current driver version was less than or equal to the
+; driver being installed.  This caused Hardware Wizard to constantly pop up, for ever installation of JAWS, under Windows XP, 
+; even when the driver did not change.
+; Now JAWS will only uninstall if the current driver version is less than the driver that is installed.  As a result, the Hardware
+; Wizard will only pop up on a ghosted system or when the driver version changes.
+
+[Version]
+Signature="$CHICAGO$"
+Class="Freedom USB"
+ClassGUID={72D7106A-EE4D-44d8-BD70-869C070C702C}
+provider=%FreedomScientific%
+CatalogFile = FSBrlDsp.cat
+DriverVer=02/22/2022,5.4.6.0
+
+[ClassInstall32.ntx86]
+AddReg=ClassAddReg
+
+[ClassInstall32.ntamd64]
+AddReg=ClassAddReg
+
+[ClassAddReg]
+HKR,,,,"Freedom USB"
+HKR,,Icon,,-20
+
+[SourceDisksNames]
+1=%DiskId%,,,
+[SourceDisksFiles]
+FSBRLDSP.sys = 1
+
+[Manufacturer]
+%FreedomScientificMfg%=FreedomScientificSection,ntx86,ntamd64
+
+[FreedomScientificSection.ntx86]
+%USB\VID_0F4E&PID_0110.DeviceDesc%=FSBRLDSP.Dev.ntx86,USB\VID_0F4E&PID_0110
+%USB\VID_0F4E&PID_0111.DeviceDesc%=FSBRLDSP.Dev.ntx86,USB\VID_0F4E&PID_0111
+%USB\VID_0F4E&PID_0112.DeviceDesc%=FSBRLDSP.Dev.ntx86,USB\VID_0F4E&PID_0112
+%USB\VID_0F4E&PID_0114.DeviceDesc%=FSBRLDSP.Dev.ntx86,USB\VID_0F4E&PID_0114
+%USB\VID_0F4E&PID_01FF.DeviceDesc%=FSBRLDSP.Dev.ntx86,USB\VID_0F4E&PID_01FF
+%USB\VID_0F4E&PID_FFFF.DeviceDesc%=FSBRLDSP.Dev.ntx86,USB\VID_0F4E&PID_FFFF
+%USB\VID_0F4E&PID_0100.DeviceDesc%=FSBRLDSP.Dev.ntx86,USB\VID_0F4E&PID_0100
+
+[FreedomScientificSection.ntamd64]
+%USB\VID_0F4E&PID_0110.DeviceDesc%=FSBRLDSP.Dev.ntamd64,USB\VID_0F4E&PID_0110
+%USB\VID_0F4E&PID_0111.DeviceDesc%=FSBRLDSP.Dev.ntamd64,USB\VID_0F4E&PID_0111
+%USB\VID_0F4E&PID_0112.DeviceDesc%=FSBRLDSP.Dev.ntamd64,USB\VID_0F4E&PID_0112
+%USB\VID_0F4E&PID_0114.DeviceDesc%=FSBRLDSP.Dev.ntamd64,USB\VID_0F4E&PID_0114
+%USB\VID_0F4E&PID_01FF.DeviceDesc%=FSBRLDSP.Dev.ntamd64,USB\VID_0F4E&PID_01FF
+%USB\VID_0F4E&PID_FFFF.DeviceDesc%=FSBRLDSP.Dev.ntamd64,USB\VID_0F4E&PID_FFFF
+%USB\VID_0F4E&PID_0100.DeviceDesc%=FSBRLDSP.Dev.ntamd64,USB\VID_0F4E&PID_0100
+
+[DestinationDirs]
+DefaultDestDir=10,System32\Drivers
+;InfCopyFiles        = 17                    ; %WinDir%\Inf
+
+[FSBRLDSP.Dev.ntx86]
+CopyFiles=DriverCopyFiles
+AddReg=FSBRLDSP.AddRegNt
+
+[FSBRLDSP.Dev.ntx86.Services]
+Addservice = FSBRLDSP, 0x00000002, FSBRLDSP.AddService
+
+[FSBRLDSP.Dev.ntamd64]
+CopyFiles=DriverCopyFiles
+AddReg=FSBRLDSP.AddRegNt
+
+[FSBRLDSP.Dev.ntamd64.Services]
+Addservice = FSBRLDSP, 0x00000002, FSBRLDSP.AddService
+
+[FSBRLDSP.AddService]
+DisplayName    = %FSBRLDSP.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\FSBRLDSP.sys
+;LoadOrderGroup = Base
+
+[FSBRLDSP.AddRegNt]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,FSBRLDSP.sys
+
+[DriverCopyFiles]
+FSBRLDSP.sys
+
+;---------------------------------------------------------------;
+
+[Strings]
+FreedomScientific="Freedom Scientific BLV Group, LLC"
+FreedomScientificMfg="Freedom Scientific BLV Group, LLC"
+DiskId="Braille display Installation Disk"
+USB\VID_0F4E&PID_0110.DeviceDesc="PAC Mate Braille Display Loader"
+USB\VID_0F4E&PID_0111.DeviceDesc="PAC Mate Braille Display"
+USB\VID_0F4E&PID_0112.DeviceDesc="Focus 2 Braille Display USB"
+USB\VID_0F4E&PID_0114.DeviceDesc="Focus 3 Braille Display USB"
+USB\VID_0F4E&PID_01FF.DeviceDesc="Braille Laser Test"
+USB\VID_0F4E&PID_FFFF.DeviceDesc="Cygnal Boot Loader"
+USB\VID_0F4E&PID_0100.DeviceDesc="Focus Braille Display"
+FSBRLDSP.SvcDesc="Freedom Scientific Braille Display USB driver (fsbrldsp.sys)"
+

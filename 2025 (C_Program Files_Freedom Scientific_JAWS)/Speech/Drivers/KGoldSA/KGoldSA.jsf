@@ -1,0 +1,124 @@
+; Configuration file for the 32-bit BrailleNote/Keynote Gold SA TTS driver for JAWS
+; File name:  KGoldSA.jsf
+;
+; This file is the control file for the 32-bit Keynote speech driver for JAWS.
+; Comment lines begin with a semicolon.
+
+[Settings]
+
+; LastCommPort:  The last serial port to scan for when searching for a Keynote synthesizer.
+; LastCommPort should be set to a number n where n is in the range 0-32.
+; If n=0, the driver will connect to the synthesizer attached to the serial port specified in the jfw.ini file.  If no
+; synthesizer is attached, the driver cannot start and JAWS will revert to Eloquence.
+; If n is in the range 1-32, the driver will search for a Keynote synthesizer attach to a serial port, starting with COM1 and ; ending with COMn.  If there is no Keynote synthesizer attached to any serial port in this range, the driver cannot start 
+; and JAWS will revert to  Eloquence.
+; NOTE:  the driver will default to 16 if LastCommPort is not present in the configuration file.
+LastCommPort=16
+
+; SilentCharFilter:  Filter out sequences of consecutive space and punctuation 
+; characters, that is, characters that may result in Keynote producing unwanted pauses 
+;in speech, from the stream being sent to the TTS driver.
+; SilentCharFilter should be set to a number n, where n >=0.
+; n=0 turns off the filter.
+; n>=1 causes the filter to strip punctuation or space characters appearing in the midst of 
+; n+2 consecutive punctuation/space characters.
+; NOTE:  The driver will assume n=1 if this parameter is not present in the configuration file.
+SilentCharFilter=1
+
+; The following lines allow the driver to control aspects of the
+; Keynote synthesizer's operation.  Specify 1 or 0 for each one.
+; If a line is commented out or not present in the configuration file, the driver sets it to a default value.
+; NOTE:  JAWS may effectively override these settings by preprocessing the text stream being output to the TTS driver.
+
+; ExpandAbbreviations:  Expand abbreviations in the synthesizer's on-board dictionary 
+; when they are encountered in the TTS stream.
+; 0 = on; 1 = off.  Driver default = 1 (off).
+ExpandAbbreviations=1
+
+; ForceLowercase:  Convert uppercase letters to lowercase.
+; 0 = off; 1 = on.  Driver default = on.
+; If on, Keynote spells groups of uppercase letters out letter by letter.  
+; Otherwise, they are read as words.
+ForceLowercase=1
+
+; ReadFullNumbers:  Read groups of digits as full numbers.
+; 0 = off; 1 = on.  Driver default = on.
+; If off, Keynote will read groups of fewer than 4 digits in pairs.  For example, 1920 would be rendered as nineteen twenty.
+; If on, Keynote always reads groups of digits, regardless of how many there are, 
+;  as full numbers.  For example, 1920 would be read as 1 thousand nine hundred twenty.
+ReadFullNumbers=1
+
+; AAnalysisFilter:  A filter for overriding the Keynote's pronunciation of the letter 'a'
+; when it appears alone in the TTS stream.
+; 0 = off; 1 = on.  Driver default = 1 (on).
+; When turned on, Keynote pronounces the letter 'a' correctly in more contexts.
+; this setting only takes effect if the synthesizer language is set to English.
+AAnalysisFilter = 1
+
+; BritishZFilter:  Determines if the letter z is spoken using American or British
+; pronunciation.
+; 0 = American pronunciation; 1 = British pronunciation.  Default = 0 (American pronunciation).
+; This setting only takes effect when the synthesizer language is set to  English.
+BritishZFilter=0
+
+; LanguageSwitching:  Determines how frequently the driver sends out JAWS-generated 
+; language-switching codes to the synthesizer.  Useful for testing and debugging.
+; 0 = never switch languages; 1 = switch languages only when necessary; 2 = always
+; switch languages when instructed by JAWS.  Default = 2 (always).
+; When set to 0, this setting prevents the driver from sending out language 
+; switching codes to the synthesizer.  A setting of one causes the driver to pass on 
+; language-switching requests to the synthesizer only when the new language difference from 
+; the one currently in use by the synthesizer.  A value of 2 causes all language-switching
+; codes to be passed through to the synthesizer without vetting.
+LanguageSwitching=1
+
+; StartLanguage:  Determines the start language when language switching is 
+; disabled.
+; 0 = English; 1 = spanish; 2 = French; 3 = German; 4 = Italian; 5 = Dutch; 
+; 6 = Japanese.  Default = 0 (English).
+; This setting only has an effect when language switching is disabled.
+StartLanguage=0
+
+; MaxReadRetries:  Determines how many times a serial read operation is retried before the driver 
+; gives up and fails to receive data from the synthesizer.  Default = 20.
+MaxReadRetries=20
+
+; MaxWriteRetries:  Determines how many times a serial write operation is retried before the 
+; driver gives up and fails to send data to the synthesizer.  Default = 12.
+MaxWriteRetries=12
+
+; MaxReadWaitTime:  The number of milliseconds to wait for a read operation to complete before 
+; the driver decides it has failed an retries the operation.  Default = 10.
+MaxReadWaitTime=10
+
+[Driver Information]
+DriverVersion=
+DriverDate=
+
+[Debugging Info]
+; If the following value is set to 1, the driver will record some debugging information.
+RecordDebuggingData=1
+; If the following value is set to 1, the driver will log all tts data sent to 
+; the synthesizer to a file.
+; WARNING:  This parameter should only be used under advisement; it is not for general use.
+; It can pose a security risk as any data written to the log file is available to 
+; anybody  with appropriate permissions.
+LogTTSOutput=0
+; The following values are written out to the "Debugging Info" section of the driver's
+; configuration file when RecordDebuggingData is set to 1.
+CommPortStatus=closed
+; NOTE:  The following information is only valid When RecordDebuggingData is set to 1 
+; and CommPortStatus contains the value "open".
+CommPort=
+KeynoteVersion=
+StopSpeechAcknowledgeCode=
+ReturnBaseValue=
+ResetAcknowledgeCode=
+IndexBaseValue=
+XOnChar=
+XOffChar=
+TextNormaliserResets=
+LanguageDetectionByte=
+NumberOfLanguages=
+DefaultLanguageByte=
+DefaultLanguage=

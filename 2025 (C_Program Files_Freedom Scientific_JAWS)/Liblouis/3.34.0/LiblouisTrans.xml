@@ -1,0 +1,1489 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Configuration file for LiblouisTrans.dll -->
+<!-- Note that modes are not necessarily listed in order, you must find an unused ID to add a new mode. -->
+<LiblouisTrans>
+    
+    <!--
+        Options are global settings that apply to all modes.
+        Path values are relative to the directory of the translator.
+    -->
+    <Options>
+        <!--
+            Relative path to the directory in which the Tables
+            defined for each Mode can be found.
+        -->
+        <TablesPath>Liblouis\3.34.0\tables</TablesPath>
+        
+        <!--
+            Relative path to the directory in which the Symbols
+            defined for each Mode can be found.
+        -->
+        <SymbolsPath>Liblouis\3.34.0\symbols</SymbolsPath>
+        
+        <!--
+            If enabled, Liblouis itself will generate a logfile of its
+            actions in the current directory.
+        -->
+        <EnableLiblouisLogging>false</EnableLiblouisLogging>
+        
+        <!--
+            If enabled, translation output will be in Unicode Braille
+            format, instead of text.
+        -->
+        <EnableUnicodeBraille>true</EnableUnicodeBraille>
+
+        <NoUndefinedDots>true</NoUndefinedDots>
+        <PartialTrans>false</PartialTrans>
+        
+        <!--
+            If nonempty, will force the translator to use the defined
+            language.
+        -->
+        <LanguageOverride></LanguageOverride>
+    </Options>
+    
+    <!--
+        Each Mode element defines an available mode for the Translator
+        that is associated with a particular language.
+        Mode specific settings should be defined here.
+    -->
+    <Modes>
+        <!-- 
+            The order of these modes determines the order of appearance
+            in the translation modes combo box.  The Id attribute is an
+            arbitrary numerical identifier that must be unique.
+        -->
+        
+        <!-- Afrikaans -->
+        <Mode   Id="1"
+                Language="afk"
+                DisplayName="Afrikaans Grade 1"
+				GradeCategory="1"
+                Table="afr-za-g1.ctb"
+                Symbols="" />
+        <Mode   Id="101"
+                Language="afk"
+                DisplayName="Afrikaans Grade 2"
+				GradeCategory="2"
+                Table="afr-za-g2.ctb"
+                Symbols="" />
+        
+        <!-- Ancient Languages -->
+        <Mode   Id="700"
+                Language="akk"
+                DisplayName="Ancient languages, U.S."
+				GradeCategory="1"
+								Table="ancient-languages-us.utb"
+                Symbols="" />
+        <Mode   Id="701"
+                Language="akk"
+                DisplayName="Ancient languages, Borger"
+				GradeCategory="1"
+								Table="ancient-languages-borger.utb"
+                Symbols="" />
+        <Mode   Id="702"
+                Language="akk"
+                DisplayName="Akkadian, U.S."
+				GradeCategory="1"
+                Table="akk.utb"
+                Symbols="" />
+        <Mode   Id="703"
+                Language="akk"
+                DisplayName="Akkadian, Borger"
+				GradeCategory="1"
+                Table="akk-borger.utb"
+                Symbols="" />
+        <Mode   Id="704"
+                Language="akk"
+                DisplayName="Cuneiform, transliterated"
+				GradeCategory="1"
+                Table="cuneiform-transliterated.utb"
+                Symbols="" />
+        <Mode   Id="705"
+                Language="akk"
+                DisplayName="Ugaritic"
+				GradeCategory="1"
+                Table="uga.utb"
+                Symbols="" />
+        <Mode   Id="706"
+                Language="akk"
+                DisplayName="Hebrew, Biblical"
+				GradeCategory="1"
+                Table="hbo.utb"
+                Symbols="" />
+
+        <!-- Arabic -->
+        <Mode   Id="2"
+                Language="arb"
+                DisplayName="Arabic Grade 1"
+				GradeCategory="1"
+                Table="ar-ar-g1.utb"
+                Symbols="" />
+        <Mode   Id="3"
+                Language="arb"
+                DisplayName="Arabic Grade 2"
+				GradeCategory="2"
+                Table="ar-ar-g2.ctb"
+                Symbols="" />
+        <Mode   Id="102"
+                Language="arb"
+                DisplayName="Arabic Computer Braille"
+				GradeCategory="0"
+                Table="ar-ar-comp8.utb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+        
+        <!-- Bulgarian -->
+        <Mode   Id="4"
+                Language="bgr"
+                DisplayName="Bulgarian Literary Braille"
+				GradeCategory="1"
+                Table="bg.utb"
+                Symbols="" />
+        <Mode   Id="104"
+                Language="bgr"
+                DisplayName="Bulgarian computer Braille"
+				GradeCategory="0"
+                Table="bg.tbl"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+
+        <!-- Catalan -->
+        <Mode   Id="5"
+                Language="cat"
+                DisplayName="Catalan"
+				GradeCategory="1"
+                Table="ca-g1.ctb"
+                Symbols="" />
+        
+        <!-- Tibetan -->
+        <Mode   Id="6"
+                Language="bob"
+                DisplayName="Tibetan"
+				GradeCategory="1"
+                Table="bo.ctb"
+                Symbols="" />
+        
+        <!-- Czech -->
+        <Mode   Id="7"
+                Language="csy"
+                DisplayName="Czech Grade 1"
+				GradeCategory="1"
+                Table="cs-g1.ctb"
+                Symbols="" />
+        <Mode   Id="107"
+                Language="csy"
+                DisplayName="Czech Computer Braille"
+				GradeCategory="0"
+                Table="cs-comp8.utb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+
+        <!-- Welsh -->
+        <Mode   Id="67"
+                Language="cym"
+                DisplayName="Welsh Grade 1"
+				GradeCategory="1"
+                Table="cy-cy-g1.utb"
+                Symbols="" />
+        <Mode   Id="68"
+                Language="cym"
+                DisplayName="Welsh Grade 2"
+				GradeCategory="2"
+                Table="cy-cy-g2.ctb"
+                Symbols="" />
+        
+        <!-- Danish -->
+        <Mode   Id="8"
+                Language="dan"
+                DisplayName="Danish Grade 1 6 dot"
+				GradeCategory="1"
+                Table="da-dk-g16.ctb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="9"
+                Language="dan"
+                DisplayName="Danish Grade 2 6 dot"
+				GradeCategory="2"
+                Table="da-dk-g26.ctb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="70"
+                Language="dan"
+                DisplayName="Danish Grade 1 8 dot"
+				GradeCategory="1"
+                Table="da-dk-g18.ctb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="71"
+                Language="dan"
+                DisplayName="Danish Grade 2 8 dot"
+				GradeCategory="2"
+                Table="da-dk-g28.ctb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="148"
+                Language="dan"
+                DisplayName="Danish Grade 1 6 dot (1993)"
+				GradeCategory="1"
+                Table="da-dk-g16_1993.ctb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="149"
+                Language="dan"
+                DisplayName="Danish Grade 2 6 dot (1993)"
+				GradeCategory="2"
+                Table="da-dk-g26_1993.ctb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="150"
+                Language="dan"
+                DisplayName="Danish Grade 1 8 dot (1993)"
+				GradeCategory="1"
+                Table="da-dk-g18_1993.ctb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="151"
+                Language="dan"
+                DisplayName="Danish Grade 2 8 dot (1993)"
+				GradeCategory="2"
+                Table="da-dk-g28_1993.ctb"
+                Symbols="" 
+                AllowInput="1" />
+
+        <!-- German -->
+        <Mode   Id="10"
+                Language="deu"
+                DisplayName="German Grade 0"
+				GradeCategory="0"
+                Table="de-g0.utb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="11"
+                Language="deu"
+                DisplayName="German Grade 1"
+				GradeCategory="1"
+                Table="de-g1.ctb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="12"
+                Language="deu"
+                DisplayName="German Grade 2"
+				GradeCategory="2"
+                Table="de-g2.ctb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="110"
+                Language="deu"
+                DisplayName="German Computer Braille"
+				GradeCategory="0"
+                Table="de-de-comp8.ctb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+
+        <!-- Filipino -->
+				<!-- Note that Filipino uses English G1 for uncontracted braille -->
+        <Mode   Id="13"
+                Language="fil"
+                DisplayName="Filipino Uncontracted Braille"
+				GradeCategory="1"
+                Table="en-ueb-g1.ctb"
+                Symbols="" />
+        <Mode   Id="14"
+                Language="fil"
+                DisplayName="Filipino Contracted Braille"
+				GradeCategory="2"
+                Table="fil-g2.ctb"
+                Symbols="" />
+        
+        <!-- Greek -->
+        <Mode   Id="16"
+                Language="ell"
+                DisplayName="Greek"
+				GradeCategory="1"
+                Table="el.ctb"
+                Symbols="" />
+        
+        <!-- English (U.K.) -->
+        <Mode   Id="17"
+                Language="eng"
+                DisplayName="U.K. English Grade 1"
+				GradeCategory="1"
+                Table="en-gb-g1.utb"
+                Symbols=""
+                AllowInput="1" />
+        <Mode   Id="18"
+                Language="eng"
+                DisplayName="U.K. English Grade 2"
+				GradeCategory="2"
+                Table="en-GB-g2.ctb"
+                Symbols=""
+                AllowInput="1" />
+        <Mode   Id="72"
+                Language="eng"
+                DisplayName="Unified English Braille Grade 1"
+				GradeCategory="1"
+                Table="EN-UEB-FSI-G1.ctb"
+                Symbols="enu-ceb.xml"
+                MathCode="Nemeth" />
+        <Mode   Id="73"
+                Language="eng"
+                DisplayName="Unified English Braille Grade 2"
+				GradeCategory="2"
+                Table="En-UEB-FSI-G2.CTB"
+                Symbols="enu-ceb.xml"
+                AllowInput="1"
+                MathCode="Nemeth" />
+        <Mode   Id="117"
+                Language="eng"
+                DisplayName="U.K. English Computer Braille"
+				GradeCategory="0"
+                Table="en-gb-comp8.ctb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+				
+         <!-- U.S. English -->
+        <Mode   Id="19"
+                Language="enu"
+                DisplayName="U.S. English Grade 1"
+				GradeCategory="1"
+                Table="EN-US-FSI-G1.ctb"
+                Symbols="enu-ceb.xml"
+                MathCode="Nemeth" />
+        <Mode   Id="20"
+                Language="enu"
+                DisplayName="U.S. English Grade 2"
+				GradeCategory="2"
+                Table="En-US-FSI-G2.CTB"
+                Symbols="enu-ceb.xml" 
+                AllowInput="1"
+                MathCode="Nemeth" />
+        <Mode   Id="21"
+                Language="enu"
+                DisplayName="Unified English Braille Grade 1"
+				GradeCategory="1"
+                Table="EN-UEB-FSI-G1.ctb"
+                Symbols="enu-ceb.xml"
+                MathCode="Nemeth" />
+        <Mode   Id="22"
+                Language="enu"
+                DisplayName="Unified English Braille Grade 2"
+				GradeCategory="2"
+                Table="En-UEB-FSI-G2.CTB"
+                Symbols="enu-ceb.xml"
+                AllowInput="1"
+                MathCode="Nemeth" />
+        <Mode   Id="119"
+                Language="enu"
+                DisplayName="U.S. English Computer Braille"
+				GradeCategory="0"
+                Table="en-us-comp8-ext.utb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+
+        <!-- Spanish -->
+        <Mode   Id="23"
+                Language="esn"
+                DisplayName="Spanish Grade 1"
+				GradeCategory="1"
+                Table="es-g1.ctb"
+                Symbols="" />
+        <Mode   Id="81"
+                Language="esn"
+                DisplayName="Spanish Grade 2"
+				GradeCategory="2"
+                Table="es-g2.ctb"
+                Symbols="" />
+        <Mode   Id="123"
+                Language="esn"
+                DisplayName="Spanish Computer Braille"
+				GradeCategory="0"
+                Table="Es-Es-G0.utb"
+                Symbols="" 
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+        
+        <!-- Estonian -->
+        <Mode   Id="24"
+                Language="eti"
+                DisplayName="Estonian"
+				GradeCategory="0"
+                Table="et-g0.utb"
+                Symbols="" />
+
+        <!-- Ethiopic -->
+        <Mode   Id="25"
+                Language="eth"
+                DisplayName="Ethiopic Grade 1"
+				GradeCategory="1"
+                Table="ethio-g1.ctb"
+                Symbols="" />
+
+        <!-- Finnish -->
+        <Mode   Id="26"
+                Language="fin"
+                DisplayName="Finnish"
+                GradeCategory="1"
+				Table="fi.utb"
+                Symbols="" />
+        <Mode   Id="126"
+                Language="fin"
+                DisplayName="Finnish Computer Braille"
+				GradeCategory="0"
+                Table="fi-fi-8dot.ctb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+        
+        <!-- Laotion -->
+        <Mode   Id="27"
+                Language="loa"
+                DisplayName="Lao Grade 1 Braille"
+				GradeCategory="1"
+                Table="lo-g1.utb"
+                Symbols="" />
+
+        <!-- French -->
+        <Mode   Id="74"
+                Language="fra"
+                DisplayName="Unified French Grade 1"
+				GradeCategory="1"
+                Table="fr-bfu-comp6.utb"
+                Symbols=""
+                AllowInput="1" />
+        <Mode   Id="75"
+                Language="fra"
+                DisplayName="Unified French Grade 2"
+                GradeCategory="2"
+				Table="Fr-bfu-g2.ctb"
+                Symbols=""
+                AllowInput="1" />
+        <Mode   Id="174"
+                Language="fra"
+                DisplayName="French Computer Braille"
+				GradeCategory="0"
+                Table="fr-bfu-comp8.utb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+                        
+        <!-- French Canadian -->
+        <Mode   Id="76"
+                Language="frc"
+                DisplayName="Unified French Grade 1"
+                GradeCategory="1"
+				Table="fr-bfu-comp6.utb"
+                Symbols=""
+                AllowInput="1" />
+        <Mode   Id="77"
+                Language="frc"
+                DisplayName="Unified French Grade 2"
+                GradeCategory="2"
+				Table="Fr-bfu-g2.ctb"
+                Symbols=""
+                AllowInput="1" />
+                        
+        <!-- Gujarati -->
+        <Mode   Id="31"
+                Language="guj"
+                DisplayName="Gujarati"
+				GradeCategory="1"
+                Table="gu-in-g1.utb"
+                Symbols="" />
+        
+        <!-- Hebrew -->
+        <Mode   Id="32"
+                Language="heb"
+                DisplayName="Hebrew"
+				GradeCategory="1"
+                Table="he-IL.utb"
+                Symbols="" />
+        <Mode   Id="132"
+                Language="heb"
+                DisplayName="Hebrew Computer Braille"
+				GradeCategory="0"
+                Table="he-IL-comp8.utb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+
+        <!-- Hindi -->
+        <Mode   Id="33"
+                Language="hin"
+                DisplayName="Hindi"
+				GradeCategory="1"
+                Table="hi-in-g1.utb"
+                Symbols="" />
+        
+        <!-- Croatian -->
+        <Mode   Id="34"
+                Language="hrv"
+                DisplayName="Croatian"
+				GradeCategory="1"
+                Table="hr-g1.ctb"
+                Symbols="" />
+        <Mode   Id="134"
+                Language="hrv"
+                DisplayName="Croatian Computer Braille"
+				GradeCategory="0"
+                Table="hr-comp8.utb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+        
+        <!-- Hungarian -->
+        <Mode   Id="35"
+                Language="hun"
+                DisplayName="Hungarian Grade 1"
+				GradeCategory="1"
+                Table="hu-hu-g1.ctb"
+                Symbols="hun-ceb.xml"
+                MathCode="Nemeth" />
+        <Mode   Id="80"
+                Language="hun"
+                DisplayName="Hungarian Grade 2"
+				GradeCategory="2"
+                Table="hu-hu-g2.ctb"
+                Symbols="hun-ceb.xml"
+                MathCode="Nemeth" />
+        <Mode   Id="135"
+                Language="hun"
+                DisplayName="Hungarian Computer Braille"
+				GradeCategory="0"
+                Table="hu-hu-comp8.ctb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+        
+        <!-- Armenian -->
+        <Mode   Id="36"
+                Language="hye"
+                DisplayName="Armenian"
+				GradeCategory="1"
+                Table="hy.ctb"
+                Symbols="" />
+        
+        <!-- Icelandic -->
+        <Mode   Id="37"
+                Language="isl"
+                DisplayName="Icelandic"
+				GradeCategory="1"
+                Table="is.ctb"
+                Symbols="" />
+        
+        <!-- Kannada -->
+        <Mode   Id="38"
+                Language="kan"
+                DisplayName="Kannada"
+				GradeCategory="1"
+                Table="ka-in-g1.utb"
+                Symbols="" />
+        
+        <!-- Korean -->
+        <Mode   Id="39"
+                Language="kor"
+                DisplayName="Korean Grade 1"
+                GradeCategory="1"
+				Table="ko-g1.ctb"
+                Symbols="" />
+        <Mode   Id="40"
+                Language="kor"
+                DisplayName="Korean Grade 2"
+				GradeCategory="2"
+                Table="ko-g2.ctb"
+                Symbols="" />
+        <Mode   Id="139"
+                Language="kor"
+                DisplayName="Korean Grade 1 (2006)"
+				GradeCategory="1"
+                Table="ko-2006-g1.ctb"
+                Symbols="" />
+        <Mode   Id="140"
+                Language="kor"
+                DisplayName="Korean Grade 2 (2006)"
+				GradeCategory="2"
+                Table="ko-2006-g2.ctb"
+                Symbols="" />
+        
+        <!-- Konkani -->
+        <Mode   Id="41"
+                Language="knk"
+                DisplayName="Konkani"
+				GradeCategory="1"
+                Table="kok.ctb"
+                Symbols="" />
+        
+        <!-- Lituanian -->
+        <Mode   Id="42"
+                Language="lth"
+                DisplayName="Lituanian 8-Dot Braille"
+				GradeCategory="0"
+                Table="lt.ctb"
+                Symbols="" />
+        <Mode   Id="142"
+                Language="lth"
+                DisplayName="Lituanian 6-Dot Braille"
+				GradeCategory="1"
+                Table="lt-6dot.utb"
+                Symbols="" />
+        
+        <!-- Latvian -->
+        <Mode   Id="43"
+                Language="lvi"
+                DisplayName="Latvian"
+				GradeCategory="1"
+                Table="Lv-Lv-g1.utb"
+                Symbols="" />
+        
+        <!-- Marathi -->
+        <Mode   Id="44"
+                Language="mar"
+                DisplayName="Marathi"
+				GradeCategory="1"
+                Table="mr-in-g1.utb"
+                Symbols="" />
+        
+        <!-- Dutch (Belgium) -->
+        <Mode   Id="45"
+                Language="nlb"
+                DisplayName="Belgium 6-dots"
+				GradeCategory="1"
+                Table="nl-nl-g0.utb"
+                Symbols="" />
+        <Mode   Id="89"
+                Language="nlb"
+                DisplayName="Belgium 8-dots"
+				GradeCategory="0"
+                Table="nl-comp8.utb"
+                Symbols="" 
+                AllowInput="1"
+                UsesComputerBraille="1"/>
+        
+        <!-- Dutch (the Netherlands) 6-dots -->
+        <Mode   Id="46"
+                Language="nld"
+                DisplayName="Netherlands 6-dots"
+				GradeCategory="0"
+                Table="nl-NL-g0.utb"
+                Symbols="" />
+        <Mode   Id="88"
+                Language="nld"
+                DisplayName="Netherlands 8-dots"
+                GradeCategory="0"
+				Table="nl-comp8.utb"
+                Symbols="" 
+                AllowInput="1"
+                UsesComputerBraille="1"/>
+
+        <!-- Norwegian -->
+        <Mode   Id="47"
+                Language="nor"
+                DisplayName="Norwegian Grade 0"
+				GradeCategory="0"
+                Table="no-no-g0.utb"
+                Symbols="" />
+        <Mode   Id="48"
+                Language="nor"
+                DisplayName="Norwegian Grade 1"
+				GradeCategory="1"
+                Table="no-no-g1.ctb"
+                Symbols="" />
+        <Mode   Id="49"
+                Language="nor"
+                DisplayName="Norwegian Grade 2"
+				GradeCategory="2"
+                Table="no-no-g2.ctb"
+                Symbols="" />
+        <Mode   Id="50"
+                Language="nor"
+                DisplayName="Norwegian Grade 3"
+				GradeCategory="2"
+                Table="no-no-g3.ctb"
+                Symbols="" />
+        <Mode   Id="147"
+                Language="nor"
+                DisplayName="Norwegian Computer Braille"
+				GradeCategory="0"
+                Table="no-no-comp8.ctb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+        
+        <!-- Punjabi -->
+        <Mode   Id="51"
+                Language="pan"
+                DisplayName="Punjabi"
+				GradeCategory="1"
+                Table="pu-in-g1.utb"
+                Symbols="" />
+        
+        <!-- Polish -->
+        <Mode   Id="52"
+                Language="plk"
+                DisplayName="Polish literary"
+				GradeCategory="1"
+                Table="pl-pl-g1.utb"
+                Symbols="plk-ceb.xml" 
+                AllowInput="1" />
+        <Mode   Id="90"
+                Language="plk"
+                DisplayName="Polish"
+				GradeCategory="1"
+                Table="pl.tbl"
+                Symbols="plk-ceb.xml" 
+                AllowInput="1" />
+        <Mode   Id="152"
+                Language="plk"
+                DisplayName="Polish Computer Braille"
+				GradeCategory="0"
+                Table="pl-pl-comp8.ctb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+        
+        <!-- Portuguese -->
+        <Mode   Id="53"
+                Language="ptg"
+                DisplayName="Portuguese Grade 1"
+				GradeCategory="1"
+                Table="pt-pt-g1.utb"
+                Symbols="" 
+                AllowInput="1" />
+        <Mode   Id="54"
+                Language="ptg"
+                DisplayName="Portuguese Grade 2"
+				GradeCategory="2"
+                Table="pt-pt-g2.ctb"
+                Symbols=""
+                AllowInput="1" />
+        <Mode   Id="153"
+                Language="ptg"
+                DisplayName="Portuguese Computer Braille"
+				GradeCategory="0"
+                Table="pt-pt-comp8.ctb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+
+        <!-- Brazilian Portuguese -->
+        <Mode   Id="253"
+                Language="ptb"
+                DisplayName="Portuguese Grade 1"
+				GradeCategory="1"
+                Table="pt-pt-g1.utb"
+                Symbols=""
+                AllowInput="1" />
+        <Mode   Id="254"
+                Language="ptb"
+                DisplayName="Portuguese Grade 2"
+				GradeCategory="2"
+                Table="pt-pt-g2.ctb"
+                Symbols="" 
+                AllowInput="1" />
+
+        <!-- Romanian -->
+        <Mode   Id="55"
+                Language="rom"
+                DisplayName="Romanian"
+				GradeCategory="1"
+                Table="ro.ctb"
+                Symbols="" />
+        
+        <!-- Russian -->
+        <Mode   Id="56"
+                Language="rus"
+                DisplayName="Russian"
+				GradeCategory="1"
+                Table="ru-litbrl-detailed.utb"
+                Symbols="" />
+        <Mode   Id="156"
+                Language="rus"
+                DisplayName="Russian Computer Braille, 8-dot"
+				GradeCategory="0"
+                Table="ru-comp8.utb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+        <Mode   Id="256"
+                Language="rus"
+                DisplayName="Russian with Capitals"
+				GradeCategory="1"
+                Table="ru-litbrl-detailed.utb"
+                Symbols="" />
+        <Mode   Id="356"
+                Language="rus"
+                DisplayName="Russian Contracted Braille"
+				GradeCategory="2"
+                Table="ru-ru-g1.ctb"
+                Symbols="" />
+        
+        <!-- Sanskrit -->
+        <Mode   Id="57"
+                Language="san"
+                DisplayName="Sanskrit"
+				GradeCategory="1"
+                Table="sa-in-g1.utb"
+                Symbols="" />
+        
+        <!-- Slovak -->
+        <Mode   Id="58"
+                Language="sky"
+                DisplayName="Slovak"
+				GradeCategory="1"
+                Table="sk-sk-g1.utb"
+                Symbols=""
+                AllowInput="1" />
+
+        <!-- Slovenian -->
+        <Mode   Id="69"
+                Language="slv"
+                DisplayName="Slovenian Grade 1"
+				GradeCategory="1"
+                Table="sl-si-g1.utb"
+                Symbols="" />
+        <Mode   Id="169"
+                Language="slv"
+                DisplayName="Slovenian Computer Braille"
+				GradeCategory="0"
+                Table="sl-si-comp8.ctb"
+                Symbols=""
+                AllowInput="1" 
+                UsesComputerBraille="1" />
+        
+        <!-- Serbian -->
+        <Mode   Id="59"
+                Language="srb"
+                DisplayName="Serbian"
+				GradeCategory="1"
+                Table="sr-g1.ctb"
+                Symbols="" />
+        
+        <!-- Swedish -->
+        <Mode   Id="60"
+                Language="sve"
+                DisplayName="Swedish Uncontracted Braille"
+				GradeCategory="0"
+                Table="sv-g0.utb"
+                Symbols="" />
+        <Mode   Id="160"
+                Language="sve"
+                DisplayName="Swedish Grade 1 Braille"
+				GradeCategory="1"
+                Table="sv-g1.ctb"
+                Symbols="" />
+        <Mode   Id="260"
+                Language="sve"
+                DisplayName="Swedish Grade 2 Braille"
+				GradeCategory="2"
+                Table="sv-g2.ctb"
+                Symbols="" />
+        
+        <!-- Tamil -->
+        <Mode   Id="61"
+                Language="tam"
+                DisplayName="Tamil"
+				GradeCategory="1"
+                Table="ta-ta-g1.ctb"
+                Symbols="" />
+        
+        <!-- Telugu -->
+        <Mode   Id="62"
+                Language="tel"
+                DisplayName="Telugu"
+				GradeCategory="1"
+                Table="te-in-g1.utb"
+                Symbols="" />
+        
+        <!-- Turkish -->
+        <Mode   Id="78"
+                Language="trk"
+                DisplayName="Türkçe Tam Kısaltmalı"
+				GradeCategory="2"
+                Table="tr-g2.ctb"
+                Symbols="trk-ceb.xml"
+                AllowInput="1" />
+        <Mode   Id="63"
+                Language="trk"
+                DisplayName="Türkçe kısaltmasız"
+				GradeCategory="1"
+                Table="tr.ctb"
+                Symbols="" />
+        
+        <!-- Vietnamese -->
+        <Mode   Id="64"
+                Language="vit"
+                DisplayName="Vietnamese Uncontracted"
+				GradeCategory="0"
+                Table="vi-vn-g0.utb"
+                Symbols="" />
+        <Mode   Id="164"
+                Language="vit"
+                DisplayName="Vietnamese Partial Contracted"
+				GradeCategory="1"
+                Table="vi-vn-g1.ctb"
+                Symbols="" />
+        <Mode   Id="264"
+                Language="vit"
+                DisplayName="Vietnamese Full Contracted"
+				GradeCategory="2"
+                Table="vi-vn-g2.ctb"
+                Symbols="" />
+        <Mode   Id="364"
+                Language="vit"
+                DisplayName="Southern Vietnamese Contracted"
+				GradeCategory="2"
+                Table="vi-saigon-g1.ctb"
+                Symbols="" />
+        
+        <!-- Chinese (Hong Kong Cantonese) -->
+        <Mode   Id="65"
+                Language="zhh"
+                DisplayName="Chinese (Hong Kong, Cantonese)"
+				GradeCategory="1"
+                Table="zh-hk.ctb"
+                Symbols="" />
+        
+        <!-- Chinese (Taiwan) -->
+        <Mode   Id="66"
+                Language="cht"
+                DisplayName="Chinese (Taiwan, Mandarin)"
+				GradeCategory="1"
+                Table="zh-tw.ctb"
+                Symbols="" />
+                
+        <!-- Italian -->
+        <Mode   Id="79"
+                Language="ita"
+                DisplayName="Italian 6 dot"
+				GradeCategory="1"
+                Table="it-it-comp6.utb"
+                Symbols="" />
+        <Mode   Id="82"
+                Language="ita"
+                DisplayName="Italian 8 dot"
+				GradeCategory="0"
+                Table="it-it-comp8.utb"
+                Symbols="" 
+                AllowInput="1"
+                UsesComputerBraille="1"/>
+
+        <!-- Chinese -->
+        <Mode   Id="83"
+                Language="chs"
+                DisplayName="Chinese (Simplified)"
+				GradeCategory="1"
+                Table="zh-chn.ctb"
+                Symbols="" />
+        <Mode   Id="84"
+                Language="chs"
+				GradeCategory="1"
+                DisplayName="Chinese (Mandarin with tones)"
+                Table="zhcn-g1.ctb"
+                Symbols="" />
+        <Mode   Id="85"
+                Language="chs"
+                DisplayName="Chinese (Mandarin two-cell)"
+				GradeCategory="2"
+                Table="zhcn-g2.ctb"
+                Symbols="" />
+
+        <!-- Farsi -->
+        <Mode   Id="86"
+                Language="far"
+                DisplayName="Farsi Computer Braille"
+				GradeCategory="0"
+                Table="fa-ir-comp8.ctb"
+                Symbols="" 
+                AllowInput="1"
+                UsesComputerBraille="1"/>
+        <Mode   Id="87"
+                Language="far"
+                DisplayName="Farsi Grade 1"
+				GradeCategory="1"
+                Table="fa-ir-g1.utb"
+                Symbols="" />
+
+        <!-- Cherokee -->
+        <Mode   Id="91"
+                Language="chr"
+                DisplayName="Cherokee Uncontracted"
+				GradeCategory="1"
+                Table="chr-us-g1.ctb"
+                Symbols="" />
+
+        <!-- Esperanto -->
+        <Mode   Id="92"
+                Language="epo"
+                DisplayName="Esperanto Literary Braille"
+				GradeCategory="1"
+                Table="eo-g1.ctb"
+                Symbols="" />
+
+        <!-- Irish -->
+        <Mode   Id="93"
+                Language="gai"
+                DisplayName="Irish Grade 1"
+				GradeCategory="1"
+                Table="ga-g1.utb"
+                Symbols="" />
+        <Mode   Id="193"
+                Language="gai"
+                DisplayName="Irish Grade 2"
+				GradeCategory="2"
+                Table="ga-g2.ctb"
+                Symbols="" />
+
+        <!-- Scottish Gaelic -->
+        <Mode   Id="94"
+                Language="gdb"
+                DisplayName="Scottish gaelic"
+				GradeCategory="1"
+                Table="gd.ctb"
+                Symbols="" />
+
+        <!-- Hawaiian -->
+        <Mode   Id="95"
+                Language="haw"
+                DisplayName="Hawaiian"
+				GradeCategory="1"
+                Table="haw-us-g1.ctb"
+                Symbols="" />
+
+        <!-- Inuktitut -->
+        <Mode   Id="96"
+                Language="iku"
+                DisplayName="Inuktitut"
+				GradeCategory="1"
+                Table="iu-ca-g1.ctb"
+                Symbols="" />
+
+        <!-- Japanese -->
+        <Mode   Id="97"
+                Language="jpn"
+                DisplayName="Kantenji"
+				GradeCategory="1"
+                Table="ja-kantenji.utb"
+                Symbols="" />
+
+        <!-- Khmer -->
+        <Mode   Id="98"
+                Language="khm"
+                DisplayName="Khmer"
+				GradeCategory="1"
+                Table="km-g1.utb"
+                Symbols="" />
+
+        <!-- Assamese -->
+        <Mode   Id="99"
+                Language="asm"
+                DisplayName="Assamese"
+				GradeCategory="1"
+                Table="as-in-g1.utb"
+                Symbols="" />
+
+        <!-- Bashkir -->
+        <Mode   Id="100"
+                Language="bak"
+                DisplayName="Bashkir"
+				GradeCategory="1"
+                Table="ba.utb"
+                Symbols="" />
+
+        <!-- Belarusian -->
+        <Mode   Id="103"
+                Language="bel"
+                DisplayName="Belarusian Literary Braille"
+				GradeCategory="1"
+                Table="bel.utb"
+                Symbols="" />
+        <Mode   Id="203"
+                Language="bel"
+                DisplayName="Belarusian Computer braille"
+				GradeCategory="0"
+                Table="bel-comp.utb"
+                Symbols=""
+                AllowInput="1"
+                UsesComputerBraille="1"/>
+
+        <!-- Kurdish -->
+        <Mode   Id="105"
+                Language="kur"
+                DisplayName="Central Kurdish Literary Braille"
+				GradeCategory="1"
+                Table="ckb-g1.ctb"
+                Symbols="" />
+        <Mode   Id="205"
+                Language="kur"
+                DisplayName="Northern Kurdish  Computer Braille"
+				GradeCategory="0"
+                Table="kmr.tbl"
+                Symbols=""
+                AllowInput="1"
+                UsesComputerBraille="1"/>
+
+        <!-- Coptic -->
+        <Mode   Id="106"
+                Language="cop"
+                DisplayName="Coptic computer braille"
+				GradeCategory="0"
+                Table="cop-eg-comp8.utb"
+                Symbols="" />
+
+        <!-- Georgian -->
+        <Mode   Id="108"
+                Language="kat"
+                DisplayName="Georgian  Literary Braille"
+				GradeCategory="1"
+                Table="ka.utb"
+                Symbols="" />
+
+        <!-- Kazakh -->
+        <Mode   Id="109"
+                Language="kkz"
+                DisplayName="Kazakh Grade 1"
+				GradeCategory="1"
+                Table="kk.utb"
+                Symbols="" />
+
+        <!-- Kashmiri -->
+        <Mode   Id="111"
+                Language="kas"
+                DisplayName="Kashmiri Grade 1"
+				GradeCategory="1"
+                Table="ks-in-g1.utb"
+                Symbols="" />
+
+        <!-- Luganda -->
+        <Mode   Id="112"
+                Language="lug"
+                DisplayName="Luganda Grade 1"
+				GradeCategory="1"
+                Table="lg-ug-g1.utb"
+                Symbols="" />
+
+        <!-- Malayalam -->
+        <Mode   Id="113"
+                Language="mal"
+                DisplayName="Malayalam Grade 1"
+				GradeCategory="1"
+                Table="ml-in-g1.utb"
+                Symbols="" />
+
+        <!-- Manipuri -->
+        <Mode   Id="114"
+                Language="mni"
+                DisplayName="Manipuri Grade 1"
+				GradeCategory="1"
+                Table="mn-in-g1.utb"
+                Symbols="" />
+
+        <!-- Malay -->
+        <Mode   Id="115"
+                Language="msl"
+                DisplayName="Malay Grade 2"
+				GradeCategory="2"
+                Table="ms-my-g2.ctb"
+                Symbols="" />
+
+        <!-- Mongolian -->
+        <Mode   Id="116"
+                Language="mon"
+                DisplayName="Mongolian Grade 1"
+				GradeCategory="1"
+                Table="mn-MN-g1.utb"
+                Symbols="" />
+        <Mode   Id="216"
+                Language="mon"
+                DisplayName="Mongolian Grade 2"
+				GradeCategory="2"
+                Table="mn-MN-g2.ctb"
+                Symbols="" />
+
+        <!-- Burmese -->
+        <Mode   Id="118"
+                Language="mya"
+                DisplayName="Burmese Grade 1"
+				GradeCategory="1"
+                Table="my-g1.utb"
+                Symbols="" />
+        <Mode   Id="218"
+                Language="mya"
+                DisplayName="Burmese Grade 2"
+				GradeCategory="2"
+                Table="my-g2.ctb"
+                Symbols="" />
+
+        <!-- Nepali -->
+        <Mode   Id="120"
+                Language="nep"
+                DisplayName="Nepali Grade 1"
+				GradeCategory="1"
+                Table="np-in-g1.utb"
+                Symbols="" />
+
+        <!-- Sepedi -->
+        <Mode   Id="121"
+                Language="nso"
+                DisplayName="Sepedi Grade 1"
+				GradeCategory="1"
+                Table="nso-za-g1.utb"
+                Symbols="" />
+        <Mode   Id="221"
+                Language="nso"
+                DisplayName="Sepedi Grade 2"
+				GradeCategory="2"
+                Table="nso-za-g2.ctb"
+                Symbols="" />
+
+        <!-- Chichewa (Malawi) -->
+        <Mode   Id="122"
+                Language="nya"
+                DisplayName="Chichewa (Malawi) Literary Braille"
+				GradeCategory="1"
+                Table="ny-mw.utb"
+                Symbols="" />
+
+        <!-- Oriya -->
+        <Mode   Id="124"
+                Language="ori"
+                DisplayName="Oriya Grade 1"
+				GradeCategory="1"
+                Table="or-in-g1.utb"
+                Symbols="" />
+
+        <!-- Kinyarwanda -->
+        <Mode   Id="125"
+                Language="kin"
+                DisplayName="Kinyarwanda Literary Braille"
+				GradeCategory="1"
+                Table="rw-rw-g1.utb"
+                Symbols="" />
+
+        <!-- Yakut -->
+        <Mode   Id="127"
+                Language="sah"
+                DisplayName="Yakut Grade 1"
+				GradeCategory="1"
+                Table="sah.utb"
+                Symbols="" />
+
+        <!-- Swahili (Kenya) -->
+        <Mode   Id="128"
+                Language="swk"
+                DisplayName="Swahili (Kenya) Grade 1"
+				GradeCategory="1"
+                Table="sw-ke-g1.utb"
+                Symbols="" />
+        <Mode   Id="228"
+                Language="swk"
+                DisplayName="Swahili (Kenya) Grade 1.2"
+				GradeCategory="1"
+                Table="sw-ke-g1-2.ctb"
+                Symbols="" />
+        <Mode   Id="328"
+                Language="swk"
+                DisplayName="Swahili (Kenya) Grade 1.3"
+				GradeCategory="1"
+                Table="sw-ke-g1-3.ctb"
+                Symbols="" />
+        <Mode   Id="428"
+                Language="swk"
+                DisplayName="Swahili (Kenya) Grade 1.4"
+				GradeCategory="1"
+                Table="sw-ke-g1-4.ctb"
+                Symbols="" />
+        <Mode   Id="528"
+                Language="swk"
+                DisplayName="Swahili (Kenya) Grade 1.5"
+				GradeCategory="1"
+                Table="sw-ke-g1-5.ctb"
+                Symbols="" />
+        <Mode   Id="628"
+                Language="swk"
+                DisplayName="Swahili (Kenya) Grade 2"
+				GradeCategory="2"
+                Table="sw-ke-g2.ctb"
+                Symbols="" />
+
+        <!-- Tatar -->
+        <Mode   Id="129"
+                Language="ttt"
+                DisplayName="Tatar Grade 1"
+				GradeCategory="1"
+                Table="tt.utb"
+                Symbols="" />
+
+        <!-- Dravidian -->
+        <Mode   Id="130"
+                Language="dra"
+                DisplayName="Dravidian"
+				GradeCategory="1"
+                Table="dra.tbl"
+                Symbols="" />
+
+        <!-- Setswana -->
+        <Mode   Id="131"
+                Language="tsn"
+                DisplayName="Setswana Grade 1"
+				GradeCategory="1"
+                Table="tsn-za-g1.ctb"
+                Symbols="" />
+        <Mode   Id="231"
+                Language="tsn"
+                DisplayName="Setswana Grade 2"
+				GradeCategory="2"
+                Table="tsn-za-g2.ctb"
+                Symbols="" />
+
+        <!-- Sesotho -->
+        <Mode   Id="133"
+                Language="sot"
+                DisplayName="Sesotho grade 1"
+				GradeCategory="1"
+                Table="sot-za-g1.ctb"
+                Symbols="" />
+        <Mode   Id="233"
+                Language="sot"
+                DisplayName="Sesotho grade 2"
+				GradeCategory="2"
+                Table="sot-za-g2.ctb"
+                Symbols="" />
+
+        <!-- Ukrainian -->
+        <Mode   Id="136"
+                Language="ukr"
+                DisplayName="Ukrainian Grade 1"
+				GradeCategory="1"
+                Table="uk.utb"
+                Symbols="" />
+        <Mode   Id="236"
+                Language="ukr"
+                DisplayName="Ukrainian Computer Braille"
+				GradeCategory="0"
+                Table="uk-comp.utb"
+                Symbols="" />
+
+        <!-- Urdu -->
+        <Mode   Id="137"
+                Language="urd"
+                DisplayName="Urdu Grade 1"
+				GradeCategory="1"
+                Table="ur-pk-g1.utb"
+                Symbols="" />
+        <Mode   Id="237"
+                Language="urd"
+                DisplayName="Urdu Grade 2"
+				GradeCategory="2"
+                Table="ur-pk-g2.ctb"
+                Symbols="" />
+
+        <!-- Uzbek -->
+        <Mode   Id="138"
+                Language="uzb"
+                DisplayName="Uzbek Grade 1"
+				GradeCategory="1"
+                Table="uz-g1.utb"
+                Symbols="" />
+
+        <!-- Tshivenda -->
+        <Mode   Id="141"
+                Language="ven"
+                DisplayName="Tshivenda Grade 1"
+				GradeCategory="1"
+                Table="ve-za-g1.utb"
+                Symbols="" />
+        <Mode   Id="241"
+                Language="ven"
+                DisplayName="Tshivenda Grade 2"
+				GradeCategory="2"
+                Table="ve-za-g2.ctb"
+                Symbols="" />
+
+        <!-- Xhosa -->
+        <Mode   Id="143"
+                Language="xho"
+                DisplayName="Xhosa Grade 1"
+				GradeCategory="1"
+                Table="xh-za-g1.utb"
+                Symbols="" />
+        <Mode   Id="243"
+                Language="xho"
+                DisplayName="Xhosa Grade 2"
+				GradeCategory="2"
+                Table="xh-za-g2.ctb"
+                Symbols="" />
+
+        <!-- Yiddish -->
+        <Mode   Id="15"
+                Language="yid"
+                DisplayName="Yiddish Grade 1"
+				GradeCategory="1"
+                Table="yi.utb"
+                Symbols="" />
+
+        <!-- Zulu -->
+        <Mode   Id="144"
+                Language="zul"
+                DisplayName="Zulu Grade 1"
+				GradeCategory="1"
+                Table="zu-za-g1.utb"
+                Symbols="" />
+        <Mode   Id="244"
+                Language="zul"
+                DisplayName="Zulu Grade 2"
+				GradeCategory="2"
+                Table="zu-za-g2.ctb"
+                Symbols="" />
+
+        <!-- Awadhi -->
+        <Mode   Id="145"
+                Language="awa"
+                DisplayName="Awadhi Grade 1"
+				GradeCategory="1"
+                Table="aw-in-g1.utb"
+                Symbols="" />
+
+        <!-- Braj -->
+        <Mode   Id="146"
+                Language="bra"
+                DisplayName="Braj Grade 1"
+				GradeCategory="1"
+                Table="br-in-g1.utb"
+                Symbols="" />
+
+    </Modes>
+
+    <!--
+        The following are the available Braille Codes for use when translating
+        math. Each translator mode may define one of these MathCodes for use by
+        that mode.
+
+        Each MathCode has the following attributes:
+        Name = The name of the Math Code
+        Table = The table to use for translation
+        EditTable = The table to use for 2nd pass translation
+        Prefix = The string that indicates the beginning of Math content
+        Suffix = The string that indicates the end of Math content
+
+        Note: Any input string for translation must begin with the specified
+        prefix and end with the specified suffix in order to be interpreted
+        as Math content.
+
+        Note: Any occurrences of "\e" are a stand-in for the Escape control
+        character, 0x1b.  These instances will be replaced during parsing.
+    -->
+    <MathCodes>
+        <MathCode   Name="Nemeth"
+                    Table="nemeth.ctb"
+                    EditTable="nemeth_edit.ctb"
+                    Prefix="\eb"
+                    Suffix="\ee" />
+    </MathCodes>
+
+</LiblouisTrans>

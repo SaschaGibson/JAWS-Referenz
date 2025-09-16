@@ -1,0 +1,126 @@
+;; This file may be used to adjust how various options that control
+;; how JAWS interacts with SAPI 4.0 compatible speech synthesizers.
+;; The options that may be controlled using this file are as
+;; follows:
+;; 1.  How JAWS switches between voices for the various SAPI 4.0
+;; compatible speech synthesizers that JAWS supports.
+;; 2.  Wether or not to embed CrLf characters in the speech command
+;; strings that are sent to the synthesizer.
+
+;; This configuration file is formatted just like any Windows Style
+;; INI file.  It consists of the section "Default," which is used to
+;; set the default value for the various options that may be
+;; controlled by this file, and several optional sections that may be
+;; used to override the default values for a specific speech
+;; synthesizer.
+
+
+;;;; **********
+;; Controlling how JAWS switches between voices
+;;;; **********
+
+;; One method of switching between voices is to insert commands in-line
+;; in the text that is spoken that the Synthesizer interprets to set
+;; the speech properties of the spoken text.  Another, more resource
+;; intensive method is to keep multiple instances of the synthesizer
+;; active and set each instance of the synthesizer to use a different
+;; voice.  Then when text needs to be spoken with a different voice,
+;; JAWS speaks the text with the instance of the synthesizer that is
+;; set to use that voice.  This second method is obviously more
+;; resource intensive and inefficient.  The problem is that not all
+;; SAPI 4.0 compatible speech synthesizers are capable of supporting
+;; the first method.
+
+;; JAWS uses the in-line commands method for switching between voices
+;; by default.  However, JAWS can use the second method of switching
+;; voices if the first method does not work with your speech
+;; synthesizer.  The integer value VceTagSupported may be used to
+;; specify which method should be used to switch between voices.
+;; This value may be 0 to indicate that JAWS should
+;; switch between voices by using separate instances of the
+;; synthesizer for each voice or 1 to indicate that the synthesizer
+;; supports the in-line commands method of switching voices.
+
+;; If you are using a SAPI 4.0 compatible synthesizer and JAWS speaks
+;; a string similar to "\Vce=Speaker={Voice Name}\\MRK=1\..." at
+;; random intervals, then your SAPI synthesizer most likely does not
+;; support the in-line commands method of switching between voices.
+;; To resolve this issue, you have two options:
+;; 1.  You may add a section to this file for your synthesizer and
+;; indicate that JAWS should switch between voices by using separate
+;; instances of the synthesizer for each voice while that synthesizer
+;; is in use as follows
+;; [{Your Synthesizer Name}]
+;; VceTagSupported=0
+;; * Replace "{Your Synthesizer Name}" with the entry for the Synth
+;; Name from JFW.INI.  For example if the problem synthesizer is the
+;; first installed synthesizer, replace "{Your Synthesizer Name}"
+;; with the value assigned to "Synth1Name" in the "Synthesizers"
+;; section of JFW.INI.
+;; 2.  Or you may change the value for VceTagSupported in the section
+;; Default.  Use this method only if you have only one Speech
+;; synthesizer because this change will effect all SAPI 4.0
+;; compatible speech synthesizers.
+
+;;;; **********
+;; Controlling wether or not to embed CrLf characters in the speech
+;; command strings that are sent to the synthesizer
+;;;; **********
+
+;; Whenever JAWS needs to send a speech command to the speech
+;; synthesizer (speech commands are used to change the voice pitch,
+;; voice rate, and for engines that support Vce Tags, the active
+;; voice) it does so by including a specially formatted string in the
+;; text that is sent to the speech synthesizer.  Some speech
+;; synthesizers expect these speech commands to be proceeded and
+;; followed by a CrLf character sequence and will have severe
+;; performance issues if the CrLf character sequences are not present,
+;; while others will have severe performance issues if the CrLf
+;; character sequences are present.
+
+;; For all synthesizers except for the Infovox family of speech
+;; synthesizers, JAWS uses speech command strings that do not
+;; included the CrLf character sequences by default.  You may change
+;; this value using the integer value SpeechCommandsNeedCrLf.  This
+;; value may be 0 to indicate that JAWS should not embed CrLf
+;; character sequences in the speech command strings, and 1 to
+;; indicate that JAWS should embed CrLf character sequences in the
+;; speech command strings.
+
+;; If you are experiencing unexplained performance issues with your
+;; SAPI speech synthesizer or are hearing the voice rate drop suddenly
+;; without explanation, you have two options:
+;; 1.  You may add a section to this file for your synthesizer and
+;; indicate that JAWS should switch between voices by using separate
+;; instances of the synthesizer for each voice while that synthesizer
+;; is in use as follows
+;; [{Your Synthesizer Name}]
+;; SpeechCommandsNeedCrLf=1
+;; * Replace "{Your Synthesizer Name}" with the entry for the Synth
+;; Name from JFW.INI.  For example if the problem synthesizer is the
+;; first installed synthesizer, replace "{Your Synthesizer Name}"
+;; with the value assigned to "Synth1Name" in the "Synthesizers"
+;; section of JFW.INI.
+;; 2.  Or you may change the value for SpeechCommandsNeedCrLf in the
+;; section Default.  Use this method only if you have only one Speech
+;; synthesizer because this change will effect all SAPI 4.0
+;; compatible speech synthesizers.
+
+;; The following section may be used to change the default values for
+;; the various options for all SAPI 4.0 synthesizers.  Modify this
+;; section at your own risk.
+[Default]
+VceTagSupported=1
+SpeechCommandsNeedCrLf=0
+
+[digalo]
+VceTagSupported=0
+
+;; The Macaw synthesizer by Voxit is one of the known synthesizers
+;; that DO NOT support the in-line commands method of switching
+;; voices.
+[Voxit Macaw]
+VceTagSupported=0
+
+[BrightSpeech v1.2]
+VceTagSupported=0

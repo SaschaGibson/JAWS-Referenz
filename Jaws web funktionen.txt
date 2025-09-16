@@ -1,0 +1,19 @@
+In JAWS gibt es mehrere Funktionen, die Ihnen helfen können, Informationen über die aktuelle Webseite zu erhalten. Diese Funktionen sind nützlich, um Details über die Struktur und den Inhalt der Webseite zu extrahieren. Hier sind einige der relevanten Funktionen:
+
+GetDocumentTitle(): Diese Funktion gibt den Titel des aktuellen Dokuments zurück. Der Titel ist oft im <title>-Tag der HTML-Seite definiert und wird normalerweise in der Titelleiste des Browsers angezeigt.
+
+GetDocumentURL(): Wie bereits erwähnt, gibt diese Funktion die URL des aktuellen Dokuments zurück.
+
+GetDocumentXML(): Diese Funktion gibt das XML-Dokument zurück, das die Struktur der aktuellen Webseite repräsentiert. Es kann verwendet werden, um detaillierte Informationen über die Elemente auf der Seite zu erhalten.
+
+GetDocumentHTML(): Diese Funktion gibt den HTML-Inhalt des aktuellen Dokuments zurück. Dies kann nützlich sein, um den Quellcode der Seite zu analysieren.
+
+GetCurrentElement(): Diese Funktion gibt das aktuell fokussierte Element auf der Webseite zurück. Dies kann nützlich sein, um zu bestimmen, welches Element gerade aktiv ist.
+
+GetCurrentElementAttribute(): Diese Funktion ermöglicht es, ein bestimmtes Attribut des aktuell fokussierten Elements abzurufen, wie z.B. id, class, name, etc.
+
+GetElementByID(): Diese Funktion sucht nach einem Element mit einer bestimmten ID auf der Webseite und gibt es zurück.
+
+GetElementByTagName(): Diese Funktion sucht nach Elementen mit einem bestimmten Tag-Namen und gibt eine Liste dieser Elemente zurück.
+
+Diese Funktionen bieten eine umfassende Möglichkeit, Informationen über die aktuelle Webseite zu sammeln und zu analysieren, was besonders nützlich ist, wenn Sie benutzerdefinierte Skripte für die Interaktion mit Webinhalten erstellen möchten.
