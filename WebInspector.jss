@@ -1,11 +1,11 @@
 ; WebInspector.jss
-; Stellt gebündelte MSAA- und XML-Informationen über das aktuell fokussierte Webelement bereit.
+; Stellt gebündelte MSAA-, XML- und HTML-Informationen über das aktuell fokussierte Webelement bereit.
 ; -----------------------------------------------------------------------------
 ; Skriptsprache: Englisch | Kommentare: Deutsch
-; Ansatz: Kombiniert den stabilen MSAA-Ansatz mit der GetElementXML()-Methode.
+; Ansatz: Kombiniert MSAA, GetElementXML() und GetElementDescription().
 ; Ausgabe: Virtual Viewer (UserBuffer)
 ; -----------------------------------------------------------------------------
-; Version: 12.0.0 (2025-09-26) - Zusammenführung von MSAA und XML-Inspektion
+; Version: 13.2.0 (2025-09-29) - Alle drei Analyse-Methoden integriert
 ; Autor:   Projekt "JAWS: Webelemente"
 
 Include "HjGlobal.jsh"
@@ -13,7 +13,7 @@ Include "HjConst.jsh"
 Include "common.jsm"
 
 ScriptFileVersion 2025
-ScriptFile "JAWS Web Inspector (MSAA & XML)"
+ScriptFile "JAWS Web Inspector (MSAA, XML & HTML)"
 
 ; =====================================================================
 ; Interne Hilfsfunktionen
@@ -23,32 +23,14 @@ ScriptFile "JAWS Web Inspector (MSAA & XML)"
 Void Function Inspector_AddInfo (string sTitle, string sValue)
     if !StringIsBlank(sValue) then
         UserBufferAddText ("- " + sTitle + ": " + sValue + cScBufferNewLine)
-    endIf
-EndFunction
-
-; Extrahiert den Wert eines bestimmten Attributs aus einem XML-String.
-string Function Inspector_ExtractXMLAttribute (string xml, string attributeName)
-	var int startPos
-	var int endPos
-	var string tempString
-	var string result
-	
-	startPos = StringContains(xml, " " + attributeName + "=\"")
-	if startPos > 0 then
-		tempString = Substring(xml, startPos + StringLength(attributeName) + 3, StringLength(xml))
-		endPos = StringContains(tempString, "\"")
-		if endPos > 1 then
-			result = Substring(tempString, 1, endPos - 1)
-		endif
-	endif
-	return result
+    endif
 EndFunction
 
 ; =====================================================================
 ; Hauptskript
 ; =====================================================================
 
-; Sammelt MSAA- und XML-Informationen zum aktuellen Objekt und zeigt diese an.
+; Sammelt MSAA-, XML- und HTML-Informationen zum aktuellen Objekt und zeigt diese an.
 Script Web_InspectCurrentElement ()
 	; --- 1. ZUERST: Alle Variablen deklarieren ---
 	var string msaaName
@@ -58,6 +40,7 @@ Script Web_InspectCurrentElement ()
 	var string msaaStateText
 	var string msaaDesc
 	var string elementXml
+	var string htmlDescription
 
 	; --- 2. DANACH: Ausführbarer Code ---
 
@@ -77,6 +60,9 @@ Script Web_InspectCurrentElement ()
 	; --- Schritt B: XML-Informationen sammeln ---
 	elementXml = GetElementXML (0)
 
+	; --- Schritt C: HTML-Beschreibung sammeln ---
+	htmlDescription = GetElementDescription(0, 0)
+
 	; --- Ausgabe vorbereiten ---
 	UserBufferClear()
 	UserBufferAddText ("JAWS Web Inspector")
@@ -90,20 +76,22 @@ Script Web_InspectCurrentElement ()
 	Inspector_AddInfo("Status", msaaStateText)
 	Inspector_AddInfo("Beschreibung", msaaDesc)
 
-	; Abschnitt 2: XML-Details
+	; Abschnitt 2: XML-Details (interne JAWS-Sicht)
+	UserBufferAddText (cScBufferNewLine + "----------------------------------------" + cScBufferNewLine)
+	UserBufferAddText ("2. XML-Details (via GetElementXML)" + cScBufferNewLine)
 	if !StringIsBlank(elementXml) then
-		UserBufferAddText (cScBufferNewLine + "----------------------------------------" + cScBufferNewLine)
-		UserBufferAddText ("2. XML-Details" + cScBufferNewLine)
-		Inspector_AddInfo("Tag", Inspector_ExtractXMLAttribute(elementXml, "fsTag"))
-		Inspector_AddInfo("Text", "'" + Inspector_ExtractXMLAttribute(elementXml, "fsText") + "'")
-		Inspector_AddInfo("Typ", Inspector_ExtractXMLAttribute(elementXml, "type"))
-		Inspector_AddInfo("Name-Attribut", Inspector_ExtractXMLAttribute(elementXml, "name"))
-		Inspector_AddInfo("Fokussierbar", Inspector_ExtractXMLAttribute(elementXml, "fsFocusable"))
-		UserBufferAddText (cScBufferNewLine)
-		UserBufferAddText ("Kompletter XML-Code:" + cScBufferNewLine)
 		UserBufferAddText (elementXml)
 	else
-		UserBufferAddText (cScBufferNewLine + "(Keine XML-Informationen für dieses Element verfügbar.)")
+		UserBufferAddText ("(Keine XML-Informationen für dieses Element verfügbar.)")
+	endif
+
+	; Abschnitt 3: HTML-Elementbeschreibung
+	UserBufferAddText (cScBufferNewLine + "----------------------------------------" + cScBufferNewLine)
+	UserBufferAddText ("3. HTML-Elementbeschreibung (via GetElementDescription)" + cScBufferNewLine)
+	if !StringIsBlank(htmlDescription) then
+		UserBufferAddText(htmlDescription)
+	else
+		UserBufferAddText ("(Keine HTML-Beschreibung für dieses Element verfügbar.)")
 	endif
 
 	; --- Viewer aktivieren ---
@@ -112,4 +100,5 @@ Script Web_InspectCurrentElement ()
 	UserBufferActivate ()
 	JAWSTopOfFile ()
 	SayLine ()
+
 EndScript

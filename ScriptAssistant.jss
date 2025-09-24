@@ -1,4 +1,4 @@
-; ScriptAssistant.jss
+; ScriptAssistant.jss 
 ; Generiert fertige Code-Schnipsel für Aktionen auf dem aktuell fokussierten Element.
 ; -----------------------------------------------------------------------------
 ; Skriptsprache: Englisch | Kommentare: Deutsch
