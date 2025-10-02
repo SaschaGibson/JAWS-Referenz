@@ -1,0 +1,49 @@
+/* Styles for dlee.org and distributed pages, from project revision 179 */
+body
+{
+	font-family: arial, sans-serif;
+}
+thead
+{
+	display: table-header-group;
+}
+tfoot
+{
+	display: table-footer-group;
+}
+td
+{
+	vertical-align: top;
+}
+
+/* The surrounding rule here comes from
+ * https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/
+ * to keep old IE and Chrome versions that ignore details tags from confusing users.
+ * [DGL, 2025-05-09]
+ */
+@supports not (-ms-ime-align: auto)
+{
+details > summary
+{
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	text-decoration: underline;
+	cursor: pointer;
+}
+details > summary > *
+{
+	display: inline
+}
+}
+
+table > caption
+{
+	text-align: left;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+ul.bulletless
+{
+list-style-type: none!important;
+}
