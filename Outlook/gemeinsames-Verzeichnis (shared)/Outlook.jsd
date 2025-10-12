@@ -1,0 +1,230 @@
+:Function ShouldMessageHeaderSpeak
+:description Used to retrieve the verbosity setting for speak message header.
+:returns int The verbosity setting for speak message header.
+
+:Function ShouldMessageTypeSpeak
+:description Used to retrieve the verbosity setting for speak message type.
+:returns int The verbosity setting for speak message type.
+
+:Function ShouldMessageSayAll
+:description Used to retrieve the verbosity setting for message say all.
+:returns int The verbosity setting for message say all.
+
+:Function ShouldMessageLinkCountSpeak
+:description Used to retrieve the verbosity setting for message link count announcement.
+:returns int The verbosity setting for message link count announcement.
+
+:Function TypeOfWindow
+:description Returns the type of window retrieved by function DetectTypeOfWindow.
+:returns int The type of window.
+
+:function DetectTypeOfWindow
+:param handle The focus.
+:description Detects the type of window.
+:returns int The type of window.
+
+:function IsCalendarWindow
+:param handle hWnd The window to test.
+:optional
+:param string/className If omitted, retrieved from hWnd.
+:returns int True or false.
+
+:function CurrentFormContainsTimeField
+:param handle focusWindow
+:returns int true or false.
+
+:Function DetectIfInOutlookMainWindow
+:param handle hWnd
+:returns int True or false.
+
+:function GetMessageListItemSayLineText
+:description Retrieved the text used for SayLine in the message list.
+:returns string The text to be spoken for the message list item.
+
+:function GetMessageListItemBrlLineText
+:description Retrieved the text used for braille value in the message list.
+:returns string The text to be brailled for the message list item.
+
+:function GetContactsListItemText
+:description Retrieved the text used for the current item in the contacts list.
+:returns string The text to be used for the current item in the contacts list.
+
+:function ConvertNetUIGalleryButtonTextToColorName
+:description Attempts to convert the RGB text of the net gallery button to a color name.
+:param string/text
+:returns string If possible, the color name.
+
+:function AutoCompleteListItemText
+:description Retrieves the text of the selected item in the autocomplete suggestion list.
+:returns string The text of the selected item in the autocomplete suggestion list.
+
+:function AutoCompleteListHelpText
+:description Retrieves the help text for the autocomplete suggestion list.
+:returns string The help text for the autocomplete suggestion list.
+
+:function GetCalendarViewBrlText
+:description Retrieves the braille text used for the calendar view.
+:returns string The calendar view braille text.
+
+:function GetCalendarTimeSlotText
+:description Retrieves the braille text used for the calendar time slot.
+:returns string The calendar time slot braille text.
+
+:function GetFocusedTreeItemFromUIA
+:description Retrieves the UIA object for the focus treeview item.
+:returns object
+
+:function GetCalendarView
+:description Retrieves the calendar view text.
+:returns string The calendar view text.
+
+:function GetRoomFinderCalendarButtonName
+:description Retrieves the name of the Room Finder calendar button.
+:returns string The name of the Room Finder calendar button.
+
+:function AutoCompleteListItemPosition
+:description Retrieves the position in group text for the selected item in the autocomplete list.
+:returns string the position in group text for the selected item in the autocomplete list.
+	
+:function MoveToFieldUsingHandle
+:Synopsis change focus to a given window and control name
+:Param handle/hndDesiredWindow No Description
+:Param string/strControlName No Description
+
+:function GetUIALabelFromPriorElement
+:description Retrieves the name of the uia element prior to the focus. Used in cases where this is the label of the focus element.
+:returns string The name of the UIA element prior to the focus element.
+
+:script ClickButton
+:Synopsis Finds, then clicks button associated with this keystroke, depending on current Outlook view and function being performed.
+:Description This script locates the button associated with this keystroke, then clicks it, depending on current Outlook view and function being performed.
+:Category Find
+:Param int/iButtonID No Description
+
+:script GoToMessagesView
+:Synopsis Changes the view in Outlook to the messages view or list.
+:Description Causes JAWS to speak the name of the window being switched to when the keystroke is pressed. The Outlook keystroke is passed on through to the application.
+
+:script GoToContactsView
+:Synopsis Changes the view in Outlook to the contacts view.
+:Description Causes JAWS to speak the name of the window being switched to when the keystroke is pressed. The Outlook keystroke is passed on through to the application.
+
+:script GoToTasksView
+:Synopsis Changes the view in Outlook to the tasks view.
+:Description Causes JAWS to speak the name of the window being switched to when the keystroke is pressed. The Outlook keystroke is passed on through to the application.
+
+:script GoToNotesView
+:Synopsis Changes the view in Outlook to the Notes view.
+:Description Causes JAWS to speak the name of the window being switched to when the keystroke is pressed. The Outlook keystroke is passed on through to the application.
+
+:script GoToCalendarView
+:Synopsis Changes the view in Outlook to the calendar view or list.
+:Description This script forces the FocusChangedEvent to speak the name of the window being switched to when the keystroke for this script is pressed. The script then passes the Outlook keystroke on through to the application.
+
+:script SayMSAAData
+:Synopsis Announces MSAA data for current list item.
+:Description Announces MSAA data for current list item when in Message, Contact, Active Appointment, Notes, or Task list.
+
+:script ContactFieldsDialog
+:Synopsis List of visible fields for active contact.
+:Description Brings up a list of the visible fields on the open contact form.
+
+:script AnnounceOutlookInfoBar
+:Synopsis Announces the Outlook InfoBar
+:Description Announces the Outlook Info Bar when text is displayed in that window.
+
+:function ReadHeader
+:Description This function when called from SayFocusedWindow, just announces the header information. When called from a script, upon first press, announcess associated Outlook header field; twice moves focus to that field.
+:Param int/iField No Description
+:optional
+:param int ignoreIsSameScript
+
+:script ReadOutlookHeader
+:Synopsis Announces Outlook headers when available in message, contacts, meeting, appointments or other windows.
+:Description Upon first press, announcess associated Outlook header field; twice moves focus to that field.
+:Param int/iField No Description
+
+:function GetFieldText
+:Returns string Text of window or field
+:Synopsis Retrieves text in window or field
+:Param int/iControl Control id of field to retrieve
+
+:script GoToOutlookMessageBodyWindow
+:DisplayName Move to Message Body 
+:Synopsis Goes to the body of the e-mail with the PC cursor
+:Description Puts the focus in the body window for the open message, appointment or meeting.
+:SearchRank 1
+
+:script CallToolBars
+:DisplayName List Outlook Toolbar Actions with Keystrokes
+:Synopsis brings up a list of featured Outlook commands.
+:Description This list contains Outlook actions such as move, copy, new and flag. These actions are for new and existing Outlook items. An Outlook item is a message, contact, task, note or other item in an Outlook folder. Other actions include address book and find people.
+:SearchRank 1
+
+:function TypeOfItem
+:Returns string Item type
+:Synopsis Returns the current item
+:Param int/iIsMessage/ByRef No Description
+:Param int/iIsTask/ByRef No Description
+
+:script MoveBackItem
+:Synopsis Moves back one item/message when reading; shrinks font when editing.
+:Description Moves back by one item/message when reading; shrinks font when editing a message.
+
+:script MoveForwardItem
+:Synopsis moves forward one item; Grows font when editing a message.
+:Description Moves forward by one item/message when reading; grows font size when editing a message.
+
+:script OutlookAttachmentsList
+:Synopsis Moves to the Outlook Attachments List
+:Description Moves focus to the Outlook Attachment list, if populated.
+
+:script SayMoveForward
+:Synopsis Moves forward through visited folders.
+:Description This keystroke cycles forward through previously visited mail folders.
+
+:script SayMoveBack
+:Synopsis Moves backward through visited folders.
+:Description This keystroke cycles backward through previously visited mail folders.
+
+:script ReplyDirectlyToSender
+:Synopsis Replies directly to sender.
+:Description Replies directly to sender of the message not to the list.
+
+:script GrowFont1Point
+:Synopsis Microsoft Outlook native keystroke that increases the font size by exactly one point.
+:Description This keystroke increases the font size by exactly one point.
+
+:script ShrinkFont1Point
+:Synopsis Microsoft Outlook native keystroke that decreases the font size by exactly one point.
+:Description This keystroke decreases the font size by exactly one point.
+
+:script ListHeadings
+:DisplayName List Headings
+:Synopsis List headings in an open Outlook message.
+:Description This keystroke lists the headings in an open Outlook message if any exist.
+
+:script selectNextHeadingOrListLevelStyle
+:Synopsis Selects the next heading or list level style for the current text by passing an alt+Shift+RightArrow to MS Outlook when in an editable message.
+:Description This script passes the keystroke Alt+Shift+RightArrow to MS Outlook when in an editable message which selects the next heading level style for the current text. If the JAWS or Invisible cursors are active then this script performs the default mouse movement script.
+
+:script selectPriorHeadingOrListLevelStyle
+:Synopsis Selects the prior heading or list level style for the current text by passing an alt+Shift+LeftArrow to MS Outlook when in an editable message.
+:Description This script selects the prior heading or list level style for the current text by passing an Alt+Shift+LeftArrow to MS Outlook when in an editable message. If the JAWS or Invisible cursors are active then this script performs the default mouse movement script.
+
+:script SelectAField
+:DisplayName Select A Field
+:Synopsis Lists fields in an open Outlook message.
+:Description This keystroke lists the fields in an open Outlook message if any exist.
+
+:Script AltF4
+:Synopsis Close office application. Use this keystroke, not the menus or the mouse, to close the currently open Office application.
+:Description Close office application. Use this keystroke, not the menus or the mouse, to close the currently open Office application. This is especially true for Office 2016 and later. If you use the menus or the mouse to exit, JAWS and the application will hang, either may crash.
+
+:script JAWSShiftDelete
+:Synopsis Performs the application's shift+Delete functionality.
+:Description The result of Shift+Delete is controlled by the application.
+
+:script JAWSDeleteItem
+:Synopsis Performs the application's control+D functionality.
+:Description The result of Control+D is controlled by the application.

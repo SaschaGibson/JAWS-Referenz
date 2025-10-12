@@ -1,0 +1,181 @@
+; Copyright 1995-2021 Freedom Scientific, Inc.
+; JAWS Braille Structure file for Outlook 2016 and O365
+
+[Component Aliases]
+FocusLine=Focus Line
+CalendarView=Show Calendar View Name
+AddressAutoComplete=Show Address Auto-complete
+FolderName=Show Folder Name
+crdname=Business Card Name
+tblInfo=Table Info
+tblRowHdr=Table Row Header
+tblColHdr=Table Column Header
+tblCellContent=Table Cell Content
+frmFldPrompt=Formfield Prompt
+type=type
+FldValue=Field Value
+FldName=Field Name
+FldType=Field type
+frmFldState=Formfield State
+frmFldPosition=Formfield Position
+shapeType=Shape Type
+altText=Alternative Text
+shapeDimensions=Shape Dimensions
+oleName=OleName
+oleType=OleType
+oleValue=OleValue
+oleState=OleState
+olePosition=OlePosition
+
+;  Section for button
+[SubtypeCode1]
+components=ContextHelp,state,name,type,description,AddressAutoComplete
+type=btn
+removed=hotkey
+displayname=
+AlignmentPriority=state,name
+
+; Section for edit
+[SubtypeCode3]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value,state,AddressAutoComplete,position
+type=ed
+removed=hotkey
+displayname=
+
+; Section for editcombo
+[SubtypeCode41]
+components=ContextHelp,name,type,value,position,state,hotkey
+type=edcbo
+removed=
+displayname=
+AlignmentPriority=name,type,value
+
+; Section for listboxitem
+[SubtypeCode55]
+components=ContextHelp,name,type,state,value,position,hotkey
+removed=
+displayname=
+type=lbx
+AlignmentPriority=name,type,state,value
+
+; Section for treeview
+[SubtypeCode31]
+components=ContextHelp,name,type,level,state,value,position,hotkey
+type=tv
+removed=
+displayname=
+AlignmentPriority=name,type,level,state,value
+
+; Section for treeviewitem
+;These are for the mailbox or folder tree views (NetUIHwnd)
+[SubtypeCode56]
+components=ContextHelp,type,level,state,value,position,ParentName,hotkey
+type=tv
+removed=
+displayname=
+AlignmentPriority=type,level,state,value
+
+;  Section for Multiline edit To:, CC, and BCC fields with address auto complete
+[SubtypeCode66]
+components=name,type,ComputerBrailleIndicator,value,AddressAutoComplete,position
+type=mled
+removed=
+displayname=
+AlignmentPriority=name,type,ComputerBrailleIndicator,value
+
+; for Tables
+[CustomControl1]
+components=tblInfo,tblRowHdr,tblColHdr,tblCellContent
+removed=
+type=
+displayname=table
+
+;for generic fields
+[CustomControl5]
+components=fldName,FldType,fldValue
+type=field
+removed=
+displayname=field
+
+;for pictures or other generic shape objects
+[CustomControl6]
+components=shapeType,altText,shapeDimensions
+removed=
+displayname=inline shape
+
+; sections for OLE control objects
+;section for OLE checkbox
+[CustomControl8]
+components=oleState,oleName,oleType,oleValue,olePosition
+type=chk
+removed=
+displayname=OLE checkbox
+AlignmentPriority=oleState,oleName
+
+;section for OLE radio button
+[CustomControl9]
+components=oleState,oleName,oleType
+type=rbtn
+removed=
+displayname=OLE Radio Button
+AlignmentPriority=oleState,oleName
+
+;section for OLE listbox
+[CustomControl10]
+components=oleName,oleType,oleValue,olePosition
+type=lbx
+removed=
+displayname=OLE Listbox
+AlignmentPriority=oleName,oleType,oleValue
+
+;section for all other generic MSForms controls 
+[CustomControl11]
+components=oleName,oleType,oleState,oleValue
+type=
+removed=
+displayname=OLE Generic
+AlignmentPriority=oleName,oleType,oleState,oleValue
+
+;unknown, generic ole controls
+[CustomControl12]
+components=oleName,oleType,oleState,oleValue
+type=
+removed=
+displayname=OLE Unknown
+
+;section for information balloons
+[CustomControl13]
+components=name,type
+type=ibln
+removed=
+displayname=Information Balloon
+
+; Calender Grid
+[CustomControl21]
+components=CalendarTimeSlot,CalendarView
+removed=
+type=
+displayname=Calendar Grid
+
+[CustomControl24];MessagesList
+components=type,state,value,position
+type=lbx
+removed=
+displayname=Messages List
+AlignmentPriority=type,state,value
+
+;section for Business Card in Contacts:
+[CustomControl25]
+components=FolderName,type,crdname
+type=crdvw
+AlignmentPriority=type,crdname
+
+;section for calendar grid, in Room Finder Pane, when creating a meeting.
+;We are just going to simulate line mode for this grid.
+[CustomControl30]
+components=FocusLine
+type=
+AlignmentPriority=FocusLine
+
+[Information]
+Description=Default  Structured Mode view for Microsoft Outlook.
