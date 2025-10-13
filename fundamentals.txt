@@ -18,3 +18,5 @@ Object_Model_and_MSAA_Event_Helpers.md
 gesamt_script_reference.md
 builtin.jsd
 Web App Scriptability.md
+Keyword-Return.md
+
