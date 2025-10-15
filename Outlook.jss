@@ -236,7 +236,7 @@ giInitialSplitModeValue=BrailleGetSplitMode()
 if AppAllowedToChangeSplitMode() then
 	BrailleSplitMode(giOutlookSplitModeValue)
 endIf
-if !(getRunningFSProducts () & (Product_Fusion | product_ZoomText))
+if ShouldParkMouse()
 	MouseToTopLeft()
 endIf
 EndFunction
@@ -1960,13 +1960,16 @@ if GetObjectRole(0) != ROLE_SYSTEM_DOCUMENT
 endIf
 var
 	string sValue = FSUIAGetFocusedElementValueText (),
-	string sName
+	string sName = GetObjectName ()
 if !sValue
 || !StringSegmentCount (sValue, cscColon+cscSpace)
 	return false
 endIf
-sName = StringSegment (sValue, cscColon+cscSpace, 1) + cscColon
-sValue = stringChopLeft (sValue, StringLength(sName+cscSpace))
+if StringIsBlank (sName)
+	;name is contained in the value, separate them
+	sName = StringSegment (sValue, cscColon+cscSpace, 1) + cscColon
+	sValue = stringChopLeft (sValue, StringLength(sName+cscSpace))
+endIf
 IndicateControlType (WT_READONLYEDIT, sName, sValue)
 return true
 endFunction

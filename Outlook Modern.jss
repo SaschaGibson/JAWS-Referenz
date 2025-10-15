@@ -31,7 +31,7 @@ EndScript
 void function AutoStartEvent ()
 InitNewOutlookModernCollections()
 loadNonJCFOptions()
-if !(getRunningFSProducts () & (Product_Fusion | product_ZoomText))
+if ShouldParkMouse()
 	MouseToTopLeft()
 endIf
 EndFunction
