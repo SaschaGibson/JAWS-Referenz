@@ -1,4 +1,0 @@
-[Common Keys]
-Control+Shift+F11=ProjectOptions
-; Changed because they conflict with standard Turbo Delphi keystrokes
-Control+Windows+Shift+F11=ViewSysTrayItems

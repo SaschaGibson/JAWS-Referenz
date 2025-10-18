@@ -1,9 +1,0 @@
-﻿; For calculator results display static windows
-[CustomControl1]
-components=name,value
-removed=
-type=
-displayname=Ergebnisse
-
-[Information]
-Description=Standard  Strukturierter Ansichtsmodus für Microsoft Rechner.

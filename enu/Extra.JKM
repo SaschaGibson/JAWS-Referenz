@@ -1,8 +1,0 @@
-[Desktop Bindings]
-
-[DESKTOP Keys]
-Control+B=SayFrame("StatusBar3270")
-Tab=Tab
-Shift+Tab=BackTab
-Home=Home
-ExtendedHome=Home

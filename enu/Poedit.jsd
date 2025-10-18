@@ -1,4 +1,0 @@
-:function isMainWindow
-:Returns int true or false
-:Synopsis Determines whether or not the main PoEdit window is the foreground window, as opposed to a dialog box created by PoEdit.
-:Description This function Determines whether or not the main PoEdit window is the foreground window, as opposed to a dialog box created by PoEdit.

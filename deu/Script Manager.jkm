@@ -1,6 +1,0 @@
-[Common Keys]
-F2=NextScript
-Shift+F2=PriorScript
-F12=JumpToDefinition
-F3=FindNext
-Shift+F3=FindPrev
