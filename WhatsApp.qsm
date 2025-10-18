@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="WhatsApp.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="WhatsappSettings" Text="What'sApp Settings">
+			<HelpMsg>
+These settings control how JAWS behaves on WhatsApp.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="WhatsappSettings.AutoMessages" Text="Read messages automatically">
+			<HelpMsg>
+This option controls whether JAWS should read messages automatically as they are received.
+The default is off.
+</HelpMsg>
+		</DisplayName>				
+		<DisplayName ID="WhatsappSettings.TypingSounder" Text="Play a sound when contact is typing">
+			<HelpMsg>
+This option plays a sound whenever the selected contact starts typing.
+The default is on.
+</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>			
+</LocalizableDefinitions>

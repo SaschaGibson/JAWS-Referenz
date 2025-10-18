@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+ <TITLE>11.1 Checking the Virtual Viewer Status</TITLE>
+ <LINK rel="StyleSheet" href="default.css">
+</HEAD>
+<BODY>
+ <H1>11.1 Checking the Virtual Viewer Status</H1>
+ 
+<P>Before you display text in the virtual viewer, you should check to make sure 
+  it is not currently being displayed by another script or function. When you 
+  find the virtual viewer is being displayed, you should deactivate it. Deactivating 
+  the virtual viewer before you display new information prevents the text from 
+  running together.</P>
+<P> You use the built-in function, UserBufferIsActive, to check the status of 
+  the virtual viewer. The function returns a value of 1 when the virtual viewer 
+  is active or displayed and a value of 0 when the viewer is not displayed. You 
+  can substitute the constant, TRUE, for the value of 1 and the constant, FALSE, 
+  for the value of zero in your scripts.</P>
+<P> When the virtual viewer is active, you use the built-in function, UserBufferDeactivate, 
+  to close the virtual viewer. This function closes the virtual viewer just as 
+  if you pressed <strong>ESC</strong> from the keyboard. You should place both 
+  the UserBufferIsActive and the UserBufferDeactivate functions within a conditional 
+  statement before you display the virtual viewer. An example of the use of both 
+  functions follows:</P>
+<P class="Code"> If UserBufferIsActive () Then<br>
+UserBufferDeactivate () ; close the virtual viewer <br>
+EndIf</p>
+<p>&nbsp;</p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="11-2_CreatingTheMessages.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</BODY>
+</HTML>

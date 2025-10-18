@@ -1,0 +1,11 @@
+; Section for listview
+[SubtypeCode30]
+components=ContextHelp,name,type,state,value,position,description
+type=lv
+removed=hotkey
+displayname=
+;Set alignment priority so that the list view items show up properly.
+AlignmentPriority=value,name
+
+[Information]
+Description=Default  Structured Mode view for the JAWS Window.

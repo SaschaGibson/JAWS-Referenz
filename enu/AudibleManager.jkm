@@ -1,0 +1,19 @@
+[Common Keys]
+Enter=Enter
+Control+R=ReWind
+Control+F=FastForward
+Control+Shift+F=NextSection
+Control+P=PlayAndStop
+Control+D=VolumeDown
+Control+U=ControlU
+NumPadEnter=Enter
+Control+Shift+B=ActivateInBoxProgramList
+Control+Shift+E=ToggleDevicePane
+Control+2=ReadDevicePane
+Control+Shift+M=ClickMainMemory
+Control+Shift+R=PreviousSection
+Control+Shift+H=HideDetailView
+Control+Shift+O=ActivateOtisOrTransferProgramList
+Control+Shift+P=FocusToDetailPane
+Control+Shift+G=ClickStorageCard
+Control+Shift+L=GoToMyLibrary

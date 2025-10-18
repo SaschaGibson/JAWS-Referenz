@@ -1,0 +1,27 @@
+﻿:script DownCell
+:DisplayName Down Cell
+:Synopsis Bewegt eine Zelle nach unten und liest sie.
+:Description Befindet man sich in einer Tabelle, wird der aktive Cursor auf die gleiche Zelle in der nächsten Reihe bewegt.  %product% liest die Reihenüberschrift, gefolgt vom Inhalt der aktuellen Zelle. Befindet man sich nicht in einer Tabelle und die Kurztaste zum Aufruf des Skripts ist ALT+STRG+PFEIL RUNTER, dann wird die Kurztaste an die Anwendung durchgereicht.
+:Category Tables
+:Version JAWS/25.0
+
+:script UpCell
+:DisplayName Up Cell
+:Synopsis Bewegt eine Zelle nach oben und liest sie.
+:Description Befindet man sich in einer Tabelle, wird der aktive Cursor auf die gleiche Zelle in der vorherigen Reihe bewegt.  %product% liest die Reihenüberschrift, gefolgt vom Inhalt der aktuellen Zelle. Befindet man sich nicht in einer Tabelle und die Kurztaste zum Aufruf des Skripts ist ALT+STRG+PFEIL RAUF, dann wird die Kurztaste an die Anwendung durchgereicht.
+:Category Tables
+:Version JAWS/25.0
+
+:script MoveToBottomOfColumn
+:DisplayName An das Ende der Spalte springen
+:Synopsis Springt an das Ende der aktuellen Spalte.
+:Description Wenn man sich in einer Tabelle befindet, wird der aktive Cursor an das Ende der aktuellen Spalte bewegt. Befindet man sich nicht in einer Tabelle und die Kurztaste zum Aufruf des Skripts ist UMSCHALT+ALT+STRG+PFEIL RUNTER, dann wird die Kurztaste an die Anwendung durchgereicht.
+:Category Tables
+:Version JAWS/25.0
+
+:script MoveToTopOfColumn
+:DisplayName Zum Spaltenanfang springen
+:Synopsis Springt an den Anfang der aktuellen Spalte.
+:Description Wenn man sich in einer Tabelle befindet, wird der aktive Cursor an den Anfang der aktuellen Spalte bewegt. Befindet man sich nicht in einer Tabelle und die Kurztaste zum Aufruf des Skripts ist UMSCHALT+ALT+STRG+PFEIL RAUF, dann wird die Kurztaste an die Anwendung durchgereicht.
+:Category Tables
+:Version JAWS/25.0

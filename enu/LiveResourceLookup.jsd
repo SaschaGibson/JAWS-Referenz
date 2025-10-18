@@ -1,0 +1,40 @@
+:function StringContainsHTML
+:Returns int TRUE if string contains HTML, FALSE otherwise
+:Synopsis Checks if the string provided contains HTML
+:Description Checks if the string provided contains correct HTML formatted page.
+:Category String
+:Param string/sString String to check for HTML
+
+:Function abs
+:Returns int the absolute value of the supplied signed integer.
+:description Returns the absolute value of the supplied signed integer.  Example: abs (-35) would return 35, abs (100) would return 100, and abs (0xFFFF) would return 65535.
+:Param int the signed integer.
+
+:Function IterateLookupModules
+:Description Retrieves all active lookup modules and rule set combinations.  Both lists are delimited by the constant LIST_ITEM_SEPARATER, found in hjConst.jsh
+:Returns int the number of items in the lists
+:Param string/byRef/szModuleNames string to receive the list of lookup modules.  This may contain duplicate entries, as more than one rule set would correspond to the same lookup module.  Just use iteration to walk through this bell-char-delimited list.
+:Param string/byRef/szRuleSets The delimited list of rule sets corresponding to the list of modules.
+:Param String/ByRef/szPrimary The Primary lookup module defined in Default.jcf file.
+
+:function ConvertLookupModuleDataToList
+:Returns string a UI-capable list, presenting Rule set first, then Lookup Module name.  This is the Pretty name assigned to the active rule set.
+:Description This list can be used to present to the user via dlgSelectItemInList.
+:Param int/nSize The number of items to expect in the subsequent module and rule set lists.
+:Param string/strModules The list of lookup modules - delimited by LIST_ITEM_SEPARATOR or the bell char (\007)
+:Param string/strRuleSets The list of rule sets - delimited by LIST_ITEM_SEPARATOR or the bell char (\007)
+
+:function RunLookupModuleQuery
+:Description Run Query either based on the supplied lookup module / rule set combination, or one or more of the optional parameters.  You can leave both Rule set and Module blank to use the primary lookup module, or fill in one or both parameters.  Fill in just he rule set parameter if you want to use the FS Lookup module.  This is the case unless you have written or been supplied with a module dll using the Live Resource Lookup API.  Most rule sets that apply to web services will use FSLookup (the default).
+:Param string/strQuery The text to send to the lookup module and rule set combination.
+:Optional
+:Param string/sRuleSet The rule set to apply to the supplied Lookup module.  If no module was supplied, the FSLookup module will be used.  Leave this param blank if you are using the primary (default) or your module does not accept rule sets.
+:Param string/sModule Optional lookup module to use.  If not supplied, the FSLookup Module will be used.
+:param string/strError optional error string to use if the query causes Invoke to return 0 or the string is empty
+
+:Function RunLookupModuleQueryUsingListOfModules
+:Description Generates a list of rule set - lookup module combinations, and generates a query based on the incoming text and the user's choice from the list.
+:Param string The query to use - generally the word or selection at the active cursor.
+
+:Function DebugLookupModuleQueryUsingListOfModules
+:Description Debug output for rule set.  Error codes / text are placed in the Virtual Viewer for developers of rule sets and/or modules.  This function only displays what's thrown up by Invoke calls.  No parameters, as it runs as a stand-alone providing both a list of available rule sets and a prompt to enter the search term.  To make your rule set discoverable first, put at least a dummy version of the files into the RuleSets folder of your subdirectory.  Then go to Settings Center | Research It options and make sure yours is checked, so it's available for listing.  When asked for the search term, press ESC to send a blank string, or type the term and press ENTER.  

@@ -1,0 +1,40 @@
+:Function HelpWasDoneForThisControl
+:Returns int True if done, false otherwise
+:synopsis This function does not work completely at this time.
+:Param1 int/iTypeToCheck Enter the JFW subtype code for the control.  Suggestion would be GetObjectSubTypeCode ()
+
+:Function MenusWereActive
+:Returns int Theoretically True if the menu bar or menu was active and the current state of the menu has not changed
+:Synopsis This function needs improvement and is not available at this time.
+
+:function GetTutorialHelpOutputType
+:description Determines the output type to be used when speaking the tutorial help message.
+:optional
+:param int True if tutorial help was called by a script, false if run from an event. Default is false.
+:returns int The output type to be used when speaking the tutorial help message.
+
+:Function SayTutorialHelp
+:Returns Void
+:Param1 int/iObjType Enter the JFW subtype code for the control
+:optional
+:param2 int/IsScriptKey Enter True if called from a script, not an event or helper function to event.
+:Synopsis This function speaks the help for the tutor mode.
+
+:Function SayTutorialHelpHotKey
+:Returns int True if help was spoken, false otherwise
+:Param1 handle/hHotKeyWindow The window with focus
+:optional
+:param2 int/IsScriptKey Enter True if called from a script, not an event or helper function to event.
+:Synopsis Speaks the formatted message, including the hot key, but does not announce when there is no hot key available.
+
+:function GetCustomTutorMessage
+:synopsis Retrieves a custom tutor message to be spoken by SayTutorialHelp.
+:description Retrieves a custom tutor message to be spoken by SayTutorialHelp.
+Overwrite this function in applications where you want a custom tutor message to be substituted instead of the usual tutor message.
+This function is processed after GetFrameTutorMessage and before any of the usual tutor messages are processed.
+:returns string Null if no custom tutor message is to be spoken, otherwise the custom tutor message.
+
+:function ExpandAltCommaInHotKey
+:synopsis Used to improve readability of hotkey text containing alt comma as part of the hotkey text.
+:description If a hotkey contains "Alt," expands it to read "Alt followed by".
+:param string byRef The hotkey text

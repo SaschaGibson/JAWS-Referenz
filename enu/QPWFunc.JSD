@@ -1,0 +1,273 @@
+:function stringsEqual
+:synopsis determines if two strings are equal based on length and content
+:description This function is more accurate than the double equals operator because it also checks the two strings lengths rather than just comparing the shortest string to the first part of the other string.
+:returns int true or false
+
+:function setColTitlesToRow
+:Synopsis defines the current row as the row containing column titles
+:Description This script defines the current row as the row containing column titles.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:function sayFont
+:Synopsis says the font and cell attributes for the current cell
+:Description This script says the font and cell attributes for the current cell.
+
+:function BrlColumnNumberToLetter
+
+:function screenSensitiveHelpCustomControls
+:Synopsis determines which custom control type has focus and calls the appropriate screen sensitive help for known classes function
+:Description this function determines which custom control type has focus and calls the appropriate default screen sensitive help for known classes function.
+
+:function sayCustomControlHotkey
+:Returns string hotkey mnemonic
+:Synopsis says the hotkey of controls in owner-drawn dialogs
+:Description This function says the hotkey of controls in owner-drawn dialogs.
+
+:function sayColumnTitle
+
+:function isOwnerDrawnCheckbox
+:Returns int true or false
+:Synopsis determines if the current focus is an owner drawn checkbox
+:Description This function determines if the current focus is an owner drawn checkbox.
+
+:function isOwnerDrawnbutton
+:Returns int true or false
+:Synopsis determines if the current focus is an owner drawn standard button
+:Description This function determines if the current focus is an owner drawn standard button.
+
+:function sayGridlineStatus
+:Synopsis says whether horizontal or vertical gridlines are displayed or not
+:Description This script says whether horizontal or vertical gridlines are displayed or not.
+
+:function setRowTitlesToColumn
+:Synopsis defines the current column as the column containing row titles
+:Description This script defines the current column as the column containing row titles.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:function sayCell
+:Synopsis this is a modified version of sayCurrentCell which only speaks the cell content
+:Description This is a modified version of sayCurrentCell which only speaks the cell content. It is hear so that the default table reading scripts work.
+
+:function spellCell
+:synopsis spells the contents of the current cell
+:description This function spells the contents of the current cell and is used when sayWord is invoked twice quickly.
+:returns void
+
+:function sayCurrentCell
+:Synopsis says the coordinates and content of the active cell
+:Description This function says the coordinates and content of the active cell.
+
+:function getCellFormat
+:Returns string format description
+:Synopsis gets the cell format for the current cell
+:Description returns the cell format for the current cell as a descriptive string.
+
+:function ColumnNumberToLetter
+
+:function autoStartEvent
+
+:function moveToMonitorCell
+:Synopsis moves to a selected monitor cell
+:Description This function allows the user to select from a possible 10 monitor cells and moves focus to that cell.
+
+:function findSumFormulaInColumn
+:Returns int the column index of the column containing the specified row's sum or total formula.
+:Synopsis finds the sum or total formula in the specified column
+:Description This function finds the sum or total formula in the specified column.
+:Param int/column No Description
+
+:function nextCell
+:Returns int true or false
+:Synopsis moves to the next cel in the current row
+:Description This function moves to the next cell in the current row. It is here so that the default table reading scripts work.When inside a table or spreadsheet, moves the active cursor to the same cell in the next column.
+
+:function saySelectedText
+:Synopsis Says selected or highlighted text that appears on the screen. If used in the spreadsheet area, the selected block is announced.
+:Description This provides an easy way to check to see if you have selected the correct text, in preparation for other actions, such as deleting, copying, bolding, underlining, etcetera.  If used in the spreadsheet area, the selected block is announced.
+
+:function sayChangedBorderComponents
+:Synopsis says the components of the cell border which have changed
+:Description This function speaks the components of the cell border which have changed since the last call to this function.
+
+:function ListRow
+:Synopsis lists cells with data in the current row
+:Description This script lists cells with data in the current row.
+
+:function setTotalColumnToCurrent
+:Synopsis sets the current column as the column containing row totals
+:Description This script sets the current column as the column containing row totals.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:function saySheetIdentifier
+:Synopsis says the current page's identifier
+:Description This function says the current sheet's identifier.
+
+:function GetColumnTotal
+:Synopsis reads the column's total
+:Description This script reads the current column's total.
+:Returns string The current columnn total
+
+:function sayFormula
+:Synopsis says the formula associated with the current cell
+:Description This script says the formula associated with the current cell.
+
+:function brailleAddMonitorCells
+:Synopsis adds the defined monitor cells to the display
+:Description This function adds the defined monitor cells to the display.
+
+:function BrailleBuildLine
+
+:function ListColumn
+:Synopsis lists cells in the current column containing data
+:Description This script lists cells in the current column containing data.
+
+:function sayColumnHeader
+:Synopsis alias for sayColumnTitle
+:Description This function is an alias for sayColumnTitle. It is hear so the default table reading scripts work.
+
+:function GetRowTotal
+:Synopsis reads the row total
+:Description This script reads the current row's total.
+:Returns string the current row total
+
+:function priorCell
+:Returns int true or false
+:Synopsis moves to the prior cell in the same row
+:Description This function moves to the prior cell in the same row. It is here so that the default table reading functions work. When inside a table or spreadsheet, moves the active cursor to the same cell in the prior column.
+
+:function getColumnTitle
+:Returns string column title
+:Synopsis gets the title for the current column
+:Description This function returns the column title for the current column or it returns the column letter and the words "no title".
+
+:function formatTimeOrDate
+:Returns string formatted time or date string
+:Synopsis formats a time or date value to the specified format
+:Description This function converts a time or date value as in "0.375" to a formatted time or date string eg "9:00 am".
+:Param string/valueStr value string, eg "0.375".
+:Param string/format format specifier, eg d1 to d9
+
+:function getWorksheetName
+:Synopsis returns the current worksheet name
+:Description This function returns the name of the active worksheet.
+:returns string the name of the sheet
+
+:function sayRowHeader
+:Synopsis alias for sayRowTitle
+:Description This function is an alias for sayRowTitle. It is hear so the default table reading scripts work.
+
+:function setTotalRowToCurrent
+:Synopsis sets the current row as the row containing column totals
+:Description This script sets the current row as the row containing column totals.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:function getMonitorCellInfo
+:Returns string No Return Description
+:Synopsis returns the coordinates and content of the monitor cell if defined
+:Description This function returns the coordinates and content of the monitor cell if defined. It is primarily called by sayCurrentCell for Braille Tracking purposes
+:Param int/index index of monitor cell to get
+
+:function sayOwnerDrawnCheckboxState
+:synopsis speaks the state of owner drawn checkboxes
+:description This function speaks the state of owner drawn checkboxes.
+:returns void
+
+:function sayOwnerDrawnControlValue
+:synopsis speaks the value of an owner drawn control
+:description This function speaks the value of an owner drawn control.
+
+:function sayOwnerDrawnDialogFocus
+:Returns int true if the function was able to determine the control to be spoken, false otherwise.
+:Synopsis says the focused control in owner drawn dialogs implemented in Service Pack 4 of QPW
+:Description This function says the focused control in owner drawn dialogs implemented in Service Pack 4 of QPW.
+
+:function readWordInContext
+:Synopsis reads the word in context or if in the spreadsheet area, reads the coordinates of the active cell
+:Description This script reads the word in context or if in the spreadsheet area, reads the coordinates of the active cell.
+
+:function stripDollarSigns
+:Returns string coordinates without dollar signs
+:Synopsis strips the dollar signs out of a cell coordinate string
+:Description This function strips the dollar signs out of a cell coordinate string. Each cell coordinate string has at least two $ (dollar) signs which we do not want to speak.
+:Param string/coordinates No Description
+
+:function worksheetChanged
+:Returns int true or false
+:Synopsis determines if the worksheet has changed since this function was last called
+:Description This function determines if the worksheet has changed since the last time this function was called.
+
+:function upCell
+:Returns int true or false depending on whether you are in the spreadsheet and there is a cell above the current cell in the same column.
+:Synopsis moves to the prior cell in the same column
+:Description This function moves to the prior cell in the same columnWhen inside a table or spreadsheet, moves the active cursor to the same cell in the prior Row. It is here so that the default table reading scripts work.
+
+:function ReadMonitorCell
+:Synopsis reads the monitor cell specified by index
+:Description This script reads the monitor cell specified by index. Up to 10 monitor cells may be defined.
+:Param int/index= index of monitor cell to read
+
+:function brailleBuildCustomDialog
+:Returns int true or false
+:Synopsis brailles the focused control in owner drawn dialogs
+:Description This function brailles the focused control in owner drawn dialogs.
+
+:function getNotebookName
+:Synopsis returns the name of the active notebook
+:Description This function returns the name of the active notebook as a string.
+:returns string The name of the active notebook
+
+:Function getNotebookJSIName
+:Synopsis returns the current notebook's jsi filename
+:Description This function returns the current notebook's jsi filename.
+:Returns string the notebook's name
+
+:FUNCTION getMonitorCellsSection
+:Returns string the section name where monitor cell definitions are stored in the JSI
+
+:function sayRowTitle
+
+:function findSumFormulaInRow
+:Returns int column number
+:Synopsis finds the sum or total formula in the specified row
+:Description This function finds the cell containing the sum or total formula in the specified row and returns the column index of that cell.
+:Param int/row row index
+
+:function describeCellBorder
+:Synopsis describes the cell border of the active cell
+:Description This script describes the cell border of the active cell.
+
+:function downCell
+:Returns int true or false
+:Synopsis moves down cell in same column
+:Description This function moves to the next cell in the same column. It is here so the default table reading scripts work.When inside a table or spreadsheet, moves the active cursor to the same cell in the next Row.
+
+:function sayCellCoordinates
+:Synopsis says the coordinates of the current cell
+:Description This function says the coordinates of the current cell.
+
+:function getRowTitle
+:Returns string the title of the current row (if one is defined) or just the row number and the words "no title".
+:Synopsis returns the row title for the current row
+:Description This function returns the row title for the current row.
+
+:function autoFinishEvent
+
+:function getSheetName
+:Returns string sheet identifier
+:Synopsis returns the sheet identifier
+:Description This function returns the worksheet identifier.
+
+:function setNthMonitorCellToCurrent
+:Synopsis defines the current cell as the nth monitor cell
+:Description This script defines the current cell as the nth monitor cell. The monitor cell can be read by pressing its assigned keystroke.. The nth parameter is passed as an int from 1 to 10.
+:Param int/index index of monitor cell to define
+
+:function getCellCoordinates
+:synopsis 
+:description 
+:returns string
+

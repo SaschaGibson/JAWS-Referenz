@@ -1,0 +1,485 @@
+:script hotkeyHelp
+:Synopsis Quattro Pro Hotkey Help
+:Description This script provides Quattro Pro hotkey help.
+
+:script listSpreadsheetFunctions
+:Synopsis lists spreadsheet functions by category
+:Description This script lists spreadsheet functions by category.
+
+:script setColTitlesToRow
+:Synopsis defines the current row as the row containing column titles
+:Description This script defines the current row as the row containing column titles.
+
+:script sayNextLine
+:Synopsis if in the spreadsheet, moves to the next row and reads the cell with focus
+:Description This script performs the nextLine function. If in the spreadsheet, moves to the next row and reads the cell with focus .
+
+:script sayFont
+:Synopsis says the font and cell attributes for the current cell
+:Description This script says the font and cell attributes for the current cell.
+
+:function GetAppMainWindow 
+:Returns handle
+:Param handle/hWindow 
+
+:script playMacro
+:Synopsis play macro
+:Description This script activates the Play Macro dialog.
+
+:script Enter
+:Category Application
+
+:script SelectNextWord
+
+:script outlineGroup
+:Synopsis outline group
+:Description This script activates the Outline Group function.
+
+:script debugMode
+:Synopsis debug mode
+:Description This script activates debug mode
+
+:script SayPriorParagraph
+
+:script sayNextCharacter
+:Synopsis moves to the next character or cell and reads it
+:Description This script moves to the next character or cell and reads it.
+
+:function InSpellChecker
+:Returns int Returns True if the spell check dialogue is active or otherwise false.
+:Synopsis Determines if you are in the Spell Checker dialogue page.
+:Description This function checks to see if the focus is within the Spell Checker dialogue.  The function checks for a unique control which is the Not Found Field.
+:Category Application
+
+:function InDictionary
+
+:script visualBasicEditor
+:Synopsis starts the Visual Basic editor
+:Description This script starts the Visual Basic editor.
+
+:script setMonitorCellToCurrent
+:Synopsis defines the current cell as the monitor cell
+:Description This script defines the current cell as the monitor cell. The monitor cell can be read by pressing its assigned keystroke.
+
+:script sayColumnTitle
+:Synopsis says the current column's title
+:Description This script says the current column's title.
+
+:function loadMonitorCells
+
+:function NextAvailableMonitorCell
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:script SayCell
+
+:script sayGridlineStatus
+:Synopsis says whether horizontal or vertical gridlines are displayed or not
+:Description This script says whether horizontal or vertical gridlines are displayed or not.
+
+:script SelectPriorCharacter
+
+:script SelectFromStartOfLine
+
+:script notebookProperties
+:Synopsis notebook properties
+:Description This script displays the notebook properties dialog.
+
+:script expandOutlineGroup
+:Synopsis expand outline group
+:Description This script expands the Outline Group.
+
+:script closeWindow
+:Synopsis closes open window
+:Description This script closes an open window.
+
+:script formulaComposer
+:Synopsis formula composer
+:Description This script opens the formula composer.
+
+:script setRowTitlesToColumn
+:Synopsis defines the current column as the column containing row titles
+:Description This script defines the current column as the column containing row titles.
+
+:script sayPriorLine
+:Synopsis if in the spreadsheet, moves to the prior row and reads the cell with focus
+:Description This script performs the priorLine function. If in the spreadsheet, moves to the prior row and reads the cell with focus .
+
+:function inSpreadsheet
+:Returns int true or false
+:Synopsis determines if the focus is in the spreadsheet area and the PC Cursor is active
+:Description This function determines if the focus is in the spreadsheet area and if the PC Cursor is active. It is used to determine whether it is appropriate to read the current cell from the object model.
+
+:function autoStartEvent
+
+:script moveToMonitorCell
+:Synopsis moves to a selected monitor cell
+:Description JFW can track up to 10 monitor cells. This script allows the user to set focus on any of these cells by presenting all defined monitor cells in a list and allowing the user to choose one to move to.
+
+:script SetTitleReadingVerbosity
+
+:function NextDictionaryControl
+:Synopsis Moves the focus to the next control in the virtual tab order of the dictionary dialogue.
+:Description This function moves the focus to the next control in the Virtual tab order of the dictionary dialogue.  Quattro by default does not permit keyboard users to move to any controls within the Writing Tools.
+:Category Application
+
+:script NextCell
+
+:script previousWindow
+:Synopsis focuses on previous open window
+:Description This script focuses on the previous open window.
+
+:script saySelectedText
+:Synopsis Says selected or highlighted text that appears on the screen. If used in the spreadsheet area, the selected block is announced.
+:Description This provides an easy way to check to see if you have selected the correct text, in preparation for other actions, such as deleting, copying, bolding, underlining, etcetera.  If used in the spreadsheet area, the selected block is announced.
+
+:script nextSheet
+:Synopsis moves to the next worksheet
+:Description This script moves to the next worksheet and announces it.
+
+:function sayEditWithButtonControl
+:Synopsis locates the correct prompt for edit controls that have associated buttons, that are not accessible by the tab key. It also speaks a help message telling the user how to activate associated buttons with these types of controls.
+:Description This function locates the correct prompt for edit controls with parents with class QPRangeControl or PFNE100. It also speaks a help message telling the user how to activate associated buttons with these types of controls.  Some dialogues that contain these types of controls are in the Table Link,  Table Query and Aliases dialogues.
+
+:script sayCharacter
+:Synopsis speaks the current cell or character at cursor
+:Description This script speaks the current cell if in the spreadsheet or the character at the caret.
+
+:function inCustomDialog
+:Returns int Always returns false.
+:Synopsis Handles non-standard dialogues.
+:Description This function is used to solve problems with braille support and is legacy code only.
+
+:script JAWSDelete
+:Synopsis Deletes the current cell or acts like the normal delete key.
+:Description This script deletes the contents of the current cell, when not in edit mode.  Otherwise acts like the standard delete key.acts like the
+:Category Application
+
+:script applicationProperties
+:Synopsis application properties
+:Description This script displays the application properties dialog.
+
+:script contextMenu
+:Synopsis context menu
+:Description This script is a shortcut to the context menu (Right Click).
+
+:script outlineUngroup
+:Synopsis outline ungroup
+:Description This script activates the Outline Ungroup function.
+
+:script selectionMode
+:Synopsis selection mode
+:Description This script activates Selection Mode.
+
+:script ListRow
+:Synopsis lists cells with data in the current row
+:Description This script lists cells with data in the current row.
+
+:script setTotalColumnToCurrent
+:Synopsis sets the current column as the column containing row totals
+:Description This script sets the current column as the column containing row totals.
+
+:script ControlEnd
+:Synopsis see End
+:Description See End description.
+
+:script end
+:Synopsis moves the focus to the last cell in the row
+:Description This script moves the focus to the last cell in the row.
+
+:script sayWindowPromptAndText
+
+:function UndefineMonitorCells
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis clears all monitor cell definitions
+:Description This function clears all definitions of monitor cells
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function GetRealWindow
+:Returns handle
+:Param handle/hWindow 
+
+:script sayLine
+:Synopsis speaks the current cell or line
+:Description This script speaks the current cell if in the spreadsheet or reads the current line if the caret is visible.
+
+:script ReadMisspelledAndSuggestion
+:Synopsis reads the misspelled word and suggestion
+:Description This script reads the misspelled word and suggestion when the spellchecker is active.
+
+:script SelectFromTop
+
+:script nextWindow
+:Synopsis focuses on the next open window
+:Description This script focuses on the next open window.
+
+:script quickTab
+:Synopsis quick tab
+:Description This script activates the Quick Tab feature
+
+:script ReadColumnTotal
+:Synopsis reads the column's total
+:Description This script reads the current column's total.
+
+:script sayNextWord
+:Synopsis moves to the next word and reads it
+:Description This script moves to the next word and reads it.
+
+:script sayFormula
+:Synopsis says the formula associated with the current cell
+:Description This script says the formula associated with the current cell.
+
+:function NextSpellCheckControl
+:Synopsis Permits JAWS to move through the SpellCheck dialogue.
+:Description This is a custom function to permit JAWS to track the focus within the Spell Checker of Quattro Pro.  By default, Quattro Pro does not track the focus within the Spell Check menu.
+:Category Application
+
+:function SayHighLightedText
+:Synopsis Called by NewTextEvent to process whether or not highlighted text will be spoken.
+:Description Can be modified for application specific needs in many cases. Example: Non-standard list boxes, spell checkers and flashing title bars.
+:Param handle/hwnd handle of the window in which the text was written
+:Param string/buffer String containing the text that was written
+
+:function PriorDictionaryControl
+:Synopsis Moves to the previous control in the dictionary dialogue page.
+:Description This function moves the focus to the previous control of the virtual tab order in the dictionary dialogue page.
+:Category Application
+
+:function ToggleCellBorderChangeDetection
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis toggles the detection of cell border changes on and off
+:Description This script toggles cell border change detection on and off. When on, if you move into a cell whose border has changed in some way, the changed component will be announced.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function saveDocumentSettings
+:Returns int true if settings are saved ok
+:Synopsis saves notebook and sheet specific verbosity settings such as title and total definitions
+:Description This function saves notebook and sheet specific verbosity settings such as title and total definitions.
+
+:script screenSensitiveHelp
+:Synopsis screen sensitive help for Quattro Pro
+:Description This script provides screen sensitive help for Quattro Pro.
+
+:script SelectPriorLine
+
+:script sortData
+:Synopsis sort data
+:Description This script activates the Sort Data dialog.
+
+:script spreadsheetProperties
+:Synopsis spreadsheet properties
+:Description This script displays the spreadsheet properties dialog.
+
+:script toggleGroupMode
+:Synopsis toggles group mode on and off
+:Description This script toggles group mode on and off.
+
+:script ListColumn
+:Synopsis lists cells in the current column containing data
+:Description This script lists cells in the current column containing data.
+
+:function toggleTitleReadingVerbosity
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis toggles title reading from off to read column titles to read row titles to read both titles
+:Description This script toggles title reading from off to read column titles to read row titles to read both titles.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:script sayPriorCharacter
+:Synopsis moves to the prior character or cell and reads it
+:Description This script moves to the prior character or cell and reads it.
+
+:function sayFocusedWindow
+
+:function sayPrompt
+:Synopsis tries to determine the prompt for a particular focused chunk
+:Description This function tries to determine the prompt for a particular focused chunk when the control id and class are the same for all controls in a dialog.
+:Param string/focusedChunk focusedChunk of text
+
+:script upALevel
+:Synopsis Performs the standard Windows Escape command. If in a spreadsheet then detects when returning to the cell navigation level from editing a cell.
+:Description In menus, this script will close the menu and place the focus on the menu bar. In Combo List boxes this script will exit the Combo List box returning focus to the Combo box without making a selection. This script will also close a Context menu. If in a spreadsheet then the script will detect when returning to the cell navigation level from editing a cell and notify the user.
+
+:script tabKey
+:Synopsis says the coordinates and content of the newly focused cell
+:Description This script says the coordinates and content of the newly focused cell.
+
+:script priorSheet
+:Synopsis moves to the prior worksheet
+:Description This script moves to the prior worksheet and announces it.
+
+:script clearMonitorCells
+:Synopsis clears all monitor cell definitions
+:Description This script clears all definitions of monitor cells
+
+:function UndefineSheetDefinitions
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis clears all definitions
+:Description This function clears all title, total and monitor cell row and column definitions.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:script spellChecker
+:Synopsis invokes the spellchecker
+:Description This script invokes the spellchecker.
+
+:function PriorSpellcheckControl
+:Synopsis Moves backwards in the virtual tab order in the Spell check dialogue.
+:Description This function moves backwards using the virtual tab order in the spell check dialogue.  Quattro Pro does not allow a keyboard user to move to most of the controls within the Spellcheck and this function solves this problem by creating a Virtual Tab order.
+:Category Application
+
+:function InThesaurus
+:Returns int Returns true if the Thesaurus is active, otherwise false.
+:Category Application
+
+:script PriorCell
+
+:script collapseOutlineGroup
+:Synopsis collapse outline group
+:Description This script collapses the Outline Group.
+
+:script listMacros
+:Synopsis lists macros by category
+:Description This script lists macros by category.
+
+:script ReadRowTotal
+:Synopsis reads the row total
+:Description This script reads the current row's total.
+
+:script shiftTabKey
+:Synopsis says the coordinates and content of the newly focused cell
+:Description This script says the coordinates and content of the newly focused cell.
+
+:script setMonitorCells
+
+:function MenuModeEvent
+:Param handle/WinHandle Window handle of the menu
+:Param int/Mode Mode of the menu
+
+:function inWritingTools
+:Returns int true or false
+:Synopsis Determines which Writing Tool is active.
+:Description This function determines which Writing Tool is active.  E.G.  The Spell Checker, Thesaurus or Dictionary.
+
+:script AdjustJAWSVerbosity
+
+:script setTotalRowToCurrent
+:Synopsis sets the current row as the row containing column totals
+:Description This script sets the current row as the row containing column totals.
+
+:script firstCell
+:Synopsis focuses on the first cell in the spreadsheet
+:Description This script focuses on the first cell in the spreadsheet.
+
+:script sayPriorWord
+:Synopsis moves to the prior word and reads it
+:Description This script moves to the prior word and reads it.
+
+:function ActiveItemChangedEvent
+:Synopsis This function is triggered when the active element in an object changes.
+:Description The MSAAMode flag must be set to 2 in the [Options] section of your application-specific jcf file to enable this function.  This function receives the following parameters: the handle for the window containing the current object, the iD of the object, the iD of the child object, the handle of the previous window, the iD of the previous object,and the iD of the previous child object.
+:Param handle/curHwnd the handle of the window containing the current object
+:Param int/curObjectId the iD of the current object
+:Param int/curChildId the iD of the current child
+:Param handle/prevHwnd the handle of the window containing the previous object
+:Param int/prevObjectId The iD or the previous object
+:Param int/prevChildId the iD of the previous child
+
+:script BrailleRouting
+:Description As in Route PC to JAWS, but it uses the braille display routing button to determine the destination. This script contains extra code to ensure that Braille routing occurs correctly when in the worksheet.
+
+:script readWordInContext
+:Synopsis reads the word in context or if in the spreadsheet area, reads the coordinates of the active cell
+:Description This script reads the word in context or if in the spreadsheet area, reads the coordinates of the active cell.
+
+:script SelectNextLine
+
+:script exitQP
+:Synopsis exits QuattroPro
+:Description This script exits QuattroPro.
+
+:script setNextAvailableMonitorCell
+
+:function loadApplicationSettings
+
+:function saveApplicationSettings
+:Returns int no description
+
+:script UpCell
+
+:script SelectNextCharacter
+
+:script whatsThis
+:Synopsis what's this
+:Description Activates What's this help
+
+:script ReadMonitorCell
+:Synopsis reads the monitor cell
+:Description This script reads the monitor cell.
+
+:script sayWord
+:Synopsis speaks or spells the current cell or word
+:Description this script speaks or spells the current cell or word depending on whether the caret is visible and whether focus is in the spreadsheet.
+
+:function toggleCellFormatChangeDetection
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis toggles the detection of cell format change on and off
+:Description This script toggles the cell format change detection feature on and off. When on and you move into a cell with a different number format, JFW will alert you by telling you the new format. This is useful for determining the kind of data expected in this cell.
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function loadDocumentSettings
+:Synopsis loads notebook/sheet verbosity settings
+:Description This function loads notebook and worksheet specific verbosity settings such as title, total and monitor cell definitions.,
+
+:script sayRowTitle
+:Synopsis says the current row's title
+:Description This script says the current row's title.
+
+:script SayNextParagraph
+
+:script describeCellBorder
+:Synopsis describes the cell border of the active cell
+:Description This script describes the cell border of the active cell.
+
+:script ScriptFileName
+
+:script clearSheetDefinitions
+:Synopsis clears all definitions
+:Description This script clears all title, total and monitor cell row and column definitions.
+
+:script DownCell
+
+:script SelectPriorWord
+
+:script SelectToBottom
+
+:function ToggleCellReadingVerbosity
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis Toggles between reading the contents or coordinates of cells
+:Description This function toggles between reading the contents of cells or the coordinates of cells
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function initializeApplicationSettings
+:Synopsis initializes QPW specific verbosity items
+:Description This function initializes QPW specific verbosity items to their default values.
+
+:function initializeDocumentSettings
+:Synopsis initializes QPW document specific verbosity items
+:Description This function initializes QPW document specific verbosity settings to their default values.
+
+:function getStatusBarText
+:Returns string text
+:Synopsis returns the text on the status bar
+:Description This function returns the text on the status bar
+
+:script nameCell
+:Synopsis lets you name a cell or cell area
+:Description This script lets you name a cell or cell area.
+
+:script home
+:Synopsis moves to first cell in row
+:Description This script moves focus to the first cell in the row.
+
+:script EditCell
+:Synopsis Edits the current cell.
+:Description This script activates the mode to modify the contents of the current cell.
+:Category Application
+

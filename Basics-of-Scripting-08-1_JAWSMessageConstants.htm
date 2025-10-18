@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+ <TITLE>8.1 JAWS Message Constants</TITLE>
+ <LINK rel="StyleSheet" href="default.css">
+</HEAD>
+<BODY>
+ <H1>8.1 JAWS Message Constants</H1>
+
+<P>In prior versions of JAWS, you had to create all of your messages as constants.
+  A constant is a mnemonic way of representing a group of hard-to-remember values.
+  Some examples of message constants follow:</P>
+<P class="Code">Const<br>
+msgSettingSaved_S = "Setting Saved"<br>
+msgNoFollowPC_L = "The Jaws cursor will not follow the PC Cursor"<br>
+msgNoFollowPC_S = "Jaws will not follow PC"<br>
+msgFollowPC_L = "The Jaws cursor will follow the PC Cursor"</P>
+<P>You can find the above examples in the default.jsm message file located in
+  your JAWS settings folder. Each message ends with either an &quot;S&quot; or
+  &quot;L&quot;. Messages ending in &quot;S&quot; indicate the message is a short
+  message. By default, JAWS speaks short messages when you use intermediate or
+  advanced verbosity settings. The messages ending in &quot;L&quot; indicate long
+  messages. JAWS speaks these messages when you use beginner verbosity setting.</P>
+<P>If you needed to make changes in any of these message constants, you would have
+  to make sure the quotation marks are in place after the modifications are complete.
+  Failure to do so causes compilation errors when you try to compile any script
+  file that includes the default.jsm message file. </P>
+<P>Each time you wanted JAWS to speak multiple messages; you had to concatenate
+  the messages together to produce one message. If you remember using hot key
+  help in JAWS 3.7, the information spoken by JAWS was lengthy. The keystrokes
+  spoken by JAWS were a series of message constants concatenated together to make
+  the entire list of keystrokes. An example of string concatenation follows:</P>
+<P>&quot;This is the first part of my message.&quot; + &quot; I am using concatenation
+  to create a single message &quot; + &quot;out of 2 or 3 messages.&quot;</P>
+<P>The result of concatenating the 3 strings of text follows:</P>
+<P>&quot;This is the first part of my message. I am using concatenation to create
+  a single message out of 2 or 3 messages.&quot;</P>
+<P>When you use string concatenation to create a single message, you also have
+  to remember to use proper spacing. Otherwise, the words of your message may
+  run together to create an unintelligible message.</P>
+<P>&nbsp;</P>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="08-2_TheJAWSMessageFormat.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</BODY>
+</HTML>

@@ -1,0 +1,19 @@
+# Script: MoveToNextFrame
+
+## Description
+
+This keystroke moves the virtual cursor to the next frame on the webpage
+
+## Returns
+
+Type: Void\
+
+## Parameters
+
+No Parameters
+
+## Version
+
+This function is available in the following releases:
+
+1.  JAWS 13.0 and later

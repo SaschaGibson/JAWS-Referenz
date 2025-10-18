@@ -1,0 +1,18 @@
+:function GetTopLineOfWindow
+
+:function GetALine
+
+:function ClickLocation
+
+:function PushAhandle
+:Param handle/NewHandle an integer or handle value to be saved on the stack
+
+:function FocusOnWindow
+
+:function InitializeStack
+
+:function VirtualizeRealWindow
+
+:function PopAhandle
+:Returns handle The handle just pulled from the stack, null if none
+

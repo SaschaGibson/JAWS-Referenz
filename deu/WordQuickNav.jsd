@@ -1,0 +1,508 @@
+:function SuspendDocumentQuickNav
+:description Suspends quick key navigation for the Word document. 
+Quick key navigation may be temporarily suspended when focus moves somewhere such as a menu, then turned back on when focus moves back to the Word document.
+:optional
+:param int/KeepQuickNavActiveForVirtualCursor If true, allows quick key navigation to stay active. 
+Quick key navigation should remain active if focus is moving to an area where the virtual cursor is active. 
+The default is false.
+
+:function UnsuspendDocumentQuickNav
+:description If quick key navigation has been temporarily suspended for the Word document, unsuspends it and turns quick key navigation back on for the Word document.
+
+:function TurnOffDocumentQuickNav
+:description Turns off quick key navigation for the Word document.
+
+:function TurnOnDocumentQuickNav
+:description Turns on quick key navigation for the Word document.
+
+:function DocumentQuickNavIsSuspended
+:description Tests if quick key navigation is temporarily suspended for the Word document.
+:returns int True if quick key navigation is suspended for the Word document, false otherwise.
+
+:function DocumentQuickNavIsOff
+:description Tests if quick key navigation is off, not active and not suspended, for the word document. Does not apply to the virtual cursor.
+:returns int True if quick key navigation is off for the Word document, false otherwise.
+
+:function DocumentQuickNavIsOn
+:description Tests if quick key navigation is active for the word document. Does not apply to the virtual cursor.
+:returns int True if quick key navigation is active for the Word document, false otherwise.
+
+:function QuickNavKeyTrapping
+:description Determines if keys are being trapped due to quick key navigation mode being on for the Word document.
+:returns int true if quick navigation mode is trapping keys, false otherwise.
+
+:function IsTrappableKey
+:param int The key code of a key.
+:description Determines if a key belongs to a set which may be trapped. The set includes all alphanumeris keys, punctuation, Backspace, Enter, space and their shifted equivalents.
+:returns int true if the key is in the range which may be trapped, false otherwise.
+
+:Function TrimKeyName
+:Description Strips the Left or Right word that begins a key name where a left or right modifier keystroke is associated with the key name. Such key names include LeftWindows or RightWindows plus an alphanumeric key. The key name returned can then be used to provide a valid parm to SimulateKey or TypeKey function calls.
+:Param String/sKeyName The key name to trim.
+:Returns String The key name without the leading Left or Right part of the name.
+
+:function QuickNavTrappedKeyProcessed
+:param int the key code.
+:param string The key name.
+:param int boolean telling if it is a script key.
+:description If a key is not scripted and if it belongs to a set of keys which may be trapped, traps the key; otherwise, runs the script for the key or sends it through to the application.
+:returns int true if the key was trapped, false otherwise.
+
+:function EnsureQuickNavKeyTrapReleased
+:description releases the key trap set in place by the quick navigation key mode.
+
+:function QuickNavState
+:description Retrieves the quick navigation status.
+:returns int True or false.
+
+:function SetQuickKeyNavigationState
+:description Sets the quick key navigation state, and turns on or off trapping of keys according to the state.
+:Param Int true to turn quick navigation on, false to turn it off.
+
+:function EstablishQuickNavState
+:description If quick navigation mode has been turned on, makes sure to release key traps when focus leaves an open documetn and the mode is toggled off by the system, and toggles the mode back on when focus returns to an open document.
+
+:function EnsureQuickNavIsOff
+:description If quick nav is on, turns it off.
+
+:function SetSayAllRestart
+:description Sets SayAll to enable automatic restart after interruption.
+
+:function ClearSayAllRestart
+:description Determines whether SayAll should automatically restart after interruption.
+:returns int in True if SayAll will restart after interruption, false otherwise.
+
+:function ShouldSayAllRestart
+:description Determines whether say all should automatically restart after interruption.
+:returns int true if SayAll should automatically restart after interruption, false otherwise.
+
+:function SayAllRelocateCursor
+:param int iSayAllMode
+:param int iUnitsToRetreat
+:param int iWordsSpokenInCurrentUnit
+
+:Function SayWrapMessageError
+:Description  Announces the appropriate error message for whether no more or no prior elements have been found depending on whether wrapping to top or bottom of file.
+:Param String/sElementType The type of element to report not having been found.
+
+:Function SayOrPlayMessage
+:Description Says or plays a message or sound, depending on whether SayAll is in progress. If it is, a sound is played. If it is not, the message is spoken.
+:Param String/smsg_l The long message to be spoken.
+:optional
+:Param String/smsg_s The short message to be spoken.
+
+:function SayKeyNotAvailableAppMessage
+:Description Speaks an error message for quick navigation scripts that are not available for the current application.
+
+:function ProcessMoveToSpellingError
+:description Used by the move to spelling error scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+
+:Script MoveToFirstSpellingError
+:Synopsis Springt zum ersten Rechtschreibfehler.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den ersten Rechtschreibfehler im Dokument oder der E-Mail-Nachricht gesprungen.
+
+:Script MoveToLastSpellingError
+:Synopsis Springt zum letzten Rechtschreibfehler.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den letzten Rechtschreibfehler im Dokument oder der E-Mail-Nachricht gesprungen.
+
+:Script MoveToPriorSpellingError
+:DisplayName Zum vorherigen Rechtschreibfehler springen
+:Synopsis Springt zum vorherigen Rechtschreibfehler.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den vorherigen Rechtschreibfehler im Dokument oder der E-Mail-Nachricht gesprungen.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:Script MoveToNextSpellingError
+:DisplayName Zum nächsten Rechtschreibfehler springen
+:Synopsis Springt zum nächsten Rechtschreibfehler.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den nächsten Rechtschreibfehler im Dokument oder der E-Mail-Nachricht gesprungen.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:function ProcessMoveToGrammaticalError
+:description Used by the move to grammatical error scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+
+:Script MoveToFirstGrammaticalError
+:Synopsis Springt zum ersten Satz mit einem Grammatikfehler.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den ersten Satz mit einem Grammatikfehler im Dokument oder der E-Mail-Nachricht gesprungen.
+
+:Script MoveToLastGrammaticalError
+:Synopsis Springt zum letzten Satz mit einem Grammatikfehler.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den letzten Satz mit einem Grammatikfehler im Dokument oder der E-Mail-Nachricht gesprungen.
+
+:Script MoveToPriorGrammaticalError
+:DisplayName Zum vorherigen Grammatikfehler springen
+:Synopsis Springt zum vorherigen Satz mit einem Grammatikfehler.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den vorherigen Satz mit einem Grammatikfehler im Dokument oder der E-Mail-Nachricht gesprungen.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:Script MoveToNextGrammaticalError
+:DisplayName Zum nächsten Grammatikfehler springen
+:Synopsis Springt zum nächsten Satz mit einem Grammatikfehler.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den nächsten Satz mit einem Grammatikfehler im Dokument oder der E-Mail-Nachricht gesprungen.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:function ProcessMoveToField
+:description Used by the move to field scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstField
+:Synopsis Springt zum ersten Feld.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wir auf das erste Feld in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+
+:Script MoveToLastField
+:Synopsis Springt zum letzten Feld.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wir auf das letzte Feld in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+
+:Script MoveToPriorField
+:DisplayName Move To Prior Field
+:Synopsis Springt zum vorherigen Feld.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wir auf das vorherige Feld in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:Script MoveToNextField
+:DisplayName Zum nächsten Feld springen
+:Synopsis Springt zum nächsten Feld.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wir auf das nächste Feld in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:function ProcessMoveToHeading
+:description Used by the move to heading scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:optional
+:param int The heading level.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstHeading
+:Synopsis Springt zur ersten Überschrift der angegebenen Ebene.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die erste Überschrift der angegebenen Ebene in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+:param int The heading level.
+
+:Script MoveToLastHeading
+:Synopsis Springt zur letzten Überschrift der angegebenen Ebene.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die letzte Überschrift der angegebenen Ebene in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+:param int The heading level.
+
+:Script MoveToPriorHeading
+:Synopsis Springt zur vorherigen Überschrift der angegebenen Ebene.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die vorherige Überschrift der angegebenen Ebene in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+:param int The heading level.
+
+:Script MoveToNextHeading
+:Synopsis Springt zur nächsten Überschrift der angegebenen Ebene.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die nächste Überschrift der angegebenen Ebene in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+:param int The heading level.
+
+:function ProcessMoveToTable
+:description Used by the move to table scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:optional
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstTable
+:Synopsis Springt zur ersten Tabelle.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die erste Tabelle in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+
+:Script MoveToLastTable
+:Synopsis Springt zur letzten Tabelle.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die letzte Tabelle in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+
+:Script MoveToPriorTable
+:Synopsis Springt zur vorherigen Tabelle.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die vorherige Tabelle in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+
+:Script MoveToNextTable
+:Synopsis Springt zur nächsten Tabelle.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die nächste Tabelle in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+
+:script MoveToNextList
+:DisplayName Zur nächsten Liste springen
+:Synopsis Springt in einem Dokument zur nächsten Liste.
+:Description Innerhalb eines Dokuments wird zur nächsten Liste im Dokument gesprungen.
+:Category HTML
+:KeyWords Kurztaste
+:SearchRank 1
+
+:script MoveToPriorList
+:DisplayName Zur vorherigen Liste springen
+:Synopsis Springt in einem Dokument zur vorherigen Liste.
+:Description Innerhalb eines Dokuments wird zur vorherigen Liste im Dokument gesprungen.
+:Category HTML
+:KeyWords Kurztaste
+:SearchRank 1
+
+:function ProcessMoveToBookmark
+:description Used by the move to bookmark scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstBookmark
+:Synopsis Springt zum ersten Lesezeichen in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf das erste Lesezeichen in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToLastBookmark
+:Synopsis Springt zum letzten Lesezeichen in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf das letzte Lesezeichen in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToPriorBookmark
+:DisplayName Zum vorherigen Lesezeichen springen
+:Synopsis Springt zum vorherigen Lesezeichen in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf das vorherige Lesezeichen in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:Script MoveToNextBookmark
+:DisplayName Zum nächsten Lesezeichen springen
+:Synopsis Springt zum nächsten Lesezeichen in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf das nächste Lesezeichen in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:function ProcessMoveToComment
+:description Used by the move to comment scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstComment
+:Synopsis Springt zum ersten Kommentar in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den ersten Kommentar in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToLastComment
+:Synopsis Springt zum letzten Kommentar in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den letzten Kommentar in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToPriorComment
+:DisplayName Zum vorherigen Kommentar springen
+:Synopsis Springt zum vorherigen Kommentar in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den vorherigen Kommentar in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:Script MoveToNextComment
+:DisplayName Zum nächsten Kommentar springen
+:Synopsis Springt zum nächsten Kommentar in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den nächsten Kommentar in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:function ProcessMoveToFootnote
+:description Used by the move to footnote scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstFootnote
+:Synopsis Springt zur ersten Fußnote in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die erste Fußnote in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToLastFootnote
+:Synopsis Springt zur letzten Fußnote in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die letzte Fußnote in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToPriorFootnote
+:DisplayName Zur vorherigen Fußnote springen
+:Synopsis Springt zur vorherigen Fußnote in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die vorherige Fußnote in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 2
+
+:Script MoveToNextFootnote
+:DisplayName Zur nächsten Fußnote springen
+:Synopsis Springt zur nächsten Fußnote in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die nächste Fußnote in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 2
+
+:function ProcessMoveToEndnote
+:description Used by the move to endnote scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstEndnote
+:Synopsis Springt zur ersten Endnote in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die erste Endnote in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToLastEndnote
+:Synopsis Springt zur letzten Endnote in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die letzte Endnote in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToPriorEndnote
+:DisplayName Zur vorherigen Endnote springen
+:Synopsis Springt zur vorherigen Endnote in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die vorherige Endnote in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 2
+
+:Script MoveToNextEndnote
+:DisplayName Zur vorherigen Endnote springen
+:Synopsis Springt zur nächsten Endnote in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die nächste Endnote in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 2
+
+:function ProcessMoveToRevision
+:description Used by the move to revision scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstRevision
+:Synopsis Springt zur ersten Revision in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die erste Revision in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToLastRevision
+:Synopsis Springt zur letzten Revision in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die letzte Revision in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToPriorRevision
+:DisplayName Zur vorherigen Überarbeitung springen
+:Synopsis Springt zur vorherigen Revision in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird, wenn die Verfolgung der Änderung aktiviert ist, auf die vorherige Revision in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:Script MoveToNextRevision
+:DisplayName Zur nächsten Überarbeitung springen
+:Synopsis Springt zur nächsten Revision in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird, wenn die Verfolgung der Änderung aktiviert ist, auf die nächste Revision in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:function ProcessMoveToGraphic
+:description Used by the move to graphic scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:optional
+:param string The long error message to be spoken when the move is unsuccessful.
+:param string The short error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstGraphic
+:Synopsis Springt zur ersten Grafik.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die erste Grafik in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+
+:Script MoveToLastGraphic
+:Synopsis Springt zur letzten Grafik.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die letzte Grafik in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+
+:Script MoveToPriorGraphic
+:Synopsis Springt zur vorherigen Grafik.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die vorherige Grafik in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+
+:Script MoveToNextGraphic
+:Synopsis Springt zur nächsten Grafik.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die nächste Grafik in einem Dokument oder einer Nur-Lesen-E-Mail-Nachricht gesprungen.
+
+:function ProcessMoveToPage
+:description Used by the move to page scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The long error message to be spoken when the move is unsuccessful.
+:optional
+:param string The short error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstPage
+:Synopsis Springt zur ersten Seite in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die erste Seite in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToLastPage
+:Synopsis Springt zur letzten Seite in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die letzte Seite in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToPriorPage
+:DisplayName Zur vorherigen Seite springen
+:Synopsis Springt zur vorherigen Seite in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die vorherige Seite in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:Script MoveToNextPage
+:DisplayName Zur nächsten Seite springen
+:Synopsis Springt zur nächsten Seite in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die nächste Seite in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 1
+
+:function ProcessMoveToSection
+:description Used by the move to section scripts to implement the desired behavior.
+:param int The direction of the movement used by the scripts.
+:param string The long error message to be spoken when the move is unsuccessful.
+
+:Script MoveToFirstSection
+:Synopsis Springt zum ersten Bereich in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den ersten Bereich in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToLastSection
+:Synopsis Springt zum letzten Bereich in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den letzten Bereich in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToPriorSection
+:DisplayName Zum vorherigen Bereich springen
+:Synopsis Springt zum vorherigen Bereich in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den vorherigen Bereich in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 2
+
+:Script MoveToNextSection
+:DisplayName Zum nächsten Bereich springen
+:Synopsis Springt zum nächsten Bereich in einem Word Dokument.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf den nächsten Bereich in einem Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+:KeyWords Kurztaste
+:SearchRank 2
+
+:Function ProcessFormfieldMovement
+:Description Processes the movement forward or backward when formfields exist and quick key navigation is enabled. The function is called by each of the formfield movement scripts for edit, checkbox, and combo box formfields.
+:Param int/index The index of the formfield type sought.
+:Param int/iControlType One of the three formfield types, edit, checkbox, or combo box.
+:Param int/iCount The nnumber of formfields of the type sought present in the list
+:Param int/bForward True if moving forward, false if moving backward.
+:Param string/sMsgElementTypeError The string representing the message for no more or no prior element type of the formfield in the script calling this function.
+:Returns Void
+
+:Script MoveToNextCombo
+:Synopsis Springt zur nächsten Ausklappliste in einem geschützten Word Formular.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die nächste Ausklappliste in einem geschützten Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToPriorCombo
+:Synopsis Springt zur vorherigen Ausklappliste in einem geschützten Word Formular.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf die vorherige Ausklappliste in einem geschützten Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToNextEdit
+:Synopsis Springt zum nächsten Eingabefeld in einem geschützten Word Formular.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf das nächste Eingabefeld in einem geschützten Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToPriorEdit
+:Synopsis Springt zum vorherigen Eingabefeld in einem geschützten Word Formular.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf das vorherige Eingabefeld in einem geschützten Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToNextCheckbox
+:Synopsis Springt zum nächsten Kontrollfeld in einem geschützten Word Formular.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf das nächste Kontrollfeld in einem geschützten Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:Script MoveToPriorCheckbox
+:Synopsis Springt zum vorherigen Kontrollfeld in einem geschützten Word Formular.
+:description Wenn Navigationsschnelltasten genutzt werden, dann wird auf das vorherige Kontrollfeld in einem geschützten Word Dokument gesprungen. Nicht verfügbar bei Outlook Nachrichten.
+
+:function ProcessUnavailableQuickNavKey
+:description Handles processing for all quick navigation keys that are not available for Word.
+
+:Script MoveToNextWordFromList
+:DisplayName Zum nächsten Wort der Liste springen
+:Synopsis Wurde eine Wortliste erstellt, dann wird mit den Schnelltasten in einem Microsoft Word Dokument oder einer Outlook Nur-Lesen-E-Mail-Nachricht auf das nächste Wort in der Liste gesprungen.
+:Description Dieses Skript geht davon aus, dass eine Wortliste für das Dokument oder die Outlook Nur-Lesen-E-Mail-Nachricht erstellt wurde. In diesen Fällen wird auf das nächste Wort der Liste gesprungen.
+:KeyWords Kurztaste
+:SearchRank 2
+
+:Script MoveToPriorWordFromList
+:DisplayName Zum vorherigen Wort der Liste springen
+:Synopsis Wurde eine Wortliste erstellt, dann wird mit den Schnelltasten in einem Microsoft Word Dokument oder einer Outlook Nur-Lesen-E-Mail-Nachricht auf das vorherige Wort in der Liste gesprungen.
+:Description Dieses Skript geht davon aus, dass eine Wortliste für das Dokument oder die Outlook Nur-Lesen-E-Mail-Nachricht erstellt wurde. In diesen Fällen wird auf das vorherige Wort der Liste gesprungen.
+:KeyWords Kurztaste
+:SearchRank 2
+
+:Script NavigationModeToggle
+:DisplayName Schnellnavigationsmodus umschalten
+:Synopsis Schaltet den Schnellnavigationsmodus ein oder aus.
+:Description Der Schnellnavigationsmodus bezieht sich auf Ein-Buchstaben-Kurztasten, die zur Navigation bei HTML Elementen innerhalb eines Dokuments verwendet werden.

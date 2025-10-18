@@ -1,0 +1,105 @@
+:script HotKeyHelp
+:Synopsis Sagt die Kurztasten für %product% und Dialogfenster an. Sagt auch RealPlayer Kurztasten an.
+:Description In einem Dialogfenster werden die Kurztasten und Beschriftungen für die Elemente in dem Dialog und spezielle Anweisungen für die Anwendung oder grundlegende %product% Funktionen angesagt. Die Tasten des RealPlayers werden zum Vergleich ebenfalls angesagt.
+
+:script SuperFastForward
+:Synopsis Bewegt im Titel 10mal schneller als Schnellvorlauf vorwärts.
+:Description Wird STRG+Umschalt+PFEIL RECHTS gedrückt, dann wird der Anwender 10 mal schneller durch den Titel bewegt, als bei Schnellvorlauf.
+
+:script VolumeDown
+:Synopsis Reduziert die Lautstärke der aktuell geladenen Audiodatei.
+:Description Wird STRG+PFEIL RUNTER gedrückt, dann wird die Lautstärke der abspielenden Audiodatei reduziert.
+
+:script NextClip
+:Synopsis Springt zum nächsten Titel.
+:Description Wird diese Tastenkombination gedrückt, dann springt man zum nächsten Titel.
+
+:script PreviousClip
+:Synopsis Springt zum vorherigen Titel.
+:Description Wird diese Tastenkombination gedrückt, dann springt man zum vorherigen Titel.
+
+:script Toolbar
+:Synopsis Listet die Schalter der Werkzeugleiste auf.
+:Description Dieses Skript listet die nicht grafischen Schalter der Werkzeugleite auf, und ermöglicht die Auswahl und Aktivierung eines Schalters.
+
+:function sayNonHighlightedText
+:Description This function is overridden to ensure descriptive static text is read in dialogs.
+:Param handle/hwnd No Description
+:Param string/sText No Description
+
+:function AutoStartEvent
+:Synopsis Event function that is triggered when RealPlayer is started
+:Description When RealPlayer is started, this event gets performed. It also gets performed when the application is switched to or gets focus, as with ALT+TAB.
+
+:script VolumeUp
+:Synopsis Erhöht die Lautstärke der aktuell geladenen Audiodatei.
+:Description Wird STRG+PFEIL RAUF gedrückt, dann wird die Lautstärke der abspielenden Audiodatei erhöht
+
+:script ScreenSensitiveHelp
+:Synopsis Spezielle Informationen bezogen auf das aktuelle Element im RealPlayer
+:Description Sagt den Typ des aktuellen Fensters oder Steuerelements an, wie es verwendet wird und welche Tasten man darin verwenden kann. Sollte %product% den Typ nicht erkennen, dann wird %product% Benutzerdefiniert ansagen. Wenn Sie möchten, können Sie die Fensterklasse neu zuweisen. 
+
+:function SayFocusedWindow
+:Synopsis Says the window with focus in RealPlayer
+:Description Called by the focus changed event or keys that move focus, like INSERT+TAB. Replaces and adds to default SayFocusedWindow to meet the unique needs of RealPlayer
+
+:script CompactView
+:Synopsis Sagt die Kompaktansicht an
+:Description Wurde STRG+M gedrückt, dann wird die Kompaktansicht angesagt.
+
+:script windowKeysHelp
+:Synopsis Liefert spezielle Realplayer Kurztasten
+:Description Dieses Skript sagt eine Reihe von häufig genutzten RealPlayer Kurztasten an.
+
+:function WindowCreatedEvent
+:Description This function is overridden to ensure that embedded IE windows get focus when available.
+:Param handle/hWindow No Description
+:Param int/nLeft No Description
+:Param int/nTop No Description
+:Param int/nRight No Description
+:Param int/nBottom No Description
+
+:function getIEServerWindowHandle
+:Returns handle handle to the IE window
+:Synopsis gets the handle to the embedded IE window
+:Description This function returns the handle to the IE window which displays web content. It is used to place focus on this window when available to enable navigation with the Virtual cursor.
+
+:script FastForward
+:Synopsis Spult den aktuellen Titel vor.
+:Description Wurde STRG+PFEIL RECHTS gedrückt, dann wird ein Schnellvorlauf des aktuelle Titels durchgeführt.
+
+:script SuperRewind
+:Synopsis Bewegt im Titel 10mal schneller als der Rücklauf rückwärts.
+:Description Wird STRG+Umschalt+PFEIL LINKS gedrückt, dann wird der Anwender 10 mal schneller durch den Titel bewegt, als bei Rücklauf.
+
+:script rewind
+:Synopsis Spult den aktuellen Titel zurück.
+:Description Wurde STRG+PFEIL LINKS gedrückt, dann wird ein Rücklauf des aktuelle Titels durchgeführt.
+
+:script NormalView
+:Synopsis Sagt die Normalansicht an.
+:Description Wurde STRG+N gedrückt, dann wird die Normalansicht angesagt.
+
+:script ScriptFileName
+:Synopsis Sagt die aktuell geladene Skriptdatei und den Namen der Anwendung an.
+:Description Nützlich, um das geladene Skript zu identifizieren, und um festzustellen, dass der RealPlayer aktuell aktiv ist.
+
+:function SayHighlightedText
+:Description This function is overridden to ensure list items are read in Media Types dialog.
+:Param handle/hwnd No Description
+:Param string/sText No Description
+
+:function GetGraphicalCheckBoxState
+:Synopsis Says the current state of the graphical check box when moving through a list
+:Description This function is called when moving through a list of items that have graphical check boxes.  It changes the state of the check box and speaks it.
+
+:function ToggleGraphicalCheckBoxState
+:Synopsis Says the current state of the graphical check box when space bar is pressed
+:Description This function is called by pressing the space bar on a list item with a graphical check box.  It changes the state of the check box and speaks it.
+
+:function KeyPressedEvent
+:Description This function is overridden to ensure that graphical check boxes are correctly spoken in Media Types Dialog
+:Param int/nKey No Description
+:Param string/strKeyName No Description
+:Param int/nIsBrailleKey No Description
+:Param int/nIsScriptKey No Description

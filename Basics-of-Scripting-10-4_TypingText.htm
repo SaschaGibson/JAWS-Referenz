@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+ <TITLE>10.4 Typing Text</TITLE>
+ <LINK rel="StyleSheet" href="default.css">
+</HEAD>
+<BODY>
+ <H1>10.4 Typing Text</H1>
+ 
+<P>You may encounter situations where you have to type the same block of text 
+  repeatedly. For example, you may use a number of different signatures in your 
+  email client. You might use one signature for business correspondence, while 
+  using a second signature for personal messages. Adding these signatures to their 
+  respective email messages may become tedious. You can create a script that uses 
+  built-in functions to type the information into the message for you with only 
+  one keystroke.</P>
+<h2>Typing the Text</h2>
+<P> You can use the built-in function, TypeString, to type a string of text into 
+  a document. You supply the function with the string of text to be typed by the 
+  function as its only parameter. This string of text can be surrounded by quotation 
+  marks, stored in a variable or declared as a string constant. After JAWS places 
+  the text into the document, JAWS places the insertion point at the end of the 
+  string of text. The following code example illustrates the use of the TypeString 
+  function:</P>
+<P class="Code"> TypeString ("This text is being typed into my document")</P>
+<P> The TypeString function types the following text into your document:</P>
+<P> This text is being typed into my document</P>
+<P> Since the TypeString function does not add a return character to end the line 
+  just typed, the insertion point is placed to the right of the last character 
+  typed by the function. In the above example, the insertion point is to the right 
+  of the last &#8220;t&#8221; in the word &#8220;text.&#8221; </P>
+<h2>Adding Carriage Returns</h2>
+<P> When you call the TypeString function multiple times, the text typed is not 
+  separated by spaces. When you want to add a carriage return between two blocks 
+  of text, you must perform this action from within your script.</P>
+<P> The EnterKey built-in function passes the <strong>ENTER</strong> key through 
+  to the active application. If you have positioned the Virtual PC cursor on a 
+  link or button, then the EnterKey function activates it. If the Virtual PC cursor 
+  is on another form control, then the EnterKey function activates forms mode. 
+  You call the EnterKey function using the following syntax:</P>
+<P class="Code"> EnterKey ()</P>
+<P> The following example illustrates the use of the TypeString and EnterKey functions:</P>
+<P class="Code"> TypeString ("This is the first line of text.")</P>
+EnterKey ()<br>
+TypeString ("This is the second line of text.")</p>
+<P> The above example produces the following text in the active application:</P>
+<P> This is the first line of text.<br>
+  This is the second line of text.</P>
+<P> Since the EnterKey function is called between the two TypeString functions, 
+  the text did not run together and is separated by a carriage return. The same 
+  example without the EnterKey function follows:</P>
+<P class="Code"> TypeString ("This is the first line of text.")<br>
+TypeString ("This is the second line of text.")</P>
+<P> This example produces the following text in the active application:</P>
+<P> This is the first line of text.This is the second line of text.</P>
+<P> Since the EnterKey function was not performed after the first TypeString function, 
+  the text runs together as there is nothing separating the two strings of text.</P>
+<P>&nbsp;</P>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="10-5_ChapterExercises.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</BODY>
+</HTML>

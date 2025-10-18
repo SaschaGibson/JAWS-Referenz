@@ -1,0 +1,21 @@
+﻿[Component Aliases]
+UnRedStatus=Status Ungel. anz.
+UnRedMsgs=Anzahl ungel. Nachrichten
+
+; Section for listview
+[SubtypeCode30]
+components=type,UnRedStatus,value,position
+type=la
+removed=name
+displayname=
+AlignmentPriority=type,UnRedStatus,value
+; Section for treeview
+[SubtypeCode31]
+components=ContextHelp,name,type,level,state,value,position,UnRedMsgs
+type=sa
+removed=
+displayname=
+AlignmentPriority=name,type,level,state,value
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Windows Mail.

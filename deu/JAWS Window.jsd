@@ -1,0 +1,69 @@
+:function SayWindowTypeAndText
+:Param Handle Type the name of a variable or choose a script function that provides the handle of the window that is to be read.
+
+:function tutorMessageEvent
+
+:function GetLockingAndAuthCodeInfoForVirtualViewer
+
+:script SayAppVersion
+
+:function ReadCustomRealWindows
+:Returns int Returns 1 if the currently active real window was spoken by this function.  Ansonsten wird 0 zurückgegeben.
+:Synopsis Regelt das Sprechen von echten Fenstern, wenn SayWindowTypeAndText das Fenster nicht ordnungsgemäß liest.
+:Description Diese Funktion wird von FocusChangedEvent aufgerufen, um das Sprechen von echten Fenstern zu regeln, wenn SayWindowTypeAndText das Fenster nicht ordnungsgemäß liest.
+:Param handle/hwndReal The window handle of the Real Window that currently has focus or the the JAWS or Invisible Cursor (if active) is positioned in
+
+:function IsIbmJapanUppercaseDialog
+:Returns int Returns 1 if the currently active real window is the version of the Uppercase Dialog box that has been customized for the IBM Japan version of JAWS.  Ansonsten wird 0 zurückgegeben.
+:Synopsis Determines if the currently active real window is the version of the Uppercase Dialog box that has been customized for the IBM Japan version of JAWS.
+:Description Diese Funktion ermittelt, ob das aktuell aktive echte Fenster die Version des Dialogfeldes Großschreibung hat, die für die Japanische IBM Version von JAWS angepasst wurde.
+:Param handle/hwndReal The window handle of the Real Window that currently has focus or the the JAWS or Invisible Cursor (if active) is positioned in
+
+:script SayWindowPromptAndText
+
+:function GetBrailleDisplayInfo
+
+:function SayTutorialHelp
+:Param int/iObjType No Description
+:Param int/IsScriptKey No Description
+
+:script UpALevel
+
+:function SayFocusedWindow
+
+:script ScreenSensitiveHelp
+
+:script OptionsMenu
+:Synopsis Öffnet das Menü Optionen
+:Description Wenn Sie aus Versehen alt + f oder alt + v gedrückt haben, öffnet sich das Menü Optionen.  Diese Tastenkombination soll dabei helfen, die Übertragung für bestehende Anwender zu erleichtern.  Beachten Sie, dass diese Tastenkombination dort, wo sie als Beschleuniger in Dialogfeldern verwendet werden, nicht unterbricht.
+
+:function FocusChangedEvent
+:Synopsis Diese Funktion wird gestartet, wenn der  Fokus zwischen Anwendungen, Dialogen und Dialogelementen bewegt wird.
+:Description Das Fensterhandle des vorherigen und aktuellen Fensters wird an diese Funktion weitergegeben. Diese Funktion ruft entweder SayWindowTypeAndText SayFocusedWindow oder SayFocusedObject, um sicherzustellen, dass das aktive Steuerelement richtig ausgesprochen wird.
+:Param handle/FocusWindow the handle of the window that has received the focus
+:Param handle/PrevWindow the handle of the window that previously had the focus
+
+:function ReadCustomControls
+:Returns int Returns 1 if the control was spoken by this function.  Ansonsten wird 0 zurückgegeben.
+:Synopsis Regelt das Sprechen von echten Fenstern, wenn SayWindowTypeAndText das Fenster nicht ordnungsgemäß liest.
+:Description Diese Funktion wird von SayFocusedWindow aufgerufen, um das Sprechen von Steuerelementen zu regeln, wenn SayWindowTypeAndText das Fenster nicht ordnungsgemäß liest.
+:Param handle/hwndReal The window handle of the Real Window that currently has focus or the the JAWS or Invisible Cursor (if active) is positioned in
+:Param handle/hwndControl The window handle of the control that is to be spoken.
+
+:script JAWSWindow
+
+:function GetSynthesizerInfo
+
+:function AddHotKeyLinks
+
+:function SayTutorialHelpHotKey
+:Returns int
+:Param handle/hHotKeyWindow No Description
+:Param int/IsScriptKey No Description
+
+:script ScriptFileName
+
+:function SayAboutJAWSDialog
+:Synopsis says the JAWS About dialog.
+:Description Announces the dialog, and speaks all visible text in the dialog.
+

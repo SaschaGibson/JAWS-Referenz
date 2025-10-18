@@ -1,0 +1,548 @@
+:script SayFont
+:Synopsis Says the font and point size at the active cursor. If the cursor is in a table, then the cell attributes are described
+:Description Says the font style name and character size. Also will speak the attributes such as Bold, Underline, and Italics. If the cursor is in a table, then the cell attributes are described
+
+:script justifyRight
+:Synopsis Align text on the right margin
+:Description This script aligns text on the right margin
+
+:script sayNextLine
+
+:script JAWSPageDown
+
+:function getLastStatic
+:Returns handle last window whose class is static at current level
+:Synopsis Finds the last window whose class is static at the supplied level
+:Description This function starts with the last window at the current level and searches backward for the first occurrence of a window whose class is static. In effect, this locates the last window whose class is static at the level of the supplied window handle
+:Param handle/startWindow starting window.
+
+:script grammatik
+:Synopsis Activates the Grammatik dialog
+:Description This script activates the Grammatik dialog
+
+:script HotKeyHelp
+
+:function sayIndentMeasure
+:Synopsis Says the paragraph indent measure in points
+:Description This function says the paragraph indent measure in points
+
+:script changeCase
+:Synopsis changes the case of selected text and reports new case
+:Description This script changes the case of text and reports the new case.
+
+:script DeleteToEndOfPage
+:Synopsis Deletes to the end of the page.
+:Description Delete to the end of the page.
+:Category Application
+
+:script OpenListBox
+
+:script BeginningOfColumn
+:Synopsis Moves the cursor to the beginning of the column
+:Description Moves the cursor to the beginning of the column
+:Category Application
+
+:script OpenPointSizeWindow
+:Synopsis Opens the Point Size combo box on the toolbar
+:Description This script opens the Point Size combo box on the toolbar and focuses the user on it
+
+:function toggleStyleDetection
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis Toggles Style Detection ON and OFF
+:Description This function toggles the automatic detection and reporting of style changes on and off. It is called from the JFW Verbosity dialog, but may also have a keystroke attached to it
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function toggleTables
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis Toggles Table Detection ON and OFF
+:Description This function toggles table detection on and off. When on, the user is alerted when moving in and out of a table, or from row to row or column to column in a table. The user is also alerted when landing in the last cell of a table. This script is called from the JFW Verbosity dialog, but may also have a keystroke attached to it
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:script styles
+:Synopsis Activates the Styles dialog and announces function name
+:Description This script activates the styles dialog and announces function name
+
+:script playMacro
+:Synopsis Initiates Play macro
+:Description This script initiates Macro Playback
+
+:script merge
+:Synopsis Activates merge
+:Description This script activates a merge
+
+:script doubleIndent
+:Synopsis Generates a double indent
+:Description This script generates a double indent
+
+:script FindNextOccurrence
+:Synopsis Finds the next occurrence of a word or selection.
+:Description Finds the next occurrence of a word or selection.
+:Category Application
+
+:script Dictionary
+:Synopsis Opens the dictionary
+:Description Opens the dictionary dialogue.
+:Category Application
+
+:function initializeApplicationGlobals
+:Synopsis initializes default values for verbosity settings
+:Description This function sets the default values for the WP specific verbosity settings.
+
+:script sayPriorParagraph
+
+:script sayNextCharacter
+
+:script priorTableColumn
+:Synopsis Moves to the prior table column and announces the coordinates and content
+:Description This script moves to the prior table column and announces the coordinates and content
+
+:script toggleRevealCodes
+:Synopsis Toggles and reports the new status of Reveal Codes
+:Description This script toggles and reports the new status of Reveal Codes
+
+:script toggleBlockMode
+:Synopsis Toggles Block mode on and off
+:Description This script toggles block mode ON and OFF
+
+:script priorWindow
+:Synopsis Focuses on the prior open window
+:Description This script focuses on the prior open window
+
+:function togglePageAndColumnBreakDetection
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis Toggles the detection of page and column breaks ON and OFF
+:Description This function toggles the detection of page and column breaks on and off
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:script SelectNextColumn
+:Synopsis Selects the next Column
+:Description Selects the next column
+:Category Application
+
+:function toggleBorderDetection
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis Toggles Border Detection ON and OFF
+:Description This function toggles detection of borders on and off
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:script SayPriorSentence
+
+:function SayNonHighlightedText
+
+:script nextDocument
+:Synopsis Sets focus on the next open document
+:Description This script sets focus on the next open document
+
+:script nextPage
+:Synopsis Moves to the next page in the document
+:Description This script moves to the next page in the document and announces the new page number and the first line of the new page
+
+:script pageView
+:Synopsis Switches to page view
+:Description Activates Page view by displaying headers, footers, watermarks, and so on.
+
+:script SelectPriorPage
+:Synopsis Selects the prior document page
+:Description Selects the prior document page.
+:Category Application
+
+:function SayTreeViewLevel
+
+:function AutostartEvent
+
+:script sayPriorLine
+
+:script JAWSEnd
+
+:function getLastWindow
+:Returns handle handle of last window at current level
+:Synopsis Gets the last window at the current hierarchy level
+:Description This function gets the last window at the current hierarchy level. It returns the window handle
+:Param handle/startWindow window handle of window where search begins.
+
+:script priorDocument
+:Synopsis Sets focus on the prior document
+:Description This script sets focus on the prior document
+
+:script deleteWordAtCursor
+:Synopsis Deletes the word at the cursor and reads the new word
+:Description This script deletes the word at the cursor and reads the new one
+
+:script ImportRegistrySettings
+:Synopsis Imports the registry settings necessary to cause WordPerfect to use a screen reader-compatible mode by default
+:Description This script is used to import the registry settings necessary to cause WordPerfect to use a screen reader-compatible mode by default. In WordPerfect X3, it is normally necessary to start WordPerfect with a /FL switch in order to cause WordPerfect to start up in a screen reader-compatible mode. Without this command line switch, many of the JFW reading functions do not operate correctly because JFW fails to see the text located in the main document window. The problem with using this command line switch is that it is impossible to start WordPerfect by pressing ENTER on a WordPerfect document in Windows Explorer. There is a registry entry that can be added to the Windows Registry that resolves this issue. However, the drawback of this fix is that it requires the use of Service Pack 1 of Corel WordPerfect Office 2000 or a newer version. It will not function properly without this Service Pack for Corel WordPerfect Office 2000. This script, after prompting the user for confirmation, runs a REG file that imports the necessary registry entries to implement this fix.
+
+:script SayCell
+:Synopsis Says the contents and coordinates of the current table cell
+:Description This script says the contents and coordinates of the current table cell When in a table or spreadsheet, speaks the contents of the current cell. It is here so that the default table reading scripts work
+
+:script DecreaseTableColumn
+:Synopsis Decreases the width of the current table column.
+:Description This script decreases the current table column width.
+:Category Application
+
+:script justifyFull
+:Synopsis Align text on the left and right margins
+:Description This script aligns text on the left and right margins
+
+:script JAWSPageUp
+
+:function getGroupboxName
+
+:script showRuler
+:Synopsis Shows the ruler
+:Description This script shows the ruler and announces the function
+
+:script recordMacro
+:Synopsis Initiates Macro Recording
+:Description This script initiates Macro Recording
+
+:script deleteToEndOfLine
+:Synopsis Deletes to end of line
+:Description This script deletes to the end of the line, and then reads the new line
+
+:script NextCell
+:Synopsis Moves to the next cell in the current row
+:Description This script moves to the next cell in the current row. It is here so that the default table reading scripts work correctly in WP tables
+
+:function sayEditWithButtonControl
+:Synopsis says the prompt and help message for controls which look like an edit but have a button associated with them
+:Description This function speaks the prompt and help message for edit controls which contain an associated button accessed by f4.
+
+:script EndOfColumn
+:Synopsis Moves the cursor to the end of the column.
+:Description Moves the cursor to the end of the column on the current page.
+:Category Application
+
+:script toggleBold
+:Synopsis Toggles the Bold attribute ON and OFF
+:Description This script toggles the bold attribute on and off
+
+:function sayWindowPromptAndText
+
+:script thesaurus
+:Synopsis Activates the thesaurus and announces the function
+:Description This script activates the thesaurus and announces the function. It is here to avoid getting the message ALT+HELP when the keystroke is pressed
+
+:script showCodes
+:Synopsis Toggles visibility of codes such as hard returns, spaces, and tabs
+:Description This script toggles visibility of codes such as hard returns, spaces, and tabs.
+
+:script WPSettings
+:Synopsis Activates the WP Settings dialog
+:Description This script activates the WP Settings dialog
+
+:script FindPreviousOccurrence
+:Synopsis Find s the previous occurrence of a word or selection
+:Description Finds the previous occurrence of a word or selection.
+:Category Application
+
+:function GetRealWindow
+:Returns handle
+:Param handle/hWindow No Description
+
+:script SelectBeginningOfColumn
+:Synopsis Selects from the insertion point to the beginning of the column.
+:Description Selects from the insertion point to the beginning of the column.
+:Category Application
+
+:script OpenStyleWindow
+:Synopsis Opens the Style combo box on the toolbar
+:Description This script opens the Style combo box on the toolbar and focuses the user on it
+
+:script sayNextWord
+
+:script ReadMisspelledAndSuggestion
+:Synopsis Reads the misspelled word and suggestion when the spelling checker is active
+:Description This script reads the misspelled word and suggestion when the spelling checker is active
+
+:function SayHighlightedText
+
+:script nextWindow
+:Synopsis Focuses on the next open window
+:Description This script focuses on the next open window
+
+:script insertPageBreak
+:Synopsis Inserts a page break
+:Description This script inserts a page break at the caret location
+
+:script SelectNextPage
+:Synopsis Selects the next page in the document.
+:Description Selects the next page in the document.
+:Category Application
+
+:script UpALevel
+
+:script ScreenSensitiveHelp
+
+:script sayPriorCharacter
+
+:script bottomOfFile
+
+:script priorPage
+:Synopsis Moves to the prior page
+:Description This script moves to the prior page in the document, and announces the prior page number and the first line
+
+:script SelectNextParagraph
+:Synopsis Selects the next paragraph in the document.
+:Description The next paragraph within the document is selected.
+:Category Application
+
+:script WPSave
+:Synopsis Saves the current document.
+:Description Saves the current document.
+:Category Application
+
+:script PasteSpecial
+:Synopsis Pastes the clipboard in a selected format (Paste Special)
+:Description Pastes the contents of the clipboard as a selected document, the same as Paste Special.
+:Category Application
+
+:script justifyCenter
+:Synopsis Center text between the margins
+:Description This script centers text between the margins
+
+:script nextTableColumn
+:Synopsis Moves to the next table column and announces the coordinates and content
+:Description This script moves to the next table column and announces the coordinates and content
+
+:script JAWSHome
+
+:script tabKey
+:Synopsis Ensures that table cell coordinates are spoken when tabbing in tables
+:Description This function ensures that cell coordinates are spoken when in a table
+
+:script sayCursorPosition
+:Synopsis Says the cursor position for page, column and line
+:Description This script says the position of the text cursor. It announces the page number, the distance from the top of the page, and the distance from the left margin in the unit of measure chosen in WP Setup
+
+:script sayCursorPosInTable
+:Synopsis Says the cursor position for table coordinates
+:Description This script says the position of the text cursor position in table cell if cursor is within a table
+
+:script spellchecker
+:Synopsis Activates the spellchecker and announces the function
+:Description This script activates the spelling checker and announces the function. It is here to override the erroneous key label CTRL+HELP
+
+:function sayWPOutlineArraySelection
+:Synopsis speaks the description static text for WPOutlineArray controls
+
+:script hideBars
+:Synopsis Hides all toolbars
+:Description Hides all the toolbars. /Display headers, footers, watermarks, and so on (Page)
+:Category Application
+
+:script TabHardDecimal
+:Synopsis Tab hard decimal
+:Description Tab hard decimal
+:Category Application
+
+:script SpellAsYouGo
+:Synopsis Determines the error detected by the Spell As You Go proofreading tool and reads the first suggestion offered by the tool
+:Description This script determines the error detected by the Spell As You Go proofreading tool and reads the first suggestion offered by the tool
+
+:script SayNextSentence
+
+:script shiftTabKey
+:Synopsis Ensures that table cell coordinates are spoken when tabbing in tables
+:Description This function ensures that table cell coordinates are spoken when tabbing in tables
+
+:script WindowKeysHelp
+
+:script PriorCell
+:Synopsis Moves to the prior cell in the current row
+:Description This script moves to the prior cell in the current row. It is here so that the default table reading scripts work correctly in WP tables
+
+:script FindPrevious
+:Synopsis Find Previous Text
+:Description Finds Previous text.
+:Category Application
+
+:script CalculateDocument
+:Synopsis Calculates document.
+:Description Calculate document.
+:Category Application
+
+:script centerLine
+:Synopsis Centers the selected text, the current line only, or all text from the insertion point forward
+:Description This script centers the selected text, the current line only, or all text from the insertion point forward
+
+:script flushRight
+:Synopsis Right justify a line of text
+:Description This script right justifies a line of text
+
+:script AdjustJAWSVerbosity
+
+:script sayPriorWord
+
+:script refreshScreen
+:Synopsis Refreshes the screen and ensures focus is not lost by attempting to refocus on the document window
+:Description This script refreshes the screen and ensures focus is not lost by attempting to refocus on the document window
+
+:script hangingIndent
+:Synopsis Hanging indent
+:Description This script generates a hanging indent
+
+:script IncreaseTableColumn
+:Synopsis Increases the column width.
+:Description The script increases the columns width.
+:Category Application
+
+:script LineHorizontal
+:Synopsis Announces the label for Line Horizontal.
+:Description Announces the label and Creates a line in a document from the left margin to the right margin (Line  Horizontal line)
+:Category Application
+
+:script toggleItalic
+:Synopsis Toggles Italic attribute
+:Description This script toggles the italic attribute on and off
+
+:script ReplaceMisspelledWord
+
+:script ReadWordInContext
+
+:script draft
+:Synopsis Activates Draft view and announces the function
+:Description This script activates Draft view and announces the function. It is here to override the message SHIFT+PRINT
+
+:script indent
+:Synopsis Indents paragraph
+:Description This script indents the current paragraph
+
+:script BrailleRouting
+:Description As in Route PC to %product%, but it uses the braille display routing button to determine the destination. This script has extra code to ensure that context detection occurs when routing in the document window.
+
+:script SelectEndOfColumn
+:Synopsis Selects the end of column
+:Description Selects to the end of the column.
+:Category Application
+
+:function loadApplicationSettings
+:Synopsis loads application verbosity settings from wp.jsi
+:Description This function loads application verbosity settings from wp.jsi.
+
+:function saveApplicationSettings
+:Returns int true if the settings were saved ok.
+:Synopsis saves WP specific verbosity settings to wp.jsi
+:Description This function saves WordPerfect specific Verbosity Settings to wp.jsi. These are loaded each time WP is run.
+
+:function inDocumentWindow
+:Returns int true or false
+:Synopsis Determines if focus is in the document window or not
+:Description This function determines if the focus is in the main document window, as focusChangedEvent is not triggered when the menu bar becomes active
+
+:script priorWindowPane
+:Synopsis Focuses on the prior window pane
+:Description This script focuses on the prior window pane
+
+:script UpCell
+:Synopsis Moves to the prior cell in the current column
+:Description This script moves to the prior cell in the current column. It is here so that the default table reading scripts work correctly in WP tables
+
+:script TableQuickFill
+:Synopsis Fill a table with incrementing numbers or dates (QuickFill)
+:Description Fill a table with incrementing numbers or dates (QuickFill)
+:Category Application
+
+:script WhatThis
+:Synopsis Activates the What This help
+:Description activates the What This help
+:Category Application
+
+:script SelectPriorColumn
+:Synopsis Selects the previous Column
+:Description Selects the Previous Column
+:Category Application
+
+:script ScriptFileName
+
+:script justifyLeft
+:Synopsis Align text on the left margin
+:Description This script aligns text on the left margin
+
+:script OpenFontWindow
+:Synopsis Opens the Font combo box on the toolbar
+:Description This script opens the Font combo box on the toolbar, and focuses the user on it
+
+:script sayNextParagraph
+
+:function SayFindPrompt
+
+:script FormatTable
+:Synopsis Format a table (Format)
+:Description Format a table (Format)
+:Category Application
+
+:script sort
+:Synopsis Activates the Sort dialog
+:Description This script activates the sort dialog
+
+:script JAWSCursor
+
+:script closeApplication
+:Synopsis Closes WP and avoids getting the message ALT OPEN FILE
+:Description This script closes WP and avoids getting the message ALT OPEN FILE
+
+:script DownCell
+:Synopsis Moves to the next cell in the current column
+:Description This script moves to the next cell in the current column. It is here so that the default table reading scripts work correctly in WP tables
+
+:script SelectPriorParagraph
+:Synopsis Selects the previous paragraph in the document.
+:Description Selects the previous paragraph within the document.
+:Category Application
+
+:script Redo
+:Synopsis Reverses the last undo change (Redo)
+:Description Reverses the last change that was performed (redo).
+:Category Application
+
+:script editGraphicBox
+:Synopsis Announces the label and activates the Edit Graphic dialogue.
+:Description This script announces the function and activates it. It is here to override the key label for SHIFT+F11 which activates the Change graphic box appearance, position, contents (Edit graphic box)
+:Category Application
+
+:script ReferenceGenerate
+:Synopsis Generate a list, Index, cross-reference, table of contents, or table of authorities (Reference  Generate)
+:Description Generate a list, Index, cross-reference, table of contents, or table of authorities (Reference  Generate)
+:Category Application
+
+:script LineVertical
+:Synopsis Announces the label for Vertical Line.
+:Description Announces the label for Vertical Line and creates it.
+:Category Application
+
+:function FindWordInContext
+:Returns string Returns the line which contains the word in context.
+:Synopsis detects if the word in context is visible or not. Finds the word in context.
+:Description Searches the document window to find the word in context which is highlighted.
+:Category Application
+
+:function AutoFinishEvent
+
+:script toggleUnderline
+:Synopsis Toggles Underline attribute ON and OFF
+:Description This script toggles the Underline attribute on and off
+
+:function toggleLanguageDetection
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis Toggles Language Detection ON and OFF
+:Description This function toggles automatic language detection on and off. It is called from the JFW Verbosity dialog, but may have a keystroke attached to it
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:script TopOfFile
+
+:script vbEditor
+:Synopsis Activates the Visual Basic Editor
+:Description This script activates the Visual Basic Editor
+
+:function resetFocusToGlobalFocus
+:Synopsis Resets the focus to the global focus window when it is lost
+:Description This script resets the focus to the global focus window when it is lost due to either JFW losing focus or WP not setting focus correctly
+
+:script TableBorderFill
+:Synopsis Add borders or fill to a table
+:Description Add borders or fill to a table (Borders/fill)
+:Category Application
+
+:function ActiveItemChangedEvent

@@ -1,0 +1,278 @@
+:script ReadFromField
+:Synopsis Liest das Feld Von
+:Description Liest das Von-Feld oder bewegt den Fokus dorthin, wenn zweimal gedrückt
+
+:script ReadDateField
+:Synopsis Liest das Feld Datum
+:Description Liest das Datumsfeld oder bewegt den Fokus dorthin, wenn zweimal gedrückt
+
+:function ReadHeaderField
+:Returns int TRUE if successful, false otherwise
+:Param int nID The name of the field
+:Param string sFieldName The name of the field to be read
+
+:script SelectALink
+:Synopsis Plaziert die zur Verfügung stehenden Links in das Listenfeld Aktive Nachrichten, wie zum Beispiel im Internet Explorer
+:Description Mit PFEIL RAUF und RUNTER oder dem Anfangsbuchstaben springen Sie auf den gewünschten Link.  Drücken Sie EINGABE, um einen Schalter 
+
+:script HotKeyHelp
+
+:script SayNextLine
+
+:function ObjStateChangedEvent
+
+:script NextMessage
+:Synopsis Erhält die nächste Nachricht
+:Description Springt auf die nächste Nachricht im Nachrichtenfenster und liest das Von- und Betreff-Feld vor dem eigentlichen Lesen
+
+:function HandleCustomWindows
+
+:script Enter
+
+:function SayAllStoppedEvent
+:Synopsis Stops speech and routes cursors to last word spoken.
+:Description Localized to stop cursor routing when delete is hit in a messageUser-defined code can be added to an overwritten version of this function to run every time SayAll stops.
+
+:script ReadToField
+:Synopsis Liest das AN Feld 
+:Description Liest das An-Feld oder bewegt den Fokus dorthin, wenn zweimal gedrückt
+
+:script ReadCcField
+:Synopsis Liest das Feld CC
+:Description Liest das cc Feld einer E-Mail-Nachricht oder bewegt den Fokus dorthin, wenn zweimal gedrückt
+
+:script ReadBccField
+:Synopsis Liest das Feld BCC
+:Description Liest das Bcc Feld einer E-Mail-Nachricht oder bewegt den Fokus dorthin, wenn zweimal gedrückt
+
+:function NewTextEvent
+
+:script SayNextCharacter
+
+:function SayObjectTypeAndText
+
+:function WasAttachmentsStripped
+:Synopsis Checks for stripped attachments notification message
+
+:function IsMessagesList
+:Returns int TRUE or FALSE
+:Description Returns TRUE if messages list is at the handle you specify, FALSE otherwise.
+:Param handle/hWnd Enter the handle to check.
+
+:function ReadHeaderField2
+:Returns int TRUE if successful, false otherwise
+:Param int nID The name of the field
+:Param string sFieldName The name of the field to be read
+
+:function SayNonHighlightedText
+
+:script JAWSEnd
+:Category Cursor
+
+:script ReadFromAndSubjectFields
+:Synopsis Liest die Von und Betreff Felder
+:Description Liest das Von- und das Betreff-Feld in einer E-Mail-Nachricht
+
+:function MisspelledAndSuggestion
+:Synopsis Repeats the misspelled word and suggestion in the Spell Check dialog.
+:Description This function repeats the misspelled word and suggestion in the Outlook Express spell check dialog. When a value of true is passed to this function, then the "not in spellchecker" message is spoken by JAWS when focus is not in the Spell Check dialog. When false is passed, then no error message is spoken.
+:Param int/iShouldSayIncorrectSpell When TRUE is passed in this parameter, then JAWS speaks the "not in spellchecker dialog" error message. If FALSE is passed, then JAWS does not speak the error message.
+:Param int/iBrlFlash Flag that determines if a Braille message should be shown on the attached Braille display. True indicates that a flash message should be displayed; False indicates no message should be displayed.
+
+:function BrailleAddObjectUnRedStatus
+
+:function AutoStartEvent
+
+:function KeyPressedEvent
+
+:script SayPriorLine
+
+:script DeleteMessage
+:Synopsis Löscht eine Nachricht
+
+:function TextSelectedEvent
+
+:script DeleteButton
+:Synopsis Dieses Vorkommen entfernen
+:Description Bewegt den Fokus auf den Entfernen Schalter, so dass bei Druck auf diese Tastenkombination der Fokus nicht verlorengeht.
+
+:script PreviousMessage
+:Synopsis Geht zur vorherigen Nachricht in der Nachrichtenliste
+:Description Nachdem zur vorherigen Nachricht gesprungen wurde, wird das Von und Betreff Feld gelesen. Dieses Skript arbeitet sowohl im Listen- als auch Nachrichtenfenster
+
+:function NewSelectLink
+:Synopsis Shows error message if list of links dialog is not present.
+
+:script UndoButton
+:Synopsis Letzte Aktion rückgängig machen.
+:Description Bewegt den Fokus auf den Rückgängig Schalter, so dass bei Druck auf diese Tastenkombination der Fokus nicht verlorengeht.
+
+:script ChangeButton
+:Synopsis Dieses Vorkommen in vorgeschlagenes Wort ändern.
+:Description Bewegt den Fokus auf den Ändern Schalter, so dass bei Druck auf diese Tastenkombination der Fokus nicht verlorengeht.
+
+:function GetToolbar
+
+:function GetMessageWindowHandle
+:Returns int True if window was found.
+:Synopsis Retrieves handle to message body.
+:Description Retrieves the handle of the message body by first checking for IE Server, then RichEdDoc class for plain text.
+:Category WindowsAndObjects
+
+:function RetrieveNumberOfUnReadMessages
+:Synopsis Retrieves the number of unread messages from the Outlook Express status bar.
+:Description This function retrieves the number of the  unread messages from the status bar as a string of text. If the status bar is not visible or the number of unread messages is 0, then no text is returned.
+:Param string sUnRedMsgs The number of unread messages retrieved from the status bar.
+
+:script ReadSubjectField
+:Synopsis Liest das Betreff Feld
+:Description Liest das Betreff-Feld oder bewegt den Fokus dorthin, wenn zweimal gedrückt
+
+:script DeleteWord
+:Synopsis Löscht das aktuelle Wort in einer E-Mail-Nachricht
+:Description Verwenden Sie diesen Befehl, um beim erstellen einer E-Mail-Nachricht das aktuelle Wort zu löschen
+
+:script SayWindowPromptAndText
+
+:script JAWSDelete
+
+:function TurnSuppressHighlightOff
+
+:script ReadMisspelledAndSuggestion
+:Synopsis Liest Rechtschreibfehler und Vorschlag
+:Description Liest Rechtschreibfehler und Vorschlag
+
+:function TopEdgeEvent
+
+:function SayHighlightedText
+
+:function SayLine
+:Category Say
+
+:script BottomOfFile
+:Category Cursor
+
+:script UpALevel
+
+:script GotoAttachmentsList
+:Synopsis Plaziert den Fokus in die Liste der Anhänge
+:Description Drücken Sie diese Tastenkombination in einer geöffneten Nachricht, um den Fokus in die Liste der Dateianhänge zu plazieren.  Dort wählen Sie einen Anhang mit Pfeil rauf oder runter aus und drücken Eingabe, um ihn zu aktivieren.  Wenn keine Anhänge gefunden werden, meldet %product% dieses.
+
+:script IgnoreAllButton
+:Synopsis Alle Vorkommen ignorieren
+:Description Bewegt den Fokus auf den Alle Ignorieren Schalter, so dass bei Druck auf diese Tastenkombination der Fokus nicht verlorengeht.
+
+:function SayFocusedWindow
+
+:script ScreenSensitiveHelp
+
+:function ScreenStabilizedEvent
+
+:script SayPriorCharacter
+
+:script JAWSHome
+:Category Cursor
+
+:script ChangeAllButton
+:Synopsis Alle Vorkommen dieses Wortes ändern.
+:Description Bewegt den Fokus auf den Alle ändern Schalter, so dass bei Druck auf diese Tastenkombination der Fokus nicht verlorengeht.
+
+:script GoToMessageField
+:Synopsis Geht ins Nachrichtenfeld
+:Description Bewegt den Fokus in das Nachrichtenfeld einer E-Mail-Nachricht.  Wenn Sie Windows NT, 2000 oder XP einsetzen, drücken Sie bitte STRG plus Dach, um die gleiche Tastenkombination zu aktivieren.
+
+:function IsMessageRules
+:Synopsis Returns TRUE if the Message Rules area is active.
+:Description This function returns true if the in the Message Rules area, false if not.
+:Param handle/hWnd handle of current window.
+
+:function BottomEdgeEvent
+
+:function FocusChangedEvent
+
+:script ReplyDirectlyToSender
+:Synopsis Antwortet direkt an den Absender. Wird in Mailinglisten verwendet.
+:Description Dieses Skript wird verwendet, wenn Sie direkt dem Absender einer Mail, die über eine Mailingliste empfangen wurde, antworten wollen, anstatt an die gesamte Liste zu antworten.
+:Category Script
+
+:function GetCurrentListViewItemName
+:Returns string No Return Description
+
+:function DocumentLoadedEvent
+
+:function GetCustomTutorMessage
+
+:function BrailleAddObjectUnRedMsgs
+
+:function TurnSuppressCheckforBoldOff
+
+:script AdjustJAWSVerbosity
+:Synopsis JAWS Ausführlichkeitsoptionen anpassen
+:Description Dies ergänzt die Standardliste, um Outlook bezogene Optionen einzubeziehen.
+
+:function ActiveItemChangedEvent
+
+:function ReadPlainTextMessage
+:Synopsis Reads the message body when plain-text mode is used.
+
+:script SayBottomLineOfWindow
+
+:function FocusPointMovedEvent
+:Synopsis Called when focus moves to a different control within an application or dialog.
+:Description It is called when the pixel location of the blinking caret or highlight changes. Note that the pixel location is determined by video resolution as in row and column coordinates.  Because this function will be called quite frequently, it is recommended that you avoid from intensive tasks that will be performed each time the PC cursor moves. For a list of parameters received by FocusPointMovedEvent and their descriptions, look at the Existing Parameters List box on the Parameters page.
+:Category Cursors
+:Param int/nX Current horizontal coordinate of the PC cursor.
+:Param int/nY Current vertical coordinate of the PC cursor.
+:Param int/nOldX Previous horizontal coordinate of the PC cursor.
+:Param int/nOldY Previous vertical coordinate of the PC cursor.
+:Param int/nUnit The unit of movement as constant variables defined in HJConst.jsh.
+:Param int/nDir The direction of movement as constant variables defined in HJConst.jsh.
+:Param int/nTimeElapsed The amount of time (milliseconds)that has elapsed since the movement occurred.
+
+:function loadApplicationSettings
+:Synopsis loads Outlook specific verbosity settings from Outllib.jsi.
+:Description This function loads Outlook specific verbosity settings from Outllib.jsi.
+
+:function saveApplicationSettings
+:Returns int true if settings were saved successfully. False otherwise.
+:Synopsis saves Outlook specific verbosity settings to Outllib.jsi
+:Description This function saves Outlook specific verbosity settings to Outllib.jsi. The settings saved include meeting request indication and unread message status announcement.
+
+:function ValueChangedEvent
+
+:script ScriptFileName
+
+:script ToolbarList
+:Synopsis Öffnet eine Liste mit Schaltern der Symbolleiste.
+:Description Diese Tastenkombination öffnet ein Dialogfeld, in dem sich alle auf der Symbolleiste befindlichen Schalter in einer Liste befinden. 
+
+:function IsUnReadMessage
+
+:function DragDialogWindow
+
+:function SayWord
+:Synopsis Says word
+:Description Localized in OE6 to process SayAllStopped function.Reads the word or graphic symbol at the active cursor.  If the PC cursor is active, JAWS looks for the visible caret or the light bar.  If the JAWS cursor is active, it speaks the word or graphic at the mouse pointer. If pressed twice quickly the word at the active cursor will be spelled.
+
+:script IgnoreButton
+:Synopsis Dieses Vorkommen ignorieren.
+:Description Bewegt den Fokus auf den Ignorieren Schalter, so dass bei Druck auf diese Tastenkombination der Fokus nicht verlorengeht.
+
+:script AddToDictionaryButton
+:Synopsis Wort dem Wörterbuch hinzufügen.
+:Description Bewegt den Fokus auf den Hinzufügen Schalter, so dass bei Druck auf diese Tastenkombination der Fokus nicht verlorengeht.
+
+:function HandleCustomRealWindows
+
+:function SayLVItemCheckStatus
+:Category Say
+:Param handle/hWnd No Description
+
+:script TopOfFile
+
+:function AutoFinishEvent
+
+:function SayWindowTypeAndText
+:Category Say
+:Param handle/hWnd Handle of window type and text is to be announced.
+

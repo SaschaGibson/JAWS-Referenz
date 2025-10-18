@@ -1,0 +1,161 @@
+﻿; Copyright 1995-2018 Freedom Scientific, Inc.
+;Braille structure file for Microsoft Word versions prior to later 2016 and O365.
+
+;section for localization and UI display
+[Component Aliases]
+tblInfo=Tabelleninfo
+tblRowHdr=Tabellenreihe Titel
+tblColHdr=Tabellenspalte Titel
+tblCellContent=Tabelle Zellinhalt
+frmFldPrompt=Formularfeld Prompt
+type=typ
+frmFldState=Formularfeld Status
+frmFldPosition=Formularfeld Position
+shapeType=Objekttyp
+altText=Alternativer Text
+shapeDimensions=Objektdimensionen
+oleName=OLE Objekt Name
+oleType=OLE Objekt Typ
+oleValue=OLE Objekt Wert
+oleState=OLE Objekt Status
+olePosition=OLE Objekt Position
+
+; Section for edit
+; note that multiline edits will always use line mode if not in a dialog
+[SubtypeCode3]
+components=ContextHelp,name,type,state,ComputerBrailleIndicator,value,hotkey
+type=ef
+removed=
+displayname=
+AlignmentPriority=name,type,state,ComputerBrailleIndicator,value
+; Section for listboxitem
+[SubtypeCode55]
+components=ContextHelp,name,type,state,value,position,hotkey
+removed=
+displayname=
+type=lf
+AlignmentPriority=name,type,state,value
+
+; for Tables
+[CustomControl1]
+components=tblInfo,tblRowHdr,tblColHdr,tblCellContent
+removed=
+type=
+displayname=Tabelle
+
+;for edit formfields
+[CustomControl2]
+components=tblInfo,tblRowHdr,tblColHdr,name,type,ComputerBrailleIndicator,Value
+type=ef
+removed=
+displayname=Eingabe Formularfeld
+AlignmentPriority=name,type,ComputerBrailleIndicator,Value
+
+;for checkbox formfields
+[CustomControl3]
+components=tblInfo,tblRowHdr,tblColHdr,state,name,type
+type=kf
+removed=
+displayname=Kontrollfeld Formularfeld
+AlignmentPriority=state,name
+
+;for dropdown formfields
+[CustomControl4]
+components=tblInfo,tblRowHdr,tblColHdr,name,type,value,position
+type=akl
+removed=
+displayname=Ausklappliste Formularfeld
+AlignmentPriority=name,type,Value
+
+;for generic fields
+[CustomControl5]
+components=fldName,FldType,FldValue
+type=feld
+removed=
+displayname=Feld
+
+;for pictures or other generic shape objects
+[CustomControl6]
+components=shapeType,altText,shapeDimensions
+removed=
+displayname=Eingebettetes Objekt
+
+; sections for OLE control objects
+;section for OLE checkbox
+[CustomControl8]
+components=oleState,oleName,oleType,oleValue,olePosition
+type=kf
+removed=
+displayname=OLE Kontrollfeld
+AlignmentPriority=oleState,oleName
+;section for OLE radio button
+[CustomControl9]
+components=oleState,oleName,oleType
+type=as
+removed=
+displayname=OLE Auswahlschalter
+AlignmentPriority=oleState,oleName
+
+;section for OLE listbox
+[CustomControl10]
+components=oleName,oleType,oleValue,olePosition
+type=lf
+removed=
+displayname=OLE Listenfeld
+AlignmentPriority=oleName,oleType,oleValue
+
+;section for all other generic MSForms controls
+[CustomControl11]
+components=oleState,oleName,oleType,oleValue
+type=
+removed=
+displayname=OLE andere
+AlignmentPriority=oleState,oleName
+
+;unknown, generic ole controls
+[CustomControl12]
+components=oleState,oleName,oleType,oleValue
+type=
+removed=
+displayname=OLE unbekannt
+AlignmentPriority=oleState,oleName
+
+;section for information balloons
+[CustomControl13]
+components=name,type
+type=ibln
+removed=
+displayname=Infoblase
+
+;section for bookmarks
+[CustomControl14]
+components=name,type,value
+removed=
+displayname=Lesezeichen
+type=lz
+AlignmentPriority=name,type,value
+
+;section for smart tags
+[CustomControl15]
+components=SmartTag
+removed=
+displayname=Smarttag
+;Please note the line specifier following the component name in the below two sections.
+; is -1 which means don't test it.
+;The reason for this is that the component callback itself handles the line indices when
+;building up the structured data.
+; Leaving blank would default to line 1 which would mean that the components would only be added
+;to line one regardless of the component's callback function 
+;calling BrailleSetLineIndexForNextAddString to set the line indices of the 
+;individual BrailleAddStrings.
+[CustomControl16]
+components=ColTitlesAndCurRow:-1
+removed=
+displayname=Spaltentitel und aktuelle Reihe
+[CustomControl17]
+components=PrevAndCurrentRow:-1
+removed=
+displayname=Vorherige und aktuelle Reihe
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Microsoft Word.

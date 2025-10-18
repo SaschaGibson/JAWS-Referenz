@@ -1,0 +1,66 @@
+[Common Keys]
+JAWSKey+F8=ToolbarButtonList
+JAWSKey+W=WindowsHelp
+Control+T=SetOptions
+Control+P=Copier
+Control+B=Navigator
+Control+F=Finder
+Control+N=NewNoteSet
+Control+L=NewJumpList
+Control+I=NewTopicsBook
+Control+1=FirstBookMark
+Control+2=SecondBookMark
+Control+3=ThirdBookMark
+Control+4=ForthBookMark
+Control+5=FifthBookMark
+Control+6=SixthBookMark
+Control+7=SeventhBookMark
+Control+8=eighthBookMark
+Control+9=NinthBookMark
+Control+0=ZeroBookMark
+Control+Shift+1=SetFirstBookMark
+Control+Shift+2=SetSecondBookMark
+Control+Shift+3=SetThirdBookMark
+Control+Shift+4=SetForthBookMark
+Control+Shift+5=SetFifthBookMark
+Control+Shift+6=SetSixthBookMark
+Control+Shift+7=SetSeventhBookMark
+Control+Shift+8=SetEighthBookMark
+Control+Shift+9=SetNinthBookMark
+Control+Shift+0=SetZeroBookMark
+F3=FindNext
+Control+H=SearchDocument
+F4=PreviousWindow
+F5=NextWindow
+JAWSKey+Delete=ActiveVerse
+JAWSKey+ExtendedDelete=ActiveVerse
+JAWSKey+F1=screenSensitiveHelp
+JAWSKey+F7=listLinks
+Control+Shift+M=AttachMedia
+Control+JAWSKey+LeftArrow=priorLink
+Control+JAWSKey+ExtendedLeftArrow=priorLink
+Control+JAWSKey+RightArrow=nextLink
+Control+JAWSKey+ExtendedRightArrow=nextLink
+Enter=Enter
+NumPadEnter=Enter
+
+[Laptop Keys]
+Insert+F8=ToolbarButtonList
+Insert+W=WindowsHelp
+Insert+Delete=ActiveVerse
+Insert+ExtendedDelete=ActiveVerse
+Insert+F1=screenSensitiveHelp
+Insert+F7=listLinks
+Control+Insert+LeftArrow=priorLink
+Control+Insert+ExtendedLeftArrow=priorLink
+Control+Insert+RightArrow=nextLink
+Control+Insert+ExtendedRightArrow=nextLink
+;Removed from Common to prevent conflicts with MAGIc
+Control+Shift+M=AttachMedia
+;End of removed from Common to prevent conflicts with MAGIc
+
+[Desktop Keys]
+;Removed from Common to prevent conflicts with MAGIc
+Control+Shift+M=AttachMedia
+;End of removed from Common to prevent conflicts with MAGIc
+

@@ -1,0 +1,723 @@
+﻿:function AutoStartEvent
+
+:function AutoFinishEvent
+
+:function InitEvents
+
+:function ClearEvents
+
+:function IsPortal
+:Returns int No Return Description
+
+:function UpdateBrailleMath
+:Description Updates the Braille display with the active equation and current cursor position.
+
+:function EnableBrailleMathSettings
+:Description Enables braille settings appropriate for displaying math, such as Push mode and minimal auto panning.
+
+:function DisableBrailleMathSettings
+:Description Reverts braille settings that were changed during a call to EnableBrailleMathSettings to the values they were previously.
+
+:script SayLine
+
+:script SayWord
+
+:script SayCharacter
+
+:script SayNextWord
+:Returns int No Return Description
+
+:script SayPriorWord
+:Returns int No Return Description
+
+:script TopOfFile
+:Returns int No Return Description
+
+:script BottomOfFile
+:Returns int No Return Description
+
+:script SayBottomLineOfWindow
+:Returns int No Return Description
+
+:function SayStackSummary
+
+:function MathEvent_OnNavigationModeChanged
+:Param int/mode No Description
+
+:function MathEvent_OnJumpedToElement
+:Description This event is raised when navigation jumps directly to an element, such as when a Braille routing key is pressed.
+
+:function MathEvent_OnNextSubequation
+
+:function MathEvent_OnPriorSubequation
+
+:function MathEvent_OnParentSubequation
+
+:function MathEvent_OnFirstChildSubequation
+
+:function MathEvent_NoNextSubequation
+
+:function MathEvent_NoPriorSubequation
+
+:function MathEvent_NoParentSubequation
+
+:function MathEvent_NoFirstChildSubequation
+
+:function MathEvent_OnStackNextRow
+
+:function MathEvent_OnStackPriorRow
+
+:function MathEvent_NoStackNextRow
+
+:function MathEvent_NoStackPriorRow
+
+:function MathEvent_OnStackNextColumn
+
+:function MathEvent_OnStackPriorColumn
+
+:function MathEvent_NoStackNextColumn
+
+:function MathEvent_NoStackPriorColumn
+
+:function MathEvent_OnStackJumpNextColumn
+
+:function MathEvent_OnStackJumpPriorColumn
+
+:function MathEvent_OnStackFirstColumn
+
+:function MathEvent_OnStackLastColumn
+
+:function MathEvent_OnStackFirst
+
+:function MathEvent_OnStackLast
+
+:function MathEvent_AlreadyOnStackFirstColumn
+
+:function MathEvent_AlreadyOnStackLastColumn
+
+:function MathEvent_AlreadyOnStackFirst
+
+:function MathEvent_AlreadyOnStackLast
+
+:function MathEvent_OnLongDivisionSectionChange
+
+:Script MoveToPrevious
+:DisplayName Springe zu vorherigem Element
+:Synopsis Springe zu vorherigem Element.
+:Description Springt zum vorherigen Element im Ausdruck und spricht dieses.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToNext
+:DisplayName Springe zu nächstem Element
+:Synopsis Springe zu nächstem Element.
+:Description Springt zum nächsten Element im Ausdruck und spricht dieses.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ZoomOut
+:DisplayName Raus zoomen
+:Synopsis Zoomt aus dem aktuellen Element raus.
+:Description Bewegt den Fokus aus dem aktuellen Element heraus und kehrt zum gesamten Ausdruck zurück.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ZoomIn
+:DisplayName Rein zoomen
+:Synopsis Zoomt in das aktuelle Element hinein und erkundet es.
+:Description Bewegt den Fokus in das aktuelle Element oder in einen Teil des Elements hinein. Sie können sich dann mit PFEIL LINKS und RECHTS im Element bewegen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script WhereAmI
+:DisplayName Wo bin ich
+:Synopsis Sagt das aktuelle Element und die Position im Ausdruck an.
+:Description Zeigt an, ob das aktuelle Element innerhalb eines größeren Ausdrucks steht, z.B. in einem Bruch.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadCurrent
+:DisplayName Aktuelles Element ansagen
+:Synopsis Sagt alle Teilausdrücke der aktuellen Ebene an.
+:Description Sagt alle Teilausdrücke der aktuellen Ebene an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToLastPosition
+:DisplayName Springe zu letzter Position
+:Synopsis Springt ein Element zurück.
+:Description Springt von einer beliebigen Stelle innerhalb des aktuellen Elements um ein Element innerhalb des aktuellen mathematischen Ausdrucks zurück.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToStart
+:DisplayName Springe zum Anfang des Ausdrucks
+:Synopsis Setzt den Fokus an den Anfang des Ausdrucks.
+:Description Setzt den Fokus an den Anfang des Ausdrucks.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToEnd
+:DisplayName Springe zum Ende des Ausdrucks
+:Synopsis Setzt den Fokus an das Ende des Ausdrucks.
+:Description Setzt den Fokus an das Ende des Ausdrucks.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker1
+:DisplayName Springe zu Lesezeichen 1
+:Synopsis Springt zum Element des ersten Lesezeichens und sagt dieses an.
+:Description Springt zum Element des ersten Lesezeichens und sagt dieses an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker2
+:DisplayName Springe zu Lesezeichen 2
+:Synopsis Springt zum Element des zweiten Lesezeichens und sagt dieses an.
+:Description Springt zum Element des zweiten Lesezeichens und sagt dieses an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker3
+:DisplayName Springe zu Lesezeichen 3
+:Synopsis Springt zum Element des dritten Lesezeichens und sagt dieses an.
+:Description Springt zum Element des dritten Lesezeichens und sagt dieses an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker4
+:DisplayName Springe zu Lesezeichen 4
+:Synopsis Springt zum Element des vierten Lesezeichens und sagt dieses an.
+:Description Springt zum Element des vierten Lesezeichens und sagt dieses an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker5
+:DisplayName Springe zu Lesezeichen 5
+:Synopsis Springt zum Element des fünften Lesezeichens und sagt dieses an.
+:Description Springt zum Element des fünften Lesezeichens und sagt dieses an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker6
+:DisplayName Springe zu Lesezeichen 6
+:Synopsis Springt zum Element des sechsten Lesezeichens und sagt dieses an.
+:Description Springt zum Element des sechsten Lesezeichens und sagt dieses an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker7
+:DisplayName Springe zu Lesezeichen 7
+:Synopsis Springt zum Element des siebten Lesezeichens und sagt dieses an.
+:Description Springt zum Element des siebten Lesezeichens und sagt dieses an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker8
+:DisplayName Springe zu Lesezeichen 8
+:Synopsis Springt zum Element des achten Lesezeichens und sagt dieses an.
+:Description Springt zum Element des achten Lesezeichens und sagt dieses an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker9
+:DisplayName Springe zu Lesezeichen 9
+:Synopsis Springt zum Element des neunten Lesezeichens und sagt dieses an.
+:Description Springt zum Element des neunten Lesezeichens und sagt dieses an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker10
+:DisplayName Springe zu Lesezeichen 10
+:Synopsis Springt zum Element des zehnten Lesezeichens und sagt dieses an.
+:Description Springt zum Element des zehnten Lesezeichens und sagt dieses an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToPreviousCell
+:DisplayName Spring zu vorheriger Zelle
+:Synopsis Springt zur vorherigen Tabellenzelle und sagt diese an.
+:Description Springt innerhalb einer Tabellenzelle zur gleichen Zelle in der vorherigen Spalte und sagt den Inhalt an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToNextCell
+:DisplayName Spring zu nächsten Zelle
+:Synopsis Springt zur nächsten Tabellenzelle und sagt diese an.
+:Description Springt innerhalb einer Tabellenzelle zur gleichen Zelle in der nächsten Spalte und sagt den Inhalt an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToCellAbove
+:DisplayName Springe in darüber liegende Zelle
+:Synopsis Springt eine Tabellenzelle nach oben und sagt diese an.
+:Description Springt innerhalb einer Tabellenzelle zur gleichen Zelle in der vorherigen Reihe und sagt den Inhalt an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToCellBelow
+:DisplayName Springe in darunter liegende Zelle
+:Synopsis Springt eine Tabellenzelle nach unten und sagt diese an.
+:Description Springt innerhalb einer Tabellenzelle zur gleichen Zelle in der nächsten Reihe und sagt den Inhalt an.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script GlobalWhereAmI
+:DisplayName Globales Wo bin ich
+:Synopsis Sagt das aktuelle Element und die Position im Ausdruck an.
+:Description Teilt Ihnen mit, ob das aktuelle Element innerhalb eines größeren Ausdrucks steht, wie z.B. in einem Bruch.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadCurrentCell
+:DisplayName Aktuelle Zelle lesen
+:Synopsis Liest die aktuelle Tabellenzelle.
+:Description Innerhalb einer Tabellenzelle wird der Inhalt der aktuellen Zelle angesagt.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToStartOfLine
+:DisplayName Zum Zeilenanfang springen
+:Synopsis Springt innerhalb eines mehrzeiligen Ausdrucks an den Anfang der aktuellen Zeile. 
+:Description Springt innerhalb eines mehrzeiligen Ausdrucks an den Anfang der aktuellen Zeile.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToEndOfLine
+:DisplayName Zum Zeilenende springen
+:Synopsis Springt innerhalb eines mehrzeiligen Ausdrucks an das Ende der aktuellen Zeile.
+:Description Springt innerhalb eines mehrzeiligen Ausdrucks an das Ende der aktuellen Zeile.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker1
+:DisplayName Setze Lesezeichen 1
+:Synopsis Setzt Lesezeichen
+:Description Setzt ein Lesezeichen beim aktuellen Element, Begriff oder Teilausdruck. Sie können bis zu 10 Lesezeichen setzen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker2
+:DisplayName Setze Lesezeichen 2
+:Synopsis Setzt Lesezeichen
+:Description Setzt ein Lesezeichen beim aktuellen Element, Begriff oder Teilausdruck. Sie können bis zu 10 Lesezeichen setzen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker3
+:DisplayName Setze Lesezeichen 3
+:Synopsis Setzt Lesezeichen
+:Description Setzt ein Lesezeichen beim aktuellen Element, Begriff oder Teilausdruck. Sie können bis zu 10 Lesezeichen setzen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker4
+:DisplayName Setze Lesezeichen 4
+:Synopsis Setzt Lesezeichen
+:Description Setzt ein Lesezeichen beim aktuellen Element, Begriff oder Teilausdruck. Sie können bis zu 10 Lesezeichen setzen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker5
+:DisplayName Setze Lesezeichen 5
+:Synopsis Setzt Lesezeichen
+:Description Setzt ein Lesezeichen beim aktuellen Element, Begriff oder Teilausdruck. Sie können bis zu 10 Lesezeichen setzen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker6
+:DisplayName Setze Lesezeichen 6
+:Synopsis Setzt Lesezeichen
+:Description Setzt ein Lesezeichen beim aktuellen Element, Begriff oder Teilausdruck. Sie können bis zu 10 Lesezeichen setzen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker7
+:DisplayName Setze Lesezeichen 7
+:Synopsis Setzt Lesezeichen
+:Description Setzt ein Lesezeichen beim aktuellen Element, Begriff oder Teilausdruck. Sie können bis zu 10 Lesezeichen setzen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker8
+:DisplayName Setze Lesezeichen 8
+:Synopsis Setzt Lesezeichen
+:Description Setzt ein Lesezeichen beim aktuellen Element, Begriff oder Teilausdruck. Sie können bis zu 10 Lesezeichen setzen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker9
+:DisplayName Setze Lesezeichen 9
+:Synopsis Setzt Lesezeichen
+:Description Setzt ein Lesezeichen beim aktuellen Element, Begriff oder Teilausdruck. Sie können bis zu 10 Lesezeichen setzen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker10
+:DisplayName Setze Lesezeichen 10
+:Synopsis Setzt Lesezeichen
+:Description Setzt ein Lesezeichen beim aktuellen Element, Begriff oder Teilausdruck. Sie können bis zu 10 Lesezeichen setzen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPrevious
+:DisplayName Lese vorheriges Element
+:Synopsis Sagt das vorherige Element an ohne den Fokus zu verschieben.
+:Description Sagt das vorherige Element an ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadNext
+:DisplayName Lese nächstes Element
+:Synopsis Sagt das nächste Element an ohne den Fokus zu verschieben.
+:Description Sagt das nächste Element an ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script NavigationModeLarger
+:DisplayName Nächster Navigationsmodus
+:Synopsis Wechselt zwischen den Navigationsmodi.
+:Description Wechselt zwischen den Navigationsmodi Einfach, Zeichen und Erweitert. Der erweiterte Modus bewegt sich zwischen mathematisch bedeutsamen Elementen wie Operatoren und Begrenzungszeichen. Der einfache Modus bewegt sich zwischen Wörtern, außer wenn ein Ausdruck wie ein Bruch oder eine Quadratwurzel auftritt. In diesem Fall wird der gesamte Ausdruck gelesen. Der Zeichenmodus bewegt sich zwischen Wörtern, ermöglicht es Ihnen jedoch, sich zwischen Zeichen zu bewegen, indem Sie eine Ebene nach unten gehen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script NavigationModeSmaller
+:DisplayName Vorheriger Navigationsmodus
+:Synopsis Wechselt zwischen den Navigationsmodi.
+:Description Wechselt zwischen den Navigationsmodi Einfach, Zeichen und Erweitert. Der erweiterte Modus bewegt sich zwischen mathematisch bedeutsamen Elementen wie Operatoren und Begrenzungszeichen. Der einfache Modus bewegt sich zwischen Wörtern, außer wenn ein Ausdruck wie ein Bruch oder eine Quadratwurzel auftritt. In diesem Fall wird der gesamte Ausdruck gelesen. Der Zeichenmodus bewegt sich zwischen Wörtern, ermöglicht es Ihnen jedoch, sich zwischen Zeichen zu bewegen, indem Sie eine Ebene nach unten gehen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ToggleSpeechMode
+:DisplayName Sprachmodus umschalten
+:Synopsis Schaltet den Sprachmodus von Lesen zu Beschreiben um.
+:Description Schaltet den Sprachmodus von Lesen zu Beschreiben um.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToStartOfColumn
+:DisplayName Springe an den Spaltenanfang
+:Synopsis Springt an den Anfang der aktuellen Spalte.
+:Description Befinden Sie sich in einer Tabellenzelle, dann wird zur ersten Zelle der aktuellen Spalte gesprungen und der Inhalt angesagt.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToEndOfColumn
+:DisplayName Springe an das Spaltenende
+:Synopsis Springt an das Ende der aktuellen Spalte.
+:Description Befinden Sie sich in einer Tabellenzelle, dann wird zur letzten Zelle der aktuellen Spalte gesprungen und der Inhalt angesagt.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker1
+:DisplayName Lese Lesezeichen 1
+:Synopsis Sagt den mathematischen Inhalt am ersten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Description Sagt den mathematischen Inhalt am ersten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker2
+:DisplayName Lese Lesezeichen 2
+:Synopsis Sagt den mathematischen Inhalt am zweiten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Description Sagt den mathematischen Inhalt am zweiten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker3
+:DisplayName Lese Lesezeichen 3
+:Synopsis Sagt den mathematischen Inhalt am dritten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Description Sagt den mathematischen Inhalt am dritten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker4
+:DisplayName Lese Lesezeichen 4
+:Synopsis Sagt den mathematischen Inhalt am vierten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Description Sagt den mathematischen Inhalt am vierten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker5
+:DisplayName Lese Lesezeichen 5
+:Synopsis Sagt den mathematischen Inhalt am fünften definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Description Sagt den mathematischen Inhalt am fünften definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker6
+:DisplayName Lese Lesezeichen 6
+:Synopsis Sagt den mathematischen Inhalt am sechsten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Description Sagt den mathematischen Inhalt am sechsten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker7
+:DisplayName Lese Lesezeichen 7
+:Synopsis Sagt den mathematischen Inhalt am siebten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Description Sagt den mathematischen Inhalt am siebten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker8
+:DisplayName Lese Lesezeichen 8
+:Synopsis Sagt den mathematischen Inhalt am achten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Description Sagt den mathematischen Inhalt am achten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker9
+:DisplayName Lese Lesezeichen 9
+:Synopsis Sagt den mathematischen Inhalt am neunten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Description Sagt den mathematischen Inhalt am neunten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker10
+:DisplayName Lese Lesezeichen 10
+:Synopsis Sagt den mathematischen Inhalt am zehnten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Description Sagt den mathematischen Inhalt am zehnten definierten Lesezeichen an, ohne den Fokus zu verschieben.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePrevious
+:DisplayName Beschreibe vorheriges Element
+:Synopsis Beschreibt das vorherige Element, ohne den Fokus zu verschieben.
+:Description Beschreibt das vorherige Element, ohne den Fokus zu verschieben
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribeNext
+:DisplayName Beschreibe nächstes Element
+:Synopsis Beschreibt das nächste Element, ohne den Fokus zu verschieben.
+:Description Beschreibt das nächste Element, ohne den Fokus zu verschieben
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ZoomOutAllTheWay
+:DisplayName Komplett heraus zoomen
+:Synopsis Bis zur obersten Ebene eines Ausdrucks heraus zoomen.
+:Description Wenn Sie sich mehrere Ebenen tief in einem komplexen Ausdruck befinden, können Sie sofort auf die oberste Ebene herauszoomen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ZoomInAllTheWay
+:DisplayName Komplett hinein zoomen
+:Synopsis Bis zur untersten Ebene eines Ausdrucks herein zoomen.
+:Description Wenn Sie sich mehrere Ebenen tief in einem komplexen Ausdruck befinden, können Sie sofort auf die unterste Ebene hereinzoomen.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribeCurrent
+:DisplayName Beschreibe aktuelles Element
+:Synopsis Beschreibt alle Teilausdrücke der aktuellen Ebene.
+:Description Beschreibt alle Teilausdrücke der aktuellen Ebene.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker1
+:DisplayName Beschreibe Lesezeichen 1
+:Synopsis Beschreibt den mathematischen Inhalt am ersten definierten Lesezeichen, ohne den Fokus zu verschieben.
+:Description Das Element, der Teilausdruck oder der Begriff beim Lesezeichen 1 wird mit zusätzlichen Details beschrieben. Der Fokus bleibt dabei an der aktuellen Position.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker2
+:DisplayName Beschreibe Lesezeichen 2
+:Synopsis Beschreibt den mathematischen Inhalt am zweiten definierten Lesezeichen, ohne den Fokus zu verschieben.
+:Description Das Element, der Teilausdruck oder der Begriff beim Lesezeichen 2 wird mit zusätzlichen Details beschrieben. Der Fokus bleibt dabei an der aktuellen Position.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker3
+:DisplayName Beschreibe Lesezeichen 3
+:Synopsis Beschreibt den mathematischen Inhalt am dritten definierten Lesezeichen, ohne den Fokus zu verschieben.
+:Description Das Element, der Teilausdruck oder der Begriff beim Lesezeichen 3 wird mit zusätzlichen Details beschrieben. Der Fokus bleibt dabei an der aktuellen Position.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker4
+:DisplayName Beschreibe Lesezeichen 4
+:Synopsis Beschreibt den mathematischen Inhalt am vierten definierten Lesezeichen, ohne den Fokus zu verschieben.
+:Description Das Element, der Teilausdruck oder der Begriff beim Lesezeichen 4 wird mit zusätzlichen Details beschrieben. Der Fokus bleibt dabei an der aktuellen Position.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker5
+:DisplayName Beschreibe Lesezeichen 5
+:Synopsis Beschreibt den mathematischen Inhalt am fünften definierten Lesezeichen, ohne den Fokus zu verschieben.
+:Description Das Element, der Teilausdruck oder der Begriff beim Lesezeichen 5 wird mit zusätzlichen Details beschrieben. Der Fokus bleibt dabei an der aktuellen Position.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker6
+:DisplayName Beschreibe Lesezeichen 6
+:Synopsis Beschreibt den mathematischen Inhalt am sechsten definierten Lesezeichen, ohne den Fokus zu verschieben.
+:Description Das Element, der Teilausdruck oder der Begriff beim Lesezeichen 6 wird mit zusätzlichen Details beschrieben. Der Fokus bleibt dabei an der aktuellen Position.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker7
+:DisplayName Beschreibe Lesezeichen 7
+:Synopsis Beschreibt den mathematischen Inhalt am siebten definierten Lesezeichen, ohne den Fokus zu verschieben.
+:Description Das Element, der Teilausdruck oder der Begriff beim Lesezeichen 7 wird mit zusätzlichen Details beschrieben. Der Fokus bleibt dabei an der aktuellen Position.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker8
+:DisplayName Beschreibe Lesezeichen 8
+:Synopsis Beschreibt den mathematischen Inhalt am achten definierten Lesezeichen, ohne den Fokus zu verschieben.
+:Description Das Element, der Teilausdruck oder der Begriff beim Lesezeichen 8 wird mit zusätzlichen Details beschrieben. Der Fokus bleibt dabei an der aktuellen Position.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker9
+:DisplayName Beschreibe Lesezeichen 9
+:Synopsis Beschreibt den mathematischen Inhalt am neunten definierten Lesezeichen, ohne den Fokus zu verschieben.
+:Description Das Element, der Teilausdruck oder der Begriff beim Lesezeichen 9 wird mit zusätzlichen Details beschrieben. Der Fokus bleibt dabei an der aktuellen Position.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker10
+:DisplayName Beschreibe Lesezeichen 10
+:Synopsis Beschreibt den mathematischen Inhalt am zehnten definierten Lesezeichen, ohne den Fokus zu verschieben.
+:Description Das Element, der Teilausdruck oder der Begriff beim Lesezeichen 10 wird mit zusätzlichen Details beschrieben. Der Fokus bleibt dabei an der aktuellen Position.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1

@@ -1,0 +1,12 @@
+[Common Keys]
+Control+JAWSKey+R=ReviewPlugInDirectories
+Alt+Shift+R=ReviewSpaceRequirements
+Alt+Shift+C=ReadComponentDescription
+
+[Laptop Keys]
+Control+Insert+R=ReviewPlugInDirectories
+Control+Shift+R=ReviewDestinationDirectory
+
+[DESKTOP Keys]
+Control+Shift+R=ReviewDestinationDirectory
+

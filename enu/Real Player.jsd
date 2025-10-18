@@ -1,0 +1,105 @@
+:script HotKeyHelp
+:Synopsis Says hot key shortcuts for %product% and dialog boxes. Also says RealPlayer shortcut keys
+:Description If in a dialog box, reads the hot keys and labels for the items in that dialog, and special instructions for the application or basic %product% functions. The RealPlayer keys are spoken for your reference
+
+:script SuperFastForward
+:Synopsis Moves forward through the clip 10 times than fast forward
+:Description When CTRL+Shift+Right ARROW or alt+ Right bracket is pressed, the user moves forward through the current clip 10 times than the fast forward
+
+:script VolumeDown
+:Synopsis Lowers the volume of the currently loaded audio file
+:Description When CTRL+DOWN ARROW is pressed, the volume of the playing audio file is lowered
+
+:script NextClip
+:Synopsis moves to the next clip or song
+:Description When this key combination is pressed, user moves to the next clip or song
+
+:script PreviousClip
+:Synopsis moves to the previous clip or song
+:Description When this key combination is pressed, user moves to the previous clip or song
+
+:script Toolbar
+:Synopsis lists toolbar buttons
+:Description This script lists the non-graphical toolbar buttons and allows the user to select and click a button.
+
+:function sayNonHighlightedText
+:Description This function is overridden to ensure descriptive static text is read in dialogs.
+:Param handle/hwnd No Description
+:Param string/sText No Description
+
+:function AutoStartEvent
+:Synopsis Event function that is triggered when RealPlayer is started
+:Description When RealPlayer is started, this event gets performed. It also gets performed when the application is switched to or gets focus, as with ALT+TAB.
+
+:script VolumeUp
+:Synopsis Raises the volume of the currently playing audio file
+:Description When CTRL+UP ARROW is pressed, the volume of the playing audio file is raised
+
+:script ScreenSensitiveHelp
+:Synopsis Specific information related to the current item or control in RealPlayer
+:Description Tells the type of the current window or control, what it is used for, and what keys to use within it. If %product% does not recognize the type then it will say, custom. You might use the class synonym to reclass it. Use this frequently when learning windows
+
+:function SayFocusedWindow
+:Synopsis Says the window with focus in RealPlayer
+:Description Called by the focus changed event or keys that move focus, like INSERT+TAB. Replaces and adds to default SayFocusedWindow to meet the unique needs of RealPlayer
+
+:script CompactView
+:Synopsis Says Compact View
+:Description When CTRL+M is pressed, says Compact View
+
+:script windowKeysHelp
+:Synopsis provides Realplayer specific keystrokes
+:Description This script speaks a list of commonly used RealPlayer keystrokes.
+
+:function WindowCreatedEvent
+:Description This function is overridden to ensure that embedded IE windows get focus when available.
+:Param handle/hWindow No Description
+:Param int/nLeft No Description
+:Param int/nTop No Description
+:Param int/nRight No Description
+:Param int/nBottom No Description
+
+:function getIEServerWindowHandle
+:Returns handle handle to the IE window
+:Synopsis gets the handle to the embedded IE window
+:Description This function returns the handle to the IE window which displays web content. It is used to place focus on this window when available to enable navigation with the Virtual cursor.
+
+:script FastForward
+:Synopsis Moves forward through the current clip
+:Description When CTRL+RIGHT ARROW is pressed, the user moves forward through the current clip
+
+:script SuperRewind
+:Synopsis Moves back through the clip 10 times than rewind
+:Description When CTRL+Shift+LEFT ARROW or alt+ left bracket is pressed, the user moves back through the current clip 10 times than the rewind
+
+:script rewind
+:Synopsis Moves back through the clip
+:Description When CTRL+LEFT ARROW or control + left bracket is pressed, the user moves back through the current clip
+
+:script NormalView
+:Synopsis Says Normal View
+:Description When CTRL+N is pressed, says Normal View
+
+:script ScriptFileName
+:Synopsis Say the currently loaded script file name and name of the application
+:Description Used to identify the script file being used, and that RealPlayer is currently active
+
+:function SayHighlightedText
+:Description This function is overridden to ensure list items are read in Media Types dialog.
+:Param handle/hwnd No Description
+:Param string/sText No Description
+
+:function GetGraphicalCheckBoxState
+:Synopsis Says the current state of the graphical check box when moving through a list
+:Description This function is called when moving through a list of items that have graphical check boxes.  It changes the state of the check box and speaks it.
+
+:function ToggleGraphicalCheckBoxState
+:Synopsis Says the current state of the graphical check box when space bar is pressed
+:Description This function is called by pressing the space bar on a list item with a graphical check box.  It changes the state of the check box and speaks it.
+
+:function KeyPressedEvent
+:Description This function is overridden to ensure that graphical check boxes are correctly spoken in Media Types Dialog
+:Param int/nKey No Description
+:Param string/strKeyName No Description
+:Param int/nIsBrailleKey No Description
+:Param int/nIsScriptKey No Description

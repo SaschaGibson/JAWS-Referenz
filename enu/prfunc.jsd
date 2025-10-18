@@ -1,0 +1,229 @@
+:function saySlideText
+:Synopsis says the text on the current slide
+:Description This function speaks the text on the current slide
+
+:function getPointerY
+:Returns int Y coordinate
+:Synopsis returns the Y coordinate of the slide poinnter
+:Description This function returns the Y coordinate of the slide poinnter.
+
+:function doesSlideHaveSpeakerNotes
+:Returns int true or false
+:Synopsis determines if a slide has speaker notes or not
+:Description This function determines if the current slide has speaker notes defined for it.
+
+:function sayFocusedObjectName
+:Synopsis says the name of the focused slide object
+:Description This function says the name of the focused slide object.
+
+:function saySlideBackgroundTitle
+:Synopsis says the name of the slide's background
+:Description This function speaks the name of the current slide's background.
+
+:function isNavigationMode
+:Returns int true or false
+:Synopsis determines if the UI is in navigation mode
+:Description This function determines if the selection tool is active and that the UI is in an appropriate edit mode which allows tab and shift tab to navigate objects on a slide
+
+:function setPointerPosition
+:Returns int true if pointer was set, false otherwise
+:Synopsis sets the UI pointer to a specified XY location
+:Description This function sets the UI pointer to a specified XY coordinate location, 0,0 is bottom left.
+
+:function saySlideTitle
+:Synopsis says the title of the current slide
+:Description This function says the name of the current slide.
+
+:function isCreaterTool
+:Returns int true or false
+:Synopsis determines if the active tool is a creater tool
+:Description This function determines if the active tool is a creater tool. It is used to determine if an object has been inserted but is awaiting positioning.
+
+:function isSlideSorter
+:Returns int true or false
+:Synopsis determines if the UI is in Slide Sorter view
+:Description This function determines if the UI is in Slide Sorter view.
+
+:function setGlobalMode
+:Synopsis sets globals which track the UI mode
+:Description This function sets globals used for tracking the UI mode.
+
+:function autoStartEvent
+:Synopsis sets up pointer to PerfectScript object
+:Description This function sets up the pointer to the Corel Presentations PerfectScript object which is required for all object model calls.
+
+:function sayCurrentDrawingTool
+:Synopsis speaks the description of the current drawing tool
+:Description This function speaks the descriptive name of the current drawing tool being used in the draw area.
+
+:function saySlideLayoutTitle
+:Synopsis says the name of the current slide's layout
+:Description This function speaks the name of the layout used for the current slide.
+
+:function getObjectX
+:Returns int x coordinate
+:Synopsis returns the x coordinate of the top left of the current object
+:Description This function returns the x coordinate of the top left of the current object.
+
+:function isSlideLayer
+:Returns int true or false
+:Synopsis determines if we are in the slide layer
+:Description This function checks the current mode to see if focus is in the slide layer. The slide layer is where navigation of objects can occur.
+
+:function getObjectY
+:Returns int Y coordinate
+:Synopsis returns the Y coordinate of the top left of the current object
+:Description This function returns the Y coordinate of the top left of the current object.
+
+:function getSlideCount
+:Returns int number of slides
+:Synopsis returns the number of slides in the current slide show
+:Description This function returns the number of slides in the current slide show.
+
+:function readSpeakerNotes
+:Synopsis reads the speaker notes associated with a slide
+:Description This function reads the speaker's notes associated with a slide.
+
+:function hasDrawingToolChanged
+:Returns int true or false
+:Synopsis determines if the drawing tool has changed since the last call to this function
+:Description This function determines if the drawing tool has changed since the last call to this function.
+
+:function sayCurrentView
+:Synopsis says the current user interface view
+:Description This function says the current user interface view.
+
+:function BrailleBuildDialog
+
+:function sayFocusedSlideObject
+:Synopsis says the name and text of the focused slide object
+:Description This function says the name and text of the focused slide object.
+
+:function brailleBuildLine
+:Returns int true if a representation is available in structured mode for current focused object
+
+:function WPUnitsToPoints
+:Returns string x points
+:Synopsis converts a measure in WP units to a measure in points
+:Description This function converts an int value in WP units to a string containing the words x points where x is the converted value.
+:Param int/wpUnitsValue No Description
+
+:function isLayoutLayer
+:Returns int true or false
+:Synopsis determines if in the layout layer view
+:Description This function determines if the UI is in layout layer view.
+
+:function getMarqueeX
+:Returns int x coordinate of marquee
+:Synopsis gets X coordinate of marquee
+:Description This function gets X coordinate of marquee.
+
+:function getSlideNumber
+:Returns int slide number
+
+:function getCurrentMode
+:Returns int UI mode
+:Synopsis gets the current UI mode
+:Description This function returns the UI mode (see constants in prfunc.hsh)
+
+:function getSlideObjectCount
+:Returns int object count on slide
+:Synopsis gets object count on current slide
+:Description This function returns the number of objects on the current slide.
+
+:function getCurrentDrawingToolDesc
+:Returns string description of current drawing tool
+:Synopsis returns desc of drawing tool
+:Description this function returns a descriptive string for the current drawing tool.
+
+:function isChartDataSheetVisible
+:Returns int true or false
+:Synopsis determines if the chart datasheet for the current chart is active
+:Description This function determines if the chart data sheet wwindow is active.
+
+:function getMarqueeY
+:Returns int Y coordinate of marquee
+:Synopsis gets Y coordinate of marquee
+:Description This function returns the Y coordinate of the marquee.
+
+:function setBrlSlideInfo
+:Synopsis sets a global used for Braille tracking
+:Description This function sets a global used for Braille tracking of objects on a slide.
+
+:function getObjectWidth
+:Returns int Object width in WP units
+:Synopsis gets object width in WP units
+:Description This function gets the width of the selected object in WP units.
+
+:function getObjectHeight
+:Returns int Object height in WP units
+:Synopsis gets object height in WP units
+:Description This function gets the height of the selected object in WP units.
+
+:function sayFocusedObjectDimensions
+:Synopsis says the dimensions of the selected object in points
+:Description This function says the dimensions of the selected object in points.
+
+:function isSlideSkipped
+:Returns int true or false
+:Synopsis determines if the current slide will be skipped when the slide show is run
+:Description This function determines if the current slide will be skipped when the slide show is run.
+
+:function getMarqueeHeight
+:Returns int marquee height in WP units
+:Synopsis gets the marquee height
+:Description This function gets the marquee height in WP units.
+
+:function sayCursorPos
+:Synopsis says the cursor position
+:Description This function speaks the cursor location and type. If a tool is being used in the UI then it says the tool's location relative to the bottom left corner of the slide along with the tool's description.
+
+:function sayPointerX
+:Synopsis says the x coordinate of the pointer relative to the bottom left of the slide in Points
+:Description This function says the x coordinate of the pointer relative to the bottom left of the slide in Points.
+
+:function saySlideObjectCount
+:Synopsis says the number of objects on the current slide
+:Description This function speaks the number of objects on the current slide.
+
+:function sayPointerY
+:Synopsis says the Y coordinate of the pointer relative to the bottom left of the slide in Points
+:Description This function says the Y coordinate of the pointer relative to the bottom left of the slide in Points.
+
+:function getMarqueeWidth
+:Returns int marquee width
+:Synopsis gets the width of the marquee
+:Description this function gets the width of the marqee in WP units.
+
+:function isTextEditMode
+:Returns int true or false
+:Synopsis determines if in text edit mode
+:Description This function determines if the UI is in text edit mode.
+
+:function sayFocusedObjectTopLeft
+:Synopsis says the focused object's top left coordinate relative to the bottom left of the slide (in points)
+:Description This function says the focused object's top left coordinate relative to the bottom left of the slide (in points)
+
+:function brailleBuildCustomControl
+:Returns int true if a custom control is handled by this function, false otherwise.
+:Synopsis builds the Braille representation for custom dialogs
+:Description This function builds the Braille representation for custom diaalog controls for which BrailleBuildDialog fails.
+
+:function getPointerX
+:Returns int the X coordinate of the pointer in WP units
+:Description This function :Returns the X coordinate of the pointer in WP units.
+
+:function autoFinishEvent
+:Synopsis resets all global object pointers to null
+:Description This function resets all global object pointers to null.
+
+:Function getCurrentView
+:synopsis returns a string describing the current mode/view
+:description This function returns a string describing the current mode/view. Several modes may be active symultaneously.
+:returns string description of current mode/view
+
+:Function getSlideTitle
+:synopsis returns the title of the current slide
+:description This function returns the title of the current slide.
+:returns string slide title
+

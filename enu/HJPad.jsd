@@ -1,0 +1,43 @@
+:function AutoStartEvent
+
+:function FocusChangedEvent
+:Synopsis Triggered when focus moves from one control to another
+:Description The window handles of the previous and new windows are passed to this function
+:Param handle/FocusWindow the handle of the window that has received the focus
+:Param handle/PrevWindow the handle of the window that had the focus
+
+:function SayHighlightedText
+:Param handle/hWnd the handle of the window in which the text was written
+:Param string/buffer the text that was written
+
+:function SayNonHighlightedText
+:Param handle/hWnd the handle of the window in which the text was written
+:Param string/buffer the text that was written
+
+:function SayFocusedWindow
+
+:script ScriptFileName
+
+:script ReadMisSpelledAndSuggestion
+:Synopsis Reads and spells the unknown word, and subsequently reads and spells the first suggestion
+:Description After reading and spelling the first unknown word, the first suggestion is read and spelled
+
+:script HotKeyHelp
+
+:script ScreenSensitiveHelp
+:Function ScreenSensitiveHelpSinglePageDlg
+:Function ScreenSensitiveHelpSinglePageDlg2
+:Function ScreenSensitiveHelpMultiPageDlg
+:Function ScreenSensitiveHelpListViewSampleDlg
+:Function ScreenSensitiveHelpTreeViewSampleDlg
+
+:Function MaximizeWindow
+:Synopsis Maximizes window so ReadWordInContext works.
+:Description Blows up window to full size to accomodate the dialogs that use ReadWordInContext.
+
+:Function DoReadMisSpelledAndSuggestion
+:Synopsis Helper to the SpellCheck function to support FocusChanged and other functions
+:Description If calling this from an event, don't pass true to the optional parameter.  This way, timing will not be an issue.
+:Optional
+:param1 int/iNotInSpellChecker Enter TRUE only if the "Not in SpellChecker" message should be announced.
+

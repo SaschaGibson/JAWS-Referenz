@@ -1,0 +1,19 @@
+:Function InitUIAAndHookEvents
+:returns void
+:Description Initializer for global UIA objets used by this configuration and adds the relevant event handlers from UIA.
+
+:function ReadMessageHeaders
+:returns void
+:Description Reads outlook message headers info from reading pane headers object when available.
+
+:script BoldText
+:Synopsis Bold text.
+:Description Application keystroke bolds text, and when successful, announces the new state on or off.
+
+:script ItalicText
+:Synopsis Italic text.
+:Description Application keystroke italicizes text, and when successful, announces the new state on or off.
+
+:script UnderlineText
+:Synopsis Underline text.
+:Description Application keystroke underlines text, and when successful, announces the new state on or off.

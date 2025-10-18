@@ -1,0 +1,15 @@
+[Modifiers]
+;  Modifier=bit|when|SendWhen|type|sticky|AllowKeyRepeat
+;  1=numlock off
+;  2=numlock on
+;  3=numlock on or off
+;  SendWhen
+;  0=never
+;  1=always
+;  2=delayed
+;  0=unique (no left or right)
+;  1=Left or right specific
+;  2=Left or right don't care
+Insert=17|3|1|2|0|0
+ExtInsert=18|3|1|1|0|0
+NumInsert=19|1|1|1|0|0

@@ -1,0 +1,788 @@
+:function VirtualStart
+:Synopsis Sets Refresh global variables for verbosity list box
+:Description Called from the Default AutostartEvent function.
+
+:function UpdateVirtualGlobals
+:Synopsis Used to set the two Refresh globals so the Verbosity dialog box will remember them.
+:Description Updates both refresh globals unless they have been updated before.  If you need them updated for sure, call VirtualStart first.
+
+:function VirtualSayAllStops
+:Synopsis Relative to SayAllStoppedEvent, Helper Function
+:Description Updates the Heading setting only if has changed from when heading scripts were used.
+
+:function UpdateReservedWebAppKeysCollection
+:description Refreshes the collection of reserved key;action pairs.
+:returns void
+
+:function IsKeystrokeReserved
+:returns int TRUE or FALSE
+:Description returns TRUE if the supplied keystroke is reserved and the option to reserve keystrokes is on, FALSE otherwise.
+:Param string/Keystroke The keystroke to be checked, usually a single letter, punctuation mark, symbol or number, may be prepended with "shift+"
+
+:function ProcessKeystrokeAsReserved
+:Returns int TRUE is the keystroke was passed to the application, FALSE to allow continued processing by Quick Navigation.
+:Description Passes the keystroke through to the application if the keystroke is a reserved key by the web application, and the setting to preserve keystrokes is on.
+:Param string/Keystroke The keystroke to be checked, usually a single letter, punctuation mark, symbol or number, may be prepended with "shift+"
+
+:function GetKeyboardHelpForReservedKey
+:returns string the action as supplied by the web application.
+:Description The action is what we use for synopsis and description in Keyboard Help for any quick Navigation key being used as a reserved key by a web application.
+:Param string/Keystroke The keystroke to be checked, usually a single letter, punctuation mark, symbol or number, may be prepended with "shift+"
+
+:function SayQuickKeynavigationNotAvailable
+:Description Speaks an error message if quick key navigation is attempted and the feature is not available.
+
+:function SayNumOfObjects
+:Returns int true if objects found, false otherwise
+:Synopsis Speaks the number of forms, frames, and links
+:Description Useful for letting the user know how many and what type of objects are on the currently loaded page. This does not measure how many are on the screen, but on the page itself
+
+:function GetWebAppReservedKeysAndActions
+:returns string The actions and their reserved keys, as supplied by the web application.
+:Description Returns a string suitable for HotKeyHelp which contains the actions and their reserved keys, as supplied by the currently loaded web application.
+
+:function GetNumOfPageElements
+:Returns string sTemp_l
+:Synopsis Gets the number of forms, frames, headings, and links
+:Description Useful for letting the user know how many and what type of objects are on the currently loaded page. This does not measure how many are on the screen, but on the page itself
+
+:function AddNumOfPageElements
+:Description Used to add the number of page elements to screen sensitive help messages.
+:Param string A function which returns the string containing the number of page elements.
+
+:function ProcessMoveToField
+:description Handles the process for moving to form fields on an HTML page or document.
+:param int The direction of the move to process. Use s_top, s_bottom, s_next, or s_prior.
+
+:Function FocusToFirstField
+:Synopsis Moves to the first input field in the page
+:Description Moves to the first input field on the page and speaks it. If no form field is found, reports "Input Field Not Found." Only available in IE4
+
+:Function FocusToNextField
+:Synopsis Moves to the next input field in the page
+:Description Moves to the next input field on the page and speaks it. If no form field is found, reports "Input Field Not Found." Only available in the Virtual PC Cursor.
+
+:Function FocusToPriorField
+:Synopsis Moves to the previous input field in the page
+:Description Moves to the previous input field on the page and speaks it. If no form field is found, reports "Input Field Not Found." Only available in the Virtual PC Cursor.
+
+:Function FocusToLastField
+:Synopsis Moves to the last input field in the page
+:Description Moves to the last input field on the page and speaks it. If no form field is found, reports "Input Field Not Found." Only available in the Virtual PC Cursor.
+
+:Function MoveToNextHeading
+:Synopsis Moves to the next heading on the page.
+:Description Moves to the next heading on an html page.
+
+:Function MoveToPriorHeading
+:Synopsis Moves to the prior heading on the page.
+:Description Moves to the prior heading on an html page.
+
+:Function MoveToFirstHeading
+:Synopsis Moves to the first heading on a page.
+:Description Moves to the first heading on an html page.
+
+:Function MoveToLastHeading
+:Synopsis Moves to the last heading on a page.
+:Description Moves to the last heading on an html page.
+
+:function MoveToNextHeadingLevelN
+:Description If possible, moves to the next heading of the specified level.
+:Param int An integer in the range 1-6, representing the heading level to which to move.
+
+:function MoveToPriorHeadingLevelN
+:Description If possible, moves to the prior heading of the specified level.
+:Param int An integer in the range 1-6, representing the heading level to which to move.
+
+:Function MoveToFirstHeadingLevelN
+:Synopsis Moves to the first heading at the specified level.
+:Description If possible, moves to the first heading at the specified level.
+:Param int An integer in the range 1-6, representing the heading level to which to move.
+
+:Function MoveToLastHeadingLevelN
+:Synopsis Moves to the last heading at the specified level.
+:Description If possible, moves to the last heading at the specified level.
+:Param int An integer in the range 1-6, representing the heading level to which to move.
+
+:Function ProcessMoveToHeading
+:description Handles the process for moving to headings on an HTML page.
+:param int The direction of the move to process. Use s_top, s_bottom, s_next, or s_prior.
+:optional
+:param int The heading level used when moving to a specified heading level.
+
+:script ControlEnter
+:Synopsis Performs the control enter keystroke, which acts as OnMouseOver, to provide more options for a given web page element.
+:Description Many elements contain more options available by moving the mouse over the element or with the press of the control enter keystroke.  Press control enter to access these options.
+
+:function SayTableCaptionAndSummary
+:Synopsis Speaks the table caption and summary for HTML tables.
+:Description If a table caption or summary exists, speaks it and if braille flash messages are turned on it also shows the caption and/or summary in braille.
+:Category HTML
+
+:Function ProcessMoveToTable
+:description Handles the process for moving to tables on an HTML page or document.
+:param int The direction of the move to process. Use s_top, s_bottom, s_next, or s_prior.
+
+:Function MoveToFirstTable
+:Synopsis Moves to the first table in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the first table in the document or web page.
+
+:Function MoveToNextTable
+:Synopsis Moves to the next table in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the next table in the document or web page.
+
+:Function MoveToPriorTable
+:Synopsis Moves to the previous table in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the previous table in the document or web page.
+
+:Function MoveToLastTable
+:Synopsis Moves to the last table in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the last table in the document or web page.
+
+:function ProcessMoveToElement
+:description Handles the process for moving to elements of the same or different type on an HTML page or document.
+:param int The direction of the move to process. Use s_top, s_bottom, s_next, or s_prior.
+:param int True if the move is to an element of the same type, otherwise moves to element of different type.
+:optional
+:param string The error message to be used if the move fails.
+
+:Function MoveToFirstSameElement
+:Synopsis Moves to the first instance of the same type of element.
+:Description When the Virtual Cursor is active, it is moved to the first instance of the type of control where the Virtual Cursor is located.
+
+:Function MoveToNextSameElement
+:Synopsis Moves to the next Same Element.
+:Description When the Virtual Cursor is active, it is moved to the next instance of the type of control where the Virtual Cursor is located.
+
+:Function MoveToPriorSameElement
+:Synopsis Moves to prior same type element.
+:Description When the Virtual Cursor is active, it is moved to the previous instance of the type of control where the Virtual Cursor is located.
+
+:Function MoveToLastSameElement
+:Synopsis Moves to the last instance of the same type of element.
+:Description When the Virtual Cursor is active, it is moved to the last instance of the type of control where the Virtual Cursor is located.
+
+:Function MoveToNextDifferentElement
+:Synopsis Moves to the next different Element.
+:Description Moves the Virtual Cursor to the next control of a different type than the one currently at the Virtual Cursor position.
+
+:Function MoveToPriorDifferentElement
+:Synopsis Moves to the previous different Element.
+:Description Moves the Virtual Cursor to the prior control of a different type than the one currently at the Virtual Cursor position.
+
+:script IEFind
+:Synopsis Invokes the %product% Find dialog
+:Description Activates JAWSFind when the Virtual Cursor is active.  Otherwise, passes the keystroke through to the application.  Do not assign to control+f in Outlook, Outlook Express or other e-mail software that uses control+f as Forward Message.
+
+:function HandleRefresh
+:Returns string The new value for the menu text.
+:Description Returns the appropriate string for the Refresh Page and Refresh Active Content verbosity menu items.
+:Param int/iRetCurVal This is the iRetCurVal that belongs to the individual functions called by the dlgSelectFunctionToRun
+:Param int/iJCFOption This is the OPT constant from HjConst.jsh representing the appropriate jcf option to check.  This is only one of the refresh options.
+
+:function RefreshHTML
+:Returns string The menu text
+:Description Corresponds to the Refresh Page verbosity menu item
+:Param int/iRetCurVal Called by JAWS in the dlgSlectFunctionToRun function.
+
+:function RefreshActiveContent
+:Returns string The menu text
+:Description Corresponds to the Refresh Active Content verbosity menu item
+:Param int/iRetCurVal Called by JAWS in the dlgSlectFunctionToRun function.
+
+:function HTMLFormFieldPromptsRenderingToggle
+:Returns string description of value to be displayed Form Field Prompts
+:Synopsis Form Field Prompts Toggle
+:Description Cycles through the options available for HTML Form Prompts.
+:Category HTML
+:Param int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned
+
+:function htmlElementAttributeAnnounce
+:Synopsis turns on or off announcement of element attributes
+:Description Element attributes that can be turned on and off include "Clickable" and "OnMouseOver".
+
+:function htmlFlashOnWebPagesToggle
+:Returns string The name of the setting in use, e.g. on or off
+:Synopsis Turn Flash on or off.
+:Description If you turn flash off, it is still visible to the sighted user.
+:Param int/iRetCurVal FALSE to update, TRUE to only return the setting name.
+
+:script NavigationModeToggle
+:DisplayName Navigation Mode Toggle
+:Synopsis Sets Navigation Mode to off, on or SayAll Only.
+:Description Navigation Mode refers to single-letter keystrokes on the keyboard used for HTML element navigation.
+
+:function ProcessMoveToList
+:description Handles the process for moving to lists on an HTML page or document.
+:param int The direction of the move to process. Use s_top, s_bottom, s_next, or s_prior.
+
+:Function MoveToFirstList
+:Synopsis Moves to the first List in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the first List in the document or web page.
+
+:Function MoveToNextList
+:Synopsis Moves to the next List in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the next List in the document or web page.
+
+:Function MoveToPriorList
+:Synopsis Moves to the previous List in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the previous List in the document or web page.
+
+:Function MoveToLastList
+:Synopsis Moves to the last List in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the last List in the document or web page.
+
+:Function ProcessMoveToLink
+:description Handles the process for moving to links on an HTML page or document.
+:param int The direction of the move to process. Use s_top, s_bottom, s_next, or s_prior.
+:param int One of the following link types declared in hjConst.jsh--VisitedLink, UnvisitedLink, or AnyLink.
+
+:Function MoveToFirstVisitedLink
+:Description Moves to the First visited link. Visited links are links you have previously activated.
+
+:Function MoveToNextVisitedLink
+:Description Moves to the next visited link. Visited links are links you have previously activated.
+
+:Function MoveToPriorVisitedLink
+:Description Moves to the previous visited link. Visited links are links you have previously activated.
+
+:Function MoveToLastVisitedLink
+:Description Moves to the last visited link. Visited links are links you have previously activated.
+
+:Function MoveToNextUnvisitedLink
+:Description Moves to the next unvisited link. Unvisited links are links you have not previously activated.
+
+:Function MoveToPriorUnvisitedLink
+:Description Moves to the previous unvisited link. Unvisited links are links you have not previously activated.
+
+:Function MoveToAnyFirstLink
+:Description Moves to the first link, regardless of whether the link has been marked as visited or not.
+
+:Function MoveToAnyLastLink
+:Description Moves to the last link, regardless of whether the link has been marked as visited or not.
+
+:Function MoveToAnyNextLink
+:Description Moves to the next link, regardless of whether the link has been marked as visited or not.
+
+:Function MoveToAnyPriorLink
+:Description Moves to the prior link, regardless of whether the link has been marked as visited or not.
+
+:Function ProcessMoveToFrame
+:description Handles the process for moving to frames on an HTML page.
+:param int The direction of the move to process. Use s_top, s_bottom, s_next, or s_prior.
+:param int The number of the frame to which the cursor should be moved.
+:param string The error message to be used if the move fails.
+
+:Function MoveToNextFrame
+:Description Moves the virtual cursor to the next frame on the webpage.
+
+:Function MoveToPriorFrame
+:Description Moves the virtual cursor to the prior frame on the webpage.
+
+:Function MoveToFirstFrame
+:Description Moves the virtual cursor to the first frame on the webpage.
+
+:Function MoveToLastFrame
+:Description Moves the virtual cursor to the last frame on the webpage.
+
+:Function MoveToFrameByNumber
+:Description Moves the virtual cursor to the frame on the webpage specified by the number parameter.
+:param int The number of the frame to which the cursor should be moved.
+
+:script VirtualSpacebar
+:Synopsis Changes the state of check boxes and radio buttons.
+:Description Press this keystroke to change the state of a check box or radio button on a web form.  No need to enter Forms Mode first.
+
+:script RouteVirtualToPc
+:Synopsis routes the virtual cursor to the location of the pc cursor.
+:Description This keystroke moves the Virtual Cursor to the location of the PC Cursor on a web page. It is used after a SayAll has been initiated when a page loads to move the Virtual Cursor back to the element which has the real PC focus.
+
+:Function MoveToFirstButton
+:Description Moves the cursor to the first button on the page.
+
+:Function MoveToLastButton
+:Description Moves the cursor to the last button on the page.
+
+:Function MoveToNextButton
+:Description Moves the cursor to the next button on the page.
+
+:Function MoveToPriorButton
+:Description Moves the cursor to the prior button on the page.
+
+:Function MoveToNextObject
+:Description Moves the cursor to the next Object tag on the page.
+
+:Function MoveToPriorObject
+:Description Moves the cursor to the prior Object tag on the page.
+
+:Function MoveToFirstObject
+:Description Moves the cursor to the first Object tag on the page.
+
+:Function MoveToLastObject
+:Description Moves the cursor to the last Object tag on the page.
+
+:Function MoveToNextBlockQuote
+:Description Moves the cursor to the next BlockQuote tag on the page.
+
+:Function MoveToPriorBlockQuote
+:Description Moves the cursor to the prior BlockQuote tag on the page.
+
+:Function MoveToFirstBlockQuote
+:Description Moves the cursor to the first BlockQuote tag on the page.
+
+:Function MoveToLastBlockQuote
+:Description Moves the cursor to the last BlockQuote tag on the page.
+
+:Function MoveToNextGraphic
+:Description Moves the cursor to the next Graphic tag on the page.
+
+:Function MoveToPriorGraphic
+:Description Moves the cursor to the prior Graphic tag on the page.
+
+:Function MoveToFirstGraphic
+:Description Moves the cursor to the first Graphic tag on the page.
+
+:Function MoveToLastGraphic
+:Description Moves the cursor to the last Graphic tag on the page.
+
+:Function MoveToNextForm
+:Description Moves the cursor to the next Form tag on the page.
+
+:Function MoveToPriorForm
+:Description Moves the cursor to the prior Form tag on the page.
+
+:Function MoveToFirstForm
+:Description Moves the cursor to the first Form tag on the page.
+
+:Function MoveToLastForm
+:Description Moves the cursor to the last Form tag on the page.
+
+:script SelectAFormField
+:Synopsis Lists all the formfields on the current page and allows the user to move to the selected field
+:Description This keystroke lists all the formfields on the current page and allows the user to move to the selected field.
+
+:script SelectAButtonFormField
+:Synopsis Lists all the buttons on the current page and allows the user to move to the selected button
+:Description This keystroke lists all the buttons on the current page and allows the user to move to the selected button.
+
+:script SelectAComboFormField
+:Synopsis Lists all the ComboBox form fields on the current page and allows the user to move to the selected ComboBox form field
+:Description This keystroke lists all the ComboBox form fields on the current page and allows the user to move to the selected ComboBox form field.
+
+:script SelectAnEditFormField
+:Synopsis Lists all the Edit form fields on the current page and allows the user to move to the selected Edit form field
+:Description This keystroke lists all the Edit form fields on the current page and allows the user to move to the selected Edit form field.
+
+:script SelectARadioButtonFormField
+:Synopsis lists all the RadioButton form fields on the current page and allows the user to move to the selected RadioButton form field
+:Description This keystroke lists all the RadioButton form fields on the current page and allows the user to move to the selected RadioButton form field.
+
+:script SelectACheckboxFormField
+:Synopsis lists all the Checkbox form fields on the current page and allows the user to move to the selected Checkbox form field
+:Description This keystroke lists all the Checkbox form fields on the current page and allows the user to move to the selected Checkbox form field.
+
+:script SelectATabFormField
+:Synopsis Lists all the tab controls on the current page and allows the user to move to the selected tab control
+:Description This keystroke lists all the tab controls on the current page and allows the user to move to the selected tab control.
+
+:script VirtualSayWindowPromptAndText
+:Synopsis Reads the current control or line under the Virtual Cursor.
+:Description Press this key repeatedly when on graphics, links or buttons to hear how the element would sound with different verbosity options set for it.
+
+:script SelectATable
+:DisplayName Select A Table
+:Synopsis Lists all the tables on the current page and allows the user to move to the selected table
+:Description This keystroke lists all the tables on the current page and allows the user to move to the selected table. Focus is placed in the first cell.
+
+:Function MoveToNextEdit
+:Description Moves to the next Edit form field in a document or web page using the virtual cursor.
+
+:Function MoveToPriorEdit
+:Description Moves to the prior Edit form field in a document or web page using the virtual cursor.
+
+:Function MoveToNextRadioButton
+:Description Moves to the next RadioButton form field in a document or web page using the virtual cursor.
+
+:Function MoveToPriorRadioButton
+:Description Moves to the prior RadioButton form field in a document or web page using the virtual cursor.
+
+:Function MoveToNextCombo
+:Description Moves to the next ComboBox form field in a document or web page using the virtual cursor.
+
+:Function MoveToPriorCombo
+:Description Moves to the prior ComboBox form field in a document or web page using the virtual cursor.
+
+:Function MoveToNextCheckbox
+:Description Moves to the next Checkbox form field in a document or web page using the virtual cursor.
+
+:Function MoveToPriorCheckbox
+:Description Moves to the prior Checkbox form field in a document or web page using the virtual cursor.
+
+:script SelectAnAnchor
+:Synopsis Lists all the Anchors on the current page and allows the user to move to the selected Anchor
+:Description This keystroke lists all the Anchors on the current page and allows the user to move to the selected Anchor. An Anchor is typically the target of a same page link.
+
+:script SelectAGraphic
+:Synopsis Lists all the Graphics on the current page and allows the user to move to the selected Graphic
+:Description This keystroke lists all the Graphics on the current page and allows the user to move to the selected Graphic.
+
+:script SelectAListItem
+:Synopsis Lists all the ListItems on the current page and allows the user to move to the selected ListItem
+:Description This keystroke lists all the ListItems on the current page and allows the user to move to the selected ListItem.
+
+:script SelectAList
+:Synopsis Lists all the Lists on the current page and allows the user to move to the selected List
+:Description This keystroke lists all the Lists on the current page and allows the user to move to the selected List.
+
+:script SelectAParagraph
+:Synopsis lists all the Paragraphs on the current page and allows the user to move to the selected Paragraph
+:Description This keystroke lists all the Paragraphs on the current page and allows the user to move to the selected Paragraph.
+
+:script SelectAnObject
+:Synopsis Lists all the Objects on the current page and allows the user to move to the selected Object
+:Description This keystroke lists all the Objects on the current page and allows the user to move to the selected Object.
+
+:script SelectABlockQuote
+:Synopsis lists all the BlockQuotes on the current page and allows the user to move to the selected BlockQuote
+:Description This keystroke lists all the BlockQuotes on the current page and allows the user to move to the selected BlockQuote.
+
+:script SelectADivision
+:Synopsis lists all the Divisions on the current page and allows the user to move to the selected Division
+:Description This keystroke lists all the Divisions on the current page and allows the user to move to the selected Division . A page is divided up using the DIV HTML tag.
+
+:script SelectASpan
+:Synopsis lists all the Span Elements on the current page and allows the user to move to the selected Division
+:Description This keystroke lists all the Span elements on the current page and allows the user to move to the selected Span element. In Rich Internet Applications, the Span element may be used to define a block or control within an ancestor element, such as Div.
+
+:Function MoveToNextAnchor
+:Description Moves to the next Anchor in a document or web page using the virtual cursor.
+
+:Function MoveToPriorAnchor
+:Description Moves to the prior Anchor in a document or web page using the virtual cursor.
+
+:Function MoveToNextListItem
+:Description Moves to the next ListItem in a document or web page using the virtual cursor.
+
+:Function MoveToPriorListItem
+:Description Moves to the prior ListItem in a document or web page using the virtual cursor.
+
+:Function MoveToNextDivision
+:Description Moves to the next Division in a document or web page using the virtual cursor.
+
+:Function MoveToPriorDivision
+:Description Moves to the prior Division in a document or web page using the virtual cursor.
+
+:Function MoveToNextSpan
+:Description Moves to the next span element in a document or web page using the virtual cursor.
+
+:Function MoveToPriorSpan
+:Description Moves to the prior span element in a document or web page using the virtual cursor.
+
+:function HTMLStyleSheetProcessing
+:Returns string description of value to be displayed as value of HTML Style Sheet Processing verbosity item
+:Synopsis Toggles the verbosity for Style Sheet Processing
+:Description Toggles the verbosity for Style Sheet Processing between Ignore, Top Level and Imported Style Sheets.
+:Category HTML
+:Param int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned
+
+:function virtualSelectAFrame
+:Synopsis select a frame dialog for virtual cursor
+:Description This function is called from the default scripts when the virtual cursor is active to facilitate the selection of frames in virtual cursor environments.
+:Category HTML
+
+:Function MoveToNextOnClickElement
+:description moves the virtual cursor to the next element with an onclick handler
+
+:Function MoveToPriorOnClickElement
+:description moves the virtual cursor to the prior element with an onclick handler
+
+:Function MoveToNextOnmouseOverElement
+:description moves the virtual cursor to the next element with an onMouseOver handler
+
+:Function MoveToPriorOnMouseOverElement
+:description moves the virtual cursor to the prior element with an onMouseOver handler
+
+:function SelectATagWithAttributeHelper
+:Synopsis used with the SelectAnOnMouseOverElement and SelectAnOnclickElement scripts
+:Category HTML
+:Param string/sTag tag passed to GetListOfTagsWithAttribute
+:Param string/sAttr attribute passed to GetListOfTagsWithAttribute
+:Param int/nAllowNesting passed to GetListOfTagsWithAttribute
+:Param string/sTitle title of dialog
+:Param string/sItemType string used in error message if no items found
+
+:script SelectAnOnClickElement
+:Synopsis allows user to select an element with an onclick handler from a list and move the virtual cursor to it.
+:description %product% only indicates the presence of the OnClick attribute for HTML elements that are not usually clickable. Press ENTER on the clickable element to perform an action or follow a link.
+:Category HTML
+
+:script SelectAnOnMouseOverElement
+:Synopsis allows user to select an element with an onMouseOver handler from a list and move the virtual cursor to it.
+:description Web page authors use OnMouseOvers to display text or images when a visitor moves the mouse pointer over a particular part of the page. After selecting the OnMouseOver element, Control+JAWSKey+Enter CAN BE USED TO access the OnMouseOver options, and %product% will notify you if a change was detected.
+:Category HTML
+
+:script SelectaRegion
+:Synopsis Displays a dialog containing a list of regions on the page.
+:Description Displays a dialog containing a list of regions on the page.  You can select a region from the list and move to the start of the region.
+:Category HTML
+
+:script SelectAMailToLink
+:DisplayName Select A Mail To Link
+:Synopsis Lists all the mailto links on the current page and allows the user to move to or activate the selected mailto link
+:Description This keystroke lists all the mailto links on the current page and allows the user to move to or activate the selected mailto link.
+
+:script SelectADropTarget
+:Synopsis Displays a dialog containing a list of the droppable elements on the page.
+:Description Droppable elements, or drop targets,  are part of a drag and drop operation. They represent areas where an item which has been grabbed may be dropped. This script displays a dialog containing a list of the droppable elements on the page.  You can select a drop target from the list and move to it.
+:Category HTML
+
+:script FilterLiveRegionAnnouncements
+:Synopsis Displays a dialog where you can filter live region announcements based on matching text.
+:Description Displays a dialog where you can filter live region announcements based on matching text.
+:Category HTML
+
+:function IsManagedVirtualHelpActive
+:Returns int true if the user buffer created by the ShowManagedVirtualHelp function is active, false otherwise.
+:Synopsis Determines if a user buffer window created by the ShowManagedVirtualHelp function is active.
+
+:function ShowManagedVirtualHelp
+:Synopsis Shows the help message in the virtual viewer, adding the instruction for closing the help message at the bottom of the viewer.
+:Description Using ShowManagedVirtualHelp to display help message will allow you to test if the message is being shown by use of the IsManagedVirtualHelpActive function, so that you can then code for specific scenarios based on the results.
+:Param string The help message to be shown in the virtual viewer.
+
+:script MoveToNextWordFromList
+:DisplayName Move To Next Word From List
+:Synopsis If a word list has been created, moves to the next word from the list, in a Microsoft Word document using quick keys, or a web page or document using the virtual cursor.
+:Description This script assumes a word list has been created for the document or web page. When the Virtual Cursor is active on a Web page or document, or when quick keys are enabled in a Microsoft Word document, it is moved to the next word in the list.
+
+:script MoveToPriorWordFromList
+:DisplayName Move To Prior Word From List
+:Synopsis If a word list has been created, moves to the prior word from the list, in a Microsoft Word document using quick keys, or a web page or document using the virtual cursor.
+:Description This script assumes a word list has been created for the document or web page. When the Virtual Cursor is active on a Web page or document, or when quick keys are enabled in a Microsoft Word document, it is moved to the prior word in the word list.
+
+:script MoveToFlowTo
+:DisplayName Move To Flow To
+:Synopsis Moves to the FlowTo element on a web page.
+:Description When the Virtual Cursor is active, it is moved to the element related to the current element by a FlowTo relationship.
+
+:script MoveToFlowFrom
+:DisplayName Move To Flow From
+:Synopsis Moves to the FlowFrom element on a web page.
+:Description When the Virtual Cursor is active, it is moved to the element related to the current element by a FlowFrom relationship.
+
+:function UsesFocusChangeDepth
+:Returns int True if the current application uses focus change depth to speak focus ancestor changes;False otherwise
+:Synopsis Determines if we are currently using focus change depth to speak changes in focused ancestors
+:Category Application
+
+:function HTMLGraphicReadingVerbosityToggle
+:Returns string description of value to be displayed as value of HTML Graphics Reading verbosity item
+:Synopsis Toggles the verbosity for image elements
+:Description Toggles the verbosity for reading HTML Graphics from longest, OnMouseOver, title and alt tag.
+:Category HTML
+:Param int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned
+
+:script DisplayAdvancedElementInfo ()
+:Synopsis displays element information for all levels of the active html document.
+:Description Starting with the element under the Virtual Cursor, the entire HTML hierarchy is displayed in the Virtual Viewer.
+
+:script DisplayBasicElementInfo ()
+:Synopsis Displays basic information on the html element under the Virtual Cursor
+:Description An HTML element can be text, graphics or form controls.  Press this keystroke twice quickly to get more advanced information on the ehtire HTML document hierarchy.
+
+:function HTMLButtonTextVerbosityToggle
+:Returns string description of value to be displayed as value of HTML button text verbosity item
+:Synopsis Toggles the verbosity for Button elements
+:Description Toggles the verbosity for buttons between title, screen text/label, alt, value and longest.
+:Category HTML
+:Param int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned
+
+:function HTMLTextLinkVerbosityToggle
+:Returns string description of value to be displayed as value of HTML text link verbosity item
+:Synopsis Toggles the verbosity for text links
+:Description Toggles the verbosity for text links between title, screen text, onMouseOver, longest and custom.
+:Category HTML
+:Param int/iRetCurVal true if current value is to be returned, false if value is to be updated and returned
+
+:function VirtualViewerFeatureAvailable
+:description Used by the scripts to test whether the correct running conditions are present for a script related to virtual viewer features.
+:param int Boolean to determine whether JAWS is required for this feature to be allowed to run, false otherwise. If this parameter is true and JAWS is not running, the function silently exits and returns false.
+:param int Boolean to determine whether this is a quick navigation feature and should be tested to see if the constraints for quick navigation should be tested for. If this is a quick nav feature but the conditions are not correct for the feature to run, an error message is spoken and the function returns false.
+:optional
+:param int True if the script presents and HJ dialog and the conditions for allowing an HJ dialog to appear are correct. If this parameter is true and the conditions are not met, an error message is spoken and the function returns false.
+:returns int True if the feature is currently available and the script should continue processing, false otherwise.
+
+:script SelectTextBetweenMarkedPlaceAndCurrentPosition
+:Synopsis Selects text between the temporary Placemarker and current virtual cursor location
+:Description This script selects text between the temporary Placemarker and current virtual cursor location. You may then use Control+c to copy this region to the clipboard.
+:Category HTML
+
+:Function MoveToNextMailToLink
+:Description Moves to the next MailTo link on an html page.
+
+:Function MoveToPriorMailToLink
+:Description Moves to the prior MailTo link on an html page.
+
+:Function ProcessMoveToControlType
+:description Handles the process for moving to controls of the specified type on an HTML page or document.
+:param int The control type.
+:param string The name of the element to be used in an error message if the move fails.
+:param int True if the element is a control type used as a form field, false otherwise.
+:param int True if focus should be programmatically moved to the control, false otherwise.
+:param int The direction of the move to process. Use s_top, s_bottom, s_next, or s_prior.
+
+:function ProcessMoveToTag
+:description Handles the process for moving to tags of the specified type on an HTML page or document.
+:param int The direction of the move to process. Use s_top, s_bottom, s_next, or s_prior.
+:param string The tag to move to.
+:param string If the tag attribute is to be used for the move, the tag attribute.
+:param string The name of the element to be used in an error message if the move fails.
+:param int True if after the move the item is to be spoken as an object, false if the line is to be spoken instead.
+:param int True if any context help should be spoken if it exists for the tag, false otherwise.
+:optional
+:param int True if the attribute should be used for the item to move to, false otherwise. Assumed to be false.
+:param int True if nesting should be checked when performing the move, false otherwise.
+
+:function NotifyNavigationFailed
+:param int The direction of the move to process. Use s_top, s_bottom, s_next, or s_prior.
+:param string The name of the element to be used in the error message. The error messages all use the plural form of the item for navigation failure messages, so this string should be the ploral name of the item used in the error message.
+:optional
+:param int The level of the item not found. Used when moving to heading by level.
+
+:function SelectAHeadingDialog
+:description Processes all code for selecting a heading.
+:returns int True if code for selecting a heading was processed, false otherwise. Return false in applications where other code should run instead of the code for selecting a heading.
+
+
+:function SelectALinkDialog
+:description Processes all code for selecting a link.
+:returns int True if code for selecting a link was processed, false otherwise. Return false in applications where other code should run instead of the code for selecting a link.
+
+:function IsTypeOfRegion
+:Returns int True if this is a type of region, false otherwise
+:Synopsis Returns true if the focused item is a type of region
+:param int The type to be tested to determine if it is a region type
+:Category Cursor
+
+:Function GetGridOrTable
+:Synopsis returns either the word table or the word grid as appropriate
+:Returns string
+
+:function GetScreenSensitiveHelpForVirtualCursorTable
+:description Retrieves the screen sensitive help message for tables in the virtual cursor environment.
+:returns string The screen sensitive help message for virtual tables.
+
+:function GetScreenSensitiveHelpForVirtualCursorList
+:description Retrieves the screen sensitive help message for lists in the virtual cursor environment.
+:returns string The screen sensitive help message for virtual lists.
+
+:function GetBrowserName
+:description Used to retrieve the name of the browser currently being used. Each browser application should have a version which returns the name of the browser application.
+:optional
+:param int If true, the name of the company which makes the browser should be included in the returned string.
+:returns string The name of the browser. This default version returns null.
+
+:function BrowserVirtualHotKeyHelp
+:Synopsis provides browser HotKeyHelp for the Virtual PC cursor.
+:Description HotKeyHelp is different in browser applications when Virtual PC cursor is on.
+
+:script MoveToControlledTarget
+:DisplayName Move To Controlled Target
+:Synopsis If the current element has an aria-controls relationship with a target element, this script will move focus to that target element
+:Category Cursor
+
+:function SayExpandedAcronymOrAbbreviation
+:description If the virtual cursor is on text which has been marked up as an acronym or abbreviation, and if the attribute for the expanded version has been included, speak the expanded acronym or abbreviation.
+:optional
+:param int/int If true, ignores the JAWS option for expanded acronym or abbreviation; otherwise, the expanded version will only be spoken if the option to expand acronym or abbreviation is set to Off. The default is false.
+:returns int True if the expanded acronym or abbreviation was spoken, false otherwise.
+
+:Function ReturnTagTypeLiteral 
+:description Given an HTML tag, returns the name of the type which the tag represents.
+:param string/Tag The HTML tag.
+:returns string The name of the type which the tag represents.
+
+:function GetScreenSensitiveHelpVirtualDocumentGeneral
+:description Retrieves the formatted string to be used in screen-sensitive help for describing general help for the HTML or PDF document.
+:returns string The formatted help message.
+
+:function ConvertFormFieldTypeToControlNamePlural
+:description Used by the scripts which show a list of formfields with Control+Insert, for the name of the type in error messages.
+:param int/Type A WT_ constant for the formfield type. If the type is not recognized by the function, the null string is returned.
+:returns string The string for the plural name of the type, or null if the type is not recognized by the function.
+
+:Function MoveToFirstTab
+:Synopsis Moves to the first tab control in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the first tab control in the document or web page.
+
+:Function MoveToNextTab
+:Synopsis Moves to the next tab control in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the next tab control in the document or web page.
+
+:Function MoveToPriorTab
+:Synopsis Moves to the previous tab control in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the previous tab control in the document or web page.
+
+:Function MoveToLastTab
+:Synopsis Moves to the last tab control in a document or web page using the virtual cursor.
+:Description When the Virtual Cursor is active, it is moved to the last tab control in the document or web page.
+
+:script SelectATab
+:DisplayName Select A Tab
+:Synopsis Lists all the tabs on the current page and allows the user to move to the selected tab
+:Description This keystroke lists all the tabs on the current page and allows the user to move to the selected tab.
+
+:script SelectAnArticle
+:DisplayName Select An Article
+:Synopsis Lists all the articles on the current page and allows the user to move to the selected article
+:Description This keystroke lists all the articles on the current page and allows the user to move to the selected article.
+:Category HTML
+
+:script InspectShowFullPageReport
+:DisplayName Inspect Show Full Page Report
+:synopsis Capture a Full Page Report.
+
+:script InspectShowElementInfo
+:DisplayName Inspect Show Element Info
+:synopsis Show Element Information for the current element.
+
+:script InspectShowElementReport
+:DisplayName Inspect Show Element Report
+:synopsis Capture a Report for Items under the current element.
+
+:script InspectShowSayAllReport
+:DisplayName Inspect Show Say All Report
+:synopsis Capture a SayAll report.
+
+:script InspectShowSpeechViewer
+:DisplayName Inspect Show Speech Viewer
+:synopsis Bring Up Inspect Speech Viewer.
+
+:script InspectShowARIALive
+:DisplayName Inspect Show ARIA Live
+:synopsis Bring Up Inspect ARIA Live Viewer.
+
+:function PictureSmartWithControlShared
+:DisplayName Describe current control
+:synopsis Send the current control to the describe service
+:Param int/serviceOptions Additional Picture Smart service options. See HJConst.jsh for option constants, all prefixed by PSServiceOptions_.
+
+:function IsLinkOrHeadingUnderVirtualCursor
+:returns int TRUE or FALSE
+:Description Generalized function to determine if link or heading is under the virtual cursor. Both links and headings are broken down into several subtypes, and a heading may contain a link, which is also accounted for.
+:Category HTML
+
+:function GetURLForFocusedLink
+:Returns string the URL for the focused link
+:Description Uses FSXML DOM to retrieve the focused link's URL. Useful where we want the user to responsibly manage what may be a suspicious link in a phishing email.
+
+:function EnsureManagedVirtualHelpIsInactive
+:description If ManageVirtualHelp is active, dismisses the user buffer displaying the managed help.
+
+:function ManageVirtualPCCursorToggle
+:param int byRef/originalState The state of the UseVirtualPCCursor option before the toggle.
+:param int byRef/newState The state of the UseVirtualPCCursor option after the toggle.
+:description Used to ensure that the UseVirtualPCCursor option is temporarily set to 1, and saves the original state so that it can be compared against the new state and reset if needed.
+
+:function FollowDetailsRelation
+:description Jumps directly to details of an item, and back to the item with details when on the details.

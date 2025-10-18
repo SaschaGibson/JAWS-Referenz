@@ -1,0 +1,27 @@
+:Function IsListViewWindow
+:Returns Int True if the specified window is a list view window. False otherwise.
+:Synopsis Determines if the specified window is a list view window.
+:Description This function determines if the specified window is a list view window.
+:Optional
+:param handle/window The window to test. If not specified, the focus window will be used.
+:Category Utility
+
+:Function IsTreeViewWindow
+:Returns Int True if the specified window is a tree view window. False otherwise.
+:Synopsis Determines if the specified window is a tree view window.
+:Description This function determines if the specified window is a tree view window.
+:Optional
+:param handle/window The window to test. If not specified, the focus window will be used.
+:Category Utility
+
+:Function MaybeSpeakObjectDescription
+:Synopsis Speaks the description of the focused object if it is appropriate to do so.
+:Description This function speaks the description of the focused object if it is appropriate to do so. It is called from SayObjectTypeAndText.
+:Param int/nLevel The level in the object hierarchy. 0, which is the default, refers to the object with focus.  1 refers to the parent of the focus object, 2 refers to the grandparent, etc.
+:Category Utility
+
+:Function MaybeSpeakObjectHelp
+:Synopsis Speaks the help of the focused object if it is appropriate to do so.
+:Description This function speaks the help of the focused object if it is appropriate to do so. It is called from SayObjectTypeAndText.
+:Param int/nLevel The level in the object hierarchy. 0, which is the default, refers to the object with focus.  1 refers to the parent of the focus object, 2 refers to the grandparent, etc.
+:Category Utility

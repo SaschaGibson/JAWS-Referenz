@@ -1,0 +1,423 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>8.5 Chapter Exercises</title>
+<LINK rel="StyleSheet" href="default.css">
+</head>
+
+<body>
+<h1>8.5 Chapter Exercises</h1>
+
+<p>The following exercises give you practice in creating messages. You will
+also use the FormatString and SayFormattedMessage built-in functions in these
+exercises.</p>
+
+<h2>Exercise 8.1: Creating a Message File and Adding Messages</h2>
+
+<p>The objective of this exercise is to give you practice creating a new
+message file and adding messages to the file. You will use Notepad for the
+active application. You will add two messages to the notepad.jsm file. After
+you have created the messages, you will create a script that speaks those
+messages.</p>
+
+<ol>
+ <li>Activate Notepad from your Start Menu | Accessories group.</li>
+ <li>From within Notepad, press <b>INSERT+F2</b> to activate the Run JAWS Managers
+     dialog. Press <b>S</b> followed by <b>ENTER</b> to start the Script Manager.</li>
+ <li>You need to create a message file for Notepad as it does not have a message file by
+     default. Press <b>CTRL+N</b> to activate the New File dialog. You are
+     placed in the New list box. The list box contains five entries for
+     creating files. You can use this list box to create a new source file,
+     header file, documentation file, message file, or key map file.</li>
+ <li>Press <b>M</b> to select the Messages file (jsm) list item followed by <b>ENTER</b> to
+     create the new message file. When the New File dialog closes, your
+     insertion point is placed in a new untitled message file.</li>
+ <li>Press <b>CTRL+S </b>to save the file. This action causes the Script Manager to display the
+     Save As dialog. The focus is in the File Name edit box. Give the new file
+     the name of Notepad. You do not need to include the file extension as the
+     script Manager does that automatically for you.</li>
+ <li>After the Save As dialog closes, press<b> INSERT+T</b> to read the title bar of the
+     Script Manager. Did you hear the file name of Notepad.jsm?</li>
+</ol>
+
+<p class="Note"><b>Note: </b>When you create script
+message or header files, give them the same name as the executable file name
+for the application. This makes it easier for you to locate the message file
+for a given application should you decide to share the file with someone else.
+If you are creating a generic message or header file, one not tied to a
+specific application, you can give it any name you want.</p>
+
+<ol start=7>
+ <li>You are now ready to add a comment to the top of the file along with the key word
+     used to indicate the beginning of your messages block. Type the following
+     text into your message file:</li>
+</ol>
+
+<p class="Code">; Message file for Notepad <br>
+Messages</p>
+
+<ol start=8>
+ <li>Next, you need to add a long message to the message file. If the insertion point is
+     still on the line containing the key word &quot;messages,&quot; press <b>ENTER</b>
+     to create a new blank line. Type the following text:</li>
+</ol>
+
+<p class="Code">@MSGText_L<br>
+This is an example of a long message. This message is only spoken by JAWS when the beginner verbosity setting is in
+use.<br>
+@@</p>
+
+<ol start=9>
+ <li>Press <b>ENTER</b> twice on the line containing the two @ symbols. This will create a blank
+     line to separate your long message from your short message.</li>
+ <li>The short message is next. Type the following text:</li>
+</ol>
+
+<p class="Code">@MsgText_S<br>
+This is an example of a short message. <br>
+@@</p>
+
+<ol start=11>
+ <li>Press <b>ENTER</b> once to create a new blank line following your short message. Type the
+     following text:</li>
+</ol>
+
+<p class="Code">EndMessages</p>
+
+<ol start=12>
+ <li>Press <b>CTRL+S</b> to save your message file.</li>
+</ol>
+
+<p class="Note"><b>Note: </b>JAWS does not speak
+&quot;Compile complete.&quot; The Script Manager does not compile message files
+only script source files.</p>
+
+<ol start=13>
+ <li>After following the steps above, you should have the following text in the
+     Notepad message file:</li>
+</ol>
+
+<p class="Code">; Message file for Notepad<br>
+Messages<br>
+@MSGText_L<br>
+This is an example of a long message.
+This message is only spoken by JAWS when the beginner verbosity setting is in
+use.<br>
+@@<br>
+@MsgText_S<br>
+This is an example of a short
+message. <br>
+@@<br>
+EndMessages</p>
+
+<ol start=14>
+ <li>Next, you need to create a script that uses the messages you just created. Press <b>CTRL+TAB</b> to move back to the Notepad.jss script source file.</li>
+</ol>
+
+<p class="Note"><b>Note: </b>You can have more than
+one file open in the Script Manager at a time. Press <b>CTRL+TAB</b> to move
+between the files.</p>
+
+<ol start=15>
+ <li>Press <b>CTRL+HOME</b> to move to the top of the Notepad script source file. You need to include
+     the new message file. Press <b>DOWN ARROW</b> until you reach the blank
+     line following the include statement for the hjconst.jsh file. Type the
+     following text:</li>
+</ol>
+
+<p class="Code">Include "Notepad.jsm"<//p>
+<p>After you have typed the text, press <b>ENTER</b> twice to create a new blank line.</p>
+
+<ol start=16>
+ <li>Press <b>CTRL+END</b> to move the insertion point to the bottom of the script file. Press <b>ENTER</b>
+     twice to create a blank line between the last script in the file and your new script.</li>
+ <li>Press <b>CTRL+E</b> to activate the New Script dialog and enter the following information in
+     the fields in the dialog:</li>
+ <ul>
+  <li>Script Name: SpeakMessage</li>
+  <li>Can be Attached to Key: checked</li>
+  <li>Synopsis: Speaks long and short messages in notepad.</li>
+  <li>Description: Speaks long and short messages in Notepad using the SayFormattedMessage function.</li>
+  <li>Category: none</li>
+  <li>Assign to: <b>CTRL+3</b></li>
+ </ul>
+
+<li>After you have entered all the information
+above, press <b>ENTER</b> to close the dialog.</li>
+ <li>Press <b>UP ARROW</b> to move to the first blank line in the body of the SpeakMessage script.</li>
+ <li>Press <b>CTRL+I</b> to activate the Insert Function dialog. The focus is placed in the
+     Function Name edit box. Look for the built-in function
+     SayFormattedMessage. When you find the function, press <b>ENTER</b>. JAWS
+     prompts you for the first parameter, output type. Type the following text:</li>
+</ol>
+
+<p class="Code">OT_MESSAGE</p>
+
+<ol start=20>
+ <li>Press <b>ENTER</b>. JAWS prompts you for the second parameter, the long message. Type the
+     following text in the Parameter 2 edit box:</li>
+</ol>
+
+<p class="Code">MsgText_l</p>
+
+<ol start=21>
+ <li>Press <b>ENTER</b>. JAWS prompts you for the third parameter, the short message. Type the
+     following text in the Parameter 3 edit box:</li>
+</ol>
+
+<p class="Code">MsgText_S</p>
+
+<ol start=22>
+ <li>You do not need to enter any information for the remaining parameters after the short message name. Press <strong>TAB</strong> to move to the Finish button and press <b>ENTER</b> to close the Insert Function dialog. Make sure to remove the extra commas and spaces before the right parenthesis</li>
+ <li>Press <b>DOWN ARROW</b> to move to the next line. Press <b>DELETE</b> repeatedly until you
+     have removed all blank lines from the script. After you have completed the
+     previous steps, your script should look like the following:</li>
+</ol>
+
+<p class="Code">Script SpeakMessage ()<br> 
+SayFormattedMessage (OT_MESSAGE, MsgText_l, MsgText_S)<br>
+EndScript</p>
+
+<ol start=24>
+ <li>Press <b>CTRL+S</b> to compile the Notepad script source file. If you hear JAWS speak, compile
+     complete, switch to Notepad and test your script. If you encountered
+     syntax errors, compare your script to the one shown above. Continue to
+     compile your script until you hear JAWS speak compile complete.</li>
+</ol>
+
+<p class="Note"><b>Hint:</b> To test your script, use the Adjust JAWS Options dialog
+to change your verbosity setting from beginner to intermediate to advanced. You
+can access the Adjust JAWS Options dialog by pressing <b>INSERT+V</b>. After
+you have opened the Adjust JAWS Options dialog, press <b>U</b> to move to the
+User Verbosity option. Press <b>SPACEBAR</b> to cycle through the options. When
+you have selected the desired option, press <b>ENTER</b> to close the dialog
+and save the verbosity setting change. Each time you switch the verbosity
+setting, test your script. JAWS should only speak the long message when you are
+using the beginner verbosity setting. JAWS should speak the short message when
+you use either intermediate or advanced verbosity setting.</p>
+
+<h2>Exercise 8.2: Using Placeholders</h2>
+
+<p>The objective of this exercise is to give you practice using placeholders in
+your messages, formatting your messages, and speaking those messages. This
+exercise should be completed in the Notepad script source and message files. If
+you do not have Notepad or the Script Manager running, refer to steps 1 and 2
+in the previous exercise to get started.</p>
+
+<ol>
+ <li>Within the script Manager, press <b>CTRL+TAB</b> until you reach the notepad.jsm
+     message file.</li>
+ <li>Press <b>CTRL+END</b> to move to the bottom of the file.</li>
+ <li>Press <b>UP ARROW</b> until you reach the line containing &quot;EndMessages.&quot;
+     Press <b>HOME</b> to move the insertion point to the beginning of the line.</li>
+ <li>Press <b>ENTER</b>
+     twice to create a blank line between the last individual message in the
+     messages block and your new message.</li>
+ <li>Type the following text in the notepad message file:</li>
+</ol>
+
+<p class="Code">@MsgMyName</br>
+Hello, my name is %1 %2. You can just call me %1.<br>
+@@</p>
+
+<ol start=6>
+ <li>Press <b>CTRL+S</b> to save the changes to the Notepad message file.</li>
+ <li>Press <b>CTRL+TAB</b> to move to the Notepad script source file, Notepad.jss.</li>
+ <li>Press <b>CTRL+END</b> to move to the bottom of the file. Press <b>ENTER</b> twice to create a
+     blank line between your last script and the new script.</li>
+ <li>Press <b>CTRL+E</b> to activate the New Script dialog. Type the following information into
+     each control within the dialog:</li>
+ <ul>
+  <li>Script Name: SpeakMyName</li>
+  <li>Can be Attached to Key: checked</li>
+  <li>Synopsis: Speaks a message containing my name.</li>
+  <li>Description: Speaks a message containing my name in Notepad. The message uses
+      placeholders.</li>
+  <li>Category: none</li>
+  <li>Assign to: <b>CTRL+SHIFT+N</b></li>
+ </ul>
+</ol>
+
+<p>After you have filled in all of the fields, press <b>ENTER</b> to close the New Script dialog.</p>
+
+<ol start=10>
+ <li>Press <b>UP ARROW</b> to move the insertion point to the first blank line in the body
+     of the script. You need to create a local variable declaration section
+     here. Type the following text:</li>
+</ol>
+
+<p class="Code">Var<br>
+string sMessage</p>
+
+<ol start=11>
+ <li>After you have typed in the variable declaration statement for sMessage, press <b>ENTER</b> to move the insertion point to a new blank line. Type
+     the following text:</li>
+</ol>
+
+<p class="Code">let sMessage = </p>
+
+<p class="Note"><b>Note:</b> Be sure to type a space after the equals sign. This allows for
+proper spacing when you insert the next function.</p>
+
+<ol start=12>
+ <li>Press <b>CTRL+I</b> to activate the Insert Function dialog. You need to find the built-in
+     function, FormatString. Once you have located the function, press <b>ENTER</b>
+     to begin adding the parameters.</li>
+ <li>The first parameter the function requires is the name of the message that contains
+     the text and placeholders. Type the following text:</li>
+</ol>
+
+<p class="Code">MsgMyName</p>
+
+<ol start=14>
+ <li>Press <b>ENTER</b>. JAWS accepts the first parameter and then prompts you for the second
+     parameter.</li>
+ <li>The second parameter is the information that replaces the first placeholder in your
+     message. Type your first name surrounded in quotation marks, for example "John."</li>
+ <li>Press <b>ENTER</b> to accept the parameter. JAWS prompts you for the third parameter. This
+     parameter is the information that replaces the second placeholder within
+     your message. Type your last name surrounded by quotation marks. For
+     example, "Doe."</li>
+ <li>Instead of pressing <b>ENTER</b> to accept this parameter, move to and activate the
+     Finish button. The finish button tells JAWS you are finished entering
+     parameters for the function. After the Insert Function dialog closes, your
+     insertion point is at the end of the line you just entered. Read the line
+     with <b>INSERT+UP</b> <b>ARROW</b>. JAWS should speak the following text:</li>
+</ol>
+
+<p class="Code">let sMessage = FormatString (MsgMyName, "John", "Doe", , , , , , , , )</p>
+
+<p>You need to remove all the commas and spaces
+following the quotation mark following your last name. Press <b>LEFT ARROW</b>
+until you reach the comma immediately following the quotation mark. Press <b>DELETE</b>
+repeatedly to remove all commas and spaces until you reach the right parenthesis.
+The line should look like the following:</p>
+
+<p class="Code">let sMessage = FormatString (MsgMyName, "John", "Doe")</p>
+
+<ol start=18>
+ <li>Press <b>END</b> to move to the character following the right parenthesis. Press <b>ENTER</b>
+     to complete the line. Your insertion point is now on a new blank line.</li>
+ <li>Press <b>CTRL+I</b> to activate the Insert Function dialog. You are looking for the
+     built-in function, SayFormattedMessage. Once you have located the
+     function, press <b>ENTER</b>.</li>
+ <li>JAWS prompts you for the first parameter for the SayFormattedMessage function.
+     This parameter is the output mode. Type the following text:</li>
+</ol>
+
+<p class="Code">OT_MESSAGE</p>
+
+<ol start=21>
+ <li>Press <b>ENTER</b>
+     to accept the parameter. JAWS prompts you for the next parameter, the long
+     message.</li>
+ <li>This parameter is the return value from the call to the FormatString function, sMessage. This is the message that has been formatted
+     with your name replacing the placeholders. Type the following text:<br>
+     sMessage</li>
+ <li>Press <b>ENTER</b> to accept the parameter. JAWS then prompts you for the third parameter.
+     This is the short message. You do not need this parameter or any of the remaining parameters; so, activate the Finish button
+     to close the Insert Function dialog.</li>
+ <li>Your insertion point is at the end of the line. Press <b>INSERT+UP ARROW</b> to
+     read the current line. JAWS should speak:</li>
+</ol>
+
+<p class="Code">SayFormattedMessage (OT_MESSAGE, sMessage, , , , , , , , , , )</p>
+
+<p>You need to remove the commas immediately following the sMessage parameter. Press <b>LEFT ARROW</b>
+until you reach a comma. Press <b>DELETE</b> until you remove the commas and 
+spaces. The line should now look like the following:</p>
+
+<p class="Code">SayFormattedMessage (OT_MESSAGE, sMessage)</p>
+
+<ol start=25>
+ <li>Press <b>DOWN ARROW</b> once to move to the next line. If this line is blank, press <b>DELETE</b>
+     to remove it and any other blank lines.</li>
+ <li>After following the steps above, your script should look like the following:</li>
+</ol>
+
+<p class="Code">Script SayMyName ()<br>
+Var<br>
+string sMessage<br>
+let sMessage = FormatString (MsgMyName, "John",
+"Doe")<br>
+SayFormattedMessage (OT_MESSAGE, sMessage)<br>
+EndScript</p>
+
+<ol start=27>
+ <li>Press <b>CTRL+S</b> to compile the Notepad script source file. If you did not hear JAWS speak "Compile Complete," return to your script. Correct the error the
+     Script Manager noted and try compiling your script again. Continue this
+     process until you hear "Compile complete."</li>
+</ol>
+
+<p class="Note"><b>Note:</b> When the Script Manager encounters an error, the line
+containing the error is highlighted.</p>
+
+<ol start=28>
+ <li>Return to Notepad and test your script. Did JAWS speak the message?</li>
+</ol>
+
+<h3>Using the SayFormattedMessage Function to Substitute Placeholders</h3>
+
+<p>New to JAWS 12 update 1, is the ability to replace placeholder values directly in the SayFormattedMessage function rather than having to use the FormatString function to do so. This eliminates the need for the sMessage variable and the FormatString function. If using this method, the script would look like the following.</p>
+
+<p class="Code">Script SayMyName ()<br>
+SayFormattedMessage (OT_MESSAGE, MsgMyName, MsgMyName, "John", "Doe")<br>
+EndScript</p>
+
+<h2>Exercise 8.3: Adding the InputBox Function to the Script Created in Exercise 8.2</h2>
+
+<p>The objective of this exercise is to modify the script created from exercise
+8.2 above. Instead of using quoted strings of text as parameters for the
+FormatString function, use a built-in function to prompt for the first and last
+name values. You can use the built-in function, InputBox,
+to accomplish this task. The function displays a dialog box using the title and
+prompt you specify. When you type information into the edit box contained in
+the dialog and activate the Ok button, the function returns the text as a string.
+The InputBox function uses three parameters:</p>
+
+<ul>
+ <li>string of text for the dialog prompt</li>
+ <li>string of text for the title of the dialog box</li>
+ <li>variable to contain the text typed in the dialog</li>
+</ul>
+
+<p>You should create two additional local variables. The first variable should
+store the first name. The second variable should contain the last name. When
+you have made the modifications to the script, it should look like the
+following:</p>
+
+<p class="Code">Script SpeakMyName ()<br>
+Var<br>
+sMessage,<br>
+string sFirstName,<br>
+string sLastName<br>
+InputBox ("Enter your first name:", "First Name Entry", sFirstName)<br>
+InputBox ("Enter your last name:", "Last Name Entry", sLastName)<br>
+let sMessage = FormatString (MsgMyName, sFirstName, sLastName)<br>
+SayFormattedMessage (OT_MESSAGE, sMessage)<br>
+EndScript</p>
+
+<p>After you have modified the script, compile the script. When you hear the
+&quot;Compile complete&quot; message, return to Notepad, and test the script.</p>
+
+<p class="Note"><b>Note:</b> For more information
+on the InputBox function, open the builtin.jsd script
+documentation file within the Script Manager.</p>
+
+<p>&nbsp;</p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="09-0_ControllingTheFlowOfScripts.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</body>
+
+</html>

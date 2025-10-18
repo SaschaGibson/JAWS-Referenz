@@ -1,0 +1,39 @@
+[Common Keys]
+HomeRow+C=SayTheCurrentChunk
+HomeRow+F=SayTheCurrentField
+Alt+JAWSKey+1=SayTSS
+JAWSKey+Shift+T=SayScreenTitle
+Control+F=JAWSFind
+Control+Shift+NumPadMinus=AutoRouteToggle
+Alt+JAWSKey+3=SayLastRed
+Control+Shift+A=ReadAddress
+JAWSKey+Tab=ReadCurrentField
+Control+JAWSKey+P=ToggleParagraphMode
+JAWSKey+Z=test
+
+[Laptop Keys]
+Alt+Insert+1=SayTSS
+Alt+Insert+1=SayTSS
+Alt+Insert+3=SayLastRed
+Insert+Tab=ReadCurrentField
+Control+Insert+P=ToggleParagraphMode
+Insert+Z=test
+; Begin Removed from Common to prevent keyboard conflicts with MAGic
+Control+Shift+C=MCALReadCALForCLMTypes
+Control+Shift+M=ReadChoices
+Control+Shift+R=ReadRemarks
+Control+Shift+T=ColumnModeToggle
+Control+Shift+O=ReadOfficeHours
+Control+Shift+P=ReadPhoneNumbers
+; End Removed from Common to prevent keyboard conflicts with MAGic
+
+[DESKTOP Keys]
+; Begin Removed from Common to prevent keyboard conflicts with MAGic
+Control+Shift+C=MCALReadCALForCLMTypes
+Control+Shift+M=ReadChoices
+Control+Shift+R=ReadRemarks
+Control+Shift+T=ColumnModeToggle
+Control+Shift+O=ReadOfficeHours
+Control+Shift+P=ReadPhoneNumbers
+; End Removed from Common to prevent keyboard conflicts with MAGic
+

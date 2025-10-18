@@ -1,0 +1,18 @@
+[Desktop Keys]
+JAWSKey+A=AddressBar
+Alt+LeftArrow=GoBack
+Alt+ExtendedLeftArrow=GoBack
+Alt+RightArrow=GoForward
+Alt+ExtendedRightArrow=GoForward
+Alt+G=ToggleGlobalSetting
+Alt+D=DisableTalkKey
+Alt+Q=MuteAudio
+F8=SelectHTMLElement
+[Common Keys]
+Control+Shift+F=ActivateFontDialog
+Control+Shift+C=ActivateCustomColorDlg
+Insert+Windows+S=AnnounceActionKeysStatus
+[Laptop Keys]
+Alt+D=DisableTalkKey
+Alt+Q=MuteAudio
+JAWSKey+Windows+S=AnnounceActionKeysStatus

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Internet Explorer.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="InternetExplorerSettings" Text="Internet Explorer Settings">
+			<HelpMsg>
+These are options specific to the application.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="InternetExplorerSettings.InformationBar" Text="Information Bar">
+			<HelpMsg>
+This option controls how JAWS will handle the Information bar.
+Select Ignore for JAWS to ignore changes.
+Select Announce Change and JAWS will announce changes to the Information Bar in the Message voice.
+Virtualize means that JAWS will show the Information Bar in a mini virtual document. The default setting is Announce Change.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="InternetExplorerSettings.InformationBar.0" Text="Ignore" />
+		<DisplayName ID="InternetExplorerSettings.InformationBar.1" Text="Announce Change" />
+		<DisplayName ID="InternetExplorerSettings.InformationBar.2" Text="Virtualize Content" />
+		<DisplayName ID="InternetExplorerSettings.RSSFeeds" Text="RSS Feeds">
+			<HelpMsg>
+This option controls how JAWS will handle the RSS Feeds.
+Select Ignore for JAWS to ignore changes.
+Select Announce Change and JAWS will announce changes to the RSS Feeds in the Message voice.
+Virtualize means that JAWS will show the RSS Feeds in a mini virtual document. The default setting is Announce Change.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="InternetExplorerSettings.RSSFeeds.0" Text="Ignore" />
+		<DisplayName ID="InternetExplorerSettings.RSSFeeds.1" Text="Announce Change" />
+		<DisplayName ID="InternetExplorerSettings.RSSFeeds.2" Text="Virtualize Content" />
+		<DisplayName ID="InternetExplorerSettings.FrameUpdateNotification" Text="Frame Update Notification">
+			<HelpMsg>
+This setting controls how JAWS notifies you that a frame has been updated.
+Off sends no notification, Speak Frame Name speaks the name of the frame which was last updated, and Move To Frame moves the cursor to the beginning of the most recently updated frame and speaks the line.
+The default setting is Speak Frame Name.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="InternetExplorerSettings.FrameUpdateNotification.0" Text="Off" />
+		<DisplayName ID="InternetExplorerSettings.FrameUpdateNotification.1" Text="Speak Frame Name" />
+		<DisplayName ID="InternetExplorerSettings.FrameUpdateNotification.2" Text="Move to Frame" />
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

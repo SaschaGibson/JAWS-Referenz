@@ -1,0 +1,188 @@
+[Common Keys]
+Control+enter=insertSlide
+Control+Shift+apostrophe=ListComments
+Control+m=NewSlide
+Enter=Enter
+NumPadEnter=Enter
+JAWSKey+F1=ScreenSensitiveHelp
+JAWSKey+Shift+DownArrow=SaySelectedObject
+JAWSKey+Shift+ExtendedDownArrow=SaySelectedObject
+Control+Shift+O=selectShape
+JAWSKey+F=SayFont
+Control+B=BoldText
+Control+I=ItalicText
+Control+U=UnderlineText
+Control+L=LeftJustify
+Control+E=CenterText
+Control+R=rightJustify
+JAWSKey+F7=SelectHyperlink
+PageDown=NextSlide
+ExtendedPageDown=NextSlide
+PageUp=PriorSlide
+ExtendedPageUp=PriorSlide
+Tab=NextObject
+Shift+Tab=PriorObject
+BackSpace=RetreatSlideShow
+Escape=upALevel
+F6=SwitchPanes
+Control+Shift+A=sayShapeAnimationInfo
+JAWSKey+Delete=speakStatusLine
+JAWSKey+ExtendedDelete=speakStatusLine
+Alt+Shift+LeftArrow=PromoteParagraph
+Alt+Shift+ExtendedLeftArrow=PromoteParagraph
+Alt+Shift+RightArrow=demoteParagraph
+Alt+Shift+ExtendedRightArrow=demoteParagraph
+Control+Shift+Enter=FollowSelectedHyperlink
+Control+Shift+NumPadEnter=FollowSelectedHyperlink
+Shift+F6=switchPanesReverse
+Alt+i=IgnoreButton
+Alt+g=IgnoreAllButton
+Alt+c=ChangeButton
+Alt+l=ChangeAllButton
+Alt+s=SuggestButton
+Alt+a=AddToDictionaryButton
+Alt+r=AutoCorrectButton
+Alt+Shift+A=toggleExpandOrCollapseAll
+
+[Desktop Keys]
+;Removed from Common to prevent conflicts with MAGIc
+Control+Shift+S=SaySlideInfo
+JAWSKey+Shift+R=readTableRowByRow
+JAWSKey+Shift+C=readTableColumnByColumn
+Control+Shift+n=readSpeakersNotes
+Control+Shift+T=SetTableReadingMethod
+Control+Shift+D=sayObjectDimensionsAndLocation
+;End of Remove from Common to prevent conflicts with MAGIc
+
+[Laptop Keys]
+Insert+F1=ScreenSensitiveHelp
+Insert+Shift+DownArrow=SaySelectedObject
+Insert+Shift+ExtendedDownArrow=SaySelectedObject
+Control+Shift+O=selectShape
+Insert+H=HotkeyHelp
+JAWSKey+H=SayLine
+Insert+F=SayFont
+Insert+F7=SelectHyperlink
+Insert+Delete=speakStatusLine
+Insert+ExtendedDelete=speakStatusLine
+;Removed from Common to prevent conflicts with MAGIc
+Insert+Shift+C=readTableColumnByColumn
+Control+Shift+n=readSpeakersNotes
+Insert+Shift+R=readTableRowByRow
+Control+Shift+S=SaySlideInfo
+Control+Shift+T=SetTableReadingMethod
+Control+Shift+D=sayObjectDimensionsAndLocation
+;End of Remove from Common to prevent conflicts with MAGIc
+
+[virtual keys]
+BackSpace=VirtualBackSpace
+Braille Dot7=VirtualBackSpace ; for PAC Mate Remote users
+Braille Dot 7=VirtualBackSpace 
+SpaceBar=VirtualSpaceBar
+Braille Dot8=VirtualSpaceBar; for PAC Mate Remote users
+Braille Dot 8=VirtualSpaceBar
+N=SlideShowNext
+Braille N=SlideShowNext
+P=SlideShowPrevious
+Braille P=SlideShowPrevious
+Shift+f10=VirtualContextKey
+RightMouseButton=VirtualContextKey
+
+[focus Keys]
+Braille Dot 8=enterKey
+Braille Dots 4 5=NextObject
+Braille Dots 4 6=NextSlide
+Braille Dots 1 2=PriorObject
+Braille Dot 7=RetreatSlideShow
+Braille Shift1+Dots 15=CenterText
+Braille Shift1+Dots 235=SwitchPanes
+Braille Shift1+Dots 235 Chord=switchPanesReverse
+Braille Shift1+Dot 1 Chord=toggleExpandOrCollapseAll
+Braille Shift1+Dot 8=FollowSelectedHyperlink
+Braille Shift1+Dots 123 Chord=LeftJustify
+Braille Shift1+Dots 1345=readSpeakersNotes
+Braille Shift1+Dots 1235=rightJustify
+Braille Shift2+Dots 2356=SelectHyperlink
+Braille Shift1+Dots 1 3 5=selectShape
+Braille Shift1+Dot 3 Chord=listComments
+
+[Focus40 Keys]
+Braille Dot 8=enterKey
+Braille Dots 4 5=NextObject
+Braille Dots 4 6=NextSlide
+Braille Dots 1 2=PriorObject
+Braille Dot 7=RetreatSlideShow
+Braille Shift1+Dots 15=CenterText
+Braille Shift1+Dots 235=SwitchPanes
+Braille Shift1+Dots 235 Chord=switchPanesReverse
+Braille Shift1+Dot 1 Chord=toggleExpandOrCollapseAll
+Braille Shift1+Dot 8=FollowSelectedHyperlink
+Braille Shift1+Dots 123 Chord=LeftJustify
+Braille Shift1+Dots 1345=readSpeakersNotes
+Braille Shift1+Dots 1235=rightJustify
+Braille Shift2+Dots 2356=SelectHyperlink
+Braille Shift1+Dots 1 3 5=selectShape
+Braille Shift1+Dot 3 Chord=listComments
+
+[Focus80 Keys]
+Braille Dot 8=enterKey
+Braille Dots 4 5=NextObject
+Braille Dots 4 6=NextSlide
+Braille Dots 1 2=PriorObject
+Braille Dot 7=RetreatSlideShow
+Braille Shift1+Dots 15=CenterText
+Braille Shift1+Dots 235=SwitchPanes
+Braille Shift1+Dots 235 Chord=switchPanesReverse
+Braille Shift1+Dot 1 Chord=toggleExpandOrCollapseAll
+Braille Shift1+Dot 8=FollowSelectedHyperlink
+Braille Shift1+Dots 123 Chord=LeftJustify
+Braille Shift1+Dots 1345=readSpeakersNotes
+Braille Shift1+Dots 1235=rightJustify
+Braille Shift2+Dots 2356=SelectHyperlink
+Braille Shift1+Dots 1 3 5=selectShape
+Braille Shift1+Dot 3 Chord=listComments
+
+[FocusXT14 Keys]
+Braille Dot 8=enterKey
+Braille Dots 4 5=NextObject
+Braille Dots 4 6=NextSlide
+Braille Dots 1 2=PriorObject
+Braille Dot 7=RetreatSlideShow
+Braille Shift1+Dots 15=CenterText
+Braille Shift1+Dots 235=SwitchPanes
+Braille Shift1+Dots 235 Chord=switchPanesReverse
+Braille Shift1+Dot 1 Chord=toggleExpandOrCollapseAll
+Braille Shift1+Dot 8=FollowSelectedHyperlink
+Braille Shift1+Dots 123 Chord=LeftJustify
+Braille Shift1+Dots 1345=readSpeakersNotes
+Braille Shift1+Dots 1235=rightJustify
+Braille Shift2+Dots 2356=SelectHyperlink
+Braille Shift1+Dots 1 3 5=selectShape
+Braille Shift1+Dot 3 Chord=listComments
+
+[FocusXT40 Keys]
+Braille Dot 8=enterKey
+Braille Dots 4 5=NextObject
+Braille Dots 4 6=NextSlide
+Braille Dots 1 2=PriorObject
+Braille Dot 7=RetreatSlideShow
+Braille Shift1+Dots 15=CenterText
+Braille Shift1+Dots 235=SwitchPanes
+Braille Shift1+Dots 235 Chord=switchPanesReverse
+Braille Shift1+Dot 1 Chord=toggleExpandOrCollapseAll
+Braille Shift1+Dot 8=FollowSelectedHyperlink
+Braille Shift1+Dots 123 Chord=LeftJustify
+Braille Shift1+Dots 1345=readSpeakersNotes
+Braille Shift1+Dots 1235=rightJustify
+Braille Shift2+Dots 2356=SelectHyperlink
+Braille Shift1+Dots 1 3 5=selectShape
+Braille Shift1+Dot 3 Chord=listComments
+
+[PACMate Braille Keys]
+DownArrow+Dot2=NextSlide
+RightArrow+Dot2=NextSlide
+UpArrow+Dot2=PriorSlide
+LeftArrow+Dot2=PriorSlide
+Dot45 Chord=NextObject
+b Chord=PriorObject
+Dot7=RetreatSlideShow

@@ -1,0 +1,50 @@
+:script AddressBar
+:DisplayName Adresszeile
+:Synopsis Sendet den JAWS Cursor an das Adressfeld und liest seinen Inhalt
+:Description Plaziert den JAWS Cursor in das Adressfeld. Der Anwender kann dann einen linken Mausklick simulieren, um die aktuelle Adresse oder URL hervorzuheben. Wenn Sie nun eine neue Adresse eingeben, wir die vorhandene überschrieben. Beachten Sie, dass der JAWS Cursor eingeschaltet bleibt, sobald das Skript ausgeführt wurde.
+
+:function IsBrowserContentWindow
+:description Determines if the window is a browser content window for Firefox.
+:param handle The window to test.
+:returns int True if the window is a browser content window for Firefox.
+
+:function IsFirefoxWindow
+:description Determines if a window belongs to a Firefox.
+:param handle The window to test.
+:returns int True if a window belongs to Firefox.
+
+:function ShouldUseDoSayObjectFromLevel
+:description Determines if focus change should process the window by announcing hierarchical level changes.
+:param handle The current focus window.
+:param handle The previous focus window.
+:returns int True if focus change should process the window by announcing hierarchical level changes.
+
+:function GetDocumentNameFromRealWindow
+:description Retrieves the name of the current page or document.
+:returns string The name of the current page or document.
+
+:function GetBrowserName
+:description Retrieves the name of the browser currently being used.
+:optional
+:param int If true, returns the name Mozilla Firefox, otherwise returns the name Firefox.
+:returns string The name of the browser.
+
+:function SayNewDocumentTab
+:description Used by focus change to announce the name of the new document.
+
+:script PictureSmartWithControl
+:DisplayName Picture Smart eines Steuerelements
+:Synopsis Beschreibt ein fokussiertes bildliches Steuerelement.
+:Optional
+:Param int/serviceOptions Additional Picture Smart service options. See HJConst.jsh for option constants, all prefixed by PSServiceOptions_.
+:Category Picture Smart
+:Keywords Abbildung, Foto, Bild, Fotografie, Grafik, beschreiben, erkennen
+:Version JAWS/20.00
+:SearchRank 1
+
+:script AddressBar
+:DisplayName Adresszeile lesen
+:Synopsis Liest die Adresse der aktiven Webseite.
+:Description Liest die Adresse der aktuellen Webseite. Zweimal schnell drücken, um die Adresse im virtuellen Betrachter anzuzeigen.
+:SearchRank 1
+

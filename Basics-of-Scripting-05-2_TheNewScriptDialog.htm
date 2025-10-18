@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+ <TITLE>5.2 The New Script Dialog</TITLE>
+ <LINK rel="StyleSheet" href="default.css">
+</HEAD>
+<BODY>
+ <H1>5.2 The New Script Dialog</H1>
+ 
+<P>To create a new script within the current script file, choose New Script from 
+  the Script menu or press <b>CTRL+E</b>. After you have initiated the new script 
+  action, the Script Manager displays the New Script dialog and the Script Name 
+  edit box is active. The New Script dialog is a multipage dialog. The first page, 
+  General, is identical to the General page in the Script Information dialog discussed 
+  previously in 4.5 Viewing Script Information. You can enter the script name, 
+  check the attach to check box, enter the synopsis and description, and assign 
+  a keystroke within this page. The second page, Parameters, contains parameter 
+  information for functions you create. You can press <b>CTRL+TAB </b>to move 
+  between the 2 pages. </P>
+<P>The Script Manager writes all the information you enter in this dialog to the 
+  documentation file that corresponds to the current script source file. For example, 
+  the spreadsheet.exe application mentioned earlier has a script file name of 
+  Spreadsheet.jss. The corresponding documentation file, or .jsd file, has the 
+  name of Spreadsheet.jsd. </P>
+<h2>General Page</h2>
+<P>This is the first page of the New Script multipage dialog. You use this page 
+  to enter all the basic information about your new script or function. You can 
+  use <b>TAB</b> and <b>SHIFT+TAB</b> to move between the controls on this page.</P>
+<h3>Script Name</h4>
+<P>When you first initiate the new script action, this edit box is active. You 
+  enter the name of your script here. It is helpful to use a name that is descriptive 
+  of the action the script performs. You may use several words concatenated together. 
+  For example, in MySampleScript, start each word with a capital letter so JAWS 
+  will pronounce the name as separate words. The script name cannot contain spaces 
+  or punctuation, only alpha numeric characters. If you try to enter spaces or punctuation in the script name, you will hear an audible beep from the computer.</P>
+<h3>Can be Attached to Key</h3>
+<P>Press the <b>SPACEBAR</b> to check this item when you want to create a script. 
+  If you leave this check box unchecked, you will create a function instead of 
+  a script. Remember that scripts can be attached to keys but functions cannot.</P>
+<h3>Synopsis</h3>
+<P>Type a brief statement of what the script does in this field. JAWS speaks this 
+  information when you or other users access Keyboard help mode (<b>INSERT+1</b>) 
+  or Key Word help (<b>SHIFT+F1</b>). To hear synopsis help, press the <b>INSERT+1</b> 
+  key combination using the 1 on the number row, not the number pad 1. JAWS says 
+  &quot;keyboard help on.&quot; Next, press the keystroke combination that activates 
+  your script. JAWS should say the information placed in this edit box. You can 
+  leave the keyboard help mode by pressing <b>INSERT+1</b> a second time.</P>
+<h3>Description</h3>
+<P>Enter a more detailed explanation of the action the script performs in this 
+  edit box. This description is used if you enter the Keyboard help mode (<b>INSERT+1</b>) 
+  or Key Word help (<b>SHIFT+F1</b>) in the Script Manager. The description is 
+  spoken by quickly pressing the key combination (that activates your script) 
+  twice after turning Keyboard Help on.</P>
+<h3>Category</h3>
+<P>You can type in a category name or choose one from the drop down combo box. 
+  This feature is not in use so you do not need to select a category at this time.</P>
+<h3>Assign To</h3>
+<P>This edit box is only available if you checked the Can Be Attached to Key check 
+  box. Type the keystroke combination you wish to use for your script. For example, 
+  to enter <b>CTRL+ALT+Z</b>, press and hold the <b>CTRL</b> and <b>ALT</b> keys 
+  while pressing the <b>Z </b>key. If the choice you make is already assigned 
+  to another script, the Script Manager displays an error dialog. You can continue 
+  with the assignment or choose a different keystroke combination.</P>
+<P>You cannot use standard reading commands to review the keystroke you have entered. For example, if you press <b>INSERT+UP ARROW</b> to try and read the keystroke you have entered, JAWS will think you are wanting to use <b>INSERT+UP ARROW</b> as the keystroke to activate the script. To review your keystroke selection, press <b>TAB</b> to move away from the edit box and then <b>SHIFT+TAB</b> to return. JAWS will automatically read the keystroke you entered.</P>
+<h3>Function Returns</h3>
+<P>This choice is only available if you did not check the Can Be Attached to Key 
+  check box. You can type in a Return Name or choose one from the drop-down combo 
+  box. Among the choices are Handle, Int, Object, String, or Void. Select the 
+  type of return that your function is designed to return to the calling script. 
+  Select Void if you do not need to use any value returned by the function. The 
+  return type appears on the first line of the function before the word Function.</P>
+<h3>Return Description</h3>
+<P>This choice is only available if you did not check the Can Be Attached to Key 
+  check box. Enter a brief description of the information that is being returned 
+  by the function and how the information is to be used.</P>
+<h2>Parameters Page</h2>
+<P>This is the second page of the New Script multipage dialog. You use this page 
+  to enter all parameters that are to be used by your new function. You will not 
+  use this page of the new script dialog unless you are creating a function. You 
+  can use <b>TAB</b> and <b>SHIFT+TAB</b> to move between the controls on this 
+  page. </P>
+<P>The Parameters page will be discussed in greater detail later in this manual.</P>
+<P>&nbsp;</P>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="05-3_PartsOfAScript.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</BODY>
+</HTML>

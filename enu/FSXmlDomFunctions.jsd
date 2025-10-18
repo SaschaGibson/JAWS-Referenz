@@ -1,0 +1,98 @@
+:function IsOnWebPage
+:description Tests to determine if the focus is on the web page.
+:returns int True if focus is on the web page, false otherwise.
+
+:function GetXMLDomDocItem
+:description Uses the selectSingleNode method to retrieved the specified node.
+:param string itemSpec The xPath expression used to select the node.
+:optional
+:param string altItemSpec An alternate xPath expression used to select the node. 
+Useful where either the first or second item may exist, but not both. 
+For instance, when a Play button or Pause button may exist, but both may not exist at the same time.
+:returns object the first DOM node matching the specification.
+
+:function GetItemIDForAction
+:description If possible, retrieves the FSID for the first node matching the specification. This ID can then be used when calling PerformActionOnElementWithID.
+:param string itemSpec The xPath expression used to select the node.
+:optional
+:param string altItemSpec An alternate xPath expression used to select the node. 
+Useful where either the first or second item may exist, but not both. 
+For instance, when a Play button or Pause button may exist, but both may not exist at the same time.
+:returns int The FSID of the first node found to match the specification.
+
+:function SayXMLDomDocItem
+:description Speaks the first node found to match the item specification.
+:param string itemSpec The xPath expression used to select the node.
+:optional
+:param int name True if the node's name value should be explicitly used to speak the item. The default is to use the text or FSText attribute to speak the item.
+:param int value True if the node's value value should be explicitly used to speak the item. The default is to use the text or FSText attribute to speak the item.
+:param int outputType The speech output type to use when speaking. If not supplied, the screen message output type is used.
+:returns int True if the item was spoken, false otherwise.
+
+:function SayAndLeftClickXMLDomDocItem
+:description Searches for the first node matching the item specification. 
+If found, attempts to speak the item using either the item text or the FSText attribute, and then performs a left mouse click on the item.
+:param string itemSpec The xPath expression used to select the node.
+:optional
+:param string altItemSpec An alternate xPath expression used to select the node. 
+Useful where either the first or second item may exist, but not both. 
+For instance, when a Play button or Pause button may exist, but both may not exist at the same time.
+:param int outputType The speech output type to use when speaking. If not supplied, the screen message output type is used.
+:returns int True if a left mouse click was successfully performed, false otherwise.
+
+:function SayAndDoDefaultActionForXMLDomDocItem
+:description Searches for the first node matching the item specification. 
+If found, attempts to speak the item using either the item text or the FSText attribute, and then performs a default action on the item.
+:param string itemSpec The xPath expression used to select the node.
+:optional
+:param string altItemSpec An alternate xPath expression used to select the node. 
+Useful where either the first or second item may exist, but not both. 
+For instance, when a Play button or Pause button may exist, but both may not exist at the same time.
+:param int outputType The speech output type to use when speaking. If not supplied, the screen message output type is used.
+:returns int True if a default action was successfully performed, false otherwise.
+
+:function DoDefaultActionForXMLDomDocItem
+:description Searches for the first node matching the item specification, and if found, attempts to performs a default action on the item.
+:param string itemSpec The xPath expression used to select the node.
+:optional
+:param string altItemSpec An alternate xPath expression used to select the node. 
+Useful where either the first or second item may exist, but not both. 
+For instance, when a Play button or Pause button may exist, but both may not exist at the same time.
+:returns int True if a default action could b performed on the item, false otherwise.
+
+:function SetFocusToXMLDomDocItem
+:description Searches for the first node matching the item specification, and if found, attempts to set focus on the item.
+:param string itemSpec The xPath expression used to select the node.
+:returns int True if set focus could be performed on the item, false otherwise.
+
+:function MakeVisibleXMLDomDocItem
+:description Searches for the first node matching the item specification, and if found, attempts to make the item visible.
+:param string itemSpec The xPath expression used to select the node.
+:returns int True if make visible could be performed on the item, false otherwise.
+
+:function GetXMLDomDocNodeList
+:description Searches for all nodes matching the item specification, and if found, returns a list of the nodes.
+:param string itemSpec The xPath expression used to select the nodes.
+:returns object The list of nodes matching the specification.
+
+:function GetXMLDomDocFocusElement
+:description Finds the node with focus.
+:returns object The node with focus.
+
+:function GetXMLDomDocFocusParentElement
+:description Finds the parent node of the node with focus.
+:returns object The parent node of the node with focus.
+
+:function GetXMLDomDocFocusGrandparentElement
+:description Finds the grandparent node of the node with focus.
+:returns object The grandparent node of the node with focus.
+
+:function GetXMLDomDocFocusAncestorElementWithNodeName
+:description Searches the ancestor nodes of the focus element for a node with the given name. If no name is supplied then nothing is returned.
+:param string nodeName The node name to search for.
+:returns object The ancestor node found in the search.
+
+:function GetXMLDomDocFocusNthAncestorElement
+:description Returns the Nth ancestor node of the focus element.
+:param int iAncestor The Nth ancestor to retrieve.
+:returns object The Nth ancestor node.

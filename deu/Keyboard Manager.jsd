@@ -1,0 +1,16 @@
+:function SayKeystroke
+
+:function SayWindowTypeAndText
+:Param handle/hWnd the handle of the window to speak the type and text
+
+:function SayHighlightedText
+:Param handle/hwnd handle of the window in which the text was written
+:Param string/buffer String containing the text that was written
+
+:function SayFocusedWindow
+
+:script ScriptFileName
+
+:script SayBottomLineOfWindow
+:Synopsis Sagt die Synopsis des Skripts im Fokus
+

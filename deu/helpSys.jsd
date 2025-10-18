@@ -1,0 +1,54 @@
+:Function IsSearchOrIndexWindow
+:synopsis Behandelt die Ansage von Steuerelementen auf der Registerkarte Suchen oder Index im Hilfesystem
+:description Diese Funktion behandelt die Ansage von Steuerelementen auf der Registerkarte Suchen oder Index im Hilfesystem Wenn eines dieser Steuerelemente im Fokus ist, dann gibt die Funktion seine Control ID zurück, so dass diese Funktion aufgerufen werden kann, um zu ermitteln, ob irgendein Steuerelement auf einer dieser beiden Registerkarten im Hilfesystem den Fokus erhalten hat.   
+							  :param handle/hWnd current window handle
+							  :param int/iShouldSpeak if true, will speak the correct information for controls in the Search or Index page of the Help System. Wenn falsch, wird die ID sofern zutreffend zurückgegeben, aber es wird keine Sprache erzeugt. 
+:returns Int the Control ID of a Search or Index page control if focus is on one of these controls, otherwise returns 0.
+
+:Function ConvertAttribToState
+:Returns string The state, either opened, closed or nothing, of the active tree view item.
+:Description Wird von Funktionen verwendet, die ermitteln, ob das Buch oder die Seite gelesen werden sollen.
+:param1 int/iAttrib Enter the value from GetControlAttributes () to check.
+
+:function sayLine
+:synopsis Liest die aktuelle Zeile oder das Objekt, verarbeitet korrekt die Strukturansicht Buch/Seite und die Steuerelemente Suchen und Index
+:description Liest die aktuelle Zeile oder das Objekt, verarbeitet korrekt die Strukturansicht Buch/Seite und die Steuerelemente Suchen und Index Es ist hier außer Kraft gesetzt, so dass an der Skriptdatei, die diesen Binär-Wert verwendet, keine Änderungen vorgenommen werden muss. 
+:Optional
+:Param Int/iDrawHighlights Optional parameter added in JAWS 7.1 / MAGic 10.0.  Used to indicate whether or not the line should be highlighted by the MAGic engine as the text is being spoken.  The possible values are as follows:  If the parameter is not present or is equal to 0, do nothing; If the parameter is equal to 1, highlight each word as it is being spoken; If the parameter is equal to 2, highlight the entire line.  NOTES: (1) This functionality is not currently supported in all applications.  (2) The highlight rectangles will only be drawn if MAGic is running.
+:Param int/bSayingLineAfterMovement set to TRUE if calling from sayNext/Prior line to avoid speaking the prompt when arrowing over forms mode controls whose prompt is already spoeken from the prior line. This parameter is available starting with JAWS version 10 and MAGic version 12.
+:returns void
+
+:Function KeyPressedEvent
+:synopsis Setzt das Flag zurück, das verwendet wird, um doppeltes Sprechen zu unterdrücken, wenn die Strukturansicht Buch/Seite im Fokus ist 
+:description Dieses Ereignis setzt das Flag zurück, das verwendet wird, um doppeltes Sprechen zu unterdrücken, wenn die Strukturansicht Buch/Seite im Fokus ist  
+							  :param int/nKey keycode
+							  :param string/strKeyName keyname
+							  :param int/nIsBrailleKey true if attached to Braille key
+							  :param int/nIsScriptKey true if attached to script key
+:returns Void
+
+:script screenSensitiveHelp
+:synopsis Öffnet die Bildschirmabhängige Hilfe für die Steuerelemente auf den Registerkarten Suchen und Index im Hilfesystem
+:description Dieses Skript öffnet die Bildschirmabhängige Hilfe für die Steuerelemente auf den Registerkarten Suchen und Index im Hilfesystem.
+
+:function brailleBuildOther
+:synopsis Per Voreinstellung außer Kraft gesetzt, um korrekte Braille-Steuerelemente im Hilfesystem zu erhalten
+:description Diese Funktion setzt die voreingestellte Funktion außer Kraft, um korrekte Braille-Steuerelemente im Hilfesystem zu erhalten, wie zum Beispiel die Strukturansicht Buch/Seite und die Steuerelemente Suchen/Index 
+:returns int true or the result of calling the default function
+
+:function brailleBuildTreeview
+:synopsis Behandelt Braille in der Strukturansicht Buch/Seite
+:description Diese Funktion behandelt Braille im Steuerelement Strukturansicht Buch/Seite auf der Registerkarte Inhalt im Hilfesystem.
+:returns int true
+
+:function GetTreeObjectName
+:synopsis Fragt den Namen des Objekts für die Elemente der Strukturansicht ab
+:description Fragt das Objekt am Punkt ab und verwendet die .accName Eigenschaft des MSAA Objekts
+:returns string The name
+:Function GetTabLabels
+:Returns string The labels for the tab controls delimited for a JAWS list box.
+:Description Retrieves all the labels in a delimited string for a JAWS list box.
+:param handle/hTabControl The window which contains the tab controls.
+
+:function GetHelpTabName
+:returns string

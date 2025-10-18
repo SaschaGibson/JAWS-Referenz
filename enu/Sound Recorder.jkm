@@ -1,0 +1,10 @@
+[common Keys]
+Control+F=ClickFastForward
+Control+P=ClickPlay
+Control+B=ClickRewind
+Control+S=ClickStop
+Control+R=StartRecord
+Control+L=LimitSpeech
+JAWSKey+F8=SelectAButton
+[Laptop Keys]
+Insert+F8=SelectAButton

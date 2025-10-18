@@ -1,0 +1,80 @@
+:function IsInSkypeTrayMenu
+:Returns int TRUE if focus is located in Skype tray menu, FALSE otherwise
+:Synopsis Checks if the focus is located in Skype tray menu
+:Description Checks if focus is located in Skype tray menu and returns TRUE if so, FALSE otherwise
+:Category Menu
+
+:function SayHighLightedText
+:Synopsis Called by NewTextEvent to process whether or not highlighted text will be spoken.
+:Description Can be modified for application specific needs in many cases. Example: Non-standard list boxes, spell checkers and flashing title bars.
+:Category Selection
+:Param handle/hwnd handle of the window in which the text was written.
+:Param string/buffer String containing the text that was written.
+
+:script SayLine
+:Synopsis Liest die aktuelle Zeile.
+:Description Bei aktiviertem PC Cursor wird das Lesen auf das aktuelle Element oder Fenster beschränkt.  Ansonsten umfasst das Lesen den gesamten Text auf ungefährt der selben Zeile, auch wenn es außerhalb des aktuellen Elements oder Fensters steht, es sei denn, die JAWS Cursor Beschränkung ist aktiviert.
+:Category Screen Text
+
+:script SayNextLine
+:Synopsis Springt zur nächsten Zeile und liest diese.
+:Description Bei aktivem JAWS Cursor belibt die Spaltenposition erhalten.  Bei aktivem PC Cursor bestimmt die Anwendung die Spalte. Der PC Cursor ist auf die Bewegung der Schreibmarke, des Menüs oder des gewählten Elements eingeschränkt. Der JAWS Cursor wird von der JAWS Cursor Beschränkung und den Rändern des aktuellen Fensters eingeschränkt .
+:Category Navigation
+
+:script SayPriorLine
+:Synopsis Springt zur vorherigen Zeile und liest diese.
+:Description Bei aktivem JAWS Cursor belibt die Spaltenposition erhalten.  Bei aktivem PC Cursor bestimmt die Anwendung die Spalte. Der PC Cursor ist auf die Bewegung der Schreibmarke, des Menüs oder des gewählten Elements eingeschränkt. Der JAWS Cursor wird von der JAWS Cursor Beschränkung und den Rändern des aktuellen Fensters eingeschränkt .
+:Category Navigation
+
+:function FocusChangedEventEx
+:Synopsis This function is triggered when focus moves between applications, dialogs, dialog controls, or to another item within a control with child items.
+:Description Processes all types of focus change, and calls the proper event to handle the change according to the type of focus change which occurred.
+:Category Window
+:Param handle/hwndFocus The handle of the window that has received the focus.
+:Param int/nObject The number of the object that has received the focus.
+:Param int/nChild The number of the current child object.
+:Param handle/hwndPrevFocus The handle of the window that previously had the focus.
+:Param int/nPrevObject The number of the object that previously had the focus.
+:Param int/nPrevChild The number of the child object which previously had focus.
+:Param int/nChangeDepth The change depth, or number of levels effected by the change.
+
+:function WindowDestroyedEvent
+:Synopsis This function is triggered when a window is destroyed.
+:Description Can be modified for application specific needs.
+:Category Window
+:Param handle/hWindow The handle of the window that is about to be destroyed.
+
+:function BrailleAddObjectVistaStartMenuSearchField
+:Returns int TRUE if the conditions are being met
+:Synopsis Special handling for Start Menu Search Edit field in Vista.
+:Param int/nSubTypeCode the sub type code of the window that is currently in focus
+
+:function BrailleAddObjectName
+:Returns int True if condition is met.
+:Synopsis Process object name
+:Category Braille
+:Param int/nSubTypeCode No Description
+
+:function WindowCreatedEvent
+:Synopsis This function is triggered when a window is created.
+:Description You should not include processor consuming code within this function. The code within this function is processed very frequently.
+:Category Window
+:Param handle/hWindow Handle of the window just created.
+:Param int/nLeft left edge of the window.
+:Param int/nTop top edge of the window.
+:Param int/nRight right edge of the window.
+:Param int/nBottom bottom edge of the window.
+
+:function ValueChangedEvent
+:Synopsis This function is triggered when a change of value of a MSAA object occurs.
+:Description The MSAA flag must be turned on in your application-specific jcf file to enable this function.  This function receives the following parameters: The window handle of the window containing the current MSAA object, The ID number of the MSAA Object, The ID number of the MSAA Child Object, The type of the MSAA Object, The name of the MSAA object, and The current value assigned to the MSAA Object.
+:Category Object Model And MSAA
+:Param handle/hwnd The window handle of the window containing the current MSAA object.
+:Param int/objId The ID number of the MSAA Object.
+:Param int/childId The ID number of the MSAA Child Object.
+:Param int/nObjType The type of the MSAA Object.
+:Param string/sObjName The name of the MSAA object.
+:Param string/sObjValue The current value assigned to the MSAA Object.
+
+:script ScriptFileName
+:Category Say

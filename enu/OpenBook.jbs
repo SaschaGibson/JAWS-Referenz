@@ -1,0 +1,30 @@
+;Open Book JAWS Braille Structure file
+;For the Exact View Graphical area
+
+[Component Aliases]
+ObMessages=OpenBook Messages
+ExactViewName=Name
+ExactViewType=Type
+
+; Section for static
+[SubtypeCode6]
+components=ContextHelp,value,ObMessages
+type=
+removed=
+displayname=
+
+; Section for readonlyedit
+; note that multiline edits will always use line mode if not in a dialog
+[SubtypeCode43]
+components=ContextHelp,name,type,value,state,ObMessages
+type=rded
+removed=
+
+[CustomControl1]
+Components=ExactViewName,ExactViewType
+Type=
+removed=
+displayname=ExactView
+
+[Information]
+Description=Default  Structured Mode view for Openbook.

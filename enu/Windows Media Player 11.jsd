@@ -1,0 +1,104 @@
+:script ApplicationMenu
+
+:function SetGlobalContainerNameAndHierarchyLevel
+:synopsis sets up management of container groups on the main WMP screen.
+:description Called when focus changes to set group name and hierarchy level global variables.
+:param Handle The handle of the focus window.
+
+:function SetUserFriendlyGroupName
+:Description Used to assign user-friendly group names for groups being managed on the main WMP screen.
+
+:function GetAboutDialogStaticText
+:Description Used to retrieve dialog static text for the About dialog.
+:returns String The dialog static text for the About dialog.
+
+:function GetCurrentSliderValue
+:description Retrieves the current value of a slider.
+:returns String The current value of the slider.
+
+:function GetVolumeSliderValue
+:description Retrieves the formatted current value of the volume slider.
+:returns String The formatted current value of the Volume slider.
+
+:function GetSeekSliderValue
+:description Retrieves the formatted current value of the Seek slider.
+:returns String The formatted current value of the Seek slider.
+
+:function GetCrossFadeSliderValue
+:description Retrieves the formatted current value of the Cross-Fader slider.
+:returns String The formatted current value of the Cross-Fader slider.
+
+:function GetEqualizerSliderName
+:description Retrieves the name of the Equalizer slider.
+:returns String The name of the Equalizer slider.
+
+:function GetEqualizerSliderValue
+:description Retrieves the formatted current value of the Equalizer slider.
+:returns String The formatted current value of the Equalizer slider.
+
+:function GetSpeedSliderValue
+:description Retrieves the formatted current value of the Speed slider.
+:returns String The formatted current value of the Speed slider.
+
+:function GetVideoSliderName
+:description Retrieves the name of the Video slider.
+:returns String The name of the Video slider.
+
+:function GetVideoSliderValue
+:description Retrieves the formatted current value of the Video slider.
+:returns String The formatted current value of the Video slider.
+
+
+:function IsWMPMainScreenUngroupedButton
+:description Determines if the PC cursor is active and on one of the WMP main screen buttons.
+:returns Int True if the PC cursor is active and is on one of the WMP main screen buttons, false otherwise.
+
+:function IsToggleControl
+:description Determines if the active cursor is on one of the WMP main screen toggle controls.
+:returns Int True if the active cursor is on one of the WMP main screen toggle controls, false otherwise.
+
+:function IsWMPMainScreenToggleControl
+:description Determines if the PC cursor is active and on one of the WMP main screen toggle controls.
+:returns Int True if the PC cursor is active and on one of the WMP main screen toggle controls, false otherwise.
+
+:function IsWMPMainScreenSlider
+:description Determines if the PC cursor is active and on one of the WMP main screen slider controls.
+:returns Int True if the PC cursor is active and on one of the WMP main screen slider controls, false otherwise.
+
+
+:function GetWMPSliderValue
+:description Retrieves the formatted value for any of the WMP main screen slider controls.
+:returns String The formatted value for any of the WMP main screen slider controls.
+
+:function WMPMainScreenSliderValueSpoken
+:description Determines if the focus is on a WMP main screen slider, and if so speaks it and returns true.
+:returns Int True if one of the WMP main screen slider controls was spoken, false otherwise.
+
+:function SayWMPMainScreenCustomElement
+:description Used by SayLine, SayWord and SayCharacter to speak custom elements of the WMP main screen.
+:param Int The unit type to speak--character, word or line.
+:returns Int True if one of the WMP main screen custom elements was spoken, false otherwise.
+
+:script MoveToMainTree
+:synopsis Moves focus to main selection tree
+:description Moves focus to the main selection and action tree window.
+
+:script MoveToCurrentPlayList
+:synopsis Moves focus to the Current Play List's first window.
+:description Moves focus to the Current play list window.
+
+:script MutePlayer
+:synopsis Mute player
+:description Toggles mute on/off.
+
+:script VolumeDown
+:synopsis Volume down
+:description Turn volume down from anywhere on the main Windows Media Player screen.
+
+:script VolumeUp
+:synopsis Volume up
+:description Turn volume up from anywhere on the main Windows Media Player screen.
+
+:script SayCurrentlyPlayingTrack
+:synopsis Say the title of currently playing media.
+:Description Says the title of currently playing media.

@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+ <TITLE>6.5 Before You Move a Cursor</TITLE>
+ <LINK rel="StyleSheet" href="default.css">
+</HEAD>
+<BODY>
+ <H1>6.5 Before You Move a Cursor</H1>
+ 
+<P>After you activate a cursor you should save its location. This ensures that 
+  the cursor is restored to the correct position on the screen after your script 
+  is performed. For example, when you are using the JAWS cursor to access a specific 
+  button within an application, you want it to stay there because you need to 
+  perform a left mouse click. If you write a script that moves the JAWS cursor 
+  without saving it first, then you must move the JAWS cursor back to the button 
+  after your script is finished. The end result is that you are left with the 
+  wrong cursor activated and in the wrong place.</P>
+<P>You also need to route the cursor to the active application window. This action 
+  ensures the cursor you are using to read specific information is in the correct 
+  window. This is important as the JAWS and invisible cursors can be anywhere 
+  on your screen. So it is always a good idea to move these cursors to the active 
+  application. Otherwise, moving the cursor may yield unexpected results.</P>
+<h2>Saving the Cursor</h2>
+<P>You can use the SaveCursor built-in function to save the cursor and its location. 
+  The SaveCursor function notes the active cursor and its present location. You 
+  can call this function after activating any of the cursors such as the JAWS 
+  cursor. The following block of code illustrates the use of the SaveCursor function:</P>
+
+<P class="Code">
+JAWSCursor (); activate the JAWS cursor<br>
+SaveCursor (); save the JAWS cursor and its location</p>
+
+<P>You can call the SaveCursor function multiple times in a script, after each 
+  cursor you activate. This is called &quot;stacking saved cursors.&quot; The 
+  following code example illustrates the use of multiple SaveCursor function calls:</P>
+
+<P class="Code">
+JAWSCursor () ; activate the JAWS cursor<br>
+SaveCursor () ; save the JAWS cursor and its location<br>
+InvisibleCursor () ; activate the invisible cursor<br>
+SaveCursor () ; save the invisible cursor and its location</P>
+
+<h2>Restoring Saved Cursors</h2>
+<P>After you perform your script and JAWS finds one or more saved cursors, JAWS 
+  restores them automatically. When you save multiple cursors, JAWS restores the 
+  cursors in reverse order.</P>
+<P>You can also use the RestoreCursor built-in function when you need to restore 
+  a specific cursor before your script finishes. This function is useful when 
+  you need to save a cursor first, perform an action with that cursor, and restore 
+  it before the script finishes. </P>
+
+<h3>Example 1: Using the RestoreCursor function</h3>
+
+<P class="Code">PCCursor () ; activate the PC cursor<br>
+SaveCursor () ; save the pc cursor<br>
+JAWSCursor () ; activate the JAWS cursor<br>
+SaveCursor () ; save the JAWS cursor<br>
+; reading statements go here<br>
+RestoreCursor (); restore the JAWS cursor</P>
+
+<P>In the above example, the RestoreCursor function restores the last saved cursor. 
+  In this case, the RestoreCursor function restores the JAWS cursor since it was 
+  the last cursor saved.</P>
+<h2>Routing the Cursors</h2>
+<P>The PC cursor is generally the active cursor in most applications. When you 
+  need to access information outside of the boundaries of the PC cursor, you need 
+  to route either the JAWS or Invisible cursor to the location of the PC cursor. 
+  When you route either cursor, you have a starting point that you know exists 
+  within the active application.</P>
+<h3>Routing the JAWS Cursor</h3>
+<P>You can use the built-in function, RouteJAWSToPC to move the JAWS cursor to 
+  the location of the PC cursor. This function repositions the JAWS cursor to 
+  the exact position of the PC cursor. This function also moves the mouse pointer 
+  to the location of the insertion point or selection highlight. </P>
+<P>However, this function does not activate the JAWS cursor. Any cursor movement 
+  functions used in your script will move the active cursor instead of the JAWS 
+  cursor. If you want the JAWS cursor to move you must activate it first. </P>
+
+<h4>Example 2: Using the RouteJAWSToPC function</h4>
+
+<P class="Code">
+JAWSCursor (); activate the JAWS cursor<br>
+SaveCursor (); save the JAWS cursor and its location<br>
+RouteJAWSToPC (); move the JAWS cursor to the location of the PC cursor</P>
+<P>In the above example, the JAWS cursor is first activated and then saved. The 
+  RouteJAWSToPC function moves the JAWS cursor from its current location to the 
+  location of the PC cursor. At this point, you can use some of the cursor movement 
+  functions to move the JAWS cursor. See <a href="06-6_MovingTheCursor.htm">6.6 
+  Moving the Cursor</a> for more information on cursor movement functions. </P>
+<h3>Routing the Invisible Cursor</h3>
+<P>You can use the built-in function, RouteInvisibleToPC, to move the invisible 
+  cursor to the location of the PC cursor. This function repositions the Invisible 
+  cursor to the exact position of the PC cursor. Unlike the JAWS cursor, the Invisible 
+  cursor is not connected to the mouse pointer, so the function does not move 
+  the mouse pointer.</P>
+<P>If you want to move the Invisible cursor you must also activate it first. </P>
+
+<h4>Example 3: Using the RouteInvisibleToPC function</h4>
+
+<P class="Code">
+InvisibleCursor (); activate the Invisible cursor<br>
+SaveCursor (); save the location of the invisible cursor<br>
+RouteInvisibleToPC (); move the Invisible cursor to the PC cursor</P>
+<P>In the above example, the Invisible cursor is activated then saved. The RouteInvisibleToPC 
+  function then moves the Invisible cursor to the exact location of the PC cursor. 
+  Now that the Invisible cursor is in the active window, you can use cursor movement 
+  commands to read information contained within the window.</P>
+<P>&nbsp;</P>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="06-6_MovingTheCursor.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</BODY>
+</HTML>

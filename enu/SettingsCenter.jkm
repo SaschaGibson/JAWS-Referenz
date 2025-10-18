@@ -1,0 +1,9 @@
+[Common Keys]
+Control+E=ActivateSearchBox
+Control+Shift+D=ChangeToDefault
+Control+Shift+W=ChangeToDomain
+Control+PageUp=PreviousDocumentWindow
+Control+ExtendedPageUp=PreviousDocumentWindow
+Control+PageDown=NextDocumentWindow
+Control+ExtendedPageDown=NextDocumentWindow
+F6=F6Key

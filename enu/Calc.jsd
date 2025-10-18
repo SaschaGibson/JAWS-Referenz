@@ -1,0 +1,465 @@
+:function DeactivateAnyActiveVirtualDisplay
+:description Deactivates persistent virtual windows.
+
+
+:function DeactivateBitsDisplay
+:description Deactivates virtualization of the Bits display window.
+
+:function PadPositionIndicators
+:description Used to expand the bits position numbers so that they can be used to properly indicate bit positions for the previous line of bits from the bits display window.
+:param string The bits position numbers retrieved from the bits display window.
+:returns string The bits position line, padded with spaces so that allignment is correct.
+
+:Function ActivateBitsDisplay
+:description Virtualized the bits display window.
+
+:function IsNonBasicDialogActive
+:description Determines if the basic controls are not active because one of the dialogs is open.
+:returns int True if one of the dialogs are open and the basic controls are not active, false otherwise.
+
+:function MonitorCalculatorModeChangedOnFocusChange
+:description Used to determine if the calculator mode has changed when the focus changed. If the mode did change, then the new mode is spoken.
+:param handle The application window from FocusChangedEvent.
+:param handle The real window from FocusChangedEvent.
+:param handle The focus window from FocusChangedEvent.
+
+:function GetDateValueChange
+:description Used by ValueChangedEvent to determine which segment of a date string changed. Assumes that only one segment changed.
+:param string The original date to be used in the comparison.
+:param string The new date to be used in the comparison.
+:returns string The segment, mm dd or yyyy, of the new date which is different from the original date.
+
+:function getCalculatorModeName
+:description Used to retrieve the name of the current calculator mode.
+:param int True if the current calculator mode should be refreshed, false otherwise
+:returns string The name of the calculator mode
+
+:function SayScheduledCalculatorModeName
+:description Schedule this function to announce the calculator mode after a period of time has passed.
+
+:function SayCalculatorModeName
+:description Speaks the name of the current calculator mode.
+:param int The outputType to use when speaking.
+
+:Function GetHandle
+:param int The control ID of one of the basic calculator controls.
+:returns handle The handle belonging to the control which matches the control ID.
+
+:function getCalculatorMode
+:description Retrieves a numeric value matching one of the calculator modes.
+:returns int One of the four basic calculator modes.
+
+:function InStatisticsBox
+:description Determines if the statistics listbox is in focus.
+:returns int True if the statistics listbox is in focus, false otherwise.
+
+:function GetStatisticsListBoxCountStatus
+:description Retrieves the displayed string showing the count of items in the statistics listbox.
+:returns string The on-screen which displays the count of items in the statistics listbox.
+
+:function IsHistoryActive
+:description Determines if the History is showing.
+:returns int True if the History is showing, false otherwise.
+
+:function GetNameFromObject
+:description Used to retrieve the name of an object belonging to a window. Intended for windows which have only one object.
+:param handle The window handle from which the object should be retrieved.
+:returns string The name of the object in the window.
+
+:function GetCalculatorControlInfo
+:description Retrieves information about the calculator controls.
+:param int The control ID of the control for which you want information.
+:param handle ByRef The handle of the window belonging to the control.
+:param string ByRef The name of the control.
+:param int ByRef The subtype code of the control.
+:returns int True if the control information could be retrieved, false otherwise.
+
+:function ClickFunctionButton
+:description Clicks, or activates the key associated with, a basic calculator control.
+:param int The control ID of the calculator control to click.
+:param int True if the display content should be announced after clicking the control, false otherwise.
+:returns int True if the control could be clicked, false otherwise.
+
+:Function ReadCalculatorDisplay
+:description Speaks the calculator's display window.
+
+:function UpdateCalculatorMode
+:description When the calculator mode changes, evaluates whether the mode should be scheduled for announcement and if so schedules it; otherwise, the focus change will announce the new mode.
+:param int The new mode.
+:param int The previous mode.
+:optional
+:param handle The focus window of the previous mode.
+
+:function GetSelectedRadioButton
+:description Given the first radio button in a group, determines which one is the selected radio button.
+:param int The control ID of the first radio button in the group.
+:returns handle The handle of the selected radio button.
+
+:script StandardMode
+:synopsis Standard mode
+:description Sets the calculator mode to Standard.
+
+:script ScientificMode
+:synopsis Scientific mode
+:description Sets the calculator mode to Standard.
+
+:script ProgrammerMode
+:synopsis Programmer mode
+:description Sets the calculator mode to Programmer.
+
+:script StatisticsMode
+:synopsis Statistics mode
+:description Sets the calculator mode to Statistics.
+
+:script BasicCalculatorDisplay
+:synopsis Basic Controls
+:description Closes any open calculation dialog and returns to the basic calculator controls.
+
+:Script OneButton
+:synopsis 1 button
+:description Presses the 1 button.
+
+:Script TwoButton
+:synopsis 2 button
+:description Presses the 2 button.
+
+:Script ThreeButton
+:synopsis 3 button
+:description Presses the 3 button.
+
+:Script FourButton
+:synopsis 4 button
+:description Presses the 4 button.
+
+:Script FiveButton
+:synopsis 5 button
+:description Presses the 5 button.
+
+:Script SixButton
+:synopsis 6 button
+:description Presses the 6 button.
+
+:Script SevenButton
+:synopsis 7 button
+:description Presses the 7 button.
+
+:Script EightButton
+:synopsis 8 button
+:description Presses the 8 button.
+
+:Script NineButton
+:synopsis 9 button
+:description Presses the 9 button.
+
+:Script ZeroButton
+:synopsis 0 button
+:description Presses the 0 button.
+
+:Script HexAOrAverageButton
+:synopsis Hex A, or Average button
+:description In Programmer mode, presses the hexadecimal A button. In Statistics mode, presses the Average button.
+
+:Script HexBButton
+:synopsis Hex B button
+:description Presses the hexadecimal B button.
+
+:Script HexCButton
+:synopsis Hex C button
+:description Presses the hexadecimal C button.
+
+:Script HexDOrModButton
+:synopsis Hex D, or Modulo button
+:description In Programmer mode, presses the hexadecimal D button. Scientific mode, presses the Modulo button.
+
+:Script HexEButton
+:synopsis Hex E button
+:description Presses the hexadecimal E button.
+
+:Script HexFButton
+:synopsis Hex F button
+:description Presses the hexadecimal F button.
+
+:script DecimalSeparatorButton
+:synopsis Decimal separator.
+:description Presses the decimal separator button.
+
+:Script LeftParenButton
+:synopsis Left Parenthesis button
+:description Presses the left parenthesis button.
+
+:Script RightParenButton
+:synopsis Right Parenthesis button
+:description Presses the Right parenthesis button.
+
+:Script EqualsButton
+:synopsis Equals button
+:description Presses the Equals button.
+
+:Script Enter
+:synopsis Enter, or Equals button
+:description In Standard, Scientific and programmer modes, Presses the Equals button. Otherwise, performs the standard function of the Enter key.
+
+:Script BackspaceButton
+:synopsis Backspace button
+:description Presses the Backspace button.
+
+:Script ClearButton
+:synopsis Clear button
+:description Presses the Clear button.
+
+:Script ClearEntryButton
+:synopsis Clear Entry button
+:description Presses the Clear Entry button.
+
+:Script MemoryClearButton
+:synopsis Memory Clear button
+:description Presses the Memory Clear button.
+
+:Script MemoryAddButton
+:synopsis Memory Add button
+:description Presses the Memory Add button.
+
+:script MemorySubtractButton
+:synopsis Memory Subtract button
+:description Presses the Memory Subtract button.
+
+:Script MemoryStoreButton
+:synopsis Memory Store button
+:description Presses the Memory Store button.
+
+:Script MemoryRecallButton
+:synopsis Memory Recall button
+:description Presses the Memory Recall button.
+
+:Script AddButton
+:synopsis Add button
+:description Presses the Add button.
+
+:Script SubtractButton
+:synopsis Subtract button
+:description Presses the Subtract button.
+
+:Script MultiplyButton
+:synopsis Multiply button
+:description Presses the Multiply button.
+
+:Script DivideButton
+:synopsis Divide button
+:description Presses the Divide button.
+
+:Script NegateButton
+:synopsis Negate button
+:description Presses the Negate button.
+
+:Script ReciprocalButton
+:synopsis Reciprocal button
+:description Presses the Reciprocal button.
+
+:Script IntegerPartButton
+:synopsis IntegerPart button
+:description Presses the Integer Part button.
+
+:Script PercentOrModuloButton
+:synopsis Percent, or Modulo button
+:description In Programmer mode, presses the Modulo button. Otherwise, presses the Percent button.
+
+:Script AndButton
+:synopsis And button
+:description Presses the And button.
+
+:Script OrButton
+:synopsis Or button
+:description Presses the Or button.
+
+:Script XOrButton
+:synopsis Exclusive Or button
+:description Presses the Exclusive Or button.
+
+:Script NotButton
+:synopsis Not button
+:description Presses the Not button.
+
+:Script LeftShiftButton
+:synopsis Left Shift button
+:description Presses the Left Shift button.
+
+:Script RightShiftButton
+:synopsis Right Shift button
+:description Presses the Right Shift button.
+
+:Script RotateLeftButton
+:synopsis Rotate Left button
+:description Presses the Rotate Left button.
+
+:Script RotateRightButton
+:synopsis Rotate Right button
+:description Presses the Rotate Right button.
+
+:Script AverageOfSquareButton
+:synopsis Average Of Square button
+:description Presses the Average Of Square button.
+
+:Script SumButton
+:synopsis Sum button
+:description Presses the Sum button.
+
+:Script PiButton
+:synopsis Pi button
+:description Presses the Pi button.
+
+:Script DMSButton
+:synopsis Degrees Minutes Seconds button
+:description presses the Degrees Minutes Seconds button.
+
+:Script SineOrSumButton
+:synopsis Sine, or Sum button
+:description In Scientific mode, presses the Sine button. In Statistics mode, presses the Sum button.
+
+:Script HyperbolicSineButton
+:synopsis Hyperbolic Sine button
+:description Presses the Hyperbolic Sine button.
+
+:Script CosineButton
+:synopsis Cosine button
+:description Presses the Cosine button.
+
+:Script HyperbolicCosineButton
+:synopsis Hyperbolic Cosine button
+:description Presses the Hyperbolic Cosine button.
+
+:Script TangentOrStandardDeviationButton
+:synopsis Tangent, or Standard Deviation button
+:description In Scientific mode, presses the Tangent button. In Statistics mode, presses the Standard Deviation button.
+
+:Script HyperbolicTangentOrStandardDeviationPopulationButton
+:synopsis Hyperbolic Tangent, or Standard Deviation Population button
+:description In Scientific mode, presses the Hyperbolic Tangent button. In Statistics mode, presses the Standard Deviation Population button.
+
+:Script CommonLogButton
+:synopsis Log button
+:description Presses the Log button.
+
+:Script AntiLogButton
+:synopsis Anti Log button
+:description Presses the Anti Log button.
+
+:Script NaturalLogButton
+:synopsis Natural Log button
+:description Presses the Natural Log button.
+
+:Script FactorialButton
+:synopsis Factorial button
+:description Presses the Factorial button.
+
+:Script SquareRootButton
+:synopsis Square Root button
+:description Presses the Square Root button.
+
+:Script SquareButton
+:synopsis Square button
+:description Presses the Square button.
+
+:Script CubeRootButton
+:synopsis Cube Root button
+:description Presses the Cube Root button.
+
+:Script CubeButton
+:synopsis Cube button
+:description Presses the Cube button.
+
+:Script ExponentialButton
+:synopsis Exponential button
+:description Presses the Exponential button.
+
+:Script RaisedToYPowerButton
+:synopsis Raised To Y Power button
+:description Presses the Raised To The Y Power button.
+
+:script OrderOfYRootButton
+:synopsis Order Of Y Root button
+:description Presses the Order Of Y Root button.
+
+:Script CADButton
+:synopsis Clear All Dataset Values button
+:description Presses the Clear All Dataset values button.
+
+:script DegreesOrWordRadioButton
+:synopsis Degrees, or Word radio button
+:description In Scientific mode, selects the Degrees radio button. In Programmer mode, selects the Word radio button.
+
+:script RadiansOrByteRadioButton
+:synopsis Radians, or Byte radio button
+:description In Scientific mode, selects the Radians radio button. In Programmer mode, selects the Byte radio button.
+
+:Script HexidecimalOrGradsRadioButton
+:synopsis Grads, or Hexidecimal radio button
+:description In Scientific mode, selects the Grads radio button. In Programmer mode, selects the Hexidecimal radio button.
+
+:Script DecimalRadioButton
+:synopsis Decimal radio button
+:description Selects the Decimal radio button.
+
+:Script OctalRadioButton
+:synopsis Octalradio button
+:description Selects the Octal radio button.
+
+:Script BinaryRadioButton
+:synopsis Binary radio button
+:description Selects the Binary radio button.
+
+:Script QWortdRadioButton
+:synopsis QWord radio button
+:description Selects the QWord radio button.
+
+:script DWordRadioButtonOrEdit
+:synopsis DWord radio button, or edit mode.
+:description in Programmer mode, selects the DWord radio button. Otherwise, enters edit mode for the History if available.
+
+:Script InverseFunctionsCheckBox
+:synopsis Inverse Functions checkbox toggle
+:description Toggles the checkbox on/off for Inverse Functions.
+
+:Script ExponentialNotationCheckbox
+:synopsis Exponential notation checkbox toggle
+:description Toggles the checkbox on/off for exponential notation.
+
+:Script SayFunctionModifiers
+:synopsis Say function modifyers
+:description Reports on the current state of the Inverse Functions checkbox.
+
+:script ToggleHistory
+:synopsis Toggle history
+:description Toggles the History listbox on/off. The History listbox is only available for Standard and Scientific modes.
+
+:script ClearHistory
+:synopsis Clear History
+:description Clears the History listbox of all values.
+
+:Script ReportCalculatorView
+:synopsis Report calculator view
+:description If the basic calculator is displayed, reports the calculator mode currently in use.
+
+:script Tab
+:synopsis Keyboard Tab
+:description When the basic calculator is displayed, moves forwards to a focusable control; otherwise, performs the normal function of the keyboard tab.
+
+:script ShiftTab
+:synopsis Keyboard Shift Tab
+:description When the basic calculator is displayed, moves backwards to a focusable control; otherwise, performs the normal function of the keyboard shift tab.
+
+:function ExemptFromFunctionsList
+:description Used to determine if a control should be exempt from inclusion when building the list of functions to be displayed in the functions list.
+:param handle The handle of a calculator control.
+:returns int True if the control should be exempt from inclusion in the functions list, false otherwise.
+
+:Script ListCalculatorFunctions
+:synopsis List calculator functions
+:description Lists the functions currently available. The basic operators for addition, subtraction, multiplication and division are not included, nor are digits, decimal, parentheses and the equals functions.
+
+:Script ReportMemoryIndicator
+:synopsis Report memory indicator
+:description Reports whether there are values stored in memory.
+
+:script ReportParenNestingLevel
+:synopsis Report parentheses nesting level
+:description Reports the current position of parentheses nesting level for the calculation.

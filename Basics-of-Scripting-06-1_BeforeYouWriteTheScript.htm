@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+ <TITLE>6.1 Before You Write the Script</TITLE>
+ <LINK rel="StyleSheet" href="default.css">
+</HEAD>
+<BODY>
+ <H1>6.1 Before You Write the Script</H1>
+ 
+<P>You may find a variety of reasons for moving a cursor around a given window. 
+  Some applications contain buttons that are only accessible with the mouse or 
+  JAWS cursor. These buttons usually cannot be reached by pressing <b>TAB</b> 
+  or through the menu system. You may also encounter applications that place blocks 
+  of text in areas of the screen that can only be read using the JAWS or invisible 
+  cursors.</P>
+<P>Before you create any script that moves a cursor to read information, you should 
+  determine the outcome of the script. If you are trying to activate a button 
+  within an application window, use cursor movement keystrokes to move the JAWS 
+  or invisible cursors to the button. You should keep track of each keystroke 
+  you press as you move the appropriate cursor. Each cursor movement command you 
+  use has an equivalent built-in function. For example, the built-in function, 
+  NextLine, acts just like pressing the <b>DOWN ARROW</b> from your keyboard. 
+  It moves the active cursor down one line.</P>
+<P>Instead of using <b>INSERT+PAGE DOWN </b>to read the bottom line of the screen, 
+  use cursor movement commands instead. You can use the JAWS cursor to accomplish 
+  this task by following the steps below:</P>
+<ol>
+  <li> Press <b>NUM PAD MINUS</b> to activate the JAWS cursor.</li>
+  <li> Press<b> INSERT+NUM PAD MINUS</b> to route the JAWS cursor to the location 
+    of the PC cursor.</li>
+  <li> Press <b>PAGE DOWN</b> to move the JAWS cursor to the bottom of the window.</li>
+  <li> Press <b>INSERT+UP ARROW</b> to read the current line.</li>
+</ol>
+<P>Now you know the steps needed to move the JAWS cursor to and read the contents 
+  of the bottom line of the window.</P>
+<P>You can take these steps and use built-in functions to accomplish the same 
+  task.</P>
+<P>You also need to think about which cursor you will use to read or access the 
+  information. Are you going to need mouse commands? Or will you only need to 
+  read the information? Use the JAWS cursor when you will need to perform mouse commands such as left or right mouse clicking. Use the invisible cursor when you need to read information but do not need to perform mouse commands. </P>
+<P>You also need to remember not to leave the wrong cursor active when your script 
+  finishes. If you are using the invisible cursor to read information on the screen, 
+  you don't want to leave that cursor active when your script finishes. Instead, 
+  you want to make sure the cursor, which was active before the script is executed, 
+  is again activated when the script finishes.</P>
+<P>&nbsp;</P>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="06-2_PCCursor.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</BODY>
+</HTML>

@@ -1,0 +1,26 @@
+[Common Keys]
+JAWSKey+Control+M=MoveToMessageList
+Insert+Control+M=MoveToMessageList
+Alt+1=ReadOutlookHeader(1)
+Alt+2=ReadOutlookHeader(2)
+Alt+3=ReadOutlookHeader(3)
+Alt+4=ReadOutlookHeader(4)
+Alt+5=ReadOutlookHeader(5)
+Alt+6=ReadOutlookHeader(6)
+
+[Laptop Keys]
+Insert+A=OutlookAttachmentsList
+
+[DESKTOP Keys]
+JAWSKey+A=OutlookAttachmentsList
+
+[Quick Navigation Keys]
+N=MoveToNextEmail
+Shift+N=MoveToPriorEmail
+Braille n=MoveToNextEmail
+Braille Dot13457=MoveToPriorEmail
+Braille Wheel2 Btn+Advance2=MoveToNextEmail
+Braille Wheel1 Btn+Advance1=MoveToPriorEmail
+
+[Quick Navigation Keys Manager Data]
+MoveToNextEmail|MoveToPriorEmail=Message In A Thread

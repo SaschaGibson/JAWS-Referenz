@@ -1,0 +1,11 @@
+; Special entry for DataGrid cells
+; This applies when looking at the contents of an SQL data table
+[SubtypeCode64]
+components=position,RowHeader,ColumnHeader,name,type,value
+type=grdc
+removed=
+displayname=
+AlignmentPriority=name,type,value
+
+[Information]
+Description=Default  Structured Mode view for Visual Studio.

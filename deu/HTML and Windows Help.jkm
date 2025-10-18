@@ -1,0 +1,94 @@
+[ML20 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F1+F2+F3=FocusToFirstField
+
+[ML40 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F1+F2+F3=FocusToFirstField
+
+[tplite Keys]
+Braille F2+F3+F5+F6=SelectALink; 7
+Braille F2+F3+F6=ToolBar; 8
+Braille F2+F4+F5=FocusToFirstField
+
+[blite18 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F1+F2+F3=FocusToFirstField
+
+[blite40 keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F1+F2+F3=FocusToFirstField
+
+[brlwin Keys]
+Braille F1+F4=GoBack
+Braille F2+F5=GoForward
+Braille KEYPAD1+KEYPAD2+KEYPAD3=SelectALink
+
+[common Keys]
+enter=enter
+F6=F6
+Control+F=IEFind
+;Tab=MoveToNextLink
+;Shift+Tab=MoveToPriorLink
+Control+JAWSKey+Home=FocusToFirstField
+Control+JAWSKey+ExtendedHome=FocusToFirstField
+Control+LeftArrow=ReadColumnLeft
+Control+ExtendedLeftArrow=ReadColumnLeft
+Control+RightArrow=ReadColumnRight
+Control+ExtendedRightArrow=ReadColumnRight
+Control+DownArrow=ReadDownColumn
+Control+ExtendedDownArrow=ReadDownColumn
+Control+UpArrow=ReadUpColumn
+Control+ExtendedUpArrow=ReadUpColumn
+Control+PageDown=ReadNextScreen
+Control+ExtendedPageDown=ReadNextScreen
+Control+PageUp=ReadPriorScreen
+Control+ExtendedPageUp=ReadPriorScreen
+JAWSKey+Tab=SaySelectedLink
+Control+JAWSKey+DownArrow=ReadCurrentScreen
+Control+JAWSKey+ExtendedDownArrow=ReadCurrentScreen
+JAWSKey+F8=ToolBar
+Control+JAWSKey+F10=SelectTab
+Control+Tab=NextDocumentWindow
+Control+Shift+Tab=PreviousDocumentWindow
+Alt+LeftArrow=GoBack
+Alt+ExtendedLeftArrow=GoBack
+Alt+RightArrow=GoForward
+Alt+ExtendedRightArrow=GoForward
+             
+[Laptop Keys]
+Control+Insert+Home=FocusToFirstField
+Control+Insert+ExtendedHome=FocusToFirstField
+Insert+Tab=SaySelectedLink
+Control+Insert+DownArrow=ReadCurrentScreen
+Control+Insert+ExtendedDownArrow=ReadCurrentScreen
+Insert+F8=ToolBar
+Control+Insert+F10=SelectTab
+
+[brlnote Keys]
+Braille KEYPAD1+KEYPAD2+KEYPAD3=SelectALink
+Braille F2+F4=GoForward
+Braille F1+F3=GoBack
+
+[Focus Keys]
+Braille Shift2+dots 2 3 6=ToolBar
+
+[brledgedriver Keys]
+Version=1.1.200
+Braille KEYPAD2+KEYPAD4+KEYPAD7=SelectALink
+Braille KEYPAD1+KEYPAD3+KEYPAD4+KEYPAD5=GoForward
+Braille KEYPAD6+KEYPAD7+KEYPAD9=GoForward
+Braille KEYPAD1+KEYPAD2+KEYPAD3+KEYPAD4=GoBack
+Braille KEYPAD3+KEYPAD7+KEYPAD9=GoBack
+
+[brlsense Keys]
+Version=1.1.200
+Braille KEYPAD2+KEYPAD4+KEYPAD7=SelectALink
+Braille KEYPAD1+KEYPAD3+KEYPAD4+KEYPAD5=GoForward
+Braille KEYPAD6+KEYPAD7+KEYPAD9=GoForward
+Braille KEYPAD1+KEYPAD2+KEYPAD3+KEYPAD4=GoBack
+Braille KEYPAD3+KEYPAD7+KEYPAD9=GoBack

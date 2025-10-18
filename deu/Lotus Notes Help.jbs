@@ -1,0 +1,10 @@
+﻿; Section for treeviewitem
+[SubtypeCode56]
+components=name,type,level,state,value,position
+type=la
+removed=
+displayname=Notes Hilfe Flächenansicht
+AlignmentPriority=name,type,level,state,value
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Lotus Notes Hilfe.

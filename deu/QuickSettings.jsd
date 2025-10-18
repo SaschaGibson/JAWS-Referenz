@@ -1,0 +1,19 @@
+:function AnnounceSearchResults
+:Synopsis Announces the search results from the search box
+:Description Announces search results from the search box to let the user know what actually was found
+:Category Say
+
+:script F6Key
+:Synopsis Wird zum Drücken der F6 Taste genutzt
+:Description Das Skript wird zum Drücken der F6 Taste genutzt und gibt entweder korrekte Informationen über den rechten Bereich oder gibt die Taste an die Einstellungsverwaltung weiter.
+:Category Keyboard
+
+:script ActivateSearchBox
+:Synopsis Aktiviert das Sucheingabefeld
+:Description Aktiviert das Sucheingabefeld durch Drücken der Strg+E Kurztaste, wie in den meisten Produkten mit Sucheingabefeldern
+:Category Windows
+
+:script ChangeToDefault
+:Synopsis Sendet der Einstellungsverwaltung die Mitteilung die Standarddatei zu laden
+:Description Sendet der Einstellungsverwaltung die Mitteilung eine Standardkonfiguration zu laden
+:Category Application

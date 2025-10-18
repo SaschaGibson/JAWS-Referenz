@@ -1,0 +1,185 @@
+[ML20 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F3+F5=SelectAFrame
+
+[ML40 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F3+F5=SelectAFrame
+
+[tplite Keys]
+Braille F2+F4+F5=FocusToFirstField
+Braille F5+F6=FocusToLastField
+Braille F1+F2+F3=FocusToNextField
+Braille F1+F3=FocusToPriorField
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F3+F5=SelectAFrame
+
+[blite18 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F3+F5=SelectAFrame
+Braille F1+F2+F3=FocusToFirstField
+Braille F4+F5+F6=FocusToLastField
+Braille F2=FocusToPriorField
+Braille F5=FocusToNextField
+
+[blite40 keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F3+F5=SelectAFrame
+Braille F1+F2+F3=FocusToFirstField
+Braille F4+F5+F6=FocusToLastField
+Braille F2=FocusToPriorField
+Braille F5=FocusToNextField
+
+[brlwin Keys]
+Braille F1+F4=GoBack
+Braille F2+F5=GoForward
+Braille KEYPAD1+KEYPAD2+KEYPAD3=SelectALink
+Braille KEYPAD2+KEYPAD3+KEYPAD4=SelectAFrame
+
+[common Keys]
+Insert+Space&i&1=InspectShowFullPageReport
+JAWSKey+Space&i&1=InspectShowFullPageReport
+Insert+Space&i&2=InspectShowElementInfo
+JAWSKey+Space&i&2=InspectShowElementInfo
+Insert+Space&i&3=InspectShowElementReport
+JAWSKey+Space&i&3=InspectShowElementReport
+Insert+Space&i&4=InspectShowSayAllReport
+JAWSKey+Space&i&4=InspectShowSayAllReport
+Insert+Space&i&5=InspectShowSpeechViewer
+JAWSKey+Space&i&5=InspectShowSpeechViewer
+Insert+Space&i&6=InspectShowARIALive
+JAWSKey+Space&i&6=InspectShowARIALive
+Insert+F7=SelectALink
+JAWSKey+F7=SelectALink
+Insert+F6=SelectAHeading
+JAWSKey+F6=SelectAHeading
+Insert+F5=SelectAFormField
+JAWSKey+F5=SelectAFormField
+Tab=MoveToNextLink
+Shift+Tab=MoveToPriorLink
+Control+JAWSKey+Home=FocusToFirstField
+Control+JAWSKey+ExtendedHome=FocusToFirstField
+Control+Insert+Home=FocusToFirstField
+Control+Insert+ExtendedHome=FocusToFirstField
+Control+JAWSKey+End=FocusToLastField
+Control+JAWSKey+ExtendedEnd=FocusToLastField
+Control+Insert+End=FocusToLastField
+Control+Insert+ExtendedEnd=FocusToLastField
+Control+PageDown=ReadNextScreen
+Control+ExtendedPageDown=ReadNextScreen
+Control+PageUp=ReadPriorScreen
+Control+ExtendedPageUp=ReadPriorScreen
+Control+JAWSKey+DownArrow=ReadCurrentScreen
+Control+JAWSKey+ExtendedDownArrow=ReadCurrentScreen
+JAWSKey+F8=ToolBar
+Alt+LeftArrow=GoBack
+Alt+ExtendedLeftArrow=GoBack
+Alt+RightArrow=GoForward
+Alt+ExtendedRightArrow=GoForward
+Alt+Home=GoHome
+Alt+ExtendedHome=GoHome
+JAWSKey+F9=SelectAFrame
+Control+Tab=NextFrame
+Control+Shift+Tab=PriorFrame
+Control+F=IEFind
+JAWSKey+Control+Slash=SelectAnOnClickElement
+Insert+Control+Slash=SelectAnOnClickElement
+JAWSKey+Control+SemiColon=SelectAnOnMouseOverElement
+Insert+Control+SemiColon=SelectAnOnMouseOverElement
+Control+Windows+Equals=SelectaDropTarget
+Control+Windows+Dash=FilterLiveRegionAnnouncements
+JAWSKey+Windows+SemiColon=SelectAnOnMouseOverElement
+Insert+Windows+SemiColon=SelectAnOnMouseOverElement
+Control+Windows+J=JumpToTableCell
+Control+Shift+Windows+J=JumpReturnFromTableCell
+Control+JAWSKey+a=SelectARadioButtonFormField
+Control+Insert+a=SelectARadioButtonFormField
+Control+JAWSKey+b=SelectAButtonFormField
+Control+Insert+b=SelectAButtonFormField
+Control+JAWSKey+c=SelectAComboFormField
+Control+Insert+c=SelectAComboFormField
+Control+JAWSKey+e=SelectAnEditFormField
+Control+Insert+e=SelectAnEditFormField
+Control+JAWSKey+g=SelectAGraphic
+Control+Insert+g=SelectAGraphic
+Control+JAWSKey+l=SelectAList
+Control+Insert+l=SelectAList
+Control+JAWSKey+o=SelectAnObject
+Control+Insert+o=SelectAnObject
+Control+JAWSKey+p=SelectAParagraph
+Control+Insert+p=SelectAParagraph
+Control+JAWSKey+q=SelectABlockQuote
+Control+Insert+q=SelectABlockQuote
+Control+JAWSKey+r=SelectaRegion
+Control+Insert+r=SelectaRegion
+Control+JAWSKey+t=SelectATable
+Control+Insert+t=SelectATable
+Control+JAWSKey+x=SelectACheckboxFormField
+Control+Insert+x=SelectACheckboxFormField
+Control+JAWSKey+y=SelectADivision
+Control+Insert+y=SelectADivision
+Control+JAWSKey+z=SelectASpan
+Control+Insert+z=SelectASpan
+Alt+JAWSKey+M=MoveToControlledTarget
+
+[DESKTOP Keys]
+JAWSKey+a=AddressBar
+
+[Laptop Keys]
+Control+Alt+A=ReadCurrentScreen
+Control+JAWSKey+DownArrow=ReadCurrentScreen
+Control+JAWSKey+ExtendedDownArrow=ReadCurrentScreen
+JAWSKey+A=SayAll
+Insert+A=AddressBar
+Insert+F8=ToolBar
+JAWSKey+F9=SelectAFrame
+Insert+F9=SelectAFrame
+Control+JAWSKey+Home=FocusToFirstField
+Control+JAWSKey+ExtendedHome=FocusToFirstField
+Control+JAWSKey+End=FocusToLastField
+Control+JAWSKey+ExtendedEnd=FocusToLastField
+
+[brlnote Keys]
+Braille KEYPAD1+KEYPAD2+KEYPAD4=SelectAFrame
+Braille KEYPAD1+KEYPAD2+KEYPAD3=SelectALink
+Braille F2+F4=GoForward
+Braille F1+F3=GoBack
+
+[Focus Keys]
+Braille Shift2+dots 2 3 6=ToolBar
+
+[PACMate Braille Keys]
+Dot45 Chord=MoveToNextLink
+B Chord=MoveToPriorLink
+
+[BrailleNote Keys]
+Version=2.1.001
+Braille READ+LEFT=GoBack
+Braille READ+RIGHT=GoForward
+Braille KEYPAD1+KEYPAD2+KEYPAD3+KEYPAD5+KEYPAD6+KEYPAD9=GoBack
+Braille KEYPAD2+KEYPAD3+KEYPAD4+KEYPAD5+KEYPAD6+KEYPAD9=GoForward
+Braille KEYPAD1+KEYPAD5+KEYPAD6+KEYPAD9=SelectAFrame
+Braille KEYPAD3+KEYPAD4+KEYPAD6+KEYPAD9=SelectALink
+
+[brledgedriver Keys]
+Version=1.1.200
+Braille KEYPAD1+KEYPAD2+KEYPAD4=SelectAFrame
+Braille KEYPAD2+KEYPAD4+KEYPAD7=SelectALink
+Braille KEYPAD1+KEYPAD3+KEYPAD4+KEYPAD5=GoForward
+Braille KEYPAD6+KEYPAD7+KEYPAD9=GoForward
+Braille KEYPAD1+KEYPAD2+KEYPAD3+KEYPAD4=GoBack
+Braille KEYPAD3+KEYPAD7+KEYPAD9=GoBack
+
+[brlsense Keys]
+Version=1.1.200
+Braille KEYPAD1+KEYPAD2+KEYPAD4=SelectAFrame
+Braille KEYPAD2+KEYPAD4+KEYPAD7=SelectALink
+Braille KEYPAD1+KEYPAD3+KEYPAD4+KEYPAD5=GoForward
+Braille KEYPAD6+KEYPAD7+KEYPAD9=GoForward
+Braille KEYPAD1+KEYPAD2+KEYPAD3+KEYPAD4=GoBack
+Braille KEYPAD3+KEYPAD7+KEYPAD9=GoBack

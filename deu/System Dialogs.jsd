@@ -1,0 +1,10 @@
+:function AutoStartEvent
+:Synopsis Lädt die Skriptdatei für das korrespondierende Applet
+:Description Wenn der Name des DateTime Eigenschaftendialogs gefunden wurde, wird die DateTime Eigenschaften Skriptdatei geladen.
+
+:function getAccName
+:Returns string
+:Param int/self No Description
+
+:function AnnounceState
+

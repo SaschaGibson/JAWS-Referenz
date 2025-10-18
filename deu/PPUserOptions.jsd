@@ -1,0 +1,36 @@
+:Function ObjectsHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function SlidesHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleTableReadingMethodHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleOverlapAlertHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleOverflowAlertHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleDescribeObjectsHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleSlideTransitionsHlp
+:Description This is the helper function for the var referred to in its name.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:script AdjustJAWSOptions
+:Synopsis JAWS Einstellungen anpassen inklusive spezieller Powerpoint-Optionen.
+:Description Dieses Skript passt die JAWS Einstellungen inklusive spezieller Powerpoint-Optionen an. Spezielle für Powerpoint geänderte Optionen werden in der jsi-Datei gespeichert.

@@ -1,0 +1,57 @@
+; Copyright 2002-2021 by Freedom Scientific BLV Group, LLC
+
+:function UserBufferActivateEx
+:synopsis activates the User Virtual Buffer with parameters
+:description The User Virtual buffer may be used as a replacement focus for graphical or other windows where the real focus is not meaningful. the User Virtual Buffer maybe populated with text. Each piece of text may have an associated function assigned to it so that when Enter or the Left Mouse button is presssed in this text, the function will be called.  This function excepts parameters.
+:Param string/sName The name that you want to assign the virtual buffer
+:Param string/sType The window type that you want to assign the virtual buffer.  It has to be a string.
+:Param int/iTypecode The type code for the Virtual buffer as an Integer.
+:Param int/iControlId The Control Id for the Virtual Buffer as an Integer.
+:Optional
+:Param Int/iAllowAllKeys true to allow all keys (default), false to indicate that keys are to be trapped.
+:returns int true if the buffer was activated, false if already active.
+
+:function UserBufferWindowName 
+:synopsis Retrieves the window name that was specified by the UserBufferActivate function.  
+:description This function retrieves the window name that was specified by the UserBufferActivate function.  
+:returns String Returns the window name that was specified by the UserBufferActivate function.  If none was specified, then a null is returned. 
+
+:function userBufferWindowType 
+:synopsis retrieves the Window type name that was specified by the UserBufferActivate function.  
+:description This function retrieves the Window type name that was specified by the UserBufferActivate function.  
+:returns string Returns the window type. if none specified, then a null is returned. 
+
+:function UserBufferwindowTypecode 
+:synopsis 
+:description retrieves the window type code of the virtual buffer.
+:returns int returns the Window type code that was assigned to the virtual buffer, none specified then a value 0 is returned.
+
+:function UserBufferWindowControlId 
+:synopsis Retrieves the control id of the virtual buffer.
+:description This function retrieves the controlId that was specified by the UserBufferActivate function.  
+:returns int Returns the control id assigned to the virtual buffer, 0 is returned if none was specified.
+
+:function UserBufferPrevWindowName 
+:synopsis Retrieves the previous window name that was define to a virtual buffer
+:description This function retrieves the previous window name that was assigned to a virtual buffer
+:returns String Returns the previous window name of a virtual buffer
+
+:function userBufferPrevWindowType 
+:synopsis retrieves the previous Window type name assigned to a virtual buffer 
+:description This function retrieves the previous Window type name that was assigned to a virtual buffer
+:returns string Returns the previous window type. if none specified, then a null is returned. 
+
+:function UserBufferPrevWindowTypecode 
+:synopsis Gets the previous  type code assigned to a virtual buffer.
+:description retrieves the previous type code assigned to a virtual buffer
+:returns int returns the previous Window type code that was assigned to the virtual buffer. None specified a value 0 is returned.
+
+:function UserBufferPrevWindowControlId 
+:synopsis Retrieves the previous control id of the virtual buffer.
+:description This function retrieves the previous control Id that was assigned to a virtual buffer.
+:returns int Returns the previous control id assigned to the virtual buffer, 0 is returned if none was specified.
+
+:Function UserBufferClearAll
+:Synopsis Clear everything possible about a user buffer.  
+:Description This clears everything possible about a user buffer.  Its main purpose is to make sure nothing is left in the PrevXXX variables that would make code try to restore an inappropriate virtual field after a subsequent help buffer has been displayed.  It executes UserBufferClear(), clears the current and previous variables such as gs_VirtualWindowName, and calls UserBufferDeactivate.
+:Returns Int Status returned by UserBufferDeactivate.

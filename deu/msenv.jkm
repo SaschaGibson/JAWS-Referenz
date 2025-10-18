@@ -1,0 +1,17 @@
+[Common Keys]
+Alt+JAWSKey+F6=ListWindows
+Alt+RightArrow=StatementCompletion
+Alt+ExtendedRightArrow=StatementCompletion
+Alt+Shift+A=IsAddinLoaded
+Alt+Shift+C=ReadControl
+Alt+Shift+F=MakeWindowsFloating
+Alt+Shift+K=QuickInfo
+Alt+Shift+L=MoveToCode
+Alt+Shift+S=ReadControlSize
+Alt+Shift+Space=MoveToComponent
+Control+JAWSKey+N=CloseNonactiveWindows
+Control+Shift+DownArrow=ControlShiftDownArrow
+Control+Shift+ExtendedDownArrow=ControlShiftDownArrow
+Control+Shift+UpArrow=ControlShiftUpArrow
+Control+Shift+ExtendedUpArrow=ControlShiftUpArrow
+Control+JAWSKey+F2= 

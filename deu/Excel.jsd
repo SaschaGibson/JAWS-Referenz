@@ -1,0 +1,818 @@
+:function ExcelSelectionChangedWithFocusChange
+:description Determines if an Excel selection change happened at close to the same time as a focus change event.
+:returns int True if an Excel selection change event or sheet activate event fired within a limited time threshold of the focus change event.
+
+:function FocusRedirectedOnFocusChange
+:description Tests whether focus should be reset using SetFocus, and does so if it is determined that focus is in an invalid location.
+:returns int True if focus was redirected with SetFocus, false otherwise.
+
+:function HandleCustomDialogueWindows
+:Description Handles all the dialogues on gaining focus and announces them.
+:Param handle/hWnd Window to handle
+:Returns int TRUE if the dialogue was handled, FALSE otherwise
+
+:function getExcelVersion
+:Description Returns the major version number of the current instance of Excel.exe.
+:Returns int major version number, e.g.  10 for Excel XP, 11 for Excel 2003, 12 for Excel 2007.
+
+:function restoreFocusToWorksheet
+:Description Returns focus to the main Excel worksheet. this function is required because sometimes when dialogs or menus are dismissed for charts the focus is not properly restored to the worksheet area.
+:Returns int true if the set focus was successful
+
+:function StatusBarMode
+:description Determines the mode of the application as displayed on the status bar.
+:returns int One of the status bar modes listed in the Excel header file.
+
+:function IsEditingComment
+:description Determines if the focus is in the edit comment area.
+:returns int True if the focus is in the edit comment area, false otherwise.
+
+:function IsExtendedSelectionMode
+:description Determines if focus is on the spreadsheet and the mode is extended selection.
+:returns int True if focus is on the spreadsheet and extended selection mode is active, false otherwise.
+
+:function IsExtendedSelectionMode
+:description Determines if focus is on the spreadsheet and the mode is add selected range of cells.
+:returns int True if focus is on the spreadsheet and add selected range of cells mode is active, false otherwise.
+
+:function InExcel2007OrLaterFunctionList
+:description Determines if the Excel 2007 or later function list where functions are inserted on the formula bar is active.
+:returns int True if using Excel 2007 or later and the function list for the formula bar is active, false otherwise.
+
+:function OnSpreadSheet
+:description Determines if the focus is on the spreadsheet and not in the comment area.
+:returns int True if the focus is on the spreadsheet, false otherwise.
+
+:script readRow
+:Synopsis Liest die aktuelle Reihe unter Berücksichtigung der Titelausführlichkeit.
+:Description Liest die aktuelle Reihe und sagt den dazugehörigen Spaltentitel an.
+
+:script readToEndOfRow
+:Synopsis Liest von der aktuellen Zelle bis zum Ende der Reihe unter Berücksichtigung der Titelausführlichkeit.
+:Description Liest von der aktuellen Zelle bis zum Ende der aktuellen Reihe und sagt den dazugehörigen Spaltentitel an.
+
+:script readFromStartOfRow
+:Synopsis Liest vom Anfang der Reihe bis zur aktuellen Zelle unter Berücksichtigung der Titelausführlichkeit.
+:Description Liest vom Anfang der Reihe bis zur aktuellen Zelle und sagt den dazugehörigen Spaltentitel an.
+
+:script readColumn
+:DisplayName Spalten mit Überschriften lesen
+:Synopsis Liest die aktuelle Spalte unter Berücksichtigung der Überschriften-Ausführlichkeit
+:Description Dieses Skript liest die aktuelle Spalte und wenn angebracht die Reihenüberschriften.
+:SearchRank 2
+
+:script readToBottomOfColumn
+:Synopsis Liest von der aktuellen Zelle bis zum Ende der aktuellen Spalte unter Berücksichtigung der Überschriften-Ausführlichkeit
+:Description Dieses Skript liest von der aktuellen Zelle bis zum Ende der aktuellen Spalte und spricht gegebenenfalls die Reihenüberschriften.
+
+:script readFromTopOfColumn
+:Synopsis Liest vom Anfang der aktuellen Spalte bis zur aktuellen Zelle unter Berücksichtigung der Überschriften-Ausführlichkeit.
+:Description Dieses Skript liest vom Spaltenanfang bis zur aktuellen Zelle und spricht gegebenenfalls die Reihenüberschriften.
+
+:script ReadRowTotal
+:DisplayName Reihensumme lesen
+:Synopsis Liest die aktuelle Reihensumme
+:Description Dieses Skript liest die aktuelle Reihensumme. Wenn die Spalte, die die Reihensummen enthält, nicht definiert wurde, dann sucht %product% von der aktuellen Spalte aus bis zum Ende der Datenregion nach einer Zelle, deren Formel einen SUM Identifizierer enthält. Wenn eine Zelle mit einer Formel gefunden wird, die den SUM Identifizierer enthält, dann wird der Inhalt dieser Zelle als Reihensumme angesagt.
+:SearchRank 1
+
+:script ReadColumnTotal
+:DisplayName Spaltensumme lesen
+:Synopsis Liest die aktuelle Spaltensumme
+:Description Dieses Skript liest die aktuelle Spaltensumme. Wenn die Reihe, die die Spaltensummen enthält, nicht definiert wurde, dann sucht %product% von der aktuellen Reihe aus bis zum Ende der Datenregion nach einer Zelle, deren Formel einen SUM Identifizierer enthält. Wenn eine Zelle mit einer Formel gefunden wird, die den SUM Identifizierer enthält, dann wird der Inhalt dieser Zelle als Spaltensumme angesagt.
+:SearchRank 1
+
+:script setTotalsColumn
+:DisplayName Summenspalte setzen
+:Synopsis Macht die aktuelle Spalte zur Spalte, die die Reihensummen für die aktuelle Region enthält.
+:Description Dieses Skript macht die aktuelle Spalte zur Spalte, die die Reihensummen für die aktuelle Region enthält.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script setTotalsRow
+:DisplayName Summenreihe setzen
+:Synopsis Macht die aktuelle Reihe zur Reihe, die die Spaltensummen für die aktuelle Region enthält.
+:Description Dieses Skript macht die aktuelle Reihe zur Reihe, die die Spaltensummen für die aktuelle Region enthält.
+:SearchRank  1
+:CommandSearchProductFilter Fusion
+
+:script sayRowTitle
+:DisplayName Reihenüberschrift lesen
+:Synopsis Sagt die aktuelle Reihenüberschrift an.
+:Description Dieses Skript sagt die aktuelle Reihenüberschrift an.
+:SearchRank  1
+
+:script sayColumnTitle
+:DisplayName Spaltenüberschrift lesen
+:Synopsis Sagt die aktuelle Spaltenüberschrift an.
+:Description Dieses Skript sagt die aktuelle Spaltenüberschrift an.
+:SearchRank 1
+
+:script setColTitlesRange
+:DisplayName Spaltenüberschriften auf Reihenbereich setzen
+:Synopsis Definiert die markierten Reihen, als solche, die die Spaltenüberschriften für die aktuelle Region enthalten
+:Description Definiert die markierten Reihen, als solche, die die Spaltenüberschriften für die aktuelle Region enthalten Beachten Sie, dass die Einstellungen in dieser Funktion nicht gespeichert werden, dies geschieht im Skript AdjustJAWSVerbosity in der excel.jss.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script setRowTitlesRange
+:DisplayName Reihenüberschriften auf Spaltenbereich setzen
+:Synopsis Definiert die markierten Spalten, als solche, die die Reihenüberschriften für die aktuelle Region enthalten.
+:Description Dieses Skript definiert die markierten Spalten, als solche, die die Reihenüberschriften für die aktuelle Region enthalten. Beachten Sie, dass die Einstellungen in dieser Funktion nicht gespeichert werden, dies geschieht im Skript AdjustJAWSVerbosity in der excel.jss.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script ColumnFirstCellFromTop
+:DisplayName Erste Zelle von oben in der Spalte
+:Synopsis Spricht den Inhalt der ersten Zelle in der aktuellen Spalte oder navigiert rückwärts in den Excel 2000 Dialogfeldern Öffnen oder Speichern unter.
+:Description Dieses Skript spricht den Inhalt der ersten Zelle in der aktuellen Spalte oder navigiert rückwärts in den Excel 2000 Dialogfeldern Öffnen oder Speichern unter.
+:SearchRank 2
+
+:script ColumnSecondCellFromTop
+:DisplayName Zweite Zelle von oben in der Spalte
+:Synopsis Spricht den Inhalt der zweiten Zelle in der aktuellen Spalte oder navigiert rückwärts in den Excel 2000 Dialogfeldern Öffnen oder Speichern unter
+:Description Dieses Skript spricht den Inhalt der zweiten Zelle in der aktuellen Spalte oder navigiert rückwärts in den Excel 2000 Dialogfeldern Öffnen oder Speichern unter.
+:SearchRank 2
+
+:script ColumnThirdCellFromTop
+:DisplayName Dritte Zelle von oben in der Spalte
+:Synopsis Liest den Inhalt der dritten Zelle in der aktuellen Tabelle
+:Description Dieses Skript liest den Inhalt der dritte Zelle in der aktuellen Tabelle.
+:SearchRank 2
+
+:script ColumnFourthCellFromTop
+:DisplayName Vierte Zelle von oben in der Spalte
+:Synopsis Liest den Inhalt der vierten Zelle in der aktuellen Tabelle.
+:Description Dieses Skript liest den Inhalt der vierten Zelle in der aktuellen Tabelle.
+:SearchRank 2
+
+:script RowFirstCellFromLeft
+:DisplayName Erste Zelle von links in der Reihe
+:Synopsis Liest den Inhalt der ersten Zelle in der aktuellen Reihe
+:Description Dieses Skript liest den Inhalt der ersten Zelle in der aktuellen Reihe.
+:SearchRank 2
+
+:script RowSecondCellFromLeft
+:DisplayName Zweite Zelle von links in der Reihe
+:Synopsis Liest den Inhalt der zweiten Zelle in der aktuellen Reihe
+:Description Dieses Skript liest den Inhalt der zweiten Zelle in der aktuellen Reihe.
+:SearchRank 2
+
+:script RowThirdCellFromLeft
+:DisplayName Dritte Zelle von links in der Reihe
+:Synopsis Liest den Inhalt der dritten Zelle in der aktuellen Reihe
+:Description Dieses Skript liest den Inhalt der dritten Zelle in der aktuellen Reihe.
+:SearchRank 2
+
+:script RowFourthCellFromLeft
+:DisplayName Vierte Zelle von links in der Reihe
+:Synopsis Liest den Inhalt der vierten Zelle in der aktuellen Reihe
+:Description Dieses Skript liest den Inhalt der vierten Zelle in der aktuellen Reihe.
+:SearchRank 2
+
+:Function SayDataRegion
+:description Processing speaking for the data region movement scripts.
+:param int One of the unit movement directions that specifies the direction of movement in the data region.
+:returns int True if the process was run, false otherwise.
+
+:script DataRegionDown
+:DisplayName Datenregion runter
+:Synopsis Setzt den Fokus auf die Datenregion direkt unter die aktuelle Region
+:Description Dieses Skript fokussiert auf die Datenregion direkt unter die aktuelle Region und liest die neue Zelle. Wenn angemessen werden die Einstellungen für die neue Region geladen.
+:SearchRank 4
+
+:script DataRegionUp
+:DisplayName Datenregion rauf
+:Synopsis Setzt den Fokus auf die Datenregion direkt über die aktuelle Region
+:Description Dieses Skript fokussiert auf die Datenregion direkt über die aktuelle Region und liest die neue Zelle. Wenn angemessen werden die Einstellungen für die neue Region geladen.
+:SearchRank 4
+
+:script DataRegionLeft
+:DisplayName Datenregion links
+:Synopsis Setzt den Fokus auf die Datenregion direkt links neben die aktuelle Region
+:Description Dieses Skript fokussiert auf die Datenregion direkt links neben die aktuelle Region und liest die neue Zelle. Wenn angemessen werden die Einstellungen für die neue Region geladen. Wenn die Schreibmarke sichtbar ist, dann springt die Schreibmarke auf das vorherige Wort und liest es.
+:SearchRank 4
+
+:script DataRegionRight
+:DisplayName Datenregion rechts
+:Synopsis Setzt den Fokus auf die Datenregion direkt rechts neben die aktuelle Region
+:Description Dieses Skript fokussiert auf die Datenregion direkt rechts neben die aktuelle Region und liest die neue Zelle. Wenn angemessen werden die Einstellungen für die neue Region geladen. Wenn die Schreibmarke sichtbar ist, dann springt die Schreibmarke auf das nächste Wort und liest es.
+:SearchRank 4
+
+:Script SelectNextRegionRight
+:DisplayName Nächste Region rechts auswählen
+:Synopsis Markiert eine Datenregion voll Zellen nach rechts von der aktuellen Zelle aus.
+:Description Diese Tastenkombination markiert von der aktuellen Zelle aus eine Datenregion voll Zellen nach rechts.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Script SelectPriorRegionLeft
+:DisplayName Vorherige Region links auswählen
+:Synopsis Markiert eine Datenregion voll Zellen nach links von der aktuellen Zelle aus.
+:Description Diese Tastenkombination markiert von der aktuellen Zelle aus eine Datenregion voll Zellen nach links.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Script SelectNextRegionDown
+:DisplayName Nächste Region abwärts auswählen
+:Synopsis Markiert eine Datenregion voll Zellen abwärts von der aktuellen Zelle aus.
+:Description Diese Tastenkombination markiert von der aktuellen Zelle aus eine Datenregion voll Zellen abwärts.
+:SearchRank 2
+
+:Script SelectPriorRegionUp
+:DisplayName Vorherige Region aufwärts auswählen
+:Synopsis Markiert eine Datenregion voll Zellen aufwärts von der aktuellen Zelle aus.
+:Description Diese Tastenkombination markiert von der aktuellen Zelle aus eine Datenregion voll Zellen aufwärts.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script MoveToStartOfRow
+:synopsis Springt in die erste Zelle der aktuellen Reihe.
+:Description Diese Kurztaste springt in die erste Zelle der aktuellen Reihe.
+
+:script MoveToEndOfRow
+:Synopsis Springt in die letzte Zelle der aktuellen Reihe.
+:Description Diese Kurztaste springt in die letzte Zelle der aktuellen Reihe.
+
+:script MoveToTopOfColumn
+:Synopsis Springt in die erste Zelle der aktuellen Spalte.
+:Description Diese Kurztaste springt in die erste Zelle der aktuellen Spalte.
+
+:script MoveToBottomOfColumn
+:Synopsis Springt in die letzte Zelle der aktuellen Spalte.
+:Description Diese Kurztaste springt in die letzte Zelle der aktuellen Spalte.
+
+:Script SelectToBeginningOfWorksheet
+:DisplayName Bis zum Anfang des Arbeitsblatts markieren
+:Synopsis Markiert von der aktiven Zelle aus bis zum Anfang des aktuellen Arbeitsblatts.
+:Description Diese Tastenkombination markiert von der aktiven Zelle aus bis zum Anfang des aktuellen Arbeitsblatts.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:Script SelectToLastDataCell
+:DisplayName Bis zur letzten Datenzelle markieren
+:Synopsis Markiert von der aktiven Zelle aus bis zur letzten Datenzelle der aktuellen Region.
+:Description Diese Tastenkombination markiert von der aktiven Zelle aus bis zur letzten Datenzelle der aktuellen Region.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:Script SelectToBeginningOfRow
+:DisplayName Bis zur ersten Reihenzelle markieren
+:Synopsis Markiert von der aktiven Zelle aus bis zum Anfang der aktuellen Reihe.
+:Description Diese Tastenkombination markiert von der aktiven Zelle aus bis zum Anfang der aktuellen Reihe.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script SelectRow
+:DisplayName Reihe markieren
+:Synopsis Markiert die gesamte Reihe und liest die Markierung
+:Description Dieses Skript markiert die gesamte Reihe und liest die Markierung
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script SelectColumn
+:DisplayName Spalte markieren
+:Synopsis Markiert die gesamte Spalte und liest die Markierung
+:Description Dieses Skript markiert die gesamte Spalte und liest die Markierung
+:SearchRank 3
+
+:script screenRight
+:Synopsis Stellt den Bildschirm rechts vom aktuellen Bildschirm dar.
+:Description Nutzen Sie diese Kurztaste, um den Fokus einige Spalten hinter diejenige zu stellen, die aktuell fokussiert ist.  Diese Kurztaste verhält sich genau so, als wenn Sie mehrmals Pfeil Rechts drücken oder das Arbeitsblatt nach rechts scrollen. Die Anzahl der bewegten Spalten wird durch die Zellgröße und Anzahl der auf dem Bildschirm sichtbaren Spalten festgelegt.  Die Zelle der aktuellen Reihe und neuen Spalte wird fokussiert. Diese Microsoft Excel Kurztaste steht erst ab Excel Version 2007 zur Verfügung.
+
+:script screenLeft
+:Synopsis Stellt den Bildschirm links vom aktuellen Bildschirm dar.
+:Description Nutzen Sie diese Kurztaste, um den Fokus einige Spalten vor diejenige zu stellen, die aktuell fokussiert ist.  Diese Kurztaste verhält sich genau so, als wenn Sie mehrmals Pfeil Links drücken oder das Arbeitsblatt nach links scrollen. Die Anzahl der bewegten Spalten wird durch die Zellgröße und Anzahl der auf dem Bildschirm sichtbaren Spalten festgelegt.  Die Zelle der aktuellen Reihe und neuen Spalte wird fokussiert. Diese Microsoft Excel Kurztaste steht erst ab Excel Version 2007 zur Verfügung.
+
+:Script SelectPriorScreen
+:Synopsis Markiert eine Bildschirmseite voll Zellen aufwärts von der aktuellen Zelle aus.
+:Description Diese Tastenkombination markiert von der aktuellen Zelle aus eine Bildschirmseite voll Zellen aufwärts.
+
+:Script SelectNextScreen
+:Synopsis Markiert eine Bildschirmseite voll Zellen abwärts von der aktuellen Zelle aus.
+:Description Diese Tastenkombination markiert von der aktuellen Zelle aus eine Bildschirmseite voll Zellen abwärts.
+
+:script NextSheet
+:DisplayName Nächstes Arbeitsblatt
+:Synopsis Springt auf das nächste Arbeitsblatt, liest den Namen des Arbeitsblattes und lädt die dazugehörigen Einstellungen.
+:Description Dieses Skript springt auf das nächste Arbeitsblatt, liest den Namen des Arbeitsblattes und lädt die dazugehörigen Einstellungen.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script PriorSheet
+:DisplayName Vorheriges Arbeitsblatt
+:Synopsis Springt auf das vorherige Arbeitsblatt, liest den Namen des Arbeitsblattes und lädt die dazugehörigen Einstellungen.
+:Description Dieses Skript springt auf das vorherige Arbeitsblatt, liest den Namen des Arbeitsblattes und lädt die dazugehörigen Einstellungen.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:Script SelectNextSheet
+:DisplayName Nächstes Arbeitsblatt auswählen
+:Synopsis Wählt und sagt das nächste zu gruppierende Arbeitsblatt an.
+:Description Dieses Skript wählt und sagt das nächste zu gruppierende Arbeitsblatt an.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script SelectPriorSheet
+:DisplayName Vorheriges Arbeitsblatt auswählen
+:Synopsis Wählt und sagt das vorherige zu gruppierende Arbeitsblatt an.
+:Description Dieses Skript wählt und sagt das vorherige zu gruppierende Arbeitsblatt an.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script SayNewSheet
+:DisplayName Neues Arbeitsblatt ansagen
+:Synopsis Sagt den Namen des neuen Arbeitsblattes, wenn diese Tastenkombination gedrückt wird.
+:Description Dieses Skript sagt den namen des neuen Arbeitsblattes an, wenn diese Anwendungstastenkombination im Arbeitsblattbereich gedrückt wird.
+:SearchRank 1
+
+:script SelectRegion
+:DisplayName Region markieren
+:Synopsis Markiert die aktuelle Datenregion und liest die neue Markierung
+:Description Dieses Skript markiert die aktuelle Datenregion und liest die neue Markierung.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script CollapseSelectionToActiveCell
+:DisplayName Markierung auf aktuelle Zelle reduzieren
+:Synopsis Reduziert die Markierung auf die aktive Zelle
+:Description Dieses Skript reduziert die Markierung auf die aktive Zelle.
+:SearchRank 1
+
+:script SayActiveCellCoordinates
+:DisplayName Aktive Zellkoordinaten lesen
+:Synopsis Sagt die Koordinaten der aktuellen Zelle an.
+:Description Dieses Skript sagt die Koordinaten der aktuellen Zelle an. Wenn Überschriften lesen eingeschaltet ist, werden die entsprechenden Überschriften ebenso gelesen.
+:SearchRank 3
+
+:script SayVisibleRangeCoordinates
+:DisplayName Koordinaten des sichtbaren Bereichs lesen
+:Synopsis Liest die Koordinaten des Bereichs der sichtbaren Zellen im aktiven Fenster
+:Description Dieses Skript liest die Koordinaten des Bereichs der sichtbaren Zellen im aktiven Fenster
+:SearchRank 2
+
+:script DescribeCellBorder
+:DisplayName Zellrahmen beschreiben
+:Synopsis Beschreibt die Rahmen der aktuellen Zelle.
+:Description Dieses Skript beschreibt die Rahmen der aktuellen Zelle.
+:SearchRank 2
+
+:script SayFont
+:Synopsis Sagt Schrift- und Zellen-Charakteristika an.
+:Description Dieses Skript sagt Schrift- und Zellen-Charakteristika an.
+
+:Script EditCell
+:DisplayName Zelle bearbeiten
+:Synopsis Drückt die Funktionstaste F2, um eine Zelle zu editieren.
+:Description Dieses Skript drückt die Funktionstaste F2, um eine Zelle zu editieren. Dieses kann, muss aber nicht, eine Zelle mit Formel sein.
+:SearchRank 4
+
+:Script EditingNote
+:DisplayName Notiz bearbeiten
+:Synopsis Öffnet ein Dialogfeld, in dem Sie für die aktuelle Zelle eine Notiz bearbeiten oder hinzufügen können.
+:Description Nutzen Sie diese Kurztaste, um eine Notiz der aktuellen Zelle zu bearbeiten oder hinzuzufügen.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script FormulaMode
+:DisplayName Formel-Modus
+:Synopsis Spricht eine Hilfe-Meldung, wenn der Formel-Modus aktiviert ist.
+:Description Dieses Skript spricht eine Hilfe-Meldung, wenn der Formel-Modus aktiviert ist.
+:SearchRank 4
+
+:script ReadCellNoteOrComment
+:DisplayName Kommentar oder Notiz der Zelle lesen
+:Synopsis Liest den einer Zelle zugewiesenen Kommentar oder Notiz (falls vorhanden).
+:Description Dieses Skript liest den einer Zelle zugewiesenen Kommentar oder Notiz (falls vorhanden). Notiz oder Kommentar wird als Blitzmeldung auf der Braillezeile angezeigt. Wird diese Kurztaste zweimal schnell gedrückt, dann wird die Notiz oder der Kommentar im virtuellen Betrachter angezeigt und kann zeilen-, wort- und zeilenweise gelesen werden.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+:UIMaintainsFocus True
+
+:script readCellHyperlink
+:DisplayName Hyperlink der Zelle lesen
+:Synopsis Liest den einer Zelle zugewiesenen Hyperlink (falls vorhanden)
+:Description Dieses Skript liest den einer Zelle zugewiesenen Hyperlink (falls vorhanden)
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+:UIMaintainsFocus True
+
+:script SayCurrentCellValidationInputMessage
+:DisplayName Aktuelle Zellenüberprüfungsmeldung lesen
+:Synopsis Liest die Eingabemeldung für die aktuelle Zelle
+:Description Wenn die aktuelle Zelle über eine Dateneingabeüberprüfungs Überschrift oder Meldung, spricht die Überschrift, dann die Meldung
+:SearchRank 2
+
+:script AutoSum
+:DisplayName Autosumme
+:Synopsis Bringt eine Hilfe-Meldung hervor, wenn die Excel AutoSum Funktion aufgerufen wird.
+:Description Dieses Skript bringt eine Hilfe-Meldung hervor, wenn die Excel AutoSum Funktion aufgerufen wird.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script DateStamp
+:DisplayName Datumsstempel
+:Synopsis Fügt das Datum in die aktuelle Zelle ein und liest sie.
+:Description Dieses Skript fügt das Datum in die aktuelle Zelle ein und liest sie.
+:SearchRank 4
+:CommandSearchProductFilter Fusion
+
+:script TimeStamp
+:DisplayName Zeitstempel
+:Synopsis Fügt die Uhrzeit in die aktuelle Zelle ein und liest sie.
+:Description Dieses Skript fügt die Uhrzeit in die aktuelle Zelle ein und liest sie.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script SayFormula
+:DisplayName Formel lesen
+:Synopsis Liest die Formel der aktuellen Zelle oder zeigt sie in einem Nachrichtenfeld an, damit man sie leichter überprüfen kann
+:Description Dieses Skript liest die Formel der aktuellen Zelle oder zeigt sie in einem Nachrichtenfeld an, damit man sie leichter überprüfen kann, wenn die zugewiesene Tastenkombination zweimal schnell hintereinander gedrückt wird.
+:SearchRank 1
+
+:Script SayCellNavigatedToInFormula
+:DisplayName Zelle aus der zu einer Formel gesprungen wurde lesen
+:Synopsis Spricht die letzte Zelle, zu der Sie bei Erstellung der Formel navigiert sind.
+:Description Diese Tastenkombination spricht die Koordinaten der letzten Zelle, zu der navigiert wurde, als Sie eine Formel erstellt haben. Die Koordinaten dieser Zelle sind diejenigen, die als letzte in der Formel-Symbolleiste aufgetaucht sind.
+:SearchRank 4
+
+:Function GetInsertFunctionHelp
+:Description Obtains the static text associated with the currently selected function . It is used by SayWindowPromptAndText to provide extra help for the diagram gallery item. MSAAGetDialogStaticText does not work for this function, nor does SaySDMGetDialogStaticText.
+:returns String  The static help message.
+
+:function GetChartWizardChartTypeHelp
+:Description Obtains the static text associated with the currently selected chart type. It is used by SayWindowPromptAndText to provide extra help for chart type. MSAAGetDialogStaticText does not work for this function, nor does SaySDMGetDialogStaticText.
+:returns String  The static help message.
+
+:Script DisplayActiveChartInvirtualViewer
+:DisplayName Aktuell gewähltes Diagramm im virtuellen Betrachter anzeigen
+:Synopsis Zeigt das aktuell gewählte Diagramm im virtuellen Betrachter an.
+:Description Dieses Skript zeigt das aktuell gewählte Diagramm im virtuellen Betrachter an.
+:SearchRank 1
+
+:Script SelectActiveChart
+:DisplayName Aktives Diagramm auswählen
+:Synopsis Wählt das Diagramm im aktuellen Arbeitsblatt.
+:Description  Diese Kurztaste wählt das Diagramm, sofern vorhanden, im aktuellen Arbeitsblatt.
+:SearchRank 1
+
+:script ReportGridlineStatus
+:DisplayName Gitterlinienstatus ansagen
+:Synopsis Liest den Status von Gitterlinien im aktiven Fenster
+:Description Dieses Skript liest den Status von Gitterlinien im aktiven Fenster.
+:SearchRank 2
+
+:Script ViewCustomSummary
+:DisplayName Benutzerdefinierte Zusammenfassung anzeigen
+:Synopsis Zeigt, falls vorhanden, die benutzerdefinierte Zusammenfassung für das aktuelle Arbeitsblatt an.
+:Description Diese Tastenkombination zeigt, falls vorhanden, die benutzerdefinierte Zusammenfassung für das aktuelle Arbeitsblatt an. Falls diese nicht vorhanden ist oder sich das Arbeitsblatt in der Diagrammansicht befindet, oder wenn sich der Cursor in einem Menü oder Dialogfeld befindet, wird eine Fehlermeldung gesprochen.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script ListRow
+:DisplayName Reihe auflisten
+:Synopsis Listet alle Zellen mit Daten in der aktuellen Reihe und erlaubt dem Anwender, in die markierte Zelle zu springen.
+:Description Dieses Skript listet alle Zellen mit Daten in der aktuellen Reihe und erlaubt dem Anwender, in die markierte Zelle zu springen.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script ListColumn
+:DisplayName Spalte auflisten
+:Synopsis Listet alle Zellen mit Daten in der aktuellen Spalte und erlaubt dem Anwender, in die markierte Zelle zu springen.
+:Description Dieses Skript listet alle Zellen mit Daten in der aktuellen Spalte und erlaubt dem Anwender, in die markierte Zelle zu springen.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script ListVisibleCellsWithData
+:DisplayName Sichtbare Zellen mit Daten auflisten
+:Synopsis Listet alle Zellen mit Daten, die im aktiven Fenster sichtbar sind, und erlaubt dem Anwender, in die markierte Zelle zu springen.
+:Description Dieses Skript listet alle Zellen mit Kommentaren, die im aktiven Fenster sichtbar sind, und erlaubt dem Anwender, in die markierte Zelle zu springen.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script ListCellsWithFormulas
+:DisplayName Zellen mit Formeln auflisten
+:Synopsis Listet Zellen mit Formeln auf, die im aktiven Fenster sichtbar sind und ermöglicht dem Anwender, zur gewählten Zelle zu springen.
+:Description Listet Zellen mit Formeln auf, die im aktiven Fenster sichtbar sind und ermöglicht dem Anwender, zur gewählten Zelle zu springen.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script ListCellsWithNotes
+:DisplayName Zellen mit Kommentaren auflisten
+:Synopsis Listet alle Zellen mit Notizen des aktuellen Arbeitsblattes auf und erlaubt dem Anwender, in die markierte Zelle zu springen.
+:Description Dieses Skript listet alle Zellen mit Notizen des aktuellen Arbeitsblattes auf und erlaubt dem Anwender, in die markierte Zelle zu springen. Excel O365 bezeichnet Kommentare, die nicht mit einem Thread versehen sind, jetzt als Notizen.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:script SelectHyperlink
+:DisplayName Hyperlink auswählen
+:Synopsis Listet Hyperlinks auf dem aktuellen Arbeitsblatt auf und erlaubt dem Anwender, dem gewählten Hyperlink zu folgen
+:Description Dieses Skript listet Hyperlinks auf dem aktuellen Arbeitsblatt auf und erlaubt dem Anwender, dem gewählten Hyperlink zu folgen.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Function ProcessHyperLinkOnEnterKeyPress
+:description If the current cell has a hyperlink, activates it.
+:returns int True if cell has a hyperlink, false otherwise.
+
+:script ListCellsAtPageBreaks
+:DisplayName Zellen beim Seitenumbruch auflisten
+:Synopsis Listet die Zellen an vertikalen und horizontalen Seitenumbrüchen und erlaubt dem Anwender, in die markierte Zelle zu springen
+:Description Dieses Skript listet die Zellen an vertikalen und horizontalen Seitenumbrüchen und erlaubt dem Anwender, in die markierte Zelle zu springen.
+:SearchRank 2
+
+:Script ShowTextboxContent
+:DisplayName Textfeldinhalt anzeigen
+:Synopsis Zeigt den Inhalt eines Textfelds im Virtuellen Betrachter, sofern eines im aktuellen Arbeitsblatt vorhanden ist.
+:Description Diese Kurztaste zeigt den Inhalt eines Textfelds im Virtuellen Betrachter, sofern eines im aktuellen Arbeitsblatt vorhanden ist. Es es mehr als ein Textfeld, dann wird das Dialogfeld Objektliste aufgerufen, so dass ein Textfeld ausgewählt werden kann.
+:SearchRank 2
+
+:script SelectWorksheetObjects
+:DisplayName Arbeitsblattobjekte auswählen
+:Synopsis Listet alle Formen des aktuellen Arbeitsblattes und erlaubt dem Anwender, das Makro OnAction, das der gewählten Form zugeordnet ist, zu starten.
+:Description Dieses Skript listet alle Formen des aktuellen Arbeitsblattes und erlaubt dem Anwender, das Makro OnAction, das der gewählten Form zugeordnet ist, zu starten. Aufgrund eines Fehlers im Objekt Model, kann die Form nicht auf vernünftige Art und Weise markiert werden.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Script ListCellMarkers
+:DisplayName Zelllesezeichen auflisten
+:Synopsis Listet alle Zelllesezeichen der aktuellen Arbeitsmappe auf.
+:Description Listet alle Zelllesezeichen per Arbeitsblatt der aktuellen Arbeitsmappe auf und ermöglich dem Anwender, jedes Lesezeichen davon zu aktivieren. Um von Arbeitsblatt zu Arbeitsblatt zu springen, nutzen Sie die üblichen Excel Befehle Strg+Seite Rauf und Strg+Seite Runter. Um die aktive Zelle als Zelllesezeichen des aktuellen Arbeitsblattes zuzuweisen, drücken Sie Strg+Windows+K. Wenn für das aktuelle Arbeitsblatt bereits ein Zelllesezeichen vorhanden ist, dann wird in einem Dialogfenster abgefragt, ob das aktuelle Zelllesezeichen ersetzt werden soll. Um zum Zelllesezeichen auf dem aktuellen Arbeitsblatt zu springen, drücken Sie Alt+Windows+K.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script DefineATempPlaceMarker
+:DisplayName Setzt Zelllesezeichen auf dem aktuellen Arbeitsblatt
+:Synopsis Setzt die aktuelle Zelle als Lesezeichen, so dass man später zu dieser zurückkehren kann.
+:Description Setzt ein Zelllesezeichen auf die aktuelle Zelle. Es kann nur ein Lesezeichen pro Arbeitsblatt zugewiesen werden. Wenn für das aktuelle Arbeitsblatt bereits ein Zelllesezeichen vorhanden ist, dann wird in einem Dialogfenster abgefragt, ob das aktuelle Zelllesezeichen ersetzt werden soll. Um von Arbeitsblatt zu Arbeitsblatt zu springen, verwenden Sie die üblichen Excel Befehle Strg+Seite Rauf und Strg+Seite Runter. Um zum Zelllesezeichen des aktuellen Arbeitsblatts zu springen, drücken Sie To Alt+Windows+K. Um alle Zelllesezeichen der aktuellen Arbeitsmappe aufzulisten, drücken Sie Alt+Strg+Windows+K.
+:SearchRank 1
+
+:script SpeakPlaceMarkers
+:DisplayName Zum Zelllesezeichen des aktuellen Arbeitsblattes zurückkehren
+:Synopsis Kehrt zur Zelle zurück, die im aktuellen Arbeitsblatt als Lesezeichen markiert wurde.
+:Description Mit dieser Kurztaste kehren Sie zu einer Zelle zurück, die im aktuellen Arbeitsblatt als Lesezeichen markiert wurde, sofern eine solche vorhanden ist. Um ein Lesezeichen auf die aktive Zelle des aktuellen Arbeitsblatts zu setzen, drücken Sie Strg+Windowstaste+K. Um Zellen zwischen der Lesezeichenzelle und der aktuellen Position auszuwählen, gehen Sie zum Endpunkt Ihrer Auswahl und drücken Sie dann JAWS Taste+Leerzeichen&M. Um von Blatt zu Blatt zu wechseln, verwenden Sie die Excel-eigenen Befehle Strg+Bild Rauf und Strg+Bild Runter. Wenn auf dem aktuellen Arbeitsblatt bereits eine Zellmarkierung vorhanden ist, werden Sie in einem Dialog aufgefordert, die aktuelle Zellmarkierung zu ersetzen. Um alle Zellmarkierungen der aktuellen Arbeitsmappe aufzulisten, drücken Sie Alt+Strg+Windowstaste+K.
+
+Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
+:SearchRank 1
+
+:script SelectTextBetweenMarkedPlaceAndCurrentPosition
+:DisplayName Markiert Zellen zwischen Zelllesezeichen und aktueller Zelle
+:Synopsis Markiert Zellen zwischen dem Zelllesezeichen des Arbeitsblattes und aktueller Zelle
+:Description Dieser Befehl markiert Zellen zwischen Zelllesezeichen und aktueller Zelle. Sie können dann Strg+C verwenden, um den markierten Text in die Zwischenablage zu kopieren. Um die aktive Zelle als Zelllesezeichen für das aktuelle Arbeitsblatt zuzuweisen, drücken Sie Strg+Windows+K. Um zum Zelllesezeichen auf dem aktuellen Arbeitsblatt zu springen, drücken Sie Alt+Windows+K.
+:Category HTML
+:Version JAWS/14.0
+:SearchRank 1
+
+:Script SetCellMarker
+:DisplayName Setzt Zelllesezeichen auf aktuellem Arbeitsblatt
+:Synopsis Setzt die aktuelle Zelle als Lesezeichen, so dass Sie später hierher zurückkehren können.
+:Description Setzt ein Lesezeichen auf die aktuelle Zelle. Es kann pro Arbeitsblatt nur ein Lesezeichen zugewiesen werden. Wenn für das aktuelle Arbeitsblatt bereits ein Zelllesezeichen vorhanden ist, dann wird in einem Dialogfenster abgefragt, ob das aktuelle Zelllesezeichen ersetzt werden soll. Um von Arbeitsblatt zu Arbeitsblatt zu springen, verwenden Sie die üblichen Excel Befehle Strg+Seite Rauf und Strg+Seite Runter. Um zum Zelllesezeichen auf dem aktuellen Arbeitsblatt zu springen, drücken Sie Alt+Windows+K. Um alle Zelllesezeichen der aktuellen Arbeitsmappe aufzulisten, drücken Sie Alt+Strg+Windows+K.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script ReturnToCellMarkerInCurrentSheet
+:DisplayName Zu Zellmarker im aktuellen Arbeitsblatt zurückkehren
+:Synopsis Kehrt zu der Zelle im aktuellen Arbeitsblatt zurück, die als Zelllesezeichen markiert wurde.
+:Description Setzt die aktuelle Zelle als Lesezeichen für das aktuelle Arbeitsblatt. Um Zellen zwischen diesem Lesezeichen und der aktuellen Position zu markieren, springen Sie zum Endpunkt der Auswahl und drücken Sie JAWS Taste+Leertaste&M. Um von Arbeitsblatt zu Arbeitsblatt zu springen, verwenden Sie die üblichen Excel Befehle Strg+Seite Rauf und Strg+Seite Runter. Um die aktive Zelle als Zelllesezeichen des aktuellen Arbeitsblattes zuzuweisen, drücken Sie Strg+Windows+K. Wenn für das aktuelle Arbeitsblatt bereits ein Zelllesezeichen vorhanden ist, dann wird in einem Dialogfenster abgefragt, ob das aktuelle Zelllesezeichen ersetzt werden soll. Um alle Zelllesezeichen der aktuellen Arbeitsmappe aufzulisten, drücken Sie Alt+Strg+Windows+K. 
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script ReturnToNextCellMarker
+:Synopsis Kehrt zur nächsten Zelle im nachfolgenden Arbeitsblatt zurück, die als Zellmarker markiert wurde, falls eines vorhanden ist.
+:Description Dieses Skript kehrt zur nächsten Zelle im nachfolgenden Arbeitsblatt zurück, die als Zellmarker markiert wurde, falls eines vorhanden ist.
+
+:Script ReturnToPreviousCellMarker
+:Synopsis Kehrt zur vorherigen Zelle im vorherigen Arbeitsblatt zurück, die als Zellmarker markiert wurde, falls eines vorhanden ist.
+:Description Dieses Skript kehrt zur vorherigen Zelle im vorherigen Arbeitsblatt zurück, die als Zellmarker markiert wurde, falls eines vorhanden ist.
+
+:script setMonitorCells
+:DisplayName Überwachungszelle der Zelle oder dem Bereich zuweisen 
+:Synopsis Weist die Zellüberwachungsfunktion der aktuellen Zelle oder des gewählten Bereichs zu.  
+:Description Weist die Zellüberwachungsfunktion der aktuellen Zelle oder des gewählten Bereichs zu.  Es können 10 Überwachungszellen (1 - 10) zugewiesen werden. Die Nummer der Überwachungszelle wird durch die am Ende des Zuweisungsprozesses gedrückte Ziffer festgelegt. Um die zugewiesene Überwachungszelle zu lesen, drücken Sie Alt+Umschalt+<Ziffer der Überwachungszelle>. Um die zugewiesenen Überwachungszellen zu löschen, müssen Sie die Schnelleinstellung verwenden.
+:Keywords Setze Überwachungszelle
+:SearchRank 1
+
+:script ReadMonitorCell
+:DisplayName Zugewiesene Überwachung der Zelle oder des Bereichs lesen
+:Synopsis Liest eine der zehn Überwachungszellen
+:Description Liest eine der zehn zugewiesenen Überwachungszellen. Die Überwachungszelle, die gelesen wird, ist abhängig davon, welche Ziffer am Ende des Zuweisungsprozesses gedrückt wurde.  Um eine Überwachungszelle zuzuweisen, drücken Sie JAWSTaste+Umschalt+<Ziffer der Überwachungszelle>.  Um die zugewiesenen Überwachungszellen zu löschen, müssen Sie die Schnelleinstellung verwenden.
+:SearchRank 1
+
+:script returnToStoredCell
+:DisplayName Zu gespeicherter Zelle zurückkehren
+:Synopsis Gibt die letzte Zelle zurück, die den Fokus besaß, bevor in eine Überwachungszelle gesprungen wurde.
+:Description Dieses Skript gibt die letzte Zelle zurück, die den Fokus besaß, bevor in eine Überwachungszelle gesprungen wurde.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script moveToMonitorCell
+:DisplayName Zu Überwachungszelle springen
+:Synopsis Listet definierte Überwachungszellen und erlaubt dem Anwender, in die ausgewählte Zelle zu springen
+:Description Dieses Skript listet definierte Überwachungszellen und erlaubt dem Anwender, in die ausgewählte Zelle zu springen.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script moveToWorksheet
+:DisplayName Zu Arbeitsblatt springen
+:Synopsis Listet alle Arbeitsblätter der aktuellen Arbeitsmappe auf und ermöglicht dem Anwender, direkt auf das ausgewählte Blatt zu springen.
+:Description Dieses Skript listet alle Arbeitsblätter in der aktuellen Arbeitsmappe, häufig in Form von Registern die am unteren Rand des Anwendungsfensters angezeigt werden und ermöglicht dem Anwender, direkt auf das ausgewählte Blatt zu springen. Wenn für bestimmte Blätter Einstellungen konfiguriert sind, werden jeweils neue Einstellungen für das gewählte Blatt geladen.
+:SearchRank 2
+:CommandSearchProductFilter Fusion
+
+:Script ManageWorksheets
+:DisplayName Arbeitsblätter verwalten
+:Synopsis Öffnet das Kontextmenü zum Verwalten der Arbeitsblätter.
+:Description Diese Kurztaste öffnet das Kontextmenü zum Verwalten der Arbeitsblätter, wie Umbenennen des aktuell aktiven Arbeitsblatts.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:Script ToggleExtendedSelectionMode
+:DisplayName Erweiterten Auswahlmodus umschalten
+:Synopsis Schaltet um und sagt den Auswahlmodus für das aktuelle Arbeitsblatt.
+:Description Dieses Skript schaltet die herkömmliche Excel-Kurztaste des erweiterten Auswahlmodus für das aktuelle Arbeitsblatt um und sagt den neuen Status an.
+:SearchRank 3
+
+:Script ToggleAddSelectedRangeOfCellsMode
+:DisplayName Modus für markierten Zellbereich hinzufügen umschalten
+:Synopsis Schaltet und spricht den Status von Markierten Bereich hinzufügen für das aktuelle Arbeitsblatt an.
+:Description Dieses Skript schaltet die herkömmliche Excel-Kurztaste des Modus Markierten Zellbereich hinzufügen für das aktuelle Arbeitsblatt um und sagt den neuen Zustand an.
+:SearchRank 3
+
+:Script SwitchPanes
+:synopsis Schaltet die Ausschnitte um und sagt den neuen Ausschnitt an.
+:description Diese Tastenkombination schaltet die Fensterausschnitte um und sagt den neuen Ausschnitt und das Element mit Fokus an. Dies ist der Taste F6 zugewiesen.
+
+:Script switchPanesReverse
+:synopsis Schaltet die Ausschnitte um und sagt den neuen Ausschnitt an.
+:description Diese Tastenkombination schaltet die Fensterausschnitte in umgekehrter Reihenfolge um und sagt den neuen Ausschnitt und das Element mit Fokus an. Dies ist der Taste Umschalt+F6 zugewiesen.
+
+:Function ReportNewAttributeState
+:description Determines the state of the bold, italics, underline, and strikethrough attributes of the current cell.
+:Param Int/nKey the key that was pressed to toggle the attribute.
+:Returns Void
+
+:function ToggleEditFont
+:Description Toggles a font such as bold, italics or underline when F2 has been used to edit the text in a cell.
+:Param string The key to pass to the application.
+:Param string The button text as it appears on-screen.
+:Param string The name of the button to speak as on or off.
+:Returns Void
+
+:script BoldText
+:DisplayName Text Fett
+:Synopsis Schaltet Fett ein und aus für den aktuellen Zellentext
+:Description Dieses Skript schaltet Fett ein und aus für den aktuellen Zellentext
+:SearchRank 4
+:CommandSearchProductFilter Fusion
+
+:script ItalicText
+:DisplayName Text Kursiv
+:Synopsis Schaltet Kursiv ein und aus für den aktuellen Zellentext
+:Description Dieses Skript schaltet Kursiv ein und aus für den aktuellen Zellentext
+:SearchRank 4
+:CommandSearchProductFilter Fusion
+
+:script UnderlineText
+:DisplayName Text Unterstrichen
+:Synopsis Schaltet Unterstrichen ein und aus für den aktuellen Zellentext
+:Description Dieses Skript schaltet Unterstrichen ein und aus für den aktuellen Zellentext
+:SearchRank 4
+:CommandSearchProductFilter Fusion
+
+:function SayShortcutKey
+:Description Announces the shortcut key for recording a macro. If no shortcut key exists, the "CTRL+" portion only is announced.
+:Returns Void
+
+:script ToggleBrlReadingMode
+:DisplayName Braillelesemodus zwischen Zelle, Spalte oder Reihe umschalten.
+:Synopsis Schaltet den Braillelesemodus um.
+:Description Schaltet zwischen der Anzeige der aktiven Zelle, der aktuellen Reihe und aktuellen Spalte um.
+:SearchRank 4
+
+:Function SpellCheck
+:param handle
+:returns int
+
+:script SpellCheck
+:DisplayName Rechtschreibprüfung 
+:Synopsis Liest das falsch geschriebene Wort und den Vorschlag, wenn die Rechtschreibprüfung aktiv ist, oder zeigt die Linkliste an.. 
+:Description Dieses Skript liest das falsch geschriebene Wort und den Vorschlag, wenn die Rechtschreibprüfung aktiv ist. Ansonsten wird eine Liste aller auf dem Arbeitsblatt enthaltenen Links angezeigt.
+:SearchRank 4
+
+:function FindFilterWindow
+:Synopsis Finds the window for the current cell filter.
+:Description Searches for the window containing the list items for a cell when the cell has a drop-down list and the list is dropped down.
+:Returns handle The handle of the filter window if found, Null otherwise.
+
+:function GetDiagramGalleryHelp
+:Description Obtains the static text associated with the currently selected function . It is used by SayWindowPromptAndText to provide extra help for the diagram gallery item. MSAAGetDialogStaticText does not work for this function, nor does SaySDMGetDialogStaticText.
+:returns String  The static help message.
+
+:function SayDiagramGalleryObject
+:Description Speaks, if appropriate, the current diagram gallery object. In the case where the object is the first item in the list, or when SayLine script is invoked, we speak. Otherwise, arrow movement handles it.
+:Param Handle/hwnd The window with focus.
+:Returns Void
+
+:function F2TogglesBetweenEditModeAndPointMode
+:returns int
+
+:function ExcelHotKeyHelp
+:Description Provides hotkey help for certain SDM dialogs. SDM dialogs do not support the default hotkey help functionality so hotkeys must be hardcoded rather than processed  dynamically.
+:Returns int true if this function supports the current SDM dialog's hotkey help, false otherwise.
+
+:Script FindDlgKey
+:Synopsis Wenn das Dialogfeld Suchen und Ersetzen aktiv ist und sich der Fokus auf der Registerkarte Ersetzen befindet, wird zur Registerkarte Suchen gesprungen und diese gesprochen.
+:Description Wenn das Dialogfeld Suchen und Ersetzen aktiv ist und sich der Fokus auf der Registerkarte Ersetzen befindet, wird zur Registerkarte Suchen gesprungen und der Fokus ist im Eingabefeld Suchen Nach.
+
+:Script ReplaceDlgKey
+:Synopsis Wenn das Dialogfeld Suchen und Ersetzen aktiv ist und sich der Fokus auf der Registerkarte Suchen befindet, wird zur Registerkarte Ersetzen gesprungen und diese gesprochen.
+:Description Wenn das Dialogfeld Suchen und Ersetzen aktiv ist und sich der Fokus auf der Registerkarte Suchen befindet, wird zur Registerkarte Ersetzen gesprungen und der Fokus ist im Eingabefeld Suchen Nach.
+
+:script CloseOfficeAssistant
+:Synopsis Schließt den Office Assistenten, falls sichtbar (Office 2003 oder älter).
+:Description Schließt den Office Assistenten, falls sichtbar (Office 2003 oder älter).
+
+:function getActiveCellFormulaText
+:returns string the text of the active formula if there is one.
+:Description Used to retrieve the text in the window associated with the active cell formula.
+
+:script JAWSHome
+:Synopsis Führt eine JAWSHome Funktion und liest die neue Zelle, wenn angemessen
+:Description Dieses Skript führt eine JAWSHome Funktion und liest die neue Zelle, wenn angemessen.
+
+:script JAWSEnd
+:Synopsis Führt eine JAWSEnd Funktion und liest die neue Zelle, wenn angemessen
+:Description Dieses Skript führt eine JAWSEnd Funktion und liest die neue Zelle, wenn angemessen.
+
+:script MoveToFirstCell
+:DisplayName Zu erster Zelle springen
+:Synopsis Springt in die erste Zelle im Arbeitsblatt und liest sie
+:Description Dieses Skript springt in die erste Zelle im Arbeitsblatt und liest sie
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script MoveToLastCell
+:DisplayName Zu letzter Zelle springen
+:Synopsis Springt in die letzte Zelle im Arbeitsblatt und liest sie.
+:Description Dieses Skript springt in die letzte Zelle im Arbeitsblatt und liest sie.
+:SearchRank 3
+:CommandSearchProductFilter Fusion
+
+:script FirstCellInRegion
+:DisplayName Zu erster Zelle in Region springen
+:Synopsis Springt in die erste Zelle der aktuellen Region.
+:Description Diese Kurztaste springt in die erste Zelle der aktuellen Region.
+:SearchRank 1
+
+:script LastCellInRegion
+:DisplayName Zu letzter Zelle in Region springen
+:Synopsis Springt in die letzte Zelle der aktuellen Region.
+:Description Diese Kurztaste springt in die letzte Zelle der aktuellen Region.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:FUNCTION getExtraHelpFromDialogsOnItemChange
+:returns string the extra help for item change, such as from
+:description Reads extra help on item change such as in the diagram gallery or insert function dialog box.
+
+:function speakHelpMoveByWorksheetInFormula
+:Synopsis speaks a help message when moving by worksheet in formula
+
+:Function speakSmartHelpTypeInFormula
+:Synopsis speaks a smart help message about typing in formula
+
+:function PauseForEditingCellFormula
+:Synopsis delays for up to 4 tenths of a second based on the formula bar text not changing.
+:Description A variable delay is needed because the text is updated at different speeds on different users machines
+
+:script PostColumnTotal
+:Synopsis Spricht oder zeigt die aktuelle Spaltensumme
+:Description Dieses Skript spricht oder zeigt die aktuelle Spaltensumme. Wenn die Reihe mit Spaltensummen nicht definiert wurde, dann wird von der aktuellen Reihe bis zum Ende der Datenregion nach einer Zelle gesucht, die in der Formel einen SUM-Befehl verwendet. Wenn eine Zelle gefunden wurde, die eine Formel mit SUM enthält, dann wird der Inhalt als Spaltensumme angesagt.
+
+:script PostRowTotal
+:Synopsis Spricht oder zeigt die aktuelle Reihensumme
+:Description Dieses Skript spricht oder zeigt die aktuelle Reihensumme. Wenn die Spalte mit Reihensummen nicht definiert wurde, dann wird von der aktuellen Spalte bis zum Ende der Datenregion nach einer Zelle gesucht, die in der Formel einen SUM-Befehl verwendet. Wenn eine Zelle gefunden wurde, die eine Formel mit SUM enthält, dann wird der Inhalt als Reihensumme angesagt.
+
+:script PostRowTitle
+:Synopsis Spricht oder zeigt den aktuellen Reihentitel
+:Description Dieses Skript spricht oder zeigt den aktuellen Reihentitel.
+
+:script PostColumnTitle
+:Synopsis Spricht oder zeigt den aktuellen Spaltentitel
+:Description Dieses Skript spricht oder zeigt den aktuellen Spaltentitel.
+
+:script PostFormula
+:Synopsis Spricht oder zeigt die Formel der aktuellen Zelle.
+:Description Dieses Skript spricht die Formel der aktuellen Zelle oder zeigt sie in einem Meldungsfenster zur leichteren Kontrolle, wenn die dazugehörige Kurztaste zweimal schnell gedrückt wird.
+
+:script PostMonitorCell
+:Synopsis Spricht oder zeigt eine der zehn Überwachungszellen
+:Description Dieses Skript spricht oder zeigt eine der zehn Überwachungszellen. Die zu lesende Überwachungszelle ist abhängig von der verwendeten Tastenkombination, die diese Skript aufruft. Die zugewiesene Überwachungszelle wird ermittelt über das äußerste rechte Zeichen der Skript-Taste, die zum Starten des Skripts verwendet wird. Das heisst, dass nur Nummern-Reihentastenkombinationen diesem Skript zugeordnet werden sollten. Handelt es sich bei dem äussersten rechten Zeichen im Skript Key-Namen um eine 0 (wenn in eine Integer umgewandelt), dann wird angenommen, dass es sich auf die zehnte Überwachungszelle beziehen soll.
+
+:Script RecalculateSpreadsheet
+:Synopsis Arbeitsblatt neu berechnen und die aktive Zelle sprechen und in Braille ausgeben.
+:Description Arbeitsblatt neu berechnen. Dieses ist ein Excel-Befehl. Bewirkt Nachverfolgung und Weitergabe an JAWS, um die Info über die Zelle zu aktualisieren und anzusagen.
+:SearchRank 4
+
+:Script AltF4
+:Synopsis Schließt die Office Anwendung. Nutzen Sie diese Kurztaste, nicht die Menüs oder die Maus, um die aktuell geöffnete Office Anwendung zu schließen.
+:Description Schließt die Office Anwendung. Nutzen Sie diese Kurztaste, nicht die Menüs oder die Maus, um die aktuell geöffnete Office Anwendung zu schließen. Wenn Sie zum Schließen die Menüs oder die Maus verwenden, dann können JAWS und die Anwendung hängen bleiben oder abstürzen.
+

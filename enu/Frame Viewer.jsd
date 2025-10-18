@@ -1,0 +1,120 @@
+:function HandleCustomWindows
+:Synopsis Helper to SayFocusedWindow and SayWindowPromptAndText
+:Description Returns true if special window was found for handling, false to use default handler
+:param1 handle/hWnd Enter the window to be checked
+:Returns int True if was custom window for this application, false otherwise.  False means use Default handler.
+
+:Function HandleCustomRealWindows
+:Synopsis Speaks custom dialog information
+:Description If returned true, default handler will not process.  False means that SayWindowTypeAndText is sufficient for the real window.
+:param1 handle/hWnd Enter the real window of the window with focus to be checked
+:Returns int True if the window was spoken, false to use default handler in FocusChangedEvent.
+
+:Function ScreenSensitiveHelpBackAndNext
+:Synopsis Performs ScreensensitiveHelp for Back and Next buttons.
+:Description As all wizards have back and next buttons, this function evaluates whether the control whose name is entered is one of these.
+:param1 string/sButtonName The name of the focused control
+:Returns int TRUE if ScreenSensitiveHelp was performed, false otherwise.
+
+:Function ScreenSensitiveHelpForPromptWizard
+:Synopsis Provides ScreenSensitiveHelp for the Prompt Wizard.
+:Description Performs the ScreenSensitiveHelp for the Prompt Wizard.
+:Returns int TRUE if ScreenSensitiveHelp was performed, FALSE otherwise.
+:param1 int/subtype Enter the window subtype code of the window with focus.
+:Param2 int/id Enter the Control ID of the window with focus.
+:param3 handle/hwnd Enter the handle for the window with focus.
+
+:Function ScreenSensitiveHelpForCreateFrameWizard
+:Synopsis Provides ScreenSensitiveHelp for the Create Frame Wizard.
+:Description Performs the ScreenSensitiveHelp for the Create Frame Wizard.
+:Returns int TRUE if ScreenSensitiveHelp was performed, FALSE otherwise.
+:param1 int/subtype Enter the window subtype code of the window with focus.
+:Param2 int/id Enter the Control ID of the window with focus.
+:param3 handle/hwnd Enter the handle for the window with focus.
+
+:Function ScreenSensitiveHelpForFramesList
+:Synopsis Provides ScreenSensitiveHelp for the Frames List.
+:Description Performs the ScreenSensitiveHelp for the Frames List.
+:Returns int TRUE if ScreenSensitiveHelp was performed, FALSE otherwise.
+:param1 int/subtype Enter the window subtype code of the window with focus.
+:Param2 int/id Enter the Control ID of the window with focus.
+:param3 handle/hwnd Enter the handle for the window with focus.
+
+:Function ScreenSensitiveHelpForGeneralPage
+:Synopsis Provides ScreenSensitiveHelp for the General Page.
+:Description Performs the ScreenSensitiveHelp for the General Page.
+:Returns int TRUE if ScreenSensitiveHelp was performed, FALSE otherwise.
+:param1 int/subtype Enter the window subtype code of the window with focus.
+:Param2 int/id Enter the Control ID of the window with focus.
+:param3 handle/hwnd Enter the handle for the window with focus.
+
+:Function ScreenSensitiveHelpForRulesPage
+:Synopsis Provides ScreenSensitiveHelp for the Rules Page.
+:Description Performs the ScreenSensitiveHelp for the Rules Page.
+:Returns int TRUE if ScreenSensitiveHelp was performed, FALSE otherwise.
+:param1 int/subtype Enter the window subtype code of the window with focus.
+:Param2 int/id Enter the Control ID of the window with focus.
+:param3 handle/hwnd Enter the handle for the window with focus.
+
+:Function ScreenSensitiveHelpForEventsPage
+:Synopsis Provides ScreenSensitiveHelp for the Events Page.
+:Description Performs the ScreenSensitiveHelp for the Events Page.
+:Returns int TRUE if ScreenSensitiveHelp was performed, FALSE otherwise.
+:param1 int/subtype Enter the window subtype code of the window with focus.
+:Param2 int/id Enter the Control ID of the window with focus.
+:param3 handle/hwnd Enter the handle for the window with focus.
+
+:Function ScreenSensitiveHelpForPositionPage
+:Synopsis Provides ScreenSensitiveHelp for the Position Page.
+:Description Performs the ScreenSensitiveHelp for the Position Page.
+:Returns int TRUE if ScreenSensitiveHelp was performed, FALSE otherwise.
+:param1 int/subtype Enter the window subtype code of the window with focus.
+:Param2 int/id Enter the Control ID of the window with focus.
+:param3 handle/hwnd Enter the handle for the window with focus.
+
+:Function ScreenSensitiveHelpForRulesWizard
+:Synopsis Provides ScreenSensitiveHelp for the rules Wizard.
+:Description Performs the ScreenSensitiveHelp for the Rules Wizard.
+:Returns int TRUE if ScreenSensitiveHelp was performed, FALSE otherwise.
+:param1 int/subtype Enter the window subtype code of the window with focus.
+:Param2 int/id Enter the Control ID of the window with focus.
+:param3 handle/hwnd Enter the handle for the window with focus.
+
+:Function ScreenSensitiveHelpForEventsWizard
+:Synopsis Provides ScreenSensitiveHelp for the Events Wizard.
+:Description Performs the ScreenSensitiveHelp for the Events Wizard.
+:Returns int TRUE if ScreenSensitiveHelp was performed, FALSE otherwise.
+:param1 int/subtype Enter the window subtype code of the window with focus.
+:Param2 int/id Enter the Control ID of the window with focus.
+:param3 int id_parent Enter the Control ID of the parent window of the window with focus.
+:param4 handle/hwnd Enter the handle for the window with focus.
+:Param5 string sWindowText Enter the text of the dialog, the static text to be spoken from the wizard.
+
+							:Function BorderCalc
+							:Synopsis Calculates the difference between two values
+							:Description Used to determine how far the edge of the rame has moved.  The calculation is always greater minus lesser.  If the same, 0 is returned, as the border has moved 0 pixels.
+							:param1 int/iVal1 Enter the first value to be calculated.
+							:param2 int/iVal2 Enter the second value to check.
+
+:Function CompareWindowDiffs
+:Synopsis Checks the current frame window against its prior position.
+:Description This function checks all four directions to see how the frame has moved and what it overlaps, if applicable.
+:param1 handle/hWindow Enter the window on which the frame sits.
+:Param2 int/iLeft Enter the left edge of the rectangle.
+:param3 int/iTop Enter the top edge of the rectangle.
+:Param4 int/iRight Enter the right edge of the rectangle.
+:Param5 int/iBottom Enter the bottom edge of the rectangle.
+
+		  :function TopAndBottomHelper
+		  :Synopsis helper function for MoveWindowSpeak.
+		  :Description Helper function for MoveWindowSpeak function.  Determines how far up or down the frame has moved.
+		  :param1 int/iMovedUp The number of pixels the frame has moved up.
+:Param2 int/iMovedDown The number of pixels the frame has moved down.
+
+:Function MoveWindowSpeak
+:Synopsis Speaks the distance the frame has moved.
+:Description Speaks the distance and direction that the frame has moved as you resize it with either arrows or mouse.  The Show Content While Dragging check box in Desktop Properties | Visual Effects Page must be checked in order to take advantage of this functionality.
+:Param1 int/iMovedLeft The new left edge of the frame rectangle
+:Param2 int/iMovedUp The new top edge of the frame rectangle
+:Param3 int/iMovedRight The new right edge of the frame.
+:Param4 int/iMovedDown The new bottom edge of the frame.

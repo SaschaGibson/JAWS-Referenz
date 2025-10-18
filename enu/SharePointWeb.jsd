@@ -1,0 +1,9 @@
+:Script ListWebAppToolbarControls
+:Synopsis Lists toolbar controls in the SharePoint web application.
+:Description Select an item in the list of SharePoint toolbar controls and press enter to activate it.
+:SearchRank 1
+
+:script SetFocusToDocument
+:Synopsis Set focus to document
+:Description Set the focus to the document control within the SharePoint web application.
+:SearchRank 1

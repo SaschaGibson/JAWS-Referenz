@@ -1,0 +1,44 @@
+:script OpenDialog
+:synopsis Ruft das Dialogfeld Öffnen auf.
+
+:script PlayPause
+:synopsis Gibt die Audiospur eines Hörbuches wieder oder pausiert die Wiedergabe.
+
+:script Stop
+:synopsis Stoppt die Wiedergabe des Hörbuchs.
+
+:script Rewind
+:synopsis Spult die Audiospur eines Hörbuches zurück.
+
+:script FastForward
+:synopsis Spult die Audiospur eines Hörbuches vor.
+
+:script NormalRate
+:synopsis Setzt die Wiedergabegeschwindigkeit eines Hörbuchs auf normale Geschwindigkeit.
+
+:script IncreaseRate
+:synopsis Erhöht die Wiedergabegeschwindigkeit eines Hörbuchs.
+
+:script DecreaseRate
+:synopsis Verringert die Wiedergabegeschwindigkeit eines Hörbuchs.
+
+:script TogglePauseReduction
+:synopsis Schaltet die Option Pausen reduzieren eines Hörbuches an oder aus.
+
+:script SetBookmark
+:synopsis Setzt ein Lesezeichen.
+
+:script ViewBookmarks
+:synopsis Zeigt die Lesezeichen an.
+
+:script GotoPage
+:synopsis Gehe zu Seite.
+
+:script Find
+:synopsis Suchen.
+
+:script FindNext
+:synopsis Weitersuchen.
+
+:script FindPrevious
+:synopsis Rückwärts suchen.

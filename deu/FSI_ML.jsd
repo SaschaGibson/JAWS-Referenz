@@ -1,0 +1,188 @@
+:Function BrlFSIInit
+:Synopsis Initializes all Whiz settings stored in the FSI_ML .jsi file
+:Description Initializes all globals from the FSI_ML.jsi file.  If it is missing, the factory defaults are used.
+
+:Function GetWhizWheelSettingName
+:Returns string The name of the new setting
+:Description Returns the name of the setting passed to it as a string.
+:Param1 int/iSetting The setting whose name is to be returned
+
+:Function SetWheel
+:Synopsis Initializes the whiz wheel to the new setting.
+:description Enter the wheel to be toggled and it's value will be toggled.  Please note: this function also updates the FSI_ML.jsi file with the new setting.
+:Optional
+:param1 int/iWheel Enter the wheel, iLeft or iRight to set.  If this parameter receives no value, the standard single-programmable wheel is used.
+
+:Function ChangeModeSetting
+:Returns int The new setting, either programmable or single
+:Description On the single setting, both wheels honor the same line/sentence/paragraph settings and monitor flags for performance.  Programmable means that they will act differently from one another.  The new setting is written to the Options section of the FSI_ML.jsi file.
+
+:Function ChangeWheelSetting
+:Returns int The new setting
+:param1 int/iWheel one of the Wheel constants left right or single
+:param2 int/ByRef/iWheelGlobal Enter the corresponding global to receive the new setting for the Whiz Wheel
+
+:Function ReadSettingFromFile
+:returns int The new setting; these are all recorded as integers, never 0.
+:description Reads the specified setting from the FSI_ML.jsi file, note the values possib;e for each parameter
+:param1 int/iWheel Enter the constant for the wheel, either individual or the single-programmable option.  iLeft for left, iRight for right, or FALSE for none.
+:param2 int/ByRef/iVal The new value to be read from the file.  1 is lines, 2 is sentences and 3 is paragraphs.
+
+:Function WriteSettingToFile
+:returns int TRUE if file was written to, false otherwise.  Note this return value is based on ability to perform a file write, not the validity of the entries made.
+:Description Writes the new whiz wheel setting to the specified file.  Do not use unless you're keeping track programatically of the values set in all relevant globals and the relationships, or the settings will be off.
+:param1 int/iWheel Enter the constant for the wheel, either individual or the single-programmable option
+:param2 int/iVal The new value to be written to the file.
+
+:Function IsWheelProgrammable
+:Synopsis Checks to see if the separate programmability option is on
+:Description If the Programmable option is set to 1 in the FSI_ML.jsi this function will return TRUE and your code can respect the individual whiz wheels.
+
+:Function IsValidWindow
+:Returns int True if successful, false otherwise
+:Description Determines if the specified window can use the Sentence or Paragraph setting of the whiz wheel
+:Param1 handle/hWnd Enter the handle of the window to check
+
+:Function IsValidListWindowForFocus
+:Synopsis Determines whether or not current control can use List Mode
+:Description List mode allows wheels to operate up and down (next/prior line) whereas wheels outside of cursor areas now tab and shift tab back and forth.
+:param1 handle/hWnd The handle of the window with focus, not at Braille Cursor specifically, as this affects actual system commands.
+
+:Function ListModeToggle
+:Synopsis Toggles Whiz Wheel List mode on and off
+:Description List Mode allows the user to navigate up and down in lists or control groups.  Used on Focus Braille displays.
+:Returns int TRUE if the state was toggled, false otherwise
+
+:Function DoListMode
+:Synopsis Operates the new List Mode for the Whiz Wheels on the Focus display
+:Description List mode allows the user to move up and down instead of tab between controls in dialogs or forms.
+:Param1 int/iDirection Enter up or down
+:Param2 handle/hWnd Enter the handle of the window with focus.
+
+:Function DoFocusWheelAction
+:Synopsis Performs special actions for Focus Whiz Wheels
+:Description If the type of control can benefit from sentence/paragraph navigation, the old navigation technique is used, calling the DoWhizWheelAction function
+:param1 int/iDirection Enter the direction to move, up or down
+:param2 int/iWheel Enter the wheel: left, right or single, depending on the programmable option
+:param3 int/ByRef/iWheelMove Enter one of the three global Special Move settings to be monitored and modified.
+:Optional
+:param4 int/iSameScript Enter TRUE if in the IsSameScript branch of code FALSE otherwise to prevent extraneous action.  This parameter is optional.
+
+:Function FocusPanLeft
+:Synopsis Like PanLeft, moves display to left
+:Description When wrapping to prior line, uses the system cursor
+
+:Function FocusPanRight
+:Synopsis Like PanRight, moves display to right
+:Description When wrapping to next line, uses the system cursor
+
+:Function DoWhizWheelAction
+:Returns void
+:param1 int/iDirection Enter the direction to move, up or down
+:param2 int/iWheel Enter the wheel: left, right or single, depending on the programmable option
+:param3 int/ByRef/iWheelMove Enter one of the three global Special Move settings to be monitored and modified.
+:Optional
+:param4 int/iSameScript Enter TRUE if in the IsSameScript branch of code FALSE otherwise to prevent extraneous action.  This parameter is optional.
+:Description This is the main control center for performing legacy navigation action on the Whiz Wheels.  This should only be called once per script, as whiz wheels can be turned very fast like many popular mouse wheels.  The whiz wheels will move the Braille Display and the active cursor.
+
+:Function WhizWheelsShutdown
+:Synopsis Turns off whiz wheels for the remainder of the JAWS session
+:Description Sets the wheels to permanent off until JAWS is restarted.
+:Returns int TRUE if wheels are shut down, false otherwise.
+
+:function BrailleSimulateClick
+:Synopsis presses the space bar for clickable objects.
+:Description If buttons, check boxes or other non-editable controls are found, simulates the space bar being pressed.
+:param1 int/nSubType Enter the sub type code of the window with focus
+:Returns int True if space bar was pressed, false otherwise.
+
+:Function WhizWheelsOption
+:Synopsis For AdjustBrailleOptions dialog box
+:Description Toggles the setting when the space bar is pressed in the dialog box.
+:param1 int/iRetCurVal Parameter used by JAWS to instruct function to update or retain current value.
+:Returns string The new value for list.
+
+:Function RightWhizWheelDown
+:Description Moves the cursor to the next line, sentence or paragraph according to the wheel setting.
+
+:Function RightWhizWheelUp
+:Description Moves the cursor to the prior line, sentence or paragraph according to the wheel setting.
+
+:Function LeftWhizWheelUp
+:Description Moves the cursor to the prior line, sentence or paragraph according to the wheel setting.
+
+:Function LeftWhizWheelDown
+:Description Moves the cursor to the next line, sentence or paragraph according to the wheel setting.
+
+:Function PressLeftWhizWheel
+:description Toggles the left whiz wheel  between lines, sentences and paragraphs.
+
+:Function PressRightWhizWheel
+:description Toggles the right whiz wheel  between lines, sentences and paragraphs.
+
+:Function RightFocusWhizWheelDown
+:Description Moves down when List Mode is on, or backwards through controls by use of shift tab.  Also performs line, sentence or paragraph navigation.
+
+:Function RightFocusWhizWheelUp
+:Description Moves up when List Mode is on, or forward through controls by use of tab.  Also performs line, sentence or paragraph navigation.
+
+:Function LeftFocusWhizWheelDown
+:Description Moves down when List Mode is on, or backwards through controls by use of shift tab.  Also performs line, sentence or paragraph navigation.
+
+:Function LeftFocusWhizWheelUp
+:Description Moves up when List Mode is on, or forward through controls by use of tab.  Also performs line, sentence or paragraph navigation.
+
+:Function PressLeftFocusWheel
+:description Toggles List Mode on and off, or switches between lines, sentences and paragraphs.
+
+:Function PressRightFocusWheel
+:description Toggles List Mode on and off, or switches between lines, sentences and paragraphs.
+
+:Function FSRightRockerDown
+:Description Moves the Braille Display and focus down.
+
+:Function FSRightRockerUp
+:Description Moves the Braille Display and focus up.
+
+:Function FSLeftRockerUp
+:Description Moves the display to the prior line.
+
+:Function FSLeftRockerDown
+:Description Moves the display to the next line.
+
+:function DeviceHasWhizWheels
+:synopsis determines whether the current braille device has whizh wheels
+:returns int true or false
+
+:function FSIWheelActionIsValidForBrailleStructure
+:description Determines if wheel actions should be allowed when the focus item is represented in structured braille. By default, wheel actions are not valid for structured braille.
+:returns int True if wheel actions should be allowed when the focus item is represented in structured braille.
+
+:function DoFSIWheelActionForSpeechBoxMode
+:param int The direction, Up or Down, of the wheel action.
+:description Module to perform the wheel action if the display is in speechbox mode.
+
+:function DoFSIWheelActionMoveByLine
+:param int The direction, Up or Down, of the wheel action.
+:description Module to perform the wheel action if the display should simply move to the next or prior line. Use DoFSIWheelActionForLine for the actions to perform for the wheel setting of Line.
+
+:function DoFSIWheelActionForPanning
+:param int The direction, Up or Down, of the wheel action.
+:description Module to perform the wheel action if the wheel is set to perform focus panning.
+
+:function DoFSIWheelActionForLine
+:param int The direction, Up or Down, of the wheel action.
+:description Module to perform the wheel action if the wheel is set to perform movement by line. This differs from DoFSIWheelActionMoveByLine in that extra logic may exist to enable specific behavior for the line mode of the wheel.
+
+:function DoFSIWheelActionForSentence
+:param int The direction, Up or Down, of the wheel action.
+:description Module to perform the wheel action if the wheel is set to perform movement by sentence.
+:returns int True if the action failed, false otherwise.
+
+:function DoFSIWheelActionForParagraph
+:param int The direction, Up or Down, of the wheel action.
+:description Module to perform the wheel action if the wheel is set to perform movement by paragraph.
+:returns int True if the action failed, false otherwise.
+
+:function WhizWheelsOnOff
+:description Toggles the whiz wheels, or nav rockers, on and off.

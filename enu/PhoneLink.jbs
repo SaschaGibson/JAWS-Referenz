@@ -1,0 +1,15 @@
+; Copyright 2022 Freedom Scientific, Inc.
+; JAWS Braille Structure file for the Phone Link app
+
+[Component Aliases]
+SuggestionCount=Suggestion Count
+
+; Section for edit
+[SubtypeCode3]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value,state,description,SuggestionCount,position
+type=ed
+removed=
+displayname=
+
+[Information]
+Description=Default  Structured Mode view for PhoneLink.

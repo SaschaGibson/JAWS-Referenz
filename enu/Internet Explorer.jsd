@@ -1,0 +1,368 @@
+:script ReadDownColumn
+:DisplayName Read Down Column
+:Synopsis When the JAWS cursor is active, reads the next line of the current column
+:Description When the JAWS cursor is active, reads down the current column line by line
+:SearchRank 3
+
+:script HotKeyHelp
+:Synopsis Says hot key shortcuts for Internet Explorer and speaks %product% hot keys in dialog boxes
+:Description If in a dialog box it will read the hot keys and labels for the items in that dialog, or special instructions for the application, or basic %product% functions. Special hot key Help is available for Internet Explorer
+
+:function GetIEVersion
+:Synopsis Returns the version of Internet Explorer in use
+:Description When this function is called from AutoStartEvent, the version information is retrieved and available for use by other scripts. Functions are called based on the version information
+:returns int
+
+:function MoveToLink
+:Synopsis Used to move focus to next or prior link on Web page or control in dialog box
+:Description Performs MoveToLink appropriate for the active version of InterNetExplorer retrieved from GetIeVersion. Type the value signifying next or previous control
+:Param int/nNext 0 = previous, 1 = next
+
+:script SaySelectedLink
+:DisplayName Say Selected Link
+:Synopsis Says the focused link or control
+:Description If in a dialog, speaks the current control. If in a Web page announces the link or control with focus
+:SearchRank 4
+
+:script SayWindowPromptAndText
+:Synopsis Says the focused link or control
+:Description If in a dialog, speaks the prompt and type of the window or control as well as the text in the window that has focus. When the virtual cursor is active and in a web page, %product% speaks the control information using the current verbosity setting for the control the first time this keystroke is pressed.  Subsequent presses of this keystroke cause %product% to speak the control again, which may or may not sound different, followed by a message in the message voice which tells you the setting being used.
+
+:function FindString
+:Returns int No Return Description
+:Synopsis Special FindString function to include the graphic labels on the toolbar
+:Description FindString searches for a string of text in a specified window. If the text is found, then the JAWS cursor is placed at the beginning of the text string
+:Param handle/hwnd Specify a window handle. Type the name of a variable or choose a script function to provide the handle of the window that is to be searched.
+:Param string/str Specify the text that is to be located. Type a text string, or type a variable name or choose a script function that can provide the text. Text strings must be enclosed within quotation marks. They may also be graphics on the toolbar
+:Param int/direction Indicate the search direction. Type the name of a constant value to indicate the direction of the search: S_TOP or S_BOTTOM.
+:Param int/restriction Indicate search restriction. Type the name of a constant value to indicate whether the search should be restricted to the active window or it should extend into all child windows of the active application. Type S_UNRESTRICTED to search all application windows or S_RESTRICTED to limit the search to the active child window.
+
+:function IsLinksList
+:Returns int true or false
+:Synopsis Determines whether or not the links list box is visible
+:Description Call this in a script where you need to know whether the links list is visible or not. Returns True or False
+:Param handle/hwnd Enter the handle of the window in which the links list may be found
+
+:function ieFocusToFirstField
+:Returns int true or false
+:Synopsis Returns whether or not there is an input field on the page
+:Description Checks to see if there is an input control for a form in the current document
+
+:Function ieFocusToFirstFieldHelper
+:Synopsis Called by IEFocusToFirstField
+:Description Supports the IEFocusToFirstField function.
+:param1 object/Doc The object pointing to the current IE (html) document.
+:Returns int True if successful, false otherwise.
+:SeeAlso IEFocusToFirstFormField
+
+:function GetFrameInHierarchy
+:Returns object The actual frame
+:Synopsis Retrieves a frame based on its position in the hierarchy
+:Description Retrieves the desired frame based on its hierarchical position, typically the HTML order
+:Param int/index Position in the hierarchy
+:Param object/startWindow the object of the main document of Internet Explorer
+
+:script ReadNextScreen
+:DisplayName Read Next Screen
+:Synopsis Does a PAGE DOWN and begins reading with the JAWS cursor
+:Description Does a standard PAGE DOWN to bring up the next screen and starts reading from the top with the JAWS cursor. You can stop reading and then begin again from the same place with SayAll.
+:SearchRank 4
+
+:function SayNonHighlightedText
+:Description Calls the appropriate SayNonHighlightedText function for the version of Internet Explorer in use
+:Param handle/hwnd handle of the window in which the new text was written
+:Param string/buffer string containing the text that was written
+
+:script ToolBar
+:DisplayName Tool Bar
+:Synopsis Allows the user to click a button on the Command Bar toolbar by selecting it from a list.
+:Description This keystroke brings up a dialog box that contains in a list every button from the CommandBar toolbar.
+In this dialog, the user can select one of the buttons on the Command Bar toolbar and press ENTER to click on it.
+For this script to find the toolbar, the Command Bar under the IE View menu Toolbars submenu must be checked.
+:SearchRank 2
+
+:function AutoStartEvent
+:Synopsis Event Function that is triggered when the application is started. Gets the version of Internet Explorer in use
+:Description When the application is started, this event is performed. It is also performed when the application is switched to or gets focus, as with ALT+TAB. The version information gathered by AutoStartEvent is used by many of the scripts in this application to determine which functions to call
+
+:script ReadPriorScreen
+:DisplayName Read Prior Screen
+:Synopsis Performs a PAGE UP and begins reading with the JAWS cursor
+:Description Performs a standard PAGE UP to bring up the prior screen and starts reading from the top with the JAWS cursor. You can stop reading and then begin again from the same place with SayAll.
+:SearchRank 4
+
+:script ReadUpColumn
+:DisplayName Read Up Column
+:Synopsis When the JAWS cursor is active, reads the prior line of the current column
+:Description When the JAWS Cursor is active, reads up the current column line by line
+:SearchRank 3
+
+:script ReadColumnLeft
+:DisplayName Read Column Left
+:Synopsis When the JAWS cursor is active, reads the current line in the prior column
+:Description When the JAWS cursor is active, used to move to and read the current line of the prior column, otherwise performs the CTRL+LEFT ARROW, SayPriorWord
+:SearchRank 3
+
+:function ScreenSensitiveHelp4
+:Synopsis Performs special Screen Sensitive Help for IE4
+:Description Is called by the ScreenSensitiveHelp script when IE4 is the active version
+
+:function GetToolbar
+:Returns handle the handle of the toolbar
+:Synopsis Returns the window handle of the toolbar
+:Description Retrieves the handle of the toolbar, if visible on the screen
+
+
+:function GetIEServerWindow
+:Returns handle the handle of the main IE4 document window
+:Synopsis Returns the handle of the current IEServer window
+:Description Used to retrieve the handle of the main document window of Internet Explorer. You can reference this handle when attempting to read certain controls or child windows within this window, such as controls on a Web page or dialogs
+:Param handle/hwnd Enter a function to retrieve the handle of the main document window in Internet Explorer
+
+:function GetNavigationTreeView
+:Returns handle the handle of the tree view with focus
+:Synopsis Returns the handle of the visible tree view
+:Description Useful for the Active Desktop shell found in Windows 98 and/or the Active Desktop installed on 95 with Internet Explorer 4. Returns the handle of the tree view in focus
+
+:function SpeakDocument
+:Synopsis Speaks the desired page or frame
+:Description Enter the object of the document window or frame to be spoken. This function can be called to speak individual frames as well as entire HTML documents
+:Param object/doc the document object to be spoken
+
+:script ReadCurrentScreen
+:DisplayName Read Current Screen
+:Synopsis Starts skimreading from the cursor.
+:Description This script starts skim reading from the cursor location using the rules you have specified. When virtual mode is disabled, this script reads the visible body of the current page with the JAWS cursor. You can stop reading and then begin again from the same place with SayAll. When you reach the bottom of the screen, CTRL+PAGE DOWN will move to the next screen and continue reading in the same manner
+:SearchRank 4
+
+:script AddressBar
+:DisplayName Read Address Bar
+:Synopsis Reads the address of the active web page.
+:Description Reads the address or URL of the current web page.
+:SearchRank 1
+
+:script NextFrame
+:Synopsis Next page tab.
+:Description Moves to the next page tab if multiple page tabs are open.
+
+:function IsToolbarList
+:Returns int true or false
+:Synopsis Determines whether or not the toolbar list is active
+:Description Used to determine whether or not the toolbar dialog is active. Returns True or False
+:Param handle/hwnd Enter the handle of the window in which the toolbar list may be found
+
+:function GetFrameNumber
+:Synopsis Determines the index of the active frame in the Frames collection of the current document
+:Param object/all the elements of the document
+:Param int/item the index of the current element
+
+:script JAWSBackspace
+:Synopsis Says the character or item to the left that has just been deleted
+:Description Says the character or item to the left that has just been deleted
+
+:function FocusChangedEvent
+:Synopsis Triggered when focus moves from one control to another
+:Description The window handles of the previous and new windows are passed to this function. If Internet Explorer 4 is loaded, the appropriate FocusChangedEvent function is loaded
+:Param handle/focusWindow the handle of the window that has received the focus
+:Param handle/prevWindow the handle of the window that had the focus
+
+:function SaySelectedLink4
+:Synopsis Speaks the link or control with focus
+:Description Called by MoveToLink function when IE4 is active. Speaks the link or control that has the focus
+
+:script PriorFrame
+:Synopsis Prior page tab.
+:Description Moves to the prior page tab if multiple page tabs are open.
+
+:script WindowKeysHelp
+
+:script MoveToPriorLink
+:DisplayName Move To Prior Link
+:Synopsis Moves to the prior hypertext link or control in the page
+:Description If in a dialog moves to the prior control. If in a Web page moves to the prior hypertext link or control. It is recommended to attach this script to the SHIFT+TAB keystroke. If %product% is unable to find the focused link, it will read the status line
+
+:function SelectALink4
+:Synopsis Brings up an old-style dialog containing a list of the links present in the page
+:Description Call this function when Virtual PC cursor is not active. If this function is called and the Virtual PC cursor is active, this function will not be able to find the hyperlinks on the page
+
+:function ClickToolBarButton
+:Synopsis Locates and clicks the button of your choice on the toolbar
+:Description This function takes two parameters. The first is the handle of the toolbar where the button you wish to press can be found. The second is the name of the button you wish to press written exactly as it appears in the Auto Graphics Labeler
+:Param handle/winHandle The window handle of the toolbar in which to search for the graphic
+:Param string/buttonLabel The label of the graphic you wish to click, exactly as it appears in the graphics file
+
+:function SayWindowTypeAndTextForNonstandardDialogs
+:Synopsis for the Alert dialogs and other nonstandard dialog boxes
+:Description SayWindowTypeAndText function specifically written with the IE4 Security Alert dialog boxes in mind. Causes the focused control and its real window to be spoken. Enter the handle followed by the window name of the dialog box to be spoken. The function will see that the control with focus gets spoken
+:Param handle/hwnd the handle of the dialog window to be spoken
+:Param string/name the name of the dialog window to be spoken
+
+:function AddFramesInWindow
+:Synopsis Adds/compiles a list of all the frames in the window
+:Description Using the top-level object in the IE4 window, a list of frames is compiled and copied to the string buffer variable you specify
+:Param object/window Input the top-level object of the IE4 main document window
+:Param string/strBuf/ByRef Enter the string variable to which the list of frame names are to be copied
+
+:script SelectAFrame
+:Synopsis Brings up a dialog containing a list of the frames present in the page
+:Description Select a frame from the list and press enter. The focus moves to the frame you selected and speak its content
+
+:script GoBack
+:Synopsis Loads the previously opened Web page
+:Description Passes ALT+LEFT ARROW to IE to load the previous page and announces it
+
+:function AutoFinishEvent
+:Synopsis Event function that is triggered when the application looses focus. Turns off cursor restriction
+:Description When the application is finished this event is performed. It also is performed when the application is switched from or loses focus, as with ALT+TAB. Ensures that the cursor restriction used in some scripts for this application is turned off
+
+:script MoveToNextLink
+:DisplayName Move To Next Link
+:Synopsis Moves to the next hypertext link or control in the page
+:Description If in a dialog, moves to the next control. If in a Web page, moves to the next hypertext link or control. It is recommended to attach to the TAB key. If %product% is unable to find the focused link, it will read the status line
+:SearchRank 2
+
+:script GoForward
+:Synopsis Loads the next opened Web page.
+:Description Passes ALT+RIGHT ARROW to IE to load the next page and announces it
+
+:script ReadColumnRight
+:DisplayName Read Column Right
+:Synopsis When the JAWS cursor is active reads the current line in the next column
+:Description When the JAWS Cursor is active used to move to and read the current line in the next column, otherwise performs the standard CTRL+RIGHT ARROW, SayNextWord
+:SearchRank 3
+
+:function AddToString
+:param1 string/sFirstString the first string or base string
+:param2 string/sSeconString The string to be concatenated on the end of string 1.
+:Returns string The concatenatede string
+:Description concatenates two strings, inserting a blank line between the two.
+
+
+:function GetToolBarButtons
+:synopsis Retrieves a list of buttons for a given toolbar.
+:description This function uses the passed window handle for a given tool bar to retrieve all the buttons found on the toolbar. The list does not include those buttons which do not have text labels or that have been given JAWS labels. A list of the indeces that correspond to each button in the list is also returned by reference. If the toolbar is not visible or the passed window handle is 0, then an error message is spoken and the function exits.
+:returns string List of all of the buttons found on the toolbar delimited by the | symbol.
+:param handle hWnd The window handle for the tool bar for which the buttons are to be retrieved.
+:param  string/ByRef/sToolBarItemsIndex List of the indeces of all the buttons contained in the returned string delimited by the | symbol.
+
+:function DetermineToolBarButtonIndex
+:synopsis Determines the index of a button in a given toolbar.
+:description This function displays a dialog containing a list of all the buttons found in a given toolbar. Once a button is selected from the list, the function uses the passed list of button indeces to determine the index of the button that is then passed back to the calling script or function. If the dialog is exited without making a choice, then the function returns 0.
+:returns int The index of the selected toolbar button.
+:param string sDialogName The name of the dialog used to display the list of toolbar buttons.
+:param string  sButtonList The delimited list of buttons for a given toolbar. This is generally retrieved using the GetToolBarButtons function.
+:param string sButtonIndex The delimited list of button indeces that corresponds to those buttons passed in the first parameter.
+
+:function SayContextHelp
+:description If not in forms mode, speaks any context help belonging to the current object.
+
+:function InRSSFeedFilterEdit
+:description Determines if in an RSS feed edit filter.
+:returns int True if in forms mode and the focus is on an RSS feed filter edit, false otherwise.
+
+:Function RSSFeedAvailable
+:description Determines if RSS feeds are available on the current page
+:returns int true if RSS feeds are available on the current page, false otherwise
+
+:function CheckForRSSFeedAvailability
+:description Determines if rss feed availability should be announced for the current page.
+:param int True if RSS feed availability should be announced only if the page address has changed since the previous announcement of RSS feed ability, false if RSS feed availability should be unconditionally announced.
+:returns int true if any RSS feeds were found and availability should be announced, false otherwise.
+
+:function CheckForInformationBar
+:synopsis checks to determine if the information bar is present.
+:returns string If found, the text of the information bar window; null otherwise.
+
+:function IsIE7SearchEdit
+:synopsis determines if the window is the IE7 search control edit.
+:param handle The window to test.
+:returns int True if the window is the IE7 search edit, false otherwise.
+
+:function NavigatingIETabControl
+:description Called by FocusChangedEventEx to determine if navigation is on the IE tab page tab control.
+:param handle The focus window
+:param handle The prior focus window.
+:returns int True if navigating on the IE tab page tab control, false otherwise.
+
+
+:function InVistaControlPanelShellView
+:Description Used to determine if the focus is in a Vista Control Panel applet which runs in the shellview of BrowseUI.
+:returns int True if the focus is in a Vista Control Panel applet running in the shellview, false otherwise.
+
+:function SayVistaControlPanelShellViewStaticText
+:description Used to speak the static text which should be spoken when entering a Vista Control Panel shellview applet.
+
+:function getAccName
+:Returns string the true msaa name of the object with focus
+
+:function IE9FindNotificationBar
+:Description From the focus window, finds the IE9 Notification Bar window.
+:Returns handle
+
+:Function CheckIE9NotificationBar
+:Description Checks to see if the IE9 Notification Bar is visible and speaks a warning message and the notification text.
+:Returns void
+
+:function SayViewDownloadsListItem
+:description Manages speaking of list items and their associated controls in the View Downloads list.
+:optional
+:param int True if the type should be spoken for the listbox item, or if the list item name should be spoken for the controls associated with the name. Default is false.
+:returns int True if in the View Downloads dialog list and the item was spoken, false otherwise.
+
+:function GetBrowserName
+:description Retrieves the name of the browser currently being used.
+:optional
+:param int If true, returns the name Microsoft Internet Explorer, otherwise returns the name Internet Explorer.
+:returns string The name of the browser.
+
+:function IsWindows10FlyOutDialog
+:description Determines if the focus window is a Windows 10 flyout dialog.
+:optional
+:param handle The focus window.
+:param handle The application window.
+:param handle The real window.
+:returns int True if the focus window is a Windows 10 flyout dialog, false otherwise.
+
+:function GetUIAForFlyOutDialog
+:description Creates a UIA object and treewalker to use for accessing the UIA structure of a flyout dialog.
+:param object byRef The FSUIA object to be created.
+:param object byRef The treewalker to be created and used with the FSUIA object.
+:optional
+:param handle The native window handle of a UIA element. If not provided, the focus window is assumed.
+:returns int True if the UIA object and treewalker were created, false otherwise.
+
+:function GetFlyOutDialogText
+:description Retrieves the dialog text belonging to a Windows 10 flyout dialog.
+:param object The FSUIA object to be used when accessing the UIA structure of the flyout dialog.
+:param object The treewalker to use when traversing the UIA structure of the flyout dialog.
+:returns string The dialog text belonging to a Windows 10 flyout dialog.
+
+:function SayFlyOutDialogText
+:description Speaks the dialog text belonging to a Windows 10 flyout dialog.
+:optional
+:param handle The native window handle of an element belonging to the flyout dialog. If not provided, the focus is assumed.
+
+:function ReadFlyOutDialogFocusableControls
+:description Used by ReadBoxInTabOrder to find and read the focusable controls belonging to a Windows 10 flyout dialog.
+:param object The FSUIA object used for accessing the dialog.
+:param object The element which is the starting or root position for finding the focusable controls.
+
+:function ReadFlyOutDialog
+:description Used by ReadBoxInTabOrder to read the dialog name, text and focusable controls in a Windows 10 flyout dialog.
+:optional
+:param handle The native window handle of an element in a Windows 10 flyout dialog. If not provided, the focus is assumed.
+:returns int True if focus is in a Windows 10 flyout dialog and the contents were read, false otherwise.
+
+:function AnnounceGroupBoxInChangeDepth
+:description Called by FocusChangedEventEx to announce any named group which is found to be within the depth of the focus change.
+:param int/nChangeDepth The depth of change received by the focus change event.
+
+:script PictureSmartWithControl
+:DisplayName Picture Smart from a Control
+:Synopsis Describes a picture control that has focus.
+:Optional
+:Param int/serviceOptions Additional Picture Smart service options. See HJConst.jsh for option constants, all prefixed by PSServiceOptions_.
+:Category Picture Smart
+:Keywords image, photo, picture, photograph, graphic, describe, recognize
+:Version JAWS/20.00
+:SearchRank 1

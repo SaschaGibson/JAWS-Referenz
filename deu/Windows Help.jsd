@@ -1,0 +1,151 @@
+:function AutoStartEvent
+
+:function GetIEVersion
+:Synopsis Diese Funktion wird verwendet, um die Internet Explorer Version zu erhalten
+:Returns int No Return Description
+
+:script ScriptFileName
+
+:script MoveToNextLink
+:Synopsis Geht zum nächsten Hyperlink oder Steuerelement auf der Seite
+:Description Springt in einem Dialogfeld auf das nächste Steuerelement. Springt auf einer Webseite auf den nächsten Hypertextlink oder das nächste Steuerelement. Es wird empfohlen, dieses Skript an die Tab Taste anzuhängen. Wenn %product% nicht in der Lage ist, den fokussierten Link zu finden, wird die Statuszeile gelesen
+
+:script MoveToPriorLink
+:Synopsis Springt zum vorherigen Hyperlink oder Steuerelement auf der Seite
+:Description Springt in einem Dialogfeld auf das vorherige Steuerelement. Springt auf einer Webseite auf den vorherigen Hypertextlink oder das vorherige Steuerelement. Es wird empfohlen, dieses Skript an den UMSCHALT+TAB Tastaturbefehl anzuhängen. Wenn %product% nicht in der Lage ist, den fokussierten Link zu finden, wird die Statuszeile gelesen
+
+:script ReadCurrentScreen
+:Synopsis Liest mit dem JAWS Cursor den Körper der Seite von oben
+:Description Dieses Skript liest mit dem JAWS Cursor den sichtbaren Körper der aktuellen Seite. Sie können das Lesen beenden und dann von der gleichen Stelle mit dem Standard-Befehl SayAll fortfahren, EINFÜGEN+PFEIL RUNTER. Wenn das Bildschirmende erreicht wird, springt STRG+SEITE RUNTER auf den nächsten Bildschirm und fährt auf die gleiche Weise mit dem Lesen fort
+
+:script ReadNextScreen
+:Synopsis Führt ein SEITE RUNTER aus und beginnt mit dem JAWS Cursor das Lesen
+:Description Führt den Standard-Befehl SEITE RUNTER aus, um den nächsten Bildschirm anzuzeigen und beginnt mit dem JAWS Cursor das Lesen vom oberen Rand. Sie können das Lesen beenden und dann von der gleichen Stelle mit dem Standard-Befehl SayAll fortfahren, EINFÜGEN+PFEIL RUNTER.
+
+:script ReadPriorScreen
+:Synopsis Führt ein SEITE RAUF aus und beginnt mit dem JAWS Cursor das Lesen
+:Description Führt den Standard-Befehl SEITE RAUF aus, um den vorherigen Bildschirm anzuzeigen und beginnt mit dem JAWS Cursor das Lesen vom oberen Rand. Sie können das Lesen beenden und dann von der gleichen Stelle mit dem Standard-Befehl SayAll fortfahren, EINFÜGEN+PFEIL RUNTER.
+
+:script ReadDownColumn
+:Synopsis Bei aktivem JAWS Cursor wird die nächste Zeile der aktuellen Spalte gelesen
+
+:script ReadUpColumn
+:Synopsis Bei aktivem JAWS Cursor wird die vorherige Zeile der aktuellen Spalte gelesen
+
+:script ReadColumnLeft
+:Synopsis Bei aktivem JAWS Cursor wird die aktuelle Zeile der vorherigen Spalte gelesen
+
+:script ReadColumnRight
+:Synopsis Bei aktivem JAWS Cursor wird die aktuelle Zeile der nächsten Spalte gelesen
+
+:function MoveToLink
+:Synopsis Diese Funktion wird verwendet, um auf einen bestimmten Link zu springen 
+:Param int/nNext No Description
+
+:script SaySelectedLink
+:Synopsis Nennt den Link, der zur Zeit im Fokus ist
+
+:function IsLinksList
+:Synopsis Diese Funktion ermittelt, ob die Linkliste aktiv ist
+:Param handle/hwnd No Description
+
+:function IsToolbarList
+:Synopsis Diese Funktion ermittelt, ob die Symbolleistenliste aktiv ist
+:Param handle/hwnd No Description
+
+:function IsTabList
+:Synopsis Diese Funktion ermittelt, ob die Tab-Liste aktiv ist
+:Param handle/hwnd No Description
+
+:function FocusChangedEvent
+:Param handle/focusWindow No Description
+:Param handle/prevWindow No Description
+
+:function SayFocusedWindow
+
+:script ReformatDocument
+:Synopsis Formatiert eine mehrspaltige Seite neu, damit sie mit der Sprachausgabe besser gelesen werden kann
+:Description Ordnet mehrspaltige Seiten neu an, damit sie linear gelesen werden können. IE Spalten werden nacheinander gelesen. Steht nur im IE4 zur Verfügung
+
+:function NewSelectLink
+:Synopsis Verwendet die neue Linklistenansicht
+:Description Wird angewendet, wenn der virtuelle PC Cursor eingeschaltet ist
+
+:script SelectALink
+:Synopsis Öffnet ein Dialogfeld, das eine Liste aller auf der Seite vorhandenen Links enthält
+
+:function ieFocusToFirstField
+:Synopsis Diese Funktion wird verwendet, um den Fokus in das erste Feld auf der Seite zu bewegen
+
+:script FocusToFirstField
+:Synopsis Springt im IE 4.0 in das erste Eingabefeld auf der Seite
+:Description Sucht nach dem ersten Eingabefeld auf der Seite und liest es. Wenn keine Eingabefelder vorhanden sind, wird der Anwender darüber mit einer gesprochenen Meldung informiert. Steht nur im IE4 zur Verfügung
+
+:function GetNavigationTreeView
+:Returns handle No Return Description
+:Synopsis Diese Funktion wird verwendet, um die Strukturansicht zu erhalten
+:Description Nützlich um herauszufinden, ob Sie sich in einer Strukturansicht als Anfangspunkt zum Skriptschreiben befinden oder nicht
+
+:function GetToolbar
+:Returns handle No Return Description
+:Synopsis Erhält die Symbolleiste, sofern sie sichtbar ist
+:Description Hilfreich beim Aufbau der Symbolleiste in Dialoglisten
+
+:script ToolBar
+:Synopsis Ermöglicht dem Anwender, auf einen Schalter in der Symbolleiste zu klicken, indem man ihn in einer Liste auswählt.
+:Description Dieses Skript öffnet ein Dialogfeld, das alle Schalter in einer Liste enthält, die auf der Symbolleiste erscheinen. In diesem Dialog kann der Anwender einen der Schalter auf der Symbolleiste auswählen und dann EINGABE drücken, um auf ihn zu klicken
+
+:function ClickToolBarButton
+:Synopsis Ermöglicht dem Anwender, auf den entsprechenden Symbolleisten-Schalter zu klicken
+:Param handle/winHandle No Description
+:Param string/buttonLabel No Description
+
+:function GetTabControl
+:Returns handle No Return Description
+:Synopsis Erhält das Steuerelement Registerkarte, das aktuell im Fokus ist
+
+:script SelectTab
+:Synopsis Ermöglicht dem Anwender, eine Registerkarte auszuwählen, um aus einer Dialogliste heraus darauf zu klicken
+
+:function ClickTab
+:Synopsis Diese Funktion wird verwendet, um auf die entsprechende Registerkarte zu klicken
+:Param handle/winHandle No Description
+:Param string/tab No Description
+
+:function GetFrameInHierarchy
+:Synopsis Diese Funktion wird verwendet, um die Rahmen-Hierarchie auf einer Seite zu erhalten
+:Param int/nIndex No Description
+:Param object/StartWindow No Description
+
+:function AddFramesInWindow
+:Synopsis Diese Funktion wird verwendet, um Rahmen einem Fenster hinzuzufügen
+:Param object/window No Description
+:Param string/strBuf/ByRef No Description
+
+:function SpeakDocument
+:Synopsis Diese Funktion wird verwendet, um den Rahmen anzusagen, der zur Zeit auf einer Seite im Fokus ist
+:Param object/doc No Description
+
+:script NextDocumentWindow
+
+:script PreviousDocumentWindow
+
+:Function GetTabLabels
+:Returns string The labels for the tab controls delimited for a JAWS list box.
+:Description Fragt alle Bezeichnungen in einem abgegrenzten String für ein JAWS Listenfeld ab.
+:param handle/hTabControl The window which contains the tab controls.
+
+:function GetToolBarButtons
+:synopsis Erzeugt eine Liste der Schalter der Symbolleiste
+:description Erzeugt eine Liste der Schalter der Symbolleiste, zusammen mit den dazugehörigen Bildschirm-Koordinaten. Schalter mit einem weißen Hintergrund gelten als nicht vorhanden und werden der Liste nicht hinzugefügt.
+:param handle The handle of the toolbar window
+:param string ByRef To hold the delimited list of toolbar button text
+:param string ByRef To hold the on-screen x coordinates of the buttons
+:param int ByRef To hold the on-screen Y coordinate of the row of buttons
+
+:function ClickToolBarButtonByPosition
+:synopsis Klickt einen Schalter basierend auf seine (x,y) Koordinaten
+:description Klickt einen Schalter basierend auf seine (x,y) Koordinaten
+:param string The delimited list of button x coordinates
+:param int The number representing which button to use
+:param int  The y coordinate of the button row

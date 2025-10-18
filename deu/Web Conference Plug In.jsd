@@ -1,0 +1,65 @@
+:function AutoStartEvent
+
+:script GoBack
+:Synopsis Lädt die vorherige geöffnete Webseite 
+:Description Reicht die Kurzaste ALT+PFEIL LINKS an Conference Room's Browser durch, um die vorherige geladene Webseite zu laden und zu lesen
+
+:script GoForward
+:Synopsis Lädt die nächste geöffnete Webseite.
+:Description Reicht die Kurztaste ALT+PFEIL RECHTS an Conference Room's Browser durch, um die nächste Webseite zu laden und zu lesen
+
+:script ToggleGlobalSetting
+:Synopsis Schaltet die allgemeine Sprecheinstellung um
+:Description Reicht die Kurztaste ALT+G an den Konferentraum durch, um die allgemeine Sprecheinstellung umzuschalten. Da diese eine Kurztaste der Anwendung ist, wird der umgeschaltete Status nicht gesprochen. 
+
+:script DisableTalkKey
+:Synopsis Deaktiviert die Sprechtaste temporär
+:Description Reicht die Kurztasste ALT+D an den Konferenzraum durch, um die Sprechtaste temporär zu deaktivieren. Diese Kurzaste schaltet die Taste auch wieder aktiv.
+
+:script MuteAudio
+:Synopsis Schaltet die Sounds des Konferenzraumes stumm
+:Description Reicht die Kurztaste ALT+Q durch an den Konferenzraum, um die Sounds des Konferenzraumes temporär stummzuschalten. Andere Systemsounds sind davon nicht betroffen.
+
+:script AnnounceActionKeysStatus
+:Synopsis Sagt den Status der Sprechtaste und des Stummschalters an.
+:Description Diese Kurztaste spricht den aktuellen Status von Sprechtaste, Stummschaltung und Sperrung an.
+
+:script SelectHTMLElement
+:Synopsis Springt zum Eingabefeld für den Chat-Text
+:Description Bewegt den Fokus von der aktuellen Position innerhalb des Konferenzraumes zum Eingabefeld für Chat-Text.
+
+:function ClickButton
+:Synopsis Clicks a specific button or control
+:Description This function uses the control ID value passed as a parameter to locate the corresponding window for the button or control to be clicked in the Conference Room.
+:Param int/iControl Control ID for the button or control to be clicked.
+
+:script ActivateFontDialog
+:Synopsis Aktiviert den Schrift-Schalter.
+:Description Aktiviert den Schrift-Schalter, welcher in Reihe die Elemente Schriftart, Schriftgröße und Attribute des Chat-Textes durchläuft.
+
+:script ActivateCustomColorDlg
+:Synopsis Aktiviert den Farben-Schalter.
+:Description Aktiviert den Farben-Schalter, welcher den Farbendialog öffnet, in dem Sie Farben hinzufügen können, in dem der Chat-Text dargestellt werden soll.
+
+:script SayWindowPromptAndText
+
+:script HotKeyHelp
+
+:function IsWebConferenceAddressBarWindow
+:description Test if a handle is the Web conference Plug In addressbar window.
+:param handle The handle to test if it is the web conference plug in addressbar.
+:returns int True if the handle is the addressbar window handle, false otherwise.
+
+:function GetAddressBarWindow
+:description Attempts to obtain the Web Conference Plug In addressbar window handle.
+:returns handle The handle to the addressbar window if it could be obtained, null otherwise.
+
+:function GetCurrentURL
+:description Attempts to retrieve the URL shown in the Web Conference Plug In addressbar.
+:param handle The handle of the Web Conference Plug In addressbar window.
+:returns string The URL shown in the web Conference Plug In addressbar.
+
+:script AddressBar
+:synopsis Spricht die Adresszeile, oder bewegt den Fokus in die Adresszeile.
+:description Einmal gedrückt wird der Inhalt der Adresszeile angesagt. Zweimal gedrückt bewegt den Fokus in die Adresszeile.
+

@@ -1,0 +1,11 @@
+:script NextLibraryWindow
+:Synopsis Springt zwischen Fenstern der WinAmp Bibliothek.
+:Description Dieses Skript bewegt den Fokus zwischen den Fenstern der WinAmp Bibliothek. Diese Fenster können Strukturansicht, IE Server Steuerung und IE Server Fenster beinhalten.
+:Category keyboard
+
+:function FocusRedirected
+
+:script Space
+:Synopsis Emuliert ein ordnungsgemäßes Drücken der Leertaste auf einem Schalter in der WinAMP Bibliothek.
+:Description Emuliert ein ordnungsgemäßes Drücken der Leertaste auf einem Schalter in der WinAMP Bibliothek.
+:Category Keyboard

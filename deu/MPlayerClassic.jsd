@@ -1,0 +1,37 @@
+:script ToggleTimeAnnouncing
+:Synopsis Schaltet die Zeitansage während der Wiedergabe um.
+:Description Schaltet die Ansage von abgelaufener Zeit und Gesamtzeit während der Wiedergabe um.
+:Category SpeakingLevel
+
+:function SayActionUnit
+:Returns int Result of operation, TRUE if successful, FALSE otherwise.
+:Synopsis Announces the action unit.
+:Description Announces the action unit without performing the action.
+:Category Positioning
+:Param int/Unit Operation performed as a constant from the hjconst.jsh file.
+
+:script Rewind
+:Synopsis Sagt das Ausführen von Zurückspulen an.
+:Description Sagt das Zurückspulen an und führt diese Aktion im Media Player Hauptfenster aus.
+:Category Positioning
+
+:script FastForward
+:Synopsis Sagt das Ausführen von Vorspulen an.
+:Description Sagt das Vorspulen an und führt diese Aktion im Media Player Hauptfenster aus.
+:Category Positioning
+
+:script IncreaseVolume
+:Synopsis Erhöht die Lautstärke.
+:Description Sagt das Erhöhen der Lautstärke an und führt diese Aktion im Media Player Hauptfenster aus.
+:Category Options
+
+:script DecreaseVolume
+:Synopsis Verringert die Lautstärke.
+:Description Sagt das Verringern der Lautstärke an und führt diese Aktion im Media Player Hauptfenster aus.
+:Category Options
+
+:script PlayAndPause
+:Synopsis Startet die Titelwiedergabe oder aktiviert die Pausenfunktion.
+:Description Startet die Wiedergabe des aktiven Titels, falls dieser noch nicht abgespielt wird oder aktiviert die Pause des Titels, wenn dieser bereits abgespielt wird.
+:Category Keyboard
+

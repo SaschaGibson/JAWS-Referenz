@@ -1,0 +1,3301 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)https://www.dlee.org/bx/ -->
+<html lang="en-us" data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./BX User&#39;s Guide_Doug_Lee_files/styles_dlee.css">
+<title>
+BX User's Guide
+</title>
+<link rel="stylesheet" type="text/css" href="chrome-extension://gdnpkbipbholkoaggmlblpbmgemddbgb/css/awebChromeHelperInjected.min.css"></head><body>
+
+<h1>
+BX User's Guide<br>
+Doug Lee<br>
+Last Revised June, 2025
+</h1>
+
+<p>
+Welcome to BX, the JAWS toolbox!
+For installation instructions and a download link, go to the <a href="https://www.dlee.org/bx/#inst">Script Installation Instructions</a>
+section.
+For news on updates, go to the <a href="https://www.dlee.org/bx/#hist">Revision History</a> section.
+
+</p><p>
+Copyright (c) 2003-2025 Doug Lee.
+</p><p>
+All rights reserved.
+</p><p>
+Redistribution and use in binary form is permitted provided that the
+following conditions are met:
+</p><ul>
+<li>Redistributions must reproduce the above copyright notice, this list of
+conditions and the following disclaimer in the documentation and/or other
+materials provided with the distribution.
+</li><li>The names of the copyright holders and contributors may not be used to
+endorse or promote products derived from this software without specific
+prior written permission.
+</li></ul>
+<p>
+Except via specific prior written permission, distribution, acquisition,
+or discovery of source code, such as by reverse engineering or decompiling,
+is not permitted.
+</p><p>
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+<!-- TOC start -->
+</p><h2>Table of Contents</h2>
+
+<ul>
+<li><a href="https://www.dlee.org/bx/#intro">What Is BX?</a>
+</li><li><a href="https://www.dlee.org/bx/#requirements">System Requirements</a>
+</li><li><a href="https://www.dlee.org/bx/#inst">Script Installation Instructions</a>
+</li><li><a href="https://www.dlee.org/bx/#usage">BX Usage Overview</a>
+</li><li><a href="https://www.dlee.org/bx/#quickStart">A Quick-Start Guide</a>
+</li><li><a href="https://www.dlee.org/bx/#quickKey">The BX Quick Key</a>
+<ul>
+<li><a href="https://www.dlee.org/bx/#tasks">Task Management Features</a>
+</li><li><a href="https://www.dlee.org/bx/#tests">Test Function Support</a>
+</li></ul>
+</li><li><a href="https://www.dlee.org/bx/#logging">Event Logging and Tracing Features</a>
+<ul>
+<li><a href="https://www.dlee.org/bx/#logging_how">How To Log Events</a>
+</li><li><a href="https://www.dlee.org/bx/#logging_caveats">Caveats</a>
+</li><li><a href="https://www.dlee.org/bx/#logging_custom">Customizing Logs</a>
+</li></ul>
+</li><li><a href="https://www.dlee.org/bx/#UIAEvents">Capturing and Examining UIA Events</a>
+</li><li><a href="https://www.dlee.org/bx/#upd">Updating Scripts With BX</a>
+</li><li><a href="https://www.dlee.org/bx/#tips">Advanced and Unusual Usage and Tips</a>
+<ul>
+<li><a href="https://www.dlee.org/bx/#tip_battery">Checking Or Watching the Computer Battery Status</a>
+</li><li><a href="https://www.dlee.org/bx/#tip_beepstack">Examining Beep Call Stacks and Process Launch History</a>
+</li><li><a href="https://www.dlee.org/bx/#tip_readInvis">Reading Invisible Lists, Combo Boxes, and HTML</a>
+</li></ul>
+</li><li><a href="https://www.dlee.org/bx/#cnf">The BX Configuration Files</a>
+</li><li><a href="https://www.dlee.org/bx/#issues">Known Issues</a>
+</li><li><a href="https://www.dlee.org/bx/#hist_past">BX Development History Overview (for the Curious)</a>
+</li><li><a href="https://www.dlee.org/bx/#ack">Acknowledgements</a>
+</li><li><a href="https://www.dlee.org/bx/#hist">Revision History</a>
+</li></ul>
+
+<!-- TOC end -->
+
+<h2 id="intro">What Is BX?</h2>
+
+<p>
+BX is a very comprehensive navigation and testing tool. It
+will allow you to test many JAWS scripting functions without writing
+scripts. Using BX, you will be able to use single
+keystrokes to get the results of most any function in each of the
+following categories:
+</p><table border="1" cellspacing="0" cellpadding="0">
+<caption>Summary of BX features by category</caption>
+<tbody><tr>
+<th>Category</th> <th>Description</th>
+</tr>
+
+<tr>
+<td>Window Functions</td>
+<td><ul>
+<li>Go to first, last, parent, child, next, previous, current, focus,
+real, foreground, top-level, or other windows directly.
+</li><li>Get a window's class, name, control ID, display style, dimensions and
+location, contents, etc.
+</li><li>Move directly from a window to various other exploration environments attainable from it, such as its SDM
+elements, MSAA or UIA object tree, AccessibleObject tree, or screen rectangle.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>SDM Window Functions</td>
+<td><ul>
+<li>Move to first, last, next, previous, current, or focused SDM
+control and test all functions you might use to present the control to the user.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>MSAA Navigation</td>
+<td><ul>
+<li>Navigate among MSAA objects by all standard MSAA methods (spatial,
+logical, hierarchical, or to focus or selection) and query all
+properties of each object (name, role, state, value, etc.). (This is
+done by direct manipulation of MSAA COM objects.)
+</li></ul></td>
+</tr>
+
+<tr>
+<td>UIA support testing</td>
+<td><ul>
+<li>Exercise the features of the UIAScriptAPI introduced publicly in
+JAWS 15 but also available (though with more limited and slightly
+different functionality) in JAWS 14.
+</li><li>Explore UIA trees, filter their content, collect UIA elements matching
+specific criteria, examine all available properties, list available
+UIA patterns for an element and test related properties and methods,
+and move among related UIA elements, MSAA elements, window
+handles, and screen rectangles.
+</li><li>Capture any of up to about 200 events on a UIA element or tree and analyze them via an XML structure that
+can also be examined in BX.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>AccessibleObject tree testing</td>
+<td><ul>
+<li>Test navigation and properties in an AccessibleObject tree obtained from a window handle.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>Internet Explorer HTML testing</td>
+<td><ul>
+<li>In Internet Explorer, navigate an HTML document's tree of elements, query for
+attributes, fire events by name on specific elements,
+retrieve HTML source code blocks by element for display or copying,
+and edit live DOM elements or trees by hand in place and test the results.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>XML testing and navigation</td>
+<td><ul>
+<li>In any browser supported by JAWS, obtain and navigate a web page's FSXML view.
+</li><li>Explore XML views of AccessibleObject trees built from MSAA or UIA, and an XML view of JAWS' Off-Screen Model
+(OSM).
+</li><li>Explore an arbitrary XML file by loading it into BX for examination.
+</li><li>Explore events captured from UIA.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>Cursor-Sensitive Functions</td>
+<td><ul>
+<li>Use any standard JAWS navigation or cursor-changing/routing
+command, plus a few for moving by other units such as text chunks; and
+test cursor-sensitive functions such as
+<code>GetGroupBoxName</code>, <code>GetTreeViewLevel</code>,
+<code>GetControlAttributes</code>, etc.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>JAWS Object Functions</td>
+<td><ul>
+<li>Navigate with cursors as above and test functions like
+<code>GetObjectName</code>/<code>Type</code>/<code>Value</code>.
+</li><li>Navigate and examine the JAWS internal object information hierarchy by level.
+</li><li>Initiate MSAA or UIA refresh to test when these might be necessary.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>Pixel navigation</td>
+<td><ul>
+<li>Move one screen pixel at a time, or search for color changes, detect color patterns on screen, etc., using
+the JAWS or invisible cursor.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>Java and Nav Module Functions</td>
+<td><ul>
+<li>Test JAWS functions for dealing directly with Java controls, including
+the Nav Module system functions introduced in JAWS 5.0.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>Global (non-location-specific) Functions</td>
+<td><ul>
+<li>Test functions such as <code>GetMenuMode</code> and
+<code>DialogActive</code> which don't relate to a location.
+</li><li>Check JAWS or Windows version and obtain detailed version information about the application in focus.
+</li><li>Update the scripts for the application in focus without running a script installer, or update BX itself.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>Braille support functions</td>
+<td><ul>
+<li>Test functions related to JAWS' support of Braille displays and the JAWS Braille Viewer application.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>COM Object Functions</td>
+<td><ul>
+<li>Find out if any of the JAWS functions returning COM object interfaces
+work from the current cursor location.
+</li><li>Explore the properties and methods of specific COM objects obtained from other BX functions or directly by
+instantiation from an edit box.
+</li></ul></td>
+</tr>
+
+<tr>
+<td>Report generation</td>
+<td><ul>
+<li>Generate a list of keystrokes scripted for the active application along with their descriptions.
+</li></ul></td>
+</tr>
+</tbody></table>
+
+<p>
+Additionally, you will be able to do all of the following:
+</p><ul>
+<li>Use JAWS' normal Keyboard Help mode (<kbd>JAWSKey+1</kbd>) to find
+out what any key's effect will be at your current location.
+</li><li>Get a key's description instantly by pressing the space bar before
+pressing the key (analogous to Kurzweil's "Nominator" concept).
+</li><li>Call up into a virtual buffer a list of all BX commands available at
+your current location.
+</li><li>Navigate among commands available at your current location with
+<kbd>Tab</kbd> and <kbd>Shift+Tab</kbd> and execute any one of them by
+pressing <kbd>Enter</kbd>.
+</li><li>Mark up to 26 locations, such as a window in the window tree,
+an MSAA object, or a cursor location, and return to them later.
+</li><li>Restrict the JAWS or invisible cursor to specific windows, object
+regions, MSAA object rectangles, etc. for easier examination of
+specific screen areas.
+</li><li>Test the <code>GetItemRect</code> function in detail to find out what is
+returned for specific unit requests.
+</li><li>Collect the output of any command or set of commands for display
+in a virtual buffer for character-by-character examination, copying to
+the clipboard for use elsewhere, etc.
+</li><li>Execute an arbitrary script function at the current location by typing
+the function call into an edit box.
+</li><li>Execute arbitrary script functions from within the JAWS Script Manager, Notepad, or various other editors
+and optionally collect their return values into the current file--analogous to the
+"Immediate Window" in Visual Basic.
+</li></ul>
+
+<p>
+Finally, power users may customize the BX interface or add
+commands by editing a .ini-style file and using a BX-specific syntax that
+permits scripts and functions to be called directly from a text file
+without the need to compile new code.
+
+</p><h2 id="requirements">System Requirements</h2>
+
+<p>
+BX works with JAWS versions 2019 and up.
+BX may contain features that only work in newer versions of JAWS.
+These features will fail under older versions of JAWS, but this
+will not prevent BX from performing properly otherwise. In other words, BX
+will do its best to adapt to what it can find and will do as much as it can.
+
+</p><h2 id="inst">Script Installation Instructions</h2>
+
+<p>
+To install BX on a new system:
+</p><ol>
+<li>Load JAWS if this has not already been done. This will require administrative privileges on the computer.
+</li><li>Run JAWS as the user for whom the scripts are to be installed.
+This and the following steps must be performed for each user of the computer
+who will be using JAWS with these scripts.
+</li><li><a href="https://www.dlee.org/bx/jfw_bx.exe">Download and run, or run directly, the installer for these
+scripts</a>; and follow the on-screen
+directions. Be sure to install the scripts in the currently running JAWS version if a JAWS version list is
+presented.
+</li></ol>
+
+<h2 id="usage">BX Usage Overview</h2>
+
+<p>
+BX is activated, and also deactivated, by typing <kbd>Insert+Space</kbd> or <kbd>JAWSKey+Space</kbd> twice in a row.
+BX will announce its state when turned on or off in this manner, e.g., by saying "BX on."
+
+</p><p>
+Note that before April, 2020, it was possible to use the JAWS "Script Utility Mode" commands to turn BX on or
+off. This is no longer the case, and the Script Utility Mode works entirely as determined by JAWS itself.
+
+</p><p>
+In JAWS' script utility mode, you have a location, defined by a
+window handle, and a set of possible commands. The possible
+keystrokes never change, but their output does: You can cycle
+through output modes with <kbd>F3</kbd> and through attribute search
+types with <kbd>F4</kbd> and thus change the effects of other commands.
+
+</p><p>
+BX extends these concepts significantly. In BX, a "location" is simply
+a sufficient set of information to define where you are. Your current
+location could be a window (as in script utility mode), an SDM control, an
+MSAA object, a cursor position, etc. Naturally, each different type
+of location has associated with it a unique set of possible commands,
+corresponding to the things you can do there. When in a window, you
+might want its class; when on an SDM control, you might want to hear
+the result of calling <code>SDMSayControl</code>; and when examining an
+MSAA object, you might want to hear its name and role. You might even
+want to combine various means of navigation to achieve one goal, such as
+by finding a list box by navigating the window tree, then getting that
+window's MSAA client object (which will be a Role_System_List object),
+and finally using arrows to read all the list items whether or not they
+are shown on screen.
+
+</p><p>
+Because there are a number of different location types in BX (window, MSAA
+object, etc.), each with its own unique requirements and capabilities,
+there will be different commands available depending on where you are.
+The set of keystrokes available for a specific location type in BX is
+called a <em>map</em>. Whenever possible, commands are uniform across
+maps: To move to the first, last, previous, or next location from the
+current one in any mode, use <kbd>Home</kbd>, <kbd>End</kbd>, <kbd>Up</kbd>,
+and <kbd>Down</kbd>, respectively (except when
+using screen coordinates as locations, at which time all normal JAWS
+movement commands will work as expected). Commands for which uniformity
+is impossible or unreasonable tend to have mnemonic key assignments:
+<kbd>C</kbd> for window class, <kbd>I</kbd> for control ID, etc. Finally,
+some conventions apply for grouping commands. For instance, commands
+that jump to a new location by means other than relative movement are
+activated with keys involving the <kbd>Ctrl</kbd> key. Thus, when
+navigating among windows, <kbd>Ctrl+F</kbd> will jump to the window in
+focus, and <kbd>Ctrl+R</kbd> will jump to the "real" window (the first
+window above the current one with a title). <code>Say</code> commands
+and commands that affect the environment, such as by changing focus,
+tend to involve the <kbd>Alt</kbd> key; thus, during Window Navigation,
+<kbd>Alt+T</kbd> is <code>SayWindowTypeAndText</code> and <kbd>Alt+F</kbd>
+is <code>SetFocus</code>.
+
+</p><p>
+In summary then, BX is simply a system which gives you the
+ability to navigate among locations and between types of locations and
+to test numerous JAWS scripting functions pertinent to each type of
+location.
+As such, it is of primary and considerable use to scripters; however, it is
+also very helpful as an instructional tool for those wishing to learn how to
+write scripts, and it can sometimes be used as a very effective means of
+handling application accessibility problems on the fly--for example, setting
+focus to an otherwise unreachable control, monitoring the progress of a long
+operation by parking on an MSAA progress control and pressing <kbd>V</kbd>
+periodically to check the position of the gauge, etc.
+
+</p><h2 id="quickStart">A Quick-Start Guide</h2>
+
+<p>
+There are several help facilities in BX which will be explained shortly. It
+is not necessary to memorize a lot of commands right away; you can find
+them all interactively. However, before presenting the help system, this
+section will do a little to explain common BX usage.
+
+</p><p>
+The most frequent type of BX usage involves turning BX on,
+choosing the map you want (for example, <kbd>Apostrophe W</kbd>
+for Window Navigation or <kbd>Apostrophe M</kbd> for MSAA Navigation), setting a
+starting point (for example, <kbd>Ctrl+F</kbd> to move to the current
+location of focus), and starting to navigate and test functions and
+properties. An example: To find the name of the current window and the
+class of the top-level window above it in the window tree, you could do the
+following:
+</p><ol>
+<li>Turn BX on.
+</li><li>Choose the Window Navigation map (if not already active) by typing an
+apostrophe (which will say "Map") and a w (which will say "Window
+Navigation").
+</li><li>Type a <kbd>Ctrl+F</kbd> to jump to the window with focus.
+</li><li>Type an "n" to get the name of that window. This will answer the first
+of our two questions.
+</li><li>Type <kbd>Ctrl+T</kbd> to jump to the top-level window above the
+current one.
+</li><li>Type <kbd>C</kbd> to get the class of this window.
+</li></ol>
+
+<p>
+Here is a list of basic commands that should help you figure out the
+rest of them. These commands work in all maps except where noted. A few
+commands, shown at the end of this list, are not really related to the help
+system but are helpful in just about any map sometimes.
+
+</p><table border="1" cellspacing="0" cellpadding="0">
+<caption>Summary of basic BX commands available in all maps</caption>
+<tbody><tr>
+<th>Keystroke</th> <th>Description</th>
+</tr>
+
+<tr>
+<td><kbd>JAWSKey+1</kbd> (normal JAWS Keyboard Help command)</td>
+<td>Activates a mode in which you can type any key to get JAWS to
+announce its function at the current location.</td>
+</tr>
+
+<tr>
+<td><kbd>Space</kbd></td>
+<td>The Describe-Next-Key function: Press just before pressing another key
+or key combination to hear its function without having to enter help mode
+first.</td>
+</tr>
+
+<tr>
+<td><kbd>JAWSKey+H</kbd>
+</td><td>Display in the JAWS virtual buffer a list of commands available at
+the current location. <kbd>F1</kbd> and <kbd>JAWSKey+F1</kbd> also do this.</td>
+</tr>
+
+<tr>
+<td><kbd>Tab</kbd>, <kbd>Shift+Tab</kbd>, and <kbd>Enter</kbd></td>
+<td>Move among and execute, respectively, the commands available at
+the current location.</td>
+</tr>
+
+<tr>
+<td><kbd>Ctrl+Tab</kbd> and <kbd>Ctrl+Shift+Tab</kbd></td>
+<td>Jump to the first or last command available at the current
+location.</td>
+</tr>
+
+<tr>
+<td><kbd>Apostrophe</kbd> (')</td>
+<td>Switch to another key map. This key actually puts you into a map whose
+purpose is to choose a map though, so the above help facilities work here to
+help you find a map to use.</td>
+</tr>
+
+<tr>
+<td><kbd>JAWSKey+T</kbd></td>
+<td>The Where-Am-I function: Announce the current map name and location.</td>
+</tr>
+
+<tr>
+<td><kbd>Period</kbd> (.)</td>
+<td>The Context key (not available in all maps): In maps supporting
+it, goes to a context map for the current location. This is, for
+example, a way to get the MSAA Window or Client object from a window
+handle.</td>
+</tr>
+
+<tr>
+<td><kbd>/</kbd></td>
+<td>Find or Search: In maps supporting this feature, moves to a map of commands for searching and reviewing search
+results related to the original map. For example, typing <kbd>/</kbd> from the UIA Navigation map reaches a "UIA
+Find" map for performing UIAScriptAPI searches, whereas typing <kbd>/</kbd> from an XML map reaches a map for
+performing XPath queries on an XML tree.</td>
+</tr>
+
+<tr>
+<td><kbd>;</kbd></td>
+<td>In maps supporting this feature, cycles among related maps for the
+current type of location. For example, <kbd>;</kbd> cycles among
+Cursor Navigation, Pixel Navigation, and other related maps that
+address physical screen locations.</td>
+</tr>
+
+<tr>
+<td><kbd>Alt+Shift+Up</kbd> and <kbd>Alt+Shift+Down</kbd></td>
+<td>BX history navigation: Move backward and forward among locations already visited, via any map, in visitation
+order.</td>
+</tr>
+
+<tr>
+<td><kbd>M</kbd></td>
+<td>The BX Mark system: This goes to a small map used for setting,
+clearing, and jumping to marks. A "mark" is a location (a
+window, an MSAA object, an HTML object, etc.).</td>
+</tr>
+
+<tr>
+<td><kbd>Windows</kbd> with a letter</td>
+<td>A shortcut for jumping to a specific mark. For example, if you
+created mark <kbd>A</kbd> earlier, <kbd>Windows+A</kbd> will return to it.
+Jumping to a mark will also return you to the map you were in when you
+created that mark.</td>
+</tr>
+
+<tr>
+<td><kbd>Alt+E</kbd></td>
+<td>Brings up an edit box in which you can type a JAWS function call
+with parameters and press <kbd>Enter</kbd> to run it immediately.
+Nested function calls will not work.</td>
+</tr>
+
+<tr>
+<td><kbd>JAWSKey+C</kbd></td>
+<td>Cycle through available cursors. Useful in maps where the normal
+PC and JAWS cursor commands are not available.</td>
+</tr>
+
+<tr>
+<td><kbd>"</kbd></td>
+<td>Object type name: Press once to hear the name of the current
+object's type, assuming the current location involves an object,
+and twice to hear its interface name.
+This is an advanced feature and may require <code>TLBInf32.dll</code> to be
+registered.</td>
+</tr>
+
+<tr>
+<td><kbd>Alt+O</kbd></td>
+<td>Object overview: Brings up a virtual buffer describing the
+interface to the current object, assuming the current location
+involves an object. This is another advanced feature requiring
+<code>TLBInf32.dll</code>.</td>
+</tr>
+
+<tr>
+<td><kbd>Esc</kbd></td>
+<td>Exit a nested key map if one is active, returning to the one
+active before it was loaded. This is a way out if, for example, you
+hit an apostrophe (map switch) by mistake and don't really wish to
+switch maps.</td>
+</tr>
+
+<tr>
+<td><kbd>Alt+C</kbd></td>
+<td>Starts and stops text collection. Type once to start text collection,
+then use one or more BX commands that produce collectable output (most
+output is collectable, but the output of <code>Say</code> commands, such as
+<code>SayWindowTypeAndText</code> is not). Finally, type this command a
+second time to place all collected output in the virtual buffer for viewing,
+copying to clipboard, etc.</td>
+</tr>
+
+<tr>
+<td><kbd>Alt+M</kbd></td>
+<td>Cycle through the three possible MSAA modes available in JAWS. The
+first press of this command simply announces the current mode; subsequent
+presses (without other intervening commands) will cycle through the
+remaining modes. The MSAA mode can have an effect on the output of numerous
+JAWS commands, notably commands like <code>GetObjectName</code>,
+<code>GetObjectValue</code>, etc.</td>
+</tr>
+</tbody></table>
+
+<h2 id="quickKey">The BX Quick Key</h2>
+
+<p>
+A more recent feature of BX is the so-called "BX Quick Key," sometimes
+also written as "QuickKey" (without the space). This is a key that
+provides access to a miscellaneous set of functions without requiring
+BX itself to be activated first with <kbd>JAWSKey+Space</kbd>. By
+default, the Quick Key is not set up; but it can be set up simply by
+adding a <kbd>QuickKey</kbd> assignment to <code>bx_user.cnf</code> in
+the JAWS user folder. The BX author
+prefers to assign the right bracket key (<kbd>]</kbd>) key as the BX
+Quick Key.
+
+</p><p>
+To assign a quick key:
+</p><ol>
+<li>Enter BX and go to the BX Configuration map (<kbd>Apostrophe Ctrl+B</kbd>).
+</li><li>Type <kbd>J</kbd> to load <code>bx_user.cnf</code> into Notepad. If
+it does not exist, let Notepad create it.
+</li><li>Add a line saying, for example, "<kbd>QuickKey=]</kbd>" (without
+the quotes) to the <code>[BX Options]</code> section. If the section
+does not exist, add that section header as well:
+<blockquote><code>
+[BX Options]<br>
+QuickKey=]
+</code></blockquote>
+Replace "<kbd>]</kbd>" with the key you wish to use as a quick key.
+</li><li>Save the file, then restart JAWS once or reload all scripts and
+configurations with <kbd>Ctrl+Insert+Esc</kbd>.
+</li></ol>
+
+<p>
+Once the key is functioning, tapping it will cause JAWS to say "BX"
+and wait for another key. The <kbd>Tab</kbd> and other help facilities
+work here just as in BX itself to help you find commands and features
+of interest.
+
+</p><p>
+As of this writing, the built-in Quick Key functions fall into the
+following categories:
+</p><dl>
+<dt><a href="https://www.dlee.org/bx/#tasks">Task switching</a>
+</dt><dd>Commands to speed jumping among running tasks when many are open
+at once. This system is designed to be somewhat similar to that used
+by the "Screen" utility found on some systems running Linux and
+similar text-based operating systems.
+</dd><dt>Text management
+</dt><dd>Commands for cutting, copying, pasting, and combining text blocks
+and holding blocks of text in up to 26 buffers named by single
+letters. This system was inspired by the buffer system in the "Vi"
+text editor found under Linux and other similar operating systems.
+</dd><dt>Reports
+</dt><dd>A command for getting to a collection of reports that BX can generate.
+</dd><dt><a href="https://www.dlee.org/bx/#tests">Test Functions</a>
+</dt><dd>A command for running any of 27 different functions you can write
+for testing scripts etc. without requiring you to assign keys to them in a <code>jkm</code> file.
+This approach also has the advantage of keeping test code out of the way of script end users, as these test
+functions do not appear in lists of available scripts for users to run.
+</dd><dt>App-specific functions
+</dt><dd>Two commands for running functions related to specific
+applications: one that brings you to a list of applications with such
+functions available, and one that lets you run functions related to
+the currently active application if any exist.
+</dd><dt>Call logging functions
+</dt><dd>Commands for tracing/logging function calls, events, etc., in JAWS
+scripting.
+</dd><dt><a href="https://www.dlee.org/bx/#upd">Script updating functions</a>
+</dt><dd>Commands for updating BX itself and updating the running scripts
+for the focused application, if such updates are available from the BX author.
+</dd><dt>Miscellaneous functions
+</dt><dd>Functionality that does not clearly fall into any other of the above categories.
+</dd></dl>
+
+<p>
+<strong>Warning</strong>: The Quick Key functionality itself is
+stable, but the specific available commands and their current layout
+are subject to change. The text management commands
+in particular could use rethinking.
+
+</p><h3 id="tasks">Task Management Features</h3>
+
+<p>The BX Quick Key command set includes the following commands for managing tasks:
+</p><dl>
+<dt><kbd>W</kbd>
+</dt><dd>List available tasks. The <kbd>W</kbd> keystroke comes from the Screen utility mentioned in the previous
+section.
+</dd><dt>Numbers from the number row
+</dt><dd>Switch to a task by its number. Digits <kbd>1</kbd> through <kbd>9</kbd> and <kbd>0</kbd> switch to tasks
+numbered 1 through 10. With <kbd>Shift</kbd>, these keys switch to tasks 11 through 20. With <kbd>Ctrl</kbd>, they
+switch to tasks 21 through 30, and with <kbd>Ctrl+Shift</kbd>, tasks 31 through 40.
+Note that while most Windows applications work well with the BX task switching methods, a few may not.
+Also, though the intention is for the BX task list to duplicate the task list available via <kbd>Alt+Tab</kbd>,
+deviations may occasionally occur.
+In particular, the BX task list will include tasks from all virtual desktops. Switching to a task on a
+non-current desktop will also activate that desktop.
+</dd><dt><kbd>Shift+N</kbd>
+</dt><dd>Announce the number and name of the currently focused task.
+</dd><dt><kbd>`</kbd>
+</dt><dd>Allow the currently focused task to be renumbered to a number of your choosing. This numbering assignment
+will last as long as the task remains open, even if JAWS restarts.
+This is a handy way to group tasks by purpose, get infrequently used tasks out of the way, etc.
+One interesting trick is to number tasks such that tasks from a particular desktop are all in a unique
+range of ten, so that for example, a lone digit will go to a main desktop task while shifted digits will go
+to tasks on the second desktop.
+</dd></dl>
+
+<h3 id="tests">Test Function Support</h3>
+
+<p>
+The BX Quick Key includes a "Test" sublayer, accessed via <kbd>T</kbd>, in which the following commands are
+available:
+</p><dl>
+<dt>Letters <kbd>A</kbd> through <kbd>Z</kbd>
+</dt><dd>Invoke a function whose name is "<code>BXTest</code>" followed by the letter typed; for example, typing
+<kbd>QuickKey T S</kbd> will run a function called <code>BXTestS</code>.
+Any return value that is speakable will be spoken when the function completes.
+</dd><dt>Letters <kbd>A</kbd> through <kbd>Z</kbd> with <kbd>Shift</kbd>, <kbd>Ctrl</kbd>, or <kbd>Shift+Ctrl</kbd>
+</dt><dd>Run the same function but pass the integer <code>1</code> as a function argument for <kbd>Shift</kbd>,
+<code>2</code> for <kbd>Ctrl</kbd>, and <code>3</code> for <kbd>Ctrl+Shift</kbd>.
+This quickly allows test function runs with special behaviors requested.
+</dd><dt>Digits <kbd>1</kbd> through <kbd>9</kbd> and <kbd>0</kbd> from the number row, possibly with modifiers
+</dt><dd>Run a test function called <code>BXTestNum</code> passing, respectively, <code>1</code> through <code>9</code>
+and <code>10</code> as an integer function argument.
+Add <kbd>Shift</kbd> to a digit key to pass <code>11</code> through <code>20</code>, <kbd>Ctrl</kbd> to pass
+<code>21</code> through <code>30</code>, and <kbd>Ctrl+Shift</kbd> to pass <code>31</code> through <code>40</code>.
+</dd><dt><kbd>?</kbd> (<kbd>Shift+Slash</kbd>)
+</dt><dd>Bring into a JAWS virtual view a list of the test functions available in current scope, with a description
+of each. See below for how descriptions are determined.
+</dd></dl>
+
+<p>
+Calling any test function that does not exist will, naturally, produce an "Unknown function call" message.
+
+</p><p>
+Test function descriptions, for the above <kbd>QuickKey T ?</kbd> command, are retrieved in either of the
+following ways, the first to succeed for each function being the one that is used:
+</p><ol>
+<li>If a function has a <code>Synopsis</code> or, failing that, a <code>Description</code> entry in any currently
+active <code>jsd</code> file, the text of this entry is used as a function description. OR
+</li><li>BX will call the test function with an integer argument of <code>-1</code> and use whatever string returns
+as a function description.
+Note that typing <kbd>QuickKey T ?</kbd> will make this call for exactly and only the above function names that
+exist and that do not have <code>jsd</code> entries as just described.
+It is therefore important to provide either a <code>jsd</code> <code>Synopsis</code> or <code>Description</code>
+or in-code handling of a <code>-1</code> argument so that users who type <kbd>QuickKey T ?</kbd> get sensible
+results for each available test function.
+</li></ol>
+
+<p>
+An example of a well-formed test function (this form works for both letter types and the <code>BXTestNum</code>
+variant):
+</p><blockquote><pre>variant function BXTestS(int num)
+if num == -1
+	return "Window class of top-level window, or window name if modifiers are typed"
+endIf
+var handle hwnd = getTopLevelWindow(getFocus())
+var string val = getWindowClass(hwnd)
+if num &gt; 0
+	; The user typed Shift, Ctrl, or Ctrl+Shift with this call.
+	val = getWindowName(hwnd)
+endIf
+return val
+enddFunction
+</pre></blockquote>
+
+<h2 id="logging">Event Logging and Tracing Features</h2>
+
+<p>
+BX is capable of generating, to clipboard and to JAWS virtual view, a
+log of event calls. This can be very useful in determining which
+events fire at certain times or in response to certain actions.
+At this writing, about 245 event and <code>say</code> functions can be
+logged.
+
+</p><h3 id="logging_how">How To Log Events</h3>
+
+<p>
+To use this feature:
+</p><ol>
+<li>Get to the point where you want to start logging events.
+</li><li>Type the BXQuickKey,
+then <kbd>D</kbd> for default (non-app-specific) application actions,
+and finally <kbd>Ctrl+E</kbd>.
+This will load a script file responsible for watching event calls. If
+the active application has any associated script, key, or other
+JAWS configuration files, they will be
+temporarily unloaded at this time.
+If this is a problem, use <kbd>Ctrl+Shift+E</kbd> instead of
+<kbd>Ctrl+E</kbd>.
+If your interest is primarily Braille-related events, try
+<kbd>Ctrl+B</kbd> or <kbd>Ctrl+Shift+B</kbd> instead.
+</li><li>To start logging events, type <kbd>JAWSKey+E</kbd> twice in quick
+succession.
+</li><li>Perform any actions and/or wait for events to fire and log.
+</li><li>When ready to stop logging and see results, type <kbd>JAWSKey+E</kbd>
+once. The accumulated event log will appear in the JAWS virtual
+viewer. A copy of the log will also be placed on the Windows
+clipboard.
+</li><li>Press <kbd>Esc</kbd> when done viewing the log.
+</li><li>To save the log in a file, paste the clipboard into Notepad or a
+similar text editor and save it.
+</li><li>To unload the logging code and reload any application-specific scripts, <kbd>Alt+Tab</kbd> out
+of and back into the application once.
+</li></ol>
+
+<h3 id="logging_caveats">Caveats</h3>
+
+<p>
+Some applications may, such as during a login process, relinquish
+and then retake focus, causing any loaded scripts to unload and then
+load again. If this happens while events are being logged, the event
+logging will stop and the event-logging scripts will be unloaded and
+not reloaded automatically. You can retrieve the logs accumulated up
+to the time of focus switch out of the application by repeating steps
+2 and 5 from the above instructions (i.e., load the event-logging
+scripts and type <kbd>JAWSKey+E</kbd> once to view the
+already-accumulated log).
+It is currently not possible to log events safely through the
+out-of-and-back-into-application focus switch.
+
+</p><h3 id="logging_custom">Customizing Logs</h3>
+
+<p>
+The event logging system supports customization through callback
+functions. These functions should reside in the custom default.jss
+file that loads BX itself, so they will not go out of scope when the
+event-logging code is loaded.
+Code in these functions should execute quickly when possible, as these
+functions may be called very frequently and rapidly.
+
+</p><p>
+To filter what is included in the output, write a
+<code>logcallInclude</code> function like the following:
+</p><blockquote><pre>int function logcallInclude(string call)
+; Call is the full function call being logged, e.g., "WindowCreatedEvent(12345)."
+if call == "keymapchange" || call == "keyPressedEvent" then
+	; Do not log these events.
+	return False
+	elif logcallLevel("FocusChangedEventEx") &gt; 2 then
+		; Log FocusChangedEventEx and whatever it calls directly,
+		; but do not log any deeper calls stemming from this event.
+		; (level 1 is the event itself, 2 is a direct call from it, etc.)
+		return False
+		elif stringContains(stringLower(logcallName(call)), "highlighted") then
+			; Do not log SayHighlightedText or SayNonHighlightedText.
+			; logcallName() returns the name from the call without the parameters.
+			return False
+		endIf
+		; Log all other events being traced.
+		return True
+		endFunction
+</pre></blockquote>
+
+<p>
+To add extra log lines for specific events, write a function like the
+following.
+Any return value, which may contain multiple lines, will be included
+and properly indented in the log output.
+This example adds two lines below each original
+<code>WindowCreatedEvent</code> call (two lines because of the
+<kbd>\n</kbd> in the <code>FormatString</code> specification).
+</p><blockquote><pre>string function logCallExtra(string call, int isReturning)
+; Call is the full function call being logged, e.g., "WindowCreatedEvent(12345)."
+; IsReturning is True if this is a function return and False if it is the original function call.
+if isReturning then
+	; No extra log lines for returns, just for original calls.
+	return ""
+endIf
+if call == "WindowCreatedEvent" then
+	; Log useful information about the window being created.
+	var
+		handle hwnd
+	let hwnd = stringToHandle(stringSegment(call, "(,", 2))
+	return formatString("Class %1, name %2, IDString %3\nOwningApp %4, type %5 (%6)",
+			getWindowClass(hwnd), getWindowName(hwnd), getControlIDString(hwnd),
+			getOwningAppName(hwnd), intToString(getWindowTypeCode(hwnd)), getWindowType(hwnd)
+	)
+endIf
+; No extra lines for any other events.
+return ""
+endFunction
+</pre></blockquote>
+
+<h2 id="UIAEvents">Capturing and Examining UIA Events</h2>
+
+<p>
+BX allows capture and examination of any or all of up to about 200 different UIA events on a UIA element or tree.
+(This actually refers to about 35 different event types plus numerous change events for specific UIA properties.)
+As has admittedly been typical for BX in general, the documentation for this system currently lags behind the
+system itself; but this is a summary of how to use it:
+</p><ol>
+<li>Activate BX and go to the UIA Navigation map with <kbd>Apostrophe U</kbd>.
+</li><li>Find a UIA element of interest, and decide whether you want to capture events on just the element, on all
+its direct children, or on its entire subtree.
+</li><li>Type <kbd>Ctrl+E</kbd> to open a box for entry of an event capture specification.
+</li><li>To capture all possible events on the entire subtree (except for FocusChange events, which do not depend on
+current location), type a colon (<kbd>:</kbd>) by itself and press <kbd>Enter</kbd>.
+Be aware that, in many cases, this will capture enough events to slow the system down.
+The syntax of event capture specifications will be explained shortly.
+</li><li>If necessary, perform tasks in the active application that trigger events. This may of course require you
+to exit and return to BX.
+During event capture, a brief announcement of each captured event is made.
+The announcement indicates the event type (e.g., Automation, PropertyChanged, etc.), specific information about
+the event when appropriate (e.g., event id or property id), and when possible, identifying information about
+the UIA element that generated the event.
+</li><li>To stop capturing events, type <kbd>Ctrl+E</kbd> again from UIA Navigation and press <kbd>Enter</kbd>
+without typing an event capture specification.
+</li><li>To examine the events captured, which can also be done while they are being captured, type the sequence
+<kbd>Period Ctrl+E</kbd> to move to the UIA Navigation map's Context map and then to the "Events" node in the XML
+view of the captured event information.
+This will also move you to the XML Navigation map and allow you to peruse the events using all of the features
+provided in BX for examining an XML structure.
+</li><li>To clear the events captured, type <kbd>Ctrl+Shift+E</kbd> from UIA Navigation.
+</li></ol>
+
+<p>
+An event capture specification consists of one or more event type specifications separated by a <kbd>Space</kbd>. In
+general, only one event type specification should be required for a capture session.
+The elements of an event type specification are, in order
+</p><ol>
+<li>A letter indicating the event type. Use the first letter of any of these: Automation, FocusChange, Notification,
+PropertyChange, StructureChange, or TextEditTextChange.
+</li><li>If required, a letter indicating tree scope for this capture. Use the first letter of Ancestors, Children,
+Descendants, Element, Parent, or Subtree.
+(The UIAScriptAPI, and probably UIA itself, does not support scopes of Parent or Ancestors at this time, however.)
+Subtree is assumed if this letter is omitted.
+</li><li>If the event type requires a further parameter, values of this parameter may be listed after a colon
+(<kbd>:</kbd>).
+This applies to Automation events (which require an event id), PropertyChange events (which require a property
+id), and others.
+In general, BX allows simple names for values of these parameters; see below examples.
+To capture all except certain events, include an exclamation mark (<kbd>!</kbd>) immediately after the colon
+and before the names of items to exclude.
+</li></ol>
+
+<p>
+Example event capture specifications:
+</p><dl>
+<dt><kbd>F</kbd>
+</dt><dd>Captures FocusChange events (these apply to UIA as a whole, not just to the current element or its subtree).
+</dd><dt><code>A:asynccontentloaded</code>
+</dt><dd>Captures the Automation event <code>AsyncContentLoaded</code> on the current element's subtree.
+</dd><dt><code>Pc:!isoffscreen,name</code>
+</dt><dd>Captures all except two possible PropertyChange events; those for the <code>Name</code> and
+<code>IsOffscreen</code> properties are ignored. These are captured on just the direct children of the current
+UIA element.
+</dd><dt><code>F A:asynccontentloaded Pc:!isoffscreen,name</code>
+</dt><dd>Captures all of the above, with their respective tree scopes, in a single capture session (this is an example
+of a capture specification containing three event type specifications).
+</dd><dt><code>:</code>
+</dt><dd>Capture everything imaginable (except FocusChange events) on the current element's entire subtree.
+</dd></dl>
+
+<p>
+Caveats on the UIA event capture system at this time:
+</p><ul>
+<li>The specific process for capturing and stopping capture of events is not set in stone and is likely to change.
+</li><li>If you examine captured events while they are still being captured, new events are not added to the XML view
+in real time. This is likely to change in future.
+If you return to UIA Navigation and then again use the sequence <kbd>Period Ctrl+E</kbd> to move to the XML
+event view, the new events will appear.
+</li><li>There seem to be some stuck-key issues not yet resolved.
+If your keyboard acts oddly during or after event capture, tap each modifier key (<kbd>Ctrl</kbd>, <kbd>Shift</kbd>,
+etc.) once to make sure Windows does not incorrectly assume that one of these keys remains held down.
+This issue may not occur if Unified Keyboard Processing (UKP) is enabled in JAWS,
+which became the default in the June 2023 JAWS update.
+</li></ul>
+
+<h2 id="upd">Updating Scripts With BX</h2>
+
+<p>
+BX includes features to facilitate updating BX and application
+scripts from the BX author.
+In BX itself, the Global Functions map includes three commands for updating scripts from this author's website.
+For those who have set up a <a href="https://www.dlee.org/bx/#quickKey">BX Quick Key</a>, there are parallel key sequences using the
+quick key:
+</p><ul>
+<li><kbd>U</kbd> updates scripts for the active application.
+Quick key users can use the sequence <kbd>QuickKey D U</kbd>.
+</li><li><kbd>Shift+U</kbd> does the same but ignores any project-specific settings for the user's computer.
+(This is not generally necessary except for special cases involving a professional project being completed by
+this author on the same machine where updates are to be installed.)
+Quick key users can use the sequence <kbd>QuickKey D Shift+U</kbd>.
+</li><li><kbd>Ctrl+U</kbd> updates BX itself.
+Quick key users can use the sequence <kbd>QuickKey D Ctrl+U</kbd>.
+</li></ul>
+
+<p>
+When an update process begins, JAWS will announce which set of scripts is being updated.
+There may be further announcements during the update process depending on whether BX encounters any
+difficulties. A successful update completion will be indicated by a "scripts updated" announcement, while a
+failed process will be indicated with an announcement saying "failed or incomplete."
+
+</p><p>
+One interim announcement that may occur is a "retry" announcement.
+JAWS sometimes holds files related to an application or its scripts open for a few moments after an
+application focus switch.
+When this happens, BX is temporarily unable to update those files. In previous BX revisions, this was
+heralded by an update failure with a message like "7z returned 2."
+Current BX revisions will retry the file update instead and will announce this, also indicating which file
+needs retrying.
+
+</p><p id="proxy">
+The update system works without issue on many systems, but some
+special preparation is needed for systems behind a web proxy.
+There are two typical methods of handling this situation:
+</p><ol>
+<li>Through environment variables:
+If <code>HTTP_PROXY</code> and/or <code>HTTPS_PROXY</code> are set in the user or system environment in
+Windows. proxy handling may occur automatically for BX updates.
+</li><li>Through special BX options:
+<code>bx_user.cnf</code> can contain a few options for proxy setup.
+</li></ol>
+Setting up environment variables usually requires Windows administrative rights or at least write access to
+the user environment. This setup method is not covered here but is likely to work in many cases. By default,
+BX uses HTTPS for downloads; but if the Windows environment contains <code>HTTP_PROXY</code> but not
+<code>HTTPS_PROXY</code>, BX will use HTTP instead.
+
+<p>
+To set up proxy usage via BX options, first obtain the proxy URL required:
+</p><ol>
+<li>Open Internet Options, such as by typing that into the Windows Search bar and selecting it from the
+Control Panel section.
+</li><li>Go to the Connections tab and press the "LAN Settings" button.
+</li><li>Obtain the proxy address and port from the dialog that appears,
+then close all dialogs opened by this process.
+</li><li>If that method is unsuccessful, obtain the required proxy information from other sources, such as a system
+administrator.
+</li></ol>
+Then enter that information into BX:
+<ol>
+<li>Enter BX and go to the BX Configuration map (<kbd>Apostrophe Ctrl+B</kbd>).
+</li><li>Type <kbd>J</kbd> to load <code>bx_user.cnf</code> into Notepad. If
+it does not exist, let Notepad create it.
+</li><li>Make sure there is a <code>[BX Options]</code> section header in the file.
+</li><li>Within that section, add lines for any required proxy settings. The first and often only one will look
+like this, where the shown proxy URL and port are replaced with the URL and port you obtained from Windows.
+The other two lines shown here are only necessary for proxies that require authentication.
+<blockquote><code>
+[BX Options]<br>
+proxyURI=my.proxy.com:8888<br>
+proxyUser=MyUserName<br>
+proxyPass=my_password_which_better_be_better_than_this
+</code></blockquote>
+Do not include the final two lines if you do not need them.
+</li><li>Save the file, then restart JAWS once or reload all scripts and configurations with <kbd>Ctrl+Insert+Esc</kbd>.
+To avoid problems with <kbd>Ctrl+Insert+Esc</kbd> when controlling a JAWS Tandem session, instead make JAWS reload
+all configurations by compiling a script, such as the <code>default.jss</code> stub in the JAWS user folder.
+</li></ol>
+The above procedure should not require administrative rights and
+should provide update functionality until and unless the proxy address or port changes.
+
+<p>
+There is also a <code>temp</code> value allowed in the same file, for adjusting where BX stores temporary
+files during an update.
+This option is likely unnecessary and may disappear in a future BX release, but it remains in case it is
+useful in rare situations.
+The options available are
+</p><dl>
+<dt>t
+</dt><dd>The standard Windows temporary file folder for the current Windows user. This is the default and is the
+same as <code>%TEMP%</code> where such an expression is permitted in Windows.
+</dd><dt>j
+</dt><dd>The JAWS user folder. This makes BX use the same folder that contains JAWS scripts for the current user.
+</dd></dl>
+Any other value for <code>temp</code> will cause an error message on any BX Update attempt.
+
+<p>
+Example <code>bx_user.cnf</code> section to change the <code>temp</code> value:
+</p><blockquote><code>
+[BX Options]<br>
+temp=j
+</code></blockquote>
+
+<h2 id="tips">Advanced and Unusual Usage and Tips</h2>
+
+<p>
+These are uses of BX that go outside the norm, though some subsections of this section may be of interest to
+those whose lives are not filled with technically intense activities.
+
+</p><h3 id="tip_battery">Checking Or Watching the Computer Battery Status</h3>
+
+<p>
+Typing <kbd>B</kbd> in the Global Functions map, or for users of the <a href="https://www.dlee.org/bx/#quickKey">BX Quick Key</a>,
+typeing <kbd>QuickKey B</kbd>, toggles on/off a battery watching feature described below and also speaks, and
+shows in Braille where applicable,
+"on" or "off" indicating whether the watch feature is on or off, then the following very briefly summarized
+computer power status information:
+</p><ul>
+<li>The first character is <kbd>P</kbd> when the computer is running on AC power, or <kbd>B</kbd> when it is
+running on battery power.
+Other rarely seen but possible values are <kbd>U</kbd> if the currently active power source is not known, and
+<kbd>X</kbd> (followed by
+numbers indicating a raw integer result) if the system's response to a request for this information returned
+something unexpected.
+</li><li>Following characters can be <kbd>C</kbd> for critical battery level, <kbd>L</kbd> for low, <kbd>H</kbd>
+for high, or <kbd>N</kbd> for no battery present.
+Normally only one of those characters should appear at one time.
+<kbd>R</kbd> means the battery is charging; if <kbd>R</kbd> does not appear, the battery is not reported by the
+system as charging.
+Again, <kbd>U</kbd> for unknown status, or <kbd>X</kbd> followed by numbers may appear if unexpected results
+come back from the system.
+</li><li>A space, then the current charge percentage follows, as a number between 0 and 100, inclusive; or 255 if
+the percentage is not known.
+The percent character (<kbd>%</kbd>) follows this.
+</li><li>When known, a space and then the number of hours/minutes/seconds of battery life remaining appears.
+</li></ul>
+Typical battery status examples:
+<blockquote><code>
+ph 100%<br>
+bl 25% 21 minutes remaining
+</code></blockquote>
+
+<p>
+If the watch feature is on, any change in the above status information, except for hours/minuts/seconds remaining,
+is reported as it occurs.
+To turn the watch off again, type again the same command you used to turn it on:
+<kbd>B</kbd> in the Global Functions map, or
+<kbd>QuickKey B</kbd> if you use the BX Quick Key.
+
+</p><p>
+To answer a likely occasional question, why these commands turn on and off the watch feature without
+providing a way to check battery status without doing that:
+The standard JAWS command for checking battery status, <kbd>JAWSKey+Shift+B</kbd>, adequately reports battery
+status without any side effects. This BX battery status feature is intended for people who wish to be very
+efficiently informed while working as the battery depletes.
+
+</p><h3 id="tip_beepstack">Examining Beep Call Stacks and Process Launch History</h3>
+
+<p>
+BX quietly records the script call stack every time the <code>beep()</code> function is called. To see the recorded
+call stacks, type <kbd>JAWSKey+Shift+B</kbd> three times in quick succession. Press <kbd>Esc</kbd> when done
+examining the stacks. BX will begin throwing away the oldest calls after the number of entries reaches 20.
+This feature is intended to help debug scripts.
+Note that beeps generated by something other than a JAWS script will not cause entries to appear here.
+Entries appear newest first.
+
+</p><p id="procs">
+Below the call stack information, a list of process launches will also appear, one entry per line. Contrary to
+the call stack entry list, this list appears in chronological order
+(oldest first). This means that typing <kbd>Ctrl+End</kbd> in the JAWS virtual view and then arrowing up will
+traverse the list from the newest entry backward.
+This list is intended to help diagnose system and user activities that might slow JAWS processing, keyboard
+handling, etc.
+Due to restrictions on the JAWS event used to make this list, however, processes whose executable files live
+under the <code>Windows</code> folder will not be included.
+
+</p><h3 id="tip_readInvis">Reading Invisible Lists, Combo Boxes, and HTML</h3>
+
+<p>
+Standard list and combo box controls support MSAA and thus make their
+contents available even when not displayed on screen. This is also
+true of standard HTML controls. This can sometimes be useful, as in
+the following examples:
+</p><ul>
+<li>Any pane of the Windows Task Manager that has been displayed at
+least once since the Task Manager was last started will keep
+up-to-date information in any list controls in that pane. This means,
+for example, that you can check on the CPU usage and memory size of
+any running process or the current utilization percentage of a network
+adapter without actually displaying the Task Manager, provided that it
+is running (minimized is fine) and has displayed the pane(s) you want
+(Processes and Networking in this case).
+</li><li>Some chat programs use lists and/or HTML controls to show chat
+text. In such cases, background chat monitoring and reporting is
+possible.
+</li></ul>
+
+<p>
+BX can be used to find and monitor this type of activity as follows:
+</p><ol>
+<li>Pick a running program of interest, even if not displayed, and
+search for its top-level window using Window Navigation.
+Alternatively, if you're just curious what's out there on your
+machine, just skim through the top-level windows looking for lists and
+combo boxes.
+</li><li>Once you find a window of interest, mark it using the Mark system.
+This will make it easy to return here later to check for changes.
+</li><li>Get the MSAA object for your chosen list or combo box by typing a
+dot and then c for the client object. For a list, this will be the
+List object. For a combo box, this will be the root ComboBox object,
+and you'll need to find the List object under that.
+</li><li>Use RightArrow and then Up and DownArrows to explore the list's
+contents. You may want to mark other positions in your navigation to
+return to later as well.
+</li></ol>
+
+<h2 id="cnf">The BX Configuration Files</h2>
+
+<p>
+BX ships with a <code>bx.cnf</code> file and can also read a
+<code>bx_user.cnf</code> file for user-specific configuration options.
+Users are strongly urged to change only <code>bx_user.cnf</code> and
+not <code>bx.cnf</code> so that future BX updates do not overwrite
+personal preferences.
+See <code>bx.cnf</code> for information on the options available.
+
+</p><h2 id="issues">Known Issues</h2>
+
+<p>
+The BX author is aware of the following issues but has not managed to address them to date:
+</p><ul>
+<li>After a JAWS restart or a script reset, such as from <kbd>Ctrl+JAWSKey+Esc</kbd>, a small number of BX
+operations may fail for a short time.
+Notable among these is the sequence to switch to a map based on the current BX location's object type,
+<kbd>Apostrophe Apostrophe</kbd>.
+This is a side effect of access restrictions placed on the JAWS <code>GetObject</code> function that BX cannot
+immediately work around.
+</li><li>There may be some stuck-key issues not yet resolved in UIA event capture.
+If your keyboard acts oddly during or after event capture, tap each modifier key (<kbd>Ctrl</kbd>, <kbd>Shift</kbd>,
+etc.) once to make sure Windows does not incorrectly assume that one of these keys remains held down.
+This issue may not occur if Unified Keyboard Processing (UKP) is enabled in JAWS,
+which became the default in the June 2023 JAWS update.
+</li><li>BX is not localizer-friendly, inasmuch as the spoken strings are either directly in <code>bx.kmp</code>,
+which is overwritten on BX updates, or in the BX code itself, <code>bx.jsb</code>.
+There have been no requests to rectify this situation as of this writing (July, 2023), and doing so would
+likely take considerable time and effort.
+</li></ul>
+
+<h2 id="hist_past">BX Development History Overview (for the Curious)</h2>
+
+<p>
+BX has its beginnings as far back as 2001 in a lot of code snippets I
+tinkered with as I found time. I kept trying to figure out a way to
+reduce the amount of time I had to spend testing things for scripting
+projects,
+but I couldn't come up with a satisfactory interface just by creating
+scripts., because the interface invariably became unwieldy. I wanted
+a way to redefine any key on the keyboard dynamically, and also a way
+to specify what each key should do in a more concise way than by
+writing a new script for each case. I made several attempts at both
+problems, one of which used the JAWS virtual buffer and allowed
+keystrokes to add to it dynamically; but I was still not happy with
+the results. The virtual buffer idea made me realize I also needed a
+system that had absolutely no effect on what was in focus or on the
+results returned by all the JAWS scripting functions. Using the
+virtual buffer violated this requirement.
+
+</p><p>
+In late February of 2003, I finally met with success and began
+collecting code snippets into a coherent system.
+Predicting, accurately as it turned
+out, that some of my coworkers might also want to use the result, I named the
+budding tool Bart Explorer and sent a copy to a few coworkers for them
+to play with. (This name is where the name BX initially came from.)
+
+</p><p>
+Although I created much of BX in my spare time and outside
+any project under company direction, I actually thought it might one day
+become either a part of JAWS itself or a
+Bartimaeus Group company product for commercial distribution. Neither
+happen, although one or two binary copies were actually sold.
+Because of this thought though, because I had such a complete lack
+of experience in the legal arena and did not know how to craft an
+appropriate license agreement,, and perhaps mostly because I knew the tool
+suffered from a profound lack of documentation, I said little of the tool's
+existance to people outside the company. I did, however, keep
+developing it regularly and kept my coworkers apprised of my progress,
+adding features as I found need for them and occasionally in response
+to coworkers' requests and suggestions. At some point I realized I was
+also leaving a trail
+of BX installations behind as I went from site to site scripting for
+various companies and agencies, because I never scripted without it
+and found it decidedly inconvenient to have to uninstall and reinstall
+it on each visit to a site (BX at that time had no installer).
+
+</p><p>
+BX first went officially public on September 11, 2007. Shortly
+thereafter, and to my surprise, a link to it appeared on a prominant
+Freedom Scientific web page. The public release had no other noted
+significant impact however, possibly due to the aforementioned
+profound lack of documentation.
+
+</p><p>
+At some point after the above public release, I began implementing features for myself and coworkers in what
+had by this time become SSB BART Group, but features that I was reluctant to release to the public for various
+reasons. For example, BX became capable of altering HTML code on an active web page, in place. This concern
+caused me to begin keeping a separate, "Pro" version of BX for myself and other SSB employees.
+As a side effect though, my efforts to keep the public BX up to date suffered greatly.
+
+</p><p>
+In early 2017, prompted by several needs to give out BX copies to SSB clients and by the existence of other easily
+available tools that duplicated Pro features of BX (e.g., Firebug for editing HTML in place), I decided to again
+unify BX into a single version. I also decided to stop including source code at this time, however. Reasons for
+this included
+</p><ul>
+<li>Complications caused by the need to support compilation of BX under many JAWS versions.
+</li><li>Recognition that most users of BX other than me use it for testing and not for scripting, which renders the
+source code useless to them.
+</li><li>The sheer size of the source file (nearly 30,000 lines of code as of March, 2017).
+</li></ul>
+In February, 2019, many more of my free public projects also stopped including source code.
+See my <a href="https://www.dlee.org/code_policy.htm">Script Distribution Policy</a> document for details.
+
+<h2 id="ack">Acknowledgements</h2>
+
+<p>
+I would like to thank Victor Tsaran for his constructive input in the
+very early days of BX's creation, and for writing and allowing
+Bartimaeus Group and me to use a Nullsoft installation script for it
+(some of Victor's installer code is still in the BX installer as of this writing).
+
+</p><p>
+I also thank Jonathan Avila for suggestions that guided some of BX's early
+development and, as he was my manager for BX's early years, for
+encouragement to write it and permission to work on it from time to
+time between projects at the office.
+Chad Foster also contributed some ideas while he worked with us in the early 2000's, for
+which I am grateful.
+
+</p><p>
+Beyond former coworkers,
+Michael (Mick) Curran deserves appreciation
+as well, for contributing one major idea to BX, that being the irregular-looking
+use of
+<code>GetObjectFromEvent</code> to retrieve MSAA objects directly from
+window handles (I saw that his JFWTechnical scripts did that in the early 2000's).
+
+</p><p>
+I could try thanking all the companies and individuals who, in the
+course of my doing scripting both on and off the job, caused me to
+think of or need various specific BX features; but the list would be
+long and the time to pull it together even longer. I will just say
+that it was the widely varying character of my scripting projects over
+the years that caused so much to happen to BX.
+
+</p><p>
+Last but certainly not least, and in the spirit and style of Larry Wall,
+author of the Perl programming language among other major public
+offerings, I wish to thank the Author of my story for prospering the work of
+my hands.
+
+</p><h2 id="hist">Revision History</h2>
+
+<p>
+This is the revision history of BX, most recent revision first.
+
+</p><h3>Revision 2656, June 9, 2025</h3>
+<ul>
+<li><kbd>P</kbd> in Rectangle Examination sends the current rectangle through Picture Smart, which displays results
+after a while. BX shuts off to accommodate this display.
+</li><li>Improved the ability of <kbd>Ctrl+D</kbd> in Window Navigation to find the Desktop window on recent Windows 11
+versions.
+</li><li><kbd>P</kbd> in Object Examination, for reporting the current object level's process name, has help text.
+</li><li>Updated the Object Examination map to include some functions that became available starting in JAWS 2024:
+<ul>
+<li><kbd>A</kbd>, for reporting the current level's automation ID, tries to get it by other means when the
+<code>getObjectAutomationId</code> function can't retrieve it.
+In JAWS 2024 and later, BX uses <code>getObjectAttributes</code>.
+In older JAWS versions, BX uses <code>getCachedMSAAFocusInfo</code>.
+These tricks will sometimes return useful information in apps with ARIA support, such as Microsoft Teams.
+This author reported this to Freedom Scientific
+in (April, 2025)
+in the hope that <code>getObjectAutomationID</code> might
+be updated to return the same information.
+</li><li><kbd>Shift+A</kbd> reports the current object level's attributes rather than inheriting from the Cursor
+Navigation map the reporting of <code>controlCanBeChecked</code> and <code>controlIsChecked</code> results.
+</li><li><kbd>Shift+P</kbd> reports the current object level's placeholder text.
+</li><li>Typing <kbd>T</kbd> twice in quick succession, in addition to reporting the current object level's role
+number, will report the associated role text and the object level's type description.
+</li></ul>
+Note that using these commands in older JAWS versions will produce "Unknown function call" messages.
+</li><li>Fixed bugs in the task list code for BX QuickKey commands like <kbd>QuickKey W</kbd>, and
+<kbd>QuickKey</kbd> followed by digits, that sometimes caused new tasks/windows to be assigned unusually
+high task numbers.
+</li><li>The <kbd>QuickKey A</kbd> map works in the Brave browser.
+</li><li>Updated the fix to the so-called <a href="https://www.dlee.org/bx/#if1">idle fiddle freeze</a>
+to avoid moving the mouse in apps that have been seen to become sluggish or freeze when this is done.
+This change only applies under JAWS 2019 and later.
+<details><summary>Details on when this applies and why</summary>
+This alteration applies in the following circumstances:
+<ul>
+<li>The mouse is inside a Qt app, such as TeamTalk 5.
+</li><li>The mouse is inside a Chrome-based window, in case it is an Electron app.
+</li><li>The active application or website is a Chrome-based window.
+</li></ul>
+JAWS and/or the apps listed can sometimes freeze or become sluggish when the mouse is moved while they are active.
+JAWS versions older than 2019 are not affected by this change, however, because those JAWS versions do not
+support the alternative technique used.
+</details>
+</li></ul>
+
+<h3>Revision 2642, July 18, 2024</h3>
+<p><strong>Note</strong>:
+This revision of BX will only install and work in JAWS versions 2019 and later.
+This revision also begins a new approach for
+<a href="https://www.dlee.org/bx/#upd">BX Update</a> and may require <code>bx_user.cnf</code> changes for any users who must pass BX
+updates through a web proxy server.
+If you need to install BX into a JAWS version between 15.0 and 2018 inclusive,
+or if you experience problems with BX Update after installing this revision,
+see the <a href="https://www.dlee.org/bx/#rev2574">Revision 2574 release notes</a> (immediately after this section), which include a
+link to an installer for that revision.
+If the problems you experience after installing this update amount to BX Update failing to work with a
+required web proxy server, see the <a href="https://www.dlee.org/bx/#proxy">description of how to set up BX for proxy use</a>.
+</p><details><summary>Quick tips on updating BX proxy configuration</summary>
+<ul>
+<li>The <code>http_proxy</code> and <code>https_proxy</code> settings in <code>bx_user.conf</code> are
+replaced with a single <code>proxyURI</code> value.
+Use your original value from <code>https_proxy</code> when possible.
+</li><li>The <code>wget_args</code> option has been replaced with <code>proxyUser</code> and
+<code>proxyPass</code> options.
+Move the values appropriately to those options.
+</li></ul>
+</details>
+
+<p>
+Changes to BX Update:
+</p><ul>
+<li>JAWS and scripts are not "blocked" during an update; commands will continue to work normally.
+Updates typically require only a few seconds, but this change means that things like a web download stall
+will not freeze JAWS.
+Instead, any progress and failure messages will speak later as they occur.
+</li><li>If a local file is temporarily in use during an update and blocks the update, BX will retry a few times
+and will report which file is holding up the show.
+If the update fails, this will also be indicated.
+(Previously, this situation resulted in update failures with messages like "7z returned 2.")
+</li><li>Progress messages, when appropriate, are timely rather than all occurring at once when the update
+attempt is done.
+</li><li>Updates should no longer cause focus or display "flashes" (brief disruptions).
+</li></ul>
+
+<p>
+Other changes in this revision:
+</p><ul>
+<li>The minimum supported JAWS version is changed from 15.0 to 2019.
+</li><li>The internal format used to store the <a href="https://www.dlee.org/bx/#tasks">active task list</a> across JAWS restarts has changed
+slightly, and the list will be rebuilt from scratch on the next restart of JAWS after this BX update is installed.
+If this causes any of your tasks to be renumbered, just use <kbd>QuickKey Accent</kbd> to re-assign your
+preferred numbers once after this update and JAWS restart.
+</li><li><kbd>B</kbd> in Global Functions no longer reports the state of the JAWS user buffer. This is now added
+to the output of <kbd>D</kbd> in Global Functions.
+</li><li><kbd>B</kbd> in Global Functions now duplicates the <kbd>QuickKey B</kbd> sequence added and documented
+in BX revision 2171 (June, 2019) for
+<a href="https://www.dlee.org/bx/#tip_battery">reporting and watching the computer battery status</a>.
+The documentation for this command and sequence is also moved into its own section of this document and out
+of the release notes.
+(This was all prompted by a number of requests for this sort of functionality over the last few months.)
+</li><li>Typing <kbd>Shift+K</kbd> twice in Global Functions will toggle and report the new state of Unified
+Keyboard Processing (UKP) as was always intended.
+JAWS will then repeat the "Global Functions" map name, as a side effect of having to restart itself to
+synchronize with the reset of the JAWS keyboard handling states.
+</li><li><kbd>Shift+M</kbd> in Window Navigation, after providing the
+integer result of calling <code>IsMSAAWindow</code> on the current window, now also provides
+the integer result of calling <code>IsScanCursorClass</code>
+on the current window's class.
+This function arrived in JAWS 2020.
+</li><li><kbd>Ctrl+Shift+F</kbd> in AccessibleObjectTree Navigation, which was a duplicate of
+<kbd>Ctrl+F</kbd> in that map, now calls the <code>IAccessibleObjectTreeBuilder</code> COM object's
+<code>BuildFocusSubtreeUsingUIA</code> method against the currently focused window.
+This call was introduced in JAWS 2024 and will not work in older JAWS versions.
+If the focused window does not directly support UIA, this call will return nothing and JAWS will say "object
+not found."
+When the focused window directly supports UIA and JAWS supports this call,
+this command produces a tree representing the focused element and all of its descendants.
+The nodes in this tree can contain extra properties that
+are not available via the normal tree builder (see the next item).
+</li><li>For AccessibleObjectTree nodes produced by the above command, the following extra commands return the
+ten extra properties and the three values from the extra object method available for these nodes:
+<ul>
+<li><kbd>I</kbd> announces <code>ItemType</code> and <code>ItemStatus</code>.
+</li><li><kbd>T</kbd> announces <code>UIAControlType</code> and <code>UIALocalizedControlType</code>.
+</li><li><kbd>Shift+T</kbd> announces, in order,
+<code>TableRowIndex</code>, <code>TableRowCount</code>, <code>TableRowHeader</code>,
+<code>TableColumnIndex</code>, <code>TableColumnCount</code>, and <code>TableColumnHeader</code>,
+in a format like "Row 2 of 5 (Bob), column 2 of 7 (Phone)."
+</li><li><kbd>P</kbd> announces the three values returned by reference from calling the
+<code>GetGroupPosition</code> method: <code>GroupLevel</code>, <code>GroupCount</code>, and
+<code>GroupIndex</code>.
+The format is like "Level 1 count 6 index 4."
+Note that, when an XML representation of an AccessibleObjectTreeNode is requested, these values transfer to
+XML with the names indicated here.
+</li></ul>
+</li><li>The copyright intro announcement speaks only once per JAWS run, on the first BX invocation, rather than
+speaking again after a script reload such as via <kbd>JAWSKey+Ctrl+Esc</kbd>.
+</li><li>Various tests and bits of code for supporting older JAWS versions are removed for efficiency.
+</li><li>The installer no longer includes an <code>Installer</code> subfolder, viewable with 7Zip, that contains
+the source code for this NSIS installer and its companion <code>JAWSUtil.vbs</code> utility script.
+These remain available in the previous revision; see the next section for a link.
+They are removed from BX going forward, though, because Microsoft began deprecating VBScript as of October, 2023.
+</li></ul>
+
+<h3>Revision 2574, May 26, 2024</h3>
+<p id="rev2574">
+This is the last version of BX to support JAWS versions 15.0 through 2018. Newer versions support only JAWS
+versions 2019 and later.
+<a href="https://www.dlee.org/bx/jfw_bx2574.exe">Install this revision 2574 if you use JAWS 15.0 through 2018</a>.
+</p><ul>
+<li>In Global Functions, <kbd>Shift+D</kbd> and <kbd>Shift+K</kbd> will report current state on first press
+and only toggle state on the second.
+These commands report or change the state of the legacy accessibility driver and the unified keyboard
+processor (UKP), respectively.
+</li><li>UIA string property conditions may now include ignore-case and substring-match conditions, when running
+under JAWS 2024 or later.
+The first filter condition below matches any UIA element whose name is "Doug" but without considering letter casing.
+The second matches a name containing the word "Doug" (case sensitive) rather than matching only the exact name "Doug".
+The third filter does the same but would also match a name containing "doug" in lower case.
+<blockquote><code>
+Name 'Doug'/i<br>
+Name 'Doug'/s<br>
+Name 'Doug'/is
+</code></blockquote>
+Using this feature in a JAWS version older than 2024 will produce a spoken error message and will fail.
+This BX feature uses the <code>UIAScriptAPI</code> <code>CreateStringPropertyConditionEx</code> method that
+was added in JAWS 2024.
+</li><li>The triple <kbd>JAWSKey+Shift+B</kbd> command, outside of BX, for showing call stacks for
+<code>beep()</code> calls and recent process launches, prints its "ago" time offsets more sensibly.
+</li><li>The shortcut for launching the JAWS Task List, <kbd>QuickKey J</kbd>, no longer says "Too many map
+inclusions." This was an incorrectly reported error message, not an actual failure to find a map entry.
+This incorrect error message may have spoken for other commands for some users.
+</li></ul>
+
+<h3>Revision 2558, November 11, 2023</h3>
+<ul>
+<li>The accent (<kbd>`</kbd>) key in Window Navigation, which cycles among filters for moving among windows,
+includes a "Windows with this process ID" option.
+</li><li><kbd>D</kbd> in Global Functions, which has always returned the results of <code>DialogActive()</code> and
+<code>InHJDialog()</code>, adds the string result of <code>GetDialogIdentifier()</code>.
+This function was added in JAWS 2021.
+</li><li><kbd>Ctrl+D</kbd> in Window Navigation is able to find the Desktop window in situations where this
+previously failed. Due to an anomaly in the JAWS <code>getWindowTypeCode</code> function, such failures
+occurred in some applications that enabled a virtual or "scan" cursor.
+</li><li><kbd>Ctrl+D</kbd> in MSAA Navigation can also more frequently find the root MSAA Desktop client object.
+</li><li><kbd>Alt+Shift+R</kbd> in Object Examination calls <code>MSAARefresh</code> synchronously with a
+five-second wait time.
+This parallels <kbd>Alt+Shift+U</kbd> for <code>UIARefresh</code>.
+</li><li><kbd>F</kbd> in Window Messages, which is reached from Window Navigation by typing a semicolon
+(<kbd>;</kbd>), has long been a way to try focusing a window by sending a <code>WM_NEXTDLGCTL</code> message
+to its top-level window.
+This revision makes a quick double-press of <kbd>F</kbd> use the "real" window instead. In some applications,
+this may be the actual dialog container for the field of interest.
+</li><li>The code for finding Windows tasks, used by the <a href="https://www.dlee.org/bx/#quickKey">QuickKey commands</a> for <a href="https://www.dlee.org/bx/#tasks">listing and switching among tasks</a>,
+no longer freezes for several seconds when encountering notification windows that refuse to yield UIA elements
+to JAWS.
+This has been seen in Windows 11 as of November, 2023.
+</li><li><kbd>Insert+E</kbd>, in edit controls supporting the BX direct execution feature,
+will work in a few new situations:
+<ul>
+<li>":function" will be ignored at the beginning of the line.
+":Script" at the beginning of the line will cause the line to be treated as a script call instead of a
+function call.
+This facilitates testing for jsd declarations that represent scripts or functions that do not actually exist.
+</li><li>A leading semicolon is ignored.
+</li></ul>
+</li><li>The <kbd>W</kbd> command in Global Functions for testing the findability of application windows is removed,
+for lack of use and modern applicability.
+</li></ul>
+
+<h3>Revision 2548, October 12, 2023</h3>
+<ul>
+<li>There are a couple changes to <kbd>Alt+E</kbd> and <kbd>Shift+Alt+E</kbd>, the BX global commands for
+evaluating function calls and speaking their results:
+<ul>
+<li>They are evaluated by newer code and no longer return sometimes mangled result strings.
+(In the past, calls like <code>GetElementXML()</code> could return unexpected characters in place of some symbols.)
+</li><li>The results are copied to the clipboard when possible - i.e., when a result has a string representation.
+This allows full result retrieval when a result is cut short and is thus not completely available via Speech History.
+</li></ul>
+</li><li>Fixed a bug in the handling of scripted keystrokes that are passed explicitly through a map with a leading
+<kbd>&amp;</kbd> sign, such as the <code>JAWSCursor</code> key in Window Navigation.
+These keys were incorrectly both silenced and prevented from running their scripts, as a side effect
+of the <a href="https://www.dlee.org/bx/#smartfix">fix to SmartNav commands trying to execute from within BX when they shouldn't</a>.
+</li><li>If a <a href="https://www.dlee.org/bx/#quickKey">BX Quick Key</a> is defined,
+<kbd>QuickKey D W C</kbd> says the CPU usage; but at least under Windows 11, this started to say "0" more
+often than made sense.
+The algorithm now used seems more capable of yielding a sensible number.
+</li><li>The included <code>readme.txt</code> file includes an explanation of how to update BX via its own internal
+<a href="https://www.dlee.org/bx/#upd"><kbd>Ctrl+U</kbd> command in the Global Functions map</a>.
+</li><li>The <a href="https://www.dlee.org/bx/#UIAEvents">Capturing and Examining UIA Events</a>
+section of this document is no longer hidden inside Advanced Usage and Tips.
+</li><li>This release includes a cleanout of many obsolete items, among them being
+<ul>
+<li>App-specific settings in <code>bx.cnf</code> for several obsolete applications,
+including Internet Explorer (<code>browseui.dll</code>), which went out of support in June, 2022.
+<details><summary>Specific applications affected</summary>
+<ul>
+<li><code>Browseui.dll</code> (Internet Explorer).
+Version 11, its last version, went out of support June 11, 2022.
+</li><li><code>ChatClient.exe</code>, the chat program once used by the For The People website.
+For The People is long gone, and I have never seen another site use that program.
+</li><li><code>outllib.dll</code> (old Outlook, maybe from Office 2007).
+</li><li><code>re7.exe</code>, The Raiser's Edge fund-raising software.
+</li><li><code>VZAccess Manager.exe</code> (old Verizon air card software for a PCMCIA device).
+</li></ul>
+</details>
+</li><li>Attempts to use a predicted and hoped for but never implemented <code>hwnd</code> parameter in calls to
+functions for retrieving native object models.
+</li></ul>
+</li><li>By popular vote, old history entries are now hidden inside a <code>details</code> tag that may be expanded
+to show them. Among the benefits of this, heading count is reduced and text searches won't match very old material.
+</li></ul>
+
+<h3>Revision 2533, August 28, 2023</h3>
+<ul>
+<li><kbd>Insert+E</kbd> works in Windows 11 Notepad for testing lines of code, just as in Windows 10 and older.
+</li><li>Fixed a string handling bug that, among perhaps other effects, made creation of a <code>bx_user.cnf</code>
+file more difficult. Thanks to Anthony for reporting this bug.
+</li><li>If a <a href="https://www.dlee.org/bx/#quickKey">BX Quick Key</a> is defined,
+<kbd>QuickKey D P</kbd> will display the current script performance history in a JAWS virtual buffer, and
+<kbd>QuickKey D Shift+P</kbd> will clear this history.
+This is a convenient interface to the
+<code>GetScriptPerformanceHistory</code> and <code>ClearScriptPerformanceHistory</code> functions introduced
+in JAWS 2022 or possibly a later update to JAWS 2021.
+To use these functions, you must first enable the performance history system itself via the
+<code>default.jcf</code> file in your JAWS user folder.
+If this is not done for you via a popup prompt on your first attempted use of these functions, add something
+like the following section to the <code>default.jcf</code> file in your JAWS user folder:
+<blockquote><code>
+[StabilityAndPerformance]<br>
+ScriptPerformanceHistoryEnabled=1<br>
+ScriptPerformanceHistorySize=50<br>
+ScriptPerformanceHistoryThreshold=250 ; milliseconds
+</code></blockquote>
+See the <code>default.jcf</code> file that comes with JAWS itself for further comments on these values.
+</li><li><kbd>Shift+V</kbd> in Cursor Navigation will issue a warning if one or more lines in the collected results
+appear to be long enough to have been cut short in the results.
+This command collects and shows in a virtual buffer a rendition of the current web page that is close to what
+JAWS says for that page, line by line. Through at least JAWS 2023 August update, there is a 1024-byte (1 k)
+limit on the length of a <code>getLine()</code> result that does not apply to <code>sayLine</code>.
+JAWS usually avoids this issue on web pages by wrapping long lines before they reach this limit, but this is
+not always the case.
+The issued warning will include the number of lines that may be cut short, followed by a list of their line
+numbers. <kbd>J</kbd> with any of these line numbers will move the virtual cursor to the line for closer
+examination.
+</li><li>The <a href="https://www.dlee.org/bx/#tasks">Task Management Features</a> section of this document
+documents the behavior of the BX task list when multiple virtual desktops are in use.
+</li></ul>
+
+<details><summary>46 older revisions back through June 16, 2008</summary>
+<h3>Revision 2525, July 12, 2023</h3>
+<ul>
+<li>This update contains much internal reworking of how dynamic code is executed.
+Most notably, the use of <code>formatStringWithEmbeddedFunctions</code> is completely eliminated.
+</li><li>Fixed an occasional problem with MSAA Navigation commands shortly after a JAWS restart or script reload.
+A symptom would be JAWS saying "Invalid object: 0" for
+an MSAA Navigation command that should return a valid object.
+</li><li>Various BX commands are more specific about "empty" values: What for years said "empty string" may now say
+"not specified" to indicate a true empty variant result (<code>VT_EMPTY</code>).
+For example, the <kbd>H</kbd> command in MSAA Navigation will still say "empty string" for a Client object but
+will say "not specified" for a Window object, because that's what <code>AccHelp</code> returns for those objects.
+Similarly, results that are the integer 0 or the string "0" will now say "0" instead of "empty string."
+</li><li>In MSAA Navigation, <kbd>Shift+H</kbd> (help topic) will say first the string help file name returned,
+then the topic id returned. Usually these will be "empty string" and 0, respectively.
+</li><li>The <a href="https://www.dlee.org/bx/#UIAEvents">UIA event logging system</a> includes event-related values that are "empty," such
+as the null string and the integer 0.
+UIA element properties still show up without such values to minimize complexity of results and memory usage.
+</li><li>The <a href="https://www.dlee.org/bx/#logging">event logging system</a> can track 11 more events and functions,
+including OCR-related events.
+</li><li><kbd>JAWSKey+E</kbd>, for executing a function call directly from the current text line of an editor or
+similar text area, will now work in non-HTML JAWS user buffers.
+This command will still perform its default function on websites and in other virtual-buffer environments,
+including the JAWS Results Viewer, so that there is no chance of running code directly from a website, even
+one embedded into an application.
+</li><li><kbd>JAWSKey+E</kbd> will also, when appropriate, give the result values' variant type in decimal rather
+than hex, and use the correct description of the code. (The description was previously incorrect in some
+cases.)
+</li><li>Some old code for supporting JAWS 14 and older UIA handling is removed for efficiency.
+Tracking of a few obsolete events, such as for AOL Instant Messenger, are also removed.
+</li></ul>
+
+<h3>Revision 2501, June 24, 2023</h3>
+<ul>
+<li>The UIA support is refactored significantly and updated to account for recent increases in JAWS' UIA support.
+A JAWS restart after installing this script update is recommended, though not required.
+This refactor is being applied to several projects.
+Users who use several of this author's script sets may notice a slight reduction in JAWS' memory consumption as
+these updates progress.
+In this project, event capture via <kbd>Ctrl+E</kbd> in UIA Navigation may be able to capture more event types
+as a result of this update.
+Note also though that complaints may be spoken currently for an attempt to capture a new event for which JAWS
+is not yet fully equipped. These messages are harmless and do not stop event capture from working correctly
+for other events.
+</li><li>The key sequence <kbd>QuickKey D B</kbd> activates the browser map for a single command.
+This can be useful in applications that present HTML controls but that are not recognized already as HTML
+environments. For example, from within Skype with the virtual cursor activated, typing <kbd>QuickKey D B
+Shift+A</kbd> presents advanced element information for the current DOM tree element in a JAWS user buffer.
+In applications that are already recognized as HTML environments, the sequence <kbd>QuickKey A Shift+A</kbd> would
+do the same thing.
+</li><li>Keyboard help mode inside BX works again. This was broken indirectly in released BX revision 2483
+(actually in revision 2474)
+by the <a href="https://www.dlee.org/bx/#smartfix">fix to SmartNav commands trying to execute from within BX when they shouldn't</a>.
+</li></ul>
+
+<h3>Revision 2490, January 19, 2023</h3>
+<ul>
+<li>The <a href="https://www.dlee.org/bx/#upd">Updating Scripts With BX</a> section of this document is more complete.
+</li><li><kbd>Ctrl+P</kbd> in UIA Text Navigation goes to the range at the active cursor position.
+</li><li>In Pixel Navigation, <kbd>Shift+NumPad5</kbd> or <kbd>Shift+,</kbd> report the active cursor name and position.
+</li><li>Pixel Navigation explicitly uses pixel coordinates rather than relying on JAWS defaults.
+</li><li><kbd>I</kbd> in BX Configuration cycles among the available settings for the idle fiddle feature.
+</li><li>Fixed a bug affecting the sequence <kbd>BXQuickKey A</kbd> when typed from within an application with no
+app-specific map defined. Prior to this release, this sequence could cause a JAWS restart to become necessary
+in order to reclaim full use of the keyboard.
+</li></ul>
+
+<h3>Revision 2483, November 27, 2022</h3>
+<ul>
+<li>The <kbd>P</kbd> command for checking results of the <code>IsMultiPageDialog</code> and
+<code>GetDialogPageName</code> functions is moved from Object Examination to Global Functions. Rationale: The
+<kbd>D</kbd> command in Global Functions is similar, checking results of <code>DialogActive</code> and
+<code>InHJDialog</code>.
+</li><li><kbd>P</kbd> in Object Examination now returns the result of the <code>GetObjectProcessName</code>
+function added in JAWS 2022.
+</li><li><kbd>I</kbd> in Global Functions actually speaks a machine ID rather than saying nothing.
+</li><li>There is a new <kbd>Ctrl+Shift+B</kbd> command in the Global Functions map that broadcasts the current state
+of the
+Windows screen reader flag to all running applications. This may and may not be useful or even have a notable
+effect under Windows 10 and later; but in the past, it was sometimes necessary to send this Windows message in
+order to fix the behavior of applications that check the flag after an event that unexpectedly turned it off.
+Running multiple screen readers at once, and running two copies of one screen reader at once, are two known
+possible causes of such an event.
+</li><li>A new <kbd>Ctrl+Shift+B</kbd> command in the Window Navigation map similarly broadcasts the current state of the
+screen reader flag to the current BX window.
+</li><li id="smartfix">Fixed the execution of SmartNav commands in BX maps that are not meant to pass keys to the
+focused application.
+Thanks to Hamza Ahmad for reporting this bug.
+</li><li><kbd>Shift+K</kbd> in Global Functions correctly reports the state of the Unified Keyboard Processing
+(UKP) driver and only tries to toggle it on second and subsequent presses.
+</li><li><kbd>BXQuickKey B</kbd> says "unknown level" for a charge percentage of 255, since that's what that value means.
+</li><li><kbd>Insert+E</kbd>, for immediate execution of the current line in edit and console controls as a JAWS
+function call, now works in Windows Terminal.
+</li><li>A missing help string in the UIA map is added.
+</li><li>The <a href="https://www.dlee.org/bx/#UIAEvents">Capturing and Examining UIA Events</a>
+part of the Revision 2410 (June 24, 2020) release notes
+is moved into the main documentation.
+</li></ul>
+
+<h3>Revision 2469, November 22, 2021</h3>
+<ul>
+<li><kbd>Insert+B</kbd> in UIA Navigation includes radio buttons in the results.
+</li><li>The method of collecting tasks for the <kbd>QuickKey W</kbd> sequence and the sequences consisting of
+<kbd>QuickKey</kbd> followed by a digit is changed (again) in an attempt to make task collection faster and
+more accurate.
+</li><li>The call stack and process launch lists shown by typing <kbd>JAWSKey+Shift+B</kbd> three times in quick
+succession separate the two lists by a blank line.
+</li><li>The <kbd>.</kbd> command in the BX Debugger (<kbd>Ctrl+X</kbd> map) works instead of producing an unknown
+function call.
+Thanks to Hamza Ahmad for catching this bug.
+</li><li><kbd>Enter</kbd> in submaps under the Quick Key will execute the last function spoken via the <kbd>Tab</kbd>
+help system, just as BX itself does when active.
+This does not apply before a submap is entered under the QuickKey though, because the initial QuickKey map is
+not implemented in the same way as other maps.
+</li><li>Removed the <a href="https://www.dlee.org/bx/#shockwave">Shockwave Flash map added in 2010</a>, for lack of use and because Flash
+itself is no longer supported. The map was also only accessible from an HTML element obtained directly from
+Internet Explorer's Document Object Model, which has been obsolete for years by now.
+</li><li>Some code for supporting very old JAWS versions (11.0 through 13.0) is removed.
+</li><li>There is new support for a <code>showRectangles</code> option in <code>bx_user.conf</code>.
+When set to something non-zero, BX will
+<ul>
+<li>Draw a visible rectangle around the current BX object in various maps/contexts.
+</li><li>Draw a visible rectangle to show what was just queried via <kbd>l</kbd> and similar commands in various maps.
+</li><li>Turn off any such rectangle when BX is turned off.
+</li></ul>
+<strong>Warning</strong>: This feature is not yet thoroughly tested.
+</li></ul>
+
+<h3>Revision 2444, December 28, 2020</h3>
+<p>
+FSXML Testing map enhancements:
+</p><ul>
+<li><kbd>Ctrl+P</kbd> moves to the FSXML node at the currently active cursor position using the
+<code>GetElementXMLAtPoint</code> function added in JAWS 2021.
+Unfortunately though, this function appears, in JAWS 2021.2011.16.400 at least, to return the same element as
+<code>GetElementXML</code> regardless of what x/y position is passed.
+</li><li><kbd>Ctrl+G</kbd> moves the active cursor, which should generally be the virtual PC cursor, to the current
+FSXML node if possible.
+This will fail with an error message if the current node is a text node or otherwise has no <code>fsOffset</code>
+attribute.
+</li><li><kbd>Ctrl+Shift+L</kbd> loads XML from the currently focused file in Windows Explorer, assuming focus is on
+a file there.
+</li><li>Various problems on some discovered web pages that broke FSXML parsing are silently and automatically fixed
+for commands like <kbd>Ctrl+F</kbd>.
+</li></ul>
+<p>
+MSAA Navigation map enhancements:
+</p><ul>
+<li><kbd>T</kbd> and <kbd>Shift+T</kbd> report the results of calling <code>GetTypeAndTextStringsForObject</code>
+without and with inclusion of invisible elements, respectively.
+When possible, this result is placed in a virtual buffer for review.
+</li></ul>
+<p>
+Object Examination map enhancements:
+</p><ul>
+<li><kbd>Shift+D</kbd> reports the result of calling <code>GetDescribedByText()</code>.
+This applies to focus and does not take the current object level into consideration.
+</li><li><kbd>U</kbd> reports the IAccessible2 (IA2) unique ID of the object at the current level. Press twice for hex.
+This requires JAWS 2021 or later.
+</li></ul>
+<p>
+Window Navigation and related enhancements:
+</p><ul>
+<li><kbd>Shift+S</kbd> in Window Navigation reports the result of calling <code>GetWindowExStyleBits</code>
+(extended style bits) in hex.
+</li><li>The undocumented <code>DisplayMSAATree</code> function call, previously <kbd>Shift+T</kbd>, is now
+<kbd>Shift+D</kbd>.
+This function was added in JAWS 8.0 but has not proved necessary to this author for many years and may not work
+in current JAWS versions.
+</li><li><kbd>Shift+T</kbd> reports, via user buffer, the result of calling <code>GetTypeAndTextStringsForWindow</code>
+on the current window.
+The keystroke for this call is deliberately chosen to match the keystroke for
+<code>GetTypeAndTextStringsForObject</code> in MSAA Navigation.
+Note though that, as of this writing, this result speaks but fails to virtualize in some settings.
+</li><li>There is a new context map for the ListView Functions map, and it permits jumping to the Rectangle Examination
+map on the current item, column, or cell rectangle.
+(The ListView Functions map is reached from the context map for Window Navigation and is used for exploring
+ListView API calls directly via the JAWS functions that provide access to them.)
+</li></ul>
+<p>
+Miscellaneous updates:
+</p><ul>
+<li>The XML Navigation map includes a <kbd>Ctrl+j</kbd> command for jumping to an XML representation of
+the last of the events thus far saved by the
+<a href="https://www.dlee.org/jam/">JAWS Alert Manager (JAM)</a> if it is installed and running.
+This is mostly intended for the BX and JAM author to use while developing and maintaining JAM but may also prove
+useful to others in examining or identifying notification events.
+</li><li>The call stack view invoked by typing <kbd>JAWSKey+Shift+B</kbd> three times in quick succession also includes
+a <a href="https://www.dlee.org/bx/#procs">list of process launches</a> to help debug causes of system performance issues.
+</li><li>Updated the fix to the so-called <a href="https://www.dlee.org/bx/#if1">idle fiddle freeze</a> to apply more often by watching for
+not only what app the JAWS cursor is in but also which app is in focus, in case they are different.
+This may prevent Microsoft Teams sluggishness for one or two of this author's coworkers under irregular conditions.
+</li></ul>
+
+<h3>Revision 2425, October 30, 2020</h3>
+<ul>
+<li>The <kbd>QuickKey H</kbd> sequence for toggling Script Utility Mode is now <kbd>QuickKey U</kbd>. The
+<kbd>H</kbd> was a holdover from many years ago when Script Utility Mode was instead called Home Row Mode.
+</li><li>Removed the Script Utility Mode emulation map from BX as it can go out of date as JAWS evolves.
+Use the native JAWS Script Utility Mode and its on/off toggle commands instead, or toggle it on/off with
+<kbd>QuickKey U</kbd>.
+</li><li>Removed the <kbd>F</kbd> keystroke from the BX Configuration map, as it was for toggling the "BX First"
+flag that was removed in the June 24 (revision 2410) update.
+</li><li id="if1">Addressed a rare situation that could cause the JAWS <code>GetItemRect</code> function to be called
+while the active cursor is in a window hosted by an Electron (Chrome) application, such as Microsoft Teams.
+In that environment, the call could cause significant sluggishness in JAWS and/or the hosting application under
+at least JAWS versions 2020 and earlier.
+This issue is not expected to have affected anyone other than the BX author and one or two accessibility testers.
+The issue does not occur under normal or default BX conditions.
+For reference, this issue is referred to as the "idle fiddle freeze."
+</li><li>Fixed an issue introduced in June 2020 that affected one of the author's remote work projects.
+For reference, this issue is referred to as the "projName slash restriction."
+</li></ul>
+
+<h3>Revision 2421, September 28, 2020</h3>
+
+<ul>
+<li>The directives file includes directions on how to set up BX sound files and files for the BX Update feature.
+(BX rarely but sometimes uses sound files included with it.)
+</li><li>More and more parts of BX use the <code>CallFunctionByName</code> function instead of the much older
+<code>FormatStringWithEmbeddedFunctions</code> function as a means to call functions indirectly. This is more
+efficient
+and ultimately will allow more flexible passing of values among function calls in BX maps.
+</li><li>When <kbd>Insert+E</kbd> is used to execute a function call from the current PC cursor line, BX will indicate
+the type of the return value if it is not a string, int, or empty.
+The type indication will consist of a hex variant type (<code>vt</code>) value followed by a description of what
+that value means. Examples include "Variant type 0xd IUnknown" and "Variant type 0x24 record."
+(The first of those is often an object pointer and the second a JAWS collection.)
+At this writing (July, 2020), a decent reference on variant type values is <a href="https://en.wikipedia.org/wiki/Variant_type#Types">https://en.wikipedia.org/wiki/Variant_type#Types</a>.
+</li><li>There are two new experimental commands in Rectangle Examination: <kbd>S</kbd> to save a rectangle's pixels
+and <kbd>Shift+S</kbd> to compare the current same rectangle to what was saved.
+If differences are found, they are listed in a JAWS virtual buffer as old and new hex color values.
+This pair of commands is intended to help in locating inaccessible checkboxes and other changeable screen elements
+that have no better representation for JAWS to use.
+However, at this writing (September, 2020), it remains unclear whether changes will frequently enough be detected
+by this approach.
+Under some conditions and especially with large rectangles, these commands may take too long to complete.
+</li><li>The method of collecting tasks for the <kbd>QuickKey W</kbd> sequence and the sequences consisting of
+<kbd>QuickKey</kbd> followed by a digit is changed in an attempt to make task collection faster.
+</li><li>Fixed a very rarely triggered but very inconvenient bug that would cause keyboard problems when an application
+script includes a script for the same keystroke that is assigned as the BX QuickKey.
+</li><li>Keystroke names in this document are more consistent, and there are other minor documentation improvements.
+</li></ul>
+
+<h3>Revision 2410, June 24, 2020</h3>
+
+<p>
+This is a big enough update to warrant a subsection in the release notes!
+Changes are listed by category, followed by a subsection describing one particularly complicated feature update,
+that being the method to capture and examine up to about 200 different UIA events.
+(This subsection was moved into the main document on November 27, 2022;
+see <a href="https://www.dlee.org/bx/#UIAEvents">Capturing and Examining UIA Events</a>.)
+
+</p><p>
+General changes:
+</p><ul>
+<li>The JAWS <code>HomeRowToggle</code> commands no longer activate or deactivate BX; only typing
+<kbd>Insert+Space</kbd> or <kbd>JAWSKey+Space</kbd> twice in a row will do this.
+As part of this, the <code>BXFirst</code> <code>bx.cnf</code> / <code>bx_user.cnf</code> option is removed and
+is no longer supported.
+The Script Utility mode continues to grow, and this move makes sure that BX does not interfere with its operation.
+</li><li>JAWS no longer announces the second <kbd>Insert+Space</kbd> or <kbd>JAWSKey+Space</kbd> on BX exit.
+</li><li>There is protection against key echo being set to None on BX being turned off. This was seen in JAWS 2020
+and possibly 2019 and relates to a problem with the JAWS <code>ScheduleFunction</code> function.
+The details of this problem are not known at this writing, but the effect is that a scheduled call to reset
+typing echo sometimes fails to happen.
+</li><li>The BX Update feature will wait for only 10 seconds for an update download connection to succeed before
+giving up.
+This is to prevent problems like proxy servers causing a freeze and a JAWS restart by allowing a connection
+attempt to stall as long as Windows will allow.
+</li><li>The <kbd>Alt+C</kbd> command for collecting text output of BX commands now announces how to stop collection
+and view results.
+</li><li>The installer contains version and product information visible from the Details tab in Windows Explorer,
+to better identify its contents. This update is being applied to all projects.
+</li><li>A "directives" text file is included that provides information on how to install this set of scripts manually.
+See <a href="https://www.dlee.org/code_common.htm#inst_directives">"Handling Directives Files" in the "Common
+Script Elements" document</a> for further information.
+</li></ul>
+
+<p>
+Changes in the BX documentation:
+</p><ul>
+<li>The revision history for BX is included in the main BX user guide rather than being in separate documents.
+This history is now quite comprehensive and in some cases may serve as additional documentation for features
+that are not thoroughly explained elsewhere.
+</li><li>Same-page links within this document work more consistently across browsers.
+</li><li>The <a href="https://www.dlee.org/bx/#intro">What Is BX?</a> section lists more features for several maps
+and also documents the <kbd>Alt+Shift+Up</kbd> and <kbd>Alt+Shift+Down</kbd> commands for navigating the history
+of BX location visitations.
+</li><li>Keystrokes are written in a more consistent manner, and some key names are spelled out rather than being
+written as native characters; e.g., <kbd>Period</kbd>.
+This change is guided by multiple documentation standards (not all of which agree) and by JAWS behavior when
+encountering some characters.
+</li><li>Other scattered and more minor updates not listed here individually.
+</li></ul>
+
+<p>
+Changes in Global Functions:
+</p><ul>
+<li><kbd>Shift+D</kbd> toggles the legacy accessibility driver on and off.
+</li><li><kbd>Shift+K</kbd> attempts to toggle between the legacy keyboard driver and the newer unified keyboard driver.
+JAWS may not permit this change except via the Settings Center, however. This command will report the state of
+the keyboard driver after the attempt, in any case.
+</li></ul>
+
+<p>
+Changes in UIA Navigation:
+</p><ul>
+<li>The information reported for the <code>TextChild</code> pattern (see the <kbd>P</kbd> command) includes
+number of children and number of bounding rectangles contained in the text range as well as the
+length and initial portion of the included text.
+Also included are the names of the container element and of the text range's enclosing element, with an indication
+of when the two are equal.
+</li><li>When typed after the announcement of <code>TextChild</code> pattern information from the <kbd>P</kbd> command,
+<kbd>Alt+P</kbd> will
+call the pattern's <code>ShowContextMenu</code> method and report the integer (Boolean) result.
+</li><li>The <code>ItemContainer</code> <code>FindItemByProperty</code> tests run by <kbd>P</kbd> include scanning
+for the first unselected item.
+</li><li>There is a new, though still subject to significant change, method for capturing any or all of up to about
+200 different UIA events on a UIA element or tree for examination.
+This is described in detail in
+<a href="https://www.dlee.org/bx/#UIAEvents">Capturing and Examining UIA Events</a>.
+</li></ul>
+
+<p>
+XML-related changes:
+</p><ul>
+<li>There is a new Find map, available from all XML maps, that allows searching for XML nodes in a tree that
+match an XPath expression. The operation of this map mirrors that of the UIA Navigation map's Find map and, again
+similarly, is accessed with the Slash key (<kbd>/</kbd>) from within any XML map.
+Use <kbd>E</kbd> to enter an XPath expression.
+There is an extension though to what can be typed in place of an XPath expression:
+Typing a value that contains no slashes results in a translation to an XPath expression that matches whatever
+is typed, currently case sensitively, against any of these:
+<ul>
+<li>Node text (the result of the <code>text()</code> function, which amounts to the content of whatever
+<code>#text</code> node(s) may exist under the node being tested).
+</li><li>Name (the result of the <code>name()</code> function or the value of the <code>Name</code> property).
+</li><li>The value of <code>fsText</code>.
+</li><li>The value of <code>fsPrompt</code>.
+</li><li>The value of any <code>ClassName</code>, <code>AutomationId</code>, <code>Value</code>, or
+<code>Description</code> properties.
+</li></ul>
+This set of property and function result tests are aimed at making this a fast way to search XML trees generated
+from any of these:
+<ul>
+<li>An FSXML tree.
+</li><li>An <code>AccessibleObject</code> tree generated from UIA or MSAA.
+</li><li>A <code>GetScreenXML</code> tree.
+</li><li>A tree generated by <a href="https://www.dlee.org/bx/#UIAEvents">capturing UIA events</a>.
+</li><li>Application and event log trees where data is stored as <code>#text</code> nodes.
+</li></ul>
+Note that, when a node's <code>text()</code> value matches, the node returned will not be the <code>#text</code>
+node but, more usefully, the node containing it. For example, a match on <code>&lt;log&gt;This is a log
+entry.&lt;/log&gt;</code> will return the <code>log</code> node, not its descendant <code>#text</code> node.
+</li></ul>
+
+<p>
+The final section of these release notes was moved on November 27, 2022;
+see <a href="https://www.dlee.org/bx/#UIAEvents">Capturing and Examining UIA Events</a>.
+
+</p><h3>Revision 2325, March 08, 2020</h3>
+
+<p>
+A block of BX code that has been active since 2003 is suspected of occasionally causing performance problems
+during focus switching between applications.
+This update is therefore recommended for all BX users.
+The performance issue appears to affect JAWS 2020 and possibly 2019 and consists of speech and keyboard stalls
+of several seconds' duration when the user switches between applications and then very quickly tries to issue
+commands to the newly focused app.
+
+</p><p>
+Update, April 8, 2020:
+Such stalls have, since publication of this release, been seen to occur without older BX versions active; but
+the advice to upgrade BX remains.
+
+</p><p>
+Along with removal of this code block, the following four BX commands are removed:
+</p><ul>
+<li>In Window Navigation, <kbd>Ctrl+Shift+A</kbd> and <kbd>Ctrl+Shift+V</kbd> for jumping to the window that
+last called <code>ActiveItemChangedEvent</code> or <code>ValueChangedEvent</code>.
+</li><li>In MSAA Navigation, <kbd>Ctrl+A</kbd> and <kbd>Ctrl+V</kbd> for jumping to the object that last called
+<code>ActiveItemChangedEvent</code> or <code>ValueChangedEvent</code>.
+</li></ul>
+
+<h3>Revision 2303, February 15, 2020</h3>
+
+<ul>
+<li>The message "can't make the wsc file" should no longer speak when the computer displays the lock screen due
+to inactivity.
+</li><li><kbd>Numpad5</kbd> is globally duplicated in keymaps by comma (<kbd>Comma</kbd>), with the same modifiers
+wherever they occur, so that users without a numeric keypad can more easily use those commands.
+</li><li>In UIA Navigation, numbers <kbd>1</kbd> through <kbd>9</kbd> and <kbd>0</kbd> go to 10%, 20%, etc., through
+100% of the RangeValue if the current UIA element supports that pattern.
+The <kbd>Hyphen</kbd> key (-) goes to 0%, the start of the range.
+The value being set is announced and then applied, then the refreshed value is spoken.
+The equal sign (<kbd>=</kbd>) announces the current value without changing it.
+</li><li>In XML Testing, <kbd>Ctrl+L</kbd> maintains a config-file <code>XMLLoadPath</code> folder so that simple
+file names can be used except when changing folders.
+</li><li><kbd>Ctrl+S</kbd> in Braille Testing toggles the Braille Viewer application on/off.
+</li><li>Commands in Braille Testing that move the Braille display announce the resulting displayed line as originally
+intended, and also more immediately than in the past.
+</li><li>The Browser map is now the map used as the application map for Slack. This map is reached with <kbd>BXQuickKey
+A</kbd>, if the QuickKey is configured.
+</li><li><code>beep()</code> calls are saved, up to 20; and a triple <kbd>JAWSKey+Shift+B</kbd> shows them in a
+virtual view.
+This is intended as a quick debugging aid for script developers.
+</li><li>Removed the HTML report commands, documentation, and code. This report only worked in IE and would not port
+well to FSXML because it modified the IE DOM to do its work.
+</li></ul>
+
+<h3>Revision 2246, October 14, 2019</h3>
+
+<ul>
+<li>The BX Update feature assumes lower-case web file names. Long term, this will avoid letter casing problems
+between Windows and the website.
+In the short term though, BX Update may fail for some applications with scripts until the actual web file name
+for those scripts is corrected.
+</li></ul>
+
+<h3>Revision 2244, October 9, 2019</h3>
+
+<ul>
+<li>Fixed removal of the BX QuickKey if configured (manually) by the BX user in <code>bx_user.cnf</code>.
+Caught and reported by Tyler Rodick (@TylerK93).
+</li><li>Fix for mistimed announcement of the <kbd>Ctrl+L</kbd> keystroke in XML Testing.
+</li><li><kbd>Shift+X</kbd> in Cursor Navigation, for showing the <code>GetScreenXML</code> result and placing it on
+the clipboard, is moved to <kbd>Shift+S</kbd> in XML Testing.
+</li><li><kbd>Shift+D</kbd> in XML Testing shows the <code>getDocumentXML</code> result and places it on the Windows
+clipboard.
+</li><li><kbd>Shift+E</kbd> in XML Testing shows the <code>getElementXML</code> result (with all ancestors included)
+and places it on the Windows clipboard.
+</li><li><kbd>D</kbd> in UIA Navigation says the UIA fullDescription before the LegacyIAccessibleDescription. Doubling
+the <kbd>D</kbd> spells both.
+</li><li><kbd>Ctrl+F</kbd> in XML Testing may work in more virtual cursor positions than before.
+<!-- undocumented updates:
+The normal contents of %APPDATA%\\BX can now be in JAWSSettingsDirectory\\BX. This also makes the update
+process use that folder for temporary files.
+Experimentally applied the BXQuickKey Browser application keymap to ApplicationFrame.dll, making it work
+in Twitter and other Metro apps.
+default_bx.jss renamed to default_bxsample.jss.
+-->
+</li></ul>
+
+<h3>Revision 2214, July 3, 2019</h3>
+
+<p>
+This revision fixes a problem some users experienced with the BX Update system.
+It also replaces some oddly-located features with more sensibly located and flexible commands and maps. The new
+commands and maps will be described first, followed by the removed commands and how they were replaced, and finally
+some other changes and enhancements beyond the new commands and maps.
+
+</p><p>
+New commands and maps:
+</p><ul>
+<li><kbd>Apostrophe X</kbd> goes to a new XML Testing map designed to allow tree-like navigation in an arbitrary
+XML structure.
+This map is the basis for several other new maps, but it also has commands for loading XML directly from several
+sources:
+<ul>
+<li><kbd>Ctrl+V</kbd> loads XML from the Windows clipboard. Coupled with the ability to save XML to the clipboard
+in a Remote Desktop or JAWS Tandem session, and leveraging the other new maps, this permits local exploration of
+remote accessibility structures.
+</li><li><kbd>Ctrl+L</kbd> prompts for a file path from which to load XML, which permits exploration of any XML
+structure that currently resides in a text file. This may be useful for examining software configuration files when
+scripting applications.
+</li></ul>
+On loading XML from any source, BX will try to switch to a map best suited for the XML found but will stay in
+the XML Testing map if no better one is found.
+</li><li><kbd>Apostrophe Shift+S</kbd> goes to a new Screen XML Testing map. This map allows navigation of the XML
+structure returned by <code>getScreenXML()</code>.
+There are also new links to this map from others:
+<ul>
+<li>The Cursor Navigation map now has a Context map with an <kbd>X</kbd> entry for going to Screen XML Testing
+while automatically retrieving the <code>getScreenXML</code> tree for the current screen.
+This replaces the previous technique of getting to this structure from the HTML Testing map; see below.
+</li><li>The Rectangle Examination map's Context map now has an x entry for going to the getScreenXML structure for
+the current rectangle.
+There was previously no way in BX to do this.
+</li></ul>
+</li><li><kbd>Apostrophe Shift+A</kbd> goes to a new AccessibleObject Tree XML Testing map. This is for navigating
+the XML structure returned by calling <code>getXML(-1)</code> on an <code>AccessibleObject</code> tree node.
+Again, other maps now link to this one:
+<ul>
+<li>The AccessibleObject Tree Navigation map's Context map includes an x entry for going to the XML structure
+for the current object.
+This replaces oddly-placed and more limited commands in HTML Testing for reaching this XML structure.
+</li></ul>
+</li></ul>
+
+<p>
+Removed commands and how to accomplish what they once did:
+</p><ul>
+<li><kbd>Alt+S</kbd> in HTML Testing, which moved to the <code>getScreenXML</code> structure for the screen,
+is removed.
+To get to this structure, go to the Cursor Navigation map and type <kbd>Period</kbd> for its Context map, then
+<kbd>X</kbd> to get to the <code>getScreenXML</code> structure.
+</li><li><kbd>Alt+U</kbd> and <kbd>Alt+Shift+U</kbd> in HTML Testing, for going to the UIA and MSAA
+<code>AccessibleObject</code> XML structures for the last visited window, are removed.
+To reach these structures now:
+<ol>
+<li>Select the window of interest as usual in the Window Navigation map.
+</li><li>Use the map's Context map to go to the UIA or MSAA <code>AccessibleObject</code> object structure (<kbd>Period
+A</kbd> for UIA, <kbd>Period Shift+A</kbd> for MSAA).
+</li><li>Use the AccessibleObject Tree Navigation's Context map to go to the XML structure for the current
+<code>AccessibleObject</code> object and its descendants (<kbd>Period X</kbd>).
+</li></ol>
+</li></ul>
+
+<p>
+Other changes and enhancements:
+</p><ul>
+<li>Some users who attempted to use the BX Update system to update BX itself encountered a freeze and an update
+failure.
+There was one BX revision that required use of the full script installer, and updating BX past that revision
+via BX Update would cause this issue on the next BX Upate attempt.
+This revision fixes this problem so that updating to this revision from a revision older than that one will not
+cause the issue.
+Of course, if you have experienced this issue already, you will need to use the full installer to install this
+revision since BX Update is not working for you now.
+</li><li>The HTML Testing Context map now uses <kbd>R</kbd> instead of <kbd>L</kbd> for all rectangle examination
+commands. <kbd>R</kbd> is now the BX-wide standard for Context maps to get to the rectangle map.
+</li><li>The new AccessibleObject Tree XML Testing map is capable of announcing IAccessible2 role text during navigation.
+These roles appear in AccessibleObject nodes but not in MSAA. The only other way to find them is from UIA via
+the <code>LegacyIAccessiblePattern</code>.
+QT5 applications such as TeamSpeak 3 can use these roles, as can web pages and browser-based apps, notably
+Electron apps.
+</li><li>When obtaining an XML DOM tree for XML obtained from an <code>AccessibleObject</code> structure, BX will work to
+correct XML errors that would otherwise prevent the Microsoft XML parser from successfully rendering an object tree.
+These corrections make examination of such trees possible in BX.
+These errors will likely be prevented entirely in a future JAWS update.
+In current JAWS versions (through the June JAWS 2019 update), they are caused by characters appearing in
+application text that are not permitted without alteration in an XML tree.
+</li><li>Several related maps have acquired help and sometimes actual commands from their base maps:
+<ul>
+<li>The following maps inherit help and non-conflicting commands from Cursor Navigation:
+<ul>
+<li>Attribute Field Navigation
+</li><li>Color Field Navigation
+</li><li>ItemRect Testing
+</li><li>Object Examination
+</li><li>Pixel Navigation
+</li></ul>
+</li><li>The Window Messages map inherits from the Window map.
+</li><li>The iTextSelection map duplicates the iTextRange map.
+</li><li>The UIA Find and UIA Virtual Elements maps include non-conflicting commands and help from UIA
+Navigation.
+</li></ul>
+</li><li><kbd>L</kbd> in the AccessibleObject Tree Navigation map has non-blank help text.
+Other help text updates not listed here are also included in this update.
+</li><li>In HTML Testing, a double press of <kbd>Shift+I</kbd> now spells the value of the <code>id</code> attribute.
+</li><li>In HTML Testing, <code>getElementID</code> is now attached to a double press of <kbd>I</kbd> rather than a
+double press of <kbd>Shift+I</kbd>.
+This function was never documented and is no longer part of JAWS.
+</li><li>Support for calling <code>GetElementID</code> is removed from FSXML Testing as it never applied there.
+</li><li><kbd>E</kbd> for editing, and <kbd>D</kbd> for deleting nodes are removed from the FSXML map as they were
+not useful there.
+</li><li>The <kbd>W</kbd>, <kbd>Shift+W</kbd>, and <kbd>Ctrl+Shift+W</kbd> commands in Window Navigation for testing
+the JAWS <code>WindowVirtualView</code> function are removed, along with their code, because the function itself
+was removed in JAWS 11.0.
+</li><li>The <code>bx.kmp</code> file is reorganized significantly.
+</li><li>Some legacy code for supporting JAWS versions older than 10.0 is removed.
+</li></ul>
+
+<h3>Revision 2171, June 7, 2019</h3>
+
+<ul>
+<li>There is yet more code to handle web proxy situations during a BX Update retrieval.
+The documentation here of this fact was missed until June 14, however.
+</li><li><code>Tlbinf32</code> files for object inspection are no longer included in BX. They were never used at
+work sites due to a DLL registration requirement, and they sometimes caused site protective software to block
+BX installation.
+</li><li>A small <code>bx.jsd</code> file is included in the distribution, documenting the BX quick key when assigned,
+for JAWS Keyboard Help mode.
+</li><li><kbd>QuickKey B</kbd> no longer loads the Braille Testing map but instead provides a
+<a href="https://www.dlee.org/bx/#tip_battery">battery checking feature</a>.
+</li><li><kbd>P</kbd> in the UIA map, for the Selection pattern, reports names of selected elements if there are five
+or fewer of them.
+</li><li>Removed from COM Object Testing the warning against using <kbd>R</kbd>, for <code>RichEditDocument</code>,
+against a non RichEdit20/40w window. This applied in 2003 to JAWS 4.51
+but probably is by now not necessary.
+</li><li>Fix in COM Object Testing: <kbd>R</kbd> and a double <kbd>I</kbd> ignored the window handle by accident. This
+fix makes <kbd>R</kbd> work as intended on the current BX window.
+There is no effect on <kbd>I</kbd> though because the <code>IEGetCurrentDocument</code> function still does not
+accept a window handle.
+</li><li>A double <kbd>Apostrophe</kbd>, for switching to the current location's COM object type's map, works for
+types with numeric suffixes like <code>iTextDocument2</code> when there is only a map for the base type.
+This can help when a COM interface specification receives an upgrade.
+</li><li>Added ItemContainer pattern support that works in at least the Windows Explorer item list:
+<ul>
+<li><kbd>P</kbd>says first selection and first element.
+</li><li><kbd>Alt+P</kbd> from there says selection and element counts, which may take time on a large container.
+</li></ul>
+</li><li><code>AccessibleObject Tree</code> (AOT) code tries to work around an anomaly found in the <code>.xml</code>
+property in some cases under at least JAWS 17:
+An ampersand (<kbd>&amp;</kbd>) character followed by a space would throw a parsing error if fed to the Microsoft
+XML parser. BX will replace such ampersands with <code>&amp;amp;</code> to avoid the parsing error.
+</li><li>When removing text elements from an Ins+B read from UIA Navigation, BX omits underscores from the comparison
+of text element name to parent name,
+so that the marking of hotkeys/underlined letters does not cause the code to fail to filter out a duplicate name.
+</li></ul>
+
+<h3>Revision 2127, April 22, 2019</h3>
+
+<ul>
+<li>Support for navigating FSXML trees, previously housed in the "HTML Testing" map which was thus renamed to
+"HTML and XML Testing" for a while, now has its own map. This update consists of these related changes:
+<ul>
+<li><kbd>Apostrophe F</kbd> goes to a new "FSXML Testing" map, which contains only commands relevant to testing
+FSXML trees.
+</li><li>The HTML testing map is again named simply "HTML Testing" and applies only to testing of the Internet Explorer
+Document Object Model (DOM).
+</li></ul>
+Several commands initially in the HTML and XML Testing map for testing FSXML trees have different keystrokes
+now in the FSXML Testing map, for consistency with the structure of other maps.
+</li><li>The BX Quick Key support for task numbering and switching, and the support for test functions, are better
+documented.
+</li><li>Means are included to get BX Update to work through more proxy situations, though the documentation for
+recent updates in this system was lost due to an accident.
+</li><li>The code for obtaining a list of running tasks is updated to include a few edge cases, though currently at
+some expense to execution speed.
+Newly included tasks include Microsoft Teams and Microsoft Office update completion notification windows.
+</li><li>Exiting BX by typing <kbd>JAWSKey+Space</kbd> or <kbd>Insert+Space</kbd> twice no longer causes a beep.
+</li><li>Fixed the long-standing bug of <kbd>M G</kbd> &lt;<var>markLetter</var>&gt;&gt; failing to switch to the right
+map though <kbd>Windows+</kbd>&lt;<var>markLetter</var>&gt; did so.
+</li><li>BX now tries during JAWS CachedMSAAInfo retrieval
+(<kbd>Shift+C</kbd> in the Object Examination map)
+to get only ancestors that exist rather than trying to retrieve 99 levels of data.
+</li></ul>
+
+<h3>Revision 2085, March 5, 2019</h3>
+
+<ul>
+<li><kbd>Ctrl+JAWSKey+R</kbd> from any map restarts BX and leaves it active.
+</li><li>Improved means of handling web proxy servers during script updates.
+The <code>bx.htm</code> documentation is updated accordingly.
+</li><li>Fix to long-standing typos that broke the Describe (Space) description for the slash key at the default level.
+</li><li>The sequence <kbd>QuickKey A</kbd> from within Internet Explorer, Firefox, and Google Chrome provides a few
+useful functions for browsers.
+This sequence previously only worked from within Internet Explorer.
+The most useful sequence is probably <kbd>QuickKey A Shift+A</kbd>, which does the same advanced-element-info
+retrieval as the default <kbd>JAWSKey+Ctrl+Shift+F1</kbd> command. This alternative may be useful from keyboards
+which
+are unable to issue the standard JAWS command due to its complexity.
+</li><li>In the Browser map just mentioned, <kbd>G</kbd> and <kbd>D</kbd> apply to FSXML instead of the IE document
+object model.
+These commands are minimally supported, however, as their use requires a command-line-based "diff" utility that
+is not included with BX.
+</li><li>Some obsolete code is eliminated.
+</li></ul>
+
+<h3>Revision 2041, November 19, 2018</h3>
+
+<p>
+This release contains several miscellaneous changes as well as a coordination of features for updating scripts.
+
+</p><p>
+Miscellaneous changes:
+</p><ul>
+<li><kbd>Shift+V</kbd> in UIA Navigation reports the value of the UIA <code>LiveSetting</code> property.
+</li><li>In the UIA map, pattern query changed from <kbd>D</kbd> to <kbd>Shift+D</kbd>, and <kbd>D</kbd> now announces
+<code>legacyIAccessibleDescription</code>.
+</li><li>In Global Functions, the <kbd>N</kbd> command's help string finally documents the fact that, in addition to
+reporting network user and domain names and computer name from the <code>WScript.Network</code> object, it also
+reports any of <code>site</code>, <code>organization</code>, and <code>userProfile</code> that have a value.
+The BX author to date has never observed values for these attributes, however.
+</li><li>In Global Functions, the <kbd>U</kbd> command for retrieving values of <code>GetUserName</code>,
+<code>GetJAWSUserName</code>, and <code>GetRegisteredTo</code> is now changed to <kbd>Shift+N</kbd>.
+It also spells the three values if typed twice in quick succession.
+</li><li>The command sequences for retrieving CPU usage percent (<kbd>QuickKey D W C</kbd>) and highest CPU utilizer
+(<kbd>QuickKey D W Shift+C</kbd>)
+<ul>
+<li>Should work in console settings like cmd on Windows 8/8.1/10, and
+</li><li>Allow 7 seconds instead of 3 per COM call under JAWS 16 and later.
+</li></ul>
+See "<a href="https://www.dlee.org/bx/bx.htm#quickKey">The BX Quick Key</a>" in the BX User's Guide for more information about the BX
+Quick Key.
+</li><li><kbd>A</kbd> in HTML and XML Testing, intended for adding an attribute to an HTML node, is removed because
+its code was never written and it would only apply to Internet Explorer environments.
+</li></ul>
+
+<p>
+BX now includes means to pull updates to itself and to scripts for running applications from the BX author's
+website.
+All updates use secure https rather than http to retrieve update files.
+
+</p><p>
+<strong>Warning</strong>: Use of the below update commands should be considered equivalent to following a beta
+track, as incomplete and experimental features may appear from time to time via such updates.
+This warning applies to both updating BX and updating scripts for other applications.
+Also, the update system's ability to function may be dependent on local and network policy restrictions on web
+access and/or local file and folder access.
+
+</p><p>
+The following commands from the Global Functions map are available for performing updates:
+</p><ul>
+<li><kbd>U</kbd> attempts to update the scripts for the running application.
+</li><li><kbd>Shift+U</kbd> attempts to update the scripts for the running application without regard to any special
+scripting project namespace that may apply to this machine. This will not be of concern to anyone for
+whom the BX author has not done direct scripting work.
+This command may be useful though for those for whom such work has been done; e.g., to update scripts for Skype
+or Skype For Business (SFB) on a machine that is otherwise considered to be part of a specific scripting project.
+</li><li><kbd>Ctrl+U</kbd> attempts to update BX itself.
+</li></ul>
+For those who have defined a BX Quick Key, the same three keys typed after <kbd>QuickKey D</kbd> will also work.
+See "<a href="https://www.dlee.org/bx/bx.htm#quickKey">The BX Quick Key</a>" in the BX User's Guide for more information.
+
+<h3>Revision 1982, August 9, 2018</h3>
+
+<ul>
+<li>The CPU load query command sequences, <kbd>] D W C</kbd> and <kbd>] D W C</kbd>, should work more
+often. Previously they would fail in console windows. Now they will most often succeed in a console window if
+already once run
+since JAWS restart in a non-console window.
+</li><li>The BX Configuration map, <kbd>Apostrophe Ctrl+B</kbd>, contains a command (<kbd>F</kbd>) that toggles the effect
+of the JAWS Script Utility Mode command. By default, the Script Utility Mode command turns on BX when BX is loaded;
+and typing the command twice quickly instead turns on Script Utility Mode. This toggle switches these so that
+a single press activates Script Utility Mode and a double press activates BX.
+Typing <kbd>F</kbd> once in the BX Configuration map simply announces the toggle's current state. Typing <kbd>F</kbd>
+more than once, regardless of how fast, toggles the setting back and forth between the two alternatives.
+This BX update fixes the announcement of the new state when it is toggled. The toggling worked before but was
+announced incorrectly.
+</li></ul>
+
+<h3>Revision 1970, June 25, 2018</h3>
+
+<p>
+<kbd>S</kbd> in Object Examination includes the hex value from <code>GetObjectStateCode</code>, a function that
+has been around for a long time.
+In sufficiently new versions of JAWS 2018 and later, pressing <kbd>S</kbd> twice will report the hex values from
+<code>GetObjectMSAAState</code> and <code>GetObjectIA2State</code>, and pressing three times will report the hex
+value from <code>GetObjectStateCodeEx</code>.
+At least the first two of these three new functions are documented in versions of JAWS 2018 prior to their actual
+implementation in JAWS itself.
+
+</p><h3>Revision 1961, May 8, 2018</h3>
+
+<ul>
+<li>The minimum JAWS version for BX is now changed from 14 to 15.
+</li><li><code>bx_user.conf</code> allows a new <code>fastSpeechHistory</code> setting. When set to <kbd>1</kbd>, this
+causes the JAWS <kbd>Insert+Space H</kbd> sequence to bring up speech history in the old JAWS user buffer instead
+of the newer Results Viewer. Especially if userBuffer display is switched Off in JAWS settings, this results in
+much faster availability of speech history when this command is typed.
+</li><li><kbd>Shift+C</kbd> in the WTM QuickKey map includes highest processor user and usage percent under Windows
+8/10, though out of 100 instead of within total CPU usage.
+</li><li>In the UIA Navigation map, the UIA native window handle command is now <kbd>W</kbd> instead of
+<kbd>Shift+H</kbd>.
+</li><li>In Global Functions, <kbd>Shift+V</kbd> reports major and minor Windows version numbers when unable to
+determine a friendlier name for the active Windows version.
+</li><li>Some obsolete features of BX are removed, along with some superfluous output error messages held over from
+many years ago.
+</li><li>The installer is a bit more likely to succeed in locations where read access to the Windows registry is not
+allowed.
+</li></ul>
+
+<h3>Revision 1876, September 6, 2017</h3>
+
+<ul>
+<li>The installer works under JAWS 2018 beta and should work under JAWS 2018 when it is released.
+</li><li>If the installer fails to find a usable JAWS instance, it will display a log to help the developer understand
+why.
+</li><li><kbd>L</kbd> in HTML and XML Testing returns the bounding rectangle of an FSXML element when possible,
+though it may first move the element onto the screen.
+</li><li><kbd>Shift+L</kbd> in Window Navigation reports element count alongside length for <code>getListOfObjects</code>
+and the help string for the command is more accurate.
+The text returned for double and triple presses may sometimes be cut short though.
+</li><li>BX now includes nine new properties in UIA property lists that are not mentioned in the JAWS 18
+<code>uia.jsh</code> file:
+<ul>
+<li><code>IsCustomNavigationPatternAvailable</code> (30151)
+</li><li><code>FillColor</code> (30160)
+</li><li><code>OutlineColor</code> (30161)
+</li><li><code>FillType</code> (30162)
+</li><li><code>VisualEffects</code> (30163)
+</li><li><code>OutlineThickness</code> (30164)
+</li><li><code>CenterPoint</code> (30165)
+</li><li><code>Rotation</code> (30166)
+</li><li><code>Size</code> (30167)
+</li></ul>
+A JAWS restart after updating BX may be required before these properties will appear in the <kbd>Alt+Right</kbd>
+property lists for UIA elements.
+</li><li><code>r4</code> and <code>r8</code> variable types are reported properly in and out of arrays in the UIA
+element property list.
+</li><li>A double <kbd>D</kbd> in UIA Navigation lists custom property values when property ids are available.
+</li><li>Numerous tests for JAWS versions that BX no longer supports are removed.
+</li><li><kbd>Shift+M</kbd> in Global Functions reports Metro app name and version along with the already-reported
+<code>isMetroApp()</code> result.
+</li><li><kbd>Shift+A</kbd> in Global Functions is just one function test, and <kbd>Alt+A</kbd> is removed.
+These changes reflect changes to JAWS' handling of ARIA applications in or after JAWS 13.
+</li><li>Multiple updates for virtual view handling (<kbd>Shift+V</kbd> in Cursor Navigation):
+<ul>
+<li>The type "static text" is no longer announced.
+</li><li>Regions no longer include type names on their start and end lines because the lines already include this.
+</li><li>The state "Vertical" sometimes found on combo boxes is removed.
+</li></ul>
+</li><li>Task switching by number
+(<kbd>BXQuickKey W</kbd> when a quick key is defined)
+will now attempt a special approach for Skype For Business 2016 conversation windows when appropriate.
+</li><li>Windows 10 Settings and Store windows no longer appear to BX as tasks when their UI windows don't exist.
+</li><li>There is a UIAScriptAPI object cache, to work around the problem of the BX event tracker, loaded on top of
+active scripts,
+causing <code>CreateObjectEx</code> to fail to get one.
+</li></ul>
+
+<h3>Revision 1813, April 1, 2017</h3>
+
+<ul>
+<li><code>bxman.htm</code> is now just <code>bx.htm</code> for consistency with other projects.
+</li><li>Typing BX QuickKey sequences very rapidly should no longer cause keys to reach the focused application.
+</li><li>Event tracing without unloading current app scripts works again.
+</li><li><kbd>S</kbd> in Window Navigation no longer includes code comments.
+</li><li><kbd>Ctrl+Shift+JAWSKey+RightArrow</kbd> in MSAA Navigation works on modern JAWS and Windows versions.
+</li><li>Tab position in a map is not lost by visiting and returning from one of its context maps.
+</li><li>Some functionality may be slightly faster due to use of scripting capabilities added in JAWS 14.
+</li></ul>
+
+<h3>Revision 1797, March 28, 2017</h3>
+
+<p>
+There are numerous improvements and additions over the 15a release, unfortunately not at this time listed here.
+
+</p><h3>Revision 1164 (Version 15a), January 20, 2014</h3>
+
+<p>
+This version was long considered experimental.
+It is the last version supporting JAWS 13 and older and is not recommended for newer JAWS versions.
+
+</p><p>
+Bug fixes:
+</p><ul>
+<li>Error messages on 64-bit Windows machines, such as "can't make the VBS environment," should no longer speak.
+</li><li>Vvarious VBScript and JScript errors from HTML Navigation commands should now speak without bringing up
+error dialogs on 64-bit Windows versions just as on 32-bit ones.
+</li></ul>
+
+<p>
+Enhancements and changes:
+</p><ul>
+<li>Major rewrite of BX's internal structure for handling locations.
+</li><li>For string comparisons, the "<code>==</code>" operator is now treated with JAWS 12+ semantics, i.e., full match
+rather than match only through shortest string. "<code>StringComparison Partial</code>" is no longer used in BX.
+</li><li>This and subsequent BX versions will not compile or run properly under anything older than the latest update
+of JAWS 11.
+</li><li>New UIA Navigation map that can help in UIA testing under JAWS 14 and later. Includes the ability to type
+a filter specification to choose the UIA view to navigate (raw, control, content, current process,
+specific control types, or any combination). More on filters below.
+</li><li>New Context map from UIA Navigation for jumping from a UIA object to its window, MSAA element, or rectangle.
+</li><li>New UIA Find map (/ from UIA Navigation) for collecting all elements matching a filter specification and
+moving through them with arrows. More on filters below.
+</li><li>New Context map entries for Window and MSAA Navigation to jump to the corresponding UIA elements.
+</li><li>Activating a map before you have a location (e.g., a window or MSAA object) will move to a default location
+for that map and announce this. This means you no longer have to type <kbd>Ctrl+F</kbd> when
+switching to Window or MSAA Navigation for the first time.
+</li><li>Most maps, not just the Window Navigation map, save their previous locations across BX activations. This
+means, for example, that MSAA Navigation will stay at the last object/element visited even when
+you turn BX off and back on. A JAWS restart will of course reset all this.
+</li><li>Marks are no longer saved across JAWS restarts.
+</li><li>There is now a history system in BX: <kbd>Alt+Shift+UpArrow</kbd> returns to the previously visited location
+and the map from which it was visited. Subsequent presses retreat up to 20 locations back
+through visitation history. <kbd>Alt+Shift+DownArrow</kbd> steps forward through these locations. Both wrap at
+the end of the history saved.
+</li><li><code>bx.jsd</code> no longer contains function declaration overrides required for BX compilation.
+</li></ul>
+
+<p>
+UIA Filter Specifications:
+
+</p><p>
+BX now includes a system for letting users specify UIA tree filters via an edit box. This system encapsulates
+the various Condition-building features of the new JAWS 15 (and undocumented but present in JAWS 14) UIAScriptAPI
+COM system.
+
+</p><p>
+Filter strings, or specifications, consist of a series of one or more items separated by single spaces. The items
+comprise an expression that forms a filter condition. The expression is in post-fix, or Reverse Polish Notation
+(RPN) format. This may be unfamiliar to some users but significantly simplifies expressions by avoiding the need
+for parentheses and for recursion in parsing (which JAWS does not support). Example expressions:
+</p><dl>
+<dt>rawView
+</dt><dd>Requests the entire UIA tree be visible for navigation.
+</dd><dt>contentView focusedProcess and
+</dt><dd>Include only content-view elements and only those in the focused Windows process.
+</dd><dt>FPContentView
+</dt><dd>Shorthand for the above.
+</dd><dt>FPRawView controlType checkBox controlType edit or and
+</dt><dd>Include only checkboxes and edit controls in the focused process (this much complexity is rarely necessary).
+</dd></dl>
+
+<p>
+Here are all the types of items permitted in a filter specification:
+</p><dl>
+<dt>contentView, controlView, rawView
+</dt><dd>Require the given UIA tree view type.
+</dd><dt>focusedProcess
+</dt><dd>Require the process ID to match the focused application's process ID.
+</dd><dt>FPRaw/Control/ContentView
+</dt><dd>One of the above with <code>focusedProcess</code>.
+</dd><dt>not
+</dt><dd>Reverse the previous condition: "<code>focusedProcess not</code>."
+</dd><dt>and, or
+</dt><dd>Combine previous two conditions: "<code>contentView focusedProcess and</code>."
+</dd><dt>property name
+</dt><dd>The name of a property with a PropertyID. These are from <code>UIA.jsh</code> without the <code>UIA_</code>
+prefix and PropertyId suffix. Examples: <code>Name</code>, <code>ControlType</code>.
+</dd><dt>value name
+</dt><dd>The name of a value with an ID. Categories:
+<ul>
+<li>Control types like <code>CheckBox</code>, <code>Edit</code>, and <code>Hyperlink</code>.
+</li><li>Other constants without <var>*</var><code>_</code> prefix, like <code>Horizontal</code> and
+<code>LargeIncrement</code>.
+</li><li>Other raw constants like <code>Next</code> that contain no underscore.
+</li></ul>
+</dd><dt>False, True
+</dt><dd>Create a boolPropertyCondition with the previous item. Example: "<code>IsEnabled True</code>." If not after
+a property, creates a <code>False</code> or <code>True</code> condition (directly in JAWS 15.0.5056+, simulated
+before that).
+</dd><dt>int like 1, -50, etc.
+</dt><dd>An integer value. Makes an <code>IntPropertyCondition</code> with the previous item. Example:
+"<code>RangeValueMinimum -5</code>"
+</dd><dt>String like 'hello'
+</dt><dd>A string value. Makes a <code>StringPropertyCondition</code> with the previous item. Example: "<code>Name
+'My UIA Application'</code>" To get a literal apostrophe in a string, write two of them
+together. Backslash escapes like \t also work.
+</dd></dl>
+
+<h3>Version 10a, January 14, 2014</h3>
+
+<p>
+This is the last BX version supporting JAWS 10 and older and is not recommended for newer JAWS versions.
+This version calls itself "BX10" when <kbd>Insert+Q</kbd> is typed while BX is active.
+There is no listed revision number for this release because it was for a while maintained in a separate code branch.
+
+</p><p>
+Window Navigation updates:
+</p><ul>
+<li>A double <kbd>Shift+C</kbd> reports the total number of descendants (at any level) under the current
+BX window. If a filter is in effect, the number of descendants matching the filter and the total number of
+descendants are announced.
+</li></ul>
+
+<p>
+HTML Testing updates:
+</p><ul>
+<li>Major event attribute announcement clutter in IE 9 fixed.
+</li><li><kbd>Ctrl+L</kbd> allows querying of <code>element.getBoundingClientRect()</code>, which appears to be the
+best way to get the rectangle containing an HTML element.
+</li></ul>
+
+<p>
+Miscellaneous updates:
+</p><ul>
+<li>Major internal reorganizations including better modularization, more well-defined paths for data and execution
+to transfer among modules, and better namespace management. (This is an ongoing effort and is still not complete.)
+</li><li><code>bx.jsd</code> entries required for compilation under very old JAWS versions reduced.
+</li><li>The distributed <code>bx.jsb</code> and other jsb files are compiled with JAWS 10.0 rather than JAWS 5.0.
+</li><li>Various installer/uninstaller fixes, including better guessing of <code>jfw.exe</code> file location when
+not findable in the Windows registry (helps when JAWS is not on drive C), not interfering with
+SkypeWatch installations, better script chain management, and better handling of non-English BX uninstallation.
+</li></ul>
+
+<h3>Revision 921, March 1, 2013</h3>
+
+<p>
+New features:
+</p><ul>
+<li>ListView Navigation map significantly rewritten.
+</li><li>Inspect Objects navigation works with an up-to-date inspect.exe as long as the view is set to MSAA rather
+than UI Automation.
+</li><li>New maps for ITextDocument and ITextRange object inspection.
+</li><li>New experimental Script Utility map inside BX to provide Script Utility features with BX-style help
+functionality. Not a complete Script Utility replacement though.
+</li></ul>
+
+<p>
+MSAA Navigation updates:
+</p><ul>
+<li>BX can report properties that can be accessed from a native object but not via parent+childID; e.g., when
+one must call <code>oParent.accChild(childID).accName(0)</code> rather than
+<code>oParent.accName(childID)</code>. This behavior is affected by <kbd>Accent</kbd> (`), which adjusts what
+BX does for objects that can be examined by parent+childID or as objects unto themselves.
+</li></ul>
+
+<p>
+Object Examination updates:
+</p><ul>
+<li><kbd>Shift+C</kbd> reports any or all JAWS object levels from the JAWS cache.
+</li></ul>
+
+<p>
+AccessibleObject Tree navigation updates:
+</p><ul>
+<li>There is a Context map to allow examination of an AccessibleObject's screen rectangle.
+</li><li>Marks work in this map.
+</li><li><kbd>Ctrl+F</kbd> twice forces use of the last window visited in Window Navigation.
+</li></ul>
+
+<p>
+Cursor Navigation updates:
+</p><ul>
+<li><kbd>Shift+X</kbd> displays an XML view of the DOM for the current screen (see the JAWS
+<code>getScreenXML()</code> function).
+</li></ul>
+
+<p>
+Global Functions updates:
+</p><ul>
+<li><kbd>O</kbd> twice includes the <code>IsWindows7()</code> result.
+</li></ul>
+
+<p>
+Miscellaneous:
+</p><ul>
+<li>Event logging documented in the manual (<code>bxman.htm</code>), including how to customize log entries and
+what is logged.
+</li><li>Installer significantly updated.
+</li><li>BX and installer source files included in installer but not installed by it.
+</li><li>Section and key lists at the end of <code>bx.kmp</code> and code to use them removed (not needed since JAWS
+5.0).
+</li><li>PACMate support discontinued.
+</li><li>ListTbl navigation and progress bar announcement support removed from BX.
+</li></ul>
+
+<h3>Revision 818, December 19, 2011</h3>
+
+<p>
+AccessibleObject Tree Navigation (<kbd>.a</kbd> from Window Navigation):
+</p><ul>
+<li><kbd>Ctrl+T</kbd> goes to the top-level (root) object in the tree.
+</li></ul>
+
+<p>
+COM Object Testing:
+</p><ul>
+<li><kbd>N</kbd> for <code>COMGetAvailableNames</code> (not yet documented by FS, lists COM object properties
+and methods).
+</li></ul>
+
+<p>
+Global Functions:
+</p><ul>
+<li><kbd>Alt+A</kbd> turns on <code>UseApplicationMode</code> on a single press and off on a double press.
+</li><li><kbd>Shift+A</kbd> reports the values of <code>IsApplicationModeAvailable</code>,
+<code>IsApplicationModeOn</code>, and <code>isInsideEmbeddedAriaApplication</code>.
+</li><li><kbd>R</kbd> reports various pieces of ribbon status info.
+</li><li><kbd>L</kbd> returns <code>getCurrentDocumentLength()</code> (for virtual documents but returns results
+elsewhere also).
+</li><li><kbd>Insert+V</kbd> works in JAWS 13.
+</li></ul>
+
+<p>
+MSAA Navigation:
+</p><ul>
+<li>Navigation by childID in MSAA Navigation (<kbd>PgUp</kbd>/<kbd>PgDn</kbd> etc.) will say "Try AccChild"
+on encountering a childID for which no <code>AccRole</code> is returned but for which <code>AccChild</code>
+would return an object. Inspired by something that happened to Jonathan Avila during a bug fixing project in an
+application supporting IA2.
+</li></ul>
+
+<p>
+Object Examination:
+</p><ul>
+<li><kbd>A</kbd> for UIA automation ID at current object level.
+</li><li><kbd>C</kbd> for window class name of object at current object level.
+</li><li><kbd>Alt+U</kbd> for <code>UIARefresh(False)</code> (asynchronous).
+</li><li><kbd>Alt+Shift+U</kbd> for <code>UIARefresh(True, 5000)</code> (synchronous with 5-second timeout).
+</li></ul>
+
+<p>
+SDM Navigation:
+</p><ul>
+<li><kbd>N</kbd> for <code>SDMGetControlName</code>.
+</li><li><kbd>Shift+N</kbd> for <code>SDMGetControlActiveItem</code> (which I think may be misnamed).
+</li><li><kbd>T</kbd> for <code>SDMGetControlSubtypeCode</code>.
+</li><li><kbd>V</kbd> for <code>SDMGetControlValue</code>.
+</li></ul>
+
+<p>
+Window Navigation:
+</p><ul>
+<li><kbd>F</kbd> for <code>doesWindowBelongToFocusedThread()</code>.
+</li><li>Double <kbd>F</kbd> for <code>getWindowProcessID()</code>.
+</li><li>The Scroll submap under Window Messages, reachable from Window Navigation via <kbd>; S</kbd>, should work now.
+</li><li>The dotted focus rectangle for a window, reached via the <kbd>Shift+R</kbd> context map (<kbd>Period
+Shift+R</kbd>), should be better at finding dotted focus rectangles.
+</li></ul>
+
+<p>
+BXQuickKey functions:
+</p><ul>
+<li>The event watcher (<kbd>BXQuickKey D</kbd> then <kbd>Ctrl+E</kbd> or <kbd>Ctrl+Shift+E</kbd>) watches 40
+more events and includes an indent level digit in its output.
+</li><li>The Put-to-clipboard-from-buffer command, <kbd>BXQuickKey P</kbd>, works as advertised (thanks Roy for
+catching this one).
+</li></ul>
+
+<p>
+Miscellaneous:
+</p><ul>
+<li>The "Object created" message on 64-bit Windows is removed.
+</li><li><kbd>Ctrl+Shift</kbd> and <kbd>Alt+Shift</kbd> commands work on JAWS 13, and other JAWS 13 adjustments are
+also included.
+</li></ul>
+
+<p>
+Known remaining issues:
+</p><ul>
+<li>Some multikey commands involving <kbd>Insert</kbd> or <kbd>JAWSKey</kbd> may still not work in JAWS 13.
+</li></ul>
+
+<h3>Revision 718, August 6, 2011</h3>
+
+<p>
+New Maps and Features:
+</p><ul>
+<li>There is a new Accessible Object Tree map reachable via <kbd>A</kbd> from Window Navigation's Context
+map. This allows exploration of UIA, Windows Forms, and Silverlight accessible object trees.
+</li><li>There is a new iTextDocument map for inspecting RichEdit objects: Focus a RichEdit window, switch to the
+COM Object Testing map (<kbd>Apostrophe Shift+O</kbd>), get the nativeOM object (<kbd>Shift+O</kbd>),
+and switch to the map for that object type (<kbd>Apostrophe Apostrophe</kbd>). This system is not as complete
+as it could be.
+</li></ul>
+
+<p>
+General:
+</p><ul>
+<li>BX should work on 64-bit Windows versions. At present, extra messages like "No object" and "Object created"
+may speak from time to time on 64-bit systems when BX is running and the user attempts to
+activate BX or a BX function. News of any 64-bit system where BX will not work would be most appreciated. The
+64-bit approach can be tested on 32-bit Windows by creating a file called <code>bx_msc_int</code>
+(no extension) in the active JAWS user folder.
+</li><li>BX should work from within Excel 2007.
+</li><li><kbd>J</kbd> in the BX Configuration map now creates new <code>bx_user.cnf</code> files in the JAWS user
+folder rather than in the shared folder. Problem discovered by Roy.
+</li><li>The BXQuickKey is no longer enabled by default, largely because the BX uninstaller fails to disable
+its key assignment, resulting in an unusable key. The recommended way to enable the key now is to add a
+<code>QuickKey=...</code> line to <code>bx_user.cnf</code> in the JAWS user folder.
+</li></ul>
+
+<p>
+Window Navigation:
+</p><ul>
+<li><code>WM_GetTextLength</code> surprises (e.g., mismatches with <code>getWindowName()</code> length) are
+announced as the user navigates among windows, rather than just when the user presses <kbd>N</kbd>.
+</li><li><kbd>Shift+N</kbd> in Window Navigation now attempts to announce or spell the actual <code>WM_GetText</code>
+result for the current
+BX window, instead of saying the <code>getRealWindow</code> window's name. This is not always successful and
+usually returns
+everything in lower case regardless of the <code>WM_GetText</code> result's actual letter casing.
+</li><li><kbd>Shift+R</kbd> in the Context map for Window Navigation will, when possible, move to the dotted focus
+rectangle found
+in the current window. This can find dotted rectangles that JAWS itself does not detect.
+</li><li><kbd>Windows</kbd> with <kbd>Left</kbd>/<kbd>Right</kbd>/<kbd>Up</kbd> in Window Navigation now send the
+active cursor position along with the <code>WinClick</code> requests.
+</li></ul>
+
+<p>
+MSAA Navigation:
+</p><ul>
+<li>Movements in MSAA Navigation now report all non-empty properties of the MSAA object or element moved to, instead
+of just name, role, and state. The newly spoken ones are prefixed with the basic property name, such as Description.
+</li></ul>
+
+<h3>Revision 582, January 31, 2011</h3>
+
+<p>
+Window Navigation:
+</p><ul>
+<li>New Window Navigation commands for sending right, left double click, and hover events to a window via
+<code>SendMessage</code>. These are experimental and possibly temporary.
+</li></ul>
+
+<p>
+MSAA Navigation:
+</p><ul>
+<li>Pressing <kbd>R</kbd> three times when the current object or element has a custom (string) role will spell
+the role string instead of trying to give it as a hex value. JAWS will currently say "empty
+string" after this though, because of the way this feature is implemented.
+</li></ul>
+
+<p>
+General:
+</p><ul>
+<li>Workaround implemented for the JAWS 12 bug of <code>SwitchToScriptFile</code> returning False even on
+success. This fixes the problem of BX unloading scripts for applications like Winamp under JAWS 12.
+</li><li>Eliminated the "GetObjectFromEvent took 0 milliseconds" messages at lock and login screens by making
+<code>ObjTrackMaxTicks=0</code> mean the same as <code>-1</code>. This still disables object call
+tracking at these screens even if the user wants them enabled, but it's still an improvement.
+</li><li><kbd>JAWSKey+7</kbd> (window class reassign) works under JAWS 12 when typed from within BX. (JAWS 12 changed
+how that script works.)
+</li><li>A few bug fixes and improvements in the internal MSAA code library, and several other internal code fixes
+and reorganizations..
+</li></ul>
+
+<p>
+Known issues that have not yet been addressed:
+</p><ul>
+<li>The BX script code installs <code>default.jkm</code> mappings for the BXQuickKey, but the uninstaller does
+not remove them.
+</li></ul>
+
+<h3>Revision 533, October 25, 2010</h3>
+
+<p>
+General (multiple map) changes:
+</p><ul>
+<li>Most if not all <kbd>L</kbd> commands in various maps, when used to get location information, also include
+offScreen indications for rectangles after the width and height.
+</li></ul>
+
+<p>
+Window Navigation:
+</p><ul>
+<li><kbd>V</kbd> now reports anomalies in window visibility, such as the MSAA client being marked Visible when
+the window is not.
+</li><li><kbd>V</kbd> also announces percentages offScreen for windows and mentions if the width and/or height of
+the window is 0.
+</li><li><kbd>Shift+F</kbd> in Window Navigation reports the result of <code>IsWinFormsWindow</code> on the current
+BX window. This function appears to be undocumented and may take other parameters or no parameters at all.
+</li><li><kbd>Windows+LeftArrow</kbd> sends a Click event to the current BX window without requiring it to be in
+focus or even visible.
+</li></ul>
+
+<p>
+MSAA Navigation:
+</p><ul>
+<li><kbd>K</kbd> twice spells the keyboard shortcut.
+</li><li><kbd>Shift+E</kbd> is now able to find the AccEvent32 event list even if AccEvent32 is minimized.
+</li></ul>
+
+<p>
+Inspect Objects navigation:
+</p><ul>
+<li><kbd>Shift+A</kbd> says Ancestors count and lists ancestors on a double press. On a triple press, it says
+the Parent value.
+</li><li>A double <kbd>C</kbd> says the number of children actually listed, as opposed to the <code>ChildCount</code>
+value; and a triple press lists the children shown.
+</li><li>The help for <kbd>G</kbd> is working now, instead of making a silent tab stop for <kbd>Tab</kbd>. The
+functionality is not yet implemented though.
+</li><li>a triple <kbd>H</kbd> says the "How Found" entry.
+</li><li>a triple <kbd>I</kbd> spells the Annotation ID.
+</li><li><kbd>Shift+I</kbd> says the list of supported interfaces, and a double press says the Implementation for
+this object.
+</li><li><kbd>Shift+S</kbd> says the number of selected children, and <kbd>Shift+S</kbd> lists them.
+</li><li><kbd>W</kbd> says the Window entry.
+</li></ul>
+
+<p>
+HTML Testing:
+</p><ul>
+<li><kbd>Ctrl+Shift+S</kbd> shows all non-blank <code>style</code>, <code>currentStyle</code>, or
+<code>runtimeStyle</code> properties in a sorted list in the JAWS virtual buffer, and in a format that can
+be copied in whole or in part into a style sheet. (Thanks to Bryan Garaventa for help with this functionality.)
+</li><li><kbd>Ctrl+RightArrow</kbd> from an Object tag announces the typeName of the <code>.object</code> property
+of the node, and a quick double press moves to that object. Useful when there is a map for the
+object type; see the information on the new Flash map below.
+</li></ul>
+
+<p>
+Pixel Navigation:
+</p><ul>
+<li>Fix: Hitting an edge says "edge" and does not try to go one pixel too far.
+</li></ul>
+
+<p>
+COM Object Testing:
+</p><ul>
+<li>VBScript errors encountered during a <code>TLIEval()</code> call are announced.
+</li><li>keymap safety escapes during <code>bxObjApply()</code> and executions of "<kbd>E</kbd>" are disabled,
+because they caused key leaks.
+</li></ul>
+
+<p>
+Miscellaneous changes:
+</p><ul>
+<li>The TLI object is no longer used to get the interface name of an object created in COM Object Testing. Instead,
+the VBS environment and <code>TypeName()</code> are used to get the object's name. This
+further minimizes the need for <code>TLBInf32.dll</code>.
+</li><li id="shockwave">There is a partial ShockwaveFlash map which can be reached with a double <kbd>Apostrophe</kbd>
+after moving to a Flash object with the <kbd>Ctrl+RightArrow</kbd> command from its HTML object tag.
+</li></ul>
+
+<p>
+Distribution fixes:
+</p><ul>
+<li><code>keymap.jsh</code> eliminated from sources (absorbed into <code>bx.jsh</code>).
+</li><li><code>msaa.jsh</code> included in sources (was left out as an oversight).
+</li></ul>
+
+<h3>Revision 377, May 11, 2010</h3>
+
+<ul>
+<li>JAWS will no longer say "JAWSKey+Windows+Dash" or similar when the user exits BX using that command in JAWS 11.
+</li><li>Users should no longer alter <code>bx.cnf</code> but should instead put their customizations in a
+<code>bx_user.cnf</code> file, whose contents will override <code>bx.cnf</code>. This will keep future
+BX updates from clobbering user settings in that file.
+</li><li>In the BX Configuration map, the key to open <code>bx.cnf</code> is now <kbd>Shift+J</kbd>, and a plain
+<kbd>J</kbd> opens <code>bx_user.cnf</code>. This parallels <kbd>K</kbd> and <kbd>Shift+K</kbd>
+for <code>bx_user.kmp</code> and <code>bx.kmp</code>.
+</li><li><kbd>S</kbd> in Window Navigation attempts to report some of the extended window styles like
+<code>WS_EX_TOPMOST</code>. This is experimental and is based on the assumption that the JAWS
+<code>GetWindowStyleBits()</code> command is including some of those bits in its result. This seems to be true
+but is not absolutely proven.
+</li><li><kbd>Shift+B</kbd> in Window Navigation reports the result of calling the (apparently undocumented) JAWS
+<code>IsComboExpanded()</code> function.
+</li><li><kbd>Shift+M</kbd> in Object Examination reports the <code>GetObjectModuleID</code> result. This is a new
+function in JAWS 11 that reports the type of environment in focus, such as MSAA, IE, Firefox, PDF, ITunes,
+MSWord, etc.
+</li><li>In Window Navigation, <kbd>U</kbd> is now a <code>FocusWindowSupportsUIA()</code> call, and the
+<code>WM_GetObject UIARootObjectId SendMessage</code> call is moved to <kbd>Shift+U</kbd>.
+</li><li>The BXQuickKey sequence for dialing a phone number via Skype from near or under the active cursor should
+now work more reliably.
+</li><li>BX compiles on JAWS 11.
+</li><li>The event watcher now includes the following new events, found in at least JAWS 11.0.1430:
+<code>ActiveDocumentNameChangedEvent</code>, <code>ApplicationModeEvent</code>, <code>DesktopAttachEvent</code>,
+<code>DesktopDetachEvent</code>, <code>IMETSFCompositionEndEx</code>,
+<code>IMETSFCompositionStartEx</code>, <code>IMETSFCompositionEventEx</code>.
+</li></ul>
+
+<h3>Revision 304, February 16, 2010</h3>
+
+<ul>
+<li>Typing <kbd>JAWSKey+Space</kbd> or <kbd>Insert+Space</kbd> twice on JAWS 11 and later will enter or exit
+BX. This is for JAWS 10 and older users who are accustomed to the older command for starting BX
+or Home Row mode (now Script Utility mode).
+</li><li>The "GetObjectFromEvent took 0 milliseconds" and "can't make the VBS environment" messages that started
+plaguing JAWS 11 users as of the Freedom Scientific JAWS 11 security update should be gone. These
+occurred when the effective user ID was "system," which includes login and security screens and UAC dialogs.
+</li><li>Uninstalling BX no longer deletes <code>bx_user.kmp</code> if it exists, since the installer doesn't install
+it and BX itself doesn't create it.
+</li></ul>
+
+<h3>Revision 280, November 25, 2009</h3>
+
+<ul>
+<li><kbd>Ctrl+P</kbd> in MSAA Navigation is better at getting as close as it can to the current MSAA object on
+an IE page when <code>AccHitTest</code> fails.
+</li><li><kbd>Period C</kbd> (Context Client) in Window Navigation and <kbd>Ctrl+P</kbd> (objectAtPoint) in MSAA
+Navigation will now use logic to find the usable MSAA client object for an IE window when the JAWS
+<code>GetObjectAtPoint</code> and <code>GetObjectFromEvent</code> functions return a client with no descendants.
+JAWS will also announce which object ID was used and, for <kbd>Ctrl+P</kbd> in MSAA Navigation, how many
+<code>AccHitTest</code> calls were then required.
+</li><li>Fixed a number of issues with typeName determination.
+</li><li>The installer should now run on 64-bit Windows.
+</li></ul>
+
+<h3>Revision 244, September 27, 2009</h3>
+
+<p>
+The BXTest system is enhanced as follows:
+</p><ul>
+<li><kbd>BXQuickKey T ?</kbd> will bring into the JAWS virtual buffer a list of the <code>BXTest</code> functions
+currently in scope, with descriptions of each. <strong>Important</strong>: <strong>Do not</strong>
+use this feature until you have addressed the next item.
+</li><li>All defined <code>BXTest</code> functions (<code>BXTestA()</code> through <code>BXTestZ()</code> and
+<code>BXTestNum()</code>), be they loaded via application
+scripts or via default scripts, must do one of two things to be safely usable with the above new command (doing
+both is ok, but doing neither is not):
+<ul>
+<li>Include jsd Description and/or Synopsis for itself, or
+</li><li>Return a help string if passed a parameter of <code>-1</code>.
+</li></ul>
+</li></ul>
+
+<p>
+The intent of this BXTest enhancement is to allow creation of comprehensive code testing systems that have no
+end-user impact, document themselves, and can remain in production code without causing any harm.
+
+</p><h3>Revision 238, September 23, 2009</h3>
+
+<ul>
+<li>The BXQuickKey is now set in the user's <code>default.jkm</code> file from the QuickKey entry in
+<code>bx.cnf</code>. Beware: This will cause everyone to have the right square bracket (<kbd>]</kbd>)
+assigned as a BXQuickKey by default. To type that character as a character, press it twice. To change the
+BXQuickKey, edit the <code>QuickKey=</code> line in <code>bx.cnf</code> and reload JAWS or re-initialize
+scripts. To disable the BXQuickKey entirely, comment out or remove the <code>QuickKey=</code> line and reload
+JAWS or re-initialize scripts.
+</li><li><code>bx.cnf</code> contained a <code>BXQuickKey=</code>&lt;<var>key</var>&gt; entry that was the real
+BXQuickKey, and an unused <code>QuickKey=1</code> line. Now, there's just a
+<code>QuickKey=</code>&lt;<var>key</var>&gt; line. If you start having BXQuickKey problems, check your
+<code>bx.cnf</code> file to make sure it matches this specification.
+</li><li><kbd>BXQuickKey Space</kbd> will activate BX, for convenience in JAWS 11.
+</li><li>Fix: The BXQuickKey can again find its maps if activated after a JAWS load before the first use of BX
+itself. This was broken in the September 22 BX version.
+</li><li>Fix: BX will again return to the last-used map when it should instead of always going to Window Navigation. This
+was also broken in the September 22 BX version.
+</li></ul>
+
+<h3>Revision 233, September 22, 2009</h3>
+
+<ul>
+<li>The reliability of the update code for <code>default_fs.jsb</code> is improved, <code>default_fs.jsd</code>
+is now managed as well, and the whole process is now automatic instead of requiring the user
+to invoke it from the BX Configuration map.
+</li><li><kbd>Shift+P</kbd> in HTML Navigation includes the document type comment (if present) just as <kbd>Shift+G</kbd>
+from the #Document node already does.
+</li><li>Much more documentation in <code>bx.jsd</code> is accessible to the JAWS Script Manager.
+</li></ul>
+
+<h3>Revision 212, September 17, 2009</h3>
+
+<p>
+Miscellaneous quick changes:
+</p><ul>
+<li><code>Beep()</code> calls are now logged by the Event Watcher.
+</li><li><kbd>JAWSKey+Q</kbd> in any map says a more easily intelligible date/time.
+</li><li>Fix: JAWS no longer says "Auto AccChild" when <kbd>Ctrl+RightArrow</kbd> in MSAA Navigation is used to
+request an <code>AccChild</code> call directly. This bug was introduced on July 9, 2008.
+</li><li>Fix: Typing <kbd>Alt+C</kbd> in a userBuffer from collecting text will beep instead of trying to start a
+new collection.
+</li></ul>
+
+<p>
+Installer changes:
+</p><ul>
+<li>Admin privileges are explicitly requested. This might help on Vista and/or Windows 7.
+</li><li>Solid rather than plain LZMA compression is used, saving about 80 K.
+</li><li>JAWS should no longer say "NullSoft Install System" three times in a row now and then during installation.
+</li><li>The NSIS installer used is now 2.45 instead of 2.35.
+</li></ul>
+
+<p>
+And one big change:
+
+</p><p>
+This update eliminates a lot of JAWS-based tricks for identifying VARIANT variable types, in favor of a much
+more reliable VBScript-based approach. This enables the following new features:
+</p><ul>
+<li>The elimination of an entire obsolete code module.
+</li><li>No more ambiguity on MSAA and HTML DOM method and property return types.
+</li><li>The elimination of <kbd>Z</kbd> and <kbd>Shift+Z</kbd> in MSAA Navigation, which were used to force JAWS to
+try to interpret navigation results as IDs or objects.
+</li><li>Some <code>AccHitTest</code> failures (<kbd>Ctrl+Shift+P</kbd> in MSAA Navigation) are fixed.
+</li></ul>
+
+<p>
+In addition, the following are included to aid in identifying exactly how MSAA calls respond:
+</p><ul>
+<li>Navigations that return <code>ChildID_Self</code> will say "self" in the JAWS message voice.
+</li><li>Navigations to unexpected types will announce the unexpected type by name.
+</li><li>If an <code>AccSelection</code> call returns an array, JAWS will say "multiple items" in the JAWS message voice.
+</li><li>If an <code>AccHitTest</code> call returns a childID belonging to the current object's parent, this will be
+indicated by JAWS saying "ID for parent" in the JAWS message voice.
+</li></ul>
+
+<h3>Revision 204, September 16, 2009</h3>
+
+<p>
+BX is now versioned in Bazaar rather than CVS.
+
+</p><p>
+Installation notes:
+</p><ul>
+<li><code>default_bxsample.</code><var>*</var> may ease manual installation.
+</li><li><code>bx.jcf</code> is now <code>bx.cnf</code>, so if you customized <code>bx.jcf</code>, update
+<code>bx.cnf</code> accordingly after installation. You can then delete your old <code>bx.jcf</code>
+file. Freedom Scientific recommended this name change.
+</li><li>You can delete old BX jsl files after this upgrade if you're not using them for other projects, as BX no
+longer uses jsl files.
+</li><li>If your BX was old enough to have enabled BXGauge beeps by default, rest assured this is no longer the case
+in this version.
+</li><li>Restart JAWS after upgrading to this version so the <code>bx.jcf</code>/cnf name change will take proper effect.
+</li></ul>
+
+<p>
+Changes:
+</p><ul>
+<li><kbd>Shift+L</kbd> in Window Navigation can now give the length, content, and spelling of the
+<code>GetListOfObjects</code> result for the current window. The window spatial info formerly assigned to
+<kbd>Shift+L</kbd> is now on <kbd>Ctrl+L</kbd>. This update revealed that many windows, such as in AIM 7, return
+nothing for this call under JAWS 10.
+</li><li><kbd>Shift+R</kbd> in Object Examination now tries every possible bit against <code>GetRelationText()</code>
+(JAWS 10 and later) and speaks a summary of results. This is for IAccessible2 testing.
+</li><li><kbd>Shift+G</kbd> in HTML Testing now copies any top-level comment nodes, such as <code>DocType</code>,
+to the clipboard and JAWS userBuffer along with the <code>outerHTML</code> of the
+<code>documentElement</code>. This should make it capable of regenerating a complete DOM in text form.
+</li><li><kbd>JAWSKey+Q</kbd> from any BX map says the BX compilation date, so it will start getting easier to find
+out who has what.
+</li><li>Experimental real-time mouse position reporting is enabled when the JAWS cursor is active and BX is
+on. Features:
+<ul>
+<li>BXGauge-style sounds indicating screen position as the mouse moves.
+</li><li>Sounds for various types of window border crossings in real time.
+</li><li>Reporting of control information where the mouse stops.
+</li></ul>
+</li><li><code>bx.jcf</code> is renamed to <code>bx.cnf</code>. A JAWS restart should be performed after upgrading
+across this boundary, and you may need to reapply any special changes you made to <code>bx.jcf</code>
+in the new <code>bx.cnf</code> file.
+</li><li>No more jsl files; all is in <code>bx.jss</code>/<code>jsh</code>/<code>jsm</code>.
+</li><li>Code in BX is now in the BX namespace (function names have a "<code>bx__</code>" prefix) so it won't collide
+with any other project.
+</li><li><kbd>F1</kbd> and <kbd>JAWSKey+F1</kbd> are being replaced by <kbd>JAWSKey+H</kbd>. Currently all three are
+active, but as of now, only <kbd>JAWSKey+H</kbd> is documented in the manual.
+</li><li>Fix: Automatic update code for default JAWS files should be improved.
+</li><li>Fix: The first launch of BX starts BX, not home-row mode, when <code>bxFirst</code> is set in
+<code>bx.cnf</code>, even if the machine has been running without a reboot for over 24 days.
+</li><li>Fix: The "dial-from-cursor" sequence works again and with Skype 4.
+</li><li>Fix: <code>bxGetJAWSVirtualView()</code> (<kbd>Shift+V</kbd> in Cursor Navigation) turns off auto forms mode
+in JAWS 10 or later to avoid various mishaps.
+</li><li>Fix: <code>AccHitTest</code> (<kbd>Ctrl+Shift+P</kbd> in MSAA Navigation) uses 0-based coordinates for MSAA
+instead of 1-based ones.
+</li><li>Fix: <code>IEFrame</code> now has the same application map as <code>BrowseUI</code>, so the HTML application
+map works on multiframe pages. TODO: It's done with an <code>Include</code>, which makes
+<kbd>Tab</kbd> etc. not find any help text.
+</li><li><code>bxGauge()</code>'s last parameter is now explicitly optional.
+</li></ul>
+
+<h3>June 2, 2009</h3>
+
+<p>
+BX development silence as preparations were made to convert versioning from CVS to Bazaar.
+
+</p><h3>Revision 103 (end of CVS history), May 20, 2009</h3>
+
+<ul>
+<li><kbd>Ctrl+Shift+E</kbd> now loads the event watcher over the current scripts, rather than in place of them
+as with <kbd>Ctrl+E</kbd>.
+</li><li><kbd>Ctrl+B</kbd> and <kbd>Ctrl+Shift+B</kbd> load Braille event watchers much as <kbd>Ctrl+E</kbd> and
+<kbd>Ctrl+Shift+E</kbd> load non-Braille event watchers.
+</li><li><kbd>BXQuickKey D</kbd> d enters a debug log manager map:
+<ul>
+<li><kbd>E</kbd> to enable debug message logging.
+</li><li><kbd>D</kbd> to disable logging and show the log.
+</li></ul>
+</li><li><kbd>U</kbd> in Window Navigation will report the integer result of <code>sendMessage(hwnd, WM_GetObject,
+0, UIARootObjectId)</code> to the current window. May be useful for UI Automation testing, at
+least to see what windows support it.
+</li><li><kbd>Q</kbd> in Window Navigation now returns the <code>QueryClassNameIdx</code> window type as text on a
+single press, decimal on a double press, and hex on a triple press. According to Microsoft
+documentation at MSDN, a non-zero result means the window is a standard User32 or ComCtl control. The index
+value can indicate what kind as well.
+</li><li><kbd>BXQuickKey D F</kbd> queries the <code>AutoFormsModeValue</code>, and <kbd>Shift+F</kbd> toggles it.
+</li><li><kbd>BXQuickKey A C</kbd> in the JAWS Script Manager, if used while the cursor is on a function definition line,
+will paste below it a call to that function with all parameters included. Useful for writing event-chaining code:
+<ul>
+<li>Copy event definition from <code>default.jss</code>.
+</li><li>Use <kbd>BXQuickKey A C</kbd> to create the event-chaining call.
+</li><li>Fill in custom code.
+</li><li>Add "<code>EndFunction</code>" line.
+</li></ul>
+</li><li>There is a Scroll map accessible from the Window Messages map for testing <code>WM_Scroll</code> messages.
+</li><li>Fix: Better <code>olutil::olGetJAWSInfo()</code> return of JAWS build number.
+</li><li>Fix: Exclusion of <code>TApplication</code> windows from the BX task list when duplicated by something else.
+</li><li>Fix: <kbd>B</kbd> and <kbd>Shift+N</kbd> were missing from BXQuickKey top-level map help (thanks Roy for
+pointing out that b was missing).
+</li><li>Fix: <kbd>Ctrl+P</kbd> and <kbd>Ctrl+Shift+P</kbd> in HTML Navigation now work much more reliably and on
+more pages with frames. (Added use of <code>IEGetUnrestrictedWindow()</code>.)
+</li><li>Fix: Workarounds implemented in MSAA code for JAWS 10's apparent inability to return anything but 0 for
+<code>ObjToInt()</code>.
+</li><li>Fix: More direct (<code>GetObject</code>-based) method of getting the <code>TLI.TLIApplication</code> object
+when necessary.
+</li><li>Fix: <kbd>Ctrl+Shift+L</kbd> in Window Navigation should no longer say " to 100" instead of "0 to 100"
+when a window entirely covers its container.
+</li><li><code>olchar.jsl</code> is now obsolete.
+</li></ul>
+
+<h3>CVS tag bx_rel081211_sam, December 11, 2008</h3>
+
+<p>
+The CVS tag for this revision is so named because this version of BX was sent to a coworker named Sam for a project.
+
+</p><ul>
+<li>In HTML Navigation, Expressions governing HTML attribute values should now be reported on
+<kbd>Up</kbd>/<kbd>Down</kbd> in an attribute list (from an <kbd>Alt+RightArrow</kbd>).
+</li><li><kbd>S</kbd> in Global Functions now says the <code>GetActiveConfiguration</code> value before the name of
+the running script.
+</li><li><kbd>Ctrl+Shift+T</kbd> in Window Navigation goes if possible to the tooltip window that last fired for the
+app in focus. The tooltip must still be visible for this to work.
+</li><li><kbd>E</kbd> in COM Object Testing now works without <code>TLBInf32.dll</code>.
+</li><li>A double quote (<kbd>"</kbd>) from any map will announce the typeName of the current object without requiring
+<code>TLBInf32.dll</code>. A double press is now required to get the interface name, which does require the DLL.
+</li><li>Pressing <kbd>Apostrophe</kbd> (') from the Map map will now switch to the map for the current object if
+there is one, like a double press of double-quote did before.
+</li><li>The edit command (<kbd>E</kbd>) in COM Object Testing now accepts arbitrary VBScript expressions in which
+"<code>o</code>" refers to the current BX object, as long as the expression contains parentheses
+somewhere so it can be distinguished from just an object ID like Scripting.Dictionary. Trick: If you want that
+kind of evaluation but have no parens in your expression, add a single quote and a left paren
+to the end of the expression (that's a VBScript comment).
+</li><li>There are some rearrangements and new commands in the Window Messages map, reachable via a semicolon
+(<kbd>;</kbd>) from the Window Navigation map.
+</li><li>There is a Scroll map accessible via <kbd>S</kbd> from the Window Messages map for testing <code>WM_Scroll</code>
+messages.
+</li><li>Fix: Warnings added for <kbd>W</kbd>, <kbd>Shift+W</kbd>, and <kbd>Ctrl+Shift+W</kbd> in Window Navigation.
+</li><li>Fix: Attempts to help BX identify object types better in JAWS 10, where object references started sometimes
+returning an object's default value instead of the object's actual reference. <code>TLITypeName()</code>
+and <code>bxtliTypeName()</code> should start working here.
+</li><li>Fix: <code>bxmsaaShowVisiblePartOfTree</code> now gets full-blown Accessible Objects from childIDs before
+looking for their properties, because at least one environment was seen to report empty properties
+like <code>AccState</code> when non-zero childIDs are used though correct values come back after a
+<code>.AccChild</code> call.
+</li><li>Fix: <code>bxGetInspectObjectsData</code> doesn't miss the left bracket for <code>VarChild</code> and is
+less easily fooled by text strings like "help" in the data.
+</li><li><code>bxIsActive()</code> can be called from debugging code to see if BX is currently active.
+</li><li>The <code>logcallExtra()</code> function for adding info to event logs can call a new <code>logcallParm()</code>
+function to retrieve parameter values of logged function calls.
+</li></ul>
+
+<h3>CVS tag bx_rel081017_scott, October 17, 2008</h3>
+
+<p>
+Like the above revision, this one was sent to a coworker after whom the CVS tag is named.
+
+</p><ul>
+<li><code>BXGauge</code> beeps are now disabled by default.
+</li><li>The Event Watcher watches more events, including events specific to FSReader and VB6.
+</li></ul>
+
+<h3>CVS tag bx_rel081013_roy, October 13, 2008</h3>
+
+<p>
+Yet another CVS tag named after a coworker recipient of the revision.
+
+</p><ul>
+<li>The Event Watcher logs calls to speech-generating functions (about 44 of them).
+</li><li>Experiment: Tried using an MSAA method of setting focus to effect task switching via the BXQuickKey.
+</li></ul>
+
+<h3>CVS tag bx_rel081010, October 10, 2008</h3>
+
+<p>
+(This text is drawn from an email.)
+
+</p><p>
+The most notable update is the addition of <code>bx_evwatch.jsb</code> and a system that allows for event watching
+without
+requiring application script files to be edited. The new system is documented in <code>BXMan.htm</code> under
+its own section,
+which should be easier to find because <code>BXMan.htm</code> also has a table of contents now. In summary,
+it works like this:
+</p><ul>
+<li>Before logging, type <kbd>BXQuickKey D Ctrl+E</kbd> to load the <code>bx_evwatch</code> code.
+</li><li>Type <kbd>JAWSKey+E</kbd> twice quickly to turn logging on.
+</li><li>Do things for which you want event logs.
+</li><li>Type another single <kbd>JAWSKey+E</kbd> to turn logging off and see the results in the JAWS virtual viewer.
+</li><li>Repeat starting at step 2 to generate new logs.
+</li><li>The event logging code unloads on the next <kbd>Alt+Tab</kbd>.
+</li></ul>
+
+<p>
+While the <code>bx_evwatch</code> code is running, application script and configuration files will not be loaded,
+so the events logged will be what JAWS does by itself.
+
+</p><p>
+The system currently tracks about 134 events and <code>Say</code> functions, all I know of to date through JAWS
+10 including some undocumented stuff. You can fine-tune what events are logged and even what
+is logged for each by writing <code>logcallInclude()</code> and <code>logcallExtra()</code> functions (names
+subject to change though). You can even pick functions to log by whether or not, and how deep,
+they are found in the calling chain of another function; for example, log <code>FocusChangedEventEx</code>
+but nothing called from it.
+
+</p><p>
+In the log output, which is also placed on the Windows clipboard automatically when shown, the first column is
+the decimal number of seconds from log start when the call occurred, the second column is "c"
+for a call and "r" for its return, and the rest is the call itself with parameters, and return value where
+appropriate.
+
+</p><p>
+Other changes:
+
+</p><p>
+The semicolon key (<kbd>;</kbd>), which cycles among related maps from some maps, is now documented. In the
+Window Navigation map, it toggles with a new Window Messages map, which can be used to see what
+happens when various messages are sent to a specific window using <code>SendMessage</code> or
+<code>PostMessage</code>. Among other things, this map provides means to test methods of moving focus through a
+dialog or among MDI children that Microsoft says are better than using <code>SetFocus</code>.
+
+</p><p>
+<kbd>N</kbd> in Window Navigation, which has always reported the result of the JAWS <code>GetWindowName</code>
+function, now also reports when the length of that result differs from the result of the
+<code>WM_GetTextLength</code> message, which can help detect when JAWS is "guessing" at a window name instead
+of providing what <code>WM_GetText</code> would provide. We can't get <code>WM_GetText</code>
+directly in JAWS, but this at least helps determine when this might matter. Caveat: The two lengths often differ
+by one character even when the strings otherwise would match, so at best this new report is
+just a heads-up, not an indication of missing info.
+
+</p><p>
+<kbd>E</kbd> in COM Object Testing will now allow parameters to be passed to method calls.
+
+</p><p>
+<kbd>P</kbd> and <kbd>Ctrl+P</kbd> in HTML Navigation and <kbd>Ctrl+P</kbd> and <kbd>Ctrl+Shift+P</kbd> in MSAA
+Navigation should now work with the Virtual PC cursor active.
+
+</p><p>
+There are a few improvements in how the Braille map is implemented.
+
+</p><p>
+<code>BXMSAA.jsh</code> includes some extra MSAA constants listed as Gecko navigation commands. These have not
+been tested but will not apply to many applications.
+
+</p><p>
+When you navigate in the MSAA map, you may occasionally hear "AutoAccChild," indicating that BX automatically
+called <code>.AccChild</code> to get somewhere even though you did not explicitly ask for this. The
+behavior is not new, but the announcement of it is.
+
+</p><p>
+A few superfluous files are no longer included in the <code>src</code> folder in the zip file.
+
+</p><h3>CVS tag bx_rel080616, June 16, 2008</h3>
+
+<p>
+Revision history documentation stops here for now.
+
+</p></details>
+
+
+<deepl-input-controller translate="no"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css"><div dir="ltr" style="visibility: initial !important;"><div class="dl-input-translation-container svelte-95aucy"><div></div></div></div></template></deepl-input-controller><div id="awebChromeHelper" data-version="1.26.0"><template shadowrootmode="open"><link rel="stylesheet" type="text/css" href="chrome-extension://gdnpkbipbholkoaggmlblpbmgemddbgb/css/awebChromeHelper.min.css"><div id="awebShadowBody"><div role="dialog" aria-modal="true" id="awebFailurePopUp" tabindex="-1" style="display: none;"><div class="aweb-modal-body"><h2 class="h5">Failure</h2><p class="modal-failure-description"></p><h3 class="h6">Failure Code Snippet</h3><small class="failure-location-html d-block text-muted my-2"></small><pre><code class="failure-modal-html"></code></pre><div class="modal-failure-details"></div><button class="btn btn-primary me-2 close-failure-modal">Close</button><button class="btn btn-secondary me-2 inspect-button">Inspect</button></div><div class="failure-modal-backdrop"></div></div></div></template></div></body></html>

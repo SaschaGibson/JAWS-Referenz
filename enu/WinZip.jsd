@@ -1,0 +1,34 @@
+:script HotKeyHelp
+
+:function HandleCustomWindows
+
+:function SayNonHighlightedText
+
+:script ShiftTab
+
+:function AutoStartEvent
+
+:function KeyPressedEvent
+
+:script SayWindowPromptAndText
+
+:function SayHighlightedText
+
+:script ScreenSensitiveHelp
+
+:script ReadPropertiesWindow
+:Synopsis Reads the information contained in the Zip Properties dialog
+:Description This command will read the property information presented in the Zip Properties dialog. You can press the Shift key to move quickly through each item
+
+:function FocusChangedEvent
+
+:script ToolbarList
+:Synopsis Provides a list of toolbar buttons which can be selected
+:Description Select the button you wish to activate from the list and press enter to activate it
+
+:script ScriptFileName
+
+:script Tab
+
+:function HandleCustomRealWindows
+

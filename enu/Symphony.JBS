@@ -1,0 +1,14 @@
+[SubtypeCode64]
+components=type,name,value
+type=
+removed=
+displayname=
+AlignmentPriority=name
+
+[SubtypeCode90]
+components=name,type,value,position
+type=shp
+displayname=shape object
+
+[Information]
+Description=Default  Structured Mode view for Symphony.

@@ -1,0 +1,440 @@
+:function justifyRight
+:Synopsis Align text on the right margin
+:Description This function will align text on the right margin.
+
+:function SayFont
+:Synopsis Says the font and point size at the active cursor. If the cursor is in a table then the cell attributes are described.
+:Description Says the font style name and character size.  Also will speak the attributes such as bold, underline, italics,etc. If the cursor is in a table then the cell attributes are described.
+
+:function GetTableSecondFillStyle
+:Synopsis Gets the Table Second Fill Style that is being used.
+:Description Returns the Table Second Fill Style that is being used.
+:Category Application
+
+:function GetTableSkewedInformation
+:Returns string returns a formatted string containing the skewed information of the current table.
+:Synopsis Gets any information on the Skewed table.
+:Description Builds up all information on the skewed table.  I.E.  The angles of the row and columns that are skewed, if the table is skewed, etc.
+:Category Application
+
+:function getWPVersion
+:Returns int 8, 9 or 10 as defined in ~wpwin.jsh
+:Synopsis returns the version of WP.
+:Description This function returns the version of WP.
+
+:function GetBorderStyleName
+:Returns string Returns the border style name
+:Synopsis Gets the name of the border style that is being used.
+:Description This function retrieves the border style name that is being used.
+:Category Application
+:Param int/iBorderType the border type as an integer, one of the following constants have to be passed:  WPBorderPage, WPBorderParagraph, WPBorderColumn and WPBorderTable
+
+:function detectContext
+:Synopsis this function detects context changes such as styles, tables, languages etc according to the settings of the global flags
+:Description This function detects context changes such as styles, tables, languages etc according to the settings of the global flags set in the JFW Verbosity Dialog.
+
+:function getTableCellCoordinates
+:Returns string coordinates of cell
+:Synopsis returns the coordinates of the active table as a string
+:Description This function returns the coordinates of the active table as a string.
+
+:function fontIsUnderlined
+:Returns int true or false
+:Synopsis determines if the font at the caret is underlined.
+:Description This function determines if the font at the caret is underlined.
+
+:function sayColumnLineSegment
+:Synopsis says the current line segment in newspaper style columns
+
+:function sayCell
+:Synopsis says the current cell contents
+:Description This function says the contents of the current cell.
+
+:function isDocumentReadOnly
+:Returns int true or false
+:Synopsis returns true if the document is read only
+:Description This function returns true if the active document is read only.
+
+:function sayCellLineSegment
+:Synopsis says the line segment within a table cell
+:Description This function says the line segment within a table cell. The function assumes that the caret is within a table and does not test for this.
+
+:function AutostartEvent
+
+:function nextCell
+:Returns int true or false
+:Synopsis moves to the next cell in the current row
+:Description This function moves to the next cell in the current row.
+
+:function SayCharacter
+
+:function sayCharacterPhonetic
+:Synopsis This function overrides the default say character phonetic to use the char passed as a parameter rather than the char at the active cursor. This is because we get the char to spaeak from the O.M. and not the OSM
+:Description This function overrides the default say character phonetic to use the char passed as a parameter rather than the char at the active cursor. This is because we get the char to spaeak from the O.M. and not the OSM
+
+:function inTable
+:Returns int true or false
+:Synopsis determines if the cursor is within a table
+:Description This function determines if the cursor is in a table or not.
+
+:function justifyFull
+:Synopsis Align text on the left and right margins
+:Description This script will align text on the left and right margins.
+
+:function fontIsBold
+:Returns int true or false
+:Synopsis determines if the font at the caret is bold
+:Description This function determines if the font at the caret is bold.
+
+:function getTextJustification
+:Returns string text describing the alignment
+:Synopsis gets the description for the alignment constant passed as a parameter
+:Description This function returns a string description for the alignment constant passed as a parameter. This constant corresponds to the value returned by envAlignment.
+:Param int/alignment No Description
+
+:function isRulerBarActive
+:Returns int true or false
+:Synopsis determines if the ruler bar is active
+:Description This function determines if the ruler bar is active or not.
+
+:function sayWindowPromptAndText
+
+:function moveToNextParagraph
+:Synopsis moves caret to next paragraph
+:Description This function moves the caret to the next paragraph.
+
+:function getCellVerticalAlignment
+:Returns string cell vertical alignment
+:Synopsis returns a text description of the cell's vertical alignment
+:Description This function returns a text description of the cell's vertical alignment.
+:Param int/alignment cell's alignment constant, returned by envCellAlignment
+
+:function SayTableSize
+:Synopsis Announces the table dimension.
+:Description The function announces the table dimension in n Columns by n Rows.
+
+:function isTypeOverActive
+:Returns int true or false
+:Synopsis determines if typeover mode is active
+:Description This function returns true if typeover mode is active. Otherwise it returns false.
+
+:function sayLine
+:Synopsis says the current line and has extra code for detecting when in a table so only the line segment in the current cell is spoken
+:Description This script says the current line and has extra code for detecting when in a table so only the line segment in the current cell is spoken.
+:Optional
+:Param Int/iDrawHighlights Optional parameter added in JAWS 7.1 / MAGic 10.0.  Used to indicate whether or not the line should be highlighted by the MAGic engine as the text is being spoken.  The possible values are as follows:  If the parameter is not present or is equal to 0, do nothing; If the parameter is equal to 1, highlight each word as it is being spoken; If the parameter is equal to 2, highlight the entire line.  NOTES: (1) This functionality is not currently supported in all applications.  (2) The highlight rectangles will only be drawn if MAGic is running.
+:Param int/bSayingLineAfterMovement set to TRUE if calling from sayNext/Prior line to avoid speaking the prompt when arrowing over forms mode controls whose prompt is already spoeken from the prior line. This parameter is available starting with JAWS version 10 and MAGic version 12.
+
+:function GetCellWidth
+:Returns string Returns the cell width as a string.
+:Synopsis Gets the current width of the cell
+:Description the function gets the current width of the cell in a table.
+:Category Application
+
+:function GetTableDefaultLine
+:Returns int Returns an integer value of the table line.
+:Synopsis Gets the currently used Table Default Line that is being used.
+:Description this function returns the currently used Table Default Line that is being used.
+:Category Application
+
+:function BrailleBuildLine
+
+:function spellWord
+:Synopsis this is a special form of the spellWord function which obtains the word from the object model rather than the OSM
+:Description This is a special form of the spellWord function which obtains the word from the object model rather than the OSM.
+
+:function sayCellAttributes
+:Synopsis says the attributes for the current table cell
+:Description This script says the attributes for the current table cell.
+
+:function GetBorderLine
+:Returns string The border line style as a string
+:Synopsis Gets the border line style that is being used.
+:Description The function returns the currently used border line style.
+:Category Application
+:Param int/iStyle integer value of the border line style
+:Param string/sBorderName String value of the border line style
+
+:function SelectNextParagraph
+:Synopsis Selects the next paragraph
+:Description This function selects the paragraph by using WP com.
+:Category Application
+
+:function isBlockModeActive
+:Returns int true or false
+:Synopsis determines if block mode is active
+:Description This function returns true if block mode is active otherwise it returns false
+
+:function justifyCenter
+:Synopsis justifies text centrally
+:Description This function justifies text centrally.
+
+:function GetColumnWidth
+:Returns string Returns the column width in points as a string value.
+:Synopsis Gets the width of the current column.
+:Description This function returns the width of the current column
+
+:function priorCell
+:Returns int true or false
+:Synopsis moves to the prior cell in the current row
+:Description This function moves to the prior cell in the current row. It is here so that the default table scripts work.
+
+:function getCurrentTextColumnIndex
+:Returns int index of current text column.
+:Synopsis gets the index of the current text column
+:Description This function returns the index of the text column containing the caret.
+
+:function getLanguageFullName
+:Returns string full name of language
+:Synopsis gets a full name of a language from an abbreviation
+:Description This function returns the full name of a language based on a supplied abbreviation.
+:Param string/language language abbreviation string as returned by oWP.envLanguage
+
+:function getUnderlineStyle
+:Returns string underline style
+:Synopsis gets the description of the underline style
+:Description This function returns a text description for an underline style constant passed as a parameter. The underline style is one of the _underlineStyle_style_enum constants.
+:Param int/style style constant
+
+:function WPUnitsToPoints
+:Returns string x points
+:Synopsis converts a measure in WP units (1/1200 of an inch) to approximate points equivalent (72 points per inch)
+:Description This function converts a measure in WP units (1/1200 of an inch) to approximate points equivalent (72 points per inch).
+:Param int/wpUnitsValue WPUnits value to be converted
+
+:function isRevealCodesActive
+:Returns int true or false
+:Synopsis determines if Reveal Codes is active or not
+:Description This function determines if Reveal Codes is active or not.
+
+:function GetTableAlternateFill
+:Returns int returns the status of the Table AlternateFill as an integer. 0 for off, 1 for Column and 2.
+:Synopsis Gets the status of the Table AlternateFill
+:Description the function gets the status of the Table AlternateFill.
+:Category Application
+
+:function flushRight
+:Synopsis Right justify a line of text
+:Description This script will right justify a line of text.
+
+:function centerLine
+:Synopsis Center the selected text, the current line only, or all text from the insertion point forward
+:Description This script will center the selected text, the current line only, or all text from the insertion point forward.
+
+:function fontIsItalic
+:Returns int true or false
+:Synopsis determines if the font at the caret is italic
+:Description This function determines if the font at the caret is italic.
+
+:function saySentence
+
+:function upCell
+:Returns int true or false
+:Synopsis moves up one cell in the current column
+:Description This function moves to the prior cell in the same column. It is here so that the default table scripts work.
+
+:function inDocumentWindow
+:Returns int true or false
+:Synopsis determines if focus is in the document window or not
+:Description This function determines if the focus is in the main document window as focusChangedEvent is not triggered when the menubar becomes active.
+
+:function getStyle
+:Returns string name of style
+:Synopsis gets the name of the current text style
+:Description This function gets the name of the current text style. It is primarily used by getRevealCodeDesc when the current code is 1757, style to expand the code to show the actual style.
+
+:function getTextColumnCount
+:Returns int the number of columns
+:Synopsis gets the number of text columns in the active document
+:Description This function returns the number of text columns in the active document.
+
+:function sayWord
+
+:function moveToPriorParagraph
+:Synopsis moves caret to prior paragraph
+:Description This function moves the caret to the prior paragraph.
+
+:function getTableName
+:Returns string table name
+:Synopsis returns the table name as a string
+:Description This function returns the table name as a string.
+
+:function justifyLeft
+:Synopsis Align text on the left margin
+:Description This script will align text on the left margin.
+
+:function sayCurrentWord
+:Synopsis says the current word at the cursor using the object model
+:Description This function says the current word at the cursor using the object model.
+
+:function wpUnitsToInches
+:Returns string returns the WP measurement in inches as a string
+:Synopsis Converts wp measurement units into inches.
+:Description the function converts wp measurement units into inches.
+:Category Application
+:Param int/iUnit The WP measurement that is returned by a WP function.
+
+:function getTableStyle
+:Returns string Returns the current style as a string.
+:Synopsis Returns the current table style
+:Description The function returns the Tables current style.
+:Category Application
+
+:function SelectPriorParagraph
+:Synopsis Select the previous paragraph in the document.
+:Description This function uses WP com to select the previous paragraph.
+:Category Application
+
+:function downCell
+:Returns int true or false
+:Synopsis moves down a cell in the current column
+:Description This function moves to the next cell in the current column. It is here so that the default table scripts work.
+
+:function setEloqLanguage
+:Returns int true if the language switch was successful otherwise false
+:Synopsis sets the Eloquence Language to the nearest matching supported language.
+:Description This function attempts to set Eloquence to the nearest matching language supported by Eloquence.
+:Param string/language language string
+
+:function getRevealCodeDesc
+:Returns string envRightCode description
+:Synopsis gets the RevealCode description for the specified envRightCode value, this is the reveal code at the cursor position.
+:Description This function gets the RevealCode description for the specified envRightCode value, this is the reveal code at the cursor position.
+:Param int/code No Description
+
+:function GetRowWidth
+:Returns string Returns the Row width in points as a string value.
+:Synopsis Gets the width of the current Row.
+:Description This function returns the width of the current Row.
+
+:function DescribeAttributes
+:Synopsis Describe the current font information
+:Description this function describes the current font, point size, font attribute, style, justification, etc.
+:Category Application
+
+:function getRevealCodeOrCharAtCursor
+:Returns string reveal code at caret (PC Cursor location)
+:Synopsis returns a string describing the Reveal code at the PC Cursor location. If there is no reveal code at the cursor location then the character or word at that location is returned instead.
+:Description This function returns a string describing the Reveal code at the PC Cursor location. If there is no reveal code at the cursor location then the character at that location is returned instead.
+:Param int/iTextUnit Text movement Unit which can be one of the following constants:  WpUnitCharacter, WpUnitWord, WpUnitLine, WpUnitSentence or WpUnitParagraph.
+
+:function sayTableName
+:Synopsis says the name of the table containing the caret
+:Description This function announces the name of the current table.
+
+:function sayCellCoordinates
+:Synopsis says the coordinates for the current cell
+:Description This function announces the coordinates of the active cell.
+
+:function sayParagraph
+:Returns int true or false
+
+:function sayTextWithLanguageDetection
+:Synopsis Says the text range with full language detection
+:Description This function says the specified range of text with full language detection. The start and end of the range must be passed as parameters.This function parses the current line for language boundaries and says the line segments in the correct language.
+:Param int/textUnit a constant specifying the text Unit. These constants are defined in wpwin9.jsh
+
+:function AutoFinishEvent
+
+:function resetDetectionFlags
+:Synopsis Resets all detection flags
+:Description This function resets all detection flags
+
+
+:function IsMultipleColumns
+:Returns int Returns true or false, depending if the cursor is in a multi text column
+:Synopsis Detects if the pc cursor is in a multi text column.
+:Description This function detects if the pc cursor is in a multi text column.
+
+:Function SayColumnNumber
+:Synopsis Announces the current column the cursor is in.
+:Description This function announces the current column the cursor is currently in, of a multi text column.
+
+:Function GetColumnNumber
+:Synopsis Number of the current text column.
+:Description  Number of the current text column.
+
+:function WPVersionSupported
+:Description Looks in the registry if the currently running version of WordPerfect is the one responding to object model calls.
+:returns int TRUE if the version currently running will respond to object model calls.
+
+:function GetPositionInDocument
+:description retrieves the current line number, horizontal position, and page number for comparison whether a quick nav key has moved the cursor.
+:returns void
+:param int/iLine/ByRef the line number
+:param int/iColumn/ByRef The horizontal position.
+:param int/iPage/ByRef The page number.
+
+:function MoveToTable
+:Description Moves to the next or prior table.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function MoveToComment
+:Description Moves to the next or prior comment.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function MoveToCrossRef
+:Description Moves to the next or prior cross reference.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function MoveToEndnote
+:Description Moves to the next or prior endnote.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function MoveToFootnote
+:Description Moves to the next or prior footnote.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function MoveToHeading
+:Description Moves to the next or prior heading.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+:param int/iLevel Heading level, not used in WP.
+
+:function MoveToIndex
+:Description Moves to the next or prior index.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function MoveToList
+:Description Moves to the next or prior list.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function MoveToTOA
+:Description Moves to the next or prior table of authorities.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function MoveToTOC
+:Description Moves to the next or prior table of contents.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function MoveToPage
+:Description Moves to the next or prior page.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function MoveToParagraph
+:Description Moves to the next or prior paragraph.
+:returns int TRUE if successful.
+:param int/iDirection The direction, forward or backward, in which to move.
+
+:function IsLastCellInTable
+:returns int TRUE if this is the last cell.
+:description determines from the WP object model if this is the last cell in the current table.
+
+:function IsFirstCellInTable
+:returns int TRUE if this is the first cell.
+:description determines by comparing against the normal first table field name if this is the first cell in teh current table.
+
+:function StepOutOfTable
+:returns int tRUE if step out of table was successful.
+:param int/iForward TRUE if stepping forward, FALSE otherwise.
+:description Steps out of the current table.

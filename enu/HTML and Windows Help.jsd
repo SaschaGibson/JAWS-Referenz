@@ -1,0 +1,177 @@
+:Function GetTabLabels
+:Returns string The labels for the tab controls delimited for a JAWS list box.
+:Description Retrieves all the labels in a delimited string for a JAWS list box.
+:param handle/hTabControl The window which contains the tab controls.
+
+
+:function AutoStartEvent
+
+:script ScriptFileName
+
+:script MoveToNextLink
+:Synopsis Moves to the next hypertext link or control in the page
+:Description If in a dialog, moves to the next control. If in a Web page, moves to the next hypertext link or control. It is recommended to attach this script to the Tab key. If %product% is unable to find the focused link, it will read the status line
+
+:script MoveToPriorLink
+:Synopsis Moves to the prior hypertext link or control in the page
+:Description If in a dialog, moves to the prior control. If in a Web page, moves to the prior hypertext link or control. It is recommended to attach this script to the SHIFT+TAB keystroke. If %product% is unable to find the focused link, it will read the status line
+
+:script ReadCurrentScreen
+:Synopsis Reads the body of the page from the top with the JAWS Cursor
+:Description This script reads the visible body of the current page with the JAWS cursor. You can stop reading and then begin again from the same place with the standard SayAll, INSERT+DOWN ARROW. When you reach the bottom of the screen, CTRL+PAGE DOWN will move to the next screen and continue reading in the same manner
+
+:script ReadNextScreen
+:Synopsis Does a PAGE DOWN and begins reading with the JAWS cursor
+:Description Does a standard PAGE DOWN to bring up the next screen and starts reading from the top with the JAWS cursor. You can stop reading and then begin again from the same place with the standard SayAll, INSERT+DOWN ARROW
+
+:script ReadPriorScreen
+:Synopsis Does a PAGE UP and begins reading with the JAWS cursor
+:Description Does a standard PAGE UP to bring up the prior screen and starts reading from the top with the JAWS cursor. You can stop reading and then begin again from the same place with the standard SayAll, INSERT+DOWN ARROW
+
+:script ReadDownColumn
+:Synopsis When the JAWS cursor is active, reads the next line of the current column
+
+:script ReadUpColumn
+:Synopsis When the JAWS cursor is active, reads the prior line of the current column
+
+:script ReadColumnLeft
+:Synopsis When the JAWS cursor is active, reads the current line in the prior column
+
+:script ReadColumnRight
+:Synopsis When the JAWS cursor is active, reads the current line in the next column
+
+:function SayNonHighlightedText
+:Param handle/hwnd No Description
+:Param string/buffer No Description
+
+:function MoveToLink
+:Synopsis Function written to move from link to link
+:Description When tabbing through a list of links, this function is called to move the focus to the link
+:Param int/nNext No Description
+
+:script SaySelectedLink
+:Synopsis Says the current link with focus
+:Description This script speaks the current link with focus
+
+:script HotKeyHelp
+
+:script ScreenSensitiveHelp
+
+:function IsLinksList
+:Synopsis Funtion used to check if the Links list is active
+:Param handle/hwnd No Description
+
+:function IsToolbarList
+:Synopsis Checks to see if the Toolbar list is active
+:Param handle/hwnd No Description
+
+:function IsTabList
+:Synopsis Checks to see if the Tabs list is active
+:Param handle/hwnd No Description
+
+:function FocusChangedEvent
+:Param handle/focusWindow No Description
+:Param handle/prevWindow No Description
+
+:function SayFocusedWindow
+
+:script ReformatDocument
+:Synopsis Reformats multiple column pages to be more readable with speech
+:Description Rearranges multiple column pages to read in a linear fashion. IE columns are read one after another. Only available in IE4
+
+:function NewSelectLink
+:Synopsis Presents the new Links List view
+:Description Use only when Virtual PC cursor is on, otherwise will not report accurately
+
+:script SelectALink
+:Synopsis Brings up a dialog containing a list of the links present in the page
+
+:function ieFocusToFirstField
+:Synopsis Moves the focus to the first control on a page
+:Description If there are multiple controls on a page, such as edit fields, this takes you to the first field and moves the focus to this field
+
+:script FocusToFirstField
+:Synopsis Moves to the first input field in the page when using IE 4.0
+:Description Searches for the first input field on the page and speaks it. Only available in IE4. If no input fields are available, a message is spoken to indicate that to the user
+
+:function GetNavigationTreeView
+:Returns handle No Return Description
+:Synopsis Function used to see if the tree view currently has the focus
+
+:function GetToolbar
+:Returns handle No Return Description
+:Synopsis Function used to get the handle of the toolbar and to see if toolbar is visible
+
+:script ToolBar
+:Synopsis Allows the user to click in a toolbar button by selecting it from a list.
+:Description This script brings up a dialog box that contains every button that appears on the toolbar in a list. In this dialog the user can select one of the buttons on the toolbar and press ENTER to click on it
+
+:function ClickToolBarButton
+:Synopsis Function used to click the appropriate toolbar button
+:Param handle/winHandle No Description
+:Param string/buttonLabel No Description
+
+:function GetTabControl
+:Returns handle No Return Description
+:Synopsis Function used to get the tab controls for a multi-page dialog
+
+:script SelectTab
+:Synopsis Builds a list of tabs in a dialog list so the user can choose the tab they want
+
+:function ClickTab
+:Synopsis Function used to click the appropriate tab when user chooses from the dialog list
+:Param handle/winHandle No Description
+:Param string/tab No Description
+
+:function GetFrameInHierarchy
+:Synopsis Function used to get the hierarchy of the frames on a page
+:Param int/nIndex No Description
+:Param object/StartWindow No Description
+
+:function AddFramesInWindow
+:Synopsis Function used to add the frames in a window for the dialog list
+:Param object/window No Description
+:Param string/strBuf/ByRef No Description
+
+:function SpeakDocument
+:Synopsis Function used to speak the document after moving to a specific frame
+:Param object/doc No Description
+
+:script NextDocumentWindow
+
+:script PreviousDocumentWindow
+
+:Function AddToString
+:Synopsis Takes two strings and adds the second string to the first
+:Description Adds the second string parameter to the first parameter and returns the new string
+:Returns string
+:Param1 String/Base The base string that is to be added to
+:Param2 string/New The string that is to be added to the base
+
+:function GetToolBarButtons
+:synopsis Builds the list of toolbar buttons
+:description Builds the list of toolbar buttons, along with their on-screen coordinates
+:param handle The handle of the toolbar window
+:param string ByRef To hold the delimited list of toolbar button text
+:param string ByRef To hold the on-screen x coordinates of the buttons
+:param int ByRef To hold the on-screen Y coordinate of the row of buttons
+
+:function ClickToolBarButtonByPosition
+:synopsis Clicks a button based on its (x,y) coordinates
+:description Clicks a button based on its on-screen (x,y) coordinates
+:param string The delimited list of button x coordinates
+:param int The number representing which button to use
+:param int  The y coordinate of the button row
+
+:script GoBack
+:Synopsis Loads the previously opened Web page
+:Description Passes ALT+LEFT ARROW to IE to load the previous page and announces it
+
+:script GoForward
+:Synopsis Loads the next opened Web page.
+:Description Passes ALT+RIGHT ARROW to IE to load the next page and announces it
+
+:function SayLine
+:Description This says a line of text where the active cursor is located. JAWS must interpret whether text that has a similar vertical position is on the same line. When the PC cursor is active, it only reads the information that is within the active child window. When it is used with other cursors, then it reads from one edge of the application window to the other.
+:Optional
+:Param Int/iDrawHighlights Optional parameter added in JAWS 7.1 / MAGic 10.0.  Used to indicate whether or not the line should be highlighted by the MAGic engine as the text is being spoken.  The possible values are as follows:  If the parameter is not present or is equal to 0, do nothing; If the parameter is equal to 1, highlight each word as it is being spoken; If the parameter is equal to 2, highlight the entire line.  NOTES: (1) This functionality is not currently supported in all applications.  (2) The highlight rectangles will only be drawn if MAGic is running.

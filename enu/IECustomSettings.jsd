@@ -1,0 +1,298 @@
+:Function CustomSettingsStart
+:Synopsis Set up globals to remember pror settings
+:Description the Autostart piece of the Personalized Settings feature.
+
+:Function GetRelevantAddressBarInfo
+:Synopsis gets relevant info for the domain from the address of the current page.
+:Description Since the PersonalizedSettings feature works by domain, this function returns the relevant domain to the current page.
+:Returns string the relevant domain info such as microsoft.com or maps.yahoo.com
+
+:Function MakeFileNameFromAddress
+:Synopsis turns the relevant domain information into a file name.
+:Description Uses the gStrAddress global variable and turns its value into a file name, passing it to gStrFileName.  Note that this does not mean a file by that name already exists, it's just the name.
+
+:Function SetUpStuffForNewPage
+:Synopsis Configures personal settings, if applicable, for the given page.
+:Description This only happens if the domain has changed.  The gStrAdress variable is used in this instance.
+:Optional
+:param int/iForcePageChange Only fill in this parameter with TRUE if you want the page to be set up regardless of whether or not it has changed.  This means we don't ever do it in DocumentLoadedEvent
+
+:Function SpeakPersonalizeSettingsChange
+:Synopsis speaks message about web site being personalized.
+:Description If the web site has been personalized, speaks message.  Uses the bCustomSettingsWereLoaded global variable. This function only speaks the message if the address of the page has changed since this function was last called.
+
+:Function SpeakPersonalizeSettings
+:Synopsis speaks message about web site being personalized but doesn't keep track of whether this message has already been spoken for this site
+:Description If the web site has been personalized, speaks message.  Uses the bCustomSettingsWereLoaded global variable. This function doesn't remember whether the message has already been spoken for this website.
+
+:Function ConvertCustomToJCF
+:Synopsis Turns the key from the personal setting into the relevant JCF option.
+:Description Uses the keys, as assigned in IECustomSettings.jsh, starting with HKEY_ and converts to jcf.
+:param1 string/sCustomOption Enter the valid key from IECustomSettings.jsh or segment of string from IniReadSectionKeys
+:Returns int the cooresponding JCF Option.
+
+:Function ConvertJCFToCustom
+:Synopsis Turns the JCF option into the relevant key from the personal setting.
+:Description Uses the jcf options in HjConst.jsh to return keys, as assigned in IECustomSettings.jsh, starting with HKEY.
+:param1 int/iJCFOption Enter the valid JCF Option, as defined in HjConst.jsh starting with lowercase opt.
+:Returns string the cooresponding key name from IECustomSettings.jsh.
+
+:Function InitializeGlobalsWithSettingsFromJCF
+:Synopsis Retrieves all relevant jcf settings using the GetJCFOption and places the values in the corresponding global variables.
+:Description This function is used in the initial AutoStartEvent in BrowseUI.jss to support storing of preexisting key values.  We also use it in the AdjustJAWSVerbosity overwrite here for the same purpose.  Be careful when using this function as it does not gather from files, but uses existing JCF options from GetJCFOption.  Only update these when necessary, as they are a template from which to return after custom settings were not found.
+:Returns void
+
+:Function SetJCFOptionsWithGlobals
+:Synopsis resets using the template provided by the global variables for custom settings.
+:Description This function prevents the inheritance of preexisting personal settings from given domain to a new page.
+:Returns void
+
+:Function LoadSettingsFromRelevantFile
+:Synopsis retrieves all the custom settings pertaining to the associated custom file and loads them into memory.
+:Description Any settings that are customized for the web site are loaded into memory.
+:Returns void
+
+:Function DiscoverCorrectOption
+:Synopsis gets the setting for the given HTML option, searching for entry in custom file first.
+:Description If the setting exists in the custom file, its value is returned.  If not, the value from GetJcfOption is retrieved.
+:Param1 int/iOption Enter the constant for the relevant JCF option, starting with a lowercase opt.
+:Returns int The value for the correct option.
+
+:Function WriteCustomOption
+:Synopsis Writes an option and its value to the predecided custom file.
+:Description Pass the option as you would an HTML option, such as optIncludeGraphics and then pass the value.  It will be written to the associated personal file.
+:param1 int/iOption enter the opt constant found in HjConst.jsh.
+:param2 int/iSetting Enter the valid value for the option, which can be retrieved by GetJCFOption on Parameter 1.
+
+:Function CustomIncludeGraphicsToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomIncludeLinksToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomGraphicsLinkLastResortToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomIncludeImageMapLinksToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomFrameIndicationToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomTextLinkVerbosityToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomButtonTextVerbosityToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:function CustomFormFieldPromptsRenderingToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomToggleUseVirtualInfoInFormsMode
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomToggleLanguageDetection
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomGraphicReadingVerbosityToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomIndicateTablesToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomDetectTables
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomIndicateHeadingsToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomIndicateBlockQuotes
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomIndicateLists
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomToggleIgnoreInlineFrames
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomSkipPastRepeatedTextToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+
+:Function CustomRefreshHTML
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomAnnounceLiveRegionUpdates
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomRefreshActiveContent
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomClearAllSettings
+:Synopsis When called to update, clears all personalized settings.
+:Description It shows up as Cleared if no settings present, Set if there are settings for this web site.  Press space bar or Execute to clear.  This function will not set settings, it just clears.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:function CustomScreenFollowsVCursorToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomElementAttributeAnnounce
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomIncrementMaxLineLength
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:function CustomDecrementMaxLineLength
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomNavigationQuickKeysMode
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomFlashOnWebPagesToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:function CustomIncrementMaxBlockLength
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Function CustomDecrementMaxBlockLength
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:function CustomIdentifyLinkTypeToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:function CustomIdentifySamePageLinksToggle
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:function CustomToggleFormsModeAutoOff
+:Synopsis Performs the Custom equivalent of the HTML function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:function CustomCustomPageSummary
+:Synopsis Performs the Custom equivalent of the Virtual function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:function CustomToggleVirtualCursor
+:Synopsis Performs the Custom equivalent of the Virtual function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:function CustomStyleSheetProcessing
+:Synopsis Performs the Custom equivalent of the Virtual function.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:param1 int/iRetCurVal Used to determine whether or not to update.
+:Returns string the valid setting for the dialog box.
+
+:Script PersonalizeSettings
+:DisplayName Personalize Settings
+:Synopsis Personalize settings for web pages.
+:Description Personalize settings for different domains, such as freedomscientific.com or my.yahoo.com.
+:SearchRank 4
+
+:Script PersonalizeSettingsByListBox
+:Synopsis Personalize settings for web pages.
+:Description Personalize settings for different domains, such as freedomscientific.com or my.yahoo.com.
+
+:Function CustomVirtualDocumentLinkActivationMethod
+:Synopsis Toggles distinction of Enter from Left Mouse Button in virtual documents when clicking elements.
+:Description These custom functions are for the Personalize Web Settings dialog box.
+:Param int iRetCurVal
+:Returns string

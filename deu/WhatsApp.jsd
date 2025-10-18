@@ -1,0 +1,115 @@
+﻿:function LoadNonJCFOptions
+:Description Loads What'sApp settings.
+
+:function getMainWindowComponent
+:Returns object The UIA element matching the AutomationID supplied in the parameter.
+:Description Finds the first UIA element that is a descendant of the root element and matches the supplied AutomationID.
+:Param string/automationID The Automation ID of the requested component
+
+:function GetWhatsappWindow
+:Returns handle The handle of the What'sApp window
+:Description Returns the handle of the What'sApp main window.
+
+:function UIAInit
+:Description Initializes global UIA variables.
+:Category WindowsAndObjects
+
+:function SpeakMessagesAuto
+:Description Speaks messages automatically, called by UIAPropertyChangedEvent.
+:Param string/sMessage Message to speak, passed by event function
+
+:function TrimStatusFromMessage
+:Returns String Text minus any status that may be included after the time at the end of the message.
+:Description Used to strip any status off the end of a message, such as pending, sent, received, read, etc. 
+This function looks for the time separator ":" near the end of the string and trims off anything that comes after the minutes of the time.
+Note, this will trim AM or PM, if present.
+:Param string/sMessage The string of the message to trim.
+
+:function TypingSounder
+:Description Controls playback of the contact typing sound
+:Param object/SoundElement The typing indicator
+
+:function WhatsAppUIAPropertyChangedEvent
+:Description Event that fires when new WhatsApp messages arrive.
+:Param object/element No Description
+:Param int/PropertyID No Description
+:Param variant/NewValue No Description
+
+:function GetRecentMessage
+:Returns String Text of the requested message.
+:Description Returns the message associated with the number passed in the parameter.
+:Param int/iRecentMessage The number of the desired message. 1 represents the most recent message, 2 represents the second most recent message, etc.
+
+:script RecordVoiceMessage
+:SearchRank 1
+:Synopsis Sprachnachricht aufnehmen
+:Description Drückt den Schalter zum Starten einer Sprachnachricht. Weiteres Drücken des Schalters wechselt zwischen Pausieren und Fortsetzen der Aufnahme.
+
+:script SendVoiceMessage
+:SearchRank 1
+:Synopsis Aufgenommene Sprachnachricht senden
+:Description Sendet die aufgenommene Sprachnachricht.
+
+:script PlayPauseRecording
+:SearchRank 1
+:Synopsis Abspielen / Pausieren der aufgenommenen Sprachnachricht
+:Description Spielt eine aufgenommene Sprachnachricht in der Vorschau ab oder pausiert diese.
+
+:script DiscardVoiceMessage
+:SearchRank 1
+:Synopsis Aufgenommene Sprachnachricht verwerfen
+:Description Verwirft die aufgenommene Sprachnachricht, ohne diese zu versenden.
+
+:script SpeedVoiceMessage
+:SearchRank 1
+:Synopsis Geschwindigkeit der Sprachnachricht steuern
+:Description Steuert die Wiedergabegeschwindigkeit der aktuell abspielenden Sprachnachricht.
+
+:script MoveToChatList
+:SearchRank 1
+:Synopsis Zur Chatliste springen
+:Description Springt in die Chatliste, in der Sie mit den Pfeiltasten navigieren können.
+
+:script MoveToEditField
+:SearchRank 1
+:Synopsis Ins Chat Eingabefeld springen
+:Description Setzt den Fokus in das Eingabefeld des Chats.
+
+:script MoveToHistory
+:SearchRank 1
+:Synopsis Springt in den Chatverlauf
+:Description Springt in das Feld des Chatverlaufs.
+
+:script SpeakNameAndStatus
+:SearchRank 1
+:Synopsis Kontaktname und Status ansagen
+:Description Liest den Namen und den Status des aktuellen Kontakts, wenn diese Information verfügbar ist (z.B. Onlinestatus, zuletzt Online)
+
+:script SpeakMessageOnDemand
+:SearchRank 1
+:Synopsis Die letzten 9 Nachrichten ansagen
+:Description Liest die erste bis neunte Nachricht des Verlaufs. Wird zusätzlich die JAWS-Taste gedrückt, dann wird dieser Befehl virtualisiert.
+
+:script AudioCall
+:SearchRank 1
+:Synopsis Sprachanruf starten
+:Description Startet einen Sprachanruf mit dem aktuellen Kontakt.
+
+:script VideoCall
+:SearchRank 1
+:Synopsis Videoanruf starten
+:Description Startet einen Videoanruf mit dem aktuellen Kontakt.
+
+:script Attach
+:SearchRank 1
+:Synopsis Eine Datei anhängen
+:Description Öffnet das Fenster zur Auswahl einer Datei, um diese an die aktuelle Nachricht anzuhängen.
+
+:script VirtualizeMessageONDemand
+:SearchRank 1
+:Synopsis Nachricht virtualisieren
+:Description Virtualisiert die erste bis neunte Nachricht des Verlaufs.
+
+:script ControlDelete
+:Synopsis Aktiviert die Kurztaste STRG+Rücktaste
+:Description Aktiviert die Kurztaste STRG+Rücktaste. Beim Bearbeiten von Text wird das neu fokussierte Wort angesagt.

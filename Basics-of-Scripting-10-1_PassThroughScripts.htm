@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>10.1 Pass-Through Scripts</title>
+<LINK rel="StyleSheet" href="default.css">
+</head>
+
+<body>
+
+<h1>10.1 Pass-Through Scripts</h1>
+
+<p>When you create a pass-through script, you must make certain to pass the
+keystroke through to the application. It is important to remember that JAWS
+determines what script to process each time you press a keystroke. If the
+application keystroke is now attached to a script, then JAWS performs the
+script first. If you do not pass the keystroke through within the script, then
+the keystroke never activates the intended action and functionality of the
+keystroke is lost.</p>
+
+<h2>Creating the Script</h2>
+
+<p>You can use the built-in function, TypeKey, to
+pass the keystroke through to the active application once you have enhanced its
+functionality in your script. The TypeKey function
+requires a single parameter to complete its task. This parameter is a string of
+text and can be enclosed in quotation marks, stored in a string variable or a
+string constant. The keystroke can be anything from a single character such as
+the letter <strong>S</strong> to a keystroke that opens a menu such as <strong>ALT+F</strong>.
+You call the TypeKey function using the following syntax:</p>
+
+<p class="Code">TypeKey ("Alt+F")</p>
+
+<p>The above example shows the parameter being passed to the function as a
+quoted string of text. An alternative way of passing the parameter is to store
+the keystroke in a local variable you have declared in the script. The
+following code example declares a local variable, stores the keystroke and then
+uses the variable as a parameter for the TypeKey
+function:</p>
+
+<p class="Code">Var<br>
+String sKeystroke<br>
+Let sKeystroke = "ALT+F"<br>
+TypeKey (sKeystroke)</p>
+
+<p>You can also declare all of your keystrokes in a JAWS script header file. To
+declare a keystroke constant for <strong>ALT+F</strong>,
+type the following two statements in a JAWS script header file:</p>
+
+<p class="Code">Const<br>
+KSFileMenu= "Alt+F"</p>
+
+<p>In the above constant declaration, the &#8220;KS&#8221; indicates it is a
+constant containing a keystroke. </p>
+
+<p>You can review a number of more commonly used keystroke constants by viewing
+the Common.jsm JAWS script message file within the Script Manager. You will
+find constant definitions for most of the more common keystrokes such as <strong>SPACEBAR</strong>, <strong>CTRL+PAGE UP</strong> and <strong>CTRL+PAGE DOWN</strong> in the
+file.</p>
+
+<p>The following code example illustrates the use of a constant as the
+parameter for the TypeKey function:</p>
+
+<p class="Code">TypeKey (KSFileMenu)</p>
+
+<p>&nbsp;</p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="10-2_GivingKeyboardAccess.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</body>
+
+</html>

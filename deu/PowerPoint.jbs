@@ -1,0 +1,105 @@
+﻿;Copyright 1995-2023 Freedom Scientific, Inc.
+;JAWS Braille structure file for Microsoft Powerpoint
+
+;section for Component Aliases
+[Component Aliases]
+shapeDescription=Formattyp
+shapeText=Shape-Text
+overlapDescription=Überlappungsstatus
+ppTblCoordinates=Tabellenkoordinaten
+ppTblCellContent=Zellinhalt
+ppTblDimensions=Tabellenabmessungen
+selectedSlides=Gewählte Folientitel
+selectedShapes=Gewählte Figurnamen
+slideId=Folien-ID
+SlideTitle=Folientitel
+SlidePosition=Folienposition
+slideLayout=Folienlayout
+xlWSCoordinates=Exl Arbeitsmappenkoordinaten
+xlWSCellContent=Exl Arbeitsblatt Zellinhalt
+PHDesc=Platzhalter Beschreibung
+UserControlPrompt=Benutzerdef. Elementprompt
+userControlType=Benutzerdef. Elementtyp
+userControlText=Benutzerdef. Elementtext
+
+; Section for editcombo
+[SubtypeCode41]
+components=ContextHelp,name,type,state,ComputerBrailleIndicator,value,position,hotkey
+type=kef
+removed=
+displayname=
+AlignmentPriority=name,type,state,ComputerBrailleIndicator,value
+
+; Section for listboxitem
+[SubtypeCode55]
+components=ContextHelp,name,type,state,value,position,hotkey
+removed=
+displayname=
+type=lf
+AlignmentPriority=name,type,state,value
+
+;Section for generic Powerpoint Shapes
+[CustomControl1]
+displayname=Powerpoint-Objekt
+components=shapeDescription,shapeText,overlapDescription
+removed=
+type=
+
+;section for Native Powerpoint 2000 Tables at Object Level
+[CustomControl2]
+displayname=Powerpoint-Tabelle
+components=type,ppTblDimensions
+removed=
+type=tbl
+
+;Section for Slide Object
+[CustomControl3]
+displayname=Folienobjekt
+components=type,SlideTitle,SlidePosition
+removed=slideId,slideLayout
+type=Folie
+
+;Section for ShapeRange ie when multiple shapes are selected
+[CustomControl4]
+displayname=Markierte Figuren
+components=type,selectedShapes
+removed=
+type=markfig
+
+;Section for slideRange ie when multiple slides are selected
+[CustomControl5]
+displayname=Markierte Folien
+components=type,selectedSlides
+removed=
+type=markfol
+
+;section for embedded Excel worksheet cell
+[CustomControl6]
+displayname=Excel Arbeitsblatt
+components=type,xlWSCoordinates,xlWSCellContent
+removed=
+type=xlab
+
+;section for Place Holders
+[CustomControl7]
+displayname=Platzhalter
+components=PHDesc,type,shapeText,overlapDescription
+removed=
+type=&ph
+
+;section for Powerpoint 2000 Native Tables at Edit Level
+[CustomControl8]
+displayname=Tabellenzelle bearbeiten
+components=type,ppTblCoordinates,ComputerBrailleIndicator,ppTblCellContent
+removed=
+type=tbl ef
+
+;section for windows with class UserControl
+[CustomControl9]
+displayName=Benutzerdefinierte Elemente
+components=UserControlPrompt,userControlType,userControlText
+removed=
+type=
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Microsoft Powerpoint.

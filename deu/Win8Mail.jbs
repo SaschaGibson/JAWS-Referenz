@@ -1,0 +1,9 @@
+﻿;Remove Grp components from structured mode data
+;This is the only way of overriding the default.jbs to remove these components so that alignment doesn't go to the grp component
+[SubtypeCode21]
+components=
+type=grp
+removed=containerName,containerType
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Windows Mail.

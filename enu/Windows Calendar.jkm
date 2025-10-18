@@ -1,0 +1,83 @@
+[Virtual Keys]
+Control+Shift+F=IEFind
+
+[common keys]
+Shift+JAWSKey+R=ReplyDirectlyToSender
+Enter=Enter
+NumPadEnter=Enter
+Control+Delete=DeleteWord
+Control+ExtendedDelete=DeleteWord
+Alt+6=ReadSubjectField
+JAWSKey+Q=ScriptFileName
+JAWSKey+F8=ToolBarList
+Alt+LeftArrow=PreviousMessage
+Alt+ExtendedLeftArrow=PreviousMessage
+Control+Comma=PreviousMessage
+Alt+GraveAccent=GoToMessageField
+Control+GraveAccent=GoToMessageField
+Control+Period=NextMessage
+Insert+a=GotoAttachmentsList
+Alt+RightArrow=NextMessage
+Alt+ExtendedRightArrow=NextMessage
+Alt+1=ReadFromField
+Alt+2=ReadDateField
+JAWSKey+F7=ReadMisspelledAndSuggestion
+Control+JAWSKey+F7=ReadMisspelledAndSuggestion
+Alt+3=ReadToField
+Alt+4=ReadCcField
+Alt+5=ReadBccField
+Alt+c=ChangeButton
+Alt+i=IgnoreButton
+Alt+d=DeleteButton
+Alt+G=IgnoreAllButton
+Alt+L=ChangeAllButton
+Alt+A=AddToDictionaryButton
+Alt+U=UndoButton
+Control+D=DeleteMessage
+[Laptop Keys]
+Insert+F8=ToolBarList
+Insert+a=GotoAttachmentsList
+Alt+G=IgnoreAllButton
+Alt+L=ChangeAllButton
+Alt+A=AddToDictionaryButton
+UpArrow=SayPriorLine
+DownArrow=SayNextLine
+
+[ML20 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+
+[ML40 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+
+[tplite Keys]
+Braille F2+F3+F5+F6=SelectALink; 7
+Braille F2+F3+F6=ToolBar; 8
+
+[blite18 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+
+[blite40 keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+
+[brlwin keys]
+braille keypad2+keypad3+keypad4=GotoAttachmentsList
+braille F1+F4=PreviousMessage
+braille F2+F5=NextMessage
+braille F1+F5=DeleteMessage
+braille keypad1+keypad2+keypad3=SelectALink
+
+[brlnote keys]
+braille keypad1+keypad2+keypad4=GotoAttachmentsList
+braille F1+F3=PreviousMessage
+braille F2+F4=NextMessage
+braille F1+F4=DeleteMessage
+
+[Focus Keys]
+Braille Shift2+dots 2 3 6=ToolBar
+
+
+

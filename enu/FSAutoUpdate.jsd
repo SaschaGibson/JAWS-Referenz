@@ -1,0 +1,12 @@
+:script SayNextLine
+:Category Say
+
+:script SayPriorLine
+:Category Say
+
+:function SayFocusedObject
+:Category WindowsAndObjects
+
+:script ScriptFileName
+:Category Say
+

@@ -1,0 +1,62 @@
+[common Keys]
+Control+F=IEFind
+Tab=MoveToNextLink
+Shift+Tab=MoveToPriorLink
+Control+JAWSKey+Home=FocusToFirstField
+Control+JAWSKey+ExtendedHome=FocusToFirstField
+Control+LeftArrow=ReadColumnLeft
+Control+ExtendedLeftArrow=ReadColumnLeft
+Control+RightArrow=ReadColumnRight
+Control+ExtendedRightArrow=ReadColumnRight
+Control+DownArrow=ReadDownColumn
+Control+ExtendedDownArrow=ReadDownColumn
+Control+UpArrow=ReadUpColumn
+Control+ExtendedUpArrow=ReadUpColumn
+Control+PageDown=ReadNextScreen
+Control+ExtendedPageDown=ReadNextScreen
+Control+PageUp=ReadPriorScreen
+Control+ExtendedPageUp=ReadPriorScreen
+JAWSKey+Tab=SaySelectedLink
+Control+JAWSKey+DownArrow=ReadCurrentScreen
+Control+JAWSKey+ExtendedDownArrow=ReadCurrentScreen
+JAWSKey+F8=ToolBar
+Control+JAWSKey+F10=SelectTab
+Control+Tab=NextDocumentWindow
+Control+Shift+Tab=PreviousDocumentWindow
+
+[Laptop Keys]
+Control+Insert+Home=FocusToFirstField
+Control+Insert+ExtendedHome=FocusToFirstField
+Insert+Tab=SaySelectedLink
+Control+Insert+DownArrow=ReadCurrentScreen
+Control+Insert+ExtendedDownArrow=ReadCurrentScreen
+Insert+F8=ToolBar
+Control+Insert+F10=SelectTab
+
+[ML20 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F1+F2+F3=FocusToFirstField
+
+[ML40 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F1+F2+F3=FocusToFirstField
+
+[tplite Keys]
+Braille F2+F3+F5+F6=SelectALink; 7
+Braille F2+F3+F6=ToolBar; 8
+Braille F2+F4+F5=FocusToFirstField
+
+[blite18 Keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F1+F2+F3=FocusToFirstField
+
+[blite40 keys]
+Braille F2+F3+F5+F6=SelectALink
+Braille F2+F3+F6=ToolBar
+Braille F1+F2+F3=FocusToFirstField
+
+[Focus Keys]
+Braille Shift2+dots 2 3 6=ToolBar

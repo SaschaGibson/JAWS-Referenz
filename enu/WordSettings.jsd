@@ -1,0 +1,598 @@
+:Function saveJCFOptions
+:description Saves all JCF options which are modified in Word Settings.
+:function FlagSetSpokenBeforeText
+:returns int the set of selection bits to be spoken before the spoken text.
+:Description Returns conditionally the bits to be spoken before the text on selection change.  This is dependent on Outlook or Word being active
+
+:function ToggleSelectionBit
+:returns int the on/off state of the toggled bit(s)
+:Description Toggles the bit(s) as selection bits supplied by the parameter.  The return is not the direct bitwise value  but the on/off state of the bit(s).
+:param int/iFlag The bit or bits to be toggled.  Constants for selection bits are found in hjConst.jsh
+
+:function TurnSelectionBitOn
+:Description Turns on the bit(s) as selection bits supplied by the parameter.  The return is not the direct bitwise value  but the on/off state of the bit(s).
+:param int/iFlag The bit or bits to be turned on.  Constants for selection bits are found in hjConst.jsh
+
+:function TurnSelectionBitOff
+:Description Turns off the bit(s) as selection bits supplied by the parameter.  The return is not the direct bitwise value  but the on/off state of the bit(s).
+:param int/iFlag The bit or bits to be turned off.  Constants for selection bits are found in hjConst.jsh
+
+:function getStateOfSelectionBit
+:returns int the on/off state of the toggled bit(s)
+:Description Gets the state of the bit(s) as selection bits supplied by the parameter.  The return is not the direct bitwise value  but the on/off state of the bit(s).
+:param int/iFlag The bit or bits to be checked.  Constants for selection bits are found in hjConst.jsh
+
+:function ToggleCountBit
+:returns int the on/off state of the toggled bit(s)
+:Description Toggles the bit(s) as count bits supplied by the parameter.  The return is not the direct bitwise value  but the on/off state of the bit(s).
+:param int/iFlag The bit or bits to be toggled.  Constants for count bits are found in hjConst.jsh
+
+:function TurnCountBitOn
+:Description Turns on the bit(s) as count bits supplied by the parameter.  The return is not the direct bitwise value  but the on/off state of the bit(s).
+:param int/iFlag The bit or bits to be turned on.  Constants for count bits are found in hjConst.jsh
+
+:function TurnCountBitOff
+:Description Turns off the bit(s) as count bits supplied by the parameter.  The return is not the direct bitwise value  but the on/off state of the bit(s).
+:param int/iFlag The bit or bits to be turned off.  Constants for count bits are found in hjConst.jsh
+
+:function getStateOfCountBit
+:returns int the on/off state of the toggled bit(s)
+:Description Gets the state of the bit(s) as count bits supplied by the parameter.  The return is not the direct bitwise value  but the on/off state of the bit(s).
+:param int/iFlag The bit or bits to be checked.  Constants for count bits are found in hjConst.jsh
+
+
+:function loadUserDefaults
+:description Loads user-specified application settings, and takes copies of all the default settings user has not changed, creating the user's application settings collection.
+
+:Function UpdateSettingsCollections
+:description force update document and table settings pointers to ensure all settings point to the active document and table.  This is a forced update, not to be used on change of a particular item.
+
+:function InitializeSettings
+:returns void
+:Description Initializes all Word settings from for collections.
+
+:function getActiveDocumentJSIFileName
+:returns string the JSI name associated with the active document
+:description gets the appropriate JSI filename for the active document. Used for document-specific settings.
+
+:function getActiveTableJSISectionName
+:returns string The ini-style section name related to the active table by index
+:description For table-specific settings, retrieves the relevant ini-style section name string for the active table by index.
+
+:function UpdateDocumentPointer
+:description Updates the settings pointer to point to settings for the active document. This should be called on document change, so the new settings may be in effect. If no specific settings have been set, a placeholder collection is created to store data or settings.
+
+:function UpdateTablePointer
+:description Updates the table settings pointer to point to the settings for the active table. This should be called on table change, so the new settings may be in effect. If no specific settings have been set, a placeholder collection is created to store data or settings.
+
+:function IndentationIndication
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function IndentationIndicate
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function PositionDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function togglePositionDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function BorderDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function toggleBorderDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+
+:function ShadingDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function ToggleShadingDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function CountBefore
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleCountBefore
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function ListNestingLevelAnnounce
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function ToggleAnnounceListNestingLevel
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function ExpressNavigationModeActive
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleSelCtxWithMarkup
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:Function NotesDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function toggleNotesDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function TableDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleTableDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function BulletTypeIndication
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleIndicateBulletType
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function BrailleBulletTypeIndication
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleIndicateBrailleBulletType
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:Function LanguageDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function LanguageDetectChange
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function ShowBrlProofreadingMark
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleShowBrlProofreadingMark
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function WordDocumentPresentation
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function WordDocumentPresentationSet
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function IndicateNonbreakingSymbols
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function IndicateNonbreakingSymbolsToggle
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function HeadingsAnnounce
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function vCursorHeadingsAnnounce
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function GraphicsShowSetting
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function GraphicsShow
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function StyleDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function toggleStyleDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function RevisionDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function toggleRevisionDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function ExtraHelpIndication
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function ToggleExtraHelpIndication
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function SpellingErrorDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function ToggleSpellingErrorDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function GrammaticalErrorDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function ToggleGrammaticalErrorDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function BookmarkDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function ToggleBookmarkDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function getDesiredUnitsOfMeasure
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function ToggleSetDesiredUnitOfMeasure
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:Function NewLinesAndParagraphsIndication
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function ToggleNewLinesAndParagraphsIndication
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function TableDescription
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleTableDescription
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function SchemeIsDocSpecific
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleScheme
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function TabMeasurementIndicationSetting
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function TabMeasurementIndication
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function LineSpacingDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleLineSpacingDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function IncludeBlankParagraphsForParagraphNavigation
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function CellCoordinatesDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function toggleCellCoordinatesDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function ObjectCountDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleObjectCountDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function HeadersFootersDetection
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleHeadersFootersDetection
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function BrlTableNumberDisplay
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleBrlTableNumberDisplay
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function OverrideDocNamedTitles
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function ToggleOverrideDocNamedTitles
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function TableTitlesAnnounce
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:function vCursorTableTitlesAnnounce
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function RowTitlesColumn
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function setRowTitlesColumn
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function ColumnTitlesRow
+:returns int the setting
+:description Returns the relevant setting's value.
+
+:Function setColumnTitlesRow
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+:function clearTitleRowAndColumnDefinition
+:returns string The string to display.
+:param int/iRetCurVal handled by dlgSelectTreeFunctionToRun True to maintain, FALSE to update
+:Description Toggles the setting and returns the appropriate string for display.
+
+
+:Function EditingOptionsHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function GeneralHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function FormattingHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function TablesHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function DocumentSettingsHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleShowBrlProofreadingMarkHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleSpellingErrorDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleGrammaticalErrorDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleSetDesiredUnitOfMeasureHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleShadingDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleExtraHelpIndicationHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleBookmarkDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleStyleDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleRevisionDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function TogglePositionDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleIndicateBulletTypeHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleIndicateBrailleBulletTypeHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleSchemeHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleBorderDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function GraphicsShowHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function ToggleNotesDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:Function WordDocumentPresentationSetHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function SetRowTitlesColumnHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function SetColumnTitlesRowHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ClearTitleRowAndColumnDefinitionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleOverrideDocNamedTitlesHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleCountBeforeHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function NavigationQuickKeysSetHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleAnnounceListNestingLevelHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleTableDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleTableDescriptionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function IndicateNonbreakingSymbolsToggleHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function vCursorHeadingsAnnounceHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function TabMeasurementIndicationHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function LanguageDetectChangeHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleLineSpacingDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function toggleCellCoordinatesDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function vCursorTableTitlesAnnounceHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function IndentationIndicateHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleSelCtxWithMarkupHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleNewLinesAndParagraphsIndicationHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleObjectCountDetectionHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function ToggleBrlTableNumberDisplayHlp
+:Description This is the helper function for the var referred to in its name.
+:returns string description of value used to populate dlgSelectTreeFunctionToRun list item's value.
+
+:function saveApplicationSettings
+:description writes to settings files from collections data in wordSettings.
+:returns int TRUE if settings were successfully saved (or cleared), false otherwise.
+
+:function setCurrentDocumentMarkedPlace
+:returns int no return description
+:Description Sets the current marked place in the document
+:Optional
+:Param int/iPlace If no position is given, the current character position is used.
+
+:Function GetCurrentDocumentMarkedPlace
+:returns int The character position for the marked place in the document.
+:Description Returns the previously saved marked place in the document. Each document can have only one marked place associated wwith it.
+
+:Function AllowNonbreakingSymbolsDetection
+:description Used to turn off nonbreaking symbols detection outside of the document area, and set back to the user's preference when in the document area.
+:param int True if the user preference should be used, false otherwise.

@@ -1,0 +1,10 @@
+; Section for tab control, added to accomodate position in group
+[SubtypeCode29]
+components=ContextHelp,name,type,state,position,description
+type=tab
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,state
+
+[Information]
+Description=Default  Structured Mode view for People app.

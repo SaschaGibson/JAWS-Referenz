@@ -1,0 +1,280 @@
+:function PauseForMovement
+:Synopsis inserts a delay before speaking, to allow time for JAWS to catch up with movement
+:Description causes the script to pause with the Delay(1) function
+:Category Script
+
+:function AutoStartEvent
+:Synopsis Saves entering voice profile index, sets script flags, and speaks intro message on first run.
+:Description Identifies DBT program; sets flag for braille verbalization if opening into a braille doc.
+:Category Script
+
+:function AutoFinishEvent
+:Synopsis Restores the entering voice profile index.
+:Category Options
+
+:function SayBrailleChar
+:Synopsis speaks the braille verbalization for a character
+:Description speaks a string segment from the appropriate csBrailleChars segmented string in dbtw.jsh; these string segments can be localized
+:Category Say
+:Param string/VCTX voice context
+:Param string/CurrentChar character to be spoken as braille
+
+:function FocusPointMovedEvent
+:Description In DBT, checks on need to beep for blank or to announce change of style or character entered in braille doc.
+:Category Positioning
+:Param int/nX No Description
+:Param int/nY No Description
+:Param int/nOldX No Description
+:Param int/nOldY No Description
+:Param int/nUnit No Description
+:Param int/nDir No Description
+:Param int/nTimeElapsed No Description
+
+:function SayCharacterValue
+:Synopsis When possible, speaks the Unicode value from the status line.
+:Description In a print document where the Unicode value appears on the status line, speaks that value. Otherwise uses the default function.
+:Category Say
+
+:function GetUnicodeValue
+:Returns string The Unicode value from the status line; otherwise blank.
+:Description In a print document, when the Unicode value appears on the status line, gives this value.
+
+:function GetColumnNum
+:Returns string No Return Description
+
+:function GetLineNum
+:Returns int current line number or -1 if not available.
+:Synopsis Gets line number from the status line.
+:Description If document window is in coded view, with no location info on the status line, returns -1.
+:Category Application
+
+:function GetPageNum
+:Returns string current page number
+:Synopsis In a document window gives current page number as string
+:Category Positioning
+
+:function GetStyleName
+:Returns string current style name, or blank string if not available.
+:Synopsis Returns name of current style.
+:Description Returns name of current style, or -1 if not available.
+:Category Application
+
+:script AltF3Press
+:DisplayName Code Anzeige ein / ausschalten
+:Synopsis Spricht den Status der Code-Anzeige: ein oder aus
+:Description Wertet die Informationen auf der Statuszeile über den derzeitigen Status der Code-Anzeige aus.
+:Category Say
+:SearchRank 1
+
+:script F2Press
+:DisplayName 6Punkte Brailleeingabe ein oder ausschalten
+:Synopsis Spricht den Status der Brailleeingabe: ein oder aus
+:Description Verwendet das Tastenfeld auf der Statuszeile um den Status der 6Punkte Brailleeingabe zu ermitteln: ein oder aus
+:Category Say
+:SearchRank 1
+
+:script ControlF8Press
+:DisplayName Übersetzte Zeile umschalten
+:Synopsis Spricht den neuen status der übersetzten Zeile
+:Category Say
+:SearchRank 1
+
+:function SayHighlightedText
+:Description in DBT, used to speak misspelled word in Spell checker
+:Category Say
+:Param handle/hwnd No Description
+:Param string/buffer No Description
+
+:script ChangeLine
+:DisplayName Geänderte Zeile sprechen
+:Synopsis Bestimmt das Sprechen und die Brailleanzeige der Zeile beim bewegen des Cursors.
+:Description Wenn in einem Brailledokument Zeilen übersetzen aktiviert ist, wird eine Pause gemacht, damit nicht die falsche Zeile gelesen wird.
+:Category Say
+:SearchRank 1
+
+:function SpeakLineOfText
+:Synopsis Handles speaking and brailling of current line.
+:Description When in a braille document and set for speaking translated line, uses that.
+:Category Say
+
+:function DecipherItemOfText
+:Returns int 1 indicates that more speech is needed; 0 indicates that item has already been spoken
+:Synopsis when moving in text, preprocesses item to be spoken
+:Description Determines if cursor is on a code for special speaking.
+:Category Say
+
+:function NextCharacterSelectIfOn
+:Synopsis moves by character without messing up text selection
+:Category Cursor
+
+:function PriorCharacterSelectIfOn
+:Synopsis moves by character without messing up text selection
+:Category Cursor
+
+:function NextWordSelectIfOn
+:Synopsis moves by wordd without messing up text selection
+:Category Cursor
+
+:function PriorWordSelectIfOn
+:Synopsis moves by word without messing up text selection
+:Category Cursor
+
+:function SayTheCharacter
+:Synopsis says the current character, using braille verbalization if appropriate.
+:Description If in a braille document, uses the braille verbalization for that character found in dbtw.jsm.
+:Category Say
+
+:function SayNextCharacterTranslatedLine
+:Synopsis Speaks a character on the translated line as braille if in a print document.
+:Description Also announces the end of the translated line.
+:Category Say
+
+:function SayPriorCharacterTranslatedLine
+:Synopsis Speaks a character on the translated line as braille if in a print document.
+:Description Also announces the start of the translated line.
+:Category Say
+
+:script SayDocName
+:DisplayName Name des Dokumentes ansagen
+:Synopsis Spricht den Namen des Dokumentes
+:Category Say
+:SearchRank 1
+
+:function CheckTransLine
+:Returns int 1 if translated line is showing, otherwise 0
+:Synopsis tells if the translated line is showing
+:Category WindowsAndObjects
+
+:script SpeakTransLine
+:DisplayName Übersetzte Zeile ansagen
+:Synopsis Spricht die übersetzte Zeile. In druckfertigen Dokumenten wird die Sprechgeschwindigkeit verringert und der Text buchstabiert.
+:Description Wenn die übersetzte Zeile nicht sichtbar ist, wird versucht, sie einzuschalten. Falls das nicht klappt, gibt das Skript auf.
+:Category Say
+:SearchRank 1
+
+:function SpeakWordAsBrailleCells
+:Synopsis speaks the individual braille characters in the first word of the given string
+:Description speaks characters as braille cells up to the place where DBT finds the next word
+:Category Say
+:Param string/sBrailleText string from which to speak the first word as braille cells
+
+:function SpeakLineAsBrailleCells
+:Synopsis speaks a line of text as braille cells
+:Description speaks one word at a time as braille cells
+:Category Say
+:Param string sBrailleLine current line of braille
+
+:function SpeakStringAsBrailleCells
+:Synopsis speaks a string as braille cells
+:Category Say
+:Param string/VCTX voice context to be used
+:Param string/sBrailleText string to be spoken as braille cells
+
+:script TransLineCursorToggle
+:DisplayName Cursor bei übersetzter Zeile umschalten
+:Synopsis Schaltet am beginn der übersetzten Zeile zwischen JAWS und PC-Cursor um.
+:Description Verwendet den Befehl Farben finden, um die übersetzte Zeile zu finden. If it's not visible, tries turning it on. Falls sie nicht zu finden ist, gibt das Skript auf.
+:Category Cursor
+:SearchRank 1
+
+:script ReadLineInBrailleDocToggle
+:DisplayName Zeile lesen in Braille Dokument umschalten
+:SearchRank 1
+
+:script ReadStyleChangeToggle
+:DisplayName Formatänderungen lesen umschalten
+:Synopsis Schaltet die Ansage von Formatänderungen beim lesen eines Dokumentes um.
+:Description Setzt die globale Variable DoNotAnnounceStyleChange.
+:Category SpeakingLevel
+:SearchRank 1
+
+:script EchoBrailleCharsToggle
+:DisplayName Ansage von Braillezeichen umschalten
+:Synopsis Schaltet die Ansage der eingegebenen Braillezeichen bei der 6Punkte Eingabe durch JAWS um. 
+:Category SpeakingLevel
+:SearchRank 1
+
+:script SayStyleName
+:DisplayName Formatierung ansagen
+:Synopsis Sagt die aktuelle Formatierung an
+:Description Liest die Formatierung von der Statuszeile, Spalte 16 - 35
+:Category Say
+:SearchRank 1
+
+:script SayLocation
+:DisplayName Position ansagen
+:Synopsis Spricht die aktuelle Position
+:Description Liest die Position von der Statuszeile
+:Category Say
+:SearchRank 1
+
+:function HandleCustomWindows
+:Returns int No Return Description
+:Param handle/hWnd No Description
+
+:function IsDocumentWindow
+:Returns int true or false
+:Synopsis checks to see if handle is for a document window
+:Category Application
+:Param handle/hwnd No Description
+
+:function IsDocumentWindowJAWSCursor
+:Returns int TRUE if the JAWS cursor is active and the current window is a document window
+:Synopsis document window, but with JAWS cursor active
+:Category Cursor
+:Param handle/hwnd No Description
+
+:function IsBrailleDocumentWindow
+:Returns int No Return Description
+:Synopsis is current window a braille document window?
+:Category Application
+:Param handle/hwnd No Description
+
+:script ChangeCase
+:DisplayName Groß/Kleinschreibung umschalten
+:Synopsis Gibt Rückmeldung über den Befehl Groß/Kleinschreibung
+:Category Say
+:SearchRank 1
+
+:function SayTextSelection
+:Synopsis Overrides the default function.
+:Description Speaks the selected text in a DBT-friendly way.
+:Category Say
+:Param string/Select No Description
+:Param string/sText No Description
+:Param int/bUseOTChar No Description
+
+:script Highlighting
+:DisplayName Hervorheben
+:Synopsis Ermittelt, ob die Hervorhebung in DBT ein- oder ausgeschaltet und sagt Änderungen an
+:Description Wird beim Drücken von Stg+H und bei Fokuswechsel aufgerufen
+:Category Application
+:SearchRank 1
+
+:script SayLinePosition
+:DisplayName Position auf zeile ansagen
+:SearchRank 1
+
+:script SayTotalAndLeftOffset
+:DisplayName Zeilenlänge ansagen
+:Synopsis Sagt die Zeilenlänge an. Zweimal hintereinander drücken sagt die Anzahl der Zeichen links vom Cursor an.
+:Category Positioning
+:SearchRank 1
+
+:script SpeakLastWord
+:DisplayName Letztes Wort ansagen
+:Synopsis Spricht das letzte Wort auf der aktuellen Zeile
+:SearchRank 1
+
+:function SaveOldValues
+:Synopsis saves old values for page numbers and the like
+:Category Cursor
+
+:function GetNewValues
+:Synopsis Gets new values for PageNum and the like and compares with old ones.
+:Category Cursor
+
+:function SpeakSpellCheck
+:Synopsis Speaks the next unknown word detected by the Spell Checker.
+:Category Say
+

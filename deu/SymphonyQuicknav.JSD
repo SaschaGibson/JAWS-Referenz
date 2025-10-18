@@ -1,0 +1,343 @@
+:function ClearQuickNavSayAllRestart
+
+:function QuickNavSayAllRestart
+:Returns int true if SayAll should be restarted after relocation.
+
+:function QuickNavState
+
+:function AutoFinishEvent
+
+:function QuickNavKeyTrapping
+:Returns int true if quick navigation mode is trapping keys, false otherwise.
+:Description Determines if keys are being trapped due to quick key navigation mode being on.
+
+:function IsTrappableKey
+:Returns int true if the key is in the range which may be trapped, false otherwise.
+:Description Determines if a key belongs to a set which may be trapped. The set includes all alphanumeris keys, punctuation, Backspace, Enter, space and their shifted equivalents.
+:Param int The key code of a key.
+
+:function QuickNavKeyTrapKey
+:Returns int true if the key was trapped, false otherwise.
+:Description If a key is not scripted and if it belongs to a set of keys which may be trapped, traps the key; otherwise, runs the script for the key or sends it through to the application.
+:Param int the key code.
+:Param string The key name.
+:Param int boolean telling if it is a script key.
+
+:function EnsureQuickNavKeyTrapReleased
+:Description releases the key trap set in place by the quick navigation key mode.
+
+:function EstablishQuickNavState
+:Description If quick navigation mode has been turned on, makes sure to release key traps when focus leaves an open documetn and the mode is toggled off by the system, and toggles the mode back on when focus returns to an open document.
+
+:function SetQuickKeyNavigationState
+
+:function NavigationQuickKeysSet
+
+:script NavigationModeToggle
+:Synopsis Schaltet den Schnellnavigationsmodus an oder aus.
+:Description Schnellnavigationsmodus bezieht sich auf Einzelbuchstaben, die für HTML Elemente zur Navigation innerhalb von Dokumenten verwendet werden.
+
+:function SayQuickKeynavigationNotAvailable
+
+:script MoveToFirstTable
+:Synopsis Springt zur ersten Tabelle im aktuellen Dokument oder einer Outlook 2007 Nur-Lese-Nachricht.
+
+:script MoveToNextTable
+:Synopsis Springt zur nächsten Tabelle im aktuellen Dokument oder einer Outlook 2007 Nur-Lese-Nachricht.
+
+:script MoveToPriorTable
+:Synopsis Springt zur vorherigen Tabelle im aktuellen Dokument oder einer Outlook 2007 Nur-Lese-Nachricht.
+
+:script MoveToLastTable
+:Synopsis Springt zur letzten Tabelle im aktuellen Dokument oder einer Outlook 2007 Nur-Lese-Nachricht.
+
+:script MoveToFirstHeading
+:Synopsis Springt zur ersten Überschrift im aktuellen Dokument oder einer Outlook 2007 Nur-Lese-Nachricht.
+
+:script MoveToNextHeading
+:Synopsis Moves to the next heading or heading level in the current Word document or Outlook 2007 message.
+:Description Using a number, moves to the next heading level, using the letter,  moves to the next heading in the current Word document or Outlook 2007 message.
+
+:script MoveToPriorHeading
+:Synopsis Moves to the previous heading or heading level in the current Word document or Outlook 2007 message.
+:Description Using a number, moves to the previous heading level, using the letter,  moves to the previous heading in the current Word document or Outlook 2007 message.
+
+:script MoveToLastHeading
+:Synopsis Moves to the last heading in the current document or Outlook 2007 read-only message.
+
+:script MoveToFirstField
+:Synopsis Moves to the first field in the current document or Outlook 2007 read-only message.
+
+:script MoveToNextField
+:Synopsis Moves to the next field in the current document or Outlook 2007 read-only message.
+
+:script MoveToPriorField
+:Synopsis Moves to the previous field in the current document or Outlook 2007 read-only message.
+
+:script MoveToLastField
+:Synopsis Moves to the last field in the current document or Outlook 2007 read-only message.
+
+:script MoveToFirstEndnote
+:Synopsis Moves to the first endnote in the current document. This key is not available for Outlook 2007.
+
+:script MoveToNextEndnote
+:Synopsis Moves to the next endnote in the current document. This key is not available for Outlook 2007.
+
+:script MoveToPriorEndnote
+:Synopsis Moves to the previous endnote in the current document. This key is not available for Outlook 2007.
+
+:script MoveToLastEndnote
+:Synopsis Moves to the last endnote in the current document. This key is not available for Outlook 2007.
+
+:script MoveToFirstFootnote
+:Synopsis Moves to the first footnote in the current document. This key is not available for Outlook 2007.
+
+:script MoveToNextFootnote
+:Synopsis Moves to the next footnote in the current document. This key is not available for Outlook 2007.
+
+:script MoveToPriorFootnote
+:Synopsis Moves to the previous footnote in the current document. This key is not available for Outlook 2007.
+
+:script MoveToLastFootnote
+:Synopsis Moves to the last footnote in the current document. This key is not available for Outlook 2007.
+
+:script MoveToFirstComment
+:Synopsis Moves to the first comment in the current document. This key is not available for Outlook 2007.
+
+:script MoveToNextComment
+:Synopsis Moves to the next comment in the current document. This key is not available for Outlook 2007.
+
+:script MoveToPriorComment
+:Synopsis Moves to the previous comment in the current document. This key is not available for Outlook 2007.
+
+:script MoveToLastComment
+:Synopsis Moves to the last comment in the current document. This key is not available for Outlook 2007.
+
+:script MoveToFirstGraphic
+:Synopsis Moves to the first graphic in the current document or Outlook 2007 read-only message.
+
+:script MoveToNextGraphic
+:Synopsis Moves to the next graphic in the current document or Outlook 2007 read-only message.
+
+:script MoveToPriorGraphic
+:Synopsis Moves to the previous graphic in the current document or Outlook 2007 read-only message.
+
+:script MoveToLastGraphic
+:Synopsis Moves to the last graphic in the current document or Outlook 2007 read-only message.
+
+:script MoveToFirstPage
+:Synopsis Moves to the first page in the current document. This key is not available for Outlook 2007.
+
+:script MoveToNextPage
+:Synopsis Moves to the next page in the current document. This key is not available for Outlook 2007.
+
+:script MoveToPriorPage
+:Synopsis Moves to the previous page in the current document. This key is not available for Outlook 2007.
+
+:script MoveToLastPage
+:Synopsis Moves to the last page in the current document. This key is not available for Outlook 2007.
+
+:script MoveToFirstSection
+:Synopsis Moves to the first section in the current document. This key is not available for Outlook 2007.
+
+:script MoveToNextSection
+:Synopsis Moves to the next section in the current document. This key is not available for Outlook 2007.
+
+:script MoveToPriorSection
+:Synopsis Moves to the previous section in the current document. This key is not available for Outlook 2007.
+
+:script MoveToLastSection
+:Synopsis Moves to the last section in the current document. This key is not available for Outlook 2007.
+
+:function StepOutOfCurrentElement
+
+:script StepToStartOfElement
+
+:script StepToEndOfElement
+
+:script JumpToLine
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script JumpToTableCell
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script JumpReturnFromTableCell
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToFirstBookmark
+:Synopsis Moves to first bookmark in the document. This key is not available for Outlook 2007.
+:Description This key moves to first bookmark in the document. This key is not available for Outlook 2007.
+
+:script MoveToNextBookmark
+:Synopsis Moves to next bookmark in the document.
+:Description This key moves to next bookmark in the document. 
+:script MoveToPriorBookmark
+:Synopsis Moves to prior bookmark in the document. This key is not available for Outlook 2007.
+:Description This key moves to prior bookmark in the cdocument. This key is not available for Outlook 2007.
+
+:script MoveToLastBookmark
+:Synopsis Moves to last bookmark in document. This key is not available for Outlook 2007.
+:Description This key moves to last bookmark in document. This key is not available for Outlook 2007.
+
+:script MoveToNextPlaceMarker
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorPlaceMarker
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextDifferentElement
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorDifferentElement
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToFirstGrammaticalError
+:Synopsis Moves to the first grammatical error in the current document or Outlook 2007 message with quick keys enabled.
+
+:script MoveToNextGrammaticalError
+:Synopsis Moves to the next grammatical error in the current document or Outlook 2007 message with quick keys enabled.
+
+:script MoveToPriorGrammaticalError
+:Synopsis Moves to the prior grammatical error in the current document or Outlook 2007 message with quick keys enabled.
+
+:script MoveToLastGrammaticalError
+:Synopsis Moves to the last grammatical error in the current document or Outlook 2007 message with quick keys enabled.
+
+:script MoveToNextNonLinkText
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorNonLinkText
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextUnvisitedLink
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorUnvisitedLink
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextVisitedLink
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorVisitedLink
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextCheckbox
+:Synopsis Moves to the next checkbox in a protected Microsoft Word form with quick keys enabled. This key is not available for Outlook 2007.
+:Description This key is only available in a Microsoft Word document that is a protected form with quick keys enabled, not  Outlook 2007.
+
+:script MoveToPriorCheckbox
+:Synopsis Moves to the prior checkbox in a protected Microsoft Word form with quick keys enabled. This key is not available for Outlook 2007.
+:Description This key is only available in a Microsoft Word document that is a protected form with quick keys enabled, not outlook 2007.
+
+:script MoveToNextListItem
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorListItem
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextList
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorList
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextBlockQuote
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorBlockQuote
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToNextDivision
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:script MoveToPriorDivision
+:Synopsis This key is not available in Microsoft Word or Outlook 2007.
+:Description This key is only available in virtual documents.
+
+:function SayOrPlayMessage
+:Description This function says or plays a message or sound depending on whether SayAll is in progress. If it is, a sound is played. If it is not, the message is spoken.
+:Param string/smsg_l The long message to be spoken
+:Param string/smsg_s The short message to be spoken
+
+:script MoveToFirstSpellingError
+:Synopsis Moves to the first spelling error in the current document or Outlook 2007 message with quick key navigation enabled.
+
+:script MoveToNextSpellingError
+:Synopsis Moves to the next spelling error in the current document or Outlook 2007 message with quick key navigation enabled.
+
+:script MoveToPriorSpellingError
+:Synopsis Moves to the previous spelling error in the current documentb or Outlook 2007 message with quick key navigation enabled.
+
+:script MoveToLastSpellingError
+:Synopsis Moves to the last spelling error in the current document or Outlook 2007 message with quick key navigation enabled.
+
+:script MoveToFirstRevision
+:Synopsis Moves to the first revision in the current document. This key is not available for Outlook 2007.
+
+:script MoveToNextRevision
+:Synopsis Moves to the next revision in the current document. This key is not available for Outlook 2007.
+
+:script MoveToPriorRevision
+:Synopsis Moves to the previous revision in the current document. This key is not available for Outlook 2007.
+
+:script MoveToLastRevision
+:Synopsis Moves to the last revision in the current document. This key is not available for Outlook 2007.
+
+:function TrimKeyName
+:Returns string The key name without the leading Left or Right part of the name.
+:Description This function strips the Left or Right word that begins a key name where a left or right modifier keystroke is associated with the key name. Such key names include LeftWindows or RightWindows plus an alphanumeric key. The key name returned can then be used to provide a valid parm to SimulateKey or TypeKey function calls.
+:Param string/sKeyName The key name to trim.
+
+:function SayKeyNotAvailableAppMessage
+:Description This function determines which error message to announce, depending on whether Outlook or Word is the active application.
+
+:function NavigationWrappedEvent
+
+:function SayWrapMessageError
+:Description This function announces the appropriate error message for whether no more or no prior elements have been found depending on whether wrapping to top or bottom of file. We use a flag set in NavigationWrappedEvent to determine which message to announce.
+:Param string/sElementType The type of element to report not having been found.
+
+:script MoveToNextCombo
+:Synopsis Moves to the next ComboBox in a Protected Microsoft Word form with quick keys enabled. This key is not available for Outlook 2007.
+:Description This key is only available in a Microsoft Word document that is a protected form with quick keys enabled, not
+
+:script MoveToPriorCombo
+:Synopsis Moves to the prior ComboBox in a protected Microsoft Word form with quick keys enabled. This key is not available for Outlook 2007.
+:Description This key is only available in a Microsoft Word document that is a protected form with quick keys enabled, not
+
+:script MoveToNextEdit
+:Synopsis Moves to the next Edit field in a protected Microsoft Word form with quick keys enabled. This key is not available for Outlook 2007.
+:Description This key is only available in a Microsoft Word document that is a protected form with quick keys enabled, not
+
+:script MoveToPriorEdit
+:Synopsis Moves to the prior Edit field in a protected Microsoft Word form with quick keys enabled. This key is not
+:Description This key is only available in a Microsoft Word document that is a protected form with quick keys enabled, not Outlook 2007.
+
+:script MoveToNextWordFromList
+:Synopsis If a word list has been created, moves to the next word from the list in a Microsoft Word document using quick keys, or an Outlook 2007 read-only message.
+:Description This script assumes a word list has been created for the document or Outlook 2007 read-only message. In these cases, it is moved to the next word in the list.
+
+:script MoveToPriorWordFromList
+:Synopsis If a word list has been created, moves to the prior word from the list in a Microsoft Word document using quick keys, or an Outlook 2007 read-only message.
+:Description This script assumes a word list has been created for the Microsoft Word document or Outlook 2007 read-only message. In these cases, it is moved to the prior word in the word list.
+

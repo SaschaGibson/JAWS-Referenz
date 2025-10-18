@@ -1,0 +1,158 @@
+﻿;Copyright 1995-2021 Freedom Scientific, Inc.
+; JAWS 23.00.xx script file for Microsoft Exce
+;Excel Braille Structure File
+
+;section for Component Aliases
+[Component Aliases]
+coordinates=Zellkoordinaten
+colHdr=Spaltentitel
+rowHdr=Reihentitel
+content=Zellinhalt
+formula=Zellformel
+hyperlink=Hyperlink-Adresse
+comment=Zellkommentar
+CommentEdit=Kommentar Eingabefeld
+InputMessage=Nachricht Eingeben
+rowTotal=Reihensumme
+coltotal=Spaltensumme
+monitorCells=Überwachte Zellen
+ColumnContext=Spaltendaten
+ColumnContextBeforeCurrent=Spaltendaten vor aktueller Zelle
+ColumnContextCurrent=Spaltendaten aktueller Zelle
+ColumnContextAfterCurrent=Spaltendaten nach aktueller Zelle
+RowContext=Reihendaten
+RowContextBeforeCurrent=Reihendaten vor aktueller Zelle
+RowContextCurrent=Reihendaten aktueller Zelle
+RowContextAfterCurrent=Reihendaten nach aktueller Zelle
+startCoordinates=Anfangskoordinaten
+startContent=Erster Zellinhalt
+delim=Markierungsbegrenzung
+endCoordinates=Letzte Zellkoordinate
+endContent=Letzter Zellinhalt
+line=Bearbeitungszeile
+areas=Markierte Bereiche
+
+; Section for listboxitem
+[SubtypeCode55]
+components=ContextHelp,name,type,state,value,position
+removed=
+displayname=
+type=lf
+AlignmentPriority=name,type,state,value
+
+;cell (when navigating)
+[CustomControl1]
+displayName=Zelle
+components=coordinates,cellType,rowHdr,colHdr,content,formula,hyperlink,comment,InputMessage,rowTotal,monitorCells:2
+removed=colTotal
+type=
+AlignmentPriority=coordinates
+
+;cell edit (f2)
+[CustomControl2]
+displayname=Zelle bearbeiten
+components=type,ComputerBrailleIndicator,line,Autocomplete
+removed=
+type=zell ef
+
+;row view
+[CustomControl3]
+displayName=Reihenansicht
+components=RowCellHeaders,RowContextBeforeCurrent:2,RowContextCurrent:2,RowContextAfterCurrent:2
+removed=
+type=rei
+
+;column view
+[CustomControl4]
+displayname=Spaltenansicht
+components=type,ColumnContextBeforeCurrent,ColumnContextCurrent,ColumnContextAfterCurrent,monitorCells:2
+removed=colTotal
+type=spa
+AlignmentPriority=ColumnContextCurrent
+
+;Cell Selection
+[CustomControl5]
+displayname=Markierte Zellen
+components=type,startCoordinates,startContent,delim,endCoordinates,endContent
+removed=
+type=mark:
+
+[CustomControl6]
+displayname=Markierte Bereiche
+components=type,areas
+removed=
+type=mark unzushängig:
+
+;for treeview in cell
+[CustomControl7]
+displayname=Strukturansicht in Zelle
+components=ContextHelp,name,type,level,value,state,position
+type=sa
+removed=
+
+;for dropdown lists
+[CustomControl8]
+components=type,value
+type=akl
+removed=
+displayname=Ausklappliste
+
+;Comment edit (Shift+f2)
+[CustomControl9]
+displayname=Kommentar Eingabefeld
+components=type,ComputerBrailleIndicator,line
+removed=
+type=kmnt ef
+
+; Section for listboxitem in SDM dialogs
+[CustomControl10]
+components=ContextHelp,name,type,state,value, position, extraHelp
+removed=
+displayname=
+type=lf
+AlignmentPriority=name,type,state,value
+
+; Section for edit text box...
+[CustomControl11]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value
+removed=
+displayname=
+type=ef
+
+;Note edit
+[CustomControl12]
+displayname=Notiz Eingabefeld
+components=type,ComputerBrailleIndicator,line
+removed=
+type=notiz ef
+
+; Section for  slicer
+[CustomControl13]
+components=ContextHelp,type,name
+type=dsch
+removed=hotkey
+displayname=Datenschnitt
+AlignmentPriority=type,name
+
+[CustomControl14]
+components=coltitles:1,RowContextBeforeCurrent:2,RowContextCurrent:2,RowContextAfterCurrent:2
+removed=
+displayname=Spaltentitel und aktuelle Reihe
+
+[CustomControl15]
+components=PriorRow:1,RowContextBeforeCurrent:2,RowContextCurrent:2,RowContextAfterCurrent:2
+removed=
+displayname=Vorherige und aktuelle Reihe
+
+[Information]
+Title=Excel-Aktive Ansicht in 1, Überwachungszellen in 2
+Description=Die aktive Ansicht (Zelle, Reihe oder Spalte) wird in Zeile 1 angezeigt und Überwachungszellen werden in Zeile 2 angezeigt.
+
+[validation]
+functionName=onSpreadsheet
+
+[Component Mapping]
+monitorCells=2
+RowContextBeforeCurrent=2
+RowContextCurrent=2
+RowContextAfterCurrent=2

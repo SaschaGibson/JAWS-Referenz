@@ -1,0 +1,8 @@
+:function StaticDoChildWindows
+:Returns int
+:Param handle/hWnd No Description
+
+:function specialFocus
+:Returns int
+:Param int/forward No Description
+

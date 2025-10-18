@@ -1,0 +1,285 @@
+:script JAWSPageDown
+:Synopsis Führt ein JAWS Seite runter durch und liest die entsprechende Information
+:Description Führt ein JAWS Seite runter durch und liest die entsprechende Information.
+
+:script SayNextLine
+:Synopsis Springt auf die nächste Zeile und liest sie
+:Description Dieses Skript springt auf die nächste Zeile und liest sie. Wenn man sich auf einem Datenblatt befindet, springt es auf die nächste Reihe und liest die Zelle im Fokus.
+
+:script HotkeyHelp
+:Synopsis Liefert Hilfe zu Kurztasten für Microsoft Access.
+:Description Liefert Hilfe zu Kurztasten für Microsoft Access wenn es angebracht ist, oder spricht die allgemeine Kurztastenhilfe.
+
+:function HandleCustomWindows
+:Returns int True if no further processing needed.
+:Synopsis Processes focused windows when extra processing is needed.
+:Category WindowsAndObjects
+:Param handle/hWnd Currently focused window handle.
+
+:function SayInitDlgItem
+:Synopsis Speaks content of initial opening dialog.
+:Description This function speaks content of any control in initial opening dialog.
+
+:script OpenListBox
+:Synopsis Öffnet ein Listenfeld, das einer Ausklappliste zugeordnet ist
+:Description Dieses Skript öffnet ein Listenfeld, das einer Ausklappliste zugeordnet ist. Es erkennt die gebräuchlichen Ausklapplisten, die in MSAccess verwendet werden. Wenn die Tastenkombination auf einem Standard-Eingabe-Steuerelement ausgeführt wird, wird der nächste Satz gesucht und gelesen.  
+
+:function tblDesignviewHelp
+:Synopsis provides screen sensitive help for Table Design view
+:Description This function provides screen sensitive help for Table Design view.
+
+:function databaseWindowHelp
+:Synopsis provides screen sensitive help for the database window
+:Description This fuhnction provides screen sensitive help for the database window.
+
+:function IsDatabaseObjDlg
+:Returns int true or false
+:Synopsis Determines whether the database objects dialog has focus.
+:Description This function is used by event handlers and related functions to determine whether the database objects dialog has focus.
+
+:function Unknown
+:Synopsis called when a function or script is invoked which is not in scope
+:Description This function is called when a function or script is invoked which is not in scope. It is here to avoid the unknown function call message when certain MAGic functions are called when MAGic is not installed.
+:Param string/TheName of the function
+:Param int/IsScript true if the function is a script
+
+:script ReadBoxInTabOrder
+:Synopsis Liest ein Dialogfeld, Formular oder Bericht in der Tab- oder Steuerelement-Reihenfolge
+:Description Dieses Skript liest ein Dialogfeld, Formular oder Bericht in der Tab- oder Steuerelement-Reihenfolge(in einem Formular oder Bericht).
+
+:script sayNextCharacter
+:Synopsis Springt und liest auf das nächste Zeichen oder die nächste Datenblatt-Zelle.
+:Description Dieses Skript springt und liest auf das nächste Zeichen oder die nächste Datenblatt-Zelle.
+
+:script sayCurrentAccessKey
+:Synopsis Liest die Kurztaste für den aktuellen Dialog oder das aktuelle Formular-Steuerelement.
+:Description Dieses Skript liest die Kurztaste für den aktuellen Dialog oder das aktuelle Formular-Steuerelement.
+
+:function SayNonHighlightedText
+:Synopsis determines non-highlighted text to speak
+:Description This function determines non-highlighted text to speak.
+:Param handle/hwnd window where text is written
+:Param string/buffer text being written
+
+:function qryDesignviewHelp
+:Synopsis provides screen sensitive help for the Query Design view
+:Description This function provides screen sensitive help for the Query Design view.
+
+:function SpeakRelationshipItem
+:Synopsis Speaks control in relationship dialog.
+:Description This function speaks controls in relationship dialog.
+
+:function isComboListboxActive
+:Returns int true or false
+:Synopsis determines if a custom MSAccess combo listbox is active on a form
+:Description This function determines if a custom MSAccess combo listbox is active on a form.
+
+:script sayCell
+:Synopsis Liest die aktuelle Spaltenüberschrift, den Zelleninhalt und die Koordinaten des Datenblattes
+:Description Dieses Skript liest die aktuelle Spaltenüberschrift, den Zelleninhalt und die Koordinaten des Datenblattes.
+
+:function KeyPressedEvent
+:Synopsis event triggered when a key is pressed
+:Description This event is triggered when a key is pressed. It is overridden to ensure that Access checkboxes have their state spoken when toggled with the space bar.
+:Param int/nKey key code
+:Param string/strKeyName key name
+:Param int/nIsBrailleKey true if a Braille Display key
+:Param int/nIsScriptKey true if key is attached to a JFW script
+
+:script SayPriorLine
+:Synopsis Springt auf die vorherige Zeile und liest sie.
+:Description Dieses Skript springt auf die vorherige Zeile und liest sie. Wenn man sich auf einem Datenblatt befindet, springt es auf die vorherige Reihe und liest die Zelle im Fokus.
+
+:script SpellCheck
+:Synopsis Liest den Rechtschreibfehler und Vorschlag
+:Description Dieses Skript liest das falsch geschriebene Wort und den Vorschlag, wenn die Rechtschreibprüfung aktiv ist
+
+:function relationshipHelp
+:Synopsis provides screen sensitive help for the Relationships dialog
+:Description This function provides screen sensitive help for the Relationships dialog.
+
+:function AutoStartEvent
+:Synopsis triggered when focus switches to MSAccess
+:Description This event function is triggered when focus switches to MSAccess.
+
+:script JAWSPageUp
+:Synopsis Führt ein JAWS Seite rauf durch und liest die entsprechende Information
+:Description Führt ein JAWS Seite rauf durch und liest die entsprechende Information.
+
+:script nextCell
+:Synopsis Springt auf die nächste Zelle in der gleichen Reihe und liest sie.
+:Description Dieses Skript springt und liest in die nächste Zelle in der gleichen Reihe.
+
+:script sayCharacter
+:Synopsis Spricht das aktuelle Zeichen oder Objekt
+:Description Dieses Skript liest das aktuelle Zeichen oder Objekt.
+
+:script SelectFormControl
+:Synopsis Präsentiert eine Liste von Steuerelementen auf dem aktiven Formular und setzt den Fokus auf das ausgewählte Steuerelement
+:Description Dieses Skript präsentiert eine Liste von Steuerelementen auf dem aktiven Formular und setzt den Fokus auf das ausgewählte Steuerelement.
+
+:script ReadDataSheetCoordinates
+:Synopsis Liest die Spalten- und Reihenanzahl für die aktuelle Datenblatt-Zelle
+:Description Dieses Skript liest die Spalten- und Reihenanzahl für die aktuelle Datenblatt-Zelle.
+
+:function GetRecordNumber
+:Returns string the record number in the form X of Y where x is the current record and y is the total number of records.
+:Description This function obtains the current record number for a datasheet or form view record.
+
+:script SpeakTableSummary
+:Synopsis Liest eine Zusammenfassung der aktuellen Tabelle
+:Description Dieses Skript liest eine Zusammenfassung der aktuellen Tabelle. Dies beinhaltet die Anzahl, den Typ und die Größe aller in der Tabelle definierter Felder.
+
+:function wizardHelp
+:Synopsis provides screen sensitive help for wizard forms
+:Description This function provides screen sensitive help for wizard forms.
+
+:script SayWindowPromptAndText
+:Synopsis Spricht den Prompt und den Text des Fensters im Fokus
+:Description Dieses Skript spricht den Prompt und den Text des Fensters im Fokus
+
+:script SayStatusLine
+:Synopsis Spricht den Text in der Statuszeile
+:Description Dieses Skript spricht den Text in der Statuszeile.
+
+:function SayDatabaseObjItem
+:Synopsis Speaks controls in database objects dialog.
+:Description This function speaks any control in the database objects dialog.
+
+:script sayLine
+:Synopsis Spricht die aktuelle Zeile oder das aktuelle Objekt
+:Description Dieses Skript liest die aktuelle Zeile oder das aktuelle Objekt.
+
+:function SayHighlightedText
+:Synopsis determines the appropriate highlighted text to speak
+:Description This function determines the appropriate highlighted text to speak.
+:Param handle/CurrentWindow window where text is being written
+:Param string/buffer text being written
+
+:script SayPriorCharacter
+:Synopsis Springt und liest auf das vorherige Zeichen oder die vorherige Datenblatt-Zelle.
+:Description Dieses Skript springt und liest auf das vorherige Zeichen oder die vorherige Datenblatt-Zelle.
+
+:function SayFocusedWindow
+:Synopsis speaks the focused object in non-SDM windows
+:Description This function speaks the focused object in non-SDM windows.
+
+:script ScreenSensitiveHelp
+:synopsis Liefert bildschirmabhängige Hilfe für das aktuelle Steuerelement oder ruft die geeignete Hilfsfunktion auf, um Hilfe für den aktuellen Bildschirm bereitzustellen
+:description Dieses Skript liefert bildschirmabhängige Hilfe für das aktuelle Steuerelement oder ruft die geeignete Hilfsfunktion auf, um Hilfe für den aktuellen Bildschirm bereitzustellen.
+
+:function SayDesignViewControl
+:Synopsis speaks the prompt of design view controls
+:Description This function speaks the prompt of design view controls such as the Table Design view control prompts in the upper and lower panels.
+
+:function isSDMDlg
+:Returns int true or false
+:Synopsis Determines whether an SDM dialog has the focus.
+:Description This function is used by event handlers and related functions to determine whether an SDM dialog has focus.
+
+:function IsInitDlg
+:Returns int true or false
+:Synopsis Determines whether initial opening dialog has the focus.
+:Description This function sets a flag and is used by event handlers and related functions to determine whether initial 	opening dialog has focus.  The flag is used by other functions to determine when to load DOM.
+
+:function FocusChangedEvent
+:Synopsis triggered when focus changes from control to control
+:Description This function is triggered when focus changes from control to control. It calls sayFocusedWindow or saySDMFocusedWindow.
+:Param handle/FocusWindow handle of new window with focus
+:Param handle/PrevWindow handle of prior window with focus
+
+:function SayDesignViewItem
+:Synopsis Speaks field name and content of control in design view table or query.
+:Description This function speaks field name and content of controls in design view for tables and queeries.
+
+:function SayNonSDMDlg
+:Synopsis Speaks controls in dialogs that are not SDM or database objects dialogs.
+:Description This function speaks any control in dialogs with window class
+
+:script priorCell
+:Synopsis Springt auf die vorherige Zelle in der gleichen Reihe und liest sie.
+:description Dieses Skript springt und liest in die vorherige Zelle in der gleichen Reihe.
+
+:function tblDatasheetHelp
+:Synopsis provides screen sensitive help for Table Datasheet views
+:Description This function provides screen sensitive help for Table Datasheet views.
+
+:function SaySDMFocusedWindow
+:Synopsis speaks the focused object in an SDM window
+:Description This function speaks the focused object in an SDM window.
+
+:function IsRelationshipWindow
+:Returns int true or false
+:Synopsis Determines whether relationship  window has focus.
+:Description This function determines whether relationship window  invoked from within a table or query view has focus.
+
+:function ActiveItemChangedEvent
+:Synopsis event triggered when the item in a MSAA object changes
+:Description This event is triggered when the item in a MSAA object changes. It is here so that the toolbars in the Database Window are spoken correctly.
+:Param handle/curHwnd handle of current window
+:Param int/curObjectId MSAA object id
+:Param int/curChildId MSAA child id
+:Param handle/prevHwnd prior window handle
+:Param int/prevObjectId prior MSAA object ID
+:Param int/prevChildId prior MSAA child ID
+
+:script SpeakDatabaseSummary
+:synopsis Liest die Zusammenfassung der Datenbank
+:description Dieses Skript liest die Zusammenfassung der Datenbank. Die Zusammenfassung beinhaltet alle definierten Datenbank-Komponenten. 
+
+:function reportHelp
+:Synopsis provides screen sensitive help for report views
+:Description This function provides screen sensitive help for report views.
+
+:script SayRecordNumber
+:Synopsis Spricht die Nummer des momentan in der Tabellenblattansicht hervorgehobenen Datensatzes.
+:Description Dieses Skript spricht die Nummer des momentan in der Tabellenblattansicht hervorgehobenen Datensatzes, wenn der Anwender STRG+%product%-Taste+R drückt.
+
+:function IsNonSDMDlg
+:Returns int true or false
+:Synopsis Determines whether dialog that has focus is not initial opening, SDM, or database objects dialog.
+:Description This function determines whether dialog that has focus and is of window class
+
+:script BrailleRouting
+:synopsis Stellt sicher, dass das Routing auch stattfindet, wenn die Routingtasten auf der Braillezeile gedrückt werden
+:description Dieses Skript stellt sicher, dass das Routing auch stattfindet, wenn die Routingtasten auf der Braillezeile gedrückt werden.
+
+:script CloseListBox
+:synopsis Schließt ein Listenfeld, das einer Ausklappliste zugeordnet ist
+:description Dieses Skript schließt ein Listenfeld, das einer Ausklappliste zugeordnet ist. Es erkennt die gebräuchlichen Ausklapplisten, die in MSAccess verwendet werden. Wenn die Tastenkombination auf einem Standard-Eingabe-Steuerelement ausgeführt wird, wird der vorherige Satz gesucht und gelesen.  
+
+:script upCell
+:Synopsis Springt direkt in die oberste Zelle in der aktuellen Spalte und liest sie.
+:description Dieses Skript springt direkt in die erste Zelle in der aktuellen Spalte und liest sie.
+
+:function formHelp
+:Synopsis provides screen sensitive help for form views
+:Description This function provides screen sensitive help for form views.
+
+:script sayWord
+:synopsis Spricht das aktuelle Wort oder Objekt
+:description Dieses Skript liest das aktuelle Wort oder Objekt.
+
+:function HandleCustomRealWindows
+:Returns int True if no further process is needed.
+:Synopsis Processes any extra tasks for the real window.
+:Category WindowsAndObjects
+:Param handle/hWnd Current window handle
+
+:script downCell
+:Synopsis Springt direkt in die letzte Zelle in der aktuellen Spalte und liest sie.
+:description Dieses Skript springt direkt in die letzte Zelle der aktuellen Spalte und liest sie.
+
+:function qryDatasheetOrSQLHelp
+:Synopsis provides screen sensitive help for the Query Datasheet or SQL views
+:Description This function provides screen sensitive help for the Query Datasheet or SQL views.
+
+:function SayDatasheetField
+:Synopsis Speaks field name and content in datasheet views.
+:Description This function speaks field names and content in  datasheet views for tables, queries, etc.
+
+:Function InViewMode
+:Description This function determines whether we are in a window where the view can be determined.
+:Param handle/hwnd The window with focus
+:Param string/sClassthe class of the window wit focus
+:Returns Int True if in a window where the view can be determined, false otherwise.

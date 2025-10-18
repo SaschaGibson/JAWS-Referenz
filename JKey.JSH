@@ -1,0 +1,14 @@
+;CopyRight 1997-2016 by Freedom Scientific BLV Group, LLC
+;JAWS Keyboard Manager Script header file
+
+const
+;Window Classes
+	wcStatusBar = "msctls_statusbar32",
+;Control ID Constants
+	ID_CHANGE_KEYSTROKE_HOT_KEY=1083,
+	ID_FIND_KEYSTROKE_HOT_KEY=1084,
+	ID_ADD_KEYSTROKE_HOT_KEY=1084,
+	ID_SCRIPT_LIST_VIEW=59649,
+	ID_FILE_LIST_VIEW=59648,
+	ID_ADD_GESTURE_FOR_GESTURE_MODE_COMBOBOX = 	1108,
+	ID_FIND_GESTURE_FOR_GESTURE_MODE_COMBOBOX = 	1109

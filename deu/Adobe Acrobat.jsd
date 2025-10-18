@@ -1,0 +1,135 @@
+:script SelectPageUp
+:synopsis Markiert eine Seite nach oben.
+:description Markiert Text von der aktuellen Cursorposition eine Seite nach oben.
+
+:script SelectPageDown
+:synopsis Markiert eine Seite nach unten.
+:description Markiert Text von der aktuellen Cursorposition eine Seite nach unten.
+
+:function HandleCustomWindows
+
+:script GoToPage
+:Synopsis Hält einen Bereich für Sie bereit, damit Sie die gewünschte Seitenzahl eingeben können, zu der Sie gehen möchten
+:Description Drücken Sie diese Tastenkombination, um ein Dialogfeld zu öffnen, in das Sie die Seitenzahl eingeben können, zu der Sie gehen möchten. Drücken Sie STRG+N für Acrobat bis Version 5, und STRG+Umschalt+N für Acrobat 6.
+
+:script GoToFirstPage
+:Synopsis Go to first page
+:Description Moves to the first page in the document
+
+:script GoToLastPage
+:Synopsis Go to last page
+:Description Moves to the last page in the document
+
+:function SayLineUnit
+:Synopsis Handles line speaking
+:Category Say
+:Param int/iMoveUnit Direction to move
+
+:function GetWindowSubTypeCode
+:Returns int No Return Description
+:Param handle/hWndToType No Description
+
+:script OpenPreferencesDialog
+
+:script SayNextCharacter
+
+:script AccessibilityQuickCheck
+
+:function ScreenSensitiveHelpForKnownClasses
+
+:function SayNonHighlightedText
+
+:script NextPage
+:Synopsis Springt zur nächsten Seite in dem Adobe Dokument
+:Description Drücken Sie diese Tastenkombination, um auf die nächste Seite im Dokument zu springen.
+
+:function BrailleAppropriateCellData
+
+:function KeyPressedEvent
+
+:script ShiftTab
+
+:function AutoStartEvent
+
+:script PreviousPage
+:Synopsis Springt zur vorherigen Seite in dem Adobe Dokument
+:Description Drücken Sie diese Tastenkombination, um auf die vorherige Seite im Dokument zu springen.
+
+:script JAWSPageUp
+
+:function SayFocusedObject
+
+:script PcCursor
+
+:function SayComboAndListItems
+:Returns int Returns 0 if it said nothing
+:Synopsis Says Adobe combo & list items
+:Description Used in the SayNextLine/PriorLine scripts to speak values in formsmode
+:Category Say
+
+:script SayNextWord
+
+:function SayHighlightedText
+
+:function InFindDialog
+:Returns int No Return Description
+:Synopsis Returns 1 if in the find dialog
+
+:script UpALevel
+
+:script SayPriorCharacter
+
+:script ScreenSensitiveHelp
+
+:function SayFocusedWindow
+
+:function SayTutorialHelp
+:Param int/iObjType No Description
+:Param int/IsScriptKey No Description
+
+:function HandleCustomAppWindows
+
+:function DocumentLoadedEvent
+
+:function InAcrobatDialog
+:Returns int No Return Description
+:Synopsis Returns 1 if in a dialog
+
+:function GetCustomTutorMessage
+
+:script SayPriorWord
+
+:script ChangeReadingOptions
+
+:script VirtualPCCursorToggle
+
+:script VirtualFind
+:Synopsis Ruft das Dialogfeld Virtuelle Suche auf
+:Description Wenn ausgeführt, wird die %product% Suche aktiviert.
+
+:script ScriptFileName
+
+:function DoAndSayCurrentKeystroke
+:Description Used to simply say the key naturally and pass it through.
+
+:script Tab
+
+:function HandleCustomRealWindows
+
+:function OmitWhenDialogActive
+:Returns int No Return Description
+:Param int/pTypeCode No Description
+
+:function RoleToType
+:Returns int No Return Description
+:Param int/pRole No Description
+
+:function SignatureState
+:Returns string No Return Description
+:Synopsis Returns the signature state
+:Param int/iState No Description
+
+:function FocusChangedEvent
+:Param Handle/FocusWindow the handle of the window that has received the focus.
+:Param Handle/PrevWindow the handle of the window that previously had the focus.
+

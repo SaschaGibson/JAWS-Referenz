@@ -1,0 +1,443 @@
+:Function AutoStartEvent
+:synopsis event triggered on App focus
+:description This event function is triggered when the Powerpoint Aplication gets focus. It sets up tracking variables etc.
+:returns void
+
+:Function SayNonHighlightedText
+:synopsis determines which non-highlighted text to automatically speak
+:description This function determines which non-highlighted text to automatically speak.
+							  :param handle/hwnd window handle to which text is being written
+							  :param string/buffer text being written
+:returns Void
+
+:Function SayHighLightedText
+:synopsis determines which highlighted text to automatically speak
+:description This function determines which highlighted text to automatically speak.
+							  :param handle/hwnd window handle to which text is being written
+							  :param string/buffer text being written
+:returns Void
+
+:Script SpellCheck
+:synopsis Speaks the misspelled word and first suggestion when the Spellchecker dialog is active, or brings up the link list when in the ddocument window.
+:description This keystroke speaks the misspelled word and first suggestion when the Spellchecker dialog is active, or brings up the link list when in the ddocument window.
+
+:Script ScriptFileName
+:synopsis Speaks active script set and executable name
+:description This function speaks the active script set and executable name.
+
+:Function SayUserControl
+:synopsis speaks custom controls with class UserControl
+:description This function speaks custom controls with class UserControl .
+
+:Function SayFocusedWindow
+:synopsis Speaks the focused control
+:description This function speaks the focused control. It is called from the FocusChangedEvent.
+:returns void
+
+:Script SayWindowPromptAndText
+:synopsis Speaks a window's prompt and contents
+:description This function speaks a window's prompt and contents. This particular implementation simply calls sayFocusedWindow.
+
+:Script SayPriorLine
+:synopsis Moves to and speaks the prior line or object
+:description This function moves to and speaks the prior line or object.
+
+:Script SayNextLine
+:synopsis Moves to and speaks the next line or object
+:description This function moves to and speaks the next line or object.
+
+:Script SayLine
+:synopsis Speaks the current line or focused object
+:description This function speaks the current line or focused object.
+
+:Script SayPriorCharacter
+:synopsis Moves to and speaks the prior character or object
+:description This function moves to and speaks the prior character or object.
+
+:Script SayWord
+:synopsis Speaks the current word or object
+:description This function speaks the current word or object.
+
+:Script SayCharacter
+:synopsis Speaks the current character or object
+:description This function speaks the current character or object.
+
+:Script SayNextCharacter
+:synopsis Moves to and speaks the next character or object
+:description This function moves to and speaks the next character or object.
+
+:Script ReadTableRowByRow
+:synopsis Reads the focused Powerpoint table row by row
+:description This function reads the focused Powerpoint table row by row.
+
+:Script ReadTableColumnByColumn
+:synopsis Reads the focused Powerpoint table column by column
+:description This function reads the focused Powerpoint table column by column.
+
+:Script ReadCurrentSlide
+:synopsis Reads the text of each object on the current slide, describing objects whose text can't be read
+:description This function reads the text of each object on the current slide, describing objects whose text can't be read.
+
+:Script SaySelectedObject
+:synopsis Speaks a description and the text for the selected object
+:description This function speaks a description and the text for the selected object .
+
+:Script SelectShape
+:synopsis Lists the objects on a slide and allows the user to select and set focus on an object directly
+:description This function lists the objects on a slide and allows the user to select and set focus on an object directly.
+
+:Script SelectHyperlink
+:synopsis Speaks the misspelled word and first suggestion when the Spellchecker dialog is active, or brings up the link list when on a slide.
+:description This keystroke speaks the misspelled word and first suggestion when the Spellchecker dialog is active, or brings up the link list when on a slide.
+
+:Script FollowSelectedHyperlink
+:synopsis Follows the object's hyperlink if it has one
+:description This function follows the object's hyperlink if it has one. Focus will be placed on the target document.
+
+:Script NextObject
+:synopsis Sets focus on the next object in the tab order on the slide or moves to the next control in the tab order in a dialog
+:description This function sets focus on the next object in the tab order on the slide or moves to the next control in the tab order in a dialog.
+
+:Script PriorObject
+:synopsis Sets focus on the prior object in the tab order on the slide or moves to the prior control in the tab order in a dialog
+:description This function sets focus on the prior object in the tab order on the slide or moves to the prior control in the tab order in a dialog.
+
+:Script PriorSlide
+:synopsis Moves to the prior slide in the presentation and reads its title or number. Also announces transition effect if feature is enabled.
+:description Moves to the prior slide in the presentation and reads its title or number. Also announces transition effect if feature is enabled
+
+:Script NextSlide
+:synopsis Moves to the next slide in the presentation and reads its title or number.  Also announces transition effect if feature is enabled.
+:description Moves to the next slide in the presentation and reads its title or number.  Also announces transition effect if feature is enabled
+
+:Script SayFont
+:synopsis Speaks font and text alignment characteristics
+:description This function speaks font and text alignment characteristics .
+
+:Script BoldText
+:synopsis Toggles Bold on and off and reports the new state
+:description This function toggles Bold on and off and reports the new state .
+
+:Script ItalicText
+:synopsis Toggles Italics on and off and reports the new state
+:description This function toggles Italics on and off and reports the new state .
+
+:Script UnderlineText
+:synopsis Toggles Underlining on and off and reports the new state
+:description This function toggles Underlining on and off and reports the new state .
+
+:Script CenterText
+:synopsis Centers text on the current line
+:description This function centers text on the current line.
+
+:Script LeftJustify
+:synopsis Left justifies text on the current line
+:description This function left justifies text on the current line.
+
+:Script rightJustify
+:synopsis Right justifies text on the current line
+:description This function right justifies text on the current line.
+
+:Script ScreenSensitiveHelp
+:synopsis Provides screen sensitive help for dialog controls and Powerpoint views
+:description This function provides screen sensitive help for dialog controls and Powerpoint views.
+
+:Script HotkeyHelp
+:synopsis Provides dialog hotkey help and relevant script key help for Powerpoint views
+:description This function provides dialog hotkey help and relevant script key help for Powerpoint views.
+
+:Function GetStatusLineText
+:synopsis Returns the text on the statusline
+:description This function returns the text on the statusline.
+:returns string statusline text
+
+:Script SpeakStatusLine
+:synopsis Speaks the statusline
+:description This function speaks the statusline.
+
+:Script SaySlideInfo
+:synopsis Speaks information about the current slide including layout, slide show characteristics etc
+:description This function speaks information about the current slide including layout, slide show characteristics etc.
+
+:Function BrailleBuildDialog
+:synopsis Builds the Structured mode Braille representation for dialogs
+:description This function builds the Structured mode Braille representation for dialogs.
+:param handle/hwndReal real window handle
+:returns int true if a Braille Structured mode representation exists, false otherwise
+
+:Function BrailleBuildLine
+:synopsis called internally 10 times a second to update the Braille Display to show the contents of the focused control or object
+:description This function called internally 10 times a second to update the Braille Display to show the contents of the focused control or object.
+:returns int true if an alternative Braille representation exists, false to use internal representation
+
+:Script RetreatSlideShow
+:synopsis Retreats a slide show and tracks animation to ensure the correct text is spoken when the backspace key is pressed during a slide show
+:description This function retreats a slide show and tracks animation to ensure the correct text is spoken when the backspace key is pressed during a slide show.
+
+:Script VirtualBackspace
+:synopsis Retreats a slide show and tracks animation to ensure the correct text is spoken when the backspace key is pressed during a slide show
+:description This function retreats a slide show and tracks animation to ensure the correct text is spoken when the backspace key is pressed during a slide show.
+
+:script VirtualSpacebar
+:synopsis Advances a slide show and tracks animation to ensure the correct text is spoken when the space bar is pressed during a slide show
+:Description This function advances a slide show and tracks animation to ensure the correct text is spoken when the space bar is pressed during a slide show. If the virtual cursor is on a botton, checkbox or radio button, performs standard virtual cursor behavior.
+
+:Script SayAll
+:synopsis If the caret is visible performs a sayAll otherwise reads all the text on the slide with focus
+:description This function if the caret is visible performs a sayAll otherwise reads all the text on the slide with focus.
+
+:Script UpALevel
+:synopsis Performs an Escape and checks to see if the UI has returned to the Object Level from the Edit Level
+:description This function performs an Escape and checks to see if the UI has returned to the Object Level from the Edit Level.
+
+:Script SayObjectDimensionsAndLocation
+:synopsis Speaks the focused slide object's dimensions and location in points
+:description This function speaks the focused slide object's dimensions and location in points. The location is measured from the top left of the slide.
+
+:Script SayShapeAnimationInfo
+:synopsis Speaks information about an object's animation characteristics such as the Entry Effect, After effect etc
+:description This function speaks information about an object's animation characteristics such as the Entry Effect, After effect etc.
+
+:Script SwitchPanes
+:synopsis Switches panes in Normal view and announces the new pane and the text on the Status Line
+:description This function switches panes in Normal view and announces the new pane and the text on the Status Line. This is assigned to F6.
+
+:Script SwitchPanesReverse
+:synopsis Switches panes in Normal view and announces the new pane and the text on the Status Line
+:description This function switches panes in Normal view and announces the new pane and the text on the Status Line. This is assigned to Shift+F6.
+
+:Script UpCell
+:synopsis Moves to the prior cell in the current column and reads it
+:description This function moves to the prior cell in the current column and reads it. This script is overridden to ensuree that default table reading keystrokes behave as expected in native Powerpoint tables, embedded Excel worksheets and Microsoft Word tables
+
+:Script DownCell
+:synopsis Moves to the next cell in the current column and reads it
+:description This function moves to the next cell in the current column and reads it. This script is overridden to ensuree that default table reading keystrokes behave as expected in native Powerpoint tables, embedded Excel worksheets and Microsoft Word tables
+
+:Script PriorCell
+:synopsis Moves to the prior cell in the current row and reads it
+:description This function moves to the prior cell in the current row and reads it. This script is overridden to ensuree that default table reading keystrokes behave as expected in native Powerpoint tables, embedded Excel worksheets and Microsoft Word tables
+
+:Script NextCell
+:synopsis Moves to the next cell in the current row and reads it
+:description This function moves to the next cell in the current row and reads it. This script is overridden to ensuree that default table reading keystrokes behave as expected in native Powerpoint tables, embedded Excel worksheets and Microsoft Word tables
+
+:Script SayCell
+:synopsis Speaks the contents of the current cell
+:description This function speaks the contents of the current cell.
+
+:Script SayLookInOrSaveInFolderName
+:synopsis Speaks the look-in or save-in folder whe in the Open or Save As dialogs
+:description This function speaks the look-in or save-in folder whe in the Open or Save As dialogs.
+
+:Script ToggleExpandOrCollapseAll
+:synopsis Toggles the Expand/Collapse outline in the Outline View
+:description This keystroke toggles the Expand/Collapse outline in the Outline View .
+
+:Script PromoteParagraph
+:synopsis Promotes the current paragraph to the prior level in Outline View
+:description This function promotes the current paragraph to the prior level in Outline View.
+
+:Script DemoteParagraph
+:synopsis Demotes the current paragraph to the next level in Outline View
+:description This function demotes the current paragraph to the next level in Outline View.
+
+:Script SelectToEndOfLine
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects to the end of the current line
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects to the end of the current line.
+
+:Script SelectFromStartOfLine
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects to the beginning of the current line
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects to the beginning of the current line.
+
+:Script SelectNextLine
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects the next line
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects the next line.
+
+:Script SelectPriorLine
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects the prior line
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects the prior line.
+
+:Script SelectNextCharacter
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects the next character
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects the next character.
+
+:Script SelectPriorCharacter
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects the prior character
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects the prior character.
+
+:Script SelectNextWord
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects the next word
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects the next word.
+
+:Script SelectPriorWord
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects the prior word
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects the prior word.
+
+:Script SelectNextScreen
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects the next screen
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects the next screen.
+
+:Script SelectPriorScreen
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects the prior screen
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects the prior screen.
+
+:Script SelectToBottom
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects to the bottom of the edit area
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects to the bottom of the edit area.
+
+:Script SelectFromTop
+:synopsis Handles slide selection in Slide Sorter View as well as standard text selection ie selects to the top of the edit area
+:description This function handles slide selection in Slide Sorter View as well as standard text selection ie selects to the top of the edit area.
+
+:Script ReadSpeakersNotes
+:DisplayName Read Speaker's Notes
+:synopsis Reads the speaker's notes associated with the current slide if a slideshow is active.
+:description This function reads the speaker's notes associated with the current slide if a slideshow is active.
+:SearchRank 1
+
+:Script SetTableReadingMethod
+:Synopsis  Toggles among four table reading methods.
+:Description This script allows user to toggle among table reading methods: row by row, column by column, table dimensions only, or ignore.
+
+:Script IgnoreButton
+:Synopsis Ignore this occurrence.
+:Description Moves focus to the Ignore button so that when that key combination is pressed, speech is not lost.
+
+:Script IgnoreAllButton
+:Synopsis Ignore all occurrences.
+:Description Moves focus to the Ignore All button so that when that key combination is pressed, speech is not lost.
+
+:Script ChangeButton
+:Synopsis Change this occurrence.
+:Description Moves focus to the Change button so that when that key combination is pressed, speech is not lost.
+
+:Script ChangeAllButton
+:Synopsis Change all occurrences.
+:Description Moves focus to the Change All button so that when that key combination is pressed, speech is not lost.
+
+:Script SuggestButton
+:Synopsis Suggest changes, if any.
+:Description Moves focus to the Suggest button so that when that key combination is pressed, speech is not lost.
+
+:Script AddToDictionaryButton
+:Synopsis Add this occurrence to the dictionary.
+:Description Moves focus to the Add to Dictionary button so that when that key combination is pressed, speech is not lost.
+
+:Script AutoCorrectButton
+:Synopsis Presses the AutoCorrect button.
+:Description Moves focus to the AutoCorrect button so that when that key combination is pressed, speech is not lost.
+
+:Script NewSlide
+:Synopsis Announces new slide title or number.
+:Description This script announces the new slide title or number when the native keystroke is pressed.
+
+:Script ListComments
+:synopsis Lists the comments on a slide and allows the user to select a comment from the list.
+:description This keystroke lists the comments on a slide and allows the user to select and set focus on the placeholder with the comment directly.
+
+:Function GetPptVersion
+:synopsis returns the major version number
+:description This function returns the major version number of Powerpoint.
+:returns Int major version number, eg 8 for PP97, 9 for PP2000
+
+:Function SpeakSlideChangeInfo
+:Description this function speaks the slide title or index number as well as the position of the slide within the set of slides in the presentation.
+:Param int/bShouldSpeakFocusedObject
+:Returns Void
+
+:Function initializeApplicationSettings
+:synopsis initializes Application specific Verbosity settings including Overlap Detection and Placeholder overflow detection
+:description This function initializes Application specific Verbosity settings including Overlap Detection and Placeholder overflow detection.
+
+:Function SayNewSlideType
+:synopsis reads the selection in the New Slide Type selector control
+:description This function reads the selection in the New Slide Type selector control.
+:returns Void
+
+:Function getDialogPageName
+:synopsis returns the dialog page name in certain situations where the default function of the same name fails
+:description This function returns the dialog page name in certain situations where the default function of the same name fails .
+:returns string the dialog page name
+
+:Function isMultipageDialog
+:synopsis determines if the current window is a multipage dialog
+:description This function determines if the current window is a multipage dialog .
+:returns int true if it is, false if not
+
+:Function toggleTableReadingMethod
+:Synopsis toggles the table reading method from ignore to read table row by row to read table column by column to announce table dimensions only
+:Description This function toggles the table reading method from ignore to read table row by row to read table column by column to announce table dimensions only .
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:Function toggleOverlapAlert
+:synopsis toggles the detection of object overlap on and off
+:description This function toggles the detection of object overlap on and off.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:Function toggleOverflowAlert
+:synopsis toggles the detection of text placeholder overflow on and off
+:description This function toggles the detection of text placeholder overflow on and off.
+:param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+:returns string description of value used to populate dlgSelectFunctionToRun list item's value
+
+:Function saveApplicationSettings
+:synopsis saves Application Specific Verbosity Settings to the Powerpoint.jsi file
+:description This function saves Application Specific Verbosity Settings to the Powerpoint.jsi file.
+:returns int true if the save was  successful, false otherwise
+
+:Function loadApplicationSettings
+:synopsis loads Application Specific Verbosity Settings from the Powerpoint.jsi file
+:description This function loads Application Specific Verbosity Settings from the Powerpoint.jsi file  .
+:returns void
+
+:Function SaySymbolPrompt
+:Description Finds and speaks the prompt associated with a customize symbol off the bullets and numbering dialog.
+
+:Function toggleSlideTransitions
+:description This function toggles the detection of slide transitions during a presentation on and off.
+:param int/iRetCurVal TRUE retains setting, FALSE updates it.
+:Returns string the human-readable name of the setting.
+
+:Function toggleDescribeObjects
+:description This function toggles the detection of object types on and off.
+:param int/iRetCurVal TRUE retains setting, FALSE updates it.
+:Returns string the human-readable name of the setting.
+:Function sayCellLineSegment
+:synopsis speaks the line segment within a table cell
+:description This function speaks the line segment within a table cell. This function guesses the line segment to speak and may occasionally be wrong.
+:returns void
+
+:Function ShapeNavCallback
+:synopsis timer-scheduled callback for moving the selected shape on the slide with the arrow keys.
+:Description Companion callback for directional arrow keys designed to indicate any directional changes when the selected shape is moved on the slide with the arrow keys.
+:Returns void No return description
+
+:Script SlideShowNext
+:DisplayName Next in slide show
+:Synopsis Move to next slide in slide show, similar to pageDown.
+:Description A single-letter way to act in slide show available in newer versions of PowerPoint. Performs same action as PageDown.
+:SearchRank 1
+
+:Script SlideShowPrevious
+:DisplayName Previous in slide show
+:Synopsis Move to previous slide in slide show, similar to pageUp.
+:Description A single-letter way to act in slide show available in newer versions of PowerPoint. Performs same action as PageUp.
+:SearchRank 1
+
+:script insertSlide
+:DisplayName Insert slide
+:Synopsis Insert slide keystroke from PowerPoint
+:Description If focus is on the last object on the slide, this keystroke will insert a new slide and JAWS will announce the new slide and position.
+:SearchRank 1
+:CommandSearchProductFilter Fusion
+
+:script ControlEnter
+:DisplayName Move pointer to current location
+:Synopsis Moves the mouse pointer to the virtual cursor approximate location during a slide show.
+:Description Moves the mouse pointer to the virtual cursor approximate location during a slide show. Only available when using the UIA support in PowerPoint.
+:Category Keyboard
+:SearchRank 1
+

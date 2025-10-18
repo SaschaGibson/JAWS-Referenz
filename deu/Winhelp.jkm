@@ -1,0 +1,15 @@
+[Common Keys]
+Control+PageUp=SayPriorScreen
+Control+ExtendedPageUp=SayPriorScreen
+Control+PageDown=SayNextScreen
+Control+ExtendedPageDown=SayNextScreen
+Escape=TurnOnPCCursorOnEscape
+Alt+F4=TurnOnPCCursorOnF4
+;Control+JAWSKey+DownArrow=SayHelpWindow
+Tab=NextControl
+Shift+Tab=PriorControl
+
+[Laptop Keys]
+;Control+Insert+DownArrow=SayHelpWindow
+
+[DESKTOP Keys]

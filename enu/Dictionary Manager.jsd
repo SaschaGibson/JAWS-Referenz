@@ -1,0 +1,18 @@
+:function AutoStartEvent
+
+:script ScriptFileName
+
+:script HotKeyHelp
+
+:script SayActualWord
+:Synopsis Speak the actual word in the the Change Dictionary Definition dialog
+
+:script SayCurrentRule
+:Synopsis Speak the actual word in the the Correct Dictionary Definition dialog
+
+:script ScreenSensitiveHelp
+
+:script OpenDefaultFile
+:Synopsis Speaks confirmation when the default file is opened
+:Description Passes CTRL+SHIFT+D to the application and announces that the default file has been opened
+

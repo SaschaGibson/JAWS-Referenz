@@ -1,0 +1,7 @@
+[Common Keys]
+JAWSKey+Alt+1=HandleMessageFields
+JAWSKey+Alt+2=HandleMessageFields
+JAWSKey+Alt+3=HandleMessageFields
+JAWSKey+Alt+4=HandleMessageFields
+JAWSKey+Alt+5=HandleMessageFields
+Control+Delete=ControlDelete

@@ -1,0 +1,723 @@
+:function AutoStartEvent
+
+:function AutoFinishEvent
+
+:function InitEvents
+
+:function ClearEvents
+
+:function IsPortal
+:Returns int No Return Description
+
+:function UpdateBrailleMath
+:Description Updates the Braille display with the active equation and current cursor position.
+
+:function EnableBrailleMathSettings
+:Description Enables braille settings appropriate for displaying math, such as Push mode and minimal auto panning.
+
+:function DisableBrailleMathSettings
+:Description Reverts braille settings that were changed during a call to EnableBrailleMathSettings to the values they were previously.
+
+:script SayLine
+
+:script SayWord
+
+:script SayCharacter
+
+:script SayNextWord
+:Returns int No Return Description
+
+:script SayPriorWord
+:Returns int No Return Description
+
+:script TopOfFile
+:Returns int No Return Description
+
+:script BottomOfFile
+:Returns int No Return Description
+
+:script SayBottomLineOfWindow
+:Returns int No Return Description
+
+:function SayStackSummary
+
+:function MathEvent_OnNavigationModeChanged
+:Param int/mode No Description
+
+:function MathEvent_OnJumpedToElement
+:Description This event is raised when navigation jumps directly to an element, such as when a Braille routing key is pressed.
+
+:function MathEvent_OnNextSubequation
+
+:function MathEvent_OnPriorSubequation
+
+:function MathEvent_OnParentSubequation
+
+:function MathEvent_OnFirstChildSubequation
+
+:function MathEvent_NoNextSubequation
+
+:function MathEvent_NoPriorSubequation
+
+:function MathEvent_NoParentSubequation
+
+:function MathEvent_NoFirstChildSubequation
+
+:function MathEvent_OnStackNextRow
+
+:function MathEvent_OnStackPriorRow
+
+:function MathEvent_NoStackNextRow
+
+:function MathEvent_NoStackPriorRow
+
+:function MathEvent_OnStackNextColumn
+
+:function MathEvent_OnStackPriorColumn
+
+:function MathEvent_NoStackNextColumn
+
+:function MathEvent_NoStackPriorColumn
+
+:function MathEvent_OnStackJumpNextColumn
+
+:function MathEvent_OnStackJumpPriorColumn
+
+:function MathEvent_OnStackFirstColumn
+
+:function MathEvent_OnStackLastColumn
+
+:function MathEvent_OnStackFirst
+
+:function MathEvent_OnStackLast
+
+:function MathEvent_AlreadyOnStackFirstColumn
+
+:function MathEvent_AlreadyOnStackLastColumn
+
+:function MathEvent_AlreadyOnStackFirst
+
+:function MathEvent_AlreadyOnStackLast
+
+:function MathEvent_OnLongDivisionSectionChange
+
+:Script MoveToPrevious
+:DisplayName Move to Previous Element
+:Synopsis Move to previous element.
+:Description Moves to the previous element in the expression and speaks it.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToNext
+:DisplayName Move to Next Element
+:Synopsis Move to next element.
+:Description Moves to the next element in the expression and speaks it.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ZoomOut
+:DisplayName Zoom Out
+:Synopsis Zoom out of the current element.
+:Description Moves focus out of the current element and returns to the whole expression.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ZoomIn
+:DisplayName Zoom In
+:Synopsis Zoom in and explore the current element.
+:Description Moves focus into an element or part of an element. You can then use LEFT and RIGHT ARROW to explore within the element.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script WhereAmI
+:DisplayName Where Am I
+:Synopsis Speak current element and position in expression.
+:Description Tells you if the current item is positioned inside a larger expression, such as a fraction.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadCurrent
+:DisplayName Speak Current Element
+:Synopsis Speak all partial expressions at the current level.
+:Description Speak all partial expressions at the current level.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToLastPosition
+:DisplayName Move To Last Position
+:Synopsis Move back one element.
+:Description From anywhere within the current element, moves back one element within the current math expression.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToStart
+:DisplayName Move to Start of Expression
+:Synopsis Moves focus to the beginning of the expression.
+:Description Moves focus to the beginning of the expression.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToEnd
+:DisplayName Move to End of Expression
+:Synopsis Moves focus to the end of the expression.
+:Description Moves focus to the end of the expression.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker1
+:DisplayName Move to Place Marker 1
+:Synopsis Moves to and speaks the element at Place Marker 1.
+:Description Moves to and speaks the element at Place Marker 1.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker2
+:DisplayName Move to Place Marker 2
+:Synopsis Moves to and speaks the element at Place Marker 2.
+:Description Moves to and speaks the element at Place Marker 2.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker3
+:DisplayName Move to Place Marker 3
+:Synopsis Moves to and speaks the element at Place Marker 3.
+:Description Moves to and speaks the element at Place Marker 3.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker4
+:DisplayName Move to Place Marker 4
+:Synopsis Moves to and speaks the element at Place Marker 4.
+:Description Moves to and speaks the element at Place Marker 4.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker5
+:DisplayName Move to Place Marker 5
+:Synopsis Moves to and speaks the element at Place Marker 5.
+:Description Moves to and speaks the element at Place Marker 5.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker6
+:DisplayName Move to Place Marker 6
+:Synopsis Moves to and speaks the element at Place Marker 6.
+:Description Moves to and speaks the element at Place Marker 6.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker7
+:DisplayName Move to Place Marker 7
+:Synopsis Moves to and speaks the element at Place Marker 7.
+:Description Moves to and speaks the element at Place Marker 7.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker8
+:DisplayName Move to Place Marker 8
+:Synopsis Moves to and speaks the element at Place Marker 8.
+:Description Moves to and speaks the element at Place Marker 8.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker9
+:DisplayName Move to Place Marker 9
+:Synopsis Moves to and speaks the element at Place Marker 9.
+:Description Moves to and speaks the element at Place Marker 9.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script JumpToPlaceMarker10
+:DisplayName Move to Place Marker 10
+:Synopsis Moves to and speaks the element at Place Marker 10.
+:Description Moves to and speaks the element at Place Marker 10.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToPreviousCell
+:DisplayName Move to Previous Cell
+:Synopsis Moves to the previous table cell and reads it.
+:Description When inside a table cell, moves to the same cell in the prior column and speaks its contents.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToNextCell
+:DisplayName Move to Next Cell
+:Synopsis Moves to the next table cell and reads it.
+:Description When inside a table cell, moves to the same cell in the next column and speaks its contents.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToCellAbove
+:DisplayName Move to Cell Above
+:Synopsis Moves up one table cell and reads it.
+:Description When inside a table cell, moves to the same cell in the prior row and speaks its contents.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToCellBelow
+:DisplayName Move to Cell Below
+:Synopsis Moves down one table cell and reads it.
+:Description When inside a table cell, moves to the same cell in the next row and speaks its contents.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script GlobalWhereAmI
+:DisplayName Global Where Am I
+:Synopsis Speak current element and position in expression.
+:Description Tells you if the current item is positioned inside a larger expression, such as a fraction.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadCurrentCell
+:DisplayName Read Current Cell
+:Synopsis Read current table cell.
+:Description When inside a table cell, speaks the contents of the current cell.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToStartOfLine
+:DisplayName Move To Start Of Line
+:Synopsis Moves to the beginning of the current line in a multi-line expression.
+:Description Moves to the beginning of the current line in a multi-line expression.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToEndOfLine
+:DisplayName Move To End Of Line
+:Synopsis Moves to the end of the current line in a multi-line expression.
+:Description Moves to the end of the current line in a multi-line expression.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker1
+:DisplayName Set Place Marker 1
+:Synopsis Set Place Marker
+:Description Sets a Place Marker at the current element, term, or partial expression. You can define up to 10 Place Markers.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker2
+:DisplayName Set Place Marker 2
+:Synopsis Set Place Marker
+:Description Sets a Place Marker at the current element, term, or partial expression. You can define up to 10 Place Markers.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker3
+:DisplayName Set Place Marker 3
+:Synopsis Set Place Marker
+:Description Sets a Place Marker at the current element, term, or partial expression. You can define up to 10 Place Markers.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker4
+:DisplayName Set Place Marker 4
+:Synopsis Set Place Marker
+:Description Sets a Place Marker at the current element, term, or partial expression. You can define up to 10 Place Markers.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker5
+:DisplayName Set Place Marker 5
+:Synopsis Set Place Marker
+:Description Sets a Place Marker at the current element, term, or partial expression. You can define up to 10 Place Markers.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker6
+:DisplayName Set Place Marker 6
+:Synopsis Set Place Marker
+:Description Sets a Place Marker at the current element, term, or partial expression. You can define up to 10 Place Markers.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker7
+:DisplayName Set Place Marker 7
+:Synopsis Set Place Marker
+:Description Sets a Place Marker at the current element, term, or partial expression. You can define up to 10 Place Markers.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker8
+:DisplayName Set Place Marker 8
+:Synopsis Set Place Marker
+:Description Sets a Place Marker at the current element, term, or partial expression. You can define up to 10 Place Markers.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker9
+:DisplayName Set Place Marker 9
+:Synopsis Set Place Marker
+:Description Sets a Place Marker at the current element, term, or partial expression. You can define up to 10 Place Markers.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script SetPlaceMarker10
+:DisplayName Set Place Marker 10
+:Synopsis Set Place Marker
+:Description Sets a Place Marker at the current element, term, or partial expression. You can define up to 10 Place Markers.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPrevious
+:DisplayName Read Previous
+:Synopsis Speaks the previous element without moving focus.
+:Description Speaks the previous element without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadNext
+:DisplayName Read Next
+:Synopsis Speaks the next element without moving focus.
+:Description Speaks the next element without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script NavigationModeLarger
+:DisplayName Next Navigation Mode
+:Synopsis Cycle between navigation modes.
+:Description Cycles between Simple, Character, and Enhanced navigation modes. Enhanced mode moves between mathematically meaningful pieces such as operators and delimiters. Simple mode moves between words, except when an expression such as a fraction or square root is encountered. In this case, the entire expression is read. Character mode moves between words but allows you to move between characters by moving one level down.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script NavigationModeSmaller
+:DisplayName Previous Navigation Mode
+:Synopsis Cycle between navigation modes.
+:Description Cycles between Simple, Character, and Enhanced navigation modes. Enhanced mode moves between mathematically meaningful pieces such as operators and delimiters. Simple mode moves between words, except when an expression such as a fraction or square root is encountered. In this case, the entire expression is read. Character mode moves between words but allows you to move between characters by moving one level down.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ToggleSpeechMode
+:DisplayName Toggle Speech Mode
+:Synopsis Toggles Speech mode to Read or Describe.
+:Description Toggles Speech mode to Read or Describe. 
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToStartOfColumn
+:DisplayName Move To Start Of Column
+:Synopsis Move to the beginning of the current column.
+:Description When focused in a table cell, moves to and speaks the contents of the first cell in the current column 
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script MoveToEndOfColumn
+:DisplayName Move To End Of Column
+:Synopsis Move to the end of the current column.
+:Description When focused in a table cell, moves to and speaks the contents of the last cell in the current column 
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker1
+:DisplayName Read Place Marker 1
+:Synopsis Speaks the math content at the first defined Place Marker without moving focus.
+:Description Speaks the math content at the first defined Place Marker without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker2
+:DisplayName Read Place Marker 2
+:Synopsis Speaks the math content at the second defined Place Marker without moving focus.
+:Description Speaks the math content at the second defined Place Marker without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker3
+:DisplayName Read Place Marker 3
+:Synopsis Speaks the math content at the third defined Place Marker without moving focus.
+:Description Speaks the math content at the third defined Place Marker without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker4
+:DisplayName Read Place Marker 4
+:Synopsis Speaks the math content at the fourth defined Place Marker without moving focus.
+:Description Speaks the math content at the fourth defined Place Marker without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker5
+:DisplayName Read Place Marker 5
+:Synopsis Speaks the math content at the fifth defined Place Marker without moving focus.
+:Description Speaks the math content at the fifth defined Place Marker without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker6
+:DisplayName Read Place Marker 6
+:Synopsis Speaks the math content at the sixth defined Place Marker without moving focus.
+:Description Speaks the math content at the sixth defined Place Marker without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker7
+:DisplayName Read Place Marker 7
+:Synopsis Speaks the math content at the seventh defined Place Marker without moving focus.
+:Description Speaks the math content at the seventh defined Place Marker without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker8
+:DisplayName Read Place Marker 8
+:Synopsis Speaks the math content at the eighth defined Place Marker without moving focus.
+:Description Speaks the math content at the eighth defined Place Marker without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker9
+:DisplayName Read Place Marker 9
+:Synopsis Speaks the math content at the ninth defined Place Marker without moving focus.
+:Description Speaks the math content at the ninth defined Place Marker without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ReadPlaceMarker10
+:DisplayName Read Place Marker 10
+:Synopsis Speaks the math content at the tenth defined Place Marker without moving focus.
+:Description Speaks the math content at the tenth defined Place Marker without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePrevious
+:DisplayName Describe Previous
+:Synopsis Describes the previous element without moving focus.
+:Description Describes the previous element without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribeNext
+:DisplayName Describe Next
+:Synopsis Describes the next element without moving focus.
+:Description Describes the next element without moving focus.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ZoomOutAllTheWay
+:DisplayName Zoom Out All The Way
+:Synopsis Zoom out to the top level of an expression.
+:Description If you are several levels deep in a complex expression, lets you immediately zoom bakc out to the top level.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script ZoomInAllTheWay
+:DisplayName Zoom In All The Way
+:Synopsis Zoom in to the lowest level of an element.
+:Description When focused on an element in an expression, lets you immediately zoom in to its lowest level.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribeCurrent
+:DisplayName Describe Current Element
+:Synopsis Describe all partial expressions at the current level.
+:Description Describe all partial expressions at the current level.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker1
+:DisplayName Describe Place Marker 1
+:Synopsis Describes the math content at Place Marker 1 without moving focus.
+:Description The element, partial expression, or term at Place Marker 1 is spoken with additional details. Focus remains at your current location.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker2
+:DisplayName Describe Place Marker 2
+:Synopsis Describes the math content at Place Marker 2 without moving focus.
+:Description The element, partial expression, or term at Place Marker 2 is spoken with additional details. Focus remains at your current location.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker3
+:DisplayName Describe Place Marker 3
+:Synopsis Describes the math content at Place Marker 3 without moving focus.
+:Description The element, partial expression, or term at Place Marker 3 is spoken with additional details. Focus remains at your current location.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker4
+:DisplayName Describe Place Marker 4
+:Synopsis Describes the math content at Place Marker 4 without moving focus.
+:Description The element, partial expression, or term at Place Marker 4 is spoken with additional details. Focus remains at your current location.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker5
+:DisplayName Describe Place Marker 5
+:Synopsis Describes the math content at Place Marker 5 without moving focus.
+:Description The element, partial expression, or term at Place Marker 5 is spoken with additional details. Focus remains at your current location.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker6
+:DisplayName Describe Place Marker 6
+:Synopsis Describes the math content at Place Marker 6 without moving focus.
+:Description The element, partial expression, or term at Place Marker 6 is spoken with additional details. Focus remains at your current location.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker7
+:DisplayName Describe Place Marker 7
+:Synopsis Describes the math content at Place Marker 7 without moving focus.
+:Description The element, partial expression, or term at Place Marker 7 is spoken with additional details. Focus remains at your current location.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker8
+:DisplayName Describe Place Marker 8
+:Synopsis Describes the math content at Place Marker 8 without moving focus.
+:Description The element, partial expression, or term at Place Marker 8 is spoken with additional details. Focus remains at your current location.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker9
+:DisplayName Describe Place Marker 9
+:Synopsis Describes the math content at Place Marker 9 without moving focus.
+:Description The element, partial expression, or term at Place Marker 9 is spoken with additional details. Focus remains at your current location.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1
+
+:Script DescribePlaceMarker10
+:DisplayName Describe Place Marker 10
+:Synopsis Describes the math content at Place Marker 10 without moving focus.
+:Description The element, partial expression, or term at Place Marker 10 is spoken with additional details. Focus remains at your current location.
+:Category Math
+:Keywords 
+:Version JAWS/26.3
+:SearchRank 1

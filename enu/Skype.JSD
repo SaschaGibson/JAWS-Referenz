@@ -1,0 +1,35 @@
+:script BackButton
+:DisplayName Skype Press Back button
+:Synopsis Press the Back button.
+:Description Presses the back button if available. Skype 8.33 and newer have a back button once you open a conversation that you must press to return to the main screen and find your list of conversations.
+:SearchRank 1
+
+:Script MoveToChatEntryField
+:DisplayName Move To Skype Chat Entry Field
+:Synopsis Move to chat entry field
+:Description Places focus on the chat entry field if available.
+:SearchRank 1
+
+:Script MoveToChatHistoryList
+:DisplayName Move To Skype Chat History List
+:Synopsis Move to the History List for the active conversation.
+:Description Places focus on the history list of the active conversation if available. The history list contains recent messages and record of Skype calls for the active conversation.
+:SearchRank 1
+
+:Script MoveToConversationsList
+:DisplayName Move To Skype Conversations List
+:Synopsis Move to Conversations List
+:Description Places focus on the conversations list if available. The conversations list is your contacts.
+:SearchRank 1
+
+:Script SkypeLayerHelp 
+:DisplayName Skype Layer Help
+:Synopsis Skyp layer help
+:Description Speaks a help message describing available commands in this key layer.
+:SearchRank 1
+
+:Script SkypeKeystrokesList
+:DisplayName Skype Keystrokes List
+:Synopsis List of JAWS commands for Skype.
+:Description JAWS Commands move to areas in the Skype application. This includes Conversations List, Chat Edit Field, and Chat History List.
+:SearchRank 1

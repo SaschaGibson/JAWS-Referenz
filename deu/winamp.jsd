@@ -1,0 +1,563 @@
+:script ScriptFileName
+:Returns undef
+
+:function GetWinampMainWindowHandle
+:Returns handle If successful, the handle to the main Winamp window, otherwise 0.
+:Synopsis Returns the handle of the main Winamp window.
+:Description Returns the handle of the main Winamp window.  If the function fails, 0 is returned.
+
+:function GetWinAmpVersionInfo
+
+:function AutoStartEvent
+
+:function GetWinampTitle
+:Returns string String containing text of the title of the main Winamp window.
+:Synopsis Get the full title of the main Winamp application window.
+:Description This function retrieves the full title of the main Winamp application window, as there seems to be circumstances in which the GetAppTitle() function fails.
+
+:function SetDefaultHighlightColour
+
+:function AutoFinishEvent
+
+:function GetWinampWindowHandle
+:Returns handle If successful, the handle of the specified Window, otherwise 0.
+:Synopsis Returns the handle of a specified Winamp window.
+:Description Returns the handle of a Winamp window specified by its class.  If the operation fails, 0 is returned.
+:Param string/sWindow The class of the desired Winamp window.  This parameter should be one of the constants WinampMW, WinampEQ, WinampPE or WinampMB.  Otherwise, the operation of identifying the window handle will fail.
+
+:function GetWindowStatuses
+:Returns string If Winamp windows are open, a string of characters corresponding to the open windows.  Otherwise, the empty string.
+:Synopsis Returns a string list of all the open Winamp windows.
+:Description Returns a string of characters, each character corresponding to an open Winamp Window.  The characters are as follows:  "w" stands for the Winamp Main Window, "e" is the Equaliser, "p" is the Playlist Editor and "b" indicates the Winamp Minibrowser.  All four characters are lower case.  If no Winamp windows are open, the empty string is returned.
+
+:function GetWinampWindowNameFromCharacter
+:Returns string If the function argument is one of "w", "q", "p" or "b", the corresponding constant, WinampWinampMainWindow, WinampWinampEqualiser, WinampWinampPlaylistEditor or WinampWinampMinibrowser.  If the function argument is "u", then sUnknown.  Otherwise, the empty string.
+:Synopsis Returns a string name of a Winamp window corresponding to a single character code used by the GetWindowStatuses, SayWindowStatuses and CloseMiniBrowser scripts to identify Winamp windows.
+:Description Maps the single character constants "w", "q", "p" and "b" to the defined constants WinampMW, WinampEQ, WinampPE and WinampMB respectively.  The character "u" is mapped to sUnknown.  Any other single character or string is mapped to the empty string.
+:Param string/sChar A single-character string containing one of the characters "w", "q", "p", "b" or "u".
+:Param string/sUnknown The name to speak if sChar is "u".
+
+:function GetCharacterFromWindowClass
+:Returns string Character identifying the window corresponding to the window class.
+:Synopsis Returns a character identfying one of the Winamp window types
+:Param string/sClass Window class
+
+:script SayWindowStatuses
+:Synopsis Liste aller offenen Winamp-Fenster ansagen
+:Description Diese Tastenkombination sagt das im Fokus befindliche Winamp-Fenster an, und nennt anschließend alle weiteren, noch geöffneten Fenster.
+
+:script HotKeyHelp
+:Returns undef
+
+:function ScreenSensitiveHelpForWinAmpWindows
+
+:script ScreenSensitiveHelp
+:Returns undef
+
+:function OpenUserManual
+:Synopsis Opens the user manual
+:Description For versions of JFW prior to 4.5, this function opens the HTML version of the Winamp Scripts user manual in the default browser.  Otherwise, it uses AppFileTopic to open the FS-prepared Winamp help topic.
+
+:script WindowKeysHelp
+:Returns undef
+
+:function IsWinampMiniBrowser
+:Returns int Returns 1 if true and 0 if not.
+:Synopsis Checks to see if we are in the Minibrowser
+
+:function IsWinampEqualiser
+:Returns int Returns 1 if true and 0 if not.
+:Synopsis Checks to see if we are in the equaliser
+
+:function IsMainWinampWindow
+:Returns int Returns 1 if true and 0 if it is not.
+:Synopsis Checks to see if we are in Main Winamp Window.
+
+:function IsPlaylistEditorWindow
+:Returns int Returns 1 if it is the playlist editor, 0 if not.
+:Synopsis Determines if this is the playlist editor window or not
+
+:function IsWinampLibrary
+:Returns int 1, if we are in the Winamp Library window; 0, otherwise.
+:Synopsis Checks to see if the Winamp Library window has the focus
+
+:function IsWinAmpStationInfo
+:Returns int
+
+:function IsWinAmpVideo
+:Returns int
+
+:function IsCoreWinampWindow
+:Returns int Returns TRUE if the Winamp Main Window, Equaliser or Playlist Editor has the focus.  Otherwise, FALSE.
+:Synopsis Tests if we are in one of the three core Winamp windows
+:Description Returns TRUE if either the Winamp Main Window, Equaliser or Playlist Editor has the focus.  Otherwise, the function returns FALSE.
+
+:function IsStandardWinampWindow
+:Returns int Returns TRUE if the Winamp Main Window, Equaliser, Playlist Editor or Minibrowser has the focus.  Otherwise, FALSE.
+:Synopsis Tests if we are in one of the four standard Winamp windows
+:Description Returns TRUE if either the Winamp Main Window, Equaliser, Playlist Editor or Minibrowser has the focus.  Otherwise, the function returns FALSE.
+
+:function PlayHighlightPresent
+:Returns int returns 1 if highlight found, p if not
+:Synopsis Finds the highlight representing the item currently playing
+
+:function IntegerIndex
+:Returns int converted integer value.
+:Synopsis extracts the index number from the string provided.
+:Description Looks for the first period, and converts all characters to the left of the period to an integer.
+:Param string/InString the string to search with number  at left, period terminated
+
+:function WhichWayToSearch
+:Returns int No Return Description
+:Synopsis Determines which direction to search for thew playing item.
+:Description Because we don't know whether to page up or down, we can use the window title which indicates the index of the playing item and compare that to the top line, first entry.  If the number in the title is larger than the number in the top line of the playlist editor window, then we need to search down. Otherwise, search up.
+
+:function FindPlayingItem
+:Synopsis finds the item currently playing
+:Param int/speak set to 1 to cause the line to be spoken
+
+:function FindHighlightedItem
+:Returns string The text displayed in the highlight colour.
+:Synopsis Search the playlist editor window for the highlight color
+:Param int/speak 0 for silence, returning the highlight text only; 1 to cause the line to be spoken
+
+:script SayPriorLine
+:Synopsis Zum vorigen Track springen oder Lautstärke rauf
+:Description Springt im Playlist-Editor zum vorigen track. Im Winamp-Hauptfenster oder Equalizer wird die Lautstärke um 1 % erhöht. An sonsten wird der Windows Standardbefehl ausgeführt.
+
+:script SayNextLine
+:Synopsis Zum nächsten Track springen oder Lautstärke runter
+:Description Springt im Playlist-Editor zum nächsten Track.  Im Winamp-Hauptfenster oder Equalizer wird die Lautstärke um 1 % verringert. An sonsten wird der Windows Standardbefehl ausgeführt.
+
+:script SayLine
+:Synopsis Aktuellen Titel ansagen
+:Description Sagt im Playlist-Editor den aktuellen Track an.  Der aktuelle Track kann entweder der sein, den Winamp gerade wiedergibt, oder der, den Winamp zum Abspielen vorgemerkt hat, falls gerade kein Track wiedergegeben wird.
+
+:script MoveToPlayingItem
+:Synopsis Zum laufenden Track springen
+:Description Befinden Sie sich im Playlist-Editor, wird der Fokus auf den gerade laufenden Track gesetzt. Wird kein Track wiedergegeben, landet der Fokus auf dem Track, den Winamp zur Wiedergabe vorgemerkt hat.
+
+:script SwapWithPrior
+:Synopsis Tauscht dieses Element mit dem vorherigen Element
+:Description Nutzbar zum Arrangieren der Reihenfolge
+
+:script SwapWithNext
+:Synopsis Tauscht dieses Ereignis mit dem nächsten Ereignis
+
+:function CheckStoppingPoint
+:Synopsis Stop after the current track finishes if the current track is the stopping point
+:Description Checks if the stopping point has been reached and instructs Winamp to stop playing when the track finishes playing
+
+:function TurnOffShuffleMode
+:Synopsis Zufallswiedergabe ausschalten
+:Description Schaltet die Zufallswiedergabe in Winamp aus.
+
+:script SetStopMarker
+:Synopsis Stopmarker setzen
+:Description Setzt beim aktuellen Track einen Stopmarker. %product% veranlasst Winamp dadurch, die Wiedergabe nach dem so markierten Track zu beenden.
+
+:script ClearStopMarker
+:Synopsis Stopmarker löschen
+:Description Löscht den Stopmarker.
+
+:script SayStopMarker
+:Synopsis Stopmarker ansagen
+:Description Durch diese Tastenkombination wird der gesetzte Stopmarker angesagt. %product% veranlasst Winamp beim Setzen eines Stopmarkers, die Wiedergabe zu beenden, sobald der Track mit dem Stopmarker endet.
+
+:script continue
+:Synopsis Wiedergabe ab nächstem Track Fortsetzen
+:Description Moves to the next scheduled track in the Playlist and starts to play.  This command is useful for resuming playback following a stop in play caused by a stop after current track operation or  a stop marker being reached.
+
+:script StartThisTrack
+:Synopsis Gewählten track abspielen
+:Description Spielt eine Playliste ab dem ausgewählten Track. An sonsten wird der Windows Standardbefehl ausgeführt.
+
+:script AltStartThisTrack
+:Synopsis Gewählten Track starten/anhalten
+:Description Im Playlist-Editor wird der ausgewählte Track wiedergegeben.  Im Hauptfenster oder dem Equalizer wird der laufende Track fortgesetzt oder angehalten.
+
+:function DecreaseEQBAnds
+:Synopsis Decreases the gain of a user selected equaliser band by approximately 1 percent
+:Description This function displays a dialog box allowing the user to select an equaliser band to decrease.  It then decreases the gain of that band by approximately 1 percent.
+
+:function IncreaseEQBAnds
+:Synopsis Increases the bands in Winamp's equaliser.
+:Description This function displays a dialog box allowing the user to select an equaliser band to increase.  It then increases the gain of that band by approximately 1 percent.
+
+:script RepeatStatusInfo
+:Synopsis Status für Zufallswiedergabe- und Wiederholmodus ansagen
+:Description Diese Tastenkombination sagt den Status der Winamp-Modi Zufallswiedergabe und Wiederholen an.
+
+:function CheckStopAfterCurrentTrack
+:Synopsis Resets stop after current track status when Winamp stops playing a track
+:Description Monitors the play state of Winamp and turns off the stop after current track flag when the current track stops playing.
+
+:script StopAfterCurrentTrack
+:Synopsis nach aktuellem Track anhalten
+:Description Winamp hält die Wiedergabe nach dem aktuellen Track an. Drückt man die Tastenkombination erneut, wird der Befehl ignoriert, und Winamp fährt mit dem Abspielen fort. Wirt gerade kein Track wiedergegeben, hat diese Tastenkombination keinerlei Auswirkung.
+
+:script SayCurrentTrackStoppedStatus
+:Synopsis Status für Stop nach aktuellem Track ansagen
+:Description Sagt an, ob der Modus Nach aktuellem Track stoppen aktiviert oder deaktiviert wurde.
+
+:function AdjustEqualizerBands
+:Synopsis Equalizer-Bänder einstellen
+:Description Die Ziffern 1 bis 0 erhöhen die Equalizer-Bänder 1 bis 10, q bis p verringern sie.  Drücken Sie die Tasten Cirkumflex oder Tab, um den Vorverstärker lauter und leiser zu stellen.
+:Param string strKeyName name of key pressed in KeyPressedEvent.
+
+:function RestoreKeyboardEcho
+:Synopsis Restores keyboard echo.
+:Description Restores the keyboard echo for future usage according to the value stored in a global variable.
+:Category Options
+
+:function ClearShouldSpeakTrackTitle
+
+:function KeyPressedEvent
+:Param int 
+:Param string 
+:Param int 
+:Param int 
+
+:script AddBookMark
+:Synopsis Lesezeichen hinzufügen
+:Description Speichert die aktuelle Datei oder URL als Winamp-Lesezeichen.
+
+:script EditBookMark
+:Synopsis Lesezeichen bearbeiten
+:Description Öffnet im Dialogfeld "Winamp Einstellungen" die Seite Lesezeichen.
+
+:script CloseWinamp
+:Synopsis Winamp beenden
+:Description Beendet Winamp.
+
+:script StopAndFadeOut
+:Synopsis Mit Ausblendung anhalten
+:Description Hält den aktuellen Track an, indem er ausgeblendet wird.
+
+:script CloseMiniBrowser
+:Synopsis Minibrowser schließen
+:Description Prüft die geöffneten Winamp-Fenster darauf, ob der Minibrowser sichtbar ist. Er wird ggf. geschlossen, und das Fenster erhält den Fokus, von dem aus die Suche begonnen wurde.
+
+:function FindTopOfPlayList
+
+:script GotoTopOfPlayList
+:Synopsis Zum Anfang der Playlist springen
+:Description Mit Dieser Tastenkombination springt man an den Anfang einer Playlist. An sonsten wird der Befehl Pos1 an die Anwendung weitergegeben.
+
+:function FindBottomOfPlayList
+
+:script GotoBottomOfPlayList
+:Synopsis Ans Ende der Playlist springen
+:Description Mit dieser Tastenkombination springt man ans Ende einer Playlist. An sonsten wird der Befehl Ende an die Anwendung weitergegeben.
+
+:function TrimIntegerFromString
+:Returns string
+:Param string 
+
+:script GeneratePlayListToHtml
+:Synopsis Playlist als HTML-Seite Speichern
+:Description Generiert aus Ihrer Playlist eine HTML-Seite.
+
+:function GetTrackName
+:Returns string The title of the current track or the empty string if the track title is not shown in the Winamp title bar.
+:Synopsis Get the name of the current track from the Winamp title bar.
+:Description This function extracts the title of the current track from the Winamp title bar if it appears there.  Otherwise, it returns the empty string, indicating that no track is ready to be played simply by pressing "x".  The parameter determines if the name will be decorated for suitable inclusion in a .ini file.
+:Param int/nDecorate If non-zero, the track name will be decorated for legal inclusion in a .ini file.  Otherwise, it will be returned without any decoration applied.
+
+:function IsNotPlaying
+:Returns int Non-zero if there is no file playing and zero if a file is playing.
+:Synopsis This function tests if a file is currently playing.
+:Description IsNotPlaying returns a non-zero value if there is no file currently playing.  Otherwise, it returns a value of zero.
+
+:function CurrentTrackNumber
+:Returns int The number of the current track
+:Synopsis Returns the number of the current track
+:Description Returns the number of the current track.  The current track is the track that is playing or the last track Winamp played.
+
+:function GetATrackTime
+:Returns string If a track is playing, a string containing the requested time in the form <minutes>:<seconds>.  Otherwise, the empty string.
+:Synopsis Returns the elapsed time or the track length of the currently playing track.
+:Description Returns a time, in minutes and seconds, relating to the currently playing track.  If no track is playing, the empty string is returned.  Otherwise the elapsed time or the time length of the currently playing track is returned, according as the nGetTrackLength parameter is set to 0 or 1.
+:Param int/nGetTrackLength Determines which time GetATrackTime returns.  If set to 0, the elapsed time is returned.  Otherwise GetATrackTime returns the track length of the currently playing track.
+
+:function FormatTime
+:Returns string String containing the appropriately formatted time
+:Synopsis Format a time for speaking in words.
+:Description Takes a time in the form <minutes>:<seconds> and returns a string of the form "x minutes[s] y second[s]", where x is the number of minutes and y is the number of seconds.
+:Param string/sTime Time in the form <minutes>:<seconds>.
+
+:function StringTimeToInt
+:Returns int A time represented in milliseconds.
+:Synopsis Converts a string time to an integer in milliseconds
+:Description Converts a time stored in a string as m:s to the integer number of milliseconds represented by that time.
+:Param string/sTime Time in the form m:s.
+
+:function SetTimeMarkerHelper
+:Synopsis Set a time marker for the elapsed time in the currently playing track.
+:Description This function does the actual work of setting a time marker when the SetTimeMarker script is invoked.
+
+:function GetListOfTimeMarkers
+:Returns string If time markers are set for the current track, a vertical bar separated list of time markers.  Otherwise, the empty string.
+:Synopsis Returns the list of time markers set for a track.
+:Description For the specified track, this function returns a vertical bar separated list of time markers suitable for displaying using DlgSelectItemInList.  If there are no time markers set for the current track, the empty string is returned.
+:Param string/sTrackName The name of the track.
+
+:script JumpToTimeMarker
+:Synopsis Zu Zeitmarker springen
+:Description Drücken Sie diese Tastenkombination, um eine liste der Zeitmarker anzuzeigen, die für den aktuellen Track gesetzt wurden. Drücken Sie PfeilRauf oder Runter, um einen bestimmten Zeitmarker auszuwählen. Mit EINGABE springen Sie auf den gewählten Zeitmarker, und spielen den Track von diesem Punkt an ab. Wurde der Aktuelle Track bereits angehalten, wird sofort mit der Wiedergabe begonnen.
+
+:script RemoveTimeMarker
+:Synopsis Zeitmarker für aktuellen Track löschen
+:Description Mit dieser Tastenkombination rufen Sie eine Liste der Zeitmarker im aktuellen Track auf. Um einen bestimmten Zeitmarker zu löschen, wählen Sie diesen mit den Pfeiltasten Rauf oder Runter aus, und bestätigen die Auswahl mit EINGABE. Zum Löschen aller Zeitmarker im aktuellen Track, wählen Sie den letzten Eintrag der Liste aus, gehen auf "Alle zeitmarker für aktuellen Track löschen", und drücken EINGABE. Nutzen Sie diese Option sehr sorgfältig, da es keine Rückfrage für das Löschen gibt, und versehentlich gelöschte Zeitmarker nicht wiederhergestellt werden können.
+
+:script SayElapsedTime
+:Synopsis Verstrichene Zeit ansagen
+:Description Die verstrichene Zeit eines Titels wird in Minuten und Sekunden angesagt.
+
+:script SayTimeLength
+:Synopsis Titeldauer ansagen
+:Description Sagt die Gesamtspieldauer eines Tracks in Minuten und Sekunden an.
+
+:script SayRemainingTime
+:Synopsis Verbleibende Zeit ansagen
+:Description Sagt die Restspieldauer eines Tracks in Minuten und Sekunden an.
+
+:script ReviewEndOfTrack
+:Synopsis Trackende anhören
+:Description Springt an eine Stelle kurz vor dem Ende des aktuellen Tracks und spielt ihn bis zum Ende ab. So können Sie feststellen, ob ein Track vollständig ist.
+
+:script SelectReviewTime
+:Synopsis Wählt die Anzahl der Sekunden zum Anhören des Trackendes.
+:Description Setzt die Anzahl der Sekunden, die als Trackende abgespielt werden soll. Jeder Druck dieser Tastenkombination springt einen Wert in der Zeitenliste weiter.
+
+:script ToggleWinampMainWindow
+:Synopsis Winamp Hauptfenster öffnen/schließen
+:Description Öffnen oder schließen des Winamp Hauptfensters.
+
+:script ToggleWinampEqualiser
+:Synopsis Equalizer öffnen/schließen
+:Description Öffnet oder schließt den Winamp-Equalizer.
+
+:script ToggleWinampPlaylisteditor
+:Synopsis Playlist-Editor öffnen/schließen
+:Description Öffnen oder schließen des Playlist-Editors.
+
+:script ToggleWinampLibrary
+:Synopsis Medienbibliothek öffnen/schließen
+:Description Öffnen oder schließn der Winamp-Medienbibliothek.
+
+:script ToggleWinampStationInfo
+:Synopsis Senderinfo-fenster öffnen/schließen
+:Description Öffnet oder schließt das Senderinformationsfenster.
+
+:script ToggleWinampVideo
+:Synopsis Video-Fenster öffnen/schließen
+:Description Video-Fenster in Winamp öffnen/schließen.
+
+:script ToggleTimeDisplayMode
+:Synopsis Zeitanzeige-Modus umschalten
+:Description Hierdurch wird der Zeitanzeige-Modus zwischen verstrichener Zeit und verbleibender Zeit umgeschaltet.
+
+:script PlaylistSelectAllOrToggleWinampAlwaysOnTop
+:Synopsis Alle Tracks in Playlist wählen oder Modus Immer im Vordergrund umschalten
+:Description Wählt alle Tracks in einer Playlist aus. In allen weiteren Fenstern wird durch diese Tastenkombination der Modus Immer im Vordergrund ein- und ausgeschaltet. Ist dieser Modus aktiv, bleibt das Fenster von Winamp immer sichtbar, selbst wenn Sie die Anwendung wechseln. So werden möglicherweise andere Anwendungsfenster von Winamp verdeckt.
+
+:script DecreaseEqualiserBand4OrToggleRepeatMode
+:Synopsis Equalizer-Band 4 verringern oder Wiederholmodus umschalten
+:Description Verringert die Vorverstärkung von Equalizer-Band 4, oder schaltet den Wiederholmodus ein und aus.
+
+:script ShowEqualiserSummary
+:Synopsis Equalizer-Einstellungen zusammenfassen
+:Description Mit dieser Tastenkombination wird eine Zusammenfassung der Equalizer-Einstellungen im virtuellen Betrachter angezeigt.
+
+:function SayEqualiserBand
+:Synopsis Say and sets the value of an equaliser band
+:Description If nAdjust is positive, band nBand is decreased; if nAdjust is negative, band nBand is increased; band nBand is not changed if nAdjust is zero.  Afterwards, the band value of band nBand is announced in decibels.
+:Param int/nBand The equaliser band to set/say.
+:Param int/nAdjustment A value of 1 decreases the selected band, a value of -1 increases the selected band and a value of 0 causes the band to be spoken without being adjusted.
+
+:function SayCurrentScriptKeyName
+:Synopsis Says the name of the key used to activate the currently running script
+:Description If typing echo is turned on, says the name of the key used to invoke the current script.
+
+:script ShowCurrentTrackInfo
+:Synopsis Zeigt Informationen des aktuellen Tracks
+:Description Diese Kurztaste zeigt Informationen des aktuellen Tracks im virtuellen Betrachter an, wie Titel, Abtastfrequenz, durchschnittliche Bitrate und Anzahl der Kanäle.
+
+:script SayCurrentTrackTitle
+:Synopsis Spricht den aktuellen Tracktitel
+:Description Spricht den Titel des aktuell abspielenden Tracks, oder des zuletzt gespielten Tracks.
+
+:function SetWinampVolume
+:Synopsis Set the volume
+:Description Instructs Winamp to immediately set the volume to nVolume.
+:Param int/nVolume The volume, 0 being minimum and 255 being maximum.
+
+:script QuickVolumeChange
+:Synopsis Schnellumschaltung der Lautstärke
+:Description Lautstärke schnell auf 4 voreingestellte Stufen einstellen. Folgende Tastenkombinationen und ihre zugehörigen Stufen: ALT+STRG+m = 0 Prozent, ALT+STRG+KOMMA = 33 Prozent, ALT+STRG+Punkt = 66 Prozent, ALT+STRG+BINDESTRICH = 100 Prozent.
+
+:function SetWinampPanning
+:Synopsis Sets the winamp panning
+:Description Instructs Winamp to immediately set the panning to nPanning
+:Param int/nPanning The panning, 0 being far left and 255 being far right.
+
+:script QuickPanningChange
+:Synopsis Schnellumschaltung der Balance
+:Description Balance auf 5 unterschiedliche Stufen einstellen. Folgende Tastenkombinationen und ihre zugehörigen Stufen: ALT+STRG+h = -100 Prozent, ALT+STRG+j = -50 Prozent, ALT+STRG+k = 0 Prozent, ALT+STRG+l = 50 Prozent, ALT+STRG+ö = 100 Prozent.
+
+:script SayColoursAtCursor
+:Synopsis Farben am Cursor ansagen
+:Description Sagt die Vorder- und Hintergrundfarbe an der Cursorposition an.
+
+:script SwapTrackWithPrevious
+:Synopsis Track mit vorherigem Track tauschen
+:Description Tauscht im Playlist-Editor den aktuellen Track mit dem vorherigen Track der Liste.
+
+:script SwapTrackWithNext
+:Synopsis Track mit Nächstem tauschen
+:Description Tauscht im Playlist-Editor den aktuellen Track mit dem nächsten Track der Liste.
+
+:script PlaylistPageUp
+:Synopsis Playlist rückwärts blättern
+:Description Scrollt in einer Playlist um ein Fünftel einer Seite nach oben, an sonsten wird der Befehl JAWSSeiteRauf ausgeführt.
+
+:script PlaylistPageDown
+:Synopsis Playlist vorwärts blättern
+:Description Scrollt in einer Playlist um ein Fünftel einer Seite nach unten, an sonsten wird der Befehl JAWSSeiteRunter ausgeführt.
+
+:script SayPriorCharacter
+:Synopsis Zurückspulen oder Balance nach links
+:Description Spult im Hauptfenster oder Playlist-Editor innerhalb eines Tracks zurück. Im Equalizer- Fenster wird die Balance um etwa 1 % nach links geschwenkt. An sonsten wird der Windows-Standardbefehl ausgeführt.
+
+:script SayNextCharacter
+:Synopsis Vorspulen oder Balance nach rechts
+:Description Spult im Hauptfenster oder Playlist-Editor innerhalb eines Tracks vor. Im Equalizer- Fenster wird die Balance um etwa 1 % nach rechts geschwenkt. An sonsten wird der Windows-Standardbefehl ausgeführt.
+
+:function CopyTimeMarkersForATrack
+:Returns int 1 = the copy was successfully done; 0 = the copy failed; -1 = there were no time markers to copy.
+:Synopsis Zeitmarker aus einer .ini-Datei in eine andere  kopieren
+:Description Kopiert alle Zeitmarker aus dem festgelegten Abschnitt einer Quelldatei in den identischen Abschnitt einer Zieldatei.
+:Param string/sTrackName The name of the track whose time markers are to be duplicated in the destination file.
+:Param string/sSourceFile The name of the source file from which time markers are to be copied.
+:Param string/sDestFile The name of the destination file to which time markers are to be copied.
+
+:script ImportExportTimeMarkers
+:Synopsis Zeitmarker importieren/exportieren
+:Description Mit dieser Tastenkombination werden Zeitmarker für den aktuellen Track aus einer Datei importiert, oder in eine Datei exportiert. Die Zeitmarker-Dateien können Nutzer untereinander austauschen.
+
+:script MinimiseWinamp
+:Synopsis Winamp minimieren
+:Description Minimiert das Winamp-Fenster.
+
+:function IntTimeToString
+:Returns string A time as a string in the format mm:ss
+:Synopsis Converts an integer  time in milliseconds into a string representation
+:Description Converts an integer  time in milliseconds into a string using the format mm:ss.
+:Param int/iTime Time in milliseconds
+
+:script JumpToRelativeTime
+:Synopsis In Track vor und zurück springen
+:Description Zeit eingeben, zu der Sie im Track springen möchten. Geben Sie die Zeit im Format mm:ss ein. Um rückwärts zu springen, stellen sie der Zeitangabe ein Minuszeichen voran.
+
+:script RepeatLastJumpToRelativeTime
+:Synopsis Sprung mit relativer Zeitangabe wiederholen
+:Description Diese Tastenkombination wiederholt einen relativen Zeitsprung für den aktuellen Track, wodurch das Ständige Eingeben der Zeit entfällt.
+
+:script GotoWinampPreferences
+:Synopsis Dialogfeld Winamp-Einstellungen öffnen
+:Description Öffnet das Dialogfeld Winamp-Einstellungen aus Fenstern wie dem Equalizer, Playlist-editor oder dem Hauptfenster. Bei einigen Plug-Ins besteht keine Möglichkeit, Mithilfe der Tastatur zu Winamp zurückzukehren. Wird das Dialogfeld aufgerufen, wenn ein Plug-In im Vordergrund ist, landen Sie nach Verlassen wieder im Dialogfeld Winamp-Einstellungen.
+
+:function suppressHighlight
+
+:function unsuppressHighlight
+
+:function SayHighLightedText
+:Param handle 
+:Param string 
+
+:function NewTextEvent
+:Param handle 
+:Param string 
+:Param int 
+:Param int 
+:Param int 
+:Param int 
+:Param string 
+
+:script SayWindowTitle
+:Returns undef
+
+:function UserBufferClose
+:Synopsis Deactivates and clears the user buffer
+:Description If the user buffer is activated, deactivates it and clears its contents.
+:Category Script
+
+:script AltDownArrowPCCursor
+:Synopsis Track mit nächstem tauschen
+:Description Vertauscht im Playlist-Editor den Track mit dem nächsten auf der Liste.  Diese Tastenkombination verhält sich an sonsten Windows entsprechend.
+:Category Keyboard
+
+:script AltUpArrowPCCursor
+:Synopsis Track mit vorigem tauschen
+:Description Vertauscht im Playlist-Editor den Track mit dem Vorigen auf der Liste.  Diese Tastenkombination verhält sich an sonsten Windows entsprechend.
+:Category Keyboard
+
+:script PageUpPCCursor
+:Synopsis Playlist rückwärts blättern
+:Description Scrollt in einer Playlist um ein Fünftel einer Seite nach oben, an sonsten wird der Befehl JAWSSeiteRauf ausgeführt.
+
+:script PageDownPCCursor
+:Synopsis Playlist vorwärts blättern
+:Description Scrollt in einer Playlist um ein Fünftel einer Seite nach unten, an sonsten wird der Befehl JAWSSeiteRunter ausgeführt.
+
+:script HomePCCursor
+:Synopsis Zum Anfang der Playlist springen
+:Description Springt im Playlist-Editor an den Anfang einer geöffneten Playlist.
+
+:script EndPCCursor
+:Synopsis ans Ende der Playlist springen
+:Description Springt im Playlist-editor ans Ende einer geöffneten Playlist.
+
+:script AltControlExtendeddownArrow
+:Synopsis Zum laufenden Track springen
+:Description Befinden Sie sich im Playlist-Editor, wird der Fokus auf den gerade laufenden Track gesetzt. Wird kein Track wiedergegeben, landet der Fokus auf dem Track, den Winamp zur Wiedergabe vorgemerkt hat.
+
+:script Undo
+:Returns undef
+
+:function SetIEServerWindowFocus
+:Param handle 
+
+:function WindowCreatedEvent
+:Param handle 
+:Param int 
+:Param int 
+:Param int 
+:Param int 
+
+:function ProcessSayAppWindowOnFocusChange
+:Param handle 
+:Param handle 
+
+:function ShowWinampGeneralHelp
+
+:function ShowHotkeyHelp
+
+:function DebugAlert
+:Synopsis Markiert einen Debug-point
+:Description Wenn der Debug-Modus für die Winamp Skripts eingeschaltet ist, sagt dieses Skript den Fehlertext an, der als Argument übergeben wurde.  Wird ein leerer String als Argument übergeben, wird eine Standardmeldung eingefügt.  Nützlich, um den Teil des Skriptcodes herauszufinden, der ausgeführt wurde.
+:Param string/sAlertText The debug alert text.
+
+:script WinampMainMenu
+:Synopsis Winamp Hauptmenü
+:Description Öffnet das Winamp-Hauptmenü.
+
+:script JumpToTime
+:Synopsis Zu Zeit springen Dialogfeld
+:Description Öffnet das Dialogfeld zu Zeit springen, wobei die Tracklänge und aktuelle Position innerhalb des Tracks gesprochen werden.
+:Category Find
+
+:script ToggleWinampScriptsDebugMode
+:Returns undef
+

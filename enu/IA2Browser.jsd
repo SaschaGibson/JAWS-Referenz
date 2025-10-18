@@ -1,0 +1,106 @@
+:function SayNewDocumentTab
+:Returns int No Return Description
+
+:function GetRelevantAddressBarInfo
+:Returns string No Return Description
+
+:script AddressBar
+:DisplayName Read Address Bar
+:Synopsis Reads the address of the active web page.
+:Description Reads the address or URL of the current web page. Press twice quickly to show it in the virtual viewer.
+:SearchRank 1
+
+:script GoBack
+:DisplayName Go Back
+:Synopsis Loads the previously opened Web page
+:Description Passes ALT+LEFT ARROW to the browser to load the previous page and announces it
+
+:script GoForward
+:DisplayName Go Forward
+:Synopsis Loads the next opened Web page.
+:Description Passes ALT+RIGHT ARROW to the browser to load the next page and announces it
+
+:function AddToString
+:Returns string No Return Description
+:Param string No Description
+:Param string No Description
+
+:script HotKeyHelp
+:DisplayName Hot Key Help
+:Synopsis Says hot key shortcuts for web browsers and speaks %product% hot keys in dialog boxes
+:Description If in a dialog box it will read the hot keys and labels for the items in that dialog, or special instructions for the application, or basic %product% functions.
+
+:script FireFoxFind
+:DisplayName Fire Fox Find
+:Returns undef No Return Description
+
+:function IsFormControl
+:Returns int
+:Param int
+
+:script SayDescribedByText
+:DisplayName Say Described By Text
+:Synopsis Reads the aria described by text
+:Description If the current element has a describedBy relationship to other elements, this function gathers the text in the describedBy elements and speaks it
+:Category Say
+
+:function BrailleStyleChange
+:Synopsis Display style change braille messages
+:Description When the style changes, call this function to show the new style in braille
+:Category Braille
+
+:Function IsMovingByCell
+:Param int/movementUnit
+:Description This function returns true when the selection movement unit is by table cell.
+:Returns int True if the movement unit is next, prior, up, or down a table cell, false otherwise.
+
+:function InTableCell
+:Returns int if the cursor is in a table cell then return true, otherwise false
+:Synopsis checks to see if the cursor is in a tablecell
+:Param int/strict True then include only table cells; False then include column and row headers and Table Cells
+
+:function ShouldSpeakItemAtLevel
+:Returns int True if we should speak the item;False otherwise
+:Synopsis True if something should be spoken for the type of object at the given level
+:Category Script
+:Param int/level level of the object to speak (must be > 0)
+:Param int/type Type of object being evaluated
+:Param int/parentType Type of parent of object being evaluated
+:Param int/focusRole MSAA role of focused object
+:Param int/focusType Type of focused object
+
+:function FindAncestorOfType
+:Returns int Level of the found ancestor
+:Param int/type No Description
+
+:function UIAFindAncestorElementWithRole
+:description Uses UIA to search for an ancestor of the specified element which has the specified role.
+:param object The element to start from.
+:param int The role to search for.
+:returns object The ancestor element if found, otherwise null.
+
+:function GetWindowTitle
+:description Retrieves the window title for the web page or web dialog.
+:returns string The title of the web page or dialog.
+
+:function HandleTableCellFocus
+:description This handle the focus change code for grids where navigating the cells causes a focus change when in forms mode.
+:returns int True if code was process for focus change in a grid while navigating the cells, false otherwise.
+
+:function HandleHeadersForTableCellFocus
+:description Used by function HandleTableCellFocus to speak the changed row or column headers when navigating.
+:param int/row the row number of the cell now in focus.
+:param int/col The column number of the cell now in focus.
+
+:function GetAriaGridElement
+:description Used to get the grid object when inside an ARIA grid.
+:Returns object The element with role=grid that is an ancestor of the focus element.
+
+:function FindTreeGridInFocusAncestors
+:description Searches the ancestory of the focus to find a treegrid.
+:returns int 0 or false if no ancestor of type treegrid was found, otherwise the level of the ancestor where the treegrid was found.
+
+:function SayTreeGridLevel
+:description If on a treegrid, speaks the treegrid level.
+:optional
+:param int/AlwaysSpeak If true, will always speak the level. Otherwise, the level is announced only if it differs from the most recently detected level.

@@ -1,0 +1,201 @@
+:script SayWindowTitle
+
+:script HotKeyHelp
+
+:script SayNextLine
+:Description Reads the next line of text
+:Category Cursor
+
+:function IsTextDocument
+:Returns int Returns TRUE or FALSE
+:Description Returns true if this is a text document
+:Category Application
+
+:function HandleCustomWindows
+:Returns int Returns TRUE if the window has been handled
+:Category Application
+:Param handle/hWnd No Description
+
+:function SayAllSpeakUnit
+
+:script SelectNextWord
+
+:script SayNextCharacter
+
+:function IsPropertyWindow
+:Returns int TRUE if in property window/edit field
+:Synopsis Returns true if in an edit field in a property grid
+:Description Returns true if in an edit field in a property grid
+:Category Cursor
+:Param int/nX No Description
+:Param int/nY No Description
+
+:function NewTextEvent
+:Category Say
+:Param handle/hwnd No Description
+:Param string/buffer No Description
+:Param int/nAttributes No Description
+:Param int/nTextColor No Description
+:Param int/nBackgroundColor No Description
+:Param int/nEcho No Description
+:Param string/sFrameName No Description
+
+:script MoveToCode
+:Synopsis Allows user to move to any method in a module
+:Description Displays a list of code elements in a class and allows the user to move to selected element
+:Category Positioning
+
+:script StatementCompletion
+:Synopsis allows the statement completion list to be read
+:Description allows the statement completion list to be read
+:Category Application
+
+:script SayPriorLine
+
+:function SayTreeviewLevel
+:Category Say
+
+:function AutoStartEvent
+:Category Application
+
+:function IsHTMLDocument
+:Returns int Returns TRUE or FALSE
+:Synopsis Checks to see if the currently active document is HTML
+:Description Returns true if this is an HTML document
+:Category Application
+
+:function IsReadableWindow
+:Returns int True if GetLine Works
+:Description Returns true if the GetLine function will work on this window
+:Category Application
+
+:script SayCharacter
+
+:script ReadControl
+:Synopsis Reads current control location and overlap information
+:Description Reads current control location and overlap information
+:Category Application
+
+:script JAWSDelete
+
+:script MakeWindowsFloating
+:Synopsis Make all open windows floating
+:Description Makes all currently open windows floating
+:Category Application
+
+:script MoveToComponent
+:Synopsis Move to selected control
+:Description Provides a list of top level controls on a form allows the user to move to one
+:Category Application
+
+:function InitializeGlobals
+:Description Initializes the JFWAddin and DTE objects
+:Category Application
+
+:script ListWindows
+:Synopsis Lists all open windows
+:Description Lists all visible windows and moves to selected window
+:Category Application
+
+:function SayHighLightedText
+
+:script SayNextWord
+
+:script SayLine
+:Description Reads current line
+:Category Cursor
+
+:function AnnounceIndentation
+:Param string/strLine No Description
+
+:function SayFocusedWindow
+
+:script UpALevel
+
+:script JAWSBackspace
+
+:script SelectPriorLine
+
+:script BottomOfFile
+
+:script SayPriorCharacter
+
+:script QuickInfo
+:Synopsis Reads the quick info tooltip
+:Description Reads the quick info tooltip
+:Category Application
+
+:script IsAddinLoaded
+:Synopsis Says addin loaded if JFWControl is loaded
+:Description Says addin loaded if JFWControl is loaded
+:Category Application
+
+:script SayAll
+:Description Reads the remainder of the current code window
+:Category Application
+
+:script ReadControlSize
+:Synopsis Read size of current control
+:Description Reads current control dimensions
+:Category Application
+
+:function ToggleErrorAnnounce
+:Returns string No Return Descriptionreturns the new error level
+:Synopsis Adjusts the speaking of errors in the code editor
+:Description Allows different error levels to be announced in the code editor
+:Category Application
+:Param int/iRetCurVal No Description
+
+:script CloseNonactiveWindows
+:Synopsis Closes all but active window
+:Description Closes all visible windows that are not currently active
+:Category WindowsAndObjects
+
+:script SayPriorWord
+
+:script AdjustJAWSVerbosity
+
+:function ActiveItemChangedEvent
+:Category Application
+:Param handle/curHwnd No Description
+:Param int/curObjectId No Description
+:Param int/curChildId No Description
+:Param handle/prevHwnd No Description
+:Param int/prevObjectId No Description
+:Param int/prevChildId No Description
+
+:script SelectNextLine
+
+:script SayBottomLineOfWindow
+
+:function SayAllRelocateCursor
+
+:script VirtualPCCursorToggle
+
+:function ValueChangedEvent
+
+:function AnnounceActiveTab
+:Returns string Returns the active toolbox tab
+:Synopsis Returns active toolbox tab
+:Description Announces the currently active tab in the toolbox
+:Category Application
+
+:script ScriptFileName
+
+:script SelectPriorWord
+
+:script TopOfFile
+
+:script MoveToCombo
+:Synopsis Move to combobox in code editor
+:Description Moves focus to combo box in code editor
+:Category Application
+
+:function WindowComponents
+:Synopsis Helper function for MoveToControl
+:Description Handles listing of win forms Components for the move to component script
+:Category Application
+
+:function AutoFinishEvent
+:Category Application
+

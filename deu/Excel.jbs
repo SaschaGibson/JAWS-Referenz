@@ -1,0 +1,157 @@
+﻿;Copyright 1995-2015 Freedom Scientific, Inc.
+; JAWS 10.00.xx script file for Microsoft Exce
+;Excel Braille Structure File
+
+;section for Component Aliases
+[Component Aliases]
+coordinates=Zellkoordinaten
+colHdr=Spaltentitel
+rowHdr=Reihentitel
+content=Zellinhalt
+formula=Zellformel
+formulaValue=Formelwert
+hyperlink=Hyperlink-Adresse
+comment=Zellkommentar
+CommentEdit=Kommentar Eingabefeld
+NoteEdit=Notiz Eingabefeld
+InputMessage=NachrichtEingeben
+rowTotal=Reihensumme
+coltotal=Spaltensumme
+monitorCells=Überwachte Zellen
+ColumnContext=Spaltendaten
+ColumnContextBeforeCurrent=Spaltendaten vor aktueller Zelle
+ColumnContextCurrent=Spaltendaten aktueller Zelle
+ColumnContextAfterCurrent=Spaltendaten nach aktueller Zelle
+RowContext=Reihendaten
+RowContextBeforeCurrent=Reihendaten vor aktueller Zelle
+RowContextCurrent=Reihendaten aktueller Zelle
+RowContextAfterCurrent=Reihendaten nach aktueller Zelle
+startCoordinates=Anfangskoordinaten
+startContent=Erster Zellinhalt
+delim=Markierungsbegrenzung
+endCoordinates=Letzte Zellkoordinate
+endContent=Letzter Zellinhalt
+line=Bearbeitungszeile
+areas=Markierte Bereiche
+filterDropdown=Filter Ausklappliste
+
+; Section for editcombo
+[SubtypeCode41]
+components=ContextHelp,name,type,state,ComputerBrailleIndicator,value,description,position
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,ComputerBrailleIndicator,value,description
+
+; Section for listboxitem
+[SubtypeCode55]
+components=ContextHelp,name,type,state,value,position,hotkey
+removed=
+displayname=
+type=lf
+AlignmentPriority=name,type,state,value
+
+;cell (when navigating)
+[CustomControl1]
+displayName=Zelle
+components=coordinates,cellType,rowHdr,colHdr,content,formula,hyperlink,comment,InputMessage,filterDropdown,rowTotal,monitorCells
+removed=colTotal
+type=
+
+;cell edit (f2)
+[CustomControl2]
+displayname=Zelle bearbeiten
+components=type,ComputerBrailleIndicator,line,Autocomplete,content
+removed=formulaValue
+type=zell ef
+
+;row view
+[CustomControl3]
+displayName=Reihenansicht
+components=type,RowContextBeforeCurrent,RowContextCurrent,RowContextAfterCurrent
+removed=rowTotal,monitorCells
+type=rei
+AlignmentPriority=RowContextCurrent
+
+;column view
+[CustomControl4]
+displayname=Spaltenansicht
+components=type,ColumnContextBeforeCurrent,ColumnContextCurrent,ColumnContextAfterCurrent
+removed=colTotal,monitorCells
+type=spa
+AlignmentPriority=ColumnContextCurrent
+
+;Cell Selection
+[CustomControl5]
+displayname=Markierte Zellen
+components=type,startCoordinates,startContent,delim,endCoordinates,endContent
+removed=
+type=mark:
+
+[CustomControl6]
+displayname=Markierte Bereiche
+components=type,areas
+removed=
+type=mark unzushängig:
+
+;for treeview in cell
+[CustomControl7]
+displayname=Strukturansicht in Zelle
+components=ContextHelp,name,type,level,value,state,position
+type=sa
+removed=
+
+;for dropdown lists
+[CustomControl8]
+components=type,value
+type=akl
+removed=
+displayname=Ausklappliste
+
+;Comment edit (Shift+f2)
+[CustomControl9]
+displayname=Kommentar Eingabefeld
+components=type,ComputerBrailleIndicator,line
+removed=
+type=cmnt ed
+
+; Section for listboxitem in SDM dialogs
+[CustomControl10]
+components=ContextHelp,name,type,state,value, position, extraHelp
+removed=
+displayname=
+type=lf
+AlignmentPriority=name,type,state,value
+
+; Section for edit text box...
+[CustomControl11]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value
+removed=
+displayname=
+type=ef
+
+;Note edit
+[CustomControl12]
+displayname=Notiz Eingabefeld
+components=type,ComputerBrailleIndicator,line
+removed=
+type=notiz ef
+
+[CustomControl13]
+components=ContextHelp,type,name
+type=dsch
+removed=hotkey
+displayname=Datenschnitt
+AlignmentPriority=type,name
+
+[CustomControl14]
+components=coltitles:1,RowContextBeforeCurrent:2,RowContextCurrent:2,RowContextAfterCurrent:2
+removed=
+displayname=Spaltentitel und aktuelle Reihe
+
+[CustomControl15]
+components=PriorRow:1,RowContextBeforeCurrent:2,RowContextCurrent:2,RowContextAfterCurrent:2
+removed=
+displayname=Vorherige und aktuelle Reihe
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Microsoft Excel.

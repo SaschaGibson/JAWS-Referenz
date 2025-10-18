@@ -1,0 +1,220 @@
+:function FHPBrailleNameAttribute
+:Synopsis Speaks Braille attribute
+:Category Braille
+:Param int/attribute Attribute to speak
+
+:function FHPBrailleUnhideBrailleCursor
+:Synopsis Restore cursor on Braille display
+:Description If cursor on Braille display is hidden, restore it.
+:Category Braille
+
+:Function FHP2DTogglePCMode
+:Returns int The new mode
+:Description Toggles between Navigation Mode and PC Emulation Mode.  Sets global flag g_b2DPCMode.  Used for older FHP Braillex displays.
+
+:function FHPBrailleToggleAttribute
+:Returns int The Attribute set to be shown on the Braille display with BrailleShowMarking
+:Synopsis Turn next/previous Braille attribute on
+:Category Braille
+:Param int/direction indicates the direction
+
+:script FHPBrailleKeySpeechMode
+:Synopsis Display is in "Speech Mode"
+:Description Display is in "Speech Mode". Used for FHP Braillex EL displays
+:Category Braille
+:script FHPBrailleSpeechPanLeft
+:Synopsis Shift Braille display left
+:Description Clear BrailleHideCursor and shift Braille display left if possible. Otherwise move active cursor to previous line.
+:Category Braille
+
+:script FHPBrailleKeyBrailleMode
+:Synopsis Display is in "Braille and Speech Mode"
+:Description Display is in "Braille and Speech Mode". Used for FHP Braillex EL displays
+:Category Braille
+
+:script FHPBrailleShowWindowsBottom
+:Synopsis Move Braille display to last line and speak it
+:Category Braille
+
+:script FHPBraillePriorLine
+:Synopsis Move Braille display one line up
+:Description Clear BrailleHideCursor and move Braille display one line up
+:Category Braille
+
+:script FHPBrailleEscape
+:Synopsis Run script BrailleEscape
+:Description Clear BrailleHideCursor and run script BrailleEscape
+:Category Braille
+
+:script FHPBrailleKeyReadingMode
+:Synopsis Display is in "Reading Mode"
+:Description Display is in "Reading Mode". Used for FHP Braillex EL displays
+:Category Braille
+
+:script FHPBrailleKeyPCMode
+:Synopsis Display is in "PC Emulation Mode"
+:Description Display is in "PC Emualtion Mode". Used for FHP Braillex EL displays
+:Category Braille
+
+:script FHPBrailleShiftTab
+:Synopsis Run script BrailleShiftTab
+:Description Clear BrailleHideCursor and run script BrailleShiftTab
+:Category Braille
+
+:script FHPcursordown
+:Synopsis Move active cursor down
+:Description Clear BrailleHideCursor and move active cursor down
+:Category Braille
+
+:script FHPBrailleKeyNavigationMode
+:Synopsis Display is in "Navigation Mode"
+:Description Display is in "Navigation Mode". Used for FHP Braillex EL displays
+:Category Braille
+
+:script FHPBrailleToggle68Dots
+:Synopsis Toggle between 6dot and 8dot Braille
+:Description Clear BrailleHideCursor and toggle between 6dot and 8dot Braille.
+:Category Braille
+
+:script FHPBrailleEnter
+:Synopsis Run script BrailleEnter
+:Description Clear BrailleHideCursor and run script BrailleEnter
+:Category Braille
+
+:script FHPcursorright
+:Synopsis Move active cursor right
+:Description Clear BrailleHideCursor and move active cursor right
+:Category Braille
+
+:script FHPBrailleShowAllMarking
+:Synopsis Turn all Braille attributes on
+:Description Clear BrailleHideCursor and turn all Braille attributes on.
+:Category Braille
+
+:script FHPBrailleSpeechPriorLine
+:Synopsis Move active cursor up
+:Description Clear BrailleHideCursor and move active cursor up
+:Category Braille
+
+:script FHPBraillePanLeft
+:Synopsis Shift Braille display one length left
+:Description Clear BrailleHideCursor and shift Braille display one length left
+:Category Braille
+
+:script FHPBrailleKeyBrailleSpeechMode
+:Synopsis Display is in "Braille Mode"
+:Description Display is in "Braille Mode". Used for FHP Braillex EL displays
+:Category Braille
+
+:script FHPToggleCursorMode
+:Synopsis Toggle between PC and JAWS cursor
+:Description Clear BrailleHideCursor and toggle between PC and JAWS cursor.
+:Category Braille
+
+:script FHPBrailleSpeechNextLine
+:Synopsis Move active cursor down
+:Description Clear BrailleHideCursor and move active cursor down
+:Category Braille
+
+:script FHPBraille2DToggleReadingMode
+:Synopsis toggles between "Navigation Mode" and "Reading Mode"
+:Description Toggles between "Naviagtion Mode" and "Reading Mode". Sets global flag "g_b2DReadingMode". Used for older FHP Braillex displays
+:Category Braille
+
+:script FHPBrailleNextLine
+:Synopsis Move Braille display one line down
+:Description Clear BrailleHideCursor and move Braille display one line down
+:Category Braille
+
+:script FHPcursorleft
+:Synopsis Move active cursor left
+:Description Clear BrailleHideCursor and move active cursor left
+:Category Braille
+
+:script FHPBraille2DTogglePCMode
+:Synopsis toggles between "Navigation Mode" and "PC Emulation Mode"
+:Description Toggles between "Naviagtion Mode" and "PC Emualtion Mode" Sets global flag "g_b2DPCMode" Used for older FHP Braillex displays
+:Category Braille
+
+:script FHPBrailleShowHighlightMarking
+:Synopsis Turn Braille attribute HIGHLIGHT on
+:Description Clear BrailleHideCursor and turn Braille attribute HIGHLIGHT on.
+:Category Braille
+:script FHPBrailleShowUnderlineMarking
+:Synopsis Turn Braille attribute UNDERLINE on
+:Description Clear BrailleHideCursor and turn Braille attribute UNDERLINE on.
+:Category Braille
+
+:script FHPBrailleToggleCursorShape
+:Synopsis Hide cursor on Braille display
+:Category Braille
+
+:script FHPBrailleTurnMarkingOff
+:Synopsis Turn all Braille attributes off
+:Description Clear BrailleHideCursor and turn all Braille attributes off.
+:Category Braille
+
+:script FHPBrailleTab
+:Synopsis Run script BrailleTab
+:Description Clear BrailleHideCursor and run script BrailleTab
+:Category Braille
+
+:script FHPBrailleToggleCharactersAndAttributes
+:Synopsis Toggle between Character and Attribute mode
+:Description Clear BrailleHideCursor and toggle between Character and Attribute mode.
+:Category Braille
+
+:script FHPcursorup
+:Synopsis Move active cursor up
+:Description Clear BrailleHideCursor and move active cursor up
+:Category Braille
+
+:script FHPBrailleSelectText
+:Synopsis Select text with routing keys
+:Description Clear BrailleHideCursor and select text with routing keys.
+:Category Braille
+
+:script FHPBrailleShowItalicMarking
+:Synopsis Turn Braille attribute ITALIC on
+:Description Clear BrailleHideCursor and turn Braille attribute ITALIC on.
+:Category Braille
+
+:script FHPRouting
+:Synopsis Braille routing
+:Description Clear BrailleHideCursor and route Braille
+:Category Braille
+
+:script FHPBrailleSpeechPanRight
+:Synopsis Shift Braille display right
+:Description Clear BrailleHideCursor and shift Braille display right if possible. Otherwise move active cursor to next line.
+:Category Braille
+
+:script FHPBraillePanRight
+:Synopsis Shift Braille display one length right
+:Description Clear BrailleHideCursor and shift Braille display one length right
+:Category Braille
+
+:script FHPBrailleToggleAttributeDown
+:Synopsis Turn previous Braille attribute BOLD on
+:Description Clear BrailleHideCursor and turn previous Braille attribute on.
+:Category Braille
+
+:script FHPBrailleShowBoldMarking
+:Synopsis Turn Braille attribute BOLD on
+:Description Clear BrailleHideCursor and turn Braille attribute BOLD on.
+:Category Braille
+
+:script FHPBrailleActiveCursorTracking
+:Synopsis Move Braille display to active cursor
+:Description Clear BrailleHideCursor and move Braille display to active cursor.
+:Category Braille
+
+:script FHPBrailleShowWindowsTop
+:Synopsis Move Braille display to first line and speak it
+:Category Braille
+
+:script FHPBrailleToggleAttributeUp
+:Synopsis Turn next Braille attribute on
+:Description Clear BrailleHideCursor and turn next Braille attribute on.
+:Category Braille
+

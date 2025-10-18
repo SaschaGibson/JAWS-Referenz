@@ -1,0 +1,19 @@
+:script MoveToTree
+:Synopsis Bewegt den Fokus auf die Strukturauswahl der virtuellen Maschinen
+
+:script MoveToFind
+:Synopsis Bewegt den Fokus auf des Sucheingabefeld
+
+:script Tab
+:Synopsis Tab
+:Description Tab
+
+:function GetNodeInfo
+:Param string/nodeText/ByRef No Description
+:Param string/nodeStatus/ByRef No Description
+:Param string/nodeBrailleStatus/ByRef No Description
+
+:script ApplicationsKey
+
+:script GrabInput
+

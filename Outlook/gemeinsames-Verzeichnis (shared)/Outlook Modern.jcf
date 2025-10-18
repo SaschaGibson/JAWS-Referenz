@@ -1,0 +1,15 @@
+[NonJCFOptions]
+MessageSayAllVerbosity=1
+[Braille]
+;highlight plus underline
+BrailleShowMarking=72
+
+[Options]
+SpeakObjectDescriptionAtStartOfRun=0
+MSAAMode=3
+
+[VirtualCursorVerbosity]
+ElementDescription=0|0|0
+
+[OSM]
+UseVirtualPCCursor=3

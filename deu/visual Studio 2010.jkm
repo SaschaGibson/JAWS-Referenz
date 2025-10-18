@@ -1,0 +1,6 @@
+[common keys]
+Ctrl+l=DeleteCurrentLine
+Ctrl+Delete=DeleteCurrentWord
+Ctrl+ExtendedDelete=DeleteCurrentWord
+Ctrl+Backspace=DeletePriorWord
+Ctrl+Shift+/=SayVariableValue

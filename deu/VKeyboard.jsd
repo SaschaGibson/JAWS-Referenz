@@ -1,0 +1,4 @@
+:script VKSelect
+:Synopsis Wählt ein erweitertes ANSI Zeichen aus einer Liste.
+:Description Wählt ein erweitertes ANSI Zeichen aus einer Liste und fügt es an der aktuellen Cursorposition ein.
+

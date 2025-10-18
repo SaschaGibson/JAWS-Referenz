@@ -1,0 +1,155 @@
+:script HTToggleStatusCellsOnOff
+:Synopsis Blendet den Statusbereich auf der Braillezeile ein oder aus.
+
+:script HTToggleBrailleInputOnOff
+:Synopsis Schaltet die Brailleeingabe ein oder aus.
+
+:script HTTurnOnMenuMode
+:Synopsis Wechselt in den Men modus der Braillezeile
+
+:script HTBrailleStarPanLeft
+:Synopsis Zeigt den Text links von der aktuellen Position der Braillezeile an und zieht den aktiven Cursor mit.
+
+:script HTBrailleStarPanRight
+:Synopsis Zeigt den Text rechts von der aktuellen Position der Braillezeile an und zieht den aktiven Cursor mit.
+
+:script HTNumPad0
+:Synopsis Gleichbedeutend mit dem Drücken der Taste 0 auf der Tastatur.
+
+:script HTNumPad1
+:Synopsis Gleichbedeutend mit dem Drücken der Taste 1 auf der Tastatur.
+
+:script HTNumPad2
+:Synopsis Gleichbedeutend mit dem Drücken der Taste 2 auf der Tastatur.
+
+:script HTNumPad3
+:Synopsis Gleichbedeutend mit dem Drücken der Taste 3 auf der Tastatur.
+
+:script HTNumPad4
+:Synopsis Gleichbedeutend mit dem Drücken der Taste 4 auf der Tastatur.
+
+:script HTNumPad5
+:Synopsis Gleichbedeutend mit dem Drücken der Taste 5 auf der Tastatur.
+
+:script HTNumPad6
+:Synopsis Gleichbedeutend mit dem Drücken der Taste 6 auf der Tastatur.
+
+:script HTNumPad7
+:Synopsis Gleichbedeutend mit dem Drücken der Taste 7 auf der Tastatur.
+
+:script HTNumPad8
+:Synopsis Gleichbedeutend mit dem Drücken der Taste 8 auf der Tastatur.
+
+:script HTNumPad9
+:Synopsis Gleichbedeutend mit dem Drücken der Taste 9 auf der Tastatur.
+
+:script HTControlTab
+:Synopsis Gleichbedeutend mit dem Drücken von Strg + Tab auf der Tastatur
+
+:script HTControlShiftTab
+:Synopsis Gleichbedeutend mit dem Drücken von Strg + Umschalt + Tab auf der Tastatur
+
+:script HTStartConfigDialog
+:Synopsis Startet den Konfigurationsdialog des Handy Tech Braillezeilentreibers
+
+:script HTToggleAtc
+:Synopsis Schaltet ATC ein oder aus
+
+:script HTToggleAtcProtocol
+:Synopsis Aktiviert oder deaktiviert das ATC Leseprotokoll
+
+:script HTToggleLockedKeys
+:Synopsis Sperrt oder entsperrt festgelegte Brailletasten der Braillezeile
+
+:script onhtlayoutchangeevent
+
+:script HTGetCurrentCursorShape
+
+:script onAtcActionEvent
+:Param int/action No Description
+:Param int/readingPos No Description
+:Param int/param1 No Description
+:Param int/param2 No Description
+
+:function GetCharacterAtCell
+:Returns string
+:Param int/readingPos No Description
+
+:function GetWordAtCell
+:Returns string
+:Param int/readingPos No Description
+
+:function GetTextBetweenCells
+:Returns string
+:Param int/beginCell No Description
+:Param int/endCell No Description
+
+:function getFontAttributeStringAtCell
+:Returns string
+:Param int/cell No Description
+:Param int/onlyChanges No Description
+
+:function HTMoveVirtualTo
+:Param int/x No Description
+:Param int/y No Description
+
+:script togglestatuscellsonoff
+:Synopsis Blendet den Statusbereich auf der Braillezeile ein oder aus.
+
+:script togglebrailleinputonoff
+:Synopsis Schaltet die Brailleeingabe ein oder aus.
+
+:script turnOnMenuMode
+:Synopsis Wechselt in den Men modus der Braillezeile
+
+:script braillestarpanleft
+:Synopsis Zeigt den Text links von der aktuellen Position der Braillezeile an und zieht den aktiven Cursor mit.
+
+:script braillestarpanright
+:Synopsis Zeigt den Text rechts von der aktuellen Position der Braillezeile an und zieht den aktiven Cursor mit.
+
+:script HT_SetBrailleText
+
+:function HTSayAttributeChanged
+:Param int/cell No Description
+:Param int/param2 No Description
+
+:function HTReadAloud
+:Param int/cell No Description
+:Param int/param2 No Description
+
+:function GetFontSize
+:Returns string No Return Description
+
+:function HTSayWord
+:Param int/cell No Description
+:Param int/isScreenText No Description
+:Param int/param1 No Description
+:Param int/param2 No Description
+
+:script test
+
+:function HTRouteCursor
+:Param int/cell No Description
+:Param int/param2 No Description
+
+:function HTSayAttribute
+:Param int/cell No Description
+:Param int/param2 No Description
+
+:function HTPerformActionAtCurrentPos
+
+:function HTSayTextBetween
+:Param int/unused No Description
+:Param int/isScreenText No Description
+:Param int/startCell No Description
+:Param int/endCell No Description
+
+:function HTPerformActionAtCellPos
+
+:function HTSayChar
+:Param int/cell No Description
+:Param int/param2 No Description
+
+:function SayAttributeNames
+

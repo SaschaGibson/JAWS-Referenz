@@ -1,0 +1,68 @@
+; Same assignments as in Chrome.jkm except:
+; No JAWS Inspect assignments.
+; Ctrl+f isn't assigned to VirtualFind because that combination is
+;used by Slack for Search.
+; Control+Shift+k is used by Slack for Browse DMs. We remove the assignment of
+;that key combination made in default.jkm.
+[Common Keys]
+Control+Shift+k=
+Insert+F7=SelectALink
+JAWSKey+F7=SelectALink
+Insert+Control+SemiColon=SelectARegion
+JAWSKey+Control+SemiColon=SelectARegion
+Insert+F6=SelectAHeading
+JAWSKey+F6=SelectAHeading
+Insert+F5=SelectAFormField
+JAWSKey+F5=SelectAFormField
+Alt+LeftArrow=GoBack
+Alt+ExtendedLeftArrow=GoBack
+Alt+RightArrow=GoForward
+Alt+ExtendedRightArrow=GoForward
+Alt+JAWSKey+R=SayDescribedByText
+Alt+JAWSKey+M=MoveToControlledTarget
+JAWSKey+Control+Slash=SelectAnOnClickElement
+Insert+Control+Slash=SelectAnOnClickElement
+JAWSKey+Control+SemiColon=SelectAnOnMouseOverElement
+Insert+Control+SemiColon=SelectAnOnMouseOverElement
+Control+Windows+Equals=SelectaDropTarget
+Control+Windows+Dash=FilterLiveRegionAnnouncements
+JAWSKey+Windows+SemiColon=SelectAnOnMouseOverElement
+Insert+Windows+SemiColon=SelectAnOnMouseOverElement
+Control+Windows+J=JumpToTableCell
+Control+Shift+Windows+J=JumpReturnFromTableCell
+Control+JAWSKey+a=SelectARadioButtonFormField
+Control+Insert+a=SelectARadioButtonFormField
+Control+JAWSKey+b=SelectAButtonFormField
+Control+Insert+b=SelectAButtonFormField
+Control+JAWSKey+c=SelectAComboFormField
+Control+Insert+c=SelectAComboFormField
+Control+JAWSKey+e=SelectAnEditFormField
+Control+Insert+e=SelectAnEditFormField
+Control+JAWSKey+g=SelectAGraphic
+Control+Insert+g=SelectAGraphic
+Control+JAWSKey+l=SelectAList
+Control+Insert+l=SelectAList
+Control+JAWSKey+o=SelectAnObject
+Control+Insert+o=SelectAnObject
+Control+JAWSKey+p=SelectAParagraph
+Control+Insert+p=SelectAParagraph
+Control+JAWSKey+q=SelectABlockQuote
+Control+Insert+q=SelectABlockQuote
+Control+JAWSKey+r=SelectaRegion
+Control+Insert+r=SelectaRegion
+Control+JAWSKey+t=SelectATable
+Control+Insert+t=SelectATable
+Control+JAWSKey+x=SelectACheckboxFormField
+Control+Insert+x=SelectACheckboxFormField
+Control+JAWSKey+y=SelectASpan
+Control+Insert+y=SelectASpan
+Control+JAWSKey+z=SelectADivision
+Control+Insert+z=SelectADivision
+Control+Delete=DeleteWord
+
+[DESKTOP Keys]
+JAWSKey+a=AddressBar
+
+[Laptop Keys]
+JAWSKey+A=SayAll
+Insert+A=AddressBar

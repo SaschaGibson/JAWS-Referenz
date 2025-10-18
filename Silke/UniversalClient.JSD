@@ -1,0 +1,69 @@
+:script GotoAgentButton
+:SearchRank 1
+
+:function GetAgentState
+:Returns string No Return Description
+:SearchRank 1
+
+:script AgentOn
+:SearchRank 1
+
+:script HandleSubPanel
+:SearchRank 1
+
+:script GotoCallButton
+:SearchRank 1
+
+:script SelectSubEntrie
+:SearchRank 1
+
+:function MoveToNextUIAElement
+:Returns object No Return Description
+:SearchRank 1
+:Param object/uia No Description
+:Param object/element No Description
+:Param object/tree No Description
+
+:script HandleMyListe
+:SearchRank 1
+:Param string/name No Description
+:Param string/elements No Description
+:Param string/runafter No Description
+
+:function BrailleBuildLine
+:SearchRank 1
+
+:script SayNextLine
+:SearchRank 1
+
+:script Enter
+:SearchRank 1
+
+:script ListReasons
+:SearchRank 1
+
+:script CopyCaller
+:SearchRank 1
+
+:script CopyInfo
+:SearchRank 1
+
+:script SqayLastCallInfo
+:SearchRank 1
+
+:function GetLastCallInfo
+:Returns string No Return Description
+:SearchRank 1
+
+:script GotoStringTable
+:SearchRank 1
+
+:script MachMalPause
+:SearchRank 1
+
+:script Test
+:SearchRank 1
+
+:script AgentOff
+:SearchRank 1
+

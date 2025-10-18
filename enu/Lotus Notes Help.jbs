@@ -1,0 +1,10 @@
+; Section for treeviewitem
+[SubtypeCode56]
+components=name,type,level,state,value,position
+type=tv
+removed=
+displayname=Notes Help Line View
+AlignmentPriority=name,type,level,state,value
+
+[Information]
+Description=Default  Structured Mode view for Lotus Notes Help.

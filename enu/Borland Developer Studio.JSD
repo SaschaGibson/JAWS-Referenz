@@ -1,0 +1,83 @@
+:function GetCurrentCodeEditorFile
+:Returns string The file of the code editor that is in focus
+:Synopsis Speaks the current file name that is displayed in Code Editor.
+:Category WindowsAndObjects
+
+:function BrailleAddObjectCodeCompletion
+:Returns int true if successful.
+:Synopsis adds code completion text.
+:Category Braille
+:Param int/nType subtype code
+
+:script OpenListBox
+
+:function HandleCustomWindows
+
+:function BrailleAddObjectLine
+:Returns int TRUE if successful
+:Synopsis Adds the current code line
+:Category Braille
+:Param int/nType Window subtype code
+
+:function NewTextEvent
+
+:function SayNonHighlightedText
+
+:function AutoStartEvent
+:Synopsis startup processing.
+
+:function BrailleAddObjectCodeInsight
+:Returns int TRUE if successful
+:Synopsis Adds Code Insight stuff
+:Category Braille
+:Param int/nType subtype code
+
+:function BrailleAddObjectType
+:Returns int TRUE if successful
+:Synopsis Adds the type of component in VCL form designer
+:Category Braille
+:Param int/nType Subtype code
+
+:function SayHighLightedText
+
+:function SayLine
+:Description This says a line of text where the active cursor is located. JAWS must interpret whether text that has a similar vertical position is on the same line. When the PC cursor is active, it only reads the information that is within the active child window. When it is used with other cursors, then it reads from one edge of the application window to the other.
+:Optional
+:Param Int/iDrawHighlights Optional parameter added in JAWS 7.1 / MAGic 10.0.  Used to indicate whether or not the line should be highlighted by the MAGic engine as the text is being spoken.  The possible values are as follows:  If the parameter is not present or is equal to 0, do nothing; If the parameter is equal to 1, highlight each word as it is being spoken; If the parameter is equal to 2, highlight the entire line.  NOTES: (1) This functionality is not currently supported in all applications.  (2) The highlight rectangles will only be drawn if MAGic is running.
+:Param int/bSayingLineAfterMovement set to TRUE if calling from sayNext/Prior line to avoid speaking the prompt when arrowing over forms mode controls whose prompt is already spoeken from the prior line. This parameter is available starting with JAWS version 10 and MAGic version 12.
+
+:function BrailleAddObjectErrorInsight
+:Returns int TRUE if successful
+:Synopsis Error insight
+:Category Braille
+:Param int/nType subtype code
+
+:function BrailleAddObjectName
+:Returns int TRUE if information was added
+:Synopsis Adds the form component name
+:Category Braille
+:Param int/nType Subtype code
+
+:script ProjectOptions
+:Synopsis Opens Project Options.
+:Category Anwendung
+
+:function BrailleCallbackObjectIdentify
+:Returns int the subtype code
+:Synopsis Returns the custom control types for Delphi
+:Category Braille
+
+:function ProcessBoundaryStrike
+
+:script CloseListBox
+:Category WindowsAndObjects
+
+:script ScriptFileName
+:Category Anwendung
+
+:function ProcessSayRealWindowOnFocusChange
+
+:script PreviousDocumentWindow
+
+:script NextDocumentWindow
+

@@ -1,0 +1,19 @@
+:function AnnounceSearchResults
+:Synopsis Announces the search results from the search box
+:Description Announces search results from the search box to let the user know what actually was found
+:Category Say
+
+:script F6Key
+:Synopsis Moves focus between the settings tree view pane and the configuration display pane
+:Description This command allows you to switch between the settings tree view pane and the configuration display pane. While most settings can be changed in either location, switching to the configuration pane is necessary when you need to type in an edit or edit spin box.
+:Category Keyboard
+
+:script ActivateSearchBox
+:Synopsis Activates the search box
+:Description Activates the Search Box on pressing the Control+E keystroke as in most products with search boxes.
+:Category Windows
+
+:script ChangeToDefault
+:Synopsis Loads the default settings file
+:Description This keystroke causes settings center to load the default configuration file.
+:Category Application

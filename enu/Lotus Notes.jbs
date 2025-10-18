@@ -1,0 +1,9 @@
+[Component Aliases]
+Status=Item Status
+;  Section for treeviewitem
+[SubtypeCode56]
+type=tv
+removed=
+
+[Information]
+Description=Default  Structured Mode view for Lotus Notes.

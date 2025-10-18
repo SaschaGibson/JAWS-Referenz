@@ -1,0 +1,10 @@
+[Common Keys]
+Control+LeftArrow=Rewind
+Control+ExtendedLeftArrow=Rewind
+Control+RightArrow=FastForward
+Control+ExtendedRightArrow=FastForward
+UpArrow=IncreaseVolume
+ExtendedUpArrow=IncreaseVolume
+DownArrow=DecreaseVolume
+ExtendedDownArrow=DecreaseVolume
+JAWSKey+Shift+T=ToggleTimeAnnouncing

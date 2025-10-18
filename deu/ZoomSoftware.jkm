@@ -1,0 +1,16 @@
+[Common Keys]
+Alt+Windows+A=SayAlert
+Control+F5=ToggleChatMessages
+Control+F9=AnnounceJAWSSettingsForZoom
+Alt+Windows+S=ToggleAlerts
+Control+1=SayNotification1
+Control+2=SayNotification2
+Control+3=SayNotification3
+Control+4=SayNotification4
+Control+5=SayNotification5
+Control+6=SayNotification6
+Control+7=SayNotification7
+Control+8=SayNotification8
+Control+9=SayNotification9
+Control+0=SayNotification10
+Control+Shift+T=ZoomNotifyCurrentSpeaker

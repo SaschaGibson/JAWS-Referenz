@@ -1,0 +1,11 @@
+[Common Keys]
+Enter=Enter
+NumPadEnter=Enter
+Insert+RightArrow=NextTableItemColumn
+Insert+ExtendedRightArrow=NextTableItemColumn
+JAWSKey+RightArrow=NextTableItemColumn
+JAWSKey+ExtendedRightArrow=NextTableItemColumn
+Insert+LeftArrow=PriorTableItemColumn
+Insert+ExtendedLeftArrow=PriorTableItemColumn
+JAWSKey+LeftArrow=PriorTableItemColumn
+JAWSKey+ExtendedLeftArrow=PriorTableItemColumn

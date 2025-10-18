@@ -1,0 +1,26 @@
+msactables2007.jsd
+:Function SpeakFieldHeader
+:Description This function speaks the field header in a table.
+:Returns Void
+
+:Function SpeakCellInfo 
+:Description This function speaks the cell info when focused in a table field.
+:Returns Void
+
+:Function SpeakCellCoordinatesChanges 
+:Description This function speaks the cell coordinates when focused on a table field if they have changed.
+:Returns Void
+
+:Function BrailleAddObjectCHdr 
+:Description This function populates the Braille column field header when focused in a table field.
+:Returns Int
+
+:Function BrailleAddObjectRHdr 
+:Description This function populates the Braille row field header when focused in a table field.
+:Returns Int
+
+:Function BrailleAddObjectCoords 
+:Description This function populates the cell coordinates to be displayed in Braille for the currently focused table field.
+:Returns Int
+
+

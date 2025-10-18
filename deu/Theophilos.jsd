@@ -1,0 +1,221 @@
+:script SetEighthBookMark
+:Synopsis places the eighth bookmark at the current verse.
+:Description This script places the eighth bookmark at the current verse.
+
+:script JAWSPageDown
+
+:script NewTopicsBook
+:Synopsis Invokes the New Topics Book dialog
+:Description This script Invokes the New Topics Book dialog
+
+:script HotKeyHelp
+:Synopsis Provides Hot Key Help for Theophilos
+:Description This script provides Hot Key Help for Theophilos
+
+:function MoveToLink
+
+:script Copier
+:Synopsis Invokes the Copier dialog
+:Description This script invokes the Copier dialog. This allows the user to specify how verses are copied to the clipboard
+
+:script SetOptions
+:Synopsis Invokes the Theophilos Settings dialog
+:Description This script invokes the Theophilos Settings dialog
+
+:script enter
+
+:script SetThirdBookMark
+:Synopsis places the third bookmark at the current verse.
+:Description This script places the third bookmark at the current verse.
+
+:script SecondBookMark
+:Synopsis moves the focus to the text marked by the second bookmark
+:Description This script moves the focus to the text marked by the second bookmark.
+
+:script priorLink
+:Synopsis moves to the prior link on the current window
+:Description This script moves the JAWS cursor to the prior link in the current window.
+
+:script SetSeventhBookMark
+:Synopsis places the seventh bookmark at the current verse.
+:Description This script places the seventh bookmark at the current verse.
+
+:script eighthBookMark
+:Synopsis moves the focus to the text marked by the eighth bookmark.
+:Description This script moves the focus to the text marked by the eighth bookmark.
+
+:script FirstBookMark
+:Synopsis Moves the focus to the text marked by the first bookmark
+:Description This script moves the focus to the text marked by the first bookmark.
+
+:function sayNonHighlightedText
+
+:script SetForthBookMark
+:Synopsis places the fourth bookmark at the current verse.
+:Description This script places the fourth bookmark at the current verse.
+
+:script ActiveVerse
+:Synopsis Announces the currently selected verse
+:Description This script announces the reference for the currently selected verse
+
+:function AutoStartEvent
+:Synopsis This event function is triggered when the application is started
+
+:function KeyPressedEvent
+:Description All key presses cause this function to fire.  If the key is assigned to a script, then KeyPressedEvent is called before the script itself.  Because this function will be called quite frequently, it is recommended that you refrain from intensive tasks that will be performed each time a keystroke is pressed.  For a list of parameters received by KeyPressedEvent and their descriptions, look at the Existing Parameters List box on the Parameters page. This is overridden here because assigning control/alt pageup/down to scripts prevents the application from responding properly so we need to detect these keystrokes and give feedback to the user via this method.
+:Param int/nKey No Description
+:Param string/strKeyName No Description
+:Param int/nIsBrailleKey No Description
+:Param int/nIsScriptKey No Description
+
+:script SixthBookMark
+:Synopsis moves the focus to the text marked by the sixth bookmark.
+:Description This script moves the focus to the text marked by the sixth bookmark.
+
+:script JAWSPageUp
+
+:script PreviousWindow
+:Synopsis Sets focus on the previous window
+:Description This script sets focus on the previous window. For example: if you have several Bible versions open, or a commentary or other document open, you can move back through the open windows
+
+:script Navigator
+:Synopsis Invokes the Navigator dialog
+:Description This script invokes the Navigation dialog. This allows the user to choose a Bible passage
+
+:script sayWindowPromptAndText
+
+:function SayNextLink
+
+:function GraphicsListHelper
+
+:script Finder
+:Synopsis Invokes the Finder dialog
+:Description This script invokes the Finder dialog. This allows the user to locate a search string in the currently opened Bible version
+
+:script FindNext
+:Synopsis Finds the next occurrence of the search string previously searched for
+:Description This script finds the next occurrence of the search string previously searched for using the Search Document CTRL+H script
+
+:script NextWindow
+:Synopsis Sets focus on the next window
+:Description This script sets focus on the next window. For example: if you have several Bible versions open, or a commentary or other document open, you can move forward through the open windows
+
+:script AttachMedia
+:Synopsis Invokes the Attach Media dialog
+:Description This script invokes the Attach Media dialog. This allows the user to attach multimedia files to the current verse
+
+:script NewJumpList
+:Synopsis Invokes the New Jump List Dialog
+:Description This script invokes the new Jump List dialog. A Jump List is a list of frequently accessed verses
+
+:script SetFifthBookMark
+:Synopsis places the fifth bookmark at the current verse.
+:Description This script places the fifth bookmark at the current verse.
+
+:script ThirdBookMark
+:Synopsis moves the focus to the text marked by the third bookmark.
+:Description This script moves the focus to the text marked by the third bookmark.
+
+:script ToolbarButtonList
+:Synopsis Lists the toolbar buttons in a list and allows the user to choose and left click a button
+:Description This script lists the toolbar buttons in a list and allows the user to choose and left click a button
+
+:script screenSensitiveHelp
+:Synopsis Provides Screen Sensitive Help for Theophilos
+:Description This script provides Screen Sensitive Help for Theophilos
+
+:function sayFocusedWindow
+
+:script SetNinthBookMark
+:Synopsis places the ninth bookmark at the current verse.
+:Description This script places the ninth bookmark at the current verse.
+
+:function getTheophilosVersion
+:Returns string version info string for version
+:Synopsis returns the version number of Theophilos
+:Description This function returns the version number of Theophilos. JFW 3.7 works with v2.6 and v3.0 code name Omega.
+
+:script SearchDocument
+:Synopsis Allows the user to search a commentary or other open document for a search string
+:Description This script allows the user to search a commentary or other open document for a search string. This does not work in the Bible text but only in other documents accessed from the Dictionaries, Writings or Commentaries menu. Use F3 to locate the next occurrence of a string
+
+:script SeventhBookMark
+:Synopsis moves the focus to the text marked by the seventh bookmark.
+:Description This script moves the focus to the text marked by the seventh bookmark.
+
+:script ForthBookMark
+:Synopsis moves the focus to the text marked by the fourth bookmark.
+:Description This script moves the focus to the text marked by the fourth bookmark.
+
+:function isHTMLView
+:Returns int true or false
+:Synopsis determines if the current view is an HTML view
+:Description This function determines if the current view is an HTML view only.
+
+:function SayPriorLink
+
+:script listLinks
+:Synopsis lists the visible links and left clicks the selected link
+:Description This script lists the visible links in either a tsRichEdit control or tHTMLViewer control and left clicks the selected link.
+
+:function MouseMovedEvent
+
+:script SetZeroBookMark
+:Synopsis places the tenth bookmark at the current verse.
+:Description This script places the tenth bookmark at the current verse.
+
+:script ZeroBookMark
+:Synopsis moves the focus to the text marked by the tenth bookmark.
+:Description This script moves the focus to the text marked by the tenth bookmark.
+
+:function sayCurrentLink
+:Synopsis says the current link at the active cursor
+:Description This function says the current link at the cursor.
+
+:script NewNoteSet
+:Synopsis Invokes the New Notes Set dialog
+:Description This script invokes the New Notes Set dialog
+
+:function FocusPointMovedEvent
+
+:script SetFirstBookMark
+:Synopsis Places the first bookmark at the current verse
+:Description This script places the first bookmark at the current verse.
+
+:script FifthBookMark
+:Synopsis moves the focus to the text marked by the fifth bookmark.
+:Description This script moves the focus to the text marked by the fifth bookmark.
+
+:script nextLink
+:Synopsis moves to the next visible link on the current screen
+:Description This script moves the JAWS cursor to the next visible link on the current screen.
+
+:script ScriptFileName
+
+:script NinthBookMark
+:Synopsis moves the focus to the text marked by the ninth bookmark.
+:Description This script moves the focus to the text marked by the ninth bookmark.
+
+:function isTextOrHTMLWindow
+:Returns int true or false
+:Synopsis determines if the current window is a text or HTML window which may contain links
+:Description This function determines if the current window is a text or HTML window which may contain hyperlinks.
+
+:script WindowsHelp
+:Synopsis Provides a list of commonly used Theophilos shortcut keys
+:Description This script provides a list of commonly used Theophilos shortcut keys
+
+:script SetSixthBookMark
+:Synopsis places the sixth bookmark at the current verse.
+:Description This script places the sixth bookmark at the current verse.
+
+:script SetSecondBookMark
+:Synopsis places the second bookmark at the current verse
+:Description This script places the second bookmark at the current verse.
+
+
+:Synopsis Takes two strings and adds the second string to the first
+:Description Adds the second string parameter to the first parameter and returns the new string 
+:Returns string
+:Param1 String/Base The base string that is to be added to
+:Param2 string/New The string that is to be added to the base

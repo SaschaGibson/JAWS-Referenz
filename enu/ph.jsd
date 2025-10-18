@@ -1,0 +1,25 @@
+:function dlgCustomLabel
+:synopsis prompt for custom label
+
+:function ShouldUseCustomLabler
+:param handle
+:returns int
+
+:function GetCustomLabel
+:returns string
+
+:Function DeleteCustomLabel
+:Description This function deletes the current custom label item.
+
+:Function DeleteAllCustomLabels 
+:Description This function deletes all custom label items from the list.\
+
+:function ShouldShowCustomSummary
+:param handle
+:returns int
+
+:Function CustomSummary
+:Description This function displays in the virtual viewer all custom labels and their related links and text information. The function currently only works for Excel custom summaries.
+:Param string/sApp The application where the summary view may be available.
+:returns Void
+

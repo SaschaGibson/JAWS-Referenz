@@ -1,0 +1,83 @@
+:function IsImMessageList
+:Returns int TRUE if the object is an item in message list, FALSE otherwise
+:Synopsis Checks if focus is located in a message list
+:Description Checks if the focused object is really an item in a message list
+:Category Script
+
+:function IsInReadOnlyMessageBody
+:Returns int TRUE if focus is in readonly message body, FALSE otherwise.
+:Synopsis Checks if focus is in readonly message body.
+:Description Checks if current focus is located in readonly message body.
+:Category WindowsAndObjects
+
+:function lvGetAllColumnHeaders
+:Returns stringArray A string array containing the headers
+:Synopsis Gets the string array representing all the column headers in the list
+:Description Gets the string array each member of which represents one of the headers of a list of messages
+:Category String
+:Param handle/hWnd Window handle to get all headers of
+
+:function lvGetLineText
+:Returns stringArray a string array representing one line of a listview
+:Synopsis Gets a string array representing one line of a list view
+:Description Gets a string array each member of which represents one item from the current line in a listview
+:Category String
+:Param handle/hWnd Handle of a window to get a line from
+:Param int/nCurrent a line to be taken
+
+:function CreateFolderLabel
+:Returns string The label to be used for saveing the information
+:Synopsis Creates a label for the folder
+:Description Creates a label for the folder that will be later used in customize listview functionality
+:Category Script
+
+:function StringFilterOutMessageInformation
+:Returns string Resulting string ready to announcement
+:Synopsis Filters out message information according to settings
+:Description Filters out the message information provided in a message list according to the settings taken from customize message list dialogue
+:Category String
+:Param int/iBrailleFlag The flag informing if the information is need for Braille output
+
+:function RetrieveMSAAObjectFromPath
+:Returns object MSAA object to operate with
+:Synopsis Retrieves the MSAA object using the text string representing the path to follow
+:Description Retrieves the exact MSAA object pointed by path, represented by child IDs, divided by commas into individual components
+:Category ObjectsAndMSAA
+:Param handle/hWnd Window handle to retrieve object from
+:Param string/sPath Path to follow retrieving the exact object
+
+:function RetrieveMSAAObjectsRolesFromPath
+:Returns string representing the window it is applied to using object roles
+:Synopsis Retrieves the MSAA object roles using the text string representing the path to follow
+:Description Retrieves the exact MSAA object roles pointed by path, devided by commas to have the window identified, represented by child IDs, divided by commas into individual components
+:Category ObjectsAndMSAA
+:Param handle/hWnd Window handle to retrieve object from
+:Param string/sPath Path to follow retrieving the exact object
+
+:function ProcessEditableMessageFields
+:Returns int TRUE if the message is editable and processed correctly, FALSE otherwise
+:Synopsis Processes the fields for the editable message
+:Description Processes the field that is provided as a parameter to this function if the message is a new or reply message
+:Category Say
+:Param handle/hWnd Handle to a window, containing the message
+:Param int/iField Field to announce
+
+:function ProcessReadOnlyMessageFields
+:Returns int TRUE if the message is read-only and if the field is processed
+:Synopsis Processes the field in the read-only message
+:Description Processes the field that is provided as a parameter if the message is read-only one
+:Category Say
+:Param handle/hWnd Handle to a window, containing the message
+:Param int/iField Field to announce
+:Param int/iWindowed TRUE if we need to get the information for a windowed representation, FALSE otherwise
+
+:script HandleMessageFields
+:Synopsis Führt alle Handlungen in den Nachrichtenfeldern durch
+:Description Führt alle Handlungen in den Nachrichtenfeldern einer geöffneten Nachricht durch, wie lesen der Felder 'Von', 'An', 'CC', 'Betreff' und fokussiert diese
+:Category WindowsAndObjects
+:Param int/iField The field number to operate on
+
+:script Test
+
+:script Test
+

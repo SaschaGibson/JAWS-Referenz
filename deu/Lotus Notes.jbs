@@ -1,0 +1,9 @@
+﻿[Component Aliases]
+Status=Item Status
+; Section for treeviewitem
+[SubtypeCode56]
+type=la
+removed=
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Lotus Notes.

@@ -1,0 +1,146 @@
+:script SelectALink
+:Synopsis Selects current link
+:Description Selects the link that the focus currently points to.
+
+:script ReadDownColumn
+:DisplayName Read Down Column
+:Synopsis Read next line in column
+:Description Reads the next line in the current column.
+
+:script HotKeyHelp
+
+:function ieFocusToFirstField
+:Synopsis Moves to first edit control
+:Description Moves to first edit control in the current document
+
+:script SaySelectedLink
+:DisplayName Say Selected Link
+:Synopsis Says selected link
+:Description Says the currently selected link
+
+:function GetFrameInHierarchy
+
+:function ClickTab
+:param1 handle/WinHandle The handle of the window containing the tab controls
+:param2 string/Tabthe The name of the tab to be clicked
+
+:function IsLinksList
+:Param1 handle/hWnd The handle of the window to check
+:function MoveToLink
+:Param int/iDirection The direction either forwards or backwards. 0 = back, 1 = forward
+:function GetIEVersion
+:Returns int The version of IE on the system recorded in WindowsSystem directory
+
+:script SelectTab
+:DisplayName Select Tab
+:Synopsis Moves to tab control
+:Description Moves focus to tab control
+
+:script FocusToFirstField
+:Synopsis Moves to first edit control
+:Description Moves to first edit control in current document.
+
+:script ReadNextScreen
+:DisplayName Read Next Screen
+:Synopsis Reads the next screen in document.
+:Description Reads the next screen that may not be currently visible on the screen.
+
+:script ToolBar
+:DisplayName Tool Bar
+:Synopsis Makes list of toolbar items
+:Description Makes a list of toolbar items.  Use the up and down arrow to move between items and then use the Enter key to select an item.
+
+:function SayNonHighlightedText
+
+:script ReadColumnLeft
+:DisplayName Read Column Left
+:Synopsis Reads line in column to the left
+:Description Moves to and reads the line in the column just to the left of the current position.  Will read the line in this column that corresponds to the line in current column.
+
+:script ReadUpColumn
+:DisplayName Read Up Column
+:Synopsis Reads prior line in column
+:Description Reads the prior line in the current column of text
+
+:script ReadPriorScreen
+:DisplayName Read Prior Screen
+:Synopsis Reads prior screen
+:Description Reads the prior screen for the currently visible document
+
+:function AutoStartEvent
+
+:function SpeakDocument
+
+:function GetTabCountAndInfo
+:Returns int the number of tabs found
+:Synopsis Retrieves the name and number of tab controls available
+:Description The first two parameters, the handle and int relate to the window in which the tabs are found.  The third parameter, type string, is taken by reference and receives the value of the tab controls separated by the LIST_ITEM_SEPARATOR value
+:Param handle/hWnd the handle of the window in which the tabs are found
+:Param int/iControl the control iD of the window in which the tabs were found
+:Param string/strBuff/ByRef the null string variable to receive the names of the tab controls separated by LIST_ITEM_SEPARATOR
+
+:function GetToolbar
+
+:function GetNavigationTreeView
+
+:function NewSelectLink
+:Synopsis Presents the new Links List view
+:Description When Virtual PC cursor is on, call this function. Otherwise, your script will report inaccurately
+
+:script ReadCurrentScreen
+:DisplayName Read Current Screen
+:Synopsis Reads the current screen
+:Description Reads the currently visible screen.
+
+:function GetTabControl
+
+:function SayFocusedWindow
+
+:function IsTabList
+:Param1 handle/hWnd The handle of the window to check
+
+:function IsToolbarList
+:Param1 handle/hWnd The handle of the window to check
+
+:script ScreenSensitiveHelp
+
+:function FocusChangedEvent
+
+:script MoveToPriorLink
+:DisplayName Move To Prior Link
+:Synopsis Moves to prior link
+:Description Moves to prior link in html
+
+:function AddFramesInWindow
+
+:function ClickToolBarButton
+:param1 handle/WinHandle The handle of the tool bar
+:param2 string/ButtonLabel the label assigned to the button to be clicked
+
+:script ScriptFileName
+
+:script PreviousDocumentWindow
+
+:script ReadColumnRight
+:DisplayName Read Column Right
+:Synopsis Reads column to the right
+:Description Moves to and reads the line in the column to the right of the current column.  Will read the line in the column that corresponds to the current line in the current column
+
+:script MoveToNextLink
+:DisplayName Move To Next Link
+:Synopsis Moves to next link in html
+:Description Moves to the next link in html.
+
+:script NextDocumentWindow
+
+:Function GetTabLabels
+:Returns string The labels for the tab controls delimited for a JAWS list box.
+:Description Retrieves all the labels in a delimited string for a JAWS list box.
+:param handle/hTabControl The window which contains the tab controls.
+
+:Function AddToString
+:Synopsis Takes two strings and adds the second string to the first
+:Description Adds the second string parameter to the first parameter and returns the new string
+:Returns string
+:Param1 String/Base The base string that is to be added to
+:Param2 string/New The string that is to be added to the base

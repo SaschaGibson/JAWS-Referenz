@@ -1,0 +1,13 @@
+:function SayNonHighlightedText
+:Param handle/hwnd The handle of the window were the text was written
+:Param string/Buffer The text that was written in the window specified by hwnd.
+
+:function SayFocusedWindow
+
+:function ProcessBoundaryStrike
+:Category Cursor
+:Param handle/hWnd No Description
+:Param int/edge No Description
+
+:script ScriptFileName
+

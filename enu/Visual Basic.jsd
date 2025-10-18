@@ -1,0 +1,4 @@
+:script ScriptFileName
+
+:function SayFocusedWindow
+

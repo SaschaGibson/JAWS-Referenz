@@ -1,0 +1,315 @@
+:function AddCustomNodes
+:Synopsis Used to add additional items to the main group in OptionsTreeCore.:
+:Description This function can create a node for your custom items either with a name you specify or by using your coniguration name, such as MyApp Options, where MyApp is the name of your configuration.
+This function adds a node to each segment in the list you pass, which does not already contain a node path.  The node will either be the node option specified in the optional parametor, or "MyApp Options", where MyApp is the name of your configuration.
+:Param string/byRef/sCustomItems The list of list item segments, delivered in the dlgSelect*ToRun format
+:Optional
+:Param string/strNewNode This optional Parameter is where you enter the node path to provide each list item.  Leave it blank to allow the function to provide the node based on your configuration's name.
+
+:function AlphaNumCombinations
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function CapsIndicate
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function CapsIndicateDuringSayAll
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function DocumentPresentationSet
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function FlashMoviesRecognize
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function GraphicsShow
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function IndentationIndicate
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function LanguageDetectChange
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function NavigationQuickKeysSet
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function PageRefresh
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function AnnounceLiveRegionUpdates
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function ProgressBarSetAnnouncement
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function PunctuationSetLevel
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function TypingEchoSet
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function SynthesizerMute
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function TopAndBottomEdgeIndicate
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function SayAllReadsBy
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function ScreenEchoSet
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function CustomLabelsSet
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function SmartWordReadingSet
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function SpellModeSet
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorAbbreviationsExpand
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorAccessKeysShow
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorAcronymsExpand
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorAttributesIndicate
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorBlockQuotesIdentifyStartAndEnd
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorButtonsShowUsing
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorCustomPageSummary
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorFormFieldsIdentifyPromptUsing
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorFormsModeAutoOff
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorFramesShowStartAndEnd
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorGraphicalLinksSet
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorGraphicsSetRecognition
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorGraphicsShow
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorHeadingsAnnounce
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorImageMapLinksShow
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorInlineFramesShow
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorLayoutTables
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorLinksIdentifySamePage
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorLinksIdentifyType
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorListsIdentifyStartAndEnd
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorRepeatedTextSkip
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorScreenTrack
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorTablesShowStartAndEnd
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorTableTitlesAnnounce
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorTextLinksShow
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function vCursorUntaggedGraphicalLinkShow
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:function VerbositySetLevel
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Returns string The human-readable string name of the new setting.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+
+:Function TypingEchoSet
+:Description Callback function for tge dlgSelectTreeFunctionToRun function.  The int parameter is set to TRUE when the tree is refreshed, FALSE if the corresponding option was executed.
+:Param int/iRetCurVal The value set by the internal dlgSelectTreeFunctionToRun function.  0 = change setting, 1 = raetain current setting.
+:Returns string The human-readable string name of the new setting.
+
+:Function UnknownItemHlp
+:Synopsis Help callback function for those tree items without help callbacks
+:Description Do not call this function; it is used by the tree view in the JAWS dialogs, specifically by components of dlgSelectTreeFunctionToRun.
+:Optional
+:Param int/iRetCurVal May be used internally if option is executed.
+:returns string The help text.
+
+:function UnknownHlp
+:returns string The text for the help windows of this node branch.
+
+:Function NodeHlp
+:Description Calls the appropriate Node hlp callack function, based upon the string node parameter.  This is where dlgSelectTreeFuntionToRun gets the help strings.  In so doing, localizers of Freedom Scientific products can translate the text of the node name into any language, and still the correct hlp callback function is called.  In your own scripts, overwrite this function for your own nodes based upon the parameter, and write your corresponding hlp Callback function.  See UserOptions.jss for definition of function and structure.
+:Returns string The text for the help windows of this node branch.
+
+:Function TreeCoreGetDefaultOptions
+:Synopsis Default options for AdustJawsOptions dialog box.
+:Description This function returns the string list of all the default options with node paths for the AdjustOptions dialog.
+:Returns String the list of options.
+
+:Function TreeCoreGetDefaultVCursorOptions
+:Synopsis This function returns the list of the default options for thh Virtual Cursor
+:Description This function returns the list of options for the Virtual Cursor, formerly html options.
+:Returns String the list of options.
+
+:Function TreeCoreGetDefaultBrailleOptions
+:Synopsis Returns the list of the default Braille Options.
+:Description returns all the default Braille options with their complete node paths.  These arethe options for your Braille display.
+:optional
+:param int True if the root node is to be discarded when building the branch to display, false otherwise. Default is false.
+:Returns String the list of options.
+
+:Function TreeCoreGetDefaultBrailleMarkingList
+:Synopsis Returns the Braille Marking options for the JAWS tree view.
+:Description Returns the list of options for marking with dots 7 and 8 on the Braille display.  This string is fopmatted for the JAWs tree view.
+:Returns String the list of options.
+
+:Function OptionsTreeCore
+:SynopSis Creates formatted string and presents the "Adjust JAWS Options" dialog box.
+:Description This function is equivalent to VerbosityCore, except that it formats the string for and presents the "Adjust JAWS Options" (Insert+v) dialog box.
+:Param string/sCustomItems List of items, wherein the list is segmented using the vertical bar (|) symbol.  Each segment is divided with the colon (:) symbol, where segment 1 is the callback function name and segment 2 is the display text, which may or may not contain a node path.  You must have a callback function and a corresponding hlp callback function with the same name as segment 1 of each array slice.  See UserOptions.jss and accompanying files for string and function format.
+:Optional
+:Param int/iRetNodeSettings Enter TRue for this optional parameter, if you do not want this function to update item strings which do not have node paths. If you ignore or leave this parameter FALSe, your items will be formatted with the node you specify in the strNewNode parameter.  Ignoring these parameters is the fastest way to get your items in in their own group.
+:Param string/strNewNode Enter the explicit path in which to place all items in your list which do not have nodes.
+
+:Function ConvertListToNodeList
+:Synopsis Prepends alist of options with the same node path.
+:Description When you need to add a whole group of options in the same branch of the tree view, use this function to give each option the same node path.  Pass the group in the standard list format using the vertical bar (|) symbol as the primary array delimitor, and the colon (:) symbol as the divider between the callback function and the display text.
+:Param string/ByRef/strList The list of list item segments, delivered in the dlgSelect*ToRun format
+:Param string/sNode The node path explicit to the list you specified in the first parameter.
+
+:Function PrependItemWithNode
+:Synopsis Adds node or tree branch path to traditional listitem.
+:Description Prepares list item string segment to be used in an array passed to the dlgSelectTreeFunctionToRun function.
+:Param string/strItem This is the string segment which contains the function callback, a colon, and the list item display text.
+:Param string/strNode This is the branch, or path of branches.  Note that it should not end with the node path separator.  Examples of nodes would be "General Options" or "Reading Options.Sayall Options" (note noperiod at end of example; this is added by the function.)
+:Returns string the modified string segment with the path string.
+
+:function OptionsTreeCorePreProcess
+:description Used to perform any tasks necessary before constructing the Options tree and displaying it.
+
+:function OptionsTreeCorePostProcess
+:description Used to perform any tasks necessary after the Options tree has been dismissed.

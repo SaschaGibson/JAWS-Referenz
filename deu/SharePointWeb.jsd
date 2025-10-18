@@ -1,0 +1,9 @@
+:Script ListWebAppToolbarControls
+:Synopsis Listet Elemente der Symbolleiste der SharePoint Webanwendung auf.
+:Description Wählen Sie ein Element aus der Liste der SharePoint Symbolleistenelemente und drücken Sie zum Aktivieren Eingabe.
+:SearchRank 1
+
+:script SetFocusToDocument
+:Synopsis Setzt den Fokus auf das Dokument
+:Description Setzt den Fokus auf das Dokumentsteuerelement innerhalb der SharePoint Webanwendung.
+:SearchRank 1

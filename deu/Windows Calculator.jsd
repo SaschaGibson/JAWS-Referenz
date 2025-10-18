@@ -1,0 +1,145 @@
+:function InitWin8Calculator
+:description Initializes the Windows Calculator scripts.
+:function FindCalculatorObjectWithCondition
+:description Performs a UIA FindFirst for the element matching the condition object.
+:param object The UIA condition object to use for the find.
+:returns object If found, the element searched for; null otherwise.
+
+:function GetCalculatorResultsElement
+:description Returns the Win8Calculator results element if it could be found.
+:returns object If found, the UIA element for the calculator results field.
+
+:function GetCalculatorModeHeaderElement
+:description Searches for and returns the element which displays the current calculator mode.
+:returns object The element which displays the current calculator mode.
+
+:function ChopStartOfResultsDisplayName
+:param string The text taken from the calculator results display field.
+:description If the string starts with the portion of the calculator results display field which acts like a field label, strips it and returns the rest of the string.
+:returns string The text with the calculator results text "Display is" removed.
+
+:function OnDisplayField
+:description Tests if focus is on the calculator results field.
+:returns int True if focus is on the calculator results field, false otherwise.
+
+:function OnCalculatorButton
+:description Tests if focus is on any of the calculator buttons.
+:returns int True if focus is on a calculator button, false otherwise.
+
+:script FocusToCalculatorResultsField
+:synopsis Setzt den Fokus auf das Ergebnisfeld des Rechners.
+:description Bewegt den Fokus auf das Ergebnisanzeigefeld des Rechners.
+:DisplayName Fokus auf Ergebnisanzeige
+:SearchRank 1
+
+:script SayCalculatorExpression
+:synopsis Ausdruck des Rechners ansagen.
+:description Wenn der Rechner einen Ausdrukc zeigt, dann wird er gesprochen. Ausdrücke werden nur in den Modi Standard, Wissenschaftlich und Programmierer angezeigt. Ein Ausdruck ist ein Teil einer noch laufenden Berechnung, die noch nicht im Ergebnisfeld dargestellt wird.
+:DisplayName Ausdruck der Berechnung ansagen
+:SearchRank 1
+
+
+
+:function SayCalculatorButtonName
+:param string The UIA automation ID of the button whose name is to be spoken.
+:optional
+:param string The alternate UIA automation ID, where a related button with a different name and id may or may not be present according to some condition. For instance, if the Hyperbolic Function button is pressed, the Sin, cos and Tan buttons change to their hyperbolic equivalents and these buttons have a different automation ID than when the Hyperbolic Function button is not pressed.
+:description Used by the various scripts attached to the Calculator shortcut keys to locate and speak the name of the button to which the shortcut key belongs.
+
+:script LeftParen
+:synopsis Runde Klammer auf Schalter
+:description Drückt den Schalter Runde Klammer auf.
+
+:script RightParen
+:synopsis Runde Klammer zu Schalter
+:description Drückt den Schalter Runde Klammer zu.
+
+:script ClearHistory
+:synopsis Verlauf löschen
+:description Löscht aller Werte in der Verlaufsliste.
+
+:Script ClearAllMemory
+:synopsis Aktiviert den Speicher löschen Schalter.
+:description Aktiviert den Speicher löschen Schalter.
+
+:Script MemoryRecall
+:synopsis Speicheraufruf Schalter.
+:description Drückt den Schalter Speicheraufruf.
+
+:Script MemoryAdd
+:synopsis Aktiviert den Zu Speicher addieren Schalter.
+:description Aktiviert den Zu Speicher addieren Schalter.
+
+:script MemorySubtract
+:synopsis Aktiviert den Vom Speicher subtrahieren Schalter.
+:description Aktiviert den Vom Speicher subtrahieren Schalter.
+
+:script MemoryStore
+:synopsis Im Speicher ablegen Schalter.
+:description Aktiviert den Schalter Im Speicher ablegen.
+
+:script Reciprocal
+:synopsis Reciprocal Schalter.
+:description Aktiviert den Reciprocal Schalter.
+
+:script Factorial
+:synopsis Faktoren Schalter
+:description Aktiviert den Faktoren Schalter.
+
+:script SquareRoot
+:synopsis Quadratwurzel Schalter
+:description Aktiviert den Quadratwurzel Schalter.
+
+:script Cube
+:synopsis Kubik Schalter
+:description Aktiviert den Kubik Schalter.
+
+:script EToTheExponent
+:synopsis Exponent Schalter
+:description Aktiviert den Exponent Schalter.
+
+:script Log
+:synopsis Log Schalter
+:description Aktiviert den Log Schalter.
+
+:script NaturalLog
+:synopsis Natural Log Schalter
+:description Aktiviert den Natural Log Schalter.
+
+:script AntiLog
+:synopsis Anti Log Schalter
+:description Aktiviert den Anti Log Schalter.
+
+:script pi
+:synopsis Pi Schalter
+:description Aktiviert den Pi Schalter.
+
+:script Sin
+:synopsis Sin Schalter
+:description Aktiviert den Sin Schalter.
+
+:script Cos
+:synopsis Cos Schalter
+:description Aktiviert den Cos Schalter.
+
+:script Tan
+:synopsis Tan, oder Standard Abweichung Schalter
+:description Im Wissenschaftlichen Modus wird der Tan Schalter aktiviert. Im Statistikmodus wird der Standard Abweichung Schalter aktiviert.
+
+:script SinH
+:synopsis Hyperbolic Sin Schalter
+:description Aktiviert den Hyperbolic Sin Schalter.
+
+:script CosH
+:synopsis Hyperbolic Cos Schalter
+:description Aktiviert den Hyperbolic Cos Schalter.
+
+:script TanH
+:synopsis Tan, oder Standard Abweichung Schalter
+:description Im Wissenschaftlichen Modus wird der Tan Schalter aktiviert. Im Statistikmodus wird der Standard Abweichung Schalter aktiviert.
+
+:script ScientificNotation
+:synopsis Wissenschaftlicher Modus
+:description Setzt den Rechnermodus auf Wissenschaftlich.
+
+

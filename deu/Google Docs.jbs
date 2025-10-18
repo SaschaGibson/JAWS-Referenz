@@ -1,0 +1,37 @@
+﻿[Component Aliases]
+coordinates=Zellkoordinaten
+colHdr=Spaltentitel
+rowHdr=Reihentitel
+content=Zellinhalt
+
+; Section for Google Sheets custom control pre 2017
+[CustomControl1]
+components=type,liveRegion:docs-aria-speakable
+type=grdc
+removed=
+displayname=
+AlignmentPriority=liveRegion:docs-aria-speakable
+
+; Google Sheets 2017,
+;For spreadsheet row, column, or current cell.
+;Because the headers and coordinates are toggled using Quick Settings rather than structured braille, only one component is listed.
+;The component function is responsible for showing the row, column or cell according to the quick settings header and coordinates setting.
+[CustomControl2]
+components=SpreadsheetData:-1
+type=grdc
+
+; Horizontal treeview for google slides
+[CustomControl3]
+components=TreeSiblings
+type=htree
+
+; for Tables in the document area, virtual cursor not active
+[CustomControl4]
+components=RowHdr,ColHdr,coordinates,content
+removed=
+type=
+displayname=Dokumenttabelle
+AlignmentPriority=coordinates,content
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Google Docs.

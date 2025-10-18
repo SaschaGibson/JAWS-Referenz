@@ -1,0 +1,119 @@
+:script sayNextLine
+
+:script HotKeyHelp
+
+:function glbFocusRead
+
+:function HandleCustomWindows
+
+:script sayNextCharacter
+
+:function SayNonHighlightedText
+
+:script deleteObject
+:Synopsis Löscht ein Zeichen, eine Auswahl, Objekte oder Folien
+:Description Dieses Skript löscht ein Zeichen, eine Auswahl, Objekte oder Folien in Abhängigkeit vom Status der Oberfläche und der aktuellen Ansicht. Wenn Sie ein Objekt löschen, dann wird %product% Ihnen die Information sagen.
+
+:function PRArrayFocusRead
+:Synopsis reads the selected item in a PRArrayClass9.32 control
+:Description This function reads the selected item in a PRArrayClass9.32 control.
+
+:script sayObjectDimensionsAndLocation
+:Synopsis Sagt die Dimensionen und die oberen linken Koordinaten des aktuell gewählten Objekts an
+:Description Dieses Skript sagt die Dimensionen und die oberen linken Koordinaten des aktuell gewählten Objekts an. Als Einheit werden WP Einheiten verwendet. Eine WP Einheit entspricht 1/1200 Zoll.
+
+:function KeyPressedEvent
+
+:script shiftTab
+
+:script sayPriorLine
+
+:function AutoStartEvent
+
+:script sayCharacter
+
+:script SayWindowPromptAndText
+
+:script readSpeakerNotes
+:Synopsis Liest die Hinweise des Vortragenden, die mit der Folie verbunden sind
+:Description Dieses Skript liest die Hinweise des Vortragenden, die mit der Folie verbunden sind.
+
+:script readMisspelledAndSuggestion
+:Synopsis Liest das falsch geschriebene Wort und den Korrekturvorschlag im Dialog Rechtschreibprüfung
+:Description Dieses Skript liest das falsch geschriebene Wort und den Korrekturvorschlag im Dialog Rechtschreibprüfung.
+
+:script sayLine
+
+:function SayHighlightedText
+
+:function getRealWindow
+:Returns handle No Return Description
+:Param handle/hwnd No Description
+
+:script sayPriorCharacter
+
+:script ScreenSensitiveHelp
+
+:function SayFocusedWindow
+
+:script sayAll
+
+:script nextSlide
+:Synopsis Reicht ein Seite Runter an die Präsentation und liest den Titel der nächsten Folie
+:Description Dieses Skript reicht ein Seite Runter an die Präsentation und liest den Titel der nächsten Folie.
+
+:script upALevel
+:Synopsis Führt den Standard Windows Befehl Escape aus. Prüft, ob das Zeichnungswerkzeug geändert wurde und sagt, falls dem so ist, das neue Werkzeug an.
+:Description In Menüs schließt dieses Skript das Menü und platziert den Focus auf die Menüzeile. In Ausklapplisten verlässt dieses Skript die Ausklapplliste und setzt den Fokus wieder auf die geschlossene Ausklappliste ohne eine Auswahl zu treffen. Dieses Skript schließt auch ein Kontextmenü. Dieses Skript prüft, ob das Zeichnungswerkzeug geändert wurde und sagt, falls dem so ist, das neue Werkzeug an.
+
+:function FocusChangedEvent
+
+:script windowKeysHelp
+
+:script sayCurrentTool
+:Synopsis Sagt den Namen des aktuellen Zeichnungswerkzeugs an
+:Description Dieses Skript spricht die Beschreibung des aktuellen Zeichnungswerkzeugs, welches im Zeichnungsbereich verwendet wird.
+
+:script AdjustJAWSVerbosity
+:Synopsis Öffnet ein Dialogfenster, in dem Sie eine Reihe von %product% Ausführlichkeitsstufen auswählen können. Fügt Corel Presentation spezifische Einstellungen hinzu.
+:Description ANSI und Grafiken sind einige der Einstellungen, die Sie in den Ausführlichkeitsstufen in dieser Liste setzen können. Dieses Skript fügt Corel Presentation spezifische Einstellungen hinzu.
+
+:script priorSlide
+:Synopsis Reicht ein Seite Rauf an Presentations und liest den Titel der nächsten Folie
+:Description Dieses Skript reicht ein Seite Rauf an Presentations und liest den Titel der nächsten Folie.
+
+:script ToolbarList
+:Synopsis Listet die Schalter der Symbolleiste auf und aktiviert den gewählten Schalter
+:Description Dieses Skript listet die Schalter der Symbolleiste auf und aktiviert den gewählten Schalter.
+
+:script sayWord
+
+:script ScriptFileName
+
+:function isWritingToolsActive
+:Returns int true or false
+:Synopsis determines if the Writing Tools window is open
+:Description This function determines if the Writing Tools window is active.
+
+:function toggleUnitsOfMeasure
+:Returns string description of value used to populate dlgSelectFunctionToRun list item's value
+:Synopsis toggles the units of measure reported by JAWS between Points and WP Units (1 WP Unit is 1/1200 inches)
+:Description This function toggles the units of measure reported by JAWS between Points and WP Units (1 WP Unit is 1/1200 inches).
+:Param int/iRetCurVal set to true if the current value of the item is to be returned, false if the value is to be updated and returned.
+
+:function SaySlideSorterFocus
+:Synopsis says the focused slide's info in Slide Sorter view
+:Description This function speaks relevant slide information for the focused slide in Slide Sorter View.
+
+:script tab
+
+:function HandleCustomRealWindows
+
+:script SaySlideInfo
+:Synopsis Liest die Informationen über die aktuelle Folie, wie das Layout, Anzahl der Objekte, on Hinweise vorhanden sind, etc.
+:Description Dieses Skript liest die Informationen über die aktuelle Folie, wie das Layout, Anzahl der Objekte, on Hinweise vorhanden sind, etc..
+
+:script SetFocusWritingTools
+:Synopsis Setzt den Fokus in das Dialogfenster Schreibwerkzeuge, wenn der Fokus verloren gehen sollte.
+:Description Dieses Skript setzt den Fokus auf den mehrseitigen Dialog nur dann, wenn der Fokus im Dialog der Schreibwerkzeuge verloren gegangen sein sollte. Dieses geschieht üblicherweise, wenn der Fokus auf eine andere Anwendung springt.
+:Category Application

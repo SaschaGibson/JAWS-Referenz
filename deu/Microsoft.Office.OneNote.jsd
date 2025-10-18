@@ -1,0 +1,21 @@
+:function GetTypeStringFromTypeCode
+:Returns String The type string.
+:Synopsis Returns the spoken type string corresponding to the given typeCode.
+:Description This function returns the spoken type string corresponding to the given typeCode. The return value should be identical to what GetWindowType and getObjectType/Subtype would return.
+:Param Int/typeCode The type code.
+:Category Utility
+
+:function ShouldCustomizeSpeakingOfFocusedObject
+:Returns Int True if the scripts should customize the speaking of the focused object. False if the standard behavior of JAWS should be used.
+:Synopsis Determines if the scripts should customize the speaking of the focused object.
+:Description This function determines if the scripts should customize the speaking of the focused object.
+:Param handle/window The window handle.
+:Param int/nLevel The level in the object hierarchy.
+
+:function CustomSayObjectTypeAndText
+:Returns Int True if the standard behavior of the SayObjectTypeAndText was customized. False otherwise.
+:Synopsis A wrapper function for the built-in SayObjectTypeAndText function that allows the behavior to be customized.
+:Description This function is a wrapper function for the built-in SayObjectTypeAndText function that allows the behavior to be customized. If no customization is required, this function will simply pass the call on to the built-in SayObjectTypeAndText function and return false. If customization is required, this function will speak the object instead of calling the built-in SayObjectTypeAndText function and return true.
+:Param int/nLevel Which object in the hierarchy should be spoken.  0, which is the default, refers to the object with focus.  1 refers to the parent of the focus object, 2 refers to the grandparent, etc.
+:Param int/includeContainerName if not supplied, assumed to be true.
+:Category Object Model And MSAA

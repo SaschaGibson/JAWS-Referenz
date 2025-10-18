@@ -1,0 +1,18 @@
+:function AutoStartEvent
+
+:script ScriptFileName
+
+:script HotKeyHelp
+
+:script SayActualWord
+:Synopsis Spricht das aktuelle Wort im Dialogfeld Wörterbuchdefinitionen verändern
+
+:script SayCurrentRule
+:Synopsis Spricht das aktuelle Wort im Dialogfeld Wörterbuchdefinitionen korrigieren
+
+:script ScreenSensitiveHelp
+
+:script OpenDefaultFile
+:Synopsis Spricht eine Bestätigung, wenn die Default-Datei geöffnet ist.
+:Description Gibt ein STRG+UMSCHALT+D an die Anwendung weiter und meldet, dass die Default-Datei geöffnet wurde
+

@@ -1,0 +1,145 @@
+:function InitWin8Calculator
+:description Initializes the Windows Calculator scripts.
+:function FindCalculatorObjectWithCondition
+:description Performs a UIA FindFirst for the element matching the condition object.
+:param object The UIA condition object to use for the find.
+:returns object If found, the element searched for; null otherwise.
+
+:function GetCalculatorResultsElement
+:description Returns the Win8Calculator results element if it could be found.
+:returns object If found, the UIA element for the calculator results field.
+
+:function GetCalculatorModeHeaderElement
+:description Searches for and returns the element which displays the current calculator mode.
+:returns object The element which displays the current calculator mode.
+
+:function ChopStartOfResultsDisplayName
+:param string The text taken from the calculator results display field.
+:description If the string starts with the portion of the calculator results display field which acts like a field label, strips it and returns the rest of the string.
+:returns string The text with the calculator results text "Display is" removed.
+
+:function OnDisplayField
+:description Tests if focus is on the calculator results field.
+:returns int True if focus is on the calculator results field, false otherwise.
+
+:function OnCalculatorButton
+:description Tests if focus is on any of the calculator buttons.
+:returns int True if focus is on a calculator button, false otherwise.
+
+:script FocusToCalculatorResultsField
+:synopsis Set focus to calculator results field.
+:description Moves the focus to the results display field of the calculator.
+:DisplayName Focus To Calculator ResultsField
+:SearchRank 1
+
+:script SayCalculatorExpression
+:synopsis Say calculator expression.
+:description If the calculator is showing an expression, speaks it. Expressions are only shown for Standard, Scientific and Programmer modes. The expression is the portion of an on-going calculation which is not present in the results display field.
+:DisplayName Say Calculator Expression
+:SearchRank 1
+
+
+
+:function SayCalculatorButtonName
+:param string The UIA automation ID of the button whose name is to be spoken.
+:optional
+:param string The alternate UIA automation ID, where a related button with a different name and id may or may not be present according to some condition. For instance, if the Hyperbolic Function button is pressed, the Sin, cos and Tan buttons change to their hyperbolic equivalents and these buttons have a different automation ID than when the Hyperbolic Function button is not pressed.
+:description Used by the various scripts attached to the Calculator shortcut keys to locate and speak the name of the button to which the shortcut key belongs.
+
+:script LeftParen
+:synopsis Left Parenthesis
+:description Presses the Left Parenthesis.
+
+:script RightParen
+:synopsis Right Parenthesis
+:description Presses the Right Parenthesis.
+
+:script ClearHistory
+:synopsis Clear History
+:description Clears the History listbox of all values.
+
+:Script ClearAllMemory
+:synopsis Memory Clear button
+:description Presses the Memory Clear button.
+
+:Script MemoryRecall
+:synopsis Memory Recall button
+:description Presses the Memory Recall button.
+
+:Script MemoryAdd
+:synopsis Memory Add button
+:description Presses the Memory Add button.
+
+:script MemorySubtract
+:synopsis Memory Subtract button
+:description Presses the Memory Subtract button.
+
+:script MemoryStore
+:synopsis Memory Store button
+:description Presses the Memory Store button.
+
+:script Reciprocal
+:synopsis Reciprocal button
+:description Presses the Reciprocal button.
+
+:script Factorial
+:synopsis Factorial button
+:description Presses the Factorial button.
+
+:script SquareRoot
+:synopsis Square Root button
+:description Presses the Square Root button.
+
+:script Cube
+:synopsis Cube button
+:description Presses the Cube button.
+
+:script EToTheExponent
+:synopsis Exponential button
+:description Presses the Exponential button.
+
+:script Log
+:synopsis Log button
+:description Presses the Log button.
+
+:script NaturalLog
+:synopsis Natural Log button
+:description Presses the Natural Log button.
+
+:script AntiLog
+:synopsis Anti Log button
+:description Presses the Anti Log button.
+
+:script pi
+:synopsis Pi button
+:description Presses the Pi button.
+
+:script Sin
+:synopsis Sine button
+:description Presses the Sine button.
+
+:script Cos
+:synopsis Cosine button
+:description Presses the Cosine button.
+
+:script Tan
+:synopsis Tangent button
+:description Presses the Tangent button.
+
+:script SinH
+:synopsis Hyperbolic Sine button
+:description Presses the Hyperbolic Sine button.
+
+:script CosH
+:synopsis Hyperbolic Cosine button
+:description Presses the Hyperbolic Cosine button.
+
+:script TanH
+:synopsis Hyperbolic Tangent button
+:description Presses the Hyperbolic Tangent button.
+
+:script ScientificNotation
+:synopsis Scientific notation toggle button
+:description Toggles the Scientific Notation button on and off.
+
+

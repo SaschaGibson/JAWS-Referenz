@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Browser.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="DocumentSettings" Text="Personalize Web Settings">
+			<HelpMsg>
+This group contains settings for the active web page or PDF document.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="DocumentSettings.VirtualCursorVerbosityLevel" AliasID="VirtualCursorOptions.VirtualCursorVerbosityLevel" />
+		<DisplayName ID="DocumentSettings.ElementDescription" AliasID="VirtualCursorOptions.ElementDescription" />
+		<DisplayName ID="DocumentSettings.GlanceHighlightIndication" AliasID="VirtualCursorOptions.GlanceHighlightIndication" />
+		<DisplayName ID="DocumentSettings.GlanceHighlightIndication.0" AliasID="VirtualCursorOptions.GlanceHighlightIndication.0" />
+		<DisplayName ID="DocumentSettings.GlanceHighlightIndication.1" AliasID="VirtualCursorOptions.GlanceHighlightIndication.1" />
+		<DisplayName ID="DocumentSettings.GlanceHighlightIndication.2" AliasID="VirtualCursorOptions.GlanceHighlightIndication.2" />
+		<DisplayName ID="DocumentSettings.GlanceHighlightIndication.3" AliasID="VirtualCursorOptions.GlanceHighlightIndication.3" />
+		<DisplayName ID="DocumentSettings.AllowWebApplicationReservedKeystrokes" AliasID="VirtualCursorOptions.AllowWebApplicationReservedKeystrokes" />
+		<DisplayName ID="DocumentSettings.SelectandCopy" AliasID="VirtualCursorOptions.SelectandCopy"  />
+		<DisplayName ID="DocumentSettings.ReadOnlyState" AliasID="VirtualCursorOptions.ReadOnlyState" />
+		<DisplayName ID="DocumentSettings.ReadOnlyState.0" AliasID="VirtualCursorOptions.ReadOnlyState.0" />
+		<DisplayName ID="DocumentSettings.ReadOnlyState.1" AliasID="VirtualCursorOptions.ReadOnlyState.1" />
+		<DisplayName ID="DocumentSettings.IndicateInsAndDelInVirtualDocs" AliasID="VirtualCursorOptions.IndicateInsAndDelInVirtualDocs" />
+		<DisplayName ID="DocumentSettings.FormsOptions" AliasID="VirtualCursorOptions.FormsOptions" />
+		<DisplayName ID="DocumentSettings.FormsOptions.AutoFormsMode" AliasID="VirtualCursorOptions.FormsOptions.AutoFormsMode" />
+		<DisplayName ID="DocumentSettings.FormsOptions.NavigationQuickKeyDelay" AliasID="VirtualCursorOptions.FormsOptions.NavigationQuickKeyDelay" />
+		<DisplayName ID="DocumentSettings.FormsOptions.ButtonsShowUsing" AliasID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing" />
+		<DisplayName ID="DocumentSettings.FormsOptions.ButtonsShowUsing.0" AliasID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.0" />
+		<DisplayName ID="DocumentSettings.FormsOptions.ButtonsShowUsing.1" AliasID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.1" />
+		<DisplayName ID="DocumentSettings.FormsOptions.ButtonsShowUsing.2" AliasID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.2" />
+		<DisplayName ID="DocumentSettings.FormsOptions.ButtonsShowUsing.3" AliasID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.3" />
+		<DisplayName ID="DocumentSettings.FormsOptions.ButtonsShowUsing.4" AliasID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.4" />
+		<DisplayName ID="DocumentSettings.FormsOptions.ButtonsShowUsing.5" AliasID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.5" />
+		<DisplayName ID="DocumentSettings.FormsOptions.FormFieldsIdentifyPromptUsing" AliasID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing" />
+		<DisplayName ID="DocumentSettings.FormsOptions.FormFieldsIdentifyPromptUsing.0" AliasID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.0" />
+		<DisplayName ID="DocumentSettings.FormsOptions.FormFieldsIdentifyPromptUsing.1" AliasID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.1" />
+		<DisplayName ID="DocumentSettings.FormsOptions.FormFieldsIdentifyPromptUsing.2" AliasID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.2" />
+		<DisplayName ID="DocumentSettings.FormsOptions.FormFieldsIdentifyPromptUsing.3" AliasID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.3" />
+		<DisplayName ID="DocumentSettings.FormsOptions.FormFieldsIdentifyPromptUsing.4" AliasID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.4" />
+		<DisplayName ID="DocumentSettings.FormsOptions.FormFieldsIdentifyPromptUsing.5" AliasID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.5" />
+		<DisplayName ID = "DocumentSettings.FormsOptions.FormsModeOffWhenNewPageLoads" AliasID = "VirtualCursorOptions.FormsOptions.FormsModeOffWhenNewPageLoads" />
+		<DisplayName ID="DocumentSettings.GeneralOptions" AliasID="VirtualCursorOptions.GeneralOptions" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.DocumentAutomaticallyReads" AliasID="VirtualCursorOptions.GeneralOptions.DocumentAutomaticallyReads" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.LanguageDetectChange" AliasID="ReadingOptions.LanguageDetectChange" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.VirtualCursor" Text="Virtual Cursor">
+			<HelpMsg>
+This Personalized Settings Option controls whether or not JAWS uses the virtual cursor on the current web page.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="DocumentSettings.GeneralOptions.DocumentAutomaticallyReads" AliasID="VirtualCursorOptions.GeneralOptions.DocumentAutomaticallyReads" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.NavigationQuickKeys" AliasID="VirtualCursorOptions.GeneralOptions.NavigationQuickKeys" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.NavigationQuickKeys.0" AliasID="VirtualCursorOptions.GeneralOptions.NavigationQuickKeys.0" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.NavigationQuickKeys.1" AliasID="VirtualCursorOptions.GeneralOptions.NavigationQuickKeys.1" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.NavigationQuickKeys.2" AliasID="VirtualCursorOptions.GeneralOptions.NavigationQuickKeys.2" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.DocumentPresentation" AliasID="VirtualCursorOptions.GeneralOptions.DocumentPresentation" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.DocumentPresentation.0" AliasID="VirtualCursorOptions.GeneralOptions.DocumentPresentation.0" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.DocumentPresentation.1" AliasID="VirtualCursorOptions.GeneralOptions.DocumentPresentation.1" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.CustomPageSummary" Text="Custom Placemarker Page Summary">
+			<HelpMsg>
+		Select a setting to determine how PlaceMarkers are announced for Web pages, HTML files, and PDF files. When you open a virtual document (such as an HTML page), the PlaceMarker Page Summary feature automatically lists each PlaceMarker on the page, along with its associated text.  (Note that changes made to this option, in the Personalized Web Settings group, apply to all HTML pages for an entire domain, such as FreedomScientific.com or Google.com.) Select "Speak PlaceMarkers on Page Load" to hear the name of each PlaceMarker and its associated text. Select "List PlaceMarkers in Results Viewer on Page Load" to have PlaceMarker information for the page appear in the Results Viewer. Select "Do Nothing" if you do not want to hear the PlaceMarker summary. The default setting is Do Nothing.</HelpMsg>
+		</DisplayName>		
+		<DisplayName ID="DocumentSettings.GeneralOptions.CustomPageSummary.0" AliasID="VirtualCursorOptions.GeneralOptions.CustomPageSummary.0" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.CustomPageSummary.1" AliasID="VirtualCursorOptions.GeneralOptions.CustomPageSummary.1" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.CustomPageSummary.2" AliasID="VirtualCursorOptions.GeneralOptions.CustomPageSummary.2" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.AccessKeysShow" AliasID="VirtualCursorOptions.GeneralOptions.AccessKeysShow" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.AttributesIndicate" AliasID="VirtualCursorOptions.GeneralOptions.AttributesIndicate" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.FlashMoviesRecognize" AliasID="VirtualCursorOptions.GeneralOptions.FlashMoviesRecognize" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.PageRefresh " AliasID="VirtualCursorOptions.GeneralOptions.PageRefresh" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.AnnounceLiveRegionUpdates" AliasID="VirtualCursorOptions.GeneralOptions.AnnounceLiveRegionUpdates" />
+		<DisplayName ID="DocumentSettings.Scheme" AliasID="SayAllOptions.Scheme" />
+		<DisplayName ID="DocumentSettings.TextOptions" AliasID="VirtualCursorOptions.TextOptions" />
+		<DisplayName ID="DocumentSettings.TextOptions.AbbreviationsExpand" AliasID="VirtualCursorOptions.TextOptions.AbbreviationsExpand" />
+		<DisplayName ID="DocumentSettings.TextOptions.AcronymsExpand" AliasID="VirtualCursorOptions.TextOptions.AcronymsExpand" />
+		<DisplayName ID="DocumentSettings.TextOptions.RepeatedTextSkip" Text="Repeated Text Skip">
+			<HelpMsg>
+This option controls whether or not JAWS skips repeated (or common) text at the top of new links when you click them on Web pages. 
+This text is usually the same for a given Web site, such as navigation information found at the top of the page. When this option is on, JAWS places the virtual cursor below the "repeated" or common text. The default setting is ON.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="DocumentSettings.TextOptions.ScreenTrackVirtualCursor" AliasID="VirtualCursorOptions.GeneralOptions.ScreenTrackVirtualCursor" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions" AliasID="VirtualCursorOptions.GraphicsOptions" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions.GraphicsShow" AliasID="VirtualCursorOptions.GraphicsOptions.GraphicsShow" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions.GraphicsShow.0" AliasID="VirtualCursorOptions.GraphicsOptions.GraphicsShow.0" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions.GraphicsShow.1" AliasID="VirtualCursorOptions.GraphicsOptions.GraphicsShow.1" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions.GraphicsShow.2" AliasID="VirtualCursorOptions.GraphicsOptions.GraphicsShow.2" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions.GraphicsRecognizeBy" AliasID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions.GraphicsRecognizeBy.0" AliasID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy.0" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions.GraphicsRecognizeBy.1" AliasID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy.1" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions.GraphicsRecognizeBy.2" AliasID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy.2" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions.GraphicsRecognizeBy.3" AliasID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy.3" />
+		<DisplayName ID="DocumentSettings.GraphicsOptions.GraphicsRecognizeBy.4" AliasID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy.4" />
+		<DisplayName ID="DocumentSettings.LinksOptions" AliasID="VirtualCursorOptions.LinksOptions" />
+		<DisplayName ID="DocumentSettings.LinksOptions.FilterConsecutiveDuplicateLinks" AliasID="VirtualCursorOptions.LinksOptions.FilterConsecutiveDuplicateLinks" />
+		<DisplayName ID="DocumentSettings.LinksOptions.GraphicalLinksShow" AliasID="VirtualCursorOptions.LinksOptions.GraphicalLinksShow" />
+		<DisplayName ID="DocumentSettings.LinksOptions.GraphicalLinksShow.0" AliasID="VirtualCursorOptions.LinksOptions.GraphicalLinksShow.0" />
+		<DisplayName ID="DocumentSettings.LinksOptions.GraphicalLinksShow.1" AliasID="VirtualCursorOptions.LinksOptions.GraphicalLinksShow.1" />
+		<DisplayName ID="DocumentSettings.LinksOptions.GraphicalLinksShow.2" AliasID="VirtualCursorOptions.LinksOptions.GraphicalLinksShow.2" />
+		<DisplayName ID="DocumentSettings.LinksOptions.UntaggedGraphicalLinksShow" AliasID="VirtualCursorOptions.LinksOptions.UntaggedGraphicalLinksShow" />
+		<DisplayName ID="DocumentSettings.LinksOptions.UntaggedGraphicalLinksShow.0" AliasID="VirtualCursorOptions.LinksOptions.UntaggedGraphicalLinksShow.0" />
+		<DisplayName ID="DocumentSettings.LinksOptions.UntaggedGraphicalLinksShow.1" AliasID="VirtualCursorOptions.LinksOptions.UntaggedGraphicalLinksShow.1" />
+		<DisplayName ID="DocumentSettings.LinksOptions.LinksInImageMapsShow" AliasID="VirtualCursorOptions.LinksOptions.LinksInImageMapsShow" />
+		<DisplayName ID="DocumentSettings.LinksOptions.LinksInImageMapsShow" AliasID="VirtualCursorOptions.LinksOptions.LinksInImageMapsShow" />
+		<DisplayName ID="DocumentSettings.LinksOptions.LinksInImageMapsShow.0" AliasID="VirtualCursorOptions.LinksOptions.LinksInImageMapsShow.0" />
+		<DisplayName ID="DocumentSettings.LinksOptions.LinksInImageMapsShow.1" AliasID="VirtualCursorOptions.LinksOptions.LinksInImageMapsShow.1" />
+		<DisplayName ID="DocumentSettings.LinksOptions.LinksInImageMapsShow.2" AliasID="VirtualCursorOptions.LinksOptions.LinksInImageMapsShow.2" />
+		<DisplayName ID="DocumentSettings.LinksOptions.TextLinksShowUsing" AliasID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing" />
+		<DisplayName ID="DocumentSettings.LinksOptions.TextLinksShowUsing.0" AliasID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing.0" />
+		<DisplayName ID="DocumentSettings.LinksOptions.TextLinksShowUsing.1" AliasID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing.1" />
+		<DisplayName ID="DocumentSettings.LinksOptions.TextLinksShowUsing.2" AliasID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing.2" />
+		<DisplayName ID="DocumentSettings.LinksOptions.TextLinksShowUsing.3" AliasID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing.3" />
+		<DisplayName ID="DocumentSettings.LinksOptions.TextLinksShowUsing.4" AliasID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing.4" />
+		<DisplayName ID="DocumentSettings.LinksOptions.LinksIdentifyType" AliasID="VirtualCursorOptions.LinksOptions.LinksIdentifyType" />
+		<DisplayName ID="DocumentSettings.LinksOptions.LinksIdentifySamePage" AliasID="VirtualCursorOptions.LinksOptions.LinksIdentifySamePage" />
+		<DisplayName ID="DocumentSettings.HeadingAndFrameOptions" AliasID="VirtualCursorOptions.HeadingAndFrameOptions" />
+		<DisplayName ID="DocumentSettings.HeadingAndFrameOptions.HeadingsAnnounce" AliasID="VirtualCursorOptions.HeadingAndFrameOptions.HeadingsAnnounce" />
+		<DisplayName ID="DocumentSettings.HeadingAndFrameOptions.InlineFramesShow" AliasID="VirtualCursorOptions.HeadingAndFrameOptions.InlineFramesShow" />
+		<DisplayName ID="DocumentSettings.HeadingAndFrameOptions.InlineFramesShow.0" AliasID="VirtualCursorOptions.HeadingAndFrameOptions.InlineFramesShow.0" />
+		<DisplayName ID="DocumentSettings.HeadingAndFrameOptions.InlineFramesShow.1" AliasID="VirtualCursorOptions.HeadingAndFrameOptions.InlineFramesShow.1" />
+		<DisplayName ID="DocumentSettings.TableOptions" AliasID="VirtualCursorOptions.TableOptions" />
+		<DisplayName ID="DocumentSettings.TableOptions.LayoutTables" AliasID="VirtualCursorOptions.TableOptions.LayoutTables" />
+		<DisplayName ID="DocumentSettings.TableOptions.TableTitles" AliasID="VirtualCursorOptions.TableOptions.TableTitles" />
+		<DisplayName ID="DocumentSettings.TableOptions.TableTitles.0" AliasID="VirtualCursorOptions.TableOptions.TableTitles.0" />
+		<DisplayName ID="DocumentSettings.TableOptions.TableTitles.1" AliasID="VirtualCursorOptions.TableOptions.TableTitles.1" />
+		<DisplayName ID="DocumentSettings.TableOptions.TableTitles.2" AliasID="VirtualCursorOptions.TableOptions.TableTitles.2" />
+		<DisplayName ID="DocumentSettings.TableOptions.TableTitles.3" AliasID="VirtualCursorOptions.TableOptions.TableTitles.3" />
+		<DisplayName ID="DocumentSettings.TableOptions.TableTitles.4" AliasID="VirtualCursorOptions.TableOptions.TableTitles.4" />
+		<DisplayName ID="DocumentSettings.TableOptions.JAWSDeterminesLayoutTable" Text="JAWS determines if tables are for layout purposes only" >
+			<HelpMsg>
+This Personalized Settings Option controls whether or not JAWS uses an old method for deciding if a table is for layout purposes only.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="DocumentSettings.GeneralOptions.VirtualDocumentLinkActivationMethod" AliasID="VirtualCursorOptions.GeneralOptions.VirtualDocumentLinkActivationMethod" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.VirtualDocumentLinkActivationMethod.0" AliasID="VirtualCursorOptions.GeneralOptions.VirtualDocumentLinkActivationMethod.0" />
+		<DisplayName ID="DocumentSettings.GeneralOptions.VirtualDocumentLinkActivationMethod.1" AliasID="VirtualCursorOptions.GeneralOptions.VirtualDocumentLinkActivationMethod.1" />
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

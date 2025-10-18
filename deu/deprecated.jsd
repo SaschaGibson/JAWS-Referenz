@@ -1,0 +1,5 @@
+:function HandleDeprecatedFunction
+:Returns int 1 if the function is deprecated;0 otherwise
+:Synopsis Speaks a message about a function that is deprecated in the current version of JAWS
+:Category Script
+:Param string/scriptName Name of function to be handled

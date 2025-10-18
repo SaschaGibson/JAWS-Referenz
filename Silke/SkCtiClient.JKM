@@ -1,0 +1,6 @@
+[Desktop Keys]
+F11=PauseBeenden
+F12=Abmelden
+[Common Keys]
+F10=GotoTextfield
+Control+T=GotoNummer

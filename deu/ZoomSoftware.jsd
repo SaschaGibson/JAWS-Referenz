@@ -1,0 +1,156 @@
+:function SettingsReminder
+:SearchRank 1
+:Synopsis This is called by the accompanying script to advise of User Preferences.
+
+:function ProcessNameOfSpeaker
+:SearchRank 1
+
+:script SayAlert
+:DisplayName Letzten Alarm ansagen
+:SearchRank 1
+:Synopsis Spricht den letzten Alarm, unabhängig davon, welcher Art er ist.
+:Description Alarme sind Elemente wie, X hat den Raum betreten, oder, Y hat die Hand gehoben.
+:CommandSearchProductFilter Fusion
+
+:script ToggleAlerts
+:DisplayName Alarme Ein oder Aus
+:SearchRank 1
+:Synopsis Schaltet den Status um, ob Alarme gesprochen oder auf der Braillezeile angezeigt werden.
+:Description Alarme sind Elemente wie, X hat den Raum betreten, oder, Y hat die Hand gehoben.
+:CommandSearchProductFilter Fusion
+
+:script ToggleChatMessages
+:DisplayName Nur Chat Meldungen, oder Chat Meldungen und Systemalarme
+:SearchRank 1
+:Synopsis Schaltet um, ob ausschließlich Chat Meldungen angesagt werden sollen.
+:Description Chat Meldungen sind diejenigen, die von einer Person an andere geschrieben wurden, abseits von Systemalarmen.
+:CommandSearchProductFilter Fusion
+
+:function sayNotification
+:SearchRank 1
+
+:script SayNotification1
+:DisplayName Letzten Hinweismeldung ansagen
+:SearchRank 1
+:Synopsis Spricht den letzten Alarm oder die letzte Meldung.
+:Description Spricht den letzten Alarm oder die letzte Meldung.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification2
+:DisplayName Vorletzte Hinweismeldung ansagen
+:SearchRank 1
+:Synopsis Spricht den vorletzten Alarm oder die vorletzte Meldung.
+:Description Spricht den vorletzten Alarm oder die vorletzte Meldung.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification3
+:DisplayName Drittletzte Hinweismeldung ansagen
+:SearchRank 1
+:Synopsis Spricht den drittletzten Alarm oder die drittletzte Meldung.
+:Description Spricht den drittletzten Alarm oder die drittletzte Meldung.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification4
+:DisplayName Viertletzte Hinweismeldung ansagen
+:SearchRank 1
+:Synopsis Spricht den viertletzten Alarm oder die viertletzte Meldung.
+:Description Spricht den viertletzten Alarm oder die viertletzte Meldung.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification5
+:DisplayName Fünftletzte Hinweismeldung ansagen
+:SearchRank 1
+:Synopsis Spricht den fünftletzten Alarm oder die fünftletzte Meldung.
+:Description Spricht den fünftletzten Alarm oder die fünftletzte Meldung.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification6
+:DisplayName Sechstletzte Hinweismeldung ansagen
+:SearchRank 1
+:Synopsis Spricht den sechstletzten Alarm oder die sechstletzte Meldung.
+:Description Spricht den sechstletzten Alarm oder die sechstletzte Meldung.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification7
+:DisplayName Siebtletzte Hinweismeldung ansagen
+:SearchRank 1
+:Synopsis Spricht den siebtletzten Alarm oder die siebtletzte Meldung.
+:Description Spricht den siebtletzten Alarm oder die siebtletzte Meldung.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification8
+:DisplayName Achtletzte Hinweismeldung ansagen
+:SearchRank 1
+:Synopsis Spricht den achtletzten Alarm oder die achtletzte Meldung.
+:Description Spricht den achtletzten Alarm oder die achtletzte Meldung.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification9
+:DisplayName Neuntletzte Hinweismeldung ansagen
+:SearchRank 1
+:Synopsis Spricht den neuntletzten Alarm oder die neuntletzte Meldung.
+:Description Spricht den neuntletzten Alarm oder die neuntletzte Meldung.
+:CommandSearchProductFilter Fusion
+
+:script SayNotification10
+:DisplayName Zehntletzte Hinweismeldung ansagen
+:SearchRank 1
+:Synopsis Spricht den zehntletzten Alarm oder die zehntletzte Meldung.
+:Description Spricht den zehntletzten Alarm oder die zehntletzte Meldung.
+:CommandSearchProductFilter Fusion
+
+:function IsParticipantsList
+:SearchRank 1
+
+:function getDataFromCustomComboBoxes
+:SearchRank 1
+:Description There are a couple combo box types which contain the name and value data strings as part of the object name. Typically, the value is in parentheses, and the name comes before. The name strings get modified when the text before the open parentheses is not a sensible name.
+:Param string/ControlName/ByRef Variable to receive the modified control name for the combo box.
+:Param string/ControlValue/ByRef Variable to receive the modified control value for the combo box.
+
+:script ZoomNotifyCurrentSpeaker
+:DisplayName Aktuellen Sprecher ansagen
+:SearchRank 1
+:Synopsis Hinweis aktueller Sprecher.
+:Description Gleichgesetzt der Zoom Software Kurztaste STRG+2, weches Zoom dazu bringt, Ihnen einen Hinweis zu senden, wer aktuell gerade spricht.
+
+:script AnnounceJAWSSettingsForZoom
+:DisplayName JAWS Einstellungen für Zoom ansagen
+:SearchRank 1
+:Synopsis JAWS Einstellungen für Nachrichten und Chats in Zoom ansagen.
+:Description Diese Ansage erfolgte immer, wenn Sie Einfügen+Tab gedrückt haben. Jetzt wurde diese in ein eigenes Skript verschoben, um Einfügen+Tab für andere Aufgaben freizugeben und diese Ankündigung zu isolieren.
+:CommandSearchProductFilter Fusion
+:UIMaintainsFocus True
+
+:script SayNextLine
+:SearchRank 1
+
+:script ToggleRecording
+:DisplayName Aufnahme umschalten
+:SearchRank 1
+:Synopsis Zugewiesen an ALT+R wird der Aufnahmestatus angesagt.
+:Description Zugewiesen an ALT+R wird der Aufnahmestatus angesagt.
+
+:script TogglePause
+:DisplayName Aufnahme pausieren und fortsetzen
+:SearchRank 1
+:Synopsis Zugewiesen an ALT+P wird der Pausenstatus angesagt.
+:Description Zugewiesen an ALT+P wird der Pausenstatus angesagt.
+
+:script ALTKey
+:SearchRank 1
+:Synopsis Unterdrückt diese Taste.
+:Description Bitte nicht neu zuweisen. Unterdrückt das Erkennen von nichtvorhandenen Menüs durch JAWS.
+
+:function CheckedOrNot
+:SearchRank 1
+
+:script ToggleMuteAudio
+:DisplayName Audio stummschalten oder Stummschaltung aufheben
+:SearchRank 1
+:Synopsis Stummschalten oder Stummschaltung aufheben.
+:Description Stummschalten oder Stummschaltung aufheben.
+
+:script SayLine
+:SearchRank 1
+

@@ -1,0 +1,1054 @@
+; Copyright 1995-2023 Freedom Scientific, Inc.
+; JAWS Braille Structure file
+
+;Note: place comments above or below Sections of data.
+; note that states which alter what is on the display are represented,
+;attributes such as selection via highlighting are not represented here
+;multiple state strings maybe combined internally.
+;some subtypecodes actually have no representation as they are handled either by line mode or by
+;other subtype codes
+;All however are listed for completeness.
+
+
+; sections for localization and UI display
+[Component Aliases]
+name=Name
+type=Type
+value=Value
+state=State
+position=Position
+level=Level
+time=Time
+dlgText=Dialog Text
+dlgPageName=Dialog Page Name
+dlgName=Dialog Name
+dlgType=Dialog Type
+wndName=Window Name
+wndType=Window Type
+containerName=Container Name
+containerType=Container Type
+ContextHelp=Insert F1 Help
+Help=Help
+hotkey=Hotkey
+urbn=Upper Ribbon
+lrbn=Lower Ribbon
+description=description
+ComputerBrailleIndicator=Computer Braille Indicator Symbol
+
+[State Aliases]
+csNone=Partially Checked
+csChecked=Checked
+csUnchecked=Unchecked
+csGrayed=Grayed
+csDisabled=Disabled
+csSubmenu=Sub Menu
+csPressed=Pressed
+csOpened=Opened
+csClosed=Closed
+csSelected=Selected
+csMultiLine=Multiline
+csExpanded=Expanded
+csCollapsed=Collapsed
+csVisited=Visited
+csIndeterminate=Indeterminate
+csReadOnly=Read Only
+csRequired=<Required>
+csProtected=Protected
+csInvalidEntry=Invalid Entry
+csDraggable=Draggable
+csGrabbed=Grabbed
+csDroppable=Droppable
+csAutoComplete=Supports AutoComplete
+csSortedAscending=SortedAscending
+csSortedDescending=SortedDescending
+csHasPopup=Has Popup
+csApplicationControl=App CTL
+csOn=On
+csOff=Off
+csCurrent =Current
+csModal=Modal
+csCurrentPage=Current Page
+csCurrentStep=Current Step
+csCurrentLocation=Current Location
+csCurrentTime=Current Time
+csCurrentDate=Current Date
+csHorizontal=Horizontal
+csVertical=Vertical
+csNotPressed=Not Pressed
+
+; note while all control states are listed, some are only used internally and hence have no Braille
+;representation. They are listed here for completeness only.
+; Note csNone is used for 3state buttons which may have a partially checked state
+[ControlStates]
+csNone=<->
+csChecked=<x>
+csUnchecked=< >
+csGrayed=xx
+csDisabled=xx
+csPressed=<=>
+csExpanded=-
+csCollapsed=+
+csSubmenu=->
+;selection is handled via raising dots 7 and 8 and hence has no distinct symbol to represent the
+;state
+;csSelected=
+;single line has no representation
+;csSingleLine=
+;multiline has no representation
+;csMultiLine=
+csOpened=-
+csClosed=+
+; has children is used internally to determine if a treenode is a parent and hence can be expanded or collapsed and hence has no representation here.
+;thus it has no representation and is only listed for completeness.
+;csHasChildren=
+csVisited=vl
+csRequired=rq
+csAutoComplete=
+csHasPopup=->
+csApplicationControl=
+csOff=off
+csOn=on
+csCurrent=cur
+csSortedAscending = asc
+csSortedDescending = desc
+csNotPressed=< >
+csReadOnly=ro
+				
+;Control Type sections
+;Note that the Key Removed will be used to hold components which have been removed from the
+;Display but which may be added back again at a later stage, ie when a user presses the remove
+;button on a component, it is removed from the Components Key and placed in the
+;Removed Key in the section for that control subtype.
+;The displayname key is used for custom controls or standard controls to define
+;what is listed in the UI for that control type.
+
+;Standard Control sections
+;  Section for button
+[SubtypeCode1]
+components=ContextHelp,state,name,type,description
+type=btn
+removed=hotkey
+displayname=
+AlignmentPriority=state,name
+
+; Section for combobox
+[SubtypeCode2]
+components=ContextHelp,name,type,value,position,state,description
+type=cbo
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,value
+
+; Section for edit
+; note that multiline edits will always use line mode if not in a dialog
+[SubtypeCode3]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value,state,description
+type=ed
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,ComputerBrailleIndicator,value
+
+; Section for listbox
+[SubtypeCode4]
+components=ContextHelp,name,type,state,value,position,description
+type=lbx
+removed=hotkey
+displayname=
+AlignmentPriority=type,state,value,name
+
+; Section for scrollbar
+[SubtypeCode5]
+components=ContextHelp,type,value
+type=scrlbar
+removed=
+displayname=
+AlignmentPriority=value
+
+; Section for static
+[SubtypeCode6]
+components=ContextHelp,value
+type=
+removed=
+displayname=
+AlignmentPriority=value
+
+; Section for toolbar
+; note name is button name of button with focus on toolbar
+[SubtypeCode7]
+components=ContextHelp,type,name,state,description
+type=tb
+removed=
+displayname=
+AlignmentPriority=type,name,state
+
+; Section for statusbar
+[SubtypeCode8]
+components=ContextHelp,type,value
+type=stb
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for headerbar
+[SubtypeCode9]
+components=ContextHelp,type,value
+type=hdb
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for buttonlistbox
+[SubtypeCode10]
+components=ContextHelp,name,type,value,position
+type=btlbx
+removed=hotkey
+displayname=
+AlignmentPriority=type,value
+
+; Section for  slider
+[SubtypeCode11]
+components=ContextHelp,type,value,description
+type=sld
+removed=hotkey
+displayname=
+AlignmentPriority=type,value
+
+; Section for spinbox
+[SubtypeCode12]
+components=ContextHelp,name,type,value,description
+type=spn
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,value
+
+; Section for menu
+[SubtypeCode13]
+components=type,name,state,hotkey,description
+type=mnu
+removed=
+displayname=
+AlignmentPriority=type,name,state
+
+; Section for desktop
+[SubtypeCode14]
+components=type,state,value,position
+type=dsklv
+removed=
+displayname=
+AlignmentPriority=type,state,value
+
+; Section for winswitch
+[SubtypeCode15]
+components=type,value
+type=tasks:
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for icontitle
+[SubtypeCode16]
+components=ContextHelp,name,type
+type=ico
+removed=
+displayname=
+AlignmentPriority=name
+
+; Section for mdiclient
+[SubtypeCode17]
+components=ContextHelp,name,type
+type=mdi
+removed=
+displayname=
+AlignmentPriority=name
+
+; Section for dialog
+;note that the components here will be prepended to all other controls when in a dialog
+[SubtypeCode18]
+components=dlgName,dlgType,dlgPageName,dlgText
+type=dlg
+removed=
+displayname=
+;note no default alignment as it will usually be on the dialog control itself, not the dialog info prepended to that control.
+
+; Section for radiobutton
+[SubtypeCode19]
+components=ContextHelp,state,name,type,position,description
+type=rbtn
+removed=hotkey
+displayname=
+AlignmentPriority=state,name
+
+; Section for checkbox
+[SubtypeCode20]
+components=ContextHelp,state,name,type,description
+type=chk
+removed=hotkey
+displayname=
+AlignmentPriority=state,name
+
+; Section for groupbox
+;note that all controls inside the groupbox will have these components prepended unless the group itself has focus
+[SubtypeCode21]
+components=containerName,containerType
+type=grp
+removed=
+displayname=
+AlignmentPriority=containerName,containerType
+
+; Section for 3state
+[SubtypeCode22]
+components=ContextHelp,state,name,type,description
+type=3st
+removed=hotkey
+displayname=
+AlignmentPriority=state,name
+
+; Section for sdm
+;note this is the same as a dialog
+[SubtypeCode23]
+components=dlgName,dlgType,dlgPageName,dlgText
+type=dlg
+removed=
+displayname=SDM Dialog
+;note no default alignment as it will usually be on the dialog control itself, not the dialog info prepended to that control.
+
+; Section for bitmap
+[SubtypeCode24]
+components=ContextHelp,type,name,description
+type=img
+removed=
+displayname=
+AlignmentPriority=type,name
+
+; Section for generalpicture
+[SubtypeCode25]
+components=type,name,description
+type=img
+removed=
+displayname=SDM Bitmap
+AlignmentPriority=type,name
+
+; Section for progress
+[SubtypeCode26]
+components=ContextHelp,name,type,value,description
+type=progress
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for tooltip
+[SubtypeCode27]
+components=type,value
+type=tip
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for hotkey
+[SubtypeCode28]
+components=ContextHelp,name,type,value,description
+type=hk
+removed=hotkey
+displayname=
+AlignmentPriority=type,value
+
+; Section for tabcontrol
+[SubtypeCode29]
+components=ContextHelp,name,type,state,position,description
+type=tab
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,state
+
+; Section for listview
+[SubtypeCode30]
+components=ContextHelp,name,type,state,value,position,description
+type=lv
+removed=hotkey
+displayname=
+AlignmentPriority=type,state,value,name
+
+; Section for treeview
+[SubtypeCode31]
+components=ContextHelp,name,type,level,value,state,position,description
+type=tv
+removed=hotkey
+displayname=
+AlignmentPriority=type,level,value,state,name
+
+; Section for startbutton
+[SubtypeCode32]
+components=ContextHelp,type
+type=stbtn
+removed=
+displayname=
+AlignmentPriority=type
+
+; Section for startmenu
+[SubtypeCode33]
+components=type,name,state,position
+type=stmnu
+removed=
+displayname=
+AlignmentPriority=type,name,state
+
+; Section for contextmenu
+[SubtypeCode34]
+components=type,name,state,hotkey
+type=cmnu
+removed=
+displayname=
+AlignmentPriority=type,name,state
+
+; Section for taskbar
+[SubtypeCode35]
+components=type,value,time
+type=taskbar
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for menubar
+[SubtypeCode36]
+components=type,name
+type=mnubr
+removed=
+displayname=Menubar
+AlignmentPriority=type,name
+
+; Section for multisel listbox
+[SubtypeCode37]
+components=ContextHelp,name,type,state,value,position,description
+type=mlbx
+removed=hotkey
+displayname=
+AlignmentPriority=type,state,value,name
+
+; Section for extsel listbox
+[SubtypeCode38]
+components=ContextHelp,name,type,state,value,position,description
+type=xlbx
+removed=hotkey
+displayname=
+AlignmentPriority=type,state,value,name
+
+; Section for leftright trackbar
+[SubtypeCode39]
+components=ContextHelp,name,type,value,description
+type=lrtrk
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,value
+
+; Section for updown trackbar
+[SubtypeCode40]
+components=ContextHelp,name,value,type,description
+type=udtrk
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,value
+
+; Section for editcombo
+[SubtypeCode41]
+components=ContextHelp,name,type,state,ComputerBrailleIndicator,value,position,description
+type=edcbo
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,ComputerBrailleIndicator,value
+
+; Section for passwordedit
+[SubtypeCode42]
+components=name,type,ComputerBrailleIndicator,value,state,description
+type=pwded
+removed=hotkey
+displayname=Password Edit
+AlignmentPriority=name,type,ComputerBrailleIndicator,value
+
+; Section for readonlyedit
+; note that multiline edits will always use line mode if not in a dialog
+[SubtypeCode43]
+components=ContextHelp,name,type,value,state,description
+type=rded
+removed=hotkey
+displayname=ReadOnly Edit
+AlignmentPriority=name,type,value
+
+; Section for commandbar
+[SubtypeCode44]
+components=name,type,value
+type=cmdbar
+removed=
+displayname=Commandbar
+AlignmentPriority=name,type,value
+
+; Section for updown scrolbar
+[SubtypeCode45]
+components=ContextHelp,type,value
+type=udscb
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for leftright scrollbar
+[SubtypeCode46]
+components=ContextHelp,type,value
+type=lrscb
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for link
+[SubtypeCode47]
+components=ContextHelp,name,state,type,description
+type=lnk
+removed=description
+displayname=
+AlignmentPriority=name
+
+; Section for mailtolink
+[SubtypeCode48]
+components=ContextHelp,name,state,type,description
+type=maillnk
+removed=
+displayname=
+AlignmentPriority=name
+
+; Section for ftplink
+[SubtypeCode49]
+components=ContextHelp,name,state,type,description
+type=ftplnk
+removed=
+displayname=
+AlignmentPriority=name
+
+; Section for image map link
+[SubtypeCode50]
+components=ContextHelp,name,state,type,description
+type=imglnk
+removed=
+displayname=Image Map Link
+AlignmentPriority=name
+
+; Section for htmlbody
+;note has no representation
+[SubtypeCode51]
+components=
+removed=
+displayname=
+type=
+
+; Section for htmlframe
+;note has no representation
+[SubtypeCode52]
+components=
+removed=
+displayname=
+type=
+
+; Section for document
+;note has no representation
+[SubtypeCode53]
+components=
+removed=
+displayname=
+type=
+
+; Section for table
+[SubtypeCode54]
+components=ContextHelp,type,value,position
+type=tbl
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for listboxitem
+[SubtypeCode55]
+components=ContextHelp,name,type,state,value,position,description
+removed=
+displayname=
+type=lbx
+AlignmentPriority=type,state,value,name
+
+; Section for treeviewitem
+[SubtypeCode56]
+components=ContextHelp,name,type,level,value,state,position,description
+type=tv
+removed=
+displayname=
+AlignmentPriority=type,level,value
+
+; Section for listviewitem
+;note no representation, handled by listview
+[SubtypeCode57]
+components=ContextHelp,name,type,state,value,position,description
+type=lv
+removed=
+displayname=
+AlignmentPriority=type,state,value
+
+; Section for buttonmenu
+[SubtypeCode58]
+components=ContextHelp,name,type,state,hotkey,description
+type=bmnu
+removed=
+displayname=
+AlignmentPriority=name,type
+
+; Section for nntplink
+[SubtypeCode59]
+components=ContextHelp,name,state,type,description
+type=nntplnk
+removed=
+displayname=
+AlignmentPriority=name
+
+; Section for thispage link
+[SubtypeCode60]
+components=ContextHelp,name,type,description
+type=same pg lnk
+removed=
+displayname=
+AlignmentPriority=name
+
+; Section for systray
+;note name is name of button with focus in SysTray
+[SubtypeCode61]
+components=type,name
+type=systray
+removed=
+displayname=
+AlignmentPriority=type,name
+
+; Section for spinbox
+[SubtypeCode62]
+components=ContextHelp,name,type,value,description
+type=spnbx
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,value
+
+; Section for frame
+[SubtypeCode63]
+components=ContextHelp,name,type
+type=frame
+removed=
+displayname=
+AlignmentPriority=name
+
+; Section for tablecell
+[SubtypeCode64]
+components=position,RowHeader,ColumnHeader,name,type
+type=grdc
+removed=
+displayname=
+AlignmentPriority=name,position
+
+; Section for dialog page
+;note no representation, handled by dialog
+[SubtypeCode65]
+components=
+removed=
+displayname=
+type=
+
+; Section for multiline edit
+;note that this is only used when a dialog is active
+;When no dialog is active, all multiline edits are handled by Line Mode
+[SubtypeCode66]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value,description
+removed=hotkey
+displayname=Multiline Edit
+type=mled
+AlignmentPriority=name,type,ComputerBrailleIndicator,value
+
+; Section for uploadedit
+[SubtypeCode67]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value,description
+type=uplded
+removed=
+displayname=Upload Edit
+
+; Section for heading1
+[SubtypeCode68]
+components=ContextHelp,name,type
+type=h1
+removed=
+displayname=Heading 1
+AlignmentPriority=name
+
+; Section for heading2
+[SubtypeCode69]
+components=ContextHelp,name,type
+type=h2
+removed=
+displayname=Heading 2
+AlignmentPriority=name
+
+; Section for heading3
+[SubtypeCode70]
+components=ContextHelp,name,type
+type=h3
+removed=
+displayname=Heading 3
+AlignmentPriority=name
+
+; Section for heading4
+[SubtypeCode71]
+components=ContextHelp,name,type
+type=h4
+removed=
+displayname=Heading 4
+AlignmentPriority=name
+
+; Section for heading5
+[SubtypeCode72]
+components=ContextHelp,name,type
+type=h5
+removed=
+displayname=Heading 5
+AlignmentPriority=name
+
+; Section for heading6
+[SubtypeCode73]
+components=ContextHelp,name,type
+type=h6
+removed=
+displayname=Heading 6
+AlignmentPriority=name
+
+; Section for Subtype Clock
+[SubtypeCode74]
+components=value
+type=clock
+removed=type
+displayname=Clock
+
+; Section for Subtype IPAddress
+[SubtypeCode75]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value,description
+type=iped
+removed=hotkey
+displayname=IP Address Edit
+AlignmentPriority=type,ComputerBrailleIndicator,value,name
+
+; Section for Subtype ButtonDropdown
+[SubtypeCode76]
+components=ContextHelp,name,type,description
+type=->
+removed=hotkey
+displayname=Button Dropdown
+AlignmentPriority=name
+
+; Section for Subtype ButtonDropdownGrid
+[SubtypeCode77]
+components=ContextHelp,name,type,description
+type=->g
+removed=
+displayname=Button Dropdown Grid
+AlignmentPriority=name
+
+; Section for Subtype SplitButton
+[SubtypeCode78]
+components=ContextHelp,name,type,description
+type=sbtn
+removed=hotkey
+displayname=Split Button
+AlignmentPriority=name
+
+; Section for Subtype OutlineButton
+[SubtypeCode79]
+components=ContextHelp,state,name,type,description
+type=obtn
+removed=hotkey
+displayname=Outline Button
+AlignmentPriority=state,name
+
+; Section for Subtype ROW
+[SubtypeCode80]
+components=ContextHelp,type,level,state,name
+type=row
+removed=
+displayname=Row
+AlignmentPriority=state,name,type
+
+; Section for Subtype COLUMN
+[SubtypeCode81]
+components=ContextHelp,name,type,value
+type=col
+removed=
+displayname=Column
+AlignmentPriority=type,value
+
+; Section for Subtype ROWHEADER
+[SubtypeCode82]
+components=ContextHelp,name,type
+type=rhdr
+removed=
+displayname=Row Header
+AlignmentPriority=name
+
+; Section for Subtype COLUMNHEADER
+[SubtypeCode83]
+components=ContextHelp,name,type
+type=chdr
+removed=
+displayname=Column Header
+AlignmentPriority=name
+
+; Section for Subtype PDFSignature
+[SubtypeCode84]
+components=ContextHelp,name,type,description
+type=sig
+removed=
+displayname=PDF Signature
+AlignmentPriority=name
+
+;Subtype for 85, generic list
+[SubtypeCode85]
+components=ContextHelp,name,type,state,value,position
+type=lst
+removed=
+displayname=List (generic)
+AlignmentPriority=type,state,value
+
+;subtype86 = list item, should be done as value in list:
+;[SubtypeCode86]
+;Name would be value for any list:
+;Components=name
+
+;Subtype87=Date/Time picker
+[SubtypeCode87]
+components=ContextHelp,name,type,value,description
+type=dtp
+removed=hotkey
+displayname=date/time picker
+AlignmentPriority=type,value,name
+
+;SubtypeCode88=Separator for menus and dialogs, should never gain focus.
+;Use symbolic reference (a line of dashes) to represent type info.
+[SubtypeCode88]
+components=name,type
+type=----------------------------------
+removed=
+displayname=Separator
+AlignmentPriority=name
+
+;SubtypeCode89=Image Map, copy from html, bitmap with hot spot:
+[SubtypeCode89]
+components=ContextHelp,name,state,type,description
+type=img
+removed=
+displayname=Image Map
+AlignmentPriority=name
+
+;Subtype90=Shape Object:
+[SubtypeCode90]
+components=name,type,value,description
+type=shp
+removed=
+displayname=shape object
+AlignmentPriority=type,value,name
+
+;SubtypeCode91=footnote
+[SubtypeCode91]
+components=name,type
+type=fnote
+removed=
+displayname=footnote
+AlignmentPriority=name
+
+;SubtypeCode92=PageHeader
+[SubtypeCode92]
+components=name,type
+type=pghdr
+removed=
+displayname=Page Header
+AlignmentPriority=name
+
+;SubtypeCode93= Page Footer
+[SubtypeCode93]
+components=name,type
+type=pgftr
+removed=
+displayname=Page Footer
+AlignmentPriority=name
+
+;SubtypeCode94=Embedded Object (not clickable)
+[SubtypeCode94]
+components=name,type
+type=pgobj
+removed=
+displayname=Embedded object
+AlignmentPriority=name
+
+;Section for upper ribbon
+[SubtypeCode95]
+components=type,state,name,hotkey,help:2
+type=urbn
+removed=
+displayname=Upper Ribbon
+AlignmentPriority=type,state,name
+
+;section for lower ribbon
+[subtypecode96]
+Components=rbntype,help:2
+Type=lrbn
+Removed=
+DisplayName=Lower Ribbon
+AlignmentPriority=type,state,value
+
+;Subtype97=application, and is handled internally
+[subtypecode97]
+
+;Subtype98=anchor, and is handled internally
+[subtypecode98]
+
+;Subtype99=paragraph, and is handled internally
+[subtypecode99]
+
+;Subtype100=toggleButton
+[subtypecode100]
+components=state,name,type,description
+type=tglb
+removed=hotkey
+displayname=
+AlignmentPriority=state,name
+
+;Subtype101=block, and is handled internally
+[subtypecode101]
+
+;Subtype102=treeGrid, and is handled internally
+[subtypecode102]
+
+;Subtype103=Region, and is handled internally
+[subtypecode103]
+
+;Subtype104=articleRegion, and is handled internally
+[subtypecode104]
+
+;Subtype105=bannerRegion, and is handled internally
+[subtypecode105]
+
+;Subtype106=complementaryRegion, and is handled internally
+[subtypecode106]
+
+;Subtype107=contentInfoRegion, and is handled internally
+[subtypecode107]
+
+;Subtype108=formRegion, and is handled internally
+[subtypecode108]
+
+;Subtype109=mainRegion, and is handled internally
+[subtypecode109]
+
+;Subtype110=navigationRegion, and is handled internally
+[subtypecode110]
+
+;Subtype111=searchRegion, and is handled internally
+[subtypecode111]
+
+; Section for log
+;note that all controls inside the log will have these components prepended
+[SubtypeCode112]
+components=containerName,containerType
+type=log
+removed=
+displayname=
+
+;Subtype113=genericRegion, and is handled internally
+[subtypecode113]
+
+;Subtype114=note, and is handled internally
+[subtypecode114]
+
+;subtype115=grid
+[SubtypeCode115]
+components=containerName,type,name,hotkey,description,position
+type=grd
+removed=
+displayname=Grid
+AlignmentPriority=name
+
+;Subtype116=tabPanel, and is handled internally
+[subtypecode116]
+
+; Subtype117=Math Content
+[subtypecode117]
+Components=type,name
+type=math
+removed=
+displayname=Math Content
+AlignmentPriority=type
+
+; Section for switch
+[SubtypeCode118]
+components=ContextHelp,state,name,type,description
+type=swch
+removed=hotkey
+displayname=
+AlignmentPriority=state,name
+					 
+; Section for search edit
+[SubtypeCode119]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value,state,description
+type=srch
+removed=hotkey
+displayname=
+AlignmentPriority=name,type,ComputerBrailleIndicator,value
+
+; Section for meter
+[SubtypeCode123]
+components=ContextHelp,name,type,value,description
+type=mtr
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for Split Pane
+[SubtypeCode124]
+components=ContextHelp,name,type,value,description
+type=spp
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for Calendar
+[SubtypeCode125]
+components=ContextHelp,name,type,value,description
+type=cal
+removed=
+displayname=
+AlignmentPriority=type,value
+
+; Section for window
+; Currently, this is for WPF windows, adding the components to the focused control
+; The window components will be added to the focus internally, similar to the way dialog components are added.
+[SubtypeCode126]
+components=wndName,wndType
+type=wnd
+removed=
+displayname=Window
+;note no default alignment as it will usually be on the focused control itself rather than the window
+
+[HTML Attributes]
+onmouseover=omo
+onclick=clk
+visited=vl
+longdesc=ld
+required=rq
+sortascending=asc
+sortdescending=desc
+
+;This section allows custom components to be mapped to standard component categories for treatment by the internal code.
+;For example, if a custom component should be treated as a control's value, the mapping should be
+;CustomComponentName=value
+;Recognized components include:
+;name, type, state, value, position, level, containerName, containerType, dlgName, dlgType, dlgText, dlgPageName,
+;other
+;This affects how the UI enables the disabling or enabling of the display of a given component in the Structured Data.
+;Note standard components do not need to be listed.
+[Component Category Map]
+;CustomKey=StandardComponent
+
+[Information]
+Description=Default  Structured Mode view.

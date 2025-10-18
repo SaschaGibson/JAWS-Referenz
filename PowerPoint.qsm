@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Powerpoint.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="Objects" Text="Objects">
+			<HelpMsg>
+This group contains options that control how JAWS detects Powerpoint objects.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="Objects.OverlapAlert" Text="Overlap alert">
+			<HelpMsg>
+This option controls whether to alert that objects are overlapping. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="Objects.TextPlaceholderOverflowAlert" Text="Text Placeholder Overflow alert">
+			<HelpMsg>
+This option controls whether to alert that placeholder content is overflowing. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="Objects.Description" Text="Description">
+			<HelpMsg>
+This option controls whether to describe objects as focus changes from slide to slide. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="Slides" Text="Slides">
+			<HelpMsg>
+This group contains options that control how JAWS detects Powerpoint slides.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="Slides.TableReadingMethod" Text="Table Reading Method">
+			<HelpMsg>
+This option controls whether tables are indicated by row, columns, dimensions only, or not at all. The default setting is table reading row by row.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="Slides.TableReadingMethod.0" Text="ignore" />
+		<DisplayName ID="Slides.TableReadingMethod.1" Text="row by row" />
+		<DisplayName ID="Slides.TableReadingMethod.2" Text="column by column" />
+		<DisplayName ID="Slides.TableReadingMethod.3" Text="dimensions" />
+		<DisplayName ID="Slides.SlideTransitionIndication"  Text="Slide Transition Indication">
+			<HelpMsg>
+This option controls whether to announce transition effects focus changes from slide to slide. The default setting is Off.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

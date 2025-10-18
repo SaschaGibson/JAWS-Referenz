@@ -1,0 +1,15 @@
+[Common keys]
+JAWSKey+F8=ToolbarList
+Tab=Tab
+Shift+Tab=ShiftTab
+
+[Laptop Keys]
+Insert+F8=ToolbarList
+;Begin remove from comment to prevent conflicts with MAGIc
+Control+Shift+p=ReadPropertiesWindow
+;End of remove from Common to prevent conflicts with MAGIc
+
+[Desktop Keys]
+;Begin remove from comment to prevent conflicts with MAGIc
+Control+Shift+p=ReadPropertiesWindow
+;End of remove from Common to prevent conflicts with MAGIc

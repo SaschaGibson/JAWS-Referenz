@@ -1,0 +1,24 @@
+# Function: tvCollapse
+
+## Description
+
+Collapses the currently selected treeview node.
+
+## Returns
+
+Type: Int\
+Description: TRUE if successful, FALSE otherwise.\
+
+## Parameters
+
+### Param 1:
+
+Type: Handle\
+Description: The TreeView window.\
+Include: Required\
+
+## Version
+
+This function is available in the following releases:
+
+1.  JAWS 5.10 and later

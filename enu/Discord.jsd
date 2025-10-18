@@ -1,0 +1,27 @@
+:script DownCell
+:DisplayName Down Cell
+:Synopsis Moves down one cell and reads it.
+:Description When inside a table, moves the active cursor to the same cell in the next row.  %product% will speak the row header followed by the content of the current cell. When not inside a table and the keystroke used to invoke the script is ALT+CONTROL+DownArrow, the keystroke is passed through to the application.
+:Category Tables
+:Version JAWS/25.0
+
+:script UpCell
+:DisplayName Up Cell
+:Synopsis Moves up one cell and reads it.
+:Description When inside a table, moves the active cursor to the same cell in the prior row.  %product% will speak the row header followed by the content of the current cell. When not inside a table and the keystroke used to invoke the script is ALT+CONTROL+UpArrow, the keystroke is passed through to the application.
+:Category Tables
+:Version JAWS/25.0
+
+:script MoveToBottomOfColumn
+:DisplayName Move to Bottom of Column
+:Synopsis Moves to the bottom of the current column.
+:Description When inside a table, moves the active cursor to the bottom of the current column. When not inside a table and the keystroke used to invoke the script is SHIFT+ALT+CONTROL+DownArrow, the keystroke is passed through to the application.
+:Category Tables
+:Version JAWS/25.0
+
+:script MoveToTopOfColumn
+:DisplayName Move to Top of Column
+:Synopsis Moves to the top of the current column.
+:Description When inside a table, moves the active cursor to the top of the current column. When not inside a table and the keystroke used to invoke the script is SHIFT+ALT+CONTROL+UpArrow, the keystroke is passed through to the application.
+:Category Tables
+:Version JAWS/25.0

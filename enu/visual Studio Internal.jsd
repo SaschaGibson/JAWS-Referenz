@@ -1,0 +1,8 @@
+:function UnscheduleAttachToObjectModel
+
+:function RescheduleAttachToObjectModel
+
+:function AttachToObjectModel
+
+:function GetHandleIncomingCallRegistrySubKey
+:returns string

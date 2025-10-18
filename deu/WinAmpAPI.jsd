@@ -1,0 +1,160 @@
+:function AutoStartEvent
+
+:function GetWinampMainWindowHandle
+:Returns handle If successful, the handle to the main Winamp window, otherwise 0.
+:Synopsis Returns the handle of the main Winamp window.
+:Description Returns the handle of the main Winamp window.  If the function fails, 0 is returned.
+
+:function IsWinampRunning
+:Returns int 1 if Winamp is running, 0 otherwise.
+:Synopsis Indicates if Winamp is running
+:Description Returns 1 if Winamp is running and 0 otherwise.
+
+:function WinampEqValueToDecibels
+:Returns string The equaliser band value expressed in decibels in the range -20 dB to 20 dB.
+:Synopsis Converts an equaliser band value to decibels
+:Description Converts values for the 10 equaliser bands returned by WinampGetEqValue and WinampGetEqData (which are in the range from 0 to 63) into decibel values in the range -20 dB to 20 dB.
+:Param int/nValue An equaliser value in the range 0 to 63.
+
+:function GetEqPos
+:Returns int The index of the equaliser setting.
+:Synopsis Get the current equaliser position
+:Description Get the index of the equaliser setting that will be accessed/edited using WinampGetEqValue/WinampSetEqValue.
+
+:function WinampSetEqPos
+:Synopsis Sets the current equaliser position
+:Description Determines the equaliser setting that will be accessed/modified by WinampGetEqValue/WinampSetEqValue.
+:Param int/nNewVal A value from 0 to 12 indicating the setting to be accessed next. 0 to 9 correspond to the 10 equaliser bands.  10 is the pre-amp setting, 11 enables/disables the equaliser and 12 is the autoload setting.
+
+:function WinampGetEqValue
+:Returns int Value of equaliser setting.
+:Synopsis Gets the value of the current equaliser setting
+:Description Returns the value of the equaliser setting that was specified by the last call to WinampSetEqPos.
+
+:function WinampSetEqValue
+:Synopsis Assigns a new value to the equaliser setting that was specified in the last call to WinampSetEqPos.
+:Param int/nNewVal The value to assign to the setting.
+
+:function WinampGetEqData
+:Returns int The value of the setting.
+:Synopsis Get equaliser setting
+:Description Returns the current value of the specified equaliser setting.
+:Param int/nPos A value from 0 to 12 indicating the setting to be accessed next. 0 to 9 correspond to the 10 equaliser bands.  10 is the pre-amp setting, 11 enables/disables the equaliser and 12 is the autoload setting.
+
+:function WinampSetEqData
+:Synopsis Assign a value to an equaliser setting.
+:Description Assign the value nNewVal to the equaliser setting specified in nPos.
+:Param int/nPos A value from 0 to 12 indicating the setting to be accessed next. 0 to 9 correspond to the 10 equaliser bands.  10 is the pre-amp setting, 11 enables/disables the equaliser and 12 is the autoload setting.
+:Param int/nNewVal the value to assign to the setting specified in nPos.
+
+:function WinampEqSummary
+:Returns string The summary.
+:Synopsis Gives a brief summary of the current equaliser band settings
+:Description Returns a string containing a list of all the current equaliser settings.
+
+:function WinampGetShuffleMode
+:Returns int Returns 1 if shuffling and 0 otherwise.
+:Synopsis Gets the current shuffle mode
+:Description Returns 1 if Winamp is randomly shuffling tracks in the playlist and 0 otherwise.
+
+:function WinampSetShuffleMode
+:Synopsis Set the shuffle mode in Winamp
+:Description According to the value passed to it, this function activates or deactivates Winamp's shuffle mode.
+:Param int/nNewVal A value of 1 activates shuffle mode while 0 deactivates it.
+
+:function WinampGetRepeatMode
+:Returns int 1 if Winamp is set to repeat the currently playing track and 0 otherwise.
+:Synopsis Reports the current repeat mode
+:Description Returns 1 if Winamp is set to repeat the currently playing  track and 0 otherwise.
+
+:function WinampSetRepeatMode
+:Synopsis Set the repeat mode in Winamp
+:Description According to the value passed to it, this function activates or deactivates Winamp's repeat mode.
+:Param int/nNewVal A value of 1 activates repeat mode while 0 deactivates it.
+
+:function WinampPlay
+:Synopsis Causes Winamp to play
+:Description Causes Winamp to start playing.  Has pretty much the same effect as pressing the play button.
+
+:function WinampIsPlaying
+:Returns int If 1, if Winamp is playing a track; 0, otherwise.
+:Synopsis Report if Winamp is playing a track
+:Description Determines whether or not the Winamp application is playing a track, returning 1 if it is and 0 otherwise.
+:Category Application
+
+:function WinampIsPaused
+:Returns int 1 if the current track is paused and 0 if it is playing.
+:Synopsis Reports if the currently playing track is paused
+:Description Returns 1 if the current track is paused and 0 if it is playing.
+
+:function WinampGetElapsedTime
+:Returns string The elapsed time formatted as minutes:seconds.
+:Synopsis Reports the time elapsed in the currently playing track
+:Description Returns how much time has elapsed in minutes and seconds of the currently playing track.
+
+:function WinampGetTotalTime
+:Returns string The total track length formatted as minutes:seconds.
+:Synopsis Reports the total time in the currently playing track
+:Description Returns how long in minutes and seconds is the currently playing track.
+
+:function WinampJumpToTime
+:Synopsis Jump to a specified time in the currently playing  track
+:Description Jumps to a time specified in seconds in the currently playing track.
+:Param string/sTime The time in the format minutes:seconds.
+
+:function WinampGetPlayListPosition
+:Returns int The position of the current track in the playlist.
+:Synopsis Reports where the current track is in the Winamp playlist
+:Description Returns the index of the current track in the Winamp playlist
+
+:function WinampSetPlayListPosition
+:Synopsis Set the current track in the playlist
+:Description Makes the specified track the current track in the playlist.
+:Param int/nNewVal The index of the track in the playlist which is to be made the current track.
+
+:function WinampGetPlayListLength
+:Returns int The number of tracks in the playlist.
+:Synopsis Reports the playlist length
+:Description Reports the number of tracks currently in the Winamp playlist.
+
+:function WinampGetSampleRate
+:Returns int The sample rate in samples per second.
+:Synopsis Reports the sample rate of the currently playing track.
+:Description If a track is playing, returns its sample rate in samples per second.
+
+:function WinampGetBitRate
+:Returns int The bit rate in kilobits per second.
+:Synopsis Reports the bit rate of the currently playing track.
+:Description If a track is playing, returns its bit rate in kilobits per second.
+
+:function WinampGetNumberOfChannels
+:Returns int The number of channels
+:Synopsis Reports the number of channels in the currently playing track.
+:Description If a track is playing, returns the number of channels it contains.
+
+:function WinampSetDisplayTimeElapsed
+:Synopsis Sets Winamp's time display mode to elapsed
+:Description Causes Winamp to show the time elapsed in the currently playing track.
+
+:function WinampSetDisplayTimeRemaining
+:Synopsis Sets Winamp's time display mode to remaining
+:Description Causes Winamp to show the time remaining in the currently playing track.
+
+:function WinampToggleAlwaysOnTop
+:Synopsis Toggles always on top mode
+:Description Toggles always on top mode in which Winamp always remains on to pof other Windows on the desktop.
+
+:function WinampSetPanning
+:Synopsis Set volume of Winamp playback
+:Description Provides a way to quickly adjust panning of playback in the Winamp application.
+:Param int/nPanning A number between -128 (far left) and 127 (far right) inclusive representing The panning balance.
+
+:function WinampSetVolume
+:Synopsis Set volume of Winamp playback
+:Description Provides a way to quickly adjust the volume of playback in the Winamp application.
+:Param int/nVolume A number between 0 (min) and 255 (max) inclusive representing The volume.
+
+:function WinampToggleStopAfterCurrentTrack
+:Synopsis Toggles stop after current track
+:Description Alternately activates and deactivates a mode in which Winamp stops playback when the currently playing track finishes.
+

@@ -1,0 +1,21 @@
+﻿[Component Aliases]
+ParentName=Elternfenster
+
+; Section for treeview
+[SubtypeCode31]
+components=ContextHelp,name,type,level,state,ControlStateInfo,value,ControlInfo,position,ParentName
+type=sa
+removed=
+displayname=
+AlignmentPriority=type,level,state,ControlStateInfo,value
+
+; Section for treeviewitem
+[SubtypeCode56]
+components=ContextHelp,name,type,level,value,state,position,ParentName,description
+type=sa
+removed=
+displayname=
+AlignmentPriority=type,level,value
+
+[Information]
+Description=Standard  Strukturierter Ansichtsmodus für Einstellungsverwaltung.

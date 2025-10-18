@@ -1,0 +1,158 @@
+;Copyright 1995-2021 Freedom Scientific, Inc.
+; JAWS 23.00.xx script file for Microsoft Exce
+;Excel Braille Structure File
+
+;section for Component Aliases
+[Component Aliases]
+coordinates=Cell Coordinates
+colHdr=Column Title
+rowHdr=Row Title
+content=Cell Content
+formula=Cell Formula
+hyperlink=Hyperlink Address
+comment=Cell Comment
+CommentEdit=Comment Edit
+InputMessage=InputMessage
+rowTotal=Row Total
+coltotal=Column Total
+monitorCells=Monitor Cells
+ColumnContext=Column Data
+ColumnContextBeforeCurrent=Column Data Before CurrentCell
+ColumnContextCurrent=Column Data CurrentCell
+ColumnContextAfterCurrent=Column Data After CurrentCell
+RowContext=Row Data
+RowContextBeforeCurrent=Row Data Before CurrentCell
+RowContextCurrent=Row Data CurrentCell
+RowContextAfterCurrent=Row Data After CurrentCell
+startCoordinates=Starting Cell Coordinates
+startContent=Starting Cell Content
+delim=Selection Delimiter
+endCoordinates=Ending Cell Coordinates
+endContent=Ending Cell Content
+line=Edit Line
+areas=Selected Areas
+
+; Section for listboxitem
+[SubtypeCode55]
+components=ContextHelp,name,type,state,value,position
+removed=
+displayname=
+type=lbx
+AlignmentPriority=name,type,state,value
+
+;cell (when navigating)
+[CustomControl1]
+displayName=Cell
+components=coordinates,cellType,rowHdr,colHdr,content,formula,hyperlink,comment,InputMessage,rowTotal,monitorCells:2
+removed=colTotal
+type=
+AlignmentPriority=coordinates
+
+;cell edit (f2)
+[CustomControl2]
+displayname=Cell Edit
+components=type,ComputerBrailleIndicator,line,Autocomplete
+removed=
+type=cell ed
+
+;row view
+[CustomControl3]
+displayName=Row View
+components=RowCellHeaders,RowContextBeforeCurrent:2,RowContextCurrent:2,RowContextAfterCurrent:2
+removed=
+type=row
+
+;column view
+[CustomControl4]
+displayname=Column View
+components=type,ColumnContextBeforeCurrent,ColumnContextCurrent,ColumnContextAfterCurrent,monitorCells:2
+removed=colTotal
+type=col
+AlignmentPriority=ColumnContextCurrent
+
+;Cell Selection
+[CustomControl5]
+displayname=Selected Cells
+components=type,startCoordinates,startContent,delim,endCoordinates,endContent
+removed=
+type=sel:
+
+[CustomControl6]
+displayname=Selected Areas
+components=type,areas
+removed=
+type=sel non-contig:
+
+;for treeview in cell
+[CustomControl7]
+displayname=Tree View in cell
+components=ContextHelp,name,type,level,value,state,position
+type=tv
+removed=
+
+;for dropdown lists
+[CustomControl8]
+components=type,value
+type=mnu
+removed=
+displayname=dropdown list
+
+;Comment edit (Shift+f2)
+[CustomControl9]
+displayname=Comment Edit
+components=type,ComputerBrailleIndicator,line
+removed=
+type=cmnt ed
+
+; Section for listboxitem in SDM dialogs
+[CustomControl10]
+components=ContextHelp,name,type,state,value, position, extraHelp
+removed=
+displayname=
+type=lbx
+AlignmentPriority=name,type,state,value
+
+; Section for edit text box...
+[CustomControl11]
+components=ContextHelp,name,type,ComputerBrailleIndicator,value
+removed=
+displayname=
+type=ed
+
+;Note edit
+[CustomControl12]
+displayname=Note Edit
+components=type,ComputerBrailleIndicator,line
+removed=
+type=note ed
+
+; Section for  slicer
+[CustomControl13]
+components=ContextHelp,type,name
+type=slc
+removed=hotkey
+displayname=Slicer
+AlignmentPriority=type,name
+
+[CustomControl14]
+components=coltitles:1,RowContextBeforeCurrent:2,RowContextCurrent:2,RowContextAfterCurrent:2
+removed=
+displayname=Column titles and Current Row
+
+[CustomControl15]
+components=PriorRow:1,RowContextBeforeCurrent:2,RowContextCurrent:2,RowContextAfterCurrent:2
+removed=
+displayname=Prior and Current Row
+
+[Information]
+Title=Excel-Active View on 1, Monitor Cells on 2
+Description=The active view, (cell, row or column,) is shown on line 1, and monitor cells are shown on line 2.
+
+[validation]
+functionName=onSpreadsheet
+
+[Component Mapping]
+monitorCells=2
+RowContextBeforeCurrent=2
+RowContextCurrent=2
+RowContextAfterCurrent=2

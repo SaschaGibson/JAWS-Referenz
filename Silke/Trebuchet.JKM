@@ -1,0 +1,12 @@
+[Common Keys]
+Control+T=ShowStaticText
+Control+L=GotoList
+Control+M=SayMeldung
+Shift+Control+L=GotoList2
+Control+K=GotoList3
+Shift+Control+T=
+Control+W=Wiedereroeffnen
+[Desktop Keys]
+Shift+Control+S=GotoStatus
+Shift+Control+V=AlternativesEinfuegen
+Control+B=Test

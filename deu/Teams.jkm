@@ -1,0 +1,24 @@
+[Common Keys]
+Control+Period=LaunchKeyboardShortcutsDialog
+alt+leftarrow=BackButton
+JAWSKey+f5=SelectATab
+Insert+f5=SelectATab
+JAWSKey+f8=MoveToToolBar
+Insert+f8=MoveToToolBar
+Control+Shift+JAWSKey+b=SelectAButton
+Control+Shift+Insert+b=SelectAButton
+alt+1=FocusToTabN
+alt+2=FocusToTabN
+alt+3=FocusToTabN
+alt+4=FocusToTabN
+alt+5=FocusToTabN
+Control+Space=
+shift+control+1=RecentMessage(1)
+shift+control+2=RecentMessage(2)
+shift+control+3=RecentMessage(3)
+shift+control+4=RecentMessage(4)
+shift+control+5=RecentMessage(5)
+shift+control+6=RecentMessage(6)
+shift+control+7=RecentMessage(7)
+shift+control+8=RecentMessage(8)
+shift+control+9=RecentMessage(9)

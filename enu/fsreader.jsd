@@ -1,0 +1,44 @@
+:script OpenDialog
+:synopsis Brings up the Open dialog
+
+:script PlayPause
+:synopsis Plays or Pauses audio of an audio book.
+
+:script Stop
+:synopsis Stops the audio of an audio book.
+
+:script Rewind
+:synopsis Rewinds the audio in an audio book.
+
+:script FastForward
+:synopsis Fast forwards the audio in an audio book.
+
+:script NormalRate
+:synopsis Sets the playback rate of an audio book to the normal rate.
+
+:script IncreaseRate
+:synopsis Increases the playback rate of an audio book.
+
+:script DecreaseRate
+:synopsis Decreases the playback rate of an audio book.
+
+:script TogglePauseReduction
+:synopsis Toggles the Reduce Pauses option on or off in an audio book.
+
+:script SetBookmark
+:synopsis Set a bookmark
+
+:script ViewBookmarks
+:synopsis View bookmarks
+
+:script GotoPage
+:synopsis Go to page
+
+:script Find
+:synopsis Find
+
+:script FindNext
+:synopsis Find next
+
+:script FindPrevious
+:synopsis Find previous

@@ -1,0 +1,12 @@
+:script PauseBeenden
+:SearchRank 1
+
+:script Abmelden
+:SearchRank 1
+
+:script GotoTextfield
+:SearchRank 1
+
+:script GotoNummer
+:SearchRank 1
+

@@ -1,0 +1,1832 @@
+:function IsUsingJAWSGestures
+:description Used to determine if gestures defined for use in JAWS are recognized. When MAGic is running, JAWS gestures are not recognized.
+:returns int True if gestures defined for use in JAWS are recognized, false otherwise.
+
+:script ToggleUIADebugging
+:synopsis UIA Debugging Umschalter An/Aus.
+:description Dieses Skript wird mitgeliefert, um Debug Ausgabemeldungen ein- oder auszuschalten, dieses ist für Skriptentwickler nützlich.
+
+:function TouchAutoStart
+:description TouchAutoStart should run when JAWS starts to initialize cscript for handling touch navigation.
+
+:function InitControlTypeHelperCollections
+:description initializes collections related to UIA control types used in touch navigation.
+:function InitFormControlQuickNavElements
+:description Called by function InitQuickNavElementCollection to initialize the collection of form control elements which belongs to the Form Control setting of the touch navigation rotor of type settings.
+:returns collection The initialized data used by InitQuickNavElementCollection when creating the touch navigation rotor.
+
+:function GetTouchNavRotorItemCount
+:description Determines the count of settings in the touch rotor.
+:returns int The count of items in the initialized touch rotor. The count equals the sum of all individual elements plus one element which is the compound set of elements for the form controls.
+
+:function EnsureRotorQuickNavAllocation
+:description Called by InitIndividualQuickNavElements to allocate memory and pointers for the structures that hold the data that make up the touch rotor elements. It does not initialize the values for the touch rotor; see SetRotorQuickNavElement for setting the rotor values.
+:param int The number of rotor elements. The number must equal the count of individual types of elements on the rotor, plus one for the forms setting on the rotor elements.
+
+:function SetRotorQuickNavElement
+:description Called by InitIndividualQuickNavElements to set the values for each individual touch rotor element, setting the data for the element.
+:param int The one-based index of a touch rotor element.
+:param string The key used to link the index to the type of touch item.
+:param string The UI name spoken for the rotor element.
+:optional
+:param variant The UIA control type or aria string used to define the type of element on the rotor.
+This may be omitted for temporary rotor items which are contextually added to perform additional special actions with the one finger flick up/down, and which do not perform movement to a UIA element of any control type.
+
+:function ClearRotorQuickNavElement
+:description Used to remove a temporary item from the navigation rotor. Do not remove fixed rotor items.
+:param int The one-based index of a touch rotor element.
+
+:function InitIndividualQuickNavElements
+:Description Called by function InitQuickNavElementCollection to initialize collections for all of the individual elements in the touch rotor. Individual elements excludes the touch rotor setting for Form Controls, which is a compound set of elements. Overwrite this function in situations where you wish to define a custom touch rotor, containing navigation elements which are not defined by the default set of individual elements.
+
+:function SetTouchRotorInitialQuickNavIndex
+:description Called by function InitQuickNavElementCollection to set the initial settings for the touch navigation rotor.
+:param int The initial index of the rotor.
+
+:function InitQuickNavElementCollection
+:description Initializes collections related to the touch rotor quick navigation in touch navigation.
+:optional
+:param int/ForceInit If true, forces a reinitialization of any existing collections. Call with true if you are redefining the default touch rotor, or restoring the default after using a custom touch rotor. The default is false, which causes initialization to be skipped if the collection data is already defined.
+
+:function SaveTouchQuickNavIndex
+:description Used to save the index of the current fix navigation rotor item before adding a temporary rotor item and changing the index to the temporary item.
+
+:function RestoreTouchQuickNavIndex
+:description Restores the navigation rotor index item which was saved using SaveTouchQuickNavIndex.
+
+:function ManageTemporaryRotorItems
+:description Called when the touch cursor moves to determine if the quick navigation rotor should have a temporary item added or removed according to the context of the current touch cursor location.
+
+:function InitUIAControlBrailleTypesArray
+:description Initializes collections for braille subtype matching used in touch navigation.
+
+:function CreateControlTypeCondition
+:description Creates and returns a condition for the type passed as the parameter.
+:param int The type of control for which a condition should be created.
+:returns object The condition object for the type.
+
+:function CreateAriaRoleCondition
+:description Creates and returns a condition for the aria role passed as the parameter.
+:param string The name of the aria role for which a condition should be created.
+:returns object The condition object for the aria role.
+
+:function CreateConditionFromCollection
+:description Creates and returns a condition for the collection of types and/or roles passed as the parameter.
+:param collection A set of types and/or aria roles for which a condition should be created.
+:returns object The condition object for the collection.
+
+:function CreateConditionFromINIKey
+:description Creates and returns a condition for the ini key passed as the parameter.
+:param string The ini key, read from the JCF file, for the type or role named by the key.
+:returns object The condition object for the element named by the ini key.
+
+:function GetDefaultUIAConditionSettings
+:description Reads the section for the touch navigation condition types from default.jcf, and builds a collection of the types or roles to be included in the default condition.
+:returns collection The set of types and/or roles to be included in the default condition.
+
+:function GetAppCustomizedUIAConditionSettings
+:description Reads the section for the touch navigation condition types from the current application's jcf file, and builds a collection of the types or roles to be included in the condition for the current application.
+:returns collection The set of types and/or roles to be included in the conditions for the current application, or the default conditions if none exist for the current application.
+
+:function GetAdvancedNavigationUIAConditionSettings
+:description Builds a collection including all of the types or roles in the condition for the treewalker.
+:returns collection The set of all types and/or roles to be included in the conditions for the advanced navigation.
+
+:function RemoveAppCustomizedUIAConditionSettings
+:description Removes customized touch navigation conditions from the JCF file for the current application, restoring the application to using the conditions specified in the default JCF file.
+
+:function GetUIAConditionForTreeWalker
+:description Obtains a treewalker object which is used to navigate with the touch cursor.
+:returns object The treewalker object used to navigate with the touch cursor.
+
+:function UpdateUIAElementRectangle
+:description Manages drawing and clearing of a visible bounding rectangle for the touch cursor location.
+:optional
+:param object The element for which a rectangle should be drawn, if possible.
+
+:function g_UIA_CreateTreeWalkerWithCondition
+:description Creates the UIA object and a treewalker used for touch and object navigation.
+:param object The condition to use when creating a touch navigation treewalker.
+:optional
+:param object The process id condition. If omitted, the process id of the focus object is used when creating a touch navigation treewalker.
+:returns object A treewalker used with touch navigation.
+
+:function InitTouchNavigationTreeWalker
+:description Creates or updates the UIA object and treewalker used with touch navigation.
+:optional
+:param int True if an existing treewalker should be updated, false if a UIA object and treewalker should be created.
+:returns int True if the treewalker was initialized or updated and the calling function should be allowed to continue processing, false otherwise.
+
+:Function CreateUIAObject
+:description Creates a global object for the treewalker, and performs setup initialization necessary for touch navigation.
+
+:Function UpdateTreeWalkerWithNewConditions
+:description Used to change the conditions the treewalker is using for traversal.
+:returns int True if the treewalker conditions could be updated, false otherwise.
+
+:function KillUIAObject
+:description Releases the object used by the treewalker during touch navigation.
+
+:function UIAFocusChangedEventEx
+:description Releases the object previously in focus.
+
+:function GetExpandCollapseString
+:description If the object has an expand/collapse pattern, retrieves a description of the expand/collapse state.
+:param object The element for which the expand/collapse string is to be obtained.
+:returns string If the element has an expand/collapse pattern, the string describing the state of expansion or collapse; otherwise null.
+
+:function GetGridItemString
+:description If the object has a grid pattern, retrieves a description of the current location in the grid and span if the current item in the grid spans more than one row or column.
+:param object The element for which the grid item string is to be obtained.
+:returns string If the element has a grid item pattern, the string describing the location of the item in the grid.
+
+:function GetGridItemRowAndColumnPosition
+:description If the object has a grid pattern, retrieves the a description of the row and column location of the item in the grid. Does not return information about the row and column span, use GetGridItemString to include span information.
+:param object The element for which the row and column position is to be obtained.
+:returns string If the element has a grid item pattern, the row and column location in the grid.
+
+:FUNCTION GetGridString
+:description If the object has a grid pattern, returns a string indicating that a grid pattern is present.
+:param object The element for which a grid pattern is to be detected.
+:returns string "Grid", if the element has a grid pattern; otherwise null.
+
+:function GetRangeValueString
+:description If the object has a range value, retrieves the text of the value.
+:param object The element for which a range value is to be detected.
+:returns string The text of the range value for the element.
+
+:function GetSelectedStateString( object element
+:description If the object has a pattern that indicates it is selected, returns a string indicating that the object is selected.
+:param object The element for which the selection is to be detected.
+:returns string "selected" if the pattern indacates the object is selected; otherwise null.
+
+:function GetToggleString
+:description If the object has a toggle pattern, retrieves the description of the check state.
+:param object The element for which a toggle pattern is to be detected.
+:returns string If the object has a toggle pattern, the text describing the check state; otherwise null.
+
+:function GetValueString
+:description If possible, retrieves a value string for the object.
+:param object The element for which a value string is to be retrieved.
+:returns string If a value string could be retrieved, the string; otherwise null.
+
+:function GetIsReadOnlyString
+:description If it can be determined that the element is read-only, a string indicating that it is read-only.
+:param object The element for which the read-only property is to be detected.
+:returns string If it was determined that the object is read-only, a string saying that it is read only; otherwise null.
+
+:function GetIsDataValidString
+:description Tests a form control to determine if there is invalid data in the control.
+:param object The form control element to test for data validity.
+:returns string If it was determined that the object is a form control with invalid data, a string indicating that the data is invalid.
+
+:function GetIsDisabledString
+:description If an element is disabled, returns a string indicating that it is disabled.
+:param object The element to test for a disabled state.
+:returns string The string indicating that the element is disabled, or null if the element is not disabled.
+
+:function GetIsPasswordString
+:description If the element is for password entry, returns a string indicating that it is a password control.
+:param object The element to test if it is a password control.
+:returns string If the control is used for password entry, the string indicating that it is a password control; otherwise null.
+
+:function GetIsRequiredString
+:description Tests if the element requires data entry, and if so returns a string indicating that it is required.
+:param object The element to test if data entry is required.
+:returns string If the object is a form control requiring data entry, a string indicating that it is required; otherwise null.
+
+:function GetOrientationString
+:description If an element's orientation can be determined, a string describing the orientation of the element.
+:param object The element whose orientation is to be determined.
+:returns string If orientation is determined to horizontal or vertical, the string describing the orientation; otherwise null.
+
+:function GetUIAStateString
+:description Attempts to determine all states for the element, and returns the retrieved state information.
+:param object The element for which the state or states should be retrieved.
+:optional
+:param int flags for specified states. If null, assumes all states should be retrieved.
+:returns string A list of all retrievable states of the element, or only the specified states if the optional flags specified a subset of states.
+
+:function GetUIAPositionString
+:description If the element is in a grid, retrieves the position of the element in the element.
+:param object The element whose grid position is to be retrieved.
+:returns string
+
+:function UIAGetTextLineRangeAtLocation
+:description Retrieves the range for the line at the location of the touch gesture coordinate.
+:param object The text pattern which will be used to obtain the range.
+:param int The X coordinate corresponding to the point of touch.
+:param int The Y coordinate corresponding to the point of touch.
+:returns object The range for the line at the touch coordinate.
+
+:function UIASayTextLineRangeAtLocation
+:description Obtains the text for the line at the location of the touch gesture coordinate and speaks it.
+:param object The text pattern which will be used to obtain the spoken text.
+:param int The X coordinate corresponding to the point of touch.
+:param int The Y coordinate corresponding to the point of touch.
+
+:function UIASayElementValueForItemWithTextValue
+:description Speaks the value of the element. The value is text retrieved from the value of the value pattern, or from the legacy iaccessible pattern.
+:param object The element to be whose value is to be spoken.
+
+:function UIAIsElementWithDocumentRange
+:description Tests if an element has a text pattern with a document range. If so, the text pattern and document range are obtained and passed back in parameters.
+:param object The UIA element to test.
+:param object byRef The text pattern belonging to the element.
+:param object byRef The document range obtained from the text pattern.
+:returns int True if the element has a text pattern with a document range, false otherwise.
+
+:function UIASayElementWithDocumentRangeAtLocation
+:description Determines if an element has a text pattern with a document range, and if so speaks it according to whether the type of action or gesture that caused the element to be announced.
+:param object The element to be announced.
+:param int The X coordinate of the touch gesture.
+:param int The Y coordinate of the touch gesture.
+:returns int True if the element has a text pattern with a document range, false otherwise.
+
+:function UIAGetValueForSayElement
+:description Given an element to be spoken, retrieves the element's value text to be spoken. If the element value is the same as the element name, the value may not be returned as text to be spoken.
+:param object The element for which the value text is to be retrieved.
+:returns string the element value text, if it exists and is determined to be appropriate when speaking the element.
+
+:Function UIASayElement
+:description Announces the element.
+:param object The element to be announced.
+:optional
+:param int True if "Has Focus" message should be silent, false otherwise. Default is false.
+:param int True if announcement of position information should be silenced, false otherwise. Default is false.
+
+:function TouchSayCurrentElement
+:description Announces the element at the touch cursor.
+
+:function UIAGetFirstChild
+:description Attempts to retrieve the first child object of the parameter object.
+:param object The element whose first child is to be retrieved.
+:returns object If the first child could be retrieved, the first child of the object parameter; otherwise null.
+
+:function UIAGetParent
+:description Attempts to retrieve the parent object of the parameter object.
+:param object The element whose parent is to be retrieved.
+:returns object If the parent could be retrieved, the parent of the object parameter; otherwise null.
+
+:function UIAGetGrandParent
+:description Attempts to retrieve the parent object of the parent object of the parameter object.
+:param object The element whose grandparent is to be retrieved.
+:returns object If the parent of the parent could be retrieved, the grandparent of the object parameter; otherwise null.
+
+:function UIAGetNext
+:description Attempts to retrieve the next object of the parameter object.
+:param object The element whose next sibling is to be retrieved.
+:returns object If the next sibling object could be retrieved, the next sibling of the object parameter; otherwise null.
+
+:function UIAGetPrior
+:description Attempts to retrieve the prior object of the parameter object.
+:param object The element whose prior sibling is to be retrieved.
+:returns object If the prior sibling object could be retrieved, the prior sibling of the object parameter; otherwise null.
+
+
+:function ElementNameIsParentName
+:description determines if the parent of the element has the same name as does the element.
+:param object The object whose name is to be compared against its parent's name.
+:returns int True if the element and its parent have the same name and the name is not null, false otherwise.
+
+:function ElementNameIsParentOrGrandParentName
+:description determines if the parent or grandparent of the element has the same name as does the element.
+:param object The object whose name is to be compared against its parent's or grandparent's name.
+:returns int True if the element and its parent have the same name and the name is not null, true if the parent's name is null and the element and its grandparent have the same name, false otherwise.
+
+:function ElementNameIsTextInGroupParent
+:description Determines if the text of the element exists in the text of the parent and the parent is of type group.
+:param object The object whose name is to be compared against its parent's name.
+:returns int True if the element name exists in the parent name and the name is not null, and the parent type is group; false otherwise.
+
+:function PreProcessShouldSkipUIAElementWhenNavigating
+:description Called by function ShouldSkipUIAElementWhenNavigating to perform necessary tests before the main test for touch navigation in applications.
+
+:function MainProcessShouldSkipUIAElementWhenNavigating
+:description Called by function ShouldSkipUIAElementWhenNavigating to programmatically determine if an application element should be skipped over during touch navigation.
+:param object The element to test if it should be skipped over during touch cursor navigation.
+:returns int True if it is determined that the element should be skipped over to reduce redundancy, false otherwise.
+
+:function ShouldSkipUIAElementWhenNavigating
+:description Attempts to programmatically determine if an element should be skipped over during touch navigation in order to reduce redundancy.
+To preserve default functionality, do not overwrite this function but instead overwrite the function MainProcessShouldSkipUIAElementWhenNavigating.
+:param object The element to test if it should be skipped over during touch cursor navigation.
+:returns int True if it is determined that the element should be skipped over to reduce redundancy, false otherwise.
+
+:function ProcessedExploreElementWithTextRange
+:description Used by function TouchExplore to process the touch gesture for elements with text range patterns, speaking the text range for the line rather than the entire element as is done for elements without a text range.
+:param object The element at the touch location.
+:param int The X screen coordinate of the touch gesture.
+:param int The Y coordinate of the touch gesture.
+:returns int True if the element had a text range and speech was processed, false otherwise.
+:function ProcessBlankScreenAreaSound
+:description Called during touch exploration to play the sound representing a blank area of the screen. Because touch exploration fires more often than playing the sound is desired, plays the sound only at specific intervals of calling the function.
+
+
+
+:function ProcessedExploreElementWithTextRange
+:description Determines if the element has a text range and if so, speaks the range or plays the sound representing a blank area of the screen.
+:param object/element The element at the touch location.
+:param int/x The X coordinate of the touch location.
+:param int/y The Y coordinate of the touch location.
+:returns int True if the element was determined to have a text range, false otherwise.
+
+:function IsElementBlankAreaOfScreen
+:description Tests whether or not an element is visually represented on the screen. Used by TouchExplore to determine when to consider the area as blank when it is touched.
+:param object/element The element to test whether or not it is visually represented on the screen.
+:returns int True if an element is not visually represented on the screen.
+
+:function IsStopSpeechBlockedDuringExploration
+:description Used by TouchExplore to determine whether to prevent calling StopSpeech from a previous element when exploration moves to a new element. Typically used to prevent speech suppression when UIA has switched elements at a touch point, rather than when exploration moves to a different element at a different touch point.
+:returns int True is StopSpeech should be prevented from running, false otherwise.
+
+:function UnblockStopSpeechDuringExploration
+:description Automatically runs after the duration of time set in BlockStopSpeechDuringExploration, clearing the blockage of StopSpeech.
+
+:function BlockStopSpeechDuringExploration
+:description Prevents StopSpeech from being called for a specified period of time in the TouchExplore function. This allows announcement to occur while TouchExplore is repeatedly running.
+:param int Duration of time in tenths of a second for StopSpeech to be blocked.
+
+:function IsInKeyboardBoundaryArea
+:description Determines if a given element is located within the keyboard boundary area. Used by DetectCrossingVirtualKeyboardBoundary to determine if the virtual keyboard area has been entered or exited during exploration.
+:param object The element to test if it is located within the keyboard boundary area.
+:returns int True if a given element is located within the keyboard boundary area, false otherwise.
+
+:function DetectCrossingVirtualKeyboardBoundary
+:description Used by function TouchExplore to detect when exploration enters or leaves the area of the virtual keyboard. Plays the sound associated with entering or exiting the virtual keyboard area.
+:param object The element at the current touch location.
+
+:function IsTouchPointInConsoleWindow
+:description Used during exploration to determine if the touch point is in a console window.
+:param int/X The X coordinate of the touch point.
+:param int Y The Y coordinate of the touch point.
+:returns int True if the touch point is in a console window, false otherwise.
+
+:function ClearOSMExplorationRectAndTouchPoint
+:description Clears the rectangle and touch point used for OSM support of touch exploration.
+
+:function UpdateOSMExplorationRectAndTouchPoint
+:description Updates the rectangle and touch point used for OSM support of touch exploration, so that it can be used for comparison on the next firing of TouchExplore.
+:param int/X The X coordinate of the touch point.
+:param int Y The Y coordinate of the touch point.
+:param int/left The left edge of the OSM rectangle at the touch location.
+:param int/top The top edge of the OSM rectangle at the touch location.
+:param int/right The right edge of the OSM rectangle at the touch location.
+:param int/bottom The bottom edge of the OSM rectangle at the touch location.
+
+:function IsNewOSMTouchRect
+:description Compares the received rectangle against the previously saved one to determine if touch has moved to a new OSM rectangle.
+:param int/left The left edge of the OSM rectangle at the touch location.
+:param int/top The top edge of the OSM rectangle at the touch location.
+:param int/right The right edge of the OSM rectangle at the touch location.
+:param int/bottom The bottom edge of the OSM rectangle at the touch location.
+:returns int True if the new rectangle is different from the save one, false otherwise.
+
+:function SayTouchLocationUsingOSM
+:description handles all touch exploration speech using OSM. This is currently used only for console windows.
+:param int/x The x coordinate of the current touch location.
+:param int y The y coordinate of the current touch location.
+
+:function TouchExplore
+:Description Used to find and speak the next touchable item when exploring the screen.
+:param int The X screen coordinate of the touch gesture.
+:param int The Y coordinate of the touch gesture.
+
+:function DoActionForTouchExploreEnd
+:description Contains the logic for the actions to be performed when touch explore ends.
+:param int The X coordinate of the touch point.
+:param int The Y coordinate of the touch point.
+
+:function TouchExploreEnded
+:description Used to indicate to the scripts that touch exploring has ended.
+:param int The X screen coordinate of the touch gesture.
+:param int The Y coordinate of the touch gesture.
+
+:function GetUIAControllerForInfo
+:param object The element for which ControllerFor property information is to be retrieved.
+:optional
+:param int True if the line of information for each element is to be indented, false otherwise. Default is false.
+:description If the element has a ControllerFor property, information about the elements for which the property applies.
+:returns string Information about any elements to which the ControllerFor property applies.
+
+:function GetUIADescribedByInfo
+:param object The element for which DescribedBy property information is to be retrieved.
+:optional
+:param int True if the line of information for each element is to be indented, false otherwise. Default is false.
+:description If the element has a DescribedBy property, information about the elements for which the property applies.
+:returns string Information about any elements to which the DescribedBy property applies.
+
+:function GetUIARuntimeIDString
+:param object The element object for which the string representing the runtime ID is to be retrieved.
+:description Retrieves a string representing the runtime ID of a UIA element object. This is a string suitable for displaying in properties information.
+:returns string If the runtime ID was retrieved for the UIA element object, a string suitable for displaying in properties; null otherwise.
+
+:function UIAGetElementPropertiesStringForElement
+:param object The element whose properties are to be retrieved.
+:returns string The diagnostic text of all the available element properties.
+
+:function UIAGetElementPropertiesString
+:description Retrieves all property strings for the current touch element and returns a message that can be used for diagnostics.
+:optional
+:param object The element whose properties are to be retrieved.
+:returns string All the information about an element's properties that could be obtained.
+
+:function UIAGetElementAvailablePatternsStringForElement
+:param object The element whose pattern information are to be retrieved.
+:returns string The diagnostic text of all the available element patterns.
+
+:function UIAGetElementAvailablePatternsString
+:description Retrieves all available pattern strings for the current touch element and returns a message that can be used for diagnostics.
+:optional
+:param object The element whose pattern information is to be retrieved.
+:returns string A list of available patterns for an element.
+
+:function GetBooleanValueStringFrompatternData
+:description Returns the string "true" or "false" for pattern data which evaluates to a UIA boolean value.
+:param object The object which is a pattern of an element. This pattern is expected to evaluate to true or false.
+:returns string The string "true" or "false".
+
+:function TextSelectionIDToString
+:description Retrieves a string representing a supported text selection id constant.
+:param int One of the SupportedTextSelectionID constants from UIA.jsh.
+:returns string A string representing the text selection ID.
+
+:function AnnotationTypeIDToString
+:description Retrieves a string representing an annotation type id constant.
+:param int One of the AnnotationTypeID constants from UIA.jsh.
+:returns string A string representing the annotation type ID.
+
+:function GetListOfAnnotationTypeStrings
+:param object The array of annotation type id's.
+:param string The separator to use in the output of strings for each annotation type in the array.
+:returns string The strings representing the annotation types in the array.
+
+:function GetFormattedListFromStringArray
+:description Retrieves a formatted list from a string array property of a UIA element.
+:param string The label to use for the formatted output of strings.
+:param object The UIA property which is the string array.
+:returns string A formatted output comprising the list label and list of strings in the array.
+
+:function GetListOfElementNames
+:description Gets a list of element names for an array of elements. If no names could be retrieved for an element in the array, the name is substituted with an indication that the name is empty.
+:param object An array of UIA elements.
+:param int The maximum number of items in the list. Used to limit output to a reasonable number of list items. This number should not exceed the number of items in the array.
+:param int byRef The count of list items where the names retrieved for elements was found to be empty when creating the list.
+:returns string An indented list of element names.
+
+:function GetFormattedListOfElementNames
+:description Formats output of element names for an array of elements. If no names could be retrieved for the list, the label is followed by an indication that the list is empty. If the number of elements in the array is greater than the limit of items to be output, the list ends with an elipsis.
+:param string The label of the list. This is usually a string from the message file, and will precede the list that is created from the array of elements.
+:param object An array of elements for which information is to be retrieved.
+:param int The maximum number of items to be output in the list.
+:returns string The formatted output comprising the list label followed by the list.
+
+:function GetFormattedListOfElementNameTypeAndRuntimeIDStrings
+:description Formats a message with a string representing the name, type and runtime ID of an element.
+:param string The message to be used when formatting the output. The message usually include text describing which element the output is referring to.
+:param object The element for which the name, type and runtime ID string is to be retrieved.
+:returns string The formatted string of information about an element.
+
+:function GetFormattedListOfElementArrayNameTypeAndRuntimeIDStrings
+:description Formats a message with a string representing the name, type and runtime ID of an array of elements.
+:param string The label text preceding the list output for the array of elements.
+:param object The array of elements for which the names, types and runtime ID strings are to be retrieved.
+:returns string The formatted string of information about an array of elements.
+
+:function GetTextRangePatternDataString
+:description Retrieves information about a text range object.
+:param object The object which is the text range.
+:returns string Diagnostic information about a text range pattern.
+
+:function GetTogglePatternDataString
+:description Retrieves information about a toggle pattern object.
+:param object The object which is the toggle pattern.
+:returns string Diagnostic information about a toggle pattern.
+
+:function GetExpandCollapsePatternDataString
+:description Retrieves information about an expand/collapse pattern object.
+:param object The object which is the expand/collapse pattern.
+:returns string Diagnostic information about an expand/collapse pattern.
+
+:function GetValuePatternDataString
+:description Retrieves information about a value pattern object.
+:param object The object which is the value pattern.
+:returns string Diagnostic information about a value pattern.
+
+:function GetLegacyIAccessiblePatternDataString
+:description Retrieves information about a legacy iaccessible pattern object.
+:param object The object which is the legacy iaccessible pattern.
+:returns string Diagnostic information about a legacy iaccessible pattern.
+
+:function GetTextPatternDataString
+:description Retrieves information about a text pattern object.
+:param object The object which is the text pattern.
+:returns string Diagnostic information about a text pattern.
+
+:function GetTextEditPatternDataString
+:description Retrieves information about a text edit pattern object.
+:param object The object which is the text edit pattern.
+:returns string Diagnostic information about a text edit pattern.
+
+:function GetTextChildPatternDataString
+:description Retrieves information about a text child pattern object.
+:param object The object which is the text child pattern.
+:returns string Diagnostic information about a text child pattern.
+
+:function GetGridPatternDataString
+:description Retrieves information about a grid pattern object.
+:param object The object which is the grid pattern.
+:returns string Diagnostic information about a grid pattern.
+
+:function GetGridItemPatternDataString
+:description Retrieves information about a grid item pattern object.
+:param object The object which is the grid item pattern.
+:returns string Diagnostic information about a grid item pattern.
+
+:function GetTablePatternDataString
+:description Retrieves information about a table pattern object.
+:param object The object which is the table pattern.
+:returns string Diagnostic information about a table pattern.
+
+:function GetTableItemPatternDataString
+:description Retrieves information about a table item pattern object.
+:param object The object which is the table item pattern.
+:returns string Diagnostic information about a table item pattern.
+
+:function GetSpreadsheetItemPatternDataString
+:description Retrieves information about a spreadsheet item pattern object.
+:param object The object which is the spreadsheet item pattern.
+:returns string Diagnostic information about a spreadsheet item pattern.
+
+:function GetRangeValuePatternDataString
+:description Retrieves information about a range value pattern object.
+:param object The object which is the range value pattern.
+:returns string Diagnostic information about a range value pattern.
+
+:function GetScrollPatternDataString
+:description Retrieves information about a scroll pattern object.
+:param object The object which is the scroll pattern.
+:returns string Diagnostic information about a scroll pattern.
+
+:function GetSelectionPatternDataString
+:description Retrieves information about a selection pattern object.
+:param object The object which is the selection pattern.
+:returns string Diagnostic information about a selection pattern.
+
+:function GetSelectionItemPatternDataString
+:description Retrieves information about a selection item pattern object.
+:param object The object which is the selection item pattern.
+:returns string Diagnostic information about a selection item pattern.
+
+:function GetAnnotationPatternDataString
+:description Retrieves information about an annotation pattern object.
+:param object The object which is the annotation pattern.
+:returns string Diagnostic information about an annotation pattern.
+
+:function GetStylesPatternDataString
+:description Retrieves information about a styles pattern object.
+:param object The object which is the styles pattern.
+:returns string Diagnostic information about a styles pattern.
+
+:function GetWindowPatternDataString
+:description Retrieves information about a window pattern object.
+:param object The object which is the window pattern.
+:returns string Diagnostic information about a window pattern.
+
+:function GetDockPatternDataString
+:description Retrieves information about a dock pattern object.
+:param object The object which is the dock pattern.
+:returns string Diagnostic information about a dock pattern.
+
+:function GetMultipleViewPatternDataString
+:description Retrieves information about a multiple view pattern object.
+:param object The object which is the multiple view pattern.
+:returns string Diagnostic information about a multiple view pattern.
+
+:function GetTransformPatternDataString
+:description Retrieves information about a transform pattern object.
+:param object The object which is the transform pattern.
+:returns string Diagnostic information about a transform pattern.
+
+:function GetDragPatternDataString
+:description Retrieves information about a drag pattern object.
+:param object The object which is the drag pattern.
+:returns string Diagnostic information about a drag pattern.
+
+:function GetDropTargetPatternDataString
+:description Retrieves information about a drop target pattern object.
+:param object The object which is the drop target pattern.
+:returns string Diagnostic information about a drop target pattern.
+
+:function UIAGetElementPatternsDataStringForElement
+:param object The element whose pattern data is to be retrieved.
+:returns string The diagnostic text of all the available element pattern data.
+
+:function UIAGetElementPatternsDataString
+:description Retrieves pattern data information for the current touch element and returns a message that can be used for diagnostics.
+:optional
+:param object The element whose pattern data is to be retrieved.
+:returns string Information about the patterns for an element.
+
+:function UIAGetElementProperties
+:description Retrieves diagnostic information about all properties and patterns of a touch element.
+optional:
+param object The element whose properties are to be retrieved. If omitted, get the properties of the focus element.
+
+:function UIASayElementProperties
+:description A diagnostic output of all properties and patterns of the current touch element.
+
+:function TouchNavigationBoundaryEvent
+:description This event fires when an attempted navigation cannot be performed because there are no more elements in the attempted navigation direction.
+:param int the attempted direction of navigation that caused the boundary event.
+
+:function UIAGoTo
+:description Attempts to move the touch cursor in the indicated direction, and if move is successful, speaks the element moved to.
+:param int The navigation direction. See touch navigation directions constants in HJConst.jsh.
+
+:function UIASayRect
+:description Speaks the rectangle coordinates of the current touch element.
+
+:function UIAGetPoint
+:param int byRef The x coordinate of the point to retrieve.
+:param int byRef The y coordinate of the point to retrieve.
+:description Retrieves the clickable point, if it exists, for the UIA object at the touch cursor location.
+:returns int True if the point could be obtained, false otherwise.
+
+:function UIAGetRect
+:param int byRef The left edge of the rectangle to be retrieved.
+:param int byRef The top edge of the rectangle to be retrieved.
+:param int byRef The right edge of the rectangle to be retrieved.
+:param int byRef The bottom edge of the rectangle to be retrieved.
+:description Retrieves the bounding rectangle, if it exists, for the UIA object at the touch cursor location.
+:returns int True if the bounding rectangle could be obtained, false otherwise.
+
+:function UIASayPoint
+:description If the current touch element has a clickable point, speaks the coordinates of the point.
+
+:function UIAMakeVisible
+:param object elementThe element to be made visible.
+:description If possible, makes the element visible by scrolling it into view.
+
+:function UpdateGestureModeToKeyboardNavState
+:description Used to change the gesture mode when navigation mode is changed by the keyboard. If navigation mode changes to text review, gesture mode is changed to text reading; otherwise, gesture mode is changed to touch navigation.
+
+:function ShowAndSayItemAtTouchCursor
+:description If possible, scrolls the item at the location of the touch cursor into view, then speaks the item.
+:optional
+:param int True if navigation sounds should be suppressed, even though they are configured to play under normal conditions; default is to use the configured setting.
+
+:function UIASelectItem
+:param object The element to select.
+:description If possible selects the element.
+:returns int true if the item is selectable and a select command was issued, false otherwise.
+
+:function UIAExpandCollapse
+:param object The element
+:description Attempts to toggle the expand/collapse state of the element.
+:returns int True if the element is expanded, false if it is collapsed or if an expand/collapse toggle could not be accomplished.
+
+:function IsEditableControl
+:description Attempts to determine if the element is a type which is an editable control.
+:param object The element to test.
+:returns int True if the control is an editable control, false otherwise. The element is not considered to be editable if it cannot gain focus or is disabled.
+
+:function IsTextReadingAppropriateForCurrentElement
+:description determines if the current element is a text type of element where the text reading mode should be available.
+:returns int True if the current element is a text type of element, false otherwise.
+
+:function CurrentElementIsAvailableForAction
+:description Tests if the scripts have access to the current element, and if the element is ready for an action such as double tap.
+:returns int True if the current element is available and enabled, false otherwise.
+
+:function TouchTapInvokeCurrentElement
+:description Called by function TouchTapCurrentElement to invoke the current touch element.
+:optional
+:param int/X The touch x coordinate.
+:param int/Y The touch y coordinate.
+:returns int True if invoke should be applied to the current touch element an no more processing should be done by function TouchTapCurrentElement.
+
+:function TouchTapToggleCurrentElement
+:description Called by function TouchTapCurrentElement to toggle the current touch element.
+:optional
+:param int/X The touch x coordinate.
+:param int/Y The touch y coordinate.
+:returns int True if toggle should be applied to the current touch element an no more processing should be done by function TouchTapCurrentElement.
+
+:function TouchTapSelectCurrentElement
+:description Called by function TouchTapCurrentElement to select the current touch element if the element is a selectable item.
+:optional
+:param int/X The touch x coordinate.
+:param int/Y The touch y coordinate.
+:returns int True if selection was performed on the current touch element an no more processing should be done by function TouchTapCurrentElement.
+
+:function TouchTapDoDefaultActionForCurrentElement
+:description Called by function TouchTapCurrentElement to do the default action for the current touch element.
+:optional
+:param int/X The touch x coordinate.
+:param int/Y The touch y coordinate.
+:returns int True if the default action should be applied to the current touch element an no more processing should be done by function TouchTapCurrentElement.
+
+:function TouchTapExpandCollapseCurrentElement
+:description Called by function TouchTapCurrentfunction touchtapElement to expand or collapse the current touch element.
+:optional
+:param int/X The touch x coordinate.
+:param int/Y The touch y coordinate.
+:returns int True if expand or collapse should be applied to the current touch element an no more processing should be done by function TouchTapCurrentElement.
+
+:function TouchTapSlider
+:description Attempts to increase or decrease the slider.
+:param object/Element The UIA slider element to tap.
+:param int/direction 
+:optional
+:param int speakValue
+:returns int True if the slider could be tapped, false otherwise. Return value does not indicate whether or not there was a slider change.
+
+:function TouchTapRangeOfCurrentElement
+:description Called by function TouchTapCurrentElement to change the current touch element where the current element uses a range pattern.
+:optional
+:param int/X The touch x coordinate.
+:param int/Y The touch y coordinate.
+:returns int True if manipulation of the range pattern should be applied to the current touch element an no more processing should be done by function TouchTapCurrentElement.
+
+:function TouchTapSetFocusToCurrentElement
+:description Called by function TouchTapCurrentElement to set focus to the current touch element.
+:optional
+:param int The X coordinate of the tap.
+:param int The Y coordinate of the tap.
+:returns int True if set focus should be applied to the current touch element an no more processing should be done by function TouchTapCurrentElement.
+
+:function ProcessTouchTapCurrentElement
+:description Called by function TouchTapCurrentElement to process the touch tap functions for the current element. Overwrite this function in applications where special conditions should apply to the order or type of touch tap functions for the current element. Overwrite one of the touch tap functions if special conditions should be applied for a specific touch tap function.
+:optional
+:param int The X coordinate of the tap.
+:param int The Y coordinate of the tap.
+:returns int True if one of the touch tap functions for the current element returned true, false otherwise.
+
+:function TouchTapCurrentElement
+:description Responds to tap of an element. JAWS tries to set focus, invoke, or toggle the expand/collapse state of the element in response to a tap.
+:optional
+:param int The X coordinate of the tap.
+:param int The Y coordinate of the tap.
+
+:function TrySetCursorToLocation
+:description Attempts to set the cursor to the screen location specified by X and Y.
+:param int The X screen coordinate.
+:param int The Y screen coordinate.
+:optional
+:param int If true, and if the cursor could be set, speaks information about the location where the cursor was set.
+:returns int True if the element at the specified location has a text pattern and the cursor could be set using the range from point, false otherwise.
+
+:function DoSecondaryActionForCurrentElement
+:description Performs the secondary action for an element.
+
+:function TouchRightClick
+:description Sets focus to the current element is possible, and attempts to bring up a context menu.
+:optional
+:param object If necessary, supply a specific object for the context menu call.
+
+:function UIASetFocus
+:description Attempts to set focus to the current touch element.
+:function UIAGoToNextInTree
+:description Traverses the UIA tree in depth-first order to move forward to the next element.
+:param object A treewalker object used to for touch navigation.
+:returns int True if the touch cursor moved, false otherwise.
+
+:function TouchNextElement
+:description Attempts to move forward to the next element in the tree. Element that are deemed as redundant are skipped over. If the move was successful, makes the element visible if possible and then speaks the element. If the move failed, the TouchBoundaryEvent fires.
+
+:function UIAGoToLastChild
+:param object The treewalker object used for touch navigation.
+:description Attempts to move the touch cursor to the last child object of the current touch object.
+:returns int True if the touch cursor moved, false otherwise.
+
+:function UIAGoToLastDescendant
+:param object The treewalker object used for touch navigation.
+:description Traverses the UIA object tree in breadth-first order to move to the right-most child.
+:returns int True if the touch cursor moved, false otherwise.
+
+:function UIAGoToPriorInTree
+:param object The treewalker object used for touch navigation.
+:description Traverses backward through the UIA object tree in breadth-first order.
+:returns int True if the touch cursor moved, false otherwise.
+
+:function TouchPriorElement
+:description Attempts to move backward to the prior element in the tree. Element that are deemed as redundant are skipped over. If the move was successful, makes the element visible if possible and then speaks the element. If the move failed, the TouchBoundaryEvent fires.
+
+:function ShouldSkipUIAElementOnSayAll
+:description Determines if an element should be skipped over and not spoken during SayAll.
+:param object The element which SayAll will speak or skip.
+:returns int True if the element should be skipped during SayAll, false otherwise.
+
+:function UIASayAllCallback
+:description This is a callback used during SayAll which moves to each element and speaks it.
+
+:function TouchSayAll
+:description Starts the SayAll, beginning with the element at the touch cursor.
+
+:function TouchStopCurrentSpeechOutput
+:description Stops the current speech output.
+
+:function UIAGoToFirstInTree
+:param object The treewalker object used for touch navigation.
+:description Moves the touch cursor to the first element.
+
+:function UIAGoToLastInTree
+:description Moves the touch cursor to the last element.
+
+:function TouchMoveToFirstElement
+:description Moves the touch cursor to the first element to be spoken, makes it visible if necessary, and speaks the element.
+
+:function TouchMoveToLastElement
+:description Moves the touch cursor to the last element to be spoken, makes it visible if necessary, and speaks the element.
+
+:function TouchMoveToFirstElementInProcessID
+:description Moves the touch cursor to the first element of the process ID where the touch cursor is located, makes it visible if necessary, and speaks the element.
+
+:function TouchMoveToLastElementInProcessID
+:description Moves the touch cursor to the last element of the process ID where the touch cursor is located, makes it visible if necessary, and speaks the element.
+
+:function UIAGoToElementType
+:description Takes a definition of items to search for when moving forward or backward in the tree, and moves to the first element found in the indicated direction. If a matching element was found, moves to it, makes it visible if possible, and speaks the element.
+:param variant The type to find when moving to the next element. Type may be a UIA type, a recognized aria role, or set of types and/or aria roles.
+:param int True if moving forward, false if moving backward.
+:optional
+:param string When used by quick navigation scripts, the type of element for the quick navigation.
+:returns int True if the touch cursor moved, false otherwise.
+
+:function TouchMoveToNextElementByType
+:description Uses UIAGoToElementType to move forward to the next element matching the type chosen in the type navigation rotor.
+:returns int true if the touch cursor moved, false otherwise.
+
+:function TouchMoveToPriorElementByType
+:description Uses UIAGoToElementType to move backward to the prior element matching the type chosen in the type navigation rotor.
+:returns int true if the touch cursor moved, false otherwise.
+
+:function TouchChangeElementMovementType
+:param int True if moving forward through the rotor of navigation types, false otherwise.
+:description Cycles through a choice of navigation types to be used during navigation by type. Each navigation type is spoken as it is chosen.
+:returns int True if the touch cursor moved, false otherwise.
+
+:function CreateContentViewTreeWalker
+:description Creates a treewalker to be used during touch navigation.
+:returns object The treewalker object to be used during touch navigation.
+
+:function TouchCloseApp
+:description Closes the current application.
+
+:function ElementHasTextDocumentRange
+:description Determines if the UIA element is of the specified control type and with a text document range.
+:param object The element to test.
+:optional
+:param int A UIA control type ID. If specified, requires that the element be of the specified control type; otherwise the control type is not checked for validation.
+:returns int True if the UIA element is of the optionally specified type with a text document range, false otherwise.
+
+:function UIAGetElementText
+:param object The element whose text is to be retrieved.
+:description retrieves any text for the specified element and returns it.
+:returns string Any text of the specified element.
+
+:function UIAGetCurrentElementText
+:description Updates the cache for the current element and obtains text for that element.
+:returns string The text of the current element.
+
+:function InitTouchNavigationConfigurations
+:description Initializes the cash to be used for storing information about each applications touch cursor settings.
+
+:function IsObjectNavigationActive
+:description object navigation is active when the object navigation mode is touch, advanced or text review.
+:returns int true if touch navigation mode or advanced object navigation mode or text review mode for object navigation is active and none of these modes are suspended; false otherwise.
+
+:function IsTouchCursor
+:description Tests if the touch cursor is active. The touch cursor is active when the object navigation mode is set to touch or to advanced, but not when it is set to text review or when it has been suspended.
+:returns int True if the touch cursor is active. The touch cursor is active when touch navigation or advanced object navigation mode is active and not suspended.
+
+:function GetObjectNavigationMode
+:description Retrieves the current touch navigation mode.
+:returns int The current touch navigation mode. The touch navigation may be off, touch or advanced. In addition to touch or advanced, bits for text review and/or suspended may be on or off depending on the current state of the mode.
+
+:function IsTouchNavigationModeActive
+:description Tests if the current mode for object navigation is set to touch. With touch navigation, the objects in the application are traversed by touchable element. Touch navigation is the default mode of object navigation.
+:returns int True if the current mode of object navigation is touch navigation. False if the object navigation mode is off or advanced, or if the suspended or text review flags have been set.
+
+:function IsAdvancedObjectNavigationModeActive
+:description Tests if the current mode for object navigation is set to advanced. With advanced object navigation, the objects in the application are traversed hierarchically rather than by touchable element.
+:returns int True if the current mode of object navigation is advanced navigation. False if the object navigation mode is off or touch, or if the suspended or text review flags have been set.
+
+:function IsObjectTextReviewModeActive
+:description Test if the current mode for object navigation has text review flag turned on and the mode is not suspended. Text review mode may be used to view text of the current object in the virtual viewer.
+:returns int True if the current mode of object navigation has text review flag on. False if the object navigation mode is off, if the mode has the suspended flag set, or if the text review flag is off.
+
+:function IsObjectTextReviewModeSuspended
+:description Tests if object navigation mode is suspended and the text review mode flag is set to reinstantiate when object navigation mode resumes.
+:returns int True if object navagation mode is suspended and the text review is set to reinstantiate after object navigation resumes, false otherwise.
+
+:function IsObjectNavigationSuspended
+:description Test if the current mode for object navigation has the suspended flag set.
+If object navigation is active when a user buffer other than text review appears, or when Quick Settings or an HJDialog appears, it is automatically suspended and then resumed when the window or dialog is dismissed.
+The suspended flag is turned on during this suspension state.
+:returns int True if the current mode of object navigation has the suspended flag set. False otherwise.
+
+:function CurrentlyActivatingObjectTextReviewMode
+:description Tests whether JAWS is in the process of activating text review mode for object navigation.
+This function is used by UserBufferActivatedEvent to distinguish the activation of text review mode from all other user buffer activations.
+:returns int True if the text review mode is in the process of being activated, false otherwise.
+
+:function CurrentlyDeactivatingObjectTextReviewMode
+:description Tests whether JAWS is in the process of deactivating text review mode for object navigation.
+This function is used by UserBufferDeactivatedEvent to distinguish the deactivation of text review mode from all other user buffer deactivations.
+:returns int True if the text review mode is in the process of being deactivated, false otherwise.
+
+
+:function TextReviewWindowIsActive
+:description Determines whether the object text review window is in focus.
+:returns int True is the virtual viewer showing text review is in focus, false otherwise.
+
+:function ShowTextReviewOutput
+:description If text can be retrieved for the element at the touch cursor location, shows it in the virtual viewer. The virtual viewer is not visible on-screen, but is provided as a means for reading the text using normal cursor navigation.
+:optional
+:param int True if function was invoked by a gesture to change mode. Default is false.
+:returns int True if text could be retrieved and shown in the virtual viewer, false otherwise.
+
+:function ActivateTouchCursorTextReviewMode
+:description If the element at the touch cursor location has text, activates a mode by which the text can be navigated using normal cursor navigation.
+:optional
+:param int True if text review mode is being activated by a gesture.
+:returns int True if text review mode could be activated, false otherwise.
+
+:function ClearTextReviewOutput
+:description If text review for an element at the touch location is showing in the virtual viewer, dismisses it.
+:optional
+:param int True if function was invoked by a gesture to change mode. Default is false.
+:returns int True if text review was showing in the virtual viewer, false otherwise.
+
+:function DeactivateTouchCursorTextReviewMode
+:description Deactivates the text review mode, which allows text of the current touch cursor element by means of normal cursor navigation.
+:optional
+:param int True if function was invoked by a gesture to change mode. Default is false.
+:returns int True if text review mode was active and could be deactivated, false otherwise.
+
+:function LoadObjectNavigationKeyMaps
+:param int The navigation type, touch, advanced, or both touch and advanced.
+:description Loads the appropriate keymaps for touch or object navigation.
+
+:function UnloadObjectNavigationKeyMaps
+:param int The navigation type, touch, advanced, or both touch and advanced.
+:description Unloads the appropriate keymaps for touch or object navigation.
+
+:function SetTouchNavigationMode
+:description Manages object navigation mode changes.
+:param int The requested new state.
+If the requested new state is off, all bits are cleared and touch navigation is turned completely off.
+If the suspended bit is on for the requested new state, the suspended bit is added to the current state. All other bits are ignored for the requested new state when the suspended bit is on.
+If the text review bit is on for the requested new state, the text review bit is added to the current state if it is touch mode or advanced mode.
+If the requested new state is touch, sets the navigation mode to touch. The touch state sets the touch navigation to the touch navigation mode, which moves the touch cursor by visible on-screen elements, and is a keyboard method of moving that emulates gestures on a tablet.
+If the requested new state is advanced, sets the navigation mode to advanced. The advanced state sets the touch navigation to advanced mode, which moves the touch cursor through the UIA object tree in herarchical manner, and does not filter out any objects.
+:optional
+:param int Whether or not to cancel text review on suspension. If true, suspending object navigation will also turn off text review so that it is not reinstantiated when object navigation is resumed; otherwise, text review resumes when object navigation resumes.
+Typically, text review should be canceled if the suspension is due to the configuration changing--such as for quick settings or an HJ dialog.
+Text review should not be canceled if the suspension is due to another user buffer appearing while text review is active.
+The default is false, allowing text review to reinstantiate on object navigation resume.
+
+:function SuspendObjectNavigation
+:description Sets the object navigation mode to suspended.
+Object navigation is temporarily suspended when Quick Settings or a JAWS dialog appears, or when a user buffer appears which is not the text review mode.
+:optional
+:param int Whether or not the text review mode should be cancelled. If true, text review mode will be reinstated on object navigation resume; otherwise it will not be reinstantiated. Default is false, to allow text review to be reinstantiated on object navigation resume.
+
+:function ResumeObjectNavigation
+:description Resumes the object navigation mode after it was temporarily suspended.
+Object navigation is temporarily suspended when Quick Settings or a JAWS dialog appears, or when a user buffer appears which is not the text review mode.
+:optional
+:param int True if the announcement of touch cursor activation should be suppressed from speaking in this function, false otherwise.
+The default is false.
+If this function is called as result of a scheduled function, it will handle the announcement of touch cursor activation.
+If the function is being called as a result of configuration change, it is best to pass true to this parameter so that the calling function handles the announcement of touch cursor activation.
+
+:function FlushTouchNavigationConfiguration
+:param string The configuration name to be flushed from the cach.
+:description Removes the cached information about the configuration from the touch configuration cache, allowing the touch cursor automatic activation setting to be read from the JCF file.
+
+:function UpdateObjectNavigationMode
+:param string The configuration name used for the current application.
+:description Sets the touch navigation mode according to the specification for the current application.
+
+:function ActivateTouchCursor
+:description If the touch cursor is not active, activates it.
+:returns int True if touch cursor could be activated, false otherwise.
+
+:function ExitTouchNavigation
+:description Exits touch navigation, turning off the touch cursor. If text review is active, it is dismissed along with turning off touch navigation.
+
+:function TurnOnTouchNavigationTextReview
+:description If possible, turns on text review mode at the current touch cursor location.
+
+:function TurnOffTouchNavigationTextReview
+:description If text review mode is on, turns it off and reactivates the touch cursor at the current element.
+
+:function UseAdvancedObjectNavigationMode
+:param int If true, advanced navigation is toggled on; otherwise, it is toggled off.
+:description Toggles advanced navigation on or off for touch cursor navigation.
+
+:function GetTouchNavElementBrlSubtype
+:description Converts the UIA type of the current element at the touch cursor to a type known by braille.
+:returns int The subtype as recognized by braille of the for the current element at the touch cursor.
+
+:function GetTouchNavElementBrlSubtypeString
+:description Retrieves the text to display as the type component for structured braille for the current element at the touch cursor.
+:returns string The text to display on the braille display for the type component.
+
+:Function GetTouchNavElementBrlStateString
+:description Retrieves the text to display as the state component for structured braille for the current element at the touch cursor.
+:returns string The text to display on the braille display for the state component.
+:param int/SubtypeCode The subtype code of the Braille object whose state string is to be returned.
+
+:Function GetTouchNavElementBrlPositionString
+:description Retrieves the text to display as the position component for structured braille for the current element at the touch cursor.
+:returns string The text to display on the braille display for the position component.
+:param int/SubtypeCode The subtype code of the Braille object whose position string is to be returned.
+
+:function GetTouchNavElementName
+:description Retrieves the name of the current element at the touch cursor.
+:returns string The name of the current touch element.
+
+:function BrailleGetObjectNameForTouchNavElement
+:description Retrieves the string for the structured braille name component. Use this function for the braille name component instead of GetTouchNavElementName, since there is not always a direct match between the UIA element name and the text braille displays for the name component.
+:returns string The text for the name component of structured braille.
+
+:function GetTouchNavElementValue
+:description Retrieves the value of the current element at the touch cursor.
+:returns string The value of the current touch element.
+
+:function BrailleGetObjectValueForTouchNavElement
+:description Retrieves the string for the structured braille value component. Use this function for the braille value component instead of GetTouchNavElementName, since there is not always a direct match between the UIA element value and the text braille displays for the value component.
+:returns string The text for the name component of structured braille.
+
+:function NotifyTouchQuickNavigationFailed
+:param int True if navigation is forward, false if backward.
+:param string The element type to include in the error message notifying the user that the navigation failed.
+:description Outputs an error message notifying the user that the attempted quick navigation failed.
+
+:function UIAGoToRadioButton
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for radio buttons in the indicated direction.
+
+:function UIAGoToButton
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for buttons in the indicated direction.
+
+:function UIAGoToComboBox
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for combo boxes in the indicated direction.
+
+:function UIAGoToDocument
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for documents in the indicated direction.
+
+:function UIAGoToEdit
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for edits in the indicated direction.
+
+:function UIAGoToFormControl
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for form controls in the indicated direction.
+
+:function UIAGoToImage
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for images in the indicated direction.
+
+:function UIAGoToHeading
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for headings in the indicated direction.
+
+:function UIAGoToListItem
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for list items in the indicated direction.
+
+:function UIAGoToHyperlink
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for hyperlinks in the indicated direction.
+
+:function UIAGoToList
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for lists in the indicated direction.
+
+:function UIAGoToMenu
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for menus, menu bars and menu items in the indicated direction.
+
+:function UIAGoToToolBar
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for tool bars in the indicated direction.
+
+:function UIAGoToPane
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for panes in the indicated direction.
+
+:function UIAGoToTab
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for tab controls and tab items in the indicated direction.
+
+:function UIAGoToRegion
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for regions in the indicated direction.
+
+:function UIAGoToLandmark
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for landmarks in the indicated direction.
+
+:function UIAGoToStaticText
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for static text controls in the indicated direction.
+
+:function UIAGoToTable
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for tables or grids in the indicated direction.
+
+:function UIAGoToGroup
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for groups in the indicated direction.
+
+:function UIAGoToTree
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for tree controls in the indicated direction.
+
+:function UIAGoToCheckBox
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for checkboxes in the indicated direction.
+
+:function UIAGoToStatusBar
+:param int True if moving forward, false if moving backward.
+:description Attempts quick navigation for status bars in the indicated direction.
+
+:function PlayTouchNavigationErrorSound
+:description Plays the sound for touch navigation error, used when the user attempts a touch navigation action that is not currently allowed.
+
+:function UsingTouchNavigationSounds
+:description Retrieves the user setting for touch navigation notification souns.
+:returns int True if user has notifications for touch navigation events set to use sounds instead of speech messages, false otherwise.
+:function ShouldAddTouchCursorOptionsConfigureTypesBranchToQuickSettings
+:description The Configure Types branch should be added to the Touch Cursor Options of Quick Settings if JAWS has been configured to automatically activate the touch cursor for the current application, or if the touch cursor was active when Quick Settings was invoked.
+:returns int True if the Configure Types branch should be added to the Touch Cursor Options branch in Quick Settings.
+
+:function HasAppUIACustomizedTypeConfigurationsFromUser
+:description Determines if customized settings exist for touch navigation types in the application's JCF file in user settings.
+:returns int True if the user settings has a JCF file for the application with entries in the TouchNavigationTypes section, false otherwise.
+
+:Function GetProcessTopLevelObject
+:description Retrieves the top level object for the process that has the focus.
+:returns object The top level object of the process with focus.
+
+:function CreateAndAttachUIAEvents
+:description Creates the UIA events object and attaches the script functions for the events.
+:param object byRef The object to which events will be attached.
+:returns int True if successful, false otherwise.
+
+:function UIAStartListeningForFocusChange
+:description Adds the UIA focus change event handler, allowing the UIA event script for focus change to fire.
+:returns int True if successful, false otherwise.
+
+:function UIAStopListeningForFocusChange
+:description Removes the UIA focus change event handler, preventing the UIA event script for focus change from firing.
+
+:function UIAStartListeningForPropertyChange
+:description Adds a UIA properties change event handler, allowing the UIA event script for the specified property change of the specified element to fire.
+:param object the object to which the event will be attached.
+:param int The property ID for which changes are to be detected. See property id's in UIA.jsh.
+:param object The element whose property change is to be detected.
+:param int The scope of the events to be handled. See the tree scopes in UIA.jsh.
+:returns int True if successful, false otherwise.
+
+:function UIAStopListeningForPropertyChange
+:param object The object to which the event was attached.
+:description Destroys the event listener object.
+
+:function UIAStartListeningForAutomationChange
+:description Adds a UIA automation change event handler, allowing the UIA event script for the specified automation change of the specified element to fire.
+:param object the object to which the event will be attached.
+:param int The automation event ID for which changes are to be detected. See automation event id's in UIA.jsh.
+:param object The element whose automation change is to be detected.
+:param int The scope of the events to be handled. See the tree scopes in UIA.jsh.
+:returns int True if successful, false otherwise.
+
+:function UIAStopListeningForAutomationChange
+:param object The object to which the event was attached.
+:description Destroys the event listener object.
+
+:function UIAStartListeningForMenuOpen
+:description Adds an automation change event handler for menu open or for context menu open, allowing UIA event script for automation change for menu open to fire.
+:returns int True if successful, false otherwise.
+
+:function UIAStopListeningForMenuOpen
+:description Removes the UIA automation event change handler for menu open, preventing the UIA event script for automation event change for menu open from firing.
+
+:function UIAGoToFirstMenuItem
+:description Moves to the first menu item for the current process id, and stops listening for any menu open event.
+
+:function UIARemoveAllEvents
+:description Ensures that all UIA events are set to null. If you have UIA events that you also want removed, overwrite this to null your events and then call this default version. Setting the object to which events are attached to null removes the events.
+
+:function UIAEvent_FocusChangedEvent
+:param object The UIA element object that caused the event.
+:description The event that fires when a UIA focus change handler has been added.
+
+:function UIAEvent_PropertyChangedEvent
+:param object The UIA element object that caused the event.
+:param int The property ID that triggered the event.
+:param variant The new value of the property.
+:description The event that fires when a UIA property change handler has been added.
+
+:function UIAEvent_AutomationEvent
+:param object The UIA element object that caused the event.
+:param int The event ID that triggered the event.
+:description The event that fires when a UIA automation event change handler has been added.
+
+:function TouchNavigationHotKeys
+:description Hotkey help for touch navigation, advanced object navigation and object navigation text review.
+:returns int True if hotkey help for object navigation was shown, false otherwise.
+
+:function TouchNavNotifyByPlayOrSay
+:description Determines if touch navigation is configured to use sounds, and if so plays the sound; otherwise, if messages are provided as an alternitve means of feedback speaks the messages.
+:param string The sound to play,when touch navigation is configured to use sounds.
+:optional
+:param int The output type used for the messages.
+:param string The long message to be spoken.
+:param string The short message to be spoken.
+
+:function NotifyNotAvailableForTouchCursor()
+:description If touch navigation sounds are configured for On, plays the touch navigation error sound; otherwise, speaks a message notifying that the action is not available for touch cursor.
+
+:function IsTouchQuickNavEnabled
+:description Determines whether touch navigation quick keys are set to be enabled. If touch navigation quick keys are enabled, they will become active when the touch cursor becomes active.
+:returns int True if touch navigation quick keys are set as enabled, false otherwise.
+
+:function IsTouchQuickNavActive
+:description Determines if touch navigation quick keys are currently active. Touch navigation must be active and touch navigation quick keys must be enabled for touch navigation quick keys to be active.
+:returns int True if touch navigation quick keys are active, false otherwise.
+
+:function SetTouchQuickKeyNavigationMode
+:param int The mode to which touch navigation quick keys should be toggled, true for on and false for off.
+:description Toggles whether or not touch navigation quick keys are set as enabled. If the touch cursor is active, the touch navigation quick keys state is also toggled to be active or inactive.
+
+:function SetUseTouchNavigationSounds
+:description configures whether or not sounds should be used when object navigation is active.
+:param int True to use touch navigation sounds, false otherwise.
+
+:function GetTouchCursorClickablePoint
+:description Retrieves the X and Y coordinates of the clickable point for the touch cursor location.
+:param int byRef X point.
+:param int byRef Y point.
+:returns int True if a clickable point for the touch cursor location could be obtained, false otherwise.
+
+:function TouchCursorObject
+:description Retrieves the object at the current touch cursor location.
+:returns object the object at the touch cursor location.
+
+:function UpdateCacheForTouchCursorObject
+:description Updates the cache for the element at the touch cursor.
+
+:function CurrentScriptWasInvokedByGesture
+:description Determines if the current script was invoked by a touch gesture.
+:returns int True if the current script was invoked by a touch gesture, false otherwise.
+
+:function GestureListHelpIsActive
+:description Determines if the Results Viewer window is present and showing the help message for the list of currently available gestures.
+:returns int True if the Results Viewer window is present and showing the help message for the list of currently available gestures, false otherwise.
+
+:function ShowGestureListHelp
+:description Shows the list of gestures and the associated actions.
+
+:function InitGestureLabels
+:description Runs when JAWS starts. Initializes the user-friendly or localized names of gestures.
+
+:function GetGestureLabel
+:description Retrieves a user-friendly or localized name for the gesture.
+:param string The name of a gesture as it is used in the JKM file.
+:returns string A user-friendly or localized label for the gesture.
+
+:function InitScriptGestureModeTable
+:description Initializes a lookup collection for scripts assigned to multiple gesture modes.
+
+:function InitGestureMode
+:description Used to initialize gesture mode when JAWS starts.
+
+:function GetGestureMode
+:description Returns the currently active gesture mode.
+:returns int the currently active gesture mode.
+
+:function GestureModeIsTouchNavigation
+:description Determines if the currently active gesture mode is touch navigation.
+:returns int True if the currently active gesture mode is touch navigation, false otherwise.
+
+:function GestureModeIsTextReading
+:description Determines if the currently active gesture mode is text reading.
+:returns int True if the currently active gesture mode is text reading, false otherwise.
+
+:function SaveGestureMode
+:description Saves the currently active gesture mode. Use RestoreGestureMode to restore to the saved mode.
+
+:function RestoreGestureMode
+:description restores the currently active gesture mode to the mode saved by SaveGestureMode.
+
+:function SetGestureModeForTouchNavigation
+:description If touch navigation is currently available as a gesture mode, sets the current gesture mode to touch navigation; otherwise, the gesture mode is unchanged.
+:returns int True if the mode was set to touch navigation, false otherwise.
+
+:function SetGestureModeForTextReading
+:description If text reading is currently available as a gesture mode, sets the current gesture mode to text reading; otherwise, the gesture mode is unchanged.
+:returns int True if the mode was set to text reading, false otherwise.
+
+:function SetGestureModeForSpeechSettings
+:description If speech settings is currently available as a gesture mode, sets the current gesture mode to speech settings; otherwise, the gesture mode is unchanged.
+:returns int True if the mode was set to speech settings, false otherwise.
+
+:function GetNextGestureMode
+:param int The gesture mode to use when looking for the next mode.
+:param int True to go forward to get the next mode, false to go to the prior mode.
+:description gets the next or prior gesture mode from the mode which was passed as parameter. Does not check for availability of mode, use CycleAvailableGestureMode instead to ensure cycling through currently available modes.
+:returns int The next or prior gesture mode.
+
+:function GestureModeIsAvailable
+:description Determines if the gesture mode indicated by the mode parameter is currently available.
+:param int the mode to test for current availability.
+:returns int True if the mode is currently available, false otherwise.
+
+:function CycleAvailableGestureMode
+:param int True to cycle to the next available mode, false to cycle to the prior available mode.
+:description Cycles to the next or prior currently available gesture mode.
+:returns int The currently active mode after it has been cycled.
+
+:function GetCurrentGestureModeName
+:description Retrieves the name of the current gesture mode.
+:returns string One of the gesture mode names, listed in cmsgGestureModesList.
+
+:function GetScriptForCurrentGestureMode
+:param string A script name.
+:description Determines which script should run for the current gesture mode. If the script is not gesture mode dependent, returns the name of the script that was passed to it.
+:returns string The script assigned to the current gesture mode.
+
+:function RunGestureModeScript
+:description Runs the script assigned to the current gesture mode.
+:param string The name of a multi-mode script assigned to a gesture that varies the action according to gesture mode.
+:optional
+:param variant The first argument to be passed to the script.
+:param variant The second argument to be passed to the script.
+
+:function GetTouchContextHelpMessage
+:description Retrieves a context help message for the element at the touch cursor current location.
+:returns string a context help message for the element at the current touch cursor location.
+
+:function GetGestureTutorMessage
+:description Retrieves a testure tutor help message for the item at the touch cursor location.
+:returns string a gesture-relevant tutor help message.
+
+:function TouchCursorIsAtFocus
+:description Determines if the touch cursor is at the focus location.
+:returns int True if the touch cursor is at the focus. returns UIAScriptError if if the UIA object is not initialized. Returns false otherwise.
+
+:function GetSemanticZoomElement
+:description Looks for a semantic zoom element in the current application, and returns it if found.
+:returns object The semantic zoom element for the application if one can be found, null otherwise.
+
+:function SetSemanticZoom
+:param int True to enable semantic zoom, false to disable it.
+:description If there is a semantic zoom element for the application, sets it to enabled or disabled.
+:returns int False if the semantic zoom could not be set or if no semantic zoom existed, true otherwise.
+
+:function FindScrollPatternForElement
+:description Attempts to find a scroll pattern object which can provide scroll pattern methods and properties for the element.
+:param object The element for which a scroll pattern object is desired.
+:returns object If found, the object representing the scroll pattern.
+
+:function TouchScroll
+:param int One of the Screen_Move_ constants for movement direction located in HJConst.jsh.
+:description Attempts to scroll the screen in the indicated direction.
+
+:function ChangeRangeValue
+:description If a range value pattern can be obtained for the current element, calls the method to set the value to the increased or decreased value.
+:param int True if the value is to be increased, false if decreased.
+:returns int True if a range value could be obtained for changing, false otherwise.
+
+:function ToggleCurrentItemSelection
+:description If the current touch object has a selection item pattern, toggles the selection. The item is added to or removed from the selection.
+:returns int True if the object has a selection pattern, false otherwise.
+
+:function RouteTouchToFocus
+:description Routes the touch cursor to the focus location.
+
+:function GetGestureEscapeSoundFileName
+:description Retrieves the name of the wav file configured to play when the Escape gesture is used.
+:returns string The name of the wav file configured for the Escape gesture.
+
+:function GetGestureCloseAppSoundFileName
+:description Retrieves the name of the wav file configured to play when the Close App gesture is used.
+:returns string The name of the wav file configured for the Close App gesture.
+
+:function PlayTouchTapClickSound
+:description Plays the click sound used for touch tapping on an element.
+
+:function UIAGetElementFromRangeRectangle
+:description Attempts to get an element at the range location. If necessary, the range will be scrolled into view to obtain a rectangle.
+:param object The range for which an element should be retrieved.
+:optional
+:param int True if any scrolling to get the rectangle on screen should scroll backward, otherwise scrolling is assumed to be forward.
+:returns object If a rectangle could be obtained for the range, the element at the first range rectangle.
+
+:function UIAGetNearestChildRangeFromTextPattern
+:param object The textPattern object for which the child range object should be retrieved.
+:param object The UIA element from which the search will start searching. If this element produces a child range, this child range will be returned. Otherwise, searches the UIA elements for the nearest element which can be used to retrieve the child range.
+:optional
+:param int If true, searches backwards to find an element which will return a child range; otherwise, searches forward if the passed element parameter cannot be used to obtain a child range.
+:param object byRef If the calling function requests, the element which was used to return a child range.
+:returns object The nearest child range if one could be retrieved.
+
+:function UIAGetTextDocumentRange
+:description If available, retrieves the document range object applicable to the focus UIA element.
+:optional
+:param object byRef If a document range was retrieved, the element from which the document range was retrieved.
+:param object byRef If a document range was retrieved, the text pattern to which the document range applies.
+:returns object If possible, a document range object; otherwise null.
+
+:function InitVirtualKeyboardSupport
+:description Initializes the scripts to support the virtual keyboard.
+
+:function ShouldSkipVirtualKeyboardElementWhenNavigating
+:description Used by ShouldSkipUIAElementWhenNavigating to handle navigation skip rules for the touch keyboard.
+:param object The element to test if it should be skipped over during touch cursor navigation.
+:returns int True if rules for the touch keyboard were applied and no more processing by ShouldSkipUIAElementWhenNavigating should occur, false otherwise.
+
+:function ShouldSkipVirtualKeyboardElementWhenNavigating
+:description Determines if the specified element should be skipped over when exploring with touch in the touch keyboard window.
+:param object The element to test whether it should be skipped.
+:returns int True if the specified element should be skipped over when exploring with touch in the touch keyboard window.
+
+:function ShouldExcludeNavigationOutsideVirtualViewerWindow
+:description Determines if the specified element should be skipped over when exploring with touch when the virtual viewer is showing on-screen.
+:param object The element to test whether it should be skipped.
+:returns int True if the specified element should be skipped over when exploring with touch when the virtual viewer is showing on-screen.
+
+:function ElementIsVirtualViewerDocument
+:description Determines if the specified element is the document element of the virtual viewer window.
+:param object The element to test.
+:returns int True if the specified element is the document element of the virtual viewer window.
+
+:function UIA_VKBD_AutomationEvent
+:description Automation event handler designated for the sole use of the virtual keyboard script support.
+:param object/element The element where the automation event occurred.
+:param int/eventID The id of the automation event.
+
+:function UIA_VKBD_PropertyChangedEvent
+:description Property changed event handler designated for the sole use of the virtual keyboard script support.
+:param object/element The element where the property change event occurred.
+:param int/propertyID The id of the property.
+:param variant/newValue The new value of the property.
+
+:function IsVKbdButton
+:description Tests if an element is a button in the virtual keyboard.
+:param object/element The element to be tested.
+:returns int True if an element is a button in the virtual keyboard, false otherwise.
+
+:function IsVKbdChildPanel
+:description Tests whether the element is the pane which is shown on-screen as the pane containing the child panel buttons for the touch keyboard.
+:param object/element The element to test whether it is the pane for the touch keyboard child panel.
+:returns int True if the element is the pane which is shown on-screen as the pane containing the child panel buttons for the touch keyboard, false otherwise.
+
+:function SayTouchKeyboardButton
+:description Used to speak a virtual keyboard button.
+:optional
+:param int/ButtonWasTapped True if the button was tapped, otherwise the assumption is that the button was explored to. The default is false.
+
+:function UIASayTouchKeyboardElement
+:description Used by UIASayElement for any special processing of elements belonging to the touch keyboard.
+:param object element The element to be spoken.
+:returns int True if the element was spoken and no further processing by UIASayElement is required, false otherwise.
+
+:function TouchTapStartTouchKeyboard
+:description Used to tap the touch keyboard icon.
+:returns int True if the keyboard icon was tapped, false otherwise.
+
+:function GetVirtualKeyboardControlButtonState
+:description Retrieves the state of the Control button on the touch keyboard.
+:returns int The state of the Control key of the touch keyboard.
+
+:function ClickVirtualKeyboardScriptedButton
+:description Processes click for virtual keyboard buttons which are scripted for specific behavior, such as the cursor buttons or the backspace button.
+:param object The UIA element being clicked.
+:param int The toggle state of the control button.
+:returns int True if the button being clicked was a virtual keyboard button which has been scripted for specific behavior, false otherwise.
+
+:function DoSayActionForClickVirtualKeyboardButtonWithControlModifier
+:description Call this function when the Control button is toggled on to handle speech output resulting from clicking virtual keyboard buttons which are not cursor buttons.
+:param object The UIA element being clicked.
+:param string The name of the keyboard button before the click was performed.
+
+:function ClickCurrentVirtualKeyboardButton
+:Description Taps the virtual keyboard button at the touch cursor location. Also handles the speech that results from tapping the button.
+:function ToggleChildPanelForCurrentVirtualKeyboardButton
+:description If a keyboard button may be expanded to show a child panel of related keys, expands or collapses the panel.
+:optional
+:param int/ShowOrHide One of the VKBd_ChildPanel_ variables for showing or hiding the child panel. If omitted, the panel is toggled to the opposite show/hide state.
+:returns int True if the current keyboard button may be expanded or collapsed and the panel is expanded or collapsed, false otherwise.
+
+:function SaveInfoForCurrentChildPanelVirtualKeyboardButton
+:description Used in standard typing mode to save the most recently tapped keyboard button name if the button was tapped with split tap, and if the button is a in a child panel and represents the same button as one on the main keyboard. This name is compared against the keyboard button at explore end to ensure that a button click does not occur if exploration ends without moving from the main keyboard button which represents the same character as the most recently tapped child panel button.
+
+:function VKbdTypingModeHook
+:description Used to hook gestures for the standard typing mode.
+:param string/ScriptName The name of the script captured by the hook.
+:returns int True if the hook is removed and normal processing resumes, false otherwise.
+
+:function TryProcessTouchForVirtualKeyboard
+:param int One of the VKbd_Gesture constants found in touch.jss, representing gestures recognized by the scripts as appropriate for the virtual keyboard.
+:description When a gesture is performed at the location of a virtual keyboard button, determines what action should be performed and does it.
+:returns int True if the gesture was carried out for the keyboard, false otherwise.
+
+:function SetVKBDStatusToInactive
+:description Clears script variables temporarily used during exploration of the virtual keyboard. This should be called when JAWS starts to initialize the collection for the virtual keyboard status script processing, and again when exploration ends to clear its member variables.
+
+:function SetVKBDStatusForNewKey
+:description This should be called when exploration lands on a new virtual keyboard key. It determines if the new key represents a different key than the previously visited one, and sets script variables accordingly. When a child panel of keys expands or collapses, the new element may represent the same key as the previous element.
+:param object/element The element representing the virtual keyboard key.
+
+:function SetVKBDStatusToShowingExtras
+:description Initializes scripts for processing when a child panel of extra virtual keyboard keys appears. This should be called immediately before expanding the child panel of keys, so that the event listener can be ready to detect the panel expanding.
+
+:function SetVKBDStatusToCompleted
+:description Sets script variables to indicate that no more automatic actions will occur. This should be called after all hold actions for a virtual keyboard key are completed.
+
+:function ClearAnyVKBDHoldStatus
+:description Ensures all hold status variables related to virtual keyboard keys are cleared. This should be called when exploring to a new element to ensure that any virtual keyboard hold actions are cleared.
+
+:function HasVKbdTouchHoldTimeExpired
+:description Used when exploration is firing continuously on the same virtual keyboard key to test if a hold action should be performed.
+:returns int True if a hold timer was set for a virtual key and time is now up, false otherwise.
+
+:function TrySetVKBDStatusToHolding
+:description Detects if waiting for a hold action should begin, and if so begins the hold timer for the action. Otherwise, ensures that the status is set to completed.
+
+:function PerformAnyHoldAction
+:description Performs the action associated with the expiring hold timer, and schedules any actions that should follow after the current one.
+
+:function TouchTwoFingersSplitTap
+:description Responds to a split tap of an element.
+
+:function TouchNextTextUnit
+:param int
+:param int
+:optional
+:param int
+:returns int
+
+
+:function TouchGoToElement
+:description Moves the touch cursor to the specified element.
+:param object The element to which the touch cursor should be moved.
+
+
+:function UIAGetTextRangeAtPCCursor
+:description Attempts to retrieve a text range object for the element at the PC cursor location.
+:optional
+:param object byRef If specified, retrieves the text pattern object used to provide the text range object.
+:returns object 
+:function UIAGetPCCursorTextRangeText
+:description Retrieves the text for the specified text unit from the text range at the PC cursor location.
+:param int One of the TextUnit constants from UIA.jsh.
+:returns string The text retrieved from the UIA text range.
+
+:function UIAMovePCCursorByTextUnit
+:description Sends to UIA a request to move the insertion point of the text range located at the PC cursor.
+:param int The text unit of movement. See TextUnit constants in UIA.jsh.
+:param int The move distance and direction. Negative values move backwards, positive values move forward by the specified number of text units.
+:optional
+:param int True if JAWS should speak as a result of the movement.
+:returns int True if a text range could be obtained for the move command, but does not indicate whether or not a move occurred.
+
+:function TouchExploreLocationHasFocus
+:description Determines if the current touch explore location has focus.
+:returns int True if the current touch explore location has focus.
+
+:function TrySetFocusToElementAtExploreLocation
+:Description Attempts to set focus to the current touch explore element.
+
+:function UIAGetTextFromRangeAtExploreLocation
+:description Attempts to retrieve the specified unit of text from the explore location.
+:param string byRef The text retrieved from the range at the explore location.
+:param int The text unit type to be retrieved. See TextUnit constants in UIA.jsh.
+:returns int True if the current explore location has a text range for text retrieval, false otherwise.
+
+:function UIASayCharacterAtExploreLocation
+:Description If UIA can be used to retrieve text from the explore location, retrieves the character at the explore location and speaks it.
+:returns int True If UIA can be used to retrieve text from the explore location, false otherwise.
+
+:function UIAGetCharacter
+:description Uses UIA to retrieve the character at the PC cursor location.
+:returns string The retrieved character.
+
+:function UIASayCharacter
+:description Uses UIA to retrieve the character at the PC curtsor location, and speaks it if anything was retrieved.
+:returns int True if a character for announcement could be retrieved using UIA, false otherwise.
+
+:function UIASayCharacterValue 
+:description Uses UIA to retrieve the character at the PC curtsor location, and speaks its value if anything was retrieved.
+:returns int True if a character for announcement could be retrieved using UIA, false otherwise.
+
+:function UIASayCharacterPhonetic
+:description Uses UIA to retrieve the character at the PC curtsor location, and speaks it phonetically if anything was retrieved.
+:returns int True if a character for announcement could be retrieved using UIA, false otherwise.
+
+:function UIANextCharacter
+:description Sends to UIA a request to move the PC cursor location one character forward.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayNextCharacter
+:description Sends to UIA a request to move the PC cursor location one character forward, then speaks the current character after the move command was sent.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIAPriorCharacter 
+:description Sends to UIA a request to move the PC cursor location one character backward.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayPriorCharacter 
+:description Sends to UIA a request to move the PC cursor location one character backward, then speaks the current character after the move command was sent.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayWordAtExploreLocation
+:Description If UIA can be used to retrieve text from the explore location, retrieves the word at the explore location and speaks it.
+:returns int True If UIA can be used to retrieve text from the explore location, false otherwise.
+
+:function UIAGetWord
+:description Uses UIA to retrieve the word at the PC cursor location.
+:returns string The retrieved word.
+
+:function UIASayWord
+:description Uses UIA to retrieve the word at the PC curtsor location, and speaks it if anything was retrieved.
+:returns int True if a word for announcement could be retrieved using UIA, false otherwise.
+
+:function UIANextWord
+:description Sends to UIA a request to move the PC cursor location one word forward.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayNextWord
+:description Sends to UIA a request to move the PC cursor location one word forward, then speaks the current word after the move command was sent.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIAPriorWord
+:description Sends to UIA a request to move the PC cursor location one word backward.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayPriorWord
+:description Sends to UIA a request to move the PC cursor location one word backward, then speaks the current word after the move command was sent.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIAGetLine
+:description Uses UIA to retrieve the line at the PC cursor location.
+:returns string The retrieved line.
+
+:function UIASayLine
+:description Uses UIA to retrieve the line at the PC curtsor location, and speaks it if anything was retrieved.
+:returns int True if a line for announcement could be retrieved using UIA, false otherwise.
+
+:function UIANextLine
+:description Sends to UIA a request to move the PC cursor location one line forward.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayNextLine
+:description Sends to UIA a request to move the PC cursor location one line forward, then speaks the current line after the move command was sent.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIAPriorLine
+:description Sends to UIA a request to move the PC cursor location one line backward.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayPriorLine
+:description Sends to UIA a request to move the PC cursor location one line backward, then speaks the current line after the move command was sent.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIAGetParagraph
+:description Uses UIA to retrieve the paragraph at the PC cursor location.
+:returns string The retrieved paragraph.
+
+:function UIASayParagraph
+:description Uses UIA to retrieve the paragraph at the PC curtsor location, and speaks it if anything was retrieved.
+:returns int True if a paragraph for announcement could be retrieved using UIA, false otherwise.
+
+:function UIANextParagraph
+:description Sends to UIA a request to move the PC cursor location one paragraph forward.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayNextParagraph
+:description Sends to UIA a request to move the PC cursor location one paragraph forward, then speaks the current paragraph after the move command was sent.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIAPriorParagraph
+:description Sends to UIA a request to move the PC cursor location one paragraph backward.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayPriorParagraph
+:description Sends to UIA a request to move the PC cursor location one paragraph backward, then speaks the current paragraph after the move command was sent.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIAGetPage
+:description Uses UIA to retrieve the page at the PC cursor location.
+:returns string The retrieved page.
+
+:function UIASayPage
+:description Uses UIA to retrieve the page at the PC curtsor location, and speaks it if anything was retrieved.
+:returns int True if a page for announcement could be retrieved using UIA, false otherwise.
+
+:function UIANextPage
+:description Sends to UIA a request to move the PC cursor location one page forward.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayNextPage
+:description Sends to UIA a request to move the PC cursor location one page forward, then speaks the current page after the move command was sent.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIAPriorPage
+:description Sends to UIA a request to move the PC cursor location one page backward.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function UIASayPriorPage
+:description Sends to UIA a request to move the PC cursor location one page backward, then speaks the current page after the move command was sent.
+:returns int True if UIA movement can be used, valse otherwise. Does not indicate whether or not movement occurred.
+
+:function TouchToggleSelectionMode
+:description Toggles selection mode on/off for text reading gesture mode.
+
+:function IsTouchSelectionModeActive
+:description Determines if selection mode is on for text reading gesture mode.
+:returns int True if selection mode is on for text reading gesture mode.
+
+:function GestureActivateTextReview
+:description If possible, activates a text review mode for gestures. The text review mode displays the screen text of controls in the virtual viewer, enabling the text to be read using text reading gestures.
+:returns int True if the text review mode was activated, false otherwise.
+
+:function GestureDeactivateTextReview
+:description Deactivates the gesture text review mode.
+
+:function GestureToggleTextReview
+:description Where this mode is applicable, toggles gesture text review mode on/off.
+
+:function DisplayOrientationChangedEvent 
+:description Event fires when the display orientation changes.
+:param int The index of the display which had it's orientation changed.
+:param int The total number of displays.
+:param int True if the displayIndex belongs to the primary display.
+:param int The orientation, see the DMDO_ constants in touch.jsh.
+:param int  True if the new orientation is landscape.
+
+:function TouchKeyboardStatusEvent
+:description Fires when the touch keyboard appears on the screen, or disappears from the screen.
+:param int True if the keyboard is visible, false otherwise.
+:param handle The handle of the touch keyboard app window.
+
+:function ProcessGestureSelectionModeOnFocusChange
+:description Used in function PreProcessFocusChangedEventEx to set gesture mode to touch navigation if it is currently set to selection. If the focus change is an active item change, the gesture mode should not be changed to touch; otherwise, it should be changed to touch to allow gestures to move to elements.
+:Param handle/hwndFocus The handle of the window that has received the focus.
+:Param int/nObject The number of the object that has received the focus.
+:Param int/nChild The number of the current child object.
+:Param handle/hwndPrevFocus The handle of the window that previously had the focus.
+:Param int/nPrevObject The number of the object that previously had the focus.
+:Param int/nPrevChild The number of the child object which previously had focus.
+:Param int/nChangeDepth The change depth, or number of levels effected by the change.
+
+:function ScheduleAnnounceCurrentGestureMode
+:description Schedules announcement of the current gesture mode. If the announcement is already scheduled, cancels it and reschedules. Use this instead of AnnounceCurrentGestureMode when you want to make sure that the announcement does not repeat when called multiple times, such as durring a continuous gesture.
+
+:function AnnounceCurrentGestureMode
+:description Announces the current gesture mode. If a call to announce the gesture mode is scheduled for the future, cancels that call before announcing the gesture mode.
+
+:function ScheduleAnnounceCurrentGestureModeAsError
+:description Schedules announcement of the current gesture mode, and plays an error tone. If the announcement is already scheduled, cancels it and reschedules. Use this instead of AnnounceCurrentGestureMode when you want to make sure that the announcement does not repeat when called multiple times, such as durring a continuous gesture.
+
+:function AnnounceCurrentGestureModeAsError
+:description Announces the current gesture mode and plays an error tone. If a call to announce the gesture mode is scheduled for the future, cancels that call before announcing the gesture mode.
+:function SetMostRecentJAWSGestureName
+:description Used by the default GestureEvent to save the name of the most recent gesture.
+:param string/gestureName The name of the gesture to save as the most recent.
+
+:function GetMostRecentJAWSGestureName
+:description Retrieves the name of the most recent gesture, which was set by the default GestureEvent. Only gestures received by JAWS are saved, so this does not retrieve the most recent gesture name if the gesture went to Windows.
+:returns string The name of the most recent gesture.
+
+:function GetDesiredScreenElementFromPoint
+:description Retrieves the desired screen element at the X and Y location. If a parent element has the same name and bounding rectangle as the element retrieved using GetElementFromPoint, the parent element may be the desired element to be retrieved.
+:param int/X The X coordinate for the element to retrieve.
+:param int/Y The Y coordinate for the element to retrieve.
+:optional
+:param object/oUIA The FSUIA object to use when creating the element and treewalker.
+:param object treeWalker The treewalker object to use for traversal of the UIA structure.
+:returns object The desired element at the X and Y location.
+
+:function ManageListenerForCurrentElementChanges
+:description Adds and removes event listeners to the current touch cursor element, enabling the detection of changes which occur to the element at the touch cursor location.
+
+:function UIA_CurrentElement_PropertyChangedEvent
+:param object The UIA element object that caused the event.
+:param int The property ID that triggered the event.
+:param variant The new value of the property.
+:description The event that fires when a UIA property change handler has been added. This event handles property changes for the current touch cursor location.
+
+:function ShowArrayOfUIAElementPropertiesForSubtree
+:description Shows diagnostic output of all properties and patterns of the current touch element and its subtree of elements.
+:returns int True if the data could be shown, false otherwise.
