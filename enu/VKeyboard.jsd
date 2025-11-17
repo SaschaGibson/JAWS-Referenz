@@ -1,4 +1,0 @@
-:script VKSelect
-:Synopsis Select an extended ANSI character from a list
-:Description Selects an extended ANSI character from a list and inserts it at the cursor position
-

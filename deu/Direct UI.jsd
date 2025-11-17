@@ -1,3 +1,0 @@
-:function fixLogonFocus
-:Param handle/hwnd handle of the currently focused window
-

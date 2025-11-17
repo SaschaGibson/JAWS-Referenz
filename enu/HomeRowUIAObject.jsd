@@ -1,2 +1,0 @@
-:function ShowUIAObjectTreeInfo
-:description If the utility window has UIA objects, displays a tree of the UIA objects in the window.
