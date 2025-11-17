@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="msMail.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="MailOptions" Text="General Mail Settings">
+			<HelpMsg>
+These are options specific to the application.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="MailOptions.MessageHeaderFieldWithMessageAnnouncement" Text="Message Header Field With Message Announcement">
+			<HelpMsg>
+This option is used to toggle on or off the announcement of headers when automatic reading of messages occurs. The default value is to read headers while automatic reading of messages.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="MailOptions.WebFramesAndLinkCountAnnouncement" Text="Web frames and Link Count Announcement">
+			<HelpMsg>
+When turned on, JAWS announces the number of web frames and links that appear in the e-mail message. </HelpMsg>
+		</DisplayName>
+		<DisplayName ID="MailOptions.AutoReadMessage" Text="Messages automatically read ">
+			<HelpMsg>
+This option is used to toggle on or off the automatic reading of messages on opening. The default value is to read messages automatically.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.CustomLabels" Text="Custom Labels">
+			<HelpMsg>
+This option controls whether or not JAWS uses custom labels that you previously defined on Web pages or in Microsoft Word.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.MarkingOptions.Underline" Text="Underline">
+			<HelpMsg>
+Select to mark one or more of the items in this group. All items are marked with dots 7 and 8. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.LanguageDetectChange" Text="Language Detect Change">
+			<HelpMsg>
+This option controls whether or not JAWS detects changes in language within documents which support language tags.
+For example, if JAWS finds Spanish text on a Web page, that text is spoken in Spanish. This detection only affects those synthesizers,
+such as Eloquence, that support multiple languages.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

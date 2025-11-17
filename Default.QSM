@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Default.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="TouchCursorOptions" Text="Touch Cursor Options">
+			<HelpMsg>
+This group contains options for the touch cursor and touch navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.AutomaticActivation" Text="Automatic Activation">
+			<HelpMsg>
+Select this checkbox to automatically activate the touch cursor for the current application. The touch cursor may be preferable for use with some Windows 8 applications. This check box is cleared by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.NavigationQuickKeys" Text="Touch Quick Keys">
+			<HelpMsg>
+Select this checkbox to enable quick key navigation for the touch cursor. This check box is cleared by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.UseSounds" Text="Use Sounds">
+			<HelpMsg>
+This option specifies whether sounds or spoken messages are used as feedback during touch navigation. Sounds may be used when navigating, tapping on an element, notification of unavailability of an attempted action, and to notify you when enterint or exiting the text review mode of touch navigation. This is a global setting, not application-specific. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.NavigateByType" Text="Navigate by Type">
+			<HelpMsg>
+Use this option to set the type of navigation by which the flick up or down moves. Not all apps support these navigation types, they are typically available in modern apps and web applications. The default setting is Regions.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.NavigateByType.0" Text="Regions" />
+		<DisplayName ID="TouchCursorOptions.NavigateByType.1" Text="Headings" />
+		<DisplayName ID="TouchCursorOptions.NavigateByType.2" Text="List Items" />
+		<DisplayName ID="TouchCursorOptions.NavigateByType.3" Text="Buttons" />
+		<DisplayName ID="TouchCursorOptions.NavigateByType.4" Text="Links" />
+		<DisplayName ID="TouchCursorOptions.NavigateByType.5" Text="Groups" />
+		<DisplayName ID="TouchCursorOptions.NavigateByType.6" Text="Landmarks" />
+		<DisplayName ID="TouchCursorOptions.NavigateByType.7" Text="Form Controls" />
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes" Text="Configure Types">
+			<HelpMsg>
+Configure the types of controls available when navigating with the touch cursor.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.RestoreToDefault" Text="Restore to Default">
+			<HelpMsg>
+This removes touch cursor control type customized settings that you have made for the current application.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Button" Text="Buttons">
+			<HelpMsg>
+specifies whether or not buttons are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Calendar" Text="Calendars">
+			<HelpMsg>
+specifies whether or not calendar controls are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Checkbox" Text="Checkboxes">
+			<HelpMsg>
+specifies whether or not checkboxes are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.ComboBox" Text="Combo Boxes">
+			<HelpMsg>
+specifies whether or not combo boxes are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Custom" Text="Custom controls">
+			<HelpMsg>
+specifies whether or not custom controls are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.DataGrid" Text="Data Grids">
+			<HelpMsg>
+specifies whether or not data grids are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.DataItem" Text="Data Items">
+			<HelpMsg>
+specifies whether or not data items are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Document" Text="Documents">
+			<HelpMsg>
+specifies whether or not documents are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Edit" Text="Edits">
+			<HelpMsg>
+specifies whether or not edit controls are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Group" Text="Groups">
+			<HelpMsg>
+specifies whether or not group controls are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Header" Text="Headers">
+			<HelpMsg>
+specifies whether or not headers are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.HeaderItem" Text="Header Items">
+			<HelpMsg>
+specifies whether or not header items are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Heading" Text="Headings">
+			<HelpMsg>
+specifies whether or not headings are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Hyperlink" Text="Hyperlinks">
+			<HelpMsg>
+specifies whether or not hyperlinks are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Image" Text="Images">
+			<HelpMsg>
+specifies whether or not images are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.List" Text="Lists">
+			<HelpMsg>
+specifies whether or not lists are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.ListItem" Text="List Items">
+			<HelpMsg>
+specifies whether or not list items are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Menu" Text="Menus">
+			<HelpMsg>
+specifies whether or not menus are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.MenuBar" Text="Menu Bars">
+			<HelpMsg>
+specifies whether or not menu bars are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.MenuItem" Text="Menu Items">
+			<HelpMsg>
+specifies whether or not menu items are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Pane" Text="Panes">
+			<HelpMsg>
+specifies whether or not panes are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.ProgressBar" Text="Progress Bars">
+			<HelpMsg>
+specifies whether or not progress bars are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.RadioButton" Text="Radio Buttons">
+			<HelpMsg>
+specifies whether or not radio buttons are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Region" Text="Regions">
+			<HelpMsg>
+specifies whether or not regions are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.ScrollBar" Text="Scroll Bars">
+			<HelpMsg>
+specifies whether or not scroll bars are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Separator" Text="Separators">
+			<HelpMsg>
+specifies whether or not separators are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Slider" Text="Sliders">
+			<HelpMsg>
+specifies whether or not sliders are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Spinner" Text="Spinners">
+			<HelpMsg>
+specifies whether or not spinners are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.SplitButton" Text="Split Buttons">
+			<HelpMsg>
+specifies whether or not split buttons are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.StatusBar" Text="Status Bars">
+			<HelpMsg>
+specifies whether or not status bars are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Tab" Text="Tabs">
+			<HelpMsg>
+specifies whether or not tab controls are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.TabItem" Text="Tab Items">
+			<HelpMsg>
+specifies whether or not tab items are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Table" Text="Tables">
+			<HelpMsg>
+specifies whether or not tables are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Text" Text="Texts">
+			<HelpMsg>
+specifies whether or not text controls are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Thumb" Text="Thumbs">
+			<HelpMsg>
+specifies whether or not thumb controls are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.TitleBar" Text="Title Bars">
+			<HelpMsg>
+specifies whether or not title bars are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.ToolBar" Text="Tool Bars">
+			<HelpMsg>
+specifies whether or not tool bars are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.ToolTip" Text="ToolTips">
+			<HelpMsg>
+specifies whether or not tool tip text controls are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Tree" Text="Trees">
+			<HelpMsg>
+specifies whether or not trees are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.TreeItem" Text="Tree Items">
+			<HelpMsg>
+specifies whether or not tree items are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="TouchCursorOptions.ConfigureTypes.Window" Text="Windows">
+			<HelpMsg>
+specifies whether or not window controls are included in touch cursor navigation.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions" Text="General Options">
+			<HelpMsg>
+This group contains options that control overall JAWS behavior.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.UserVerbosity" Text="User Verbosity" >
+			<HelpMsg>
+This option controls the Verbosity, or amount of information, spoken by JAWS.
+The level settings are Beginner, Intermediate, and Advanced.
+To customize what JAWS speaks for each level, see the Verbosity Options dialog in Settings Center. The default setting is Beginner.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.UserVerbosity.0" Text="Beginner" />
+		<DisplayName ID="GeneralOptions.UserVerbosity.1" Text="Intermediate" />
+		<DisplayName ID="GeneralOptions.UserVerbosity.2" Text="Advanced" />
+		<DisplayName ID="GeneralOptions.VirtualRibbonMenu" Text="Virtual Ribbon Menu">
+			<HelpMsg>
+Select this check box to turn on the Virtual Ribbon Menu. This is applicable for applications where Ribbons are present instead of the classic menu bar and menus. When it is on, an application's Ribbon is organized and navigated using the traditional menu and submenu format that is familiar to most users. By using the ARROW and TAB keys, it is easier to move focus between Upper Ribbon tabs and Lower Ribbon groups. These same keys are also used to select items within a group. In addition, SPACEBAR, ENTER, and ESC are used to expand or collapse submenus. This check box is cleared by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.ProgressBars" Text="Progress Bars">
+			<HelpMsg>
+This option controls whether or not JAWS announces progress bar updates.
+When set to Spoken, JAWS will periodically read the percentages in installations, or when performing other tasks like copying large files or burning CDs.
+To control how often JAWS announces progress bar changes, see Progress Bar Updates Announcement in Settings Center. The default setting is Spoken.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.TopAndBottomEdge" Text="Top And Bottom Edge">
+			<HelpMsg>
+This option controls whether or not JAWS beeps when it encounters a top or bottom boundary while you navigate. The default setting is Silent.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.TopAndBottomEdge.0" Text="Silent" />
+		<DisplayName ID="GeneralOptions.TopAndBottomEdge.1" Text="Alert with Sound" />
+		<DisplayName ID="GeneralOptions.Graphics" Text="Graphics">
+			<HelpMsg>
+This option controls which graphics JAWS announces when reading with ARROW keys or with a braille display. It applies to graphics such as button icons found in an application's toolbar or menu bar. It does not apply to graphics in virtualized messages in Outlook, Web pages, or PDF documents. When this option is set to All, JAWS reads both labeled and unlabeled graphics. Note that unlabeled graphics are announced as "Graphic" followed by a number. When set to labeled, only those graphics with labels are read. When set to None, JAWS ignores all graphics in a document window. The default setting is Labeled.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.Graphics.0" Text="None" />
+		<DisplayName ID="GeneralOptions.Graphics.1" Text="Labeled" />
+		<DisplayName ID="GeneralOptions.Graphics.2" Text="All" />
+		<DisplayName ID="GeneralOptions.IncludeDimensions" Text="Include Graphical Dimensions">
+			<HelpMsg>When selected, JAWS will announce dimensions for graphics embedded in documents or Outlook messages where Word is the editor. For Outlook, this check box is cleared. For Word, this check box is selected.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.IncludeAlignmentDesc" Text="Include Graphic Alignment Description">
+					<HelpMsg>When selected, JAWS will announce the alignment description for graphics embedded in documents or Outlook messages where Word is the editor. For Outlook, this check box is cleared. For Word, this check box is selected.</HelpMsg>
+				</DisplayName>
+				<DisplayName ID="GeneralOptions.ScreenEcho" Text="Screen Echo">
+			<HelpMsg>
+This option controls how JAWS responds to text as it is written to the screen.
+Set to Off in a window where JAWS is reading over and over.
+Set to Highlighted to read list items or other highlights as they change.
+Set to All when in a terminal, telnet or command window, or other location where you want to hear any and all text written to the screen.
+The default setting is Highlighted.</HelpMsg>
+		</DisplayName >
+		<DisplayName ID="GeneralOptions.ScreenEcho.0" Text="Off" />
+		<DisplayName ID="GeneralOptions.ScreenEcho.1" Text="Highlighted" />
+		<DisplayName ID="GeneralOptions.ScreenEcho.2" Text="All" />
+		<DisplayName ID="GeneralOptions.FocusLoss" Text="Focus Loss Announcement">
+			<HelpMsg>
+Use this option to decide whether or not JAWS will announce loss of focus.
+This can happen frequently in some versions of Windows, and thus may become too verbose.
+When you change this setting, it is stored between JAWS sessions.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.EnableScreenShade" Text="Screen Shade">
+			<HelpMsg>
+Select this check box to turn on the Screen Shade. The Screen Shade covers the screen to prevent it from being seen. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.InterruptSpeechWhenADialogBoxIsCreated" Text="Interrupt Speech When a Dialog Box Is Created">
+			<HelpMsg>
+Select this check box to cause JAWS to interrupt speech when a dialog box is created. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="GeneralOptions.UseInferredAccessKeys" Text="Use Inferred Access Keys">
+			<HelpMsg>
+Select this check box to cause JAWS to use Inferred Access Keys for menu items when there is not an explicitly defined access key. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ConvenientOCR" Text="Convenient OCR">
+			<HelpMsg>Use the items in this group to configure settings for OCR.  </HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ConvenientOCR.Primary" Text="Primary Recognition Language">
+			<HelpMsg>Use this item to specify the language used to read and decipher text. Select the language that corresponds to the language of the printed page you are acquiring. This allows correct recognition of characters (such as accent marks and umlauts) unique to that language.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ConvenientOCR.Secondary" Text="Secondary Recognition Language">
+			<HelpMsg>Use this item to specify a second recognition language used to recognize acquired text. It uses the languages selected for both the primary and secondary options to recognize text. This is helpful if the document contains text from more than one language.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions" Text="Reading Options">
+			<HelpMsg>
+This group contains options that control how JAWS behaves when reading and navigating text.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.TextAnalyzer" Text="Text Analyzer">
+			<HelpMsg>
+Use this option to identify inconsistencies such as unmatched parentheses, unintentional format changes, extra whitespace, and stray or unspaced punctuation when editing or proofreading a document by line, sentence, paragraph, or Say All command.
+Select Indicate with Sound to use a WAV file to identify inconsistencies. Select Speak Count to announce the number of inconsistencies in the current text. Select Describe Inconsistencies for a description of the error.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.TextAnalyzer.0" Text="Off" />
+		<DisplayName ID="ReadingOptions.TextAnalyzer.1" Text="Indicate With Sound" />
+		<DisplayName ID="ReadingOptions.TextAnalyzer.2" Text="Speak Count" />
+		<DisplayName ID="ReadingOptions.TextAnalyzer.3" Text="Describe Inconsistencies" />
+		<DisplayName ID="ReadingOptions.AnnotationIndication" Text="Annotation Indication">
+			<HelpMsg>
+This option controls whether to detect annotations in the rich document.
+The options are: Off, Type Only, and Type and Text.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.AnnotationIndication.0" Text="Off" />
+		<DisplayName ID="ReadingOptions.AnnotationIndication.1" Text="Type Only" />
+		<DisplayName ID="ReadingOptions.AnnotationIndication.2" Text="Type and Text" />
+		<DisplayName ID="ReadingOptions.SmartWordReading" Text="Smart Word Reading">
+			<HelpMsg>
+This option controls how JAWS reads words with punctuation in them, such as phone numbers.
+When off, JAWS reads the punctuation symbol under the cursor.
+When on, JAWS reads the entire word.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.LanguageDetectChange" Text="Language Detect Change">
+			<HelpMsg>
+This option controls whether or not JAWS detects changes in languages within documents which support language tags.
+For example, if JAWS finds Spanish text on a Web page, that text is spoken in Spanish. This detection only affects those synthesizers,
+such as Eloquence, that support multiple languages.
+In Word, the default setting is On. In Outlook, the default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.CustomLabels" Text="Custom Labels">
+			<HelpMsg>
+This option controls whether or not JAWS uses custom labels that you previously defined on Web pages or in Microsoft Word. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ReadingOptions.StopwordsExceptionDictionary" Text="Stopwords Exception Dictionary">
+			<HelpMsg>
+This option controls whether or not a stopwords exception dictionary is used by the Word List feature. A stopwords exception dictionary contains the list of words to be ignored. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="SayAllOptions" Text="Say All Options">
+			<HelpMsg>
+This group contains options that control how JAWS behaves during Say All.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="SayAllOptions.Scheme" Text="Scheme">
+			<HelpMsg>
+This option allows you to load a different scheme to be used during Say All. It applies only to HTML documents, or to documents with HTML elements such as some Microsoft Word documents.
+
+If the scheme is set to No Change for the application, a different sound scheme will not be loaded during Say All.
+If set to Same As Application in Personalized Settings, it means that the Say All scheme will be the same as used for the application.
+
+The Say All Text With Sounds scheme speaks the text of links and headings, but plays a subtle sound instead of announcing links and headings.
+
+The Say All Text Only scheme gives no indication of links and headings, it merely speaks the text of the links and headings.
+The default setting is No Change.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="SayAllOptions.SayAllReadsBy" Text="Say All Reads By">
+			<HelpMsg>
+This option controls how JAWS reads when you perform a Say All.
+The available settings are:  Line With Pauses, Line Without Pauses, Sentence, and Paragraph.
+The default setting is Line without pauses.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="SayAllOptions.Capitalization" Text="Capitalization">
+			<HelpMsg>
+This option controls whether or not capitalization is indicated while reading with Say All.
+By default, JAWS indicates capitalization by raising the pitch of the active voice.
+Use Indicate Caps During Say All in Settings Center to turn this option on or off.
+The default setting is Ignore.
+</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="SayAllOptions.Capitalization.0" Text="Ignore" />
+		<DisplayName ID="SayAllOptions.Capitalization.1" Text="Indicate" />
+		<DisplayName ID="EditingOptions" Text="Editing Options">
+			<HelpMsg>
+This group contains options  that control how JAWS behaves when you are editing text.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="EditingOptions.TypingEcho" Text="Typing Echo">
+			<HelpMsg>
+This option controls how JAWS speaks as you type.
+The available settings are Characters, Words, Both Characters and Words, and Off.
+The default setting is Characters.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="EditingOptions.TypingEcho.0" Text="None"/>
+		<DisplayName ID="EditingOptions.TypingEcho.1" Text="Characters" />
+		<DisplayName ID="EditingOptions.TypingEcho.2" Text="Words" />
+		<DisplayName ID="EditingOptions.TypingEcho.3" Text="Both Characters and Words" />
+		<DisplayName ID="EditingOptions.CapsIndicate" Text="Caps Indicate">
+			<HelpMsg>
+This option controls when JAWS indicates capitalization while reading with reading keys or typing text.
+Available settings are On Character; On Character and Word; On Character, Word, and Line; and Never.
+By default, JAWS indicates capitalization by raising the pitch of the active voice.
+To change how JAWS indicates capitalization, see Indicate Capitalization in Settings Center.
+The default setting is On Character.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="EditingOptions.CapsIndicate.0" Text="Never"/>
+		<DisplayName ID="EditingOptions.CapsIndicate.1" Text="On Character"/>
+		<DisplayName ID="EditingOptions.CapsIndicate.2" Text="On Character and Word"/>
+		<DisplayName ID="EditingOptions.CapsIndicate.3" Text="On Character, Word, and Line"/>
+		<DisplayName ID="EditingOptions.Punctuation" Text="Punctuation">
+			<HelpMsg>
+This option controls the amount of punctuation JAWS will speak.
+Available settings are None, Some, Most, and All.
+To control which punctuation is spoken at a given level, see Customize Punctuation in Settings Center.
+The default setting is Most.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="EditingOptions.Punctuation.0" Text="None"/>
+		<DisplayName ID="EditingOptions.Punctuation.1" Text="Some" />
+		<DisplayName ID="EditingOptions.Punctuation.2" Text="Most" />
+		<DisplayName ID="EditingOptions.Punctuation.3" Text="All" />
+		<DisplayName ID="EditingOptions.Indentation" Text="Indentation">
+			<HelpMsg>
+This option controls whether or not JAWS will indicate indentation as you navigate using reading commands.
+By default, when using the Classic scheme, JAWS indicates indentation by announcing the number of spaces.
+To control what indentation to indicate, and how it should be indicated, See the Speech and Sounds Manager Indentation page.
+The default setting is Ignore.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="EditingOptions.Indentation.0" Text="Ignore"/>
+		<DisplayName ID="EditingOptions.Indentation.1" Text="Indicate"/>
+		<DisplayName ID="SpellingOptions" Text = "Spelling Options">
+			<HelpMsg>
+This group contains options that control how JAWS behaves when spelling text.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="SpellingOptions.TextSpell" Text="Text Spell">
+			<HelpMsg>
+This option controls how JAWS spells text when you issue one of the Spell commands, such as SpellWord, which is the SayWord command twice quickly, or SpellLine, which is the SayLine command twice quickly.
+Select to have JAWS spell phonetically or alphabetically.
+When set to spell Alphabetically, JAWS spells the letters one by one, such as "J A W S."
+When set to spell Phonetically, JAWS uses words to represent the letters, such as: "Juliet Alpha Whiskey Sierra."
+The default setting is Alphabetically.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="SpellingOptions.TextSpell.0" Text="Alphabetically" />
+		<DisplayName ID="SpellingOptions.TextSpell.1" Text="Phonetically" />
+		<DisplayName ID="SpellingOptions.AlphaNumericText" Text="AlphaNumeric Text">
+			<HelpMsg>
+This option controls how JAWS speaks letter and number combinations, such as license plate numbers.
+Available settings are Off (read as word), Spell, and Spell Phonetically.
+The default setting is Read As Word.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="SpellingOptions.AlphaNumericText.0" Text="Read as Word" />
+		<DisplayName ID="SpellingOptions.AlphaNumericText.1" Text="Spell" />
+		<DisplayName ID="SpellingOptions.AlphaNumericText.2" Text="Spell Phonetically" />
+		<DisplayName ID="NumbersOptions" Text = "Numbers Options">
+			<HelpMsg>
+This group contains options that control how JAWS pronounces numbers.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="NumbersOptions.SingleDigitsThreshold" Text="Speak Single Digits Threshold">
+			<HelpMsg>
+Use this option to set a threshold value for JAWS so that a number string is read as individual digits. For example, if a string contains five or more digits, JAWS will announce each digit as a standalone number. The string 54321 is read as 5 4 3 2 1.
+
+This is useful when reading long number strings such as telephone numbers, serial numbers, and part numbers. Note that this rule will apply under the following conditions: the number string is not preceded by or followed by an alpha character, and it does not contain a dash, colon, decimal, or slash to separate the digits similar to what is used for telephone, time, or date formatting. If you want to override the dash exception of this rule, select the Dashes option located next in the Numbers Options.
+
+Other values for this option are Six or More Digits, Seven or More Digits, Eight or More Digits, and Controlled by Synthesizer. When the latter is selected, the current synthesizer determines how numbers are read.
+The default setting is 5 or more digits.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="NumbersOptions.SingleDigitsThreshold.0" Text="Controlled by Synthesizer" />
+		<DisplayName ID="NumbersOptions.SingleDigitsThreshold.1" Text="5 or more digits" />
+		<DisplayName ID="NumbersOptions.SingleDigitsThreshold.2" Text="6 or more digits" />
+		<DisplayName ID="NumbersOptions.SingleDigitsThreshold.3" Text="7 or more digits" />
+		<DisplayName ID="NumbersOptions.SingleDigitsThreshold.4" Text="8 or more digits" />
+		<DisplayName ID="NumbersOptions.SingleDigitsDashes" Text="Speak Single Digits if Number Contains Dashes">
+			<HelpMsg>
+Select this option so that number strings containing dashes are read by JAWS as individual digits. This will apply when the dash is preceded by and followed by a digit similar to telephone number formatting.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions" Text="Virtual Cursor Options">
+			<HelpMsg>
+This group contains options and groups of options that control how JAWS behaves when the virtual cursor is active.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.VirtualCursorVerbosityLevel" Text="Virtual Cursor Verbosity Level">
+			<HelpMsg>
+Use this option to select a virtual cursor verbosity level. 
+The verbosity level determines the amount of information spoken by JAWS when the Virtual Cursor is active. Each of the 3 levels is preset to give a different amount of detail and can be further configured to give only the information you want to hear.
+The default verbosity level is Medium, which creates an optimal user experience on most websites and documents.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.VirtualCursorVerbosityLevel.0" Text="Low" />
+		<DisplayName ID="VirtualCursorOptions.VirtualCursorVerbosityLevel.1" Text="Medium" />
+		<DisplayName ID="VirtualCursorOptions.VirtualCursorVerbosityLevel.2" Text="High" />
+		<DisplayName ID="VirtualCursorOptions.ElementDescription" Text="Element Description">
+			<HelpMsg>
+When checked, JAWS speaks the description of an element if one exists; if off, the description is not spoken.
+Toggling this option will save it to the domain setting if a domain-specific JCF file exists, otherwise the setting will be saved for the current application.
+</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GlanceHighlightIndication" Text="Smart Glance Highlight Indication">
+			<HelpMsg>
+This combobox is used to configure when Smart Glance Highlights  are indicated.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GlanceHighlightIndication.0" Text="Off" />
+		<DisplayName ID="VirtualCursorOptions.GlanceHighlightIndication.1" Text="On page load" />
+		<DisplayName ID="VirtualCursorOptions.GlanceHighlightIndication.2" Text="While Navigating" />
+		<DisplayName ID="VirtualCursorOptions.GlanceHighlightIndication.3" Text="Both" />
+		<DisplayName ID="VirtualCursorOptions.AllowWebApplicationReservedKeystrokes" Text="Allow web application reserved keystrokes">
+			<HelpMsg>
+Select this check box to allow passing through keystrokes to a web application using its reserved keystroke list.
+Clearing this check box causes JAWS to handle all keystrokes. This check box is selected by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.SelectandCopy" Text="Select and Copy">
+			<HelpMsg>
+This option controls whether or not JAWS will use the Text Selection and Copy Commands from the Web browser, e-mail software, or other owner of a virtual document.
+With the "From Virtual Cursor" setting, text is copied as plain text without formatting, pictures, and HTML attributes.
+With the "Full Content Using Onscreen Highlight" setting, the text and elements you select are highlighted onscreen as you press selection keys from the keyboard just as it would be in programs like Word Processors. The content is then copied with all formatting.
+The default setting is Full Content Using Onscreen Highlight.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.ReadOnlyState" Text="Read Only State">
+			<HelpMsg>
+This option controls whether to announce or ignore read-only state information in form fields.
+It applies to Adobe Acrobat documents.
+The default setting is Announce.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.ReadOnlyState.0" Text="Announce" />
+		<DisplayName ID="VirtualCursorOptions.ReadOnlyState.1" Text="Ignore" />
+		<DisplayName ID="VirtualCursorOptions.IndicateInsAndDelInVirtualDocs" Text="Indicate text  inside  INS and DEL Elements">
+			<HelpMsg>
+This option controls whether to indicate inserted or deleted text inside INS and DEL tags.
+The default setting is Off.
+			</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.FormsOptions" Text="Forms Options">
+			<HelpMsg>
+This group contains options for reading and interacting with form controls in the virtual cursor.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.AutoFormsMode" Text="Auto Forms Mode">
+			<DisabledMsg>When Smart Navigation is set to Controls and Tables, Auto Forms Mode is automatically set to SemiAuto.</DisabledMsg>
+			<HelpMsg>
+This feature determines if JAWS will automatically switch between Forms Mode and Virtual mode when working in Applications such as IE, Firefox, Help,
+Acrobat, etc. When set to Auto, you will be able to navigate to controls with the ARROW keys where input is needed and JAWS will automatically switch to Forms Mode.
+If you continue to arrow past the control, Forms mode will be disabled again automatically. It will make interacting with Forms much more transparent. 
+When Forms Mode is set to Manual, it will remain off and you will be forced to manually go in and out of Forms Mode with the ENTER key and PC Cursor key.
+When set to Semi-auto, JAWS will automatically enter Forms Mode when tabbing, but you will need to manually exit Forms Mode with the PC Cursor key.
+The default setting is Auto.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.UseSound " Text="Use Sound">
+			<HelpMsg>
+As you move into and out of a form field, JAWS can use sounds to indicate when it switches between Virtual Mode and Forms Mode instead of speaking the
+traditional messages, Forms Mode On and Forms Mode Off.
+Clear this option box if you do not want to hear sounds and would prefer to hear the traditional spoken messages.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.NavigationQuickKeyDelay" Text="Navigation Quick Key Delay">
+			<HelpMsg>
+When using Navigation Quick Keys to move through forms, this option determines how long it takes before the Auto Forms Mode feature causes forms mode to turn on in controls such as Edits, where Auto Forms Mode would normally turn Forms Mode on.
+
+Settings for this option range from 0.5 seconds to 5 seconds. There is also an option of Never, which is the default setting. This means that when using Navigation Quick Keys, JAWS will not automatically enter Forms Mode. If users wish to go into Forms Mode in this case, they will need to turn it on manually with the Enter Key.
+
+Setting another choice, such as 3 seconds, will allow Forms Mode to be activated following a
+3-second delay when landing on a control.
+
+Note: This option is unavailable if Auto Forms Mode is off.
+Note: JAWS can be configured to emit a sound when you enter or exit a form field.
+The sound is heard when Forms Mode becomes active.
+The default setting is Never.</HelpMsg>
+			<DisabledMsg>Auto Forms Mode is off</DisabledMsg>
+		</DisplayName>
+		<DisplayName  ID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing" Text="Buttons Show Using">
+			<HelpMsg>
+This option controls which attribute JAWS uses to show buttons in the virtual cursor.
+The available settings are Title, Screen Text, Alt Attribute, Value, Longest, or Custom Search.
+The default setting is Screen Text.  You may want to experiment with other settings on pages where the buttons have images instead of text.
+You know this when buttons are identified with words like "images/," "gif," or "jpg."
+The default setting is Screen Text.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.0" Text="Title" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.1" Text="Screen Text" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.2" Text="Alt Attribute" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.3" Text="Value" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.4" Text="Longest" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.ButtonsShowUsing.5" Text="Custom Search" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing" Text="Form Fields Identify Prompt Using">
+			<HelpMsg>
+This option controls which method JAWS uses to identify prompts or labels for form fields.
+Available settings are Label Tag, Title Attribute, Alt Attribute, Longest, and Both Label and Title.
+For Both Label and Title, JAWS only uses both if they are different.
+The default setting is Label Tag.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.0" Text="Label Tag" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.1" Text="Title" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.2" Text="Alt Attribute" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.3" Text="Longest" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.4" Text="Both Label and Title if Different" />
+		<DisplayName ID="VirtualCursorOptions.FormsOptions.FormFieldsIdentifyPromptUsing.5" Text="Both Label and Alt if Different" />
+		<DisplayName ID = "VirtualCursorOptions.FormsOptions.FormsModeOffWhenNewPageLoads" Text="Forms Mode Off When New Page Loads">
+			<HelpMsg>
+This option controls whether or not JAWS automatically turns off Forms mode when a new page loads, or you switch to a new tab or window.
+With this feature enabled, you can have Forms mode on in a search window, while viewing results in another window or tab freely with the virtual cursor.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions" Text="General Options">
+			<HelpMsg>
+This group contains options that control overall JAWS Virtual Cursor behavior .</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.AnnouncePageElementsOnLoad" Text="Announce Count of Links, Headings, etc when page loads">
+			<HelpMsg>
+Determines whether links, headings, etc are announced when a page first loads. 
+This checkbox is checked by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.SmartNavigation" Text="Smart Navigation Mode">
+			<HelpMsg>
+Smart Navigation offers a more efficient way to navigate in web-based applications, tables, and forms.
+When set to "Controls," most controls are treated as single units when navigating by character or word, like moving through a menu bar with RIGHT and LEFT ARROW.
+When set to "Controls and Tables," controls are treated as single units when navigating by character or word, while inside a table, the ARROW keys move between cells.
+When set to Tables, the ARROW keys move between cells while focused in a table, while outside of a table, navigating by character and word works as it always has.
+In either case, you can always get to traditional navigation such as character or word, by pressing the Say Character, Say Word, or Say Line commands twice quickly so you can explore the text of the control in more traditional ways. To return to Smart Navigation, just press DOWN ARROW, ESC, or TAB.
+When set to Controls or Controls and Tables, the Document Presentation Mode setting is changed to Screen Layout, which offers a much more natural movement through pages the way they appear on screen.
+This option is set to Off by default. Changes to this setting will apply to all web sites visited using this browser. To configure Smart Navigation for specific web sites, use Settings Center.
+To temporarily toggle this setting between Off and your chosen setting, use insert+x.
+This also modifies the Document Presentation Mode setting appropriately. 
+The toggle is always temporary, meaning it only stays in effect until you do something that moves focus away from your current browser window such as alt+tab.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.SmartNavigation.0" Text="Off" />
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.SmartNavigation.1" Text="Controls" />
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.SmartNavigation.2" Text="Tables" />
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.SmartNavigation.3" Text="Controls and Tables" />
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.DocumentAutomaticallyReads" Text="Document and Web Pages automatically read when loaded">
+			<HelpMsg>
+When turned on, JAWS automatically begins reading the Web page that is open in your browser.
+Disabling this option is especially useful if you are using JAWS in conjunction with screen magnification software as the focus is not unexpectedly moved back to the top while you are using the mouse to navigate through the document.
+
+This setting is on by default in web browsers and is off by default when using Fusion or FSReader.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.NavigationQuickKeys" Text="Navigation Quick Keys">
+			<HelpMsg>
+This option controls whether or not JAWS uses Navigation Quick Keys in the virtual cursor.
+Navigation Quick Keys are simple keys for quickly moving through documents and web pages using the virtual cursor. These keys do not interfere with typing in Forms mode.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.DocumentPresentation" Text="Document Presentation Mode">
+			<DisabledMsg>Smart Navigation must be set to OFF.</DisabledMsg>
+			<HelpMsg>
+This option controls how JAWS formats virtual documents.
+Select Simple Layout to have links, form fields, buttons, and other page controls display on a separate line. This is the default setting if Smart Navigation is not enabled. 
+Select Screen Layout to have pages rendered in the virtual buffer in a way that is similar to what a sighted user sees on the screen. If page controls visually appear on the same line, then they will appear on the same line in the virtual buffer. In addition, all items in a single table row display on the same line. Table cells are separated by a vertical bar.
+Screen Layout is used when Smart Navigation is set to Controls or Controls and Tables and cannot be changed while Smart Navigation is active.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.DocumentPresentation.0" Text="Simple Layout" />
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.DocumentPresentation.1" Text="Screen Layout" />
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.CustomPageSummary" Text="Custom Placemarker Page Summary">
+			<HelpMsg>
+Select a setting to determine how PlaceMarkers are announced for Web pages, HTML files, and PDF files. When you open a virtual document (such as an HTML page), the PlaceMarker Page Summary feature automatically lists each PlaceMarker on the page, along with its associated text.  Select Speak PlaceMarkers on Page Load to hear the name of each PlaceMarker and its associated text. Select List PlaceMarkers in Results Viewer on Page Load to have PlaceMarker information for the page appear in the Results Viewer. Select Do Nothing if you do not want to hear the PlaceMarker summary. The default setting is Do Nothing.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.CustomPageSummary.0" Text="Do nothing" />
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.CustomPageSummary.1" Text="Speak Placemarkers On Page Load" />
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.CustomPageSummary.2" Text="List Placemarkers in Results Viewer On Page Load" />
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.AccessKeysShow" Text="Access Keys Indicate">
+			<HelpMsg>
+This option controls whether or not JAWS shows access keys coded into web pages in the virtual cursor.
+These keys are designed by web page authors so you can quickly move to certain sections or activate certain controls on web pages.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.AttributesIndicate" Text="Attributes Indicate">
+			<HelpMsg>
+This option controls whether or not JAWS indicates attributes, such as clickable and onMouseover.
+With speech, JAWS indicates these by saying "Clickable" or "onMouseover" respectively.
+You can change what is said, or what sound to use in the Speech and Sounds Manager.
+In braille, you see clk and omo respectively, after the text of the element or item.
+To activate the onMouseOver attribute, press control insert enter.
+To activate Clickable, tap with a cursor routing button or press enter or the left mouse button on the item.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.FlashMoviesRecognize" Text="Flash Movies Recognize">
+			<HelpMsg>
+This option controls whether or not JAWS recognizes flash content on Web pages.
+If on, JAWS marks the flash content with flash movie start and flash movie end markings surrounding the content.  This content may update frequently, and for that reason, you may opt to turn this option off to more easily navigate the page.
+If you turn this option off, the Quick Navigation Keys O and SHIFT+O will not take you to the flash content.  This is different from tables or frames, because the content in this case is not shown at all in the virtual cursor.
+The default setting is On.			</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.PageRefresh" Text="Page Refresh">
+			<HelpMsg>
+This option allows you to specify the frequency with which pages reload.
+By default, pages refresh automatically based on settings in the HTML code. You can also choose to have pages refresh every 60 seconds, or choose Off to suppress all refreshes of web pages.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.AnnounceLiveRegionUpdates" Text="Announce live region updates">
+			<HelpMsg>
+This option controls the announcement of live region updates on web pages and applications that support them.
+There is a setting by the same name in the Settings Center where this can be changed for a specific application or web domain, without changing the default value of checked.
+When set to off, no live region updates will be spoken.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.ScreenTrackVirtualCursor" Text="Screen Track Virtual Cursor">
+			<HelpMsg>
+This option controls whether or not JAWS causes the screen to track the virtual cursor.
+When JAWS does this, sighted users can more easily tell where you are on the Web page.  Since Web pages do not have a cursor, like Microsoft Word does, this tracking feature works to keep the content you are viewing on screen.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.VirtualDocumentLinkActivationMethod" Text="Link activation">
+			<HelpMsg>
+This option affects how links are activated when the user presses the ENTER key in a virtual document.
+When this option is set to "Enter simulates mouse click," pressing the ENTER key on a link actually simulates a left mouse click on the link. This is how JAWS behaved prior to JAWS 15.
+When this option is set to "Enter sends Enter key," pressing the ENTER key on a link instead causes the ENTER key to be passed on to the system.
+You may want to consider setting this option to "Enter sends Enter key" if pressing ENTER does not activate a Web element unless you first press JAWSKey+3 to enable the Pass Key Through feature.
+The default setting is "Enter simulates mouse click."
+</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.VirtualDocumentLinkActivationMethod.0" Text="Enter simulates mouse click" />
+		<DisplayName ID="VirtualCursorOptions.GeneralOptions.VirtualDocumentLinkActivationMethod.1" Text="Enter sends Enter key" />
+		<DisplayName ID="VirtualCursorOptions.TextOptions" Text="Text Options">
+			<HelpMsg>
+This group contains options that control how text is formatted in the virtual cursor.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.TextOptions.AbbreviationsExpand" Text="Abbreviations Expand">
+			<HelpMsg>
+This option controls how JAWS shows abbreviations in the virtual cursor.
+If on, JAWS will use the title attribute, if provided by the web page author, for the given abbreviation.
+If off, JAWS will display the abbreviation as it is on screen.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.TextOptions.AcronymsExpand" Text="Acronyms Expand">
+			<HelpMsg>
+This option controls how JAWS shows acronyms in the virtual cursor.
+If on, JAWS uses the title attribute, if provided by the Web page author, for the given acronym.
+If off, JAWS displays the acronym as it is on screen.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.TextOptions.RepeatedTextSkip" Text="Repeated Text Skip">
+			<HelpMsg>
+This option controls whether or not JAWS skips repeated (or common) text at the top of new links when you click them on Web pages.
+This text is usually the same for a given Web site, such as navigation information found at the top of the page.
+When this option is on, JAWS places the virtual cursor below the "repeated" or common text.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions" Text="Graphics Options">
+			<HelpMsg>
+This group contains options that control graphics recognition and reading in the virtual cursor.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions.GraphicsShow" Text="Graphics Show">
+			<HelpMsg>
+This option controls which graphics are shown in the virtual cursor.
+Available settings are None, Tagged, and All.
+Tagged means that there are tags associated in the page which JAWS can use to describe the graphic.
+The default setting is Tagged.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions.GraphicsShow.0" Text="None" />
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions.GraphicsShow.1" Text="Tagged" />
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions.GraphicsShow.2" Text="All" />
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy" Text="Graphics recognize by">
+			<HelpMsg>
+This option controls which attribute of the graphic is used by JAWS in showing a graphic's name.
+The most common attribute used by web page developers is the Alt attribute.
+The available settings for this option are: Title, Alt Attribute, On Mouse Over, Longest and Custom Search.
+The default setting is Alt Attribute.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy.0" Text="Title" />
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy.1" Text="Alt Attribute" />
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy.2" Text="On Mouse Over" />
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy.3" Text="Longest" />
+		<DisplayName ID="VirtualCursorOptions.GraphicsOptions.GraphicsRecognizeBy.4" Text="Custom Search" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions" Text="Links Options">
+			<HelpMsg>
+This group contains options that control link recognition and reading in the virtual cursor.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.FilterConsecutiveDuplicateLinks" Text="Filter Consecutive Duplicate Links">
+			<HelpMsg>
+This option controls whether consecutive links pointing to the same location, one graphical and one text, are filtered.
+The available settings are On and Off. When on, only the text link will be shown.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.GraphicalLinksShow" Text="Graphical Links Show">
+			<HelpMsg>
+This option controls which graphical links are shown in the virtual cursor.
+Available settings are None, Tagged and All.
+Tagged means that there are tags associated in the page which JAWS can use to describe the graphical link.
+The default setting is All.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.GraphicalLinksShow.0" Text="None" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.GraphicalLinksShow.1" Text="Tagged" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.GraphicalLinksShow.2" Text="All" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.UntaggedGraphicalLinksShow" Text="Untagged Graphical Links Show">
+			<HelpMsg>
+This option controls how JAWS shows graphical links without tags.
+Available settings are URL and Image Source.
+The URL points to the page you will be on if you click the link.
+The image source points to the name of the file used as the graphic or image.
+The default setting is Image Source.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.LinksInImageMapsShow" Text="Links in Image Maps Show">
+			<HelpMsg>
+This option controls which links in image maps JAWS shows.
+Available settings are none, tagged, and all.
+The default setting is All.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.LinksInImageMapsShow.0" Text="None" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.LinksInImageMapsShow.1" Text="Tagged" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.LinksInImageMapsShow.2" Text="All" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing" Text="Text Links Show Using">
+			<HelpMsg>
+This option controls what information JAWS uses to show text links in the virtual cursor.
+These links do not have graphical content, but are embedded in the text of the content of the web page or document.
+Available settings are Screen Text, Alt Attribute, Title, Longest, and Custom Search.
+The default setting is Screen Text.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing.0" Text="Title" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing.1" Text="Screen Text" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing.2" Text="Alt Attribute" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing.3" Text="Longest" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.TextLinksShowUsing.4" Text="Custom Search" />
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.LinksIdentifyType" Text="Links Identify Type">
+			<HelpMsg>
+This option controls whether or not JAWS identifies the link type as it reads and displays the Web page on the braille display.
+When this option is off, JAWS still identifies links, it just does not identify links as mail, ftp, or other link types.
+It still identifies links as image map, graphic or graphic link.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.LinksOptions.LinksIdentifySamePage" Text="Links Identify &quot;Same Page&quot;">
+			<HelpMsg>
+				This option controls whether or not JAWS identifies the &quot;same page&quot; status of links pointing to another place on the same web page or document.
+When this option is off, JAWS still identifies links in speech and braille, but does not announce &quot;same page&quot; as part of the link identification.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.HeadingAndFrameOptions" Text="Heading and Frame Options">
+			<HelpMsg>
+This group contains options that determines how frames and headings are shown in the virtual cursor.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.HeadingAndFrameOptions.HeadingsAnnounce" Text="Headings Announce">
+			<HelpMsg>
+This option controls how JAWS announces headings in virtual documents.
+Select between Off, On, and Heading and Level.
+The default setting is Heading and Level.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.HeadingAndFrameOptions.HeadingNavigation" Text="Heading Navigation">
+			<HelpMsg>
+This option determines what happens during heading navigation when using the numbers row to navigate to headings at a given level.
+Restrict to section restricts navigation to finding headings with an equal or lower precedence.
+For example, searching for an h3 when the next heading is an h2 will stop since the h2 indicates the start of a new section whose level has a higher precedence than the heading you are searching for.
+Speak headings at new section will find the next heading with the given level, but if it is under a different higher precedence heading, the immediately higher precedence headings will be read so you know that the new heading belongs to a different section.
+If Play sound at new section is selected, heading navigation will find the next heading with the given level, but if it is under a different higher precedence heading, a sound shall be played to indicate that the heading belongs to a different section.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.HeadingAndFrameOptions.HeadingNavigation.0" Text="Restrict to Section" />
+		<DisplayName ID="VirtualCursorOptions.HeadingAndFrameOptions.HeadingNavigation.1" Text="Speak Headings at New Section" />
+		<DisplayName ID="VirtualCursorOptions.HeadingAndFrameOptions.HeadingNavigation.2" Text="Play Sound at New Section" />
+		<DisplayName ID="VirtualCursorOptions.HeadingAndFrameOptions.InlineFramesShow" Text="Inline Frames Show">
+			<HelpMsg>
+This option controls whether or not the contents of inline frames are shown in the virtual cursor.
+Inline frames are often those which contain banner ads, but can be used by Web page authors to present information.
+You may want to turn this off if a particular Web page has a lot of frame start and end markings with useless or no content in between.
+Settings for this option determine whether the whole content, including start and end marks if appropriate, is shown or not.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<!-- 0 = On e.g. ignore, 1 = off e.g. show -->
+		<DisplayName ID="VirtualCursorOptions.HeadingAndFrameOptions.InlineFramesShow.0" Text="On" />
+		<DisplayName ID="VirtualCursorOptions.HeadingAndFrameOptions.InlineFramesShow.1" Text="Off" />
+		<DisplayName ID="VirtualCursorOptions.TableOptions" Text="Table Options">
+			<HelpMsg>
+This group contains options that control how tables are shown or spoken when navigating in the virtual cursor.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.TableOptions.LayoutTables" Text="Layout Tables Ignore">
+			<HelpMsg>
+This option controls whether or not JAWS recognizes tables used exclusively for formatting purposes.
+Such tables are often used as navigation bars at the top, bottom, or side of the Web page.
+You will still see the buttons within the navigation bar and they will still be shown one after the other in the virtual cursor, but you will not see the table start and end marks.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.TableOptions.TableTitles" Text="Table Titles">
+			<HelpMsg>
+This option controls which table header titles are to be announced when a table cell is spoken.
+
+Select 'Off' to have no titles announced.
+
+You can select row, column, both row and column, or only marked headers. If you choose only marked headers, only the explicitly marked headers will be spoken for the row or column title.
+
+If you choose row, column or both headers, JAWS will first look for the explicitly marked headers for the row or column title. If marked headers are not found, JAWS will guess which row or column to use for the title.
+
+As you navigate, only the changed title matching your title announcement choice is spoken.
+If you use the SayCell script, all titles matching your announcement choice are spoken.
+The default setting is Only Marked Headers.</HelpMsg>
+			<DisabledMsg>
+				This option is unavailable because Table Show Start and End is turned off.
+			</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.TableOptions.TableTitles.0" Text="Off" />
+		<DisplayName ID="VirtualCursorOptions.TableOptions.TableTitles.1" Text="Row" />
+		<DisplayName ID="VirtualCursorOptions.TableOptions.TableTitles.2" Text="Column" />
+		<DisplayName ID="VirtualCursorOptions.TableOptions.TableTitles.3" Text="Both Row and Column" />
+		<DisplayName ID="VirtualCursorOptions.TableOptions.TableTitles.4" Text="Only Marked Headers" />
+		<DisplayName ID="VirtualCursorOptions.TableOptions.HeaderAndContentOrder" Text="Cell Header and Content">
+			<HelpMsg>
+Use this option to set whether headers are announced before content or content is announced before headers in tables.
+
+The default is to announce headers before content.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="VirtualCursorOptions.TableOptions.HeaderAndContentOrder.0" Text="Speak headers before content" />
+		<DisplayName ID="VirtualCursorOptions.TableOptions.HeaderAndContentOrder.1" Text="Speak content before headers" />
+
+		<DisplayName ID="VirtualCursorOptions.TableOptions.CellCoordinatesAnnouncement" Text="Cell Coordinates Announcement">
+			<HelpMsg>
+This option controls whether or not cell coordinates are announced when table navigation is used. When selected, table cell coordinates are announced after the cell content. This check box is selected by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions" Text = "Braille Options">
+			<HelpMsg>
+This group contains options and groups of options that control your braille display. These include options for panning, translated braille output, braille marking, 8-dot braille, and more.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.Mode" Text="Braille Mode">
+			<HelpMsg>
+This option controls which mode, or method, JAWS uses to display text and contextual information.
+Select Structured to have JAWS intelligently display text and contextual information. Symbols are used to represent the type and state of the control.
+Line mode displays text "as is" on your display.  This is not the way sighted users experience Windows, as it is without symbols and you have no context into which you can view relevant text.
+So if you see the word OK on your display, it could be an OK button, or it could be the text of the word OK written in a document.
+Select Speech Output to display all spoken text
+Select Attributes to show only the attributes of the text.  When multiple attributes are present, JAWS displays each attribute for a short time, then rotates to the next one.
+You will not see text with this setting, only attribute symbols.
+The default setting is Structured.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.Mode.0" Text="Line" />
+		<DisplayName ID="BrailleOptions.Mode.1" Text="Structured" />
+		<DisplayName ID="BrailleOptions.Mode.2" Text="Speech Output" />
+		<DisplayName ID="BrailleOptions.Mode.3" Text="Attributes" />
+		<DisplayName ID="BrailleOptions.CursorOptions" Text="Cursor Options">
+			<HelpMsg>
+This group contains options that control the relationship between the active cursor and your braille display.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.CursorOptions.ActiveFollowsBraille" Text="Active Follows Braille">
+			<HelpMsg>
+This option controls whether or not the active cursor automatically follows the braille display as it moves.
+With this option off, you can move the braille display to a different place in the window, away from the active cursor.
+You can look at a status bar, toolbar or other information outside a document area.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.CursorOptions.BrailleFollowsActive" Text="Braille Follows Active">
+			<HelpMsg>
+This option controls whether or not the braille display automatically follows the active cursor.
+When this option is on, the braille display automatically follows the cursor as you use navigation keys on the keyboard.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.PanningOptions" Text="Panning Options">
+			<HelpMsg>
+This group contains options that control panning of your braille display and presentation of text. These options work with the relationship between the display and line length.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.PanningOptions.PanBy" Text="Pan By">
+			<HelpMsg>
+This option controls how text displays as you pan with the braille display.
+Available settings are, Best Fit, Fixed Increment, Maximize Text, and Automatic.
+The Automatic setting allows JAWS to figure out the best way to display text while you pan.
+Maximize Text presents as much text as possible on the display, regardless of display length.
+Best Fit checks available space on your display and only displays what will fit logically.
+Fixed Increment is based on the length of your display.
+The default setting is Automatic.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.PanningOptions.PanBy.0" Text="Best Fit" />
+		<DisplayName ID="BrailleOptions.PanningOptions.PanBy.1" Text="Fixed" />
+		<DisplayName ID="BrailleOptions.PanningOptions.PanBy.2" Text="Maximize Text" />
+		<DisplayName ID="BrailleOptions.PanningOptions.PanBy.3" Text="Automatic" />
+         	<DisplayName ID="BrailleOptions.PanningOptions.PanByParagraph" Text="Pan Text by Paragraph">
+         	       <HelpMsg> 
+This setting determines how much text is shown on the Braille display and how it is navigated when panning through a document such as a web page or a Word document.
+When checked, panning shows the entire paragraph on the display, only showing a blank space if a word does not fit or the paragraph ends. 
+When unchecked, panning moves by what JAWS determines to be a line, which means that you could have large blank spaces after the text as there is nothing more on the current line.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.PanningOptions.WordWrap" Text="Word Wrap">
+			<HelpMsg>
+This option controls whether or not JAWS displays part of a word, even if it cuts off at the end of the braille display.
+If this option is on, only the text that can fit as words on the braille display as shown.
+If this option is off, you may see part of a word at the end of the display, and when you pan, you will see the remainder of it on the left edge of the display.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.PanningOptions.AutoPan" Text="Auto Pan Mode">
+			<HelpMsg>
+This setting determines how the content of the braille display is updated when the active cursor moves outside the area currently displayed.
+Select Off to turn off automatic panning.
+If you select Match User Panning, JAWS pans the braille display using the same method specified in the User Pan list. 
+Select Automatic to allow JAWS to choose the best method for showing text on your braille display.
+The default selection is Automatic.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.PanningOptions.AutoPan.0" Text="Off" />
+		<DisplayName ID="BrailleOptions.PanningOptions.AutoPan.1" Text="Match manual panning" />
+		<DisplayName ID="BrailleOptions.PanningOptions.AutoPan.2" Text="Automatic" />
+		<DisplayName ID="BrailleOptions.EightDotBraille" Text="Eight Dot Braille">
+			<HelpMsg>
+This option controls whether or not JAWS display is eight-dot braille.
+In eight dot braille, dot 7 is used for capital letters in computer braille, and both dots 7 and 8 are used to represent non-alphanumeric characters.
+Even if eight-dot braille is turned off, braille marking is still shown if you have it turned on.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.MarkingUsesDots7and8" Text="Marking uses dots 7 and 8">
+			<HelpMsg>
+This option controls whether or not JAWS marks text containing attributes.
+Marking is done with dots 7 and 8.
+Select either on or off.
+When this option is on, you can turn various attributes on or off for marking.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.MarkingOptions" Text="Marking Options">
+			<HelpMsg>
+This group contains the options that control which attributes are marked with dots 7 and 8 on your braille display. Attributes are modifications to text such as bold, italic, highlight, and so on.  This group also contains options for script defined marking and color marking.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.MarkingOptions.Highlight" Text="Highlight">
+			<HelpMsg>
+Select to mark one or more of the items in this group. All items are marked with dots 7 and 8. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.MarkingOptions.Bold" Text="Bold">
+			<HelpMsg>
+Select to mark one or more of the items in this group. All items are marked with dots 7 and 8. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.MarkingOptions.Underline" Text="Underline">
+			<HelpMsg>
+Select to mark one or more of the items in this group. All items are marked with dots 7 and 8. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.MarkingOptions.Italic" Text="Italic">
+			<HelpMsg>
+Select to mark one or more of the items in this group. All items are marked with dots 7 and 8. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.MarkingOptions.StrikeOut" Text="Strike Out">
+			<HelpMsg>
+Select to mark one or more of the items in this group. All items are marked with dots 7 and 8. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.MarkingOptions.Colors" Text="Colors">
+			<HelpMsg>
+Select to mark one or more of the items in this group. All items are marked with dots 7 and 8. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.MarkingOptions.ScriptDefined" Text="Script Defined">
+			<HelpMsg>
+Select to mark one or more of the items in this group. All items are marked with dots 7 and 8. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.TableOptions" Text="Table Options">
+			<HelpMsg>
+This group contains options that control table presentation on your braille display.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.TableOptions.TableDisplay" Text="Table Display">
+			<HelpMsg>
+This option controls how JAWS displays table text.  You can display current cell, current row, or current column.
+The default setting is Current cell.</HelpMsg>
+			<DisabledMsg>
+				This option is unavailable because Document Reading is set to Screen Layout.
+			</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.TableOptions.TableDisplay.0" Text="Current cell" />
+		<DisplayName ID="BrailleOptions.TableOptions.TableDisplay.1" Text="Current Row" />
+		<DisplayName ID="BrailleOptions.TableOptions.TableDisplay.2" Text="Current Column" />
+		<DisplayName ID="BrailleOptions.TableOptions.TableShowTitles" Text="Table show titles">
+			<HelpMsg>
+This option controls which headers, if any, are displayed for the active table cell.
+The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.TableOptions.TableShowTitles.0" Text="Off" />
+		<DisplayName ID="BrailleOptions.TableOptions.TableShowTitles.1" Text="Row" />
+		<DisplayName ID="BrailleOptions.TableOptions.TableShowTitles.2" Text="Column" />
+		<DisplayName ID="BrailleOptions.TableOptions.TableShowTitles.3" Text="Both row and column" />
+		<DisplayName ID="BrailleOptions.TableOptions.TableShowTitles.4" Text="Only Marked Headers" />
+		<DisplayName ID="BrailleOptions.TableOptions.TableShowCoordinates" Text="Table Show Coordinates">
+			<HelpMsg>
+This option controls whether coordinates for the active cell are on or off.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.FlashMessages" Text="Flash Messages">
+			<HelpMsg>
+This option controls whether or not JAWS flashes messages to the braille display.
+Flash messages are generally announcements not otherwise contextual to the display.  For example, if a link in Internet Explorer opens a new window, the braille display flashes "New Browser Window."
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.BrailleKeysInterruptSpeech" Text="Braille Keys Interrupt Speech">
+			<HelpMsg>
+This option controls whether or not braille keys interrupt speech.
+If this option is on, speech is interrupted any time you press a braille key.
+If off, you can pan or otherwise interact with the braille display and speech is not interrupted.
+JAWS could be announcing or reading one thing, while you quickly look at or adjust something else from your braille display.
+The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="BrailleOptions.StudyMode" Text="Study Mode">
+			<HelpMsg>
+The Braille Study Mode announces the Braille character at the cursor position. On displays with two sets of routing buttons, it can speak and spell the word.
+If on, JAWS speaks the current braille character or symbol when a front row routing button is pressed. For displays with two sets of routing buttons, JAWS speaks and spells the current braille word if a back row hot button is pressed.
+To spell the word under the cursor on Focus Blue displays, press the routing button in conjunction with the left or right selector button.
+Braille Study Mode will remain toggled on until toggled off again or until JAWS is restarted.
+This setting is disabled for displays that cannot use Braille study mode.
+The default setting is Off.</HelpMsg>
+			<DisabledMsg>
+				The braille display you are using does not support this feature.
+			</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="__LastChangedSettings" Text="__InternalControlHelp">
+			<HelpMsg>
+This group contains the last 25 options that were recently changed for an application or document. When you select an item in the tree view, its corresponding settings appear in the configuration display pane on the right side of the Quick Settings window. Note that once this group has 25 items, the last setting in the list is deleted when another item is added. To remove an item from the list, select it, press SHIFT+F10, and then select Remove. To remove all items from the list, select the Last Changed Settings group in the tree view, press SHIFT+F10, and then select Remove All.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

@@ -1,0 +1,64 @@
+# 7.2 Constants
+
+Constants differ from variables in that they do not change value. You
+can use constants as a way of using easily-remembered names to store
+hard to remember strings of letters or numbers. You can think of a
+constant as a number or group of letters or words that you give or
+assign a new name. You create constants purely for mnemonic reasons
+since it is easier to remember a name than a number or long group of
+letters or words.
+
+JAWS has no restrictions to how many constant names you can assign to a
+number. For example, in the default JAWS constants file, HJConst.jsh,
+the script developers at Freedom Scientific have assigned both of the
+constants True and On the same value of 1. Since both True and On
+represent the value of 1, you can write a script statement to check a
+condition for values of True, On, or 1. JAWS considers all of these
+constants as having the same value once you declare the constants.
+
+There are several advantages to using constants in your scripts.
+
+First, you may find it more difficult to remember that when something
+has a value of 1 then it is also true. It is also easier to understand
+the difference between true and false.
+
+Second, when someone else is reading your script file, it is much easier
+for them to understand what you were trying to do if they see well-named
+constants instead of numbers.
+
+Finally, if you need to change the value of a number that is used in
+several places, you can change all of them at once if you have used a
+constant to represent that number. You need only change the value of the
+constant declaration.
+
+## Declaring Constants
+
+You can declare constants at the beginning of a script file. You begin
+the constant declaration with the key word, Const. You follow each
+constant declaration with a comma except for the last entry. An example
+of a constant declaration follows:
+
+Const\
+True = 1,\
+False = 0,\
+On = 1,\
+Off = 0
+
+You can also declare constants in a script header file. You can create
+your own script header file to store your constant definitions. When you
+create a file to store your constant declarations, don\'t forget to
+include the file in any script file in which you want to use those
+constants.
+
+Since many of the built-in functions accept constant values as
+parameters, you can also use the constants defined in the default
+constant file, HJConst.jsh. This file is also included in the default
+script file, default.jss. Although you can use the constants declared in
+this file in your own script files, you should not add your own constant
+declarations to this file.
+
+ 
+
+  ---------------------------------------------------------- -- -------------------------------------------------------------
+  [Back](javascript:window.history.go(-1);){accesskey="b"}      [Next](08-0_CreatingAndSpeakingMessages.htm){accesskey="x"}
+  ---------------------------------------------------------- -- -------------------------------------------------------------

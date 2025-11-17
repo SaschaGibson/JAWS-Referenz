@@ -1,0 +1,199 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>12.3 User Defined Functions</title>
+<LINK rel="StyleSheet" href="default.css">
+</head>
+
+<body>
+
+<h1>12.3 User Defined Functions</h1>
+
+<p>In cases where built-in functions don't perform the task you need, you can
+create your own functions. These types of functions are called
+&quot;user-defined&quot; functions. Unlike built-in functions, any script
+developer can modify the contents of a user-defined function. </p>
+
+<p>You create user-defined functions within your script file using the same
+methods you would when creating a script. However, the New Script dialog
+changes its contents when you create your function. Instead of prompting you
+for a keystroke to assign to the function, the New script dialog prompts you
+for a return type and description. For more information on the New Script
+dialog, see section <a href="05-2_TheNewScriptDialog.htm">5.2 The New Script
+Dialog</a>. </p>
+
+<h2>Basic User-Defined Functions</h2>
+
+<p>The simplest form of a user-defined function is one that does not require
+any parameters to complete its task. These same functions also do not return
+any values to the calling script or user-defined function. This type of
+function is often referred to as a &quot;void&quot; function.</p>
+
+<p>When you create this type of user-defined function, you need only use the
+General Page of the New Script multi-page dialog. After you add the name,
+synopsis, description and category for the function, you should select the
+&quot;void&quot; return type from the Function Returns edit combo box. This
+return type tells JAWS that the function does not return any information to the
+calling script or function.</p>
+
+<p>When you create a function that does not require any parameters or return
+any values, the script Manager inserts the following beginning line of the
+function into your script file:</p>
+
+<p class="Code">Void Function MyFunction ()</p>
+
+<p>The key word &quot;void&quot; preceding the key word &quot;Function&quot;
+indicates the function does not return anything to the calling script or
+user-defined function. The empty pair of parentheses following the function
+name indicate the function does not require any information to perform its
+task. An example of a function that does not require any parameters or return a
+value follows:</p>
+
+<p class="Code">void Function GeneralJAWSHotKeys ()<br>
+If UserBufferIsActive () then<br>
+UserBufferDeactivate ()<br>
+EndIf<br>
+SayFormattedMessage (OT_USER_BUFFER, cmsgHotKeyHelp1_L, cmsgHotKeyHelp1_S)<br>
+EndFunction</p>
+
+<p>You can find this function in the Default.jss script source file. The HotKeyHelp
+script calls this function to display a list of JAWS hot keys in the virtual
+viewer. Since the function only displays information, it does not require any
+data from the calling script to perform its task. When the function finishes,
+it does not return anything to the calling script. </p>
+
+<h2>Functions with Parameters</h2>
+
+<p>When you create a user-defined function, your goal is to be able to call
+this function from a variety of scripts and other user-defined functions. In
+order for the function to determine what it should do, you may need to pass
+some information to the function. </p>
+
+<p>Just like the built-in functions discussed earlier in this chapter,
+user-defined functions can accept parameters. A parameter is a piece of
+information that is passed to a function to allow it to complete its task. A
+parameter can be any one of the four data types: handle, integer, object, or
+string. See <a href="07-0_UsingVariablesAndConstants.htm">7.0 Using Variables
+and Constants</a>, for more information on available variable types.</p>
+
+<p>You use the New Script dialog to create parameters for your user-defined
+functions. After you have added all the necessary function information in the
+General page, press <b>CTRL+TAB</b> to move to the parameters page. When you
+first enter this page, the focus is placed in the existing Parameters list box.
+This list box displays all existing parameters for the function. This list box
+is empty when you create your new function but may be populated with information
+for an existing function.</p>
+
+<p>To add parameters to a function, perform the following:</p>
+
+<ol>
+ <li>Press <b>TAB</b> to move from the Existing Parameters list box to the New Parameter edit box.</li>
+ <li>Give the parameter a meaningful name. Follow the same rules for naming parameters
+     as you do for naming variables. You should use Hungarian notation to
+     denote the type of parameter. You should also avoid using spaces or any
+     punctuation marks other than an underline (_) characters. For example, you
+     could give a string parameter the name of sName as it stores a string
+     value containing a name. See <a href="07-0_UsingVariablesAndConstants.htm">7.0 Using Variables
+and Constants</a> for more information.</li>
+ <li>Press <b>TAB</b> to move to the By Reference check box. Leave this check box cleared as
+     this allows for a one-way data exchange between the calling script or
+     user-defined function and your new function.</li>
+ <li>Press <b>TAB</b> to move to the Parameter Description edit box. Type a meaningful
+     description in this edit box as this is used by the Script Manager when
+     you insert the function into a script.</li>
+ <li>Press <b>TAB</b> to move to the available Types combo box. Select the appropriate type for
+     the parameter. For example, the sName parameter discussed above would have
+     a type of string.</li>
+ <li>Press <b>TAB</b> to move to the Add Parameter button. Press <b>SPACEBAR</b> to activate
+     this button. After you activate this button, the Script Manager returns
+     the focus to the New Parameter edit box in preparation for the addition of
+     another parameter.</li>
+</ol>
+
+<p>After you have finished adding all necessary parameters, press <b>TAB</b>
+until you reach the OK button. Press <b>SPACEBAR</b> to activate the button and
+the Script Manager inserts the new function into your script file. When you
+declare a parameter using the New Script dialog, the Script Manager places the
+type and name of the parameter between the parentheses following the function
+name. An example of a beginning line of a function that uses a single string
+parameter follows:</p>
+
+<p class="Code">Void Function MyFunction (string sParameter)</p>
+
+<p>In the line above, the parameter, sParameter, and its type, string, are
+placed between the parentheses. As you add statements to your function to
+perform the given task, you refer to the parameter using the name that appears
+between the parentheses. Using the example shown above, you would refer to
+sParameter within the body of the function any time you want to determine the
+value it contains just as you would if it were declared as a local variable.</p>
+
+<p>An example of a function from the default script file using a single
+parameter follows:</p>
+
+<p class="Code">Void Function InitializeGlobalVoiceSettings (int iParamToSet)<br>
+If iParamToSet == V_RATE then<br>
+let GlobalPcRate = GetVoiceRate (VCTX_PCCURSOR)<br>
+let GlobalJawsRate = GetVoiceRate (VCTX_JAWSCURSOR)<br>
+let GlobalKeyboardRate = GetVoiceRate (VCTX_KEYBOARD)<br>
+let GlobalMessageRate = GetVoiceRate (VCTX_MESSAGE)<br>
+ElIf iParamToSet == V_VOLUME then<br>
+let GlobalPcVolume = GetVoiceVolume (VCTX_PCCURSOR)<br>
+let GlobalJawsVolume = GetVoiceVolume (VCTX_JAWSCURSOR)<br>
+let GlobalKeyboardVolume = GetVoiceVolume (VCTX_KEYBOARD)<br>
+let GlobalMessageVolume = GetVoiceVolume (VCTX_MESSAGE)<br>
+ElIf iParamToSet == V_PITCH then<br>
+let GlobalPcPitch = GetVoicePitch (VCTX_PCCURSOR)<br>
+let GlobalJawsPitch = GetVoicePitch (VCTX_JAWSCURSOR)<br>
+let GlobalKeyboardPitch = GetVoicePitch (VCTX_KEYBOARD)<br>
+let GlobalMessagePitch = GetVoicePitch (VCTX_MESSAGE)<br>
+endIf<br>
+EndFunction</p>
+
+<p>In the function shown above, the iParamToSet parameter contains the value
+used to determine the set of global variables to be initialized. Since the
+speech characteristic can be different each time the function is called, a
+parameter of type integer was used. The If statement contained within the
+function determines which speech characteristic should have its corresponding
+global variables initialized. Notice that the parameter is referred to just as
+if it had been declared as a local variable within the body of the function. </p>
+
+<p>When you declare multiple parameters, the Script Manager places a comma
+after each parameter declaration except for the last in the list. Essentially,
+a list of parameters is identical to a list of local or global declarations in
+that each declaration is followed by a comma except for the last. The only
+difference is that you do not use the key words &quot;Var&quot; or
+&quot;Globals&quot; to begin the parameter declarations. Instead, a pair of
+parentheses surrounds the parameters in the beginning line of the function. An
+example of a function beginning line containing multiple parameters follows:</p>
+
+<p class="Code">Void Function MyFunction (string sParameter1, string sParameter2,
+string sParameter3)</p>
+
+<p>In the example above, the Script Manager inserted a comma after the first
+and second parameter declarations, but not the third. The following function
+beginning lines are taken from the default script file and use multiple
+parameters to perform their tasks: </p>
+
+<p class="Code">Void Function DoCustomHighlightColors (string strForeground, string strBackground, string sApp)</p>
+
+<p class="Code">void Function KeyboardHelpHook (string ScriptName, string FrameName)</p>
+
+<p class="Code">void Function ProcessSelectText(int nAttributes,string buffer)</p>
+
+<p>&nbsp;</p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="12-4_FunctionsThatReturnValues.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</body>
+
+</html>

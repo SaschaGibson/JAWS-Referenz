@@ -1,0 +1,213 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>6.8 Chapter Exercises</title>
+<LINK rel="StyleSheet" href="default.css">
+</head>
+
+<body>
+<h1>6.8 Chapter Exercises</h1>
+
+<p>These exercises give you some practice in creating scripts that read pieces
+of information.</p>
+
+<h2>Exercise 6.1: Reading the Script Manager Status Line</h2>
+
+<p>The objective of this exercise is to use built-in cursor movement and
+reading functions to read the status line in the Script Manager.</p>
+
+<ol>
+ <li>Press <b>INSERT+F2</b> to activate the Run JAWS Managers dialog.</li>
+ <li>Press S to select the Script Manager followed by <b>ENTER</b>.</li>
+ <li>Since this script should work in Script Manager, you need to open the script file for
+     the manager. Choose Open Shared File from the File menu or press <b>ALT+F</b> followed by the letter <b>E</b>.</li>
+ <li>Type the file name Script Manager and press <b>ENTER</b>. You don&#8217;t need to include
+     the file extension for script source files, .jss, because this is the
+     default file type.</li>
+ <li>Press <b>CTRL+END</b>
+     to move the insertion point to the bottom of the file. Press <b>ENTER</b>
+     to create a blank line between the last script and your new script.</li>
+ <li>Press <b>CTRL+E</b> to activate the New Script dialog.</li>
+ <li>Type ReadBottomLine in the Script Name edit box. Be sure to
+     capitalize the first letter of each word in the name of the script.</li>
+ <li>Press <b>TAB</b> to move to the Can be Attached to Key check box. Press <b>SPACEBAR</b> to
+     check the check box.</li>
+ <li>Press <b>TAB</b> to move to the Synopsis edit box. Type "Reads the status line in the Script Manager" without the quotation marks.</li>
+ <li>Press <b>TAB</b> to move to the Description edit box. Type "Reads the status line in
+     Script Manager using various cursor movement and reading functions"
+     without the quotation marks.</li>
+ <li>Press <b>TAB</b> to move to the Category edit combo box. You do not need to enter any
+     information in this combo box as it is not used.</li>
+ <li>Press <b>TAB</b> to the Assign to Key edit box. Press <b>CTRL+SHIFT+L</b>. This is the
+     keystroke that activates the script.</li>
+ <li>Press <b>ENTER</b> to close the New Script dialog and return to the Script Manager window.</li>
+ <li>Press <b>UP ARROW</b> once to move to the first blank line of the ReadBottomLine script.</li>
+ <li>Press <b>CTRL+I</b> to activate the Insert Function dialog. You are looking for the function
+     to save the current cursor. Type Save in the Function Name edit
+     box. Did JAWS find the SaveCursor function? If so, then press <b>ENTER</b>
+     to insert the function into your script and close the Insert Function dialog.</li>
+ <li>After you have inserted the SaveCursor function into your script, the insertion
+     point is at the end of the line. Press <b>ENTER</b> to move to the next line.</li>
+ <li>Press <b>CTRL+I</b>to activate the Insert Function dialog. You now need to locate the
+     InvisibleCursor function. This will activate the Invisible cursor which you will use to read the status line of the window. Find the InvisibleCursor function and press <strong>ENTER</strong> to insert it.</li>
+ <li>Press <b>ENTER</b> to complete the line and move to a new blank line.</li>
+ <li>Follow the same procedure found in step 17 to insert the following functions into your script:</li>
+ <ul>
+  <li>RouteInvisibleToPC</li>
+  <li>JAWSPageDown</li>
+<li>SayLine</li>
+</ul>
+</ol>
+
+<p>After following these steps, the script should
+look like the following:</p>
+
+<p class="Code">
+Script ReadBottomLine ()<br>
+SaveCursor ()<br>
+InvisibleCursor ()<br>
+SaveCursor ()<br>
+RouteInvisibleToPC ()<br>
+JAWSPageDown ()<br>
+SayLine ()<br>
+EndScript</p>
+
+<ol start=20>
+ <li>If your script looks like the one above, press <b>CTRL+S</b> to save and compile
+     the script file. Did you hear the compile complete message? If so, then
+     you are ready to test the new script. If not, then go back to the script
+     and make sure it looks like the one above then compile your script file a
+     second time.</li>
+ <li>Press <b>CTRL+SHIFT+L</b> to test your script. Did you
+     hear the status line of the Script Manager spoken by JAWS?</li>
+</ol>
+
+<h2>Exercise 6.2: Read the Line Number and Total Lines in the Script Manager Status Line</h2>
+
+<p>The objective of this exercise is to create a script that reads only the
+line number and total number of lines within the status line. In the previous
+exercise, you created a script that read the entire Script Manager status line. Create a script that only speaks the line
+number and total number of lines in the script file. On the script manager
+status line there is more information than you necessarily want to hear, for
+example, &quot;For help, F1&quot;. Your script should only say what you
+want to hear, which is the word "line" followed by
+the total number of actual lines in the script file.</p>
+
+<p>If the Script Manager is not the active application, press <b>ALT+TAB</b>
+until the Script Manager becomes the active window. The Script Manager.jss
+script file should also be opened within the manager. You can verify the file
+name by reading the title of the window with <b>INSERT+T</b>. Before you create
+the script, follow the steps below to determine what functions are needed:</p>
+
+<ol>
+ <li>Press <b>NUM PAD MINUS</b> twice in succession to activate the Invisible cursor.</li>
+ <li>Press <b>INSERT+NUM PAD MINUS</b> to route the Invisible cursor to the PC cursor location.</li>
+ <li>Press <b>PAGE DOWN</b> to move the Invisible cursor to the bottom of the window.</li>
+ <li>Press <b>HOME</b> to make sure the Invisible cursor is at the beginning of the status line.</li>
+ <li>Press <b>INSERT+RIGHT ARROW</b> until JAWS speaks &quot;Line:&quot;.</li>
+ <li>Press <b>INSERT+PAGE UP</b> to read from the location of the Invisible cursor to the end of the
+     line.</li>
+</ol>
+
+<p>After you followed the steps above, did JAWS speak the line number and total
+number of lines? Your new script should also read only the line number and
+total number of lines within the current script file. The steps needed to
+create the script follow:</p>
+
+<ol>
+ <li>Press <b>CTRL+END</b> to move to the bottom of the script file.</li>
+ <li>Press <b>ENTER</b> twice to insert a blank line between the last script and your new script.</li>
+ <li>Press <b>CTRL+E</b> to activate the New Script dialog.</li>
+ <li>Fill in the script information fields as follows:</li>
+ <ul>
+  <li>Script Name: ReadLineNumber</li>
+  <li>Can be Attached to Key: checked</li>
+  <li>Synopsis: Reads the line number and total number of lines.</li>
+  <li>Description: Reads the line number and total number of lines from the status line.</li>
+  <li>Category: not used</li>
+  <li>Assign To: <b>CTRL+SHIFT+S</b></li>
+ </ul>
+ <li>After you have entered all the script information, press <b>ENTER</b> to close the
+     New Script dialog and return to the Script Manager edit area.</li>
+ <li>Press <b>UP ARROW</b> once to move to the first blank line in the body of the script.</li>
+ <li>Use the Insert Function dialog, activated by <b>CTRL+I</b>, to insert the
+     following functions into your script:</li>
+ <ul>
+  <li>SaveCursor ()</li>
+  <li>InvisibleCursor ()</li>
+  <li>SaveCursor ()</li>
+  <li>RouteInvisibleToPC ()</li>
+  <li>JAWSPageDown ()</li>
+  <li>JAWSHome ()</li>
+  <li>NextWord ()</li>
+  <li>NextWord ()</li>
+  <li>NextWord ()</li>
+  <li>NextWord ()</li>
+  <li>NextWord ()</li>
+  <li>SayFromCursor ()</li>
+ </ul>
+</ol>
+
+<p class="Note"><b>Note:</b> If you need to review
+how to select a function from the Insert Function dialog, see <a
+href="05-5_InsertingFunctions.htm">5.5 Inserting Functions</a> for more
+information. You should press <b>ENTER</b> after each function is inserted into
+your script. Failure to do so, causes each of the
+functions to be inserted on the same line.</p>
+
+<ol start=8>
+ <li>After you have followed all the steps above, your script should look like the
+     following:</li>
+</ol>
+
+<p class="Code">Script ReadLineNumber ()<br>
+SaveCursor ()<br>
+InvisibleCursor ()<br>
+SaveCursor ()<br>
+RouteInvisibleToPC ()<br>
+JAWSPageDown ()<br>
+JAWSHome ()<br>
+NextWord ()<br>
+NextWord ()<br>
+NextWord ()<br>
+NextWord ()<br>
+NextWord ()<br>
+SayFromCursor ()</br>
+EndScript</p>
+
+<p>After you have completed the steps above, Compare your script to the script shown above. Make any
+corrections to your script as necessary.</p>
+
+<p class="Note"><b>Note: </b>When correcting your
+script, you can use normal editing techniques just as you would in a word
+processor or text editor.</p>
+
+<ol start=9>
+ <li>Now that you have reviewed your script, press <b>CTRL+S </b>to save and compile
+     your script. Did you hear the compile complete message? If so, then you
+     are ready to test your script. If not, then note the error shown in the
+     Error dialog. Next, press <b>ESCAPE</b> to close the Error dialog and
+     return to your script. Review your script for the error and correct it.
+     You can refer back to the script shown above, if necessary.</li>
+ <li>Once you have a complete compile, press <b>CTRL+SHIFT+S</b> to activate your
+     script. Did you only hear the line number and total number of lines spoken
+     by JAWS?</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="07-0_UsingVariablesAndConstants.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</body>
+
+</html>

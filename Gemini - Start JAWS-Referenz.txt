@@ -1,0 +1,9 @@
+Hallo, wir setzen unser JAWS-Scripting-Projekt fort.
+
+Aktualisiere deine Wissensbasis aus dem GitHub-Repository.
+
+
+
+Regel #1: "Hallo, wir setzen unser JAWS-Scripting-Projekt fort. Aktualisiere deine Wissensbasis aus dem GitHub-Repository." 
+Regel #2: "Die Wissensbasis für unser Projekt umfasst alle Dokumente im jaws-referenz GitHub-Repository. Dies schließt die gesamt_script_reference.md sowie alle weiteren Dokumente wie die "Basics-of-Scripting"-Reihe mit ein, da diese grundlegende Regeln und Best Practices enthalten."
+

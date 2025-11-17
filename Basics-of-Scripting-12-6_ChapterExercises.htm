@@ -1,0 +1,406 @@
+<html lang="en-us">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>12.6 Chapter Exercises</title>
+<LINK rel="StyleSheet" href="default.css">
+</head>
+
+<body>
+<h1>12.6 Chapter Exercises</h1>
+
+<p>The following exercises will give you practice in creating varying types of
+user-defined functions. Each exercise creates a user-defined function and a
+corresponding script to call the function. Each exercise will indicate the
+script file that should be used.</p>
+
+<h2>Exercise 12.1: Basic User-Defined Function</h2>
+
+<p>The purpose of this exercise is to create a function that speaks a message
+and then types a string of text into an Notepad document. If you don't already
+have Notepad open, start Notepad and activate the script Manager from within
+Notepad. This should open the Notepad.jss script file that contains scripts
+from the previous exercises in this manual.</p>
+
+<p>If you run Script Manager from within Notepad and a blank file is opened,
+type the following lines at the top of the file:</p>
+
+<p class="Code">; Script file for Notepad<br>
+; JAWS version 12.0<br>
+include "hjconst.jsh"<br>
+include "common.jsm"</p>
+
+<p>First, create the function that speaks a message and then types a string of
+text into Notepad. Use the SayFormattedMessage function to speak the message
+and the TypeString function to type the text.</p>
+
+<h3>SpeakGreeting Function Documentation:</h3>
+
+<ul>
+ <li>Script Name: SpeakGreeting</li>
+ <li>Can be Attached to Key: not checked</li>
+ <li>Synopsis: Speaks a message and types a string of text.</li>
+ <li>Description: Speaks a message and types a string of text into an open Notepad text document.</li>
+ <li>Category: none</li>
+ <li>Function Returns: void</li>
+ <li>Return Description: none</li>
+</ul>
+
+<h3>SpeakGreeting Function:</h3>
+
+<p class="Code">Void Function SpeakGreeting ()<br>
+SayFormattedMessage (OT_MESSAGE, "Hello world, it's a great day for writing scripts.")<br>
+TypeString ("Hello world, it's a great day for writing scripts.")<br>
+EndFunction</p>
+
+<p>Once you have successfully compiled your function, you will need to create
+the script to call it. Use the Insert Function dialog to insert the
+SpeakMessage function into the body of your script. This is the only statement
+that goes into the body of your script as the function performs the desired
+task.</p>
+
+<h3>TypeAndSpeakGreeting Script Documentation:</h3>
+
+<ul>
+ <li>Script Name: TypeAndSpeakGreeting</li>
+ <li>Can be Attached to Key: checked</li>
+ <li>Synopsis: Calls the SpeakGreeting function to speak a message and type text.</li>
+ <li>Description: Calls the SpeakGreeting function to speak a message and type text in Notepad.</li>
+ <li>Category: none</li>
+ <li>Assign to: <b>CTRL+SHIFT+G</b></li>
+</ul>
+
+<h3>TypeAndSpeakGreeting Script:</h3>
+
+<p class="Code">Script TypeAndSpeakGreeting ()<br>
+SpeakGreeting ()<br>
+EndScript</p>
+
+<h2>Exercise 12.2: User-Defined Function with a Single Parameter</h2>
+
+<p>The purpose of this exercise is to create a user-defined function that
+speaks a message using a string of text passed to it as a parameter. If you
+don't already have Notepad open, start Notepad and activate the script Manager
+from within Notepad.</p>
+
+<p>Before you create your user-defined function and related script, you need to
+create the message used by your function in the Notepad.jsm message file. You
+can open the file within the Script Manager and add your message. If you
+already have a Notepad.jsm message file, do the following to open the file in
+the Script Manager:</p>
+
+<ol>
+ <li>Press <b>CTRL+O</b> to display the Open File dialog.</li>
+ <li>Type Notepad.jsm in the File Name edit box and press <b>ENTER</b>.</li>
+</ol>
+
+<p>If you have not previously created the Notepad message file, perform the
+following:</p>
+
+<ol>
+ <li>Press <b>CTRL+N</b> to display the New File dialog.</li>
+ <li>The active control is a list of file types. Press <b>M</b> to select Messages followed by <b>ENTER</b>.
+     This will open an untitled message file in the Script Manager.</li>
+ <li>Type the following text in the file:</li>
+</ol>
+
+<p class="Code">; Message file for Notepad<br>
+Messages<br>
+EndMessages</p>
+
+<ol start=4>
+ <li>Press <b>CTRL+S</b> to save the file. JAWS prompts you for the filename. Type Notepad in the
+     File Name Edit box followed by <b>ENTER</b>.</li>
+</ol>
+
+<p>Now you are ready to insert the individual message in the Notepad.jsm
+message file. To add the individual message, perform the following:</p>
+
+<ol>
+ <li>Press <b>UP ARROW</b> until you reach the line entitled "Messages."</li>
+ <li>Press <b>END</b> to move to the end of the line.</li>
+ <li>Press <b>ENTER</b> twice to create two blank lines.</li>
+ <li>Type the following messages:</li>
+</ol>
+
+<p class="Code">@MsgName<br>
+Hello world, my name is %1.<br>
+@@<br>
+; message for missing or no name<br>
+@MsgNoName<br>
+You did not enter a name.<br>
+@@</p>
+
+<ol start=5>
+ <li>Press <b>CTRL+S</b> to save the file.</li>
+ <li>Press <b>CTRL+TAB</b> to move back to the Notepad.jss script source file.</li>
+</ol>
+
+<p class="Note"><b>NOTE:</b> After you have moved back to the Notepad.jss script file, be sure to include the Notepad.jsm file if
+you haven't done so already. Failure to do so will result in errors at the time
+of compilation. For more information on the include statement see Chapter 5
+Creating Scripts.</p>
+
+<p>Now you are ready to create the function that will speak your message and
+the script that calls the function. Your function should accept a single string
+parameter: the name passed to it from the calling script. Before the function
+speaks the message, check to make sure the parameter actually contains some
+text using an If statement. If there is no text in the parameter, speak an
+error message and use the return statement to exit the function. Use the
+FormatString function to combine the passed string parameter and the MsgName
+message you created above into one message. Next, call the SayFormattedMessage
+function to speak the message after it has been formatted.</p>
+
+<h3>SpeakTheName Function Documentation:</h3>
+
+<ul>
+ <li>Script Name: SpeakTheName</li>
+ <li>Can be Attached to Key: not checked</li>
+ <li>Synopsis: Speaks a message that includes a name.</li>
+ <li>Description: Speaks a Hello World message using a string parameter passed to the
+     function containing a name.</li>
+ <li>Category: none</li>
+ <li>Function Returns: void</li>
+ <li>Return Description: none</li>
+</ul>
+
+<p>After you have entered the information shown above into the General page of
+the New Script dialog, press <b>CTRL+TAB </b>to move to the Parameters page.
+You will use this page to tell JAWS the name and type of the parameter the
+function needs to perform its task. When you reach this page, press <b>TAB</b>
+to move to the New Parameter edit box and add the following information:</p>
+
+<ul>
+ <li>New Parameter: sName</li>
+ <li>By Reference: not checked</li>
+ <li>Description: String containing the name to be combined with the message and spoken.</li>
+ <li>Available Types: string</li>
+</ul>
+
+<p>After you have entered the information shown above, press <b>ALT+A</b> to
+activate the Add button and add your new parameter. Next, press <b>TAB </b>until
+you reach the Ok button. Press <b>SPACEBAR</b> to activate the button and close
+the New Script dialog.</p>
+
+<h3>SpeakTheName Function:</h3>
+
+<p class="Code">Void Function SpeakTheName (string sName)<br>
+var<br>
+String sMessage<br>
+If sName == "" Then; check to make sure text was actually passed in the sName parameter<br>
+SayFormattedMessage (OT_ERROR, MsgNoName); speak an error message<br>
+Return; exit the function<br>
+EndIf<br>
+Let sMessage = FormatString (MsgName, sName); format the message using the passed parameter<br>
+SayFormattedMessage (OT_MESSAGE, sMessage)<br>
+EndFunction</p>
+
+<p>Once you have successfully compiled the SpeakTheName function, you will be
+ready to create the script that calls the function. Your script should assign a value to a variable called sName. Use the Insert Function dialog to insert the SpeakTheName function. The variable sName will be the parameter to the SpeakTheName function.</p>
+
+<h3>SayName Script Documentation:</h3>
+
+<ul>
+ <li>Script Name: SayName</li>
+ <li>Can be Attached to Key: checked</li>
+ <li>Synopsis: Prompts you for a name to be spoken by JAWS.</li>
+ <li>Description: Displays a dialog box that allows you to enter your name. JAWS then speaks
+     a message containing the name you entered.</li>
+ <li>Category: none</li>
+ <li>Assign to: <b>CTRL+SHIFT+N</b></li>
+</ul>
+
+<h3>SayName Script:</h3>
+
+<p class="Code">Script SayName ()<br>
+var<br>
+String sName<br>
+let sName = "Your name goes here"<br>
+SpeakTheName (sName)<br>
+EndScript</p>
+
+<h2>Exercise 12.3: User-Defined Function with Multiple Parameters</h2>
+
+<p>In the previous exercise, you created a function that accepted a string
+parameter containing your name. This parameter could hold only your first name
+or the combination of your first and last names. In this exercise, modify the
+SpeakTheName function to accept two string parameters. The original parameter
+of the function, sName, will be used to hold the first name. The second
+parameter created for this exercise, will hold the last name. Before you modify
+the function, you will need to change the content of the MsgName message
+contained in the Notepad message file. Press <b>CTRL+TAB</b> to move from the
+Notepad.jss file to the Notepad.jsm file. In the Notepad.jsm message file,
+change the MsgName message to look like the following:</p>
+
+<p class="Code">@MsgName<br>
+Hello world, my name is %1 %2.<br>
+@@</p>
+
+<p>Press <b>CTRL+S</b> to save your changes followed by <b>CTRL+TAB</b> to move
+back to the Notepad script file. Now you are ready to modify the existing
+SpeakTheName function. To add an additional parameter to the function, perform
+the following:</p>
+
+<ol>
+ <li>Move to the body of the SpeakTheName function.</li>
+ <li>Press <b>CTRL+D</b> to display the script Documentation multi-page dialog.</li>
+ <li>Press <b>CTRL+TAB</b> to move to the Parameters page. When you move to this page, the focus is
+     placed in the Existing Parameters list box.</li>
+ <li>Press <b>TAB</b> to move to the New Parameter edit box.</li>
+</ol>
+
+<h3>Add the following information for your new parameter:</h3>
+
+<ul>
+ <li>New Parameter: sLastName</li>
+ <li>By Reference: not checked</li>
+ <li>Description: String containing the last name.</li>
+ <li>Available Types: string</li>
+</ul>
+
+<p>After you have added all the necessary information for the new parameter,
+press <b>ALT+A</b> to activate the Add button. This moves the focus back to the
+New Parameter edit box. Press <b>TAB</b> until you reach the Ok button. Press <b>SPACEBAR</b>
+to activate the button and close the Script Documentation multipage dialog.</p>
+
+<p>Move the insertion point to the beginning line of the SpeakTheName function.
+It should now look like the following:</p>
+
+<p class="Code">Void Function SpeakTheName (string sName, string sLastName)</p>
+
+<p>You are now ready to modify the function to use the second parameter. First,
+you should add a second If statement to check if anything was passed in the
+sLastName parameter. Move your insertion point to the line containing the EndIf
+statement. Press <b>END</b> to move to the end of the line followed by <b>ENTER</b>
+to create a new blank line. Add the following statements to the function:</p>
+
+<p class="Code">If sLastName == "" Then<br>
+SayFormattedMessage (OT_ERROR, MsgNoName); speak an error message<br>
+Return; exit the function<br>
+EndIf</p>
+
+<p>Second, you will need to add a third parameter to the call to the
+FormatString function. Move your insertion point to the line containing the
+FormatString function and change it to look like the following:</p>
+
+<p class="Code">Let sMessage = FormatString (MsgName, sName, sLastName) ; format the message using the passed parameters</p>
+
+<p>After you modify the function to use the new parameter, compile the script
+file. Once you have compiled the file successfully, you will be ready to modify
+the script.</p>
+
+<p class="Note"><b>NOTE:</b> You can alter the
+messages used to speak the error messages when nothing is contained in either
+the first or last name parameters. To do this, you would add a second message
+to the Notepad.jsm message file for the last name and alter the contents of the
+message for the first name. Then you could use each message appropriately to
+speak the correct error message.</p>
+
+<p>To modify the script you will need to add a second variable to hold the last name. Use a Let statement to assign a value to the variable and pass it as the second parameter into the SpeakTheName function. Modify the
+SayName script to look like the following:</p>
+
+<p class="Code">Script SayName ()<br>
+var<br>
+String sLastName,<br>
+String sName<br>
+let sName = "Your first name goes here"<br>
+let sLastName = "Your last name goes here"<br>
+SpeakTheName (sName, sLastName)<br>
+EndScript</p>
+
+<h2>Exercise 12.4: User-Defined Function with a Return Value</h2>
+
+<p>The purpose of this exercise is to create a function that returns a value to
+the calling script. In the previous 2 exercises, you created a script and
+function that used 2 parameters to speak a message. The script used the Let statement to assign values to variables which were then passed into the function to speak the message.</p>
+
+<p>In this exercise, you will create a function that uses the InputBox function
+to prompt you for your first and last names. The function will then format the
+message to be spoken using the FormatString function. The FormatString function
+uses the MsgName message from the previous exercise along with the values for
+the first and last names entered using the InputBox function. Finally, the
+function returns the message as a string to the calling script.</p>
+
+<p>The InputBox function is a built-in function that displays a dialog box with an edit field for entering text. Using the parameters of the function, you pass strings of text to be used as the title of the dialog box and the prompt for the edit field. The third parameter should be a variable name that will contain the text entered when the OK button is activated in the dialog box. An example of the InputBox function follows:</p>
+
+<p class="Code">InputBox ("Name entry", "Please enter your first name", $sName)</p>
+
+<p>In the example above, the title of the dialog box will be "Name entry." The text "Please enter your first name" will be the prompt for the edit box. sName will contain the text entered by the user. If no text is entered, sName will be empty.</p>
+
+<h3>RetrieveTheName Function Documentation:</h3>
+
+<ul>
+ <li>Script Name: RetrieveTheName</li>
+ <li>Can be Attached to Key: not checked</li>
+ <li>Synopsis: Prompts you for your first and last names.</li>
+ <li>Description: Uses the InputBox function to prompt you for your first and last names.</li>
+ <li>Category: none</li>
+ <li>Function Returns: string</li>
+ <li>Return Description: String of text containing the formatted message to be used by any of the Say functions.</li>
+</ul>
+
+<h3>RetrieveTheName Function:</h3>
+
+<p class="Code">String Function RetrieveTheName ()<br>
+var<br>
+String sFirstName,<br>
+string sLastName,<br>
+string sMessage,<br>
+string sPrompt, <br>
+string sTitle<br>
+let sTitle = "Name Entry"<br>
+; retrieve the first name<br>
+let sPrompt = "Enter your first name:"<br>
+InputBox (sPrompt, sTitle, sFirstName)<br>
+; retrieve the last name<br>
+let sPrompt = "Enter your last name:"<br>
+InputBox (sPrompt, sTitle, sLastName)<br>
+; format the message<br>
+let sMessage = FormatString (MsgName, sFirstName, sLastName)<br>
+; return the formatted message<br>
+return sMessage<br>
+EndFunction</p>
+
+<p>Once you have compiled the function successfully, you will be ready to
+create the script that calls it. You will need to declare a single string
+variable to hold the message that is returned from the function. Your script
+should then call the function and store the returned message in the local
+variable. Finally, your script will use the SayFormattedMessage function to
+speak the message.</p>
+
+<h3>SpeakFormattedMessage Script Documentation:</h3>
+
+<ul>
+ <li>Script Name: SpeakFormattedMessage</li>
+ <li>Can be Attached to Key: checked</li>
+ <li>Synopsis: Speaks a message containing first and last names.</li>
+ <li>Description: Speaks a message returned from the RetrieveTheName function.</li>
+ <li>Category: none</li>
+ <li>Assign to: <b>CTRL+SHIFT+M</b></li>
+</ul>
+
+<h3>SpeakFormattedMessage Script:</h3>
+
+<p class="Code">Script SpeakFormattedMessage ()<br>
+var<br>
+String sMessage<br>
+Let sMessage = RetrieveTheName (); call the function to retrieve and format the message<br>
+SayFormattedMessage (OT_MESSAGE, sMessage); speak the message<br>
+EndScript</p>
+
+<p>&nbsp;</p>
+
+<table>
+ <tr>
+  <td>
+  <p><a href="javascript:window.history.go(-1);" accesskey="b">Back</a></p>
+  </td>
+  <td></td>
+  <td>
+<p><a href="13-0_WindowsStructure.htm" accesskey="x">Next</a></p>
+  </td>
+ </tr>
+</table>
+
+</body>
+
+</html>

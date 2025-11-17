@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright (c) 2015 - 2016 elita group ltd.
+Scripts written by Serge Tumanyan
+-->
+<LocalizableDefinitions File="Visual Studio 2015 Community.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="elNotesSettings" Text="elNotes settings">
+			<HelpMsg>These settings control JAWS behavior while using elNotes.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="elNotesSettings.General" Text="General">
+			<HelpMsg>This group of options controls JAWS behaviour while manipulating in notes list.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="elNotesSettings.General.AutoReading" Text="Auto Reading">
+			<HelpMsg>This option controls whether to read note text while moving through list of notes. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<!-- 0 = off or not announce, 1 = on or announce -->
+		<DisplayName ID="elNotesSettings.General.AutoReading.0" Text="Off"/>
+		<DisplayName ID="elNotesSettings.General.AutoReading.1" Text="On"/>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

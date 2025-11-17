@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Excel.qs">
+	<DisplayNameDefinitions>
+		<DisplayName ID="ExcelOptions" Text="Excel Settings">
+			<HelpMsg>
+These options are specific to the Microsoft Excel application.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.Formatting" Text="Formatting">
+			<HelpMsg>
+This group contains options that control which cell formatting changes are detected.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.Formatting.NumberFormatVerbosity" Text="Number Format and Style Changes Indication">
+			<HelpMsg>
+This option controls whether to detect changes in number format and/or  style as cells are navigated. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.CellAppearance" Text="Cell Appearance">
+			<HelpMsg>
+This group contains options that control whether cell appearance changes are detected.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.CellAppearance" Text="Cell Appearance">
+			<HelpMsg>
+This group contains options that control whether cell appearance changes are detected.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.CellAppearance.AnnounceTextVisible" Text="Cell Text Visibility Detection">
+			<HelpMsg>
+This workbook specific option controls whether to detect that cell text is cropped or overlapping other cells.  When a cell contains more than one line of text, JAWS also reports that it is a multi-line cell.
+By default, this setting is off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.CellAppearance.OrientationIndication" Text="Orientation Indication">
+			<HelpMsg>
+This option controls whether to indicate the orientation of a cell as the user navigates around the current worksheet. The setting is worksheet-specific. If the number indicated is positive, rotation is upward or counterclockwise. If negative, the rotation is downward or clockwise. By default, this setting is off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.CellAppearance.CellBorderVerbosity" Text="Border changes Indication">
+			<HelpMsg>
+This option controls whether to detect changes in borders as cells are navigated. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.MonitoringCells" Text="Monitoring Cells">
+			<HelpMsg>
+This group contains options for reading monitor cells and their associated titles. To set or clear Monitor Cells see the Monitoring Cell Assignments node found in the Workbook, Worksheet and Region Settings node.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.MonitoringCells.MonitorCellTitles" Text="Monitor Cell Titles Read">
+			<HelpMsg>
+This option controls whether to read column and row titles of a monitor cell when the user requests to read the content of that cell. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.WorkbookSettings" Text="Workbook Settings">
+			<HelpMsg>
+This group contains options that control workbook settings.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.WorkbookSettings.DocSettingsAssoc" Text="Workbook Settings Associate">
+			<HelpMsg>
+This option controls whether workbook settings are set for the settings file to be an exact match for the current filename, or a best match for the current filename. The default is exact match.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions" Text="Reading Options">
+			<HelpMsg>
+This group contains options specific to Microsoft Excel that control how JAWS behaves when reading and navigating cells. It also contains options that control how JAWS behaves when reading and navigating text.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions.HeaderAndContentOrder" Text="Cell Title and Content">
+			<HelpMsg>
+Use this option to set whether cell titles are announced before cell content or cell content is announced before titles.
+
+The default is to announce titles before content.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions.HeaderAndContentOrder.0" Text="Speak titles before content" />
+		<DisplayName ID="ExcelOptions.ReadingOptions.HeaderAndContentOrder.1" Text="Speak content before titles" />
+		<DisplayName ID="ExcelOptions.ReadingOptions.ToggleCellReadingVerbosity" Text="Cell Verbosity">
+			<HelpMsg>
+This option controls whether to announce both cell content and coordinates or only cell content as cells are navigated. The default setting is to announce both cell content and coordinates.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions.ToggleCellReadingVerbosity.0" Text="Content Only" />
+		<DisplayName ID="ExcelOptions.ReadingOptions.ToggleCellReadingVerbosity.1" Text="Content + Coordinates" />
+		<DisplayName ID="ExcelOptions.ReadingOptions.toggleSelectionReadingVerbosity" Text="Selection Verbosity">
+			<HelpMsg>
+This option controls whether to announce the content of all cells in a selected range or the content of only the first and last cells in the range. The default setting is to announce the content of the first and last cell in the selected range.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions.toggleSelectionReadingVerbosity.0" Text="Read First and Last Cell" />
+		<DisplayName ID="ExcelOptions.ReadingOptions.toggleSelectionReadingVerbosity.1" Text="Read All Cells" />
+		<DisplayName ID="ExcelOptions.ReadingOptions.FilterDetection" Text="Filtered Columns and Rows Detection">
+			<HelpMsg>
+This option controls whether to detect filtered columns and rows as the cells in the currently active worksheet are navigated. The default setting is Off.
+
+When the option is on and filtering is enabled for the current worksheet, JAWS tells you when you have selected a cell whose column or row is filtered. If you navigate within the same column or row, JAWS does not repeat this information. But if you move to a new column and new row, such as from the GoTo dialog, JAWS announces what columns or rows are filtered for the cell that has just gained focus.
+
+Filtered columns and rows may not be filtered consecutively. You could have Columns c, E, and G filtered or you could have columns C through G filtered. The same is true for rows. JAWS attempts to tell you whether the cell that has just gained focus is within a filtered row or column, or whether the rows or columns that are filtered are nonconsecutive. When the range of columns or rows is nonconsecutive, you can bring up Screen-sensitive Help to get a complete list of the filtered items.
+</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions.HyperlinkAddressAnnouncement" Text="Hyperlink Address Announcement">
+			<HelpMsg>
+This option controls whether to announce the cell address pointed to by a cell with a hyperlink if the address is a worksheet address. For example, if the hyperlink on A1 points to A1 in sheet2, JAWS would announce, "points to Sheet2, A1". If the hyperlink is not a worksheet address, such as a Web site or e-mail address, the standard message that the cell has a hyperlink is heard instead. The default setting is off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions.ObjectCountDetection" Text="Object Count Detection">
+			<HelpMsg>
+This option controls whether JAWS detects and announces the number of embedded objects in the currently active worksheet. When used, JAWS announces the number of objects as you open a worksheet, add a worksheet using the Insert Ribbon or menu, or switch between worksheets within the same workbook. This check box is selected by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions.PagebreaksDetection" Text="Pagebreaks Detection">
+			<HelpMsg>
+Use this option to detect page breaks while moving through the current document. In general, this option should remain off. However, if you need to check where page breaks may occur when printing a document, it is helpful to use it for that workbook. The option is workbook-specific. This means that when it is on for one workbook, it may not be on for another workbook. The default setting is off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions.BlankCellAnnouncement"  Text="Blank Cell Announcement">
+			<HelpMsg>
+This option controls the announcement of blank cells on the spreadsheet. This check box is selected by default, which means you will hear "blank" when navigating to an empty cell.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions.togglePointModeVerbosity" Text="Point Mode Verbosity">
+			<HelpMsg>
+This option controls whether to announce cell content or formula value when using Point Mode to construct a formula. The default setting is to announce cell content.
+Point Mode is a temporary mode that Excel enters when you're creating or editing a formula and you start using the arrow keys to navigate or select cells. It is designed to make it easier to reference other cells within your formula.
+Formula value notifications are tooltips provided by Microsoft to help with debugging when constructing formulas.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.ReadingOptions.togglePointModeVerbosity.0" Text="None" />
+		<DisplayName ID="ExcelOptions.ReadingOptions.togglePointModeVerbosity.1" Text="Cell Content" />
+		<DisplayName ID="ExcelOptions.ReadingOptions.togglePointModeVerbosity.2" Text="Formula Value" />
+		<DisplayName ID="ExcelOptions.ReadingOptions.togglePointModeVerbosity.3" Text="Cell Content and Formula Value" />
+		<DisplayName ID="ExcelOptions.Braille" Text="Braille Options">
+			<HelpMsg>
+This group contains options specific to Microsoft Excel that control your Braille display while on a spreadsheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.Braille.BrlStructuredMode" Text="Braille mode">
+			<HelpMsg>
+This option controls whether the Braille display shows the active cell, the current row, or the current column. The default setting is to show the active cell.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.Braille.BrlStructuredMode.0" Text="Current Cell" />
+		<DisplayName ID="ExcelOptions.Braille.BrlStructuredMode.1" Text="Current Row" />
+		<DisplayName ID="ExcelOptions.Braille.BrlStructuredMode.2" Text="Current Column" />
+		<DisplayName ID="ExcelOptions.DocumentSettings" Text="Workbook, Worksheet and Region Settings">
+			<HelpMsg>
+These settings are saved for the active workbook, its worksheets, and regions.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.CellAppearance.CellShadingChanges" Text="Shading changes indication">
+			<HelpMsg>
+This option controls whether to detect changes in shading as cells are navigated. By default, this setting is off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading" Text="Title and Total Reading">
+			<HelpMsg>
+This group contains options that control row and column title reading detection, as well as options for setting the totals row and column.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.AllowPerformanceImpactingFeatures" Text="Allow Performance Impacting Features">
+			<HelpMsg>
+Clear this check box to turn off features known to impact performance including named title regions, multiple region detection on worksheets, and auto detection of row or column totals on spreadsheets where no formulas exist for totals calculation. 
+These features tend to result in a slower response time with very large spreadsheets. 
+Clearing this option turns these features off for the current workbook. 
+This option is selected by default, which means features that may cause sluggish performance are not turned off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.OverrideDocNamedTitles" Text="Define Name Column and Row Titles Override">
+			<HelpMsg>
+When this option is set to Off, named regions defined in the Excel workbook can be used to enable row and column titles for the named region. 
+When set to On, or On for the current file, use the Quick Settings title-related options to manually define row and column titles. 
+If this setting is off, the title-related options in Quick Settings may not be modified. 
+If using Excel for Office 365 or later, the Allow Performance Impacting Features option must be checked in order to change this setting. 
+The default setting for this option is Off.</HelpMsg>
+			<DisabledMsg>
+				The Allow Performance Impacting Features option must be checked to allow toggling of this setting.
+			</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.MultipleRegionSupport" Text="Regions Type Indication">
+			<HelpMsg>
+This option controls whether to detect the current worksheet as having a single region or multiple regions for purposes of column and row title reading. 
+The default is single region. 
+This setting can only be changed manually if the Define Name Column and Row Titles Override option is turned on for all files or for the current file, and if the Allow Performance Impacting Features option is checked. 
+When Allow Performance Impacting Features is not checked, The sheet is treated as having a single region. 
+Allow Performance Impacting Features does not apply to versions of Excel prior to Office 365.</HelpMsg>
+			<DisabledMsg>
+				Set the Define Name Titles Override option to On or On for the Current File, and ensure that the Allow Performance Impacting Features option is checked to enable setting the current setting manually.
+			</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.TitleReadingVerbosity" Text="Title Reading Detection">
+			<HelpMsg>
+This worksheet specific option controls whether title reading is on for both columns and rows, on only for columns, on only for rows, or off altogether. 
+The default setting is Off. 
+This setting can only be changed manually if the Define Name Column and Row Titles Override option is turned on for all files or for the current file.</HelpMsg>
+			<DisabledMsg>
+				Change the Define Name Titles Override option to set the current setting manually.
+			</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.TitleSpeaksForCells" Text="Titles Read For">
+			<HelpMsg>
+This worksheet specific option controls whether column and row titles should be read for any data cell or only when cells are to the right and below title cells . The default is to read titles only when cells are to the right and below title cells.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.TitleSpeaksForCells.0" Text="Cells Right and Below" />
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.TitleSpeaksForCells.1" Text="Any Data Cell" />
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.ColTitlesToRowRange" Text="Column Titles to Row Range Set">
+			<HelpMsg>
+This worksheet specific option lets you define the currently selected cell or group of cells as a title row. 
+The default setting is Undefined. 
+Note that before using this feature, you first need to change the default setting for the Define Name Column and Row Titles Override option. 
+It is off by default, which means that JAWS honors named titles for columns and rows already present in the worksheet, if such named titles exist. 
+To set the current title row(s), first select the Define Name Column and Row Titles option in the Title Reading group. 
+Change this option to a setting other than Off. 
+Next, return to the Column Titles to Row Range Set option and then select one or more cells to define as the title row.</HelpMsg>
+			<DisabledMsg>
+				Change the Define Name Titles Override option to set the current setting manually.
+			</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.RowTitlesToColumnRange" Text="Row Titles to Column Range Set">
+			<HelpMsg>
+This worksheet specific option lets you define the currently selected cell or group of cells as a title column.
+In order to use this feature, you first need to change the default setting for "Define Name Column and Row Titles Override". 
+That feature is off by default. 
+This means that JAWS honors named titles for columns and rows already present in the worksheet itself, if such named titles exist. 
+The named titles must be of a certain form for JAWS to recognize them. 
+For example, if a named range were "TitleRegion1.A1.G6.1, JAWS would recognize the region bound by cells A1 through G6 as a region in Worksheet 1, and use rows in column A and columns in row 1 as title headers. 
+To learn more about how to use Define Name Column and Row Titles, see the Help topic for the feature.
+
+To set the current title column(s) manually, first move up to the Define Name Column and Row Titles option in the list. Then press SPACEBAR to toggle the override on. Choose either "On for all files" or "On for the current file".
+
+Now move back down the list to define the current title column(s) and press SpaceBar. Press Enter to save the setting changes you have made.</HelpMsg>
+			<DisabledMsg>
+				Change the Define Name Titles Override option to set the current setting manually.
+			</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.SetTotalsColumnToCurrent" Text="Totals Column Set">
+			<HelpMsg>
+This worksheet specific option allows the user to set the current column as the totals column for the current worksheet or region. 
+When set to Off, JAWS will not attempt to find a column with a formula unless INSERT+DELETE is pressed to read the row total. 
+If a formula is found, the setting will change from Off to Auto as long as the Allow Performance Impacting Features option is checked, otherwise the auto detection is only temporarily used and is not saved as the setting for this option. 
+When set to Auto, JAWS looks for a cell in the current row containing a formula, and if a formula is found, JAWS uses the column where the formula was found as the totals column. 
+Auto total detection is unavailable when the Allow Performance Impacting Features option is not checked, unless a formula is found when pressing INSERT+DELETE to read the row total.
+Allow Performance Impacting Features does not apply to versions of Excel prior to Office 365.
+When set to Column, JAWS uses the currently selected column on the worksheet as the totals column.
+The default setting for this option is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.SetTotalsRowToCurrent" Text="Totals Row Set">
+			<HelpMsg>
+This worksheet specific option allows the user to set the current row as the totals row for the current worksheet or region. 
+When set to Off, JAWS will not attempt to find a row with a formula unless INSERT+ENTER is pressed to read the column total. 
+If a formula is found, the setting will change from Off to Auto as long as the Allow Performance Impacting Features option is checked, otherwise the auto detection is only temporarily used and is not saved as the setting for this option. 
+When set to Auto, JAWS looks for a cell in the current column containing a formula, and if a formula is found, JAWS uses the row where the formula was found as the totals row. 
+Auto total detection is unavailable when the Allow Performance Impacting Features option is not checked, unless a formula is found when pressing INSERT+ENTER to read the column total.
+Allow Performance Impacting Features does not apply to versions of Excel prior to Office 365.
+When set to Row, JAWS uses the currently selected row on the worksheet as the totals row.
+The default setting for this option is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.TitleReading.ClearDefinitions" Text="Clear Title And Total Definitions">
+			<HelpMsg>
+This option allows the user to clear all user-defined column and row title definitions as well as total column and total row definitions for the current worksheet or region. 
+The feature only works if those definitions are not the ones predefined using the Define Names feature in Excel. In other words, Define Names Title Override must either be "on for all files" or "On for the current file" and there must be row and/or column designations defined in the options for setting row and column titles.</HelpMsg>
+			<DisabledMsg>
+				Change the Define Name Titles Override option to set the current setting manually.
+			</DisabledMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.Formatting" Text="Formatting">
+			<HelpMsg>
+This group contains options that control which cell formatting changes are detected.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.Formatting.FontChanges" Text="Font, color, and attribute changes indication">
+			<HelpMsg>
+This option controls whether to detect changes in font name, size, attributes, and color as cells are navigated. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.Formatting.TitleCellFontAndFormattingIndication" Text="Title Cell Font and Formatting Indication">
+			<HelpMsg>
+This option controls whether or not JAWS displays font and formatting information in the Virtual Viewer for the title cell associated with the currently active cell. This check box is cleared by default.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.Formatting.DetectFormatConditions" Text="Format Conditions Detection">
+			<HelpMsg>
+This option controls whether to detect that a cell is conditionally formatted. The default setting is Off.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells" Text="Monitoring Cell Assignments">
+			<HelpMsg>Use the settings in this group to set or clear up to ten monitor cells. Monitor cells are worksheet-specific.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.MonitorCell.1" Text="Monitor Cell 1">
+			<HelpMsg>
+These worksheet specific options allow the user to set up cells that should be monitor cells for the current worksheet. Up to 10 monitor cells can be set for any given worksheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.MonitorCell.2" Text="Monitor Cell 2">
+			<HelpMsg>
+These worksheet specific options allow the user to set up cells that should be monitor cells for the current worksheet. Up to 10 monitor cells can be set for any given worksheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.MonitorCell.3" Text="Monitor Cell 3">
+			<HelpMsg>
+These worksheet specific options allow the user to set up cells that should be monitor cells for the current worksheet. Up to 10 monitor cells can be set for any given worksheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.MonitorCell.4" Text="Monitor Cell 4">
+			<HelpMsg>
+These worksheet specific options allow the user to set up cells that should be monitor cells for the current worksheet. Up to 10 monitor cells can be set for any given worksheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.MonitorCell.5" Text="Monitor Cell 5">
+			<HelpMsg>
+These worksheet specific options allow the user to set up cells that should be monitor cells for the current worksheet. Up to 10 monitor cells can be set for any given worksheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.MonitorCell.6" Text="Monitor Cell 6">
+			<HelpMsg>
+These worksheet specific options allow the user to set up cells that should be monitor cells for the current worksheet. Up to 10 monitor cells can be set for any given worksheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.MonitorCell.7" Text="Monitor Cell 7">
+			<HelpMsg>
+These worksheet specific options allow the user to set up cells that should be monitor cells for the current worksheet. Up to 10 monitor cells can be set for any given worksheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.MonitorCell.8" Text="Monitor Cell 8">
+			<HelpMsg>
+These worksheet specific options allow the user to set up cells that should be monitor cells for the current worksheet. Up to 10 monitor cells can be set for any given worksheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.MonitorCell.9" Text="Monitor Cell 9">
+			<HelpMsg>
+These worksheet specific options allow the user to set up cells that should be monitor cells for the current worksheet. Up to 10 monitor cells can be set for any given worksheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.MonitorCell.10" Text="Monitor Cell 10">
+			<HelpMsg>
+These worksheet specific options allow the user to set up cells that should be monitor cells for the current worksheet. Up to 10 monitor cells can be set for any given worksheet.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.MonitoringCells.ClearMonitorCells" Text="Monitor Cells Clear">
+			<HelpMsg>
+This worksheet specific option allows the user to clear all monitor cell definitions for the current worksheet. Activating this option clears all ten monitor cell settings immediately, though the displayed assignment for each will not be updated until Quick Settings is closed and reopened.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.PropertiesOfCells" Text="Properties of Cells">
+			<HelpMsg>
+This group contains options that control which cell properties are detected.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.PropertiesOfCells.Formulas" Text="Formulas Detection">
+			<HelpMsg>
+This worksheet specific option controls whether to announce that a cell has a formula. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.PropertiesOfCells.Comments" Text="Comments Detection">
+			<HelpMsg>
+This option controls whether to announce that a cell has a comment. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.PropertiesOfCells.MergedCells" Text="Merged Cells Detection">
+			<HelpMsg>
+This option controls whether to announce that a group of cells is merged. The default setting is On.</HelpMsg>
+		</DisplayName>
+		<DisplayName ID="ExcelOptions.DocumentSettings.ReadingOptions" AliasID="ExcelOptions.ReadingOptions" />
+		<DisplayName ID="ExcelOptions.DocumentSettings.ReadingOptions.FormControlsDetection" Text="Form Controls Detection">
+			<HelpMsg>
+This option controls whether JAWS detects form controls as the currently open worksheet is navigated. The default setting is Off.
+
+Form controls include listboxes, checkboxes, and other similar types of form controls.</HelpMsg>
+		</DisplayName>
+		<!-- custom version of this setting for Excel -->
+		<DisplayName ID="ReadingOptions.CustomLabels" Text="Custom Summary Labels">
+			<HelpMsg>
+This option controls whether or not JAWS uses custom summary labels for custom summary views previously defined in Microsoft Excel.
+
+When the Custom Summary Labels option is On, you can assign and manipulate custom summary labels for the current workbook by using the command normally used to create a custom label.
+
+When the Custom Summary Labels option is off, the feature is simply not available. If you attempt to create a custom summary label for a cell in the worksheet, or attempt to view a custom summary of previously defined custom summary labels, an error message is heard. Turning the feature off only works temporarily. When the application regains focus from moving away and back or closing and restarting Excel, or even changing worksheets or workbooks, custom Summary Labels is available once again.
+
+The only purpose for turning it off temporarily is to demonstrate how useful it is to have it available.
+By default, this setting is On.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

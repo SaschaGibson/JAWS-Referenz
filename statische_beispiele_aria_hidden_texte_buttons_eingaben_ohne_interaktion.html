@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Statische Beispiele: aria-hidden – Texte, Buttons & Eingaben</title>
+  <style>
+    :root { --bg:#0b0c10; --card:#11131a; --ink:#e6e6e6; --muted:#a9b0bd; --accent:#4da3ff; --bad:#ff5a6e; --ok:#61d095; }
+    html,body{margin:0;height:100%;}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55}
+    header{padding:24px 20px; border-bottom:1px solid #1e2230; background:linear-gradient(180deg, rgba(255,255,255,0.04), transparent)}
+    header h1{margin:0 0 6px 0; font-size:clamp(1.4rem, 1.2rem + 1.2vw, 2rem)}
+    header p{margin:0; color:var(--muted)}
+    main{max-width:1100px; margin:0 auto; padding:24px}
+    .grid{display:grid; gap:16px}
+    @media (min-width:900px){ .grid{grid-template-columns:repeat(12,1fr);} }
+    .card{grid-column:1/-1; background:var(--card); border:1px solid #1e2230; border-radius:16px; padding:18px 18px 16px}
+    .card h2{margin:0 0 8px 0; font-size:1.15rem}
+    .note{color:var(--muted); font-size:0.95rem}
+    .pill{display:inline-block; font-size:0.82rem; padding:2px 8px; border-radius:999px; border:1px solid #2b2f45; background:#0c0f1a; color:var(--muted)}
+    .ok{color:var(--ok)}
+    .bad{color:var(--bad)}
+    .two-col{display:grid; gap:14px}
+    @media (min-width:800px){ .two-col{grid-template-columns:1fr 1fr} }
+    .example{border:1px solid #1d2236; border-radius:12px; padding:12px; background:#0c0f1a}
+    .example h3{margin:0 0 8px 0; font-size:1rem}
+    .code{margin-top:8px; background:#0b0d18; border:1px solid #1a2136; border-radius:10px; padding:8px; overflow:auto}
+    code,pre{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:0.92rem; color:#dce4ff}
+    .row{display:grid; grid-template-columns:180px 1fr; gap:10px; align-items:center}
+    .label{font-weight:600}
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+    .warn{display:inline-block; margin-left:8px; padding:2px 8px; border-radius:999px; border:1px solid #3a2230; background:#201016; color:var(--bad); font-size:0.82rem}
+    .good{display:inline-block; margin-left:8px; padding:2px 8px; border-radius:999px; border:1px solid #1e3a30; background:#0f1e19; color:var(--ok); font-size:0.82rem}
+    footer{color:var(--muted); margin-top:24px}
+    button{background:#192036;color:#e7eefc;border:1px solid #263255;border-radius:12px;padding:8px 12px}
+    input[type="text"],input[type="email"]{background:#0e1220;border:1px solid #1d2236;border-radius:10px;padding:8px 10px;color:#e7eefc}
+  </style>
+</head>
+<body>
+  <a class="visually-hidden" href="#start">Zum Inhalt springen</a>
+  <header>
+    <h1 id="start">Statische Beispiele: <code>aria-hidden</code> – Texte, Buttons & Eingabefelder</h1>
+    <p>Diese Seite zeigt <strong>fest kodierte</strong> Musterfälle ohne JavaScript und ohne umschaltbare Zustände – ideal für Umgebungen ohne Interaktion.</p>
+  </header>
+
+  <main class="grid">
+    <!-- Überblick -->
+    <section class="card" aria-labelledby="summary-h">
+      <h2 id="summary-h">Kurzüberblick</h2>
+      <p class="note">Grundregel: <code>aria-hidden</code> entfernt Knoten aus dem Accessibility-Tree, hat aber keinen Einfluss auf Sicht- oder Fokusierbarkeit. Für interaktive Elemente ist es deshalb <strong>nicht geeignet</strong>, um sie „verschwinden“ zu lassen.</p>
+    </section>
+
+    <!-- 1) TEXT -->
+    <section class="card" aria-labelledby="text-h">
+      <h2 id="text-h">1) Text-Information</h2>
+      <div class="two-col">
+        <div class="example" aria-label="Gute Praxis – dekorativer Text versteckt">
+          <h3>Gute Praxis <span class="good">OK</span></h3>
+          <div class="row"><span class="label">Sichtbar:</span> <span>Normaler Absatztext (sichtbar & lesbar)</span></div>
+          <div class="row"><span class="label">Deko-Span:</span> <span aria-hidden="true">★ Dekoratives Symbol (mit <code>aria-hidden="true"</code>)</span></div>
+          <p class="note">Dekoratives hat keinen Informationswert → darf aus dem Accessibility-Tree entfernt werden.</p>
+          <div class="code"><pre><code>&lt;p&gt;Normaler Absatztext&lt;/p&gt;
+&lt;span aria-hidden="true"&gt;★ Dekoratives Symbol&lt;/span&gt;</code></pre></div>
+        </div>
+        <div class="example" aria-label="Schlechte Praxis – informativer Text versteckt">
+          <h3>Schlechte Praxis <span class="warn">NICHT OK</span></h3>
+          <div class="row"><span class="label">Sichtbar:</span> <span>Warnhinweis <strong>(visuell sichtbar)</strong> <em class="bad">aber für SR unsichtbar</em></span></div>
+          <p aria-hidden="true"><strong>Wichtig:</strong> Bitte speichern, bevor Sie fortfahren.</p>
+          <p class="note">Der Hinweis ist inhaltlich relevant, wird aber durch <code>aria-hidden</code> versteckt → Screenreader-Nutzer verlieren Information.</p>
+          <div class="code"><pre><code>&lt;p aria-hidden="true"&gt;&lt;strong&gt;Wichtig:&lt;/strong&gt; Bitte speichern …&lt;/p&gt;</code></pre></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) BUTTONS -->
+    <section class="card" aria-labelledby="button-h">
+      <h2 id="button-h">2) Buttons</h2>
+      <div class="two-col">
+        <div class="example" aria-label="Gute Praxis – deaktivierter Button ohne aria-hidden">
+          <h3>Gute Praxis <span class="good">OK</span></h3>
+          <div class="row"><span class="label">Button:</span> <button type="button" disabled>Aktion (deaktiviert)</button></div>
+          <p class="note">Deaktiviert & ohne <code>aria-hidden</code>. Der Button bleibt erkennbar (Role/Name), aber nicht bedienbar.</p>
+          <div class="code"><pre><code>&lt;button type="button" disabled&gt;Aktion&lt;/button&gt;</code></pre></div>
+        </div>
+        <div class="example" aria-label="Schlechte Praxis – Button mit aria-hidden=true">
+          <h3>Schlechte Praxis <span class="warn">NICHT OK</span></h3>
+          <div class="row"><span class="label">Button:</span> <button type="button" aria-hidden="true">Unsichtbar für SR</button></div>
+          <p class="note">Mit <code>aria-hidden="true"</code> fehlt der Button im Accessibility-Tree, kann aber je nach Kontext weiterhin fokussierbar sein → „unsichtbarer Fokus“.</p>
+          <div class="code"><pre><code>&lt;button type="button" aria-hidden="true"&gt;Aktion&lt;/button&gt;</code></pre></div>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:12px">
+        <div class="example" aria-label="Besser – Element wirklich ausblenden">
+          <h3>Besser ausblenden <span class="good">OK</span></h3>
+          <div class="row"><span class="label">Entfernt:</span> <span>Dieser Button ist mit <code>hidden</code> entfernt (hier nur als Code gezeigt).</span></div>
+          <div class="code"><pre><code>&lt;button type="button" hidden&gt;Aktion&lt;/button&gt;
+&lt;!-- oder per CSS: style="display:none" --&gt;</code></pre></div>
+        </div>
+        <div class="example" aria-label="Container inaktiv mittels inert">
+          <h3>Bereich inaktiv <span class="good">OK</span></h3>
+          <div class="row"><span class="label">Container:</span> <div inert>
+            <button type="button">Aktion (inaktiv)</button>
+          </div></div>
+          <p class="note"><code>inert</code> macht Inhalte un-fokussierbar & von assistiver Tech ignorierbar – nützlich z.&nbsp;B. hinter Modaldialogen.</p>
+          <div class="code"><pre><code>&lt;div inert&gt;
+  &lt;button type="button"&gt;Aktion&lt;/button&gt;
+&lt;/div&gt;</code></pre></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) INPUTS -->
+    <section class="card" aria-labelledby="input-h">
+      <h2 id="input-h">3) Eingabefelder</h2>
+      <div class="two-col">
+        <div class="example" aria-label="Gute Praxis – sichtbares Label & Feld">
+          <h3>Gute Praxis <span class="good">OK</span></h3>
+          <label for="name">Ihr Name</label><br>
+          <input id="name" type="text" autocomplete="name" placeholder="Vor- und Nachname">
+          <p class="note">Klassisches, korrekt beschriftetes Feld. Keine versteckenden ARIA-Attribute.</p>
+          <div class="code"><pre><code>&lt;label for="name"&gt;Ihr Name&lt;/label&gt;
+&lt;input id="name" type="text" autocomplete="name"&gt;</code></pre></div>
+        </div>
+        <div class="example" aria-label="Schlechte Praxis – Gruppe aria-hidden=true">
+          <h3>Schlechte Praxis <span class="warn">NICHT OK</span></h3>
+          <div aria-hidden="true">
+            <label for="email">E‑Mail</label><br>
+            <input id="email" type="email" placeholder="name@example.org">
+          </div>
+          <p class="note">Die gesamte Gruppe ist aus dem Accessibility-Tree entfernt. Das Feld könnte dennoch Fokus erhalten → keine Name/Role/Value-Infos.</p>
+          <div class="code"><pre><code>&lt;div aria-hidden="true"&gt;
+  &lt;label for="email"&gt;E‑Mail&lt;/label&gt;
+  &lt;input id="email" type="email"&gt;
+&lt;/div&gt;</code></pre></div>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:12px">
+        <div class="example" aria-label="Besser – Feld deaktivieren">
+          <h3>Besser deaktivieren <span class="good">OK</span></h3>
+          <label for="plz">PLZ</label><br>
+          <input id="plz" type="text" inputmode="numeric" pattern="[0-9]*" disabled value="65185">
+          <p class="note">Mit <code>disabled</code> bleibt das Feld erkennbar, ist aber nicht bedienbar.</p>
+          <div class="code"><pre><code>&lt;input id="plz" type="text" disabled&gt;</code></pre></div>
+        </div>
+        <div class="example" aria-label="Besser – Bereich wirklich entfernen">
+          <h3>Besser entfernen <span class="good">OK</span></h3>
+          <p>Beispiel: Feld wird serverseitig gar nicht gerendert oder per <code>hidden</code> entfernt.</p>
+          <div class="code"><pre><code>&lt;!-- Feld nicht ausgeben (SSR) --&gt;
+&lt;input id="bonus" type="text" hidden&gt;</code></pre></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Tab-Reihenfolge & Fokus-Falle (statisch) -->
+    <section class="card" aria-labelledby="trap-h">
+      <h2 id="trap-h">4) Statische Fokus-Falle (Demonstration)</h2>
+      <p class="note">In folgender Sequenz ist ein Button <em>visuell vorhanden</em>, aber mit <code>aria-hidden="true"</code> versehen. In reiner Betrachtung wirkt alles normal – in aktiven Szenarien kann der Fokus jedoch „stumm“ auf ihm landen.</p>
+      <div class="example">
+        <a href="#">Link A</a>
+        <button type="button" aria-hidden="true">Stummer Button</button>
+        <a href="#">Link B</a>
+        <p class="note">In einer interaktiven Umgebung wäre der Button nicht im Accessibility-Tree – Tastaturfokus könnte dennoch bei schlechtem CSS/JS dort erscheinen.</p>
+        <div class="code"><pre><code>&lt;a href="#"&gt;Link A&lt;/a&gt;
+&lt;button type="button" aria-hidden="true"&gt;Stummer Button&lt;/button&gt;
+&lt;a href="#"&gt;Link B&lt;/a&gt;</code></pre></div>
+      </div>
+    </section>
+
+    <footer class="card" aria-label="Hinweise">
+      <p>Best Practices (Kurz):</p>
+      <ol>
+        <li><code>aria-hidden</code> nur für dekorative Inhalte.</li>
+        <li>Interaktive Elemente niemals nur mit <code>aria-hidden</code> „verstecken“.</li>
+        <li>Für echte Deaktivierung/Verbergung: <code>hidden</code>, <code>display:none</code>, <code>inert</code>, oder Element gar nicht rendern.</li>
+        <li>Immer Name/Role/Value sichern: Label korrekt verdrahten, Disabled statt Verstecken, wenn Information erhalten bleiben soll.</li>
+      </ol>
+    </footer>
+  </main>
+</body>
+</html>

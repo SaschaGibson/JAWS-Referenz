@@ -1,0 +1,22 @@
+# Script: FSReaderRewind
+
+## Description
+
+This script rewinds the current FSReader track by 5 seconds. You can
+press this keystroke from anywhere on your system to perform this
+action. If FSReader is not active, then CTRL+COMMA is passed through to
+the active application.
+
+## Returns
+
+Type: Void\
+
+## Parameters
+
+No Parameters
+
+## Version
+
+This function is available in the following releases:
+
+1.  JAWS 8.00 and later

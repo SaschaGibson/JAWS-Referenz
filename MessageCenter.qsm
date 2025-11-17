@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LocalizableDefinitions File="Default.qs">
+	<DisplayNameDefinitions>
+    <DisplayName ID="ReadingOptions.ReadOnLoad" Text="Read On Load">
+        <HelpMsg>
+            When this option is checked, Jaws will start reading a message when it is opened.
+        </HelpMsg>
+    </DisplayName>
+		<DisplayName ID="ReadingOptions.IndicateUnread" Text="Indicate Unread">
+			<HelpMsg>
+When this option is checked, JAWS will speak and show in braille if a message is unread.
+It is checked by default.</HelpMsg>
+		</DisplayName>
+	</DisplayNameDefinitions>
+</LocalizableDefinitions>

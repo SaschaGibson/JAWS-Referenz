@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo: aria-hidden="true/false" – Texte, Buttons & Eingabefelder</title>
+  <style>
+    :root { --bg:#0b0c10; --card:#11131a; --ink:#e6e6e6; --muted:#a9b0bd; --accent:#4da3ff; --bad:#ff5a6e; --ok:#61d095; }
+    html,body{margin:0;height:100%;}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55}
+    header{padding:24px 20px; border-bottom:1px solid #1e2230; background:linear-gradient(180deg, rgba(255,255,255,0.04), transparent)}
+    header h1{margin:0 0 6px 0; font-size:clamp(1.4rem, 1.2rem + 1.2vw, 2rem)}
+    header p{margin:0; color:var(--muted)}
+    main{max-width:1100px; margin:0 auto; padding:24px}
+    .grid{display:grid; gap:16px}
+    @media (min-width:900px){ .grid{grid-template-columns:repeat(12,1fr);} }
+    .card{grid-column:1/-1; background:var(--card); border:1px solid #1e2230; border-radius:16px; padding:18px 18px 16px}
+    .card h2{margin:0 0 8px 0; font-size:1.15rem}
+    .card p{margin:0.2rem 0}
+    .controls{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 0}
+    .note{color:var(--muted); font-size:0.95rem}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; background:#0c0d12; border:1px solid #1e2230; padding:2px 6px; border-radius:6px}
+    button, .btn{background:#192036; color:#e7eefc; border:1px solid #263255; border-radius:12px; padding:8px 12px; cursor:pointer}
+    button:focus-visible, .btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+    .danger{background:#2a1014; border-color:#3c1a20}
+    .success{background:#0f2a21; border-color:#1d3f34}
+    .muted{background:#141722; border-color:#232a3d}
+    .pill{display:inline-block; font-size:0.82rem; padding:2px 8px; border-radius:999px; border:1px solid #2b2f45; background:#0c0f1a; color:var(--muted)}
+    code{background:#0c0f1a; border:1px solid #1d2236; padding:1px 6px; border-radius:6px}
+    .two-col{display:grid; gap:14px}
+    @media (min-width:700px){ .two-col{grid-template-columns:1fr 1fr} }
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+    .log{background:#0c0f1a; border:1px solid #1d2236; border-radius:12px; padding:10px; max-height:220px; overflow:auto}
+    .ok{color:var(--ok)}
+    .bad{color:var(--bad)}
+    table.quick{width:100%; border-collapse:collapse; margin-top:8px}
+    .quick th,.quick td{border:1px solid #1d2236; padding:8px; vertical-align:top}
+    .quick th{background:#0f1322; text-align:left}
+    footer{color:var(--muted); margin-top:24px}
+  </style>
+</head>
+<body>
+  <a class="visually-hidden" href="#start">Zum Inhalt springen</a>
+  <header>
+    <h1 id="start">Demo: <code>aria-hidden</code> für Texte & Interaktion</h1>
+    <p>Was passiert, wenn <code>aria-hidden</code> auf <strong>Text</strong> sowie auf <strong>Buttons</strong> und <strong>Eingabefelder</strong> gesetzt wird? Diese Seite macht es sichtbar – und hörbar.</p>
+  </header>
+
+  <main class="grid" aria-describedby="summary">
+    <section class="card" id="summary" aria-labelledby="tl;dr-h">
+      <h2 id="tl;dr-h">Kurzfazit</h2>
+      <table class="quick" aria-label="Kurzfazit zu aria-hidden">
+        <thead><tr><th>Fall</th><th>Empfehlung</th><th>Begründung</th></tr></thead>
+        <tbody>
+          <tr><td>Reiner Zierrat-/Deko-Text</td><td><span class="pill">✅ <strong>aria-hidden="true"</strong> ist ok</span></td><td>Verhindert unnötigen Lärm im Screenreader.</td></tr>
+          <tr><td>Informations-Text</td><td><span class="pill">❌ <strong>nicht</strong> verstecken</span></td><td>Sonst fehlt die Information im Accessibility-Tree.</td></tr>
+          <tr><td>Interaktive Elemente (Button, Eingabe)</td><td><span class="pill">❌ <strong>niemals</strong> nur mit <code>aria-hidden</code> verstecken</span></td><td>Fokus bleibt oft erreichbar → „unsichtbarer“ Fokus, Inkonsistenzen. Nutze <code>hidden</code>, <code>inert</code> oder entferne aus Tab-Reihenfolge & deaktiviere.</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Hinweis: <code>aria-hidden</code> entfernt Knoten aus dem <em>Accessibility-Tree</em>, hat aber <em>keinen</em> Einfluss auf Sichtbarkeit oder Fokusierbarkeit im Browser.</p>
+    </section>
+
+    <!-- TEXT-DEMO -->
+    <section class="card" aria-labelledby="text-h">
+      <h2 id="text-h">1) Text-Information</h2>
+      <div class="two-col">
+        <div>
+          <p>Dieser Satz ist normal lesbar und für Screenreader sichtbar.</p>
+          <p>
+            <span id="decorative-text" aria-hidden="true">★ Dekorativer Sternentext (aktueller Zustand: <strong><span id="text-state">aria-hidden=true</span></strong>)</span>
+          </p>
+          <div class="controls" role="group" aria-label="Steuerung für Text">
+            <button id="toggle-text">aria-hidden umschalten</button>
+            <button id="focus-text" class="muted">Fokus auf Stern-Span</button>
+          </div>
+        </div>
+        <div>
+          <p class="note"><strong>Erwartung:</strong> Wenn <code>aria-hidden=true</code>, sollte der Screenreader den Sternentext überspringen. Die Sichtbarkeit im Browser bleibt erhalten.</p>
+          <p class="note">Teste mit JAWS: <span class="kbd">Pfeiltasten</span>/<span class="kbd">SayAll</span>. Der Text ist visuell da, aber im virtuellen Puffer nicht vorhanden.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUTTON-DEMO -->
+    <section class="card" aria-labelledby="button-h">
+      <h2 id="button-h">2) Button (interaktiv)</h2>
+      <div class="two-col">
+        <div>
+          <button id="demo-button">Aktion ausführen</button>
+          <div class="controls" role="group" aria-label="Steuerung für Button">
+            <button id="toggle-button">aria-hidden umschalten</button>
+            <label class="btn"><input type="checkbox" id="btn-tabindex" /> <span>Tab-Reihenfolge entfernen (tabindex = -1)</span></label>
+            <label class="btn"><input type="checkbox" id="btn-disabled" /> <span>Button deaktivieren (<code>disabled</code>)</span></label>
+          </div>
+        </div>
+        <div>
+          <p class="note"><strong>Wichtig:</strong> <code>aria-hidden=true</code> macht den Button für Screenreader unsichtbar, <em>aber</em> er bleibt ggf. per Tastatur fokussierbar. Das erzeugt „unsichtbaren Fokus“ – ein Anti-Pattern.</p>
+          <ul class="note">
+            <li><em>Besser:</em> Element wirklich entfernen (<code>hidden</code>), per <code>inert</code> den Bereich inaktiv machen oder <code>tabindex=-1</code> + <code>disabled</code> setzen.</li>
+            <li>Teste: Schalte <code>aria-hidden</code> ein und versuche mit <span class="kbd">Tab</span> den Fokus zu setzen. Hörst du nichts, aber siehst Fokus? → Problem!</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- INPUT-DEMO -->
+    <section class="card" aria-labelledby="input-h">
+      <h2 id="input-h">3) Eingabefeld mit Label</h2>
+      <div class="two-col">
+        <div>
+          <div id="input-group" role="group" aria-labelledby="name-label">
+            <label id="name-label" for="name">Ihr Name</label><br />
+            <input id="name" type="text" autocomplete="name" placeholder="Vor- und Nachname" />
+            <p id="help" class="note">Hilfetext: Dieses Feld ist ein Beispiel. (aktueller Zustand: <strong><span id="input-state">aria-hidden=false</span></strong>)</p>
+          </div>
+          <div class="controls" role="group" aria-label="Steuerung für Eingabe">
+            <button id="toggle-input">aria-hidden umschalten (Gruppe)</button>
+            <label class="btn"><input type="checkbox" id="inp-tabindex" /> <span>Aus Tab-Reihenfolge nehmen (<code>tabindex=-1</code> am Feld)</span></label>
+            <label class="btn"><input type="checkbox" id="inp-disabled" /> <span>Feld deaktivieren (<code>disabled</code>)</span></label>
+          </div>
+        </div>
+        <div>
+          <p class="note"><strong>Erwartung:</strong> Setzt du <code>aria-hidden=true</code> auf die <em>Gruppe</em>, verschwinden Label <em>und</em> Feld aus dem Accessibility-Tree. Bleibt das Feld dennoch fokussierbar, entsteht ein Screenreader-„Loch“ (Fokus ohne Name/Role/Value).</p>
+          <p class="note">Teste: <span class="kbd">Tab</span> zum Feld, dann <span class="kbd">JAWS+B</span> (Listen der Buttons/Formulare) oder <span class="kbd">Ins+Tab</span> (aktuelles Fokusobjekt) – bei aktivem <code>aria-hidden</code> gibt es keine sinnvolle Ausgabe.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRAS: Alternative Techniken -->
+    <section class="card" aria-labelledby="alt-h">
+      <h2 id="alt-h">Alternativen zum Verstecken</h2>
+      <ul>
+        <li><code>hidden</code> oder <code>style="display:none"</code>: entfernt aus <em>Sicht</em> und aus Accessibility-Tree (kein Fokus).</li>
+        <li><code>inert</code> am Container: macht gesamte Subtree nicht fokussierbar und nimmt ihn aus assistiver Interaktion; ideal für deaktivierte Dialog-Overlays im Hintergrund.</li>
+        <li>Temporär entfernen: Element erst gar nicht rendern.</li>
+      </ul>
+    </section>
+
+    <!-- EVENT-LOG -->
+    <section class="card" aria-labelledby="log-h">
+      <h2 id="log-h">Event- & Fokus-Log (zum Beobachten)</h2>
+      <div id="log" class="log" role="log" aria-live="polite" aria-atomic="false" aria-relevant="additions text">—</div>
+      <p class="note">Hier werden Fokus- und Klickereignisse protokolliert. So siehst du, ob ein Element trotz <code>aria-hidden=true</code> noch Fokus bekommt.</p>
+    </section>
+
+    <footer class="card" aria-label="Hinweise">
+      <p>Best Practices (Kurz):</p>
+      <ol>
+        <li>Nutze <code>aria-hidden</code> für rein dekorative Knoten.</li>
+        <li>Verstecke <strong>niemals</strong> fokussierbare/aktive Elemente nur mit <code>aria-hidden</code>.</li>
+        <li>Wenn UI-Abschnitte inaktiv sind: <code>inert</code> oder wirklich entfernen.</li>
+        <li>Teste immer mit Screenreader + Tastatur: Sichtbarkeit, Fokusierbarkeit, Name/Role/Value.</li>
+      </ol>
+    </footer>
+  </main>
+
+  <script>
+    const logEl = document.getElementById('log');
+    const appendLog = (msg, cls) => {
+      const time = new Date().toLocaleTimeString();
+      const p = document.createElement('p');
+      if (cls) p.className = cls;
+      p.innerHTML = `<span class="pill">${time}</span> ${msg}`;
+      logEl.appendChild(p);
+      logEl.scrollTop = logEl.scrollHeight;
+      if (logEl.textContent.trim() === '—') logEl.textContent = '';
+    };
+
+    // TEXT demo
+    const textSpan = document.getElementById('decorative-text');
+    const textState = document.getElementById('text-state');
+    document.getElementById('toggle-text').addEventListener('click', () => {
+      const nowTrue = textSpan.getAttribute('aria-hidden') !== 'true';
+      textSpan.setAttribute('aria-hidden', nowTrue ? 'true' : 'false');
+      textState.textContent = `aria-hidden=${nowTrue ? 'true' : 'false'}`;
+      appendLog(`Text-Span → aria-hidden=${nowTrue}`, nowTrue ? 'ok' : '');
+    });
+    document.getElementById('focus-text').addEventListener('click', () => {
+      textSpan.setAttribute('tabindex', '-1');
+      textSpan.focus();
+      appendLog('Fokus auf dekorativen Text-Span gesetzt. (Nur zum Testen)', '');
+    });
+
+    // BUTTON demo
+    const btn = document.getElementById('demo-button');
+    const btnTab = document.getElementById('btn-tabindex');
+    const btnDis = document.getElementById('btn-disabled');
+    document.getElementById('toggle-button').addEventListener('click', () => {
+      const nowTrue = btn.getAttribute('aria-hidden') !== 'true';
+      btn.setAttribute('aria-hidden', nowTrue ? 'true' : 'false');
+      if (nowTrue && btnTab.checked) btn.setAttribute('tabindex','-1');
+      if (!nowTrue) btn.removeAttribute('tabindex');
+      if (btnDis.checked) btn.disabled = nowTrue; else btn.disabled = false;
+      appendLog(`Button → aria-hidden=${nowTrue}; tabindex=${btn.getAttribute('tabindex')||'0'}; disabled=${btn.disabled}`, nowTrue ? 'bad' : 'ok');
+    });
+    btnTab.addEventListener('change', () => {
+      if (btn.getAttribute('aria-hidden') === 'true' && btnTab.checked) btn.setAttribute('tabindex','-1');
+      else btn.removeAttribute('tabindex');
+      appendLog(`Button Tab-Reihenfolge ${btnTab.checked? 'entfernt (tabindex=-1)':'normal'}.`, '');
+    });
+    btnDis.addEventListener('change', () => {
+      if (btn.getAttribute('aria-hidden') === 'true' && btnDis.checked) btn.disabled = true; else btn.disabled = false;
+      appendLog(`Button disabled = ${btn.disabled}`, '');
+    });
+    btn.addEventListener('focus', () => appendLog('Fokus: Button', 'ok'));
+    btn.addEventListener('click', () => appendLog('Klick auf Button ausgelöst.', 'ok'));
+
+    // INPUT demo
+    const group = document.getElementById('input-group');
+    const inp = document.getElementById('name');
+    const inputState = document.getElementById('input-state');
+    const inpTab = document.getElementById('inp-tabindex');
+    const inpDis = document.getElementById('inp-disabled');
+
+    document.getElementById('toggle-input').addEventListener('click', () => {
+      const nowTrue = group.getAttribute('aria-hidden') !== 'true';
+      group.setAttribute('aria-hidden', nowTrue ? 'true' : 'false');
+      inputState.textContent = `aria-hidden=${nowTrue ? 'true' : 'false'}`;
+      if (nowTrue && inpTab.checked) inp.setAttribute('tabindex','-1');
+      else inp.removeAttribute('tabindex');
+      if (inpDis.checked) inp.disabled = nowTrue; else inp.disabled = false;
+      appendLog(`Eingabe-Gruppe → aria-hidden=${nowTrue}; Feld tabindex=${inp.getAttribute('tabindex')||'0'}; disabled=${inp.disabled}`, nowTrue ? 'bad' : 'ok');
+    });
+    inpTab.addEventListener('change', () => {
+      if (group.getAttribute('aria-hidden') === 'true' && inpTab.checked) inp.setAttribute('tabindex','-1');
+      else inp.removeAttribute('tabindex');
+      appendLog(`Feld Tab-Reihenfolge ${inpTab.checked? 'entfernt (tabindex=-1)':'normal'}.`, '');
+    });
+    inpDis.addEventListener('change', () => {
+      if (group.getAttribute('aria-hidden') === 'true' && inpDis.checked) inp.disabled = true; else inp.disabled = false;
+      appendLog(`Feld disabled = ${inp.disabled}`, '');
+    });
+    inp.addEventListener('focus', () => appendLog('Fokus: Eingabefeld', 'ok'));
+    inp.addEventListener('input', () => appendLog(`Eingabe: ${inp.value}`, 'ok'));
+
+    // Global keyboard tracker (Tab/Shift+Tab) for visibility of focus movement
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') appendLog(`Taste: Tab (shift=${e.shiftKey})`, '');
+    });
+  </script>
+</body>
+</html>
