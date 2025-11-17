@@ -1,0 +1,18 @@
+:frame Rahmen1
+:SearchRank 1
+:Description hier wurd die Druckfunktion ausgelöst: Die Auswertungsregel wurde abgekürtzt auf LMZ MIC 1.0.7.                                                           von 03/19 bis 10/21 änderte sich die Version lediglich 1.0.7.700 auf 1.0.7.777                          durch die strikte Anwendung der Prüfung wurde bei geringfügigen Updates immer sofort die Funktion aus Sicherheitsgründen deaktiviert
+
+:script HROSprungInListe
+:SearchRank 1
+:Synopsis springt in Therapieliste
+
+:script HROPlanLesen
+:SearchRank 1
+:Synopsis liest den Plan von HRO
+
+:function AutoStartEvent
+:SearchRank 1
+
+:script HROPause
+:SearchRank 1
+

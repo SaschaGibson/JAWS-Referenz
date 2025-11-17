@@ -1,0 +1,378 @@
+:function autoStartEvent
+:SearchRank 1
+
+:function ShouldNotifyIfContextHelp
+:Returns int
+:SearchRank 1
+
+:function BrailleCallbackObjectIdentify
+:Returns int
+:SearchRank 1
+
+:function BrailleAddObjectDescription
+:Returns int
+:SearchRank 1
+:Param int/nSubtypeCode 
+
+:function BrailleAddObjectContextHelp
+:Returns int
+:SearchRank 1
+:Param int/nSubtypeCode 
+
+:function IsBrowserContentWindow
+:Returns int True if the window is a browser content window for Chrome.
+:SearchRank 1
+:Description Determines if the window is a browser content window for Chrome.
+:Param handle The window to test.
+
+:function IsBrowserUIDialog
+:Returns int
+:SearchRank 1
+
+:function ShouldUseDoSayObjectFromLevel
+:Returns int True if focus change should process the window by announcing hierarchical level changes.
+:SearchRank 1
+:Description Determines if focus change should process the window by announcing hierarchical level changes.
+:Param handle The current focus window.
+:Param handle The previous focus window.
+
+:function GetDocumentNameFromRealWindow
+:Returns string The name of the current page or document.
+:SearchRank 1
+:Description Retrieves the name of the current page or document.
+
+:function GetBrowserName
+:Returns string The name of the browser.
+:SearchRank 1
+:Description Retrieves the name of the browser currently being used.
+:Optional
+:Param int If true, returns the name Google Chrome, otherwise returns the name Chrome.
+
+:script ScreenSensitiveHelp
+:SearchRank 1
+
+:function ShouldHandleParagraphNavigation
+:Returns int
+:SearchRank 1
+
+:function CaretMovedEvent
+:SearchRank 1
+:Param int/movementUnit 
+:Optional
+:Param int/source 
+
+:function UnitMoveControlNav
+:SearchRank 1
+:Param int/UnitMovement 
+
+:function IsOnAddressBarEdit
+:Returns int
+:SearchRank 1
+
+:function SayLineFromCaretMovedEvent
+:SearchRank 1
+:Param int/movementUnit 
+
+:function ContractedBrailleInputAllowedNow
+:Returns int
+:SearchRank 1
+
+:function ActiveItemChangedEvent
+:SearchRank 1
+:Param handle/curHwnd 
+:Param int/curObjectId 
+:Param int/curChildId 
+:Param handle/prevHwnd 
+:Param int/prevObjectId 
+:Param int/prevChildId 
+
+:function SayAutoCompleteAddressAfterPause
+:SearchRank 1
+
+:function SelectionChangedEvent
+:SearchRank 1
+:Param string/text 
+:Param int/wasTextSelected 
+:Optional
+:Param int/source 
+
+:function SecondaryFocusChangedEvent
+:SearchRank 1
+
+:function ValueChangedEvent
+:SearchRank 1
+:Param handle/hwnd 
+:Param int/objId 
+:Param int/childId 
+:Param int/nObjType 
+:Param string/sObjName 
+:Param string/sObjValue 
+:Optional
+:Param int/bIsFocusObject 
+
+:function SayLineUnit
+:SearchRank 1
+:Param int/unitMovement 
+:Optional
+:Param int/bMoved 
+
+:function IsValidForTraverseBrowserUIDialogAndReadControls
+:Returns int
+:SearchRank 1
+:Param string/dlgName 
+:Param object/element 
+
+:script readBoxInTabOrder
+:SearchRank 1
+
+:function GetWindowTitleForApplication
+:SearchRank 1
+:Param handle/hAppWnd 
+:Param handle/hRealWnd 
+:Param handle/hCurWnd 
+:Param int/iTypeCode 
+:Param string/sTitle 
+:Param string/sSubTitle 
+:Param int/bHasPage 
+
+:function HandleCustomAppWindows
+:Returns int
+:SearchRank 1
+:Param handle/hWnd 
+
+:script PictureSmartWithControl
+:DisplayName Picture Smart von einem Steuerelement
+:KeyWords Abbildung, Foto, Bild, Fotografie, Grafik, beschreiben, erkennen
+:SearchRank 1
+:Synopsis Beschreibt ein fokussiertes bildliches Steuerelement.
+:Category Picture Smart
+:Optional
+:Param int/serviceOptions Additional Picture Smart service options. See HJConst.jsh for option constants, all prefixed by PSServiceOptions_.
+
+:script PictureSmartWithControlMultiService
+:SearchRank 1
+
+:function ShouldSpeakItemAtLevel
+:Returns int
+:SearchRank 1
+:Param int/level 
+:Param int/type 
+:Param int/parentType 
+:Param int/focusRole 
+:Param int/focusType 
+
+:function NewBrowserTabIsNewPage
+:Returns int
+:SearchRank 1
+:Param handle/hWnd 
+
+:function AnnounceNewTabOrPageFromBrowserTabChangedEvent
+:SearchRank 1
+:Param handle/hWnd 
+
+:function BrowserTabChangedEvent
+:SearchRank 1
+:Param int/tabID 
+:Param handle/hWnd 
+
+:function GetTabID
+:Returns int
+:SearchRank 1
+
+:function GetVirtualCursorSettingForTab
+:Returns int
+:SearchRank 1
+:Param int/tabID 
+
+:function SetVirtualCursorSettingForTab
+:SearchRank 1
+:Param int/tabID 
+:Param int/vCursorSetting 
+
+:script VirtualPCCursorToggle
+:SearchRank 1
+
+:function SayLineInsteadOfSayAll
+:Returns int
+:SearchRank 1
+
+:function ContextMenuProcessed
+:Returns int
+:SearchRank 1
+:Param handle/hWnd 
+
+:function HandleUnknownAncestor
+:SearchRank 1
+:Param int/level 
+:Param int/focusType 
+:Param int/pageIsChanging 
+
+:function PreProcessFocusChangedEventEx
+:SearchRank 1
+:Param handle/hwndFocus 
+:Param int/nObject 
+:Param int/nChild 
+:Param handle/hwndPrevFocus 
+:Param int/nPrevObject 
+:Param int/nPrevChild 
+:Param int/nChangeDepth 
+
+:function ProcessSayRealWindowOnFocusChange
+:SearchRank 1
+:Param handle/AppWindow 
+:Param handle/RealWindow 
+:Param string/RealWindowName 
+:Param handle/FocusWindow 
+
+:function IsKeySelectingText
+:Returns int
+:SearchRank 1
+:Param int/keyCode 
+
+:function UpdateAndSayNewStateOfRadioButton
+:SearchRank 1
+
+:function ProcessSpaceBarKeyPressed
+:Returns int
+:SearchRank 1
+:Param int/nKey 
+:Param string/strKeyName 
+:Param int/nIsBrailleKey 
+:Param int/nIsScriptKey 
+
+:function KeyPressedEvent
+:SearchRank 1
+:Param int/nKey 
+:Param string/strKeyName 
+:Param int/nIsBrailleKey 
+:Param int/nIsScriptKey 
+
+:function IsOpenListBoxApplicable
+:Returns int
+:SearchRank 1
+:Param handle/hWnd 
+:Param int/iSubtype 
+
+:function IsCloseListBoxApplicable
+:Returns int
+:SearchRank 1
+:Param handle/hWnd 
+:Param int/iSubtype 
+
+:function GetDetailsIDs
+:Returns intArray
+:SearchRank 1
+:Param int/details 
+
+:function GetTextForUniqueIDs
+:Returns string
+:SearchRank 1
+:Param intArray/ids 
+:Param int/idsCount 
+
+:function RestrictToElementsWithUniqueIDs
+:SearchRank 1
+:Param intArray/ids 
+:Param int/idsCount 
+
+:function MoveToElementWithUniqueID
+:SearchRank 1
+:Param int/id 
+
+:script announceComment
+:SearchRank 1
+
+:function IsInsideDetailsFor
+:Returns int
+:SearchRank 1
+
+:script UpALevel
+:SearchRank 1
+
+:function FormsModeEvent
+:SearchRank 1
+:Param int/bEntering 
+:Optional
+:Param int/lastMovementUnit 
+
+:function RestrictToSavedIDs
+:SearchRank 1
+
+:function SpeakLiveRegionEvent
+:Returns int
+:SearchRank 1
+:Param string/text 
+:Param int/suggestedOutputType 
+:Param int/containsSpeechMarkup 
+
+:function InPageTabArea
+:Returns int
+:SearchRank 1
+
+:function SayObjectTypeAndText
+:SearchRank 1
+:Optional
+:Param int/nLevel 
+:Param int/includeContainerName 
+
+:script SayLine
+:SearchRank 1
+
+:script SayNextWord
+:SearchRank 1
+
+:script SayPriorWord
+:SearchRank 1
+
+:script SelectNextWord
+:SearchRank 1
+
+:script SelectPriorWord
+:SearchRank 1
+
+:function IsFocusedOnTabSearchTopChromePage
+:Returns int
+:SearchRank 1
+
+:function DescriptionChangedEventAnnouncement
+:SearchRank 1
+
+:function DescriptionChangedEvent
+:SearchRank 1
+:Param handle/hwnd 
+:Param int/objId 
+:Param int/childId 
+:Param int/nObjType 
+:Param string/sOldDescription 
+:Param string/sNewDescription 
+:Optional
+:Param int/bFromFocusObject 
+
+:function InDialogWithDocumentDescendant
+:Returns int
+:SearchRank 1
+
+:function DidWebDialogJustOpenOrClose
+:Returns int
+:SearchRank 1
+
+:function ShouldHandleWebDialogFocusTransition
+:Returns int
+:SearchRank 1
+
+:function SayNewDocumentTab
+:Returns int
+:SearchRank 1
+:Description Used by focus change to announce the name of the new document.
+
+:function DoBackSpace
+:SearchRank 1
+
+:function MSAAAlertEvent
+:SearchRank 1
+:Param handle/hwnd 
+:Param int/nTime 
+:Param string/sText 
+:Param int/nAlertLevel 
+:Param string/appName 
+

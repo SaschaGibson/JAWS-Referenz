@@ -1,0 +1,45 @@
+﻿;  UTF-8 w/BOM: If there are some funny characters at the beginning
+;  of the first line, then your editor may not support UTF-8
+;  format files with a Byte-Order-Mark (BOM) - try notepad.
+;  
+[Rahmen1]
+originy=72
+originx=1
+spokenprompt=
+event1=1|0|2|2|Rahmen1|PCCursor
+brailledprompt=
+enable=1
+realwindowtop=-7
+realwindowbottom=938
+realwindowright=1289
+height=858
+realwindowleft=-7
+relativeto=0
+echo=-1
+windowbased=0
+width=1225
+validationrule1=1|1|2|Chrome_WidgetWin_1
+dpi=96
+priority=5
+tutormessage=
+locktodpi=0
+[TagesansichPatient]
+originy=208
+originx=203
+spokenprompt=
+brailledprompt=
+event1=1|0|2|2|TagesansichPatient|PCCursor
+enable=1
+realwindowtop=0
+realwindowbottom=937
+realwindowright=1288
+height=455
+realwindowleft=0
+echo=-1
+relativeto=0
+windowbased=0
+width=470
+locktodpi=0
+tutormessage=
+dpi=96
+priority=5

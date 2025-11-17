@@ -1,0 +1,18 @@
+:function Inspector_AddInfo
+:SearchRank 1
+:Param string/sTitle 
+:Param string/sValue 
+
+:function Inspector_AddCodeLine
+:SearchRank 1
+:Param string/sCode 
+
+:function Inspector_ExtractXMLAttribute
+:Returns string
+:SearchRank 1
+:Param string/xml 
+:Param string/attributeName 
+
+:script InspectAndAssist
+:SearchRank 1
+

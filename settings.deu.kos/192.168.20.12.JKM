@@ -1,0 +1,11 @@
+[Desktop Keys]
+Shift+Control+F12=GenerateDokuSummary
+Alt+Control+F12=BETA_SelectSpecialAriaButton_XML
+Alt+Control+F11=BETA_DumpElementXMLs
+JAWSKey+Space&F12=Neue_Sonstige_Verlaufdoku
+JAWSKey+Space&F11=Neue_Arzt_Aufgabe
+JAWSKey+Space&F9=Abbrechen
+JAWSKey+Space&F10=Fertig
+Control+F12=label_suchen
+[Common Keys]
+Control+JAWSKey+F11=GeheZuButton

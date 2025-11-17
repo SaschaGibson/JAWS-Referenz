@@ -1,0 +1,5 @@
+[Common Keys]
+f12=HROPlanLesen
+f11=HROSprungInListe
+[Desktop Keys]
+f9=SayFrame("Rahmen1")

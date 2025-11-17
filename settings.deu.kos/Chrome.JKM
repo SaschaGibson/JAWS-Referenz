@@ -1,0 +1,5 @@
+[common Keys]
+Insert+Control+SemiColon=SelectAnOnMouseOverElement
+JAWSKey+Control+SemiColon=SelectAnOnMouseOverElement
+[Desktop Keys]
+Shift+Control+F12=GenerateElementAction

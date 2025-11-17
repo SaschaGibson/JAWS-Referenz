@@ -1,0 +1,40 @@
+﻿;  UTF-8 w/BOM: If there are some funny characters at the beginning
+;  of the first line, then your editor may not support UTF-8
+;  format files with a Byte-Order-Mark (BOM) - try notepad.
+[Options]
+MigrationWizardDisplayed=1
+ViewMode=1
+AutomaticNotificationOfUpdates=1
+LowerOtherAppsVolumeWhileJAWSIsRunning=1
+VirtualRibbonSupport=1
+LanguageDetection=0
+VTUseVirtualPCCursor=1
+AnnounceMultilineEdit=1
+SayBlankForEmptyEdit=1
+DisplayStartupWizard=0
+FirstWindows11Run=1
+[OCR]
+UseMicrosoftOcrForScreenRecognitions=1
+[Braille]
+SelectedBrailleTranslator=
+[BrailleAndTextViewer]
+BTViewerTextColor=3329330
+BTViewerTextBackgroundColor=1776411
+BTViewerTextSize=16
+BTViewerTextBackgroundCustomColor=1776411
+BTViewerTextBackgroundCustomColorSelected=1
+BTViewerCustomColor1=1776411
+BTViewerFont=Consolas
+BTViewerPosition=1
+BTViewerEnableBrailleViewer=1
+[ScriptManager]
+ViewFontSize=0
+ZoomLevel=9
+SyntaxHighlighting=1
+ShowLineNumbers=1
+[MessageCenter]
+PendingMessages=0
+[OSM]
+HookingMode=1
+[OutputModes]
+TUTOR=2|2|2|Tutor

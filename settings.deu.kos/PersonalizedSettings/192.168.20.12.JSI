@@ -1,0 +1,37 @@
+[CustomLabels]
+Zurück zu Römhild, H.=zurück zum Kalender
+;appointment-0-button=Termin 1
+appointment-1-button=Termin 2
+appointment-3-button=Termin 4
+appointment-2-button=Termin 3
+appointment-4-button=Termin 5
+appointment-5-button=Termin 6
+appointment-6-button=Termin 7
+appointment-7-button=Termin 8
+appointment-8-button=Termin 9
+appointment-9-button=Termin 10
+appointment-10-button=Termin 11
+appointment-11-button=Termin 12
+appointment-12-button=Termin 13
+appointment-13-button=Termin 14
+appointment-14-button=Termin 15
+appointment-15-button=Termin 16
+appointment-16-button=Termin 17
+appointment-17-button=Termin 18
+appointment-18-button=Termin 19
+appointment-19-button=Termin 20
+NodeIndex163=Bearbeiten
+NodeIndex60=Bearbeiten
+Neue Erfassung anlegen=neue Verlaufsdokumentation
+NodeIndex226=bearbeiten
+5b79765487f94e6286926194ad618950#91ab589c84eb437da192d2208317f7c5=Verlauf Sonstige TherapieDoku
+78d8858486804835b5e60fa8fd0b8c45#32fdd88e44a84d559e55ad44f9c272f3=ärztliche Dokumentation
+1126888bda064f3e8ed58bc9cc119fb0#1d37da885b1340cd94d58e0ae5df4fe6=Pflegedokumentation
+111b0ecc341c44b291f5caea0cd66759#461c38f77f384d22b65f80c7291d64d4=Verlauf psychologisch
+311612c3a47645c09e243a4196af2ca4#e479883f49654670b6076a6230ee6fa4=Bemerkung:
+rdts1_trigger=Empänger
+[HTML]
+FormFieldPromptOptions=4
+SayAllOnDocumentLoad=0
+[PageAnalyzer]
+sghIndication=0

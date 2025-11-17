@@ -1,0 +1,41 @@
+:function BETA_ShowVirtualOutput
+:SearchRank 1
+:Param string/sTitle No Description
+:Param string/sContent No Description
+
+:function RecurseDomAndCollectButtons
+:SearchRank 1
+:Param int/hNode No Description
+:Param int/index No Description
+
+:script BETA_SelectSpecialAriaButton_XML_DOM_IntHandles
+:SearchRank 1
+
+:script BETA_DumpElementXMLs
+:SearchRank 1
+
+:script Neue_Sonstige_Verlaufdoku
+:SearchRank 1
+
+:script label_suchen
+:SearchRank 1
+
+:script Neue_Arzt_Aufgabe
+:SearchRank 1
+
+:script Abbrechen
+:SearchRank 1
+
+:script Fertig
+:SearchRank 1
+
+:function GetSubElementTextByClass
+:Returns string
+:SearchRank 1
+:Param object/parentElement 
+:Param object/conditionFactory 
+:Param string/className 
+
+:script GenerateDokuSummary
+:SearchRank 1
+

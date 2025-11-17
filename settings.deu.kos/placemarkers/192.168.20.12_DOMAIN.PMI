@@ -1,0 +1,40 @@
+[Zurück zum Kalender, Tagesliste]
+Offset=1
+AttributeName=id
+AttributeValue=calendarPortalRoot
+[Termin1]
+Offset=0
+AttributeName=id
+AttributeValue=appointment-1-button
+[Kalenderbeginn]
+Offset=15
+AttributeName=id
+AttributeValue=dayNavigationRow__next
+[neue Verlaufsdokumentation]
+Offset=0
+Tag=BUTTON
+Text=neue Verlaufsdokumentation
+AttributeName=id
+AttributeValue=page-wrapper
+[Therapie]
+Offset=201
+AttributeName=id
+AttributeValue=bottomsheet-root
+[Sonstige TherapieDoku]
+Offset=0
+Tag=A
+Text=Sonstige TherapieDoku
+AttributeName=id
+AttributeValue=bottomsheet-root
+[Fertig]
+Offset=0
+AttributeName=id
+AttributeValue=calendar-submit
+Tag=BUTTON
+Text=Fertig
+[Abbrechen]
+Offset=0
+Tag=BUTTON
+Text=Abbrechen
+AttributeName=id
+AttributeValue=calendar-cancel

@@ -1,0 +1,42 @@
+[brlsense Keys]
+Braille KEYPAD1+KEYPAD2+KEYPAD5+KEYPAD9=MinimizeAllApps
+[Freedom Scientific FOCUS 5-40 HID HID Keys]
+Braille Dots 3 4 6 Chord=RoutePCCursorToJAWS
+[focus Keys]
+Braille Dots 4 5 6 Chord=BrailleBottom
+Braille Dots 1 2 3 Chord=BrailleTop
+Braille Dots 3 4 6 Chord=RoutePCCursorToJAWS
+Braille Shift2+Dot 8=MoveToNextNonLinkText
+Braille Shift2+Dot 2=ScreenSensitiveHelp
+[Classic Laptop Keys]
+Alt+Shift+N=SayBottomLineOfWindow
+Alt+Shift+Z=SayTopLineOfWindow
+[Pronto keys]
+Braille D1+D2+D3+D5=RouteBrailleToActiveCursor
+[FocusXT14 Keys]
+Braille Dots 3 4 6 Chord=RoutePCCursorToJAWS
+[brledgedriver Keys]
+Braille KEYPAD1+KEYPAD4+KEYPAD5+KEYPAD9=JAWSDelete
+Braille KEYPAD1+KEYPAD2+KEYPAD5+KEYPAD9=MinimizeAllApps
+Braille KEYPAD1+KEYPAD2+KEYPAD9=SayBatteryLevel
+Braille KEYPAD2+KEYPAD3+KEYPAD9=SayPriorParagraph
+Braille KEYPAD1+KEYPAD2+KEYPAD4+KEYPAD5+KEYPAD9=BrailleGrade2Translation
+Braille KEYPAD2+KEYPAD3+KEYPAD4+KEYPAD5+KEYPAD7+KEYPAD9=SayWindowTitle
+[PAC Mate Keys]
+Insert+Shift+Z=SayTopLineOfWindow
+Insert+Shift+N=SayBottomLineOfWindow
+[FocusXT80 Keys]
+Braille Dots 3 4 6 Chord=RoutePCCursorToJAWS
+[FocusXT40 Keys]
+Braille Dots 3 4 6 Chord=RoutePCCursorToJAWS
+[PACMate Braille Keys]
+Dot45678 Chord=BXBuildModifyer
+Dot4568 Chord=BXBuildModifyer
+[focus80 Keys]
+Braille Dots 3 4 6 Chord=RoutePCCursorToJAWS
+[focus40 Keys]
+Braille Dots 3 4 6 Chord=RoutePCCursorToJAWS
+[ObjectTextReview Keys]
+Braille Shift2+Dot 1=TouchCloseApp
+[Desktop Keys]
+Alt+Control+Space=InspectAndAssist

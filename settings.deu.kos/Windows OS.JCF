@@ -1,0 +1,6 @@
+[NonJCFOptions]
+AutomaticTouchCursorActivation=0
+[Options]
+TextAnalyser=1
+[RichEdit and Edit Control Options]
+ExpandAnnotationsInline=1

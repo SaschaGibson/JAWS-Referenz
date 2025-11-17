@@ -1,0 +1,238 @@
+{
+  "LastCheckTime": "2025-11-10T14:28:55.6474997+00:00",
+  "UserIdentityHash": "dWwW6\u002BKXeRtOJgSgJfjUxfVcPuCNSSelFhmRslEzQL8=",
+  "Messages": [
+    {
+      "Read": false,
+      "Id": 1919,
+      "Date": "2025-10-27T15:00:00+00:00",
+      "Category": "Power Tips",
+      "Tags": [
+        "locale-enu",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Aktualisieren des Bildschirms in einer App oder Webseite",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EBei der Verwendung einer Anwendung oder beim Navigieren auf einer Webseite kann es vorkommen, dass sich der Bildschirminhalt \u00E4ndert, JAWS aber nicht automatisch die neu geladenen Informationen spricht oder auf der Braillezeile anzeigt. Dies kann der Fall sein, wenn Inhalte auf dem Bildschirm aktualisiert werden oder wenn Sie eine neue Webseite besuchen. Wenn dies geschieht, dr\u00FCcken Sie \u003Cstrong\u003EEINF\u00DCGEN\u002BESC\u003C/strong\u003E, falls Sie das Desktop-Layout verwenden, oder \u003Cstrong\u003EFeststelltaste\u002BESC\u003C/strong\u003E, falls Sie das Laptop-Layout verwenden, um den Bildschirm zu aktualisieren, damit JAWS seinen virtuellen Puffer aktualisiert und den aktuell angezeigten Inhalt spricht, bzw. auf der Braillezeile anzeigt.\u003C/p\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1871,
+      "Date": "2025-09-15T15:02:00+00:00",
+      "Category": "Power Tips",
+      "Tags": [
+        "locale-enu",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Suchen Sie Text in einem PDF-Dokument",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EMit dem Befehl Suchen k\u00F6nnen Sie mit JAWS in PDFs nach Text suchen. \u003C/p\u003E\n\n\n\n\u003Col class=\u0022wp-block-list\u0022\u003E\n\u003Cli\u003EWenn die PDF-Datei in einem Browser ge\u00F6ffnet ist, dr\u00FCcken Sie \u003Cstrong\u003ESTRG\u002BF\u003C/strong\u003E, um den Dialog Suchen zu \u00F6ffnen. Wenn die PDF-Datei im Acrobat Reader ge\u00F6ffnet ist, verwenden Sie den JAWS-Befehl Suchen, indem Sie \u003Cstrong\u003EEINF\u00DCGEN\u002BSTRG\u003C/strong\u003E\u002B\u003Cstrong\u003EF\u003C/strong\u003E dr\u00FCcken, wenn Sie das Desktop-Tastaturlayout verwenden, oder \u003Cstrong\u003EFESTSTELLTASTE\u002BSTRG\u002BF\u003C/strong\u003E, wenn Sie das Laptop-Tastaturlayout verwenden.\u003C/li\u003E\n\n\n\n\u003Cli\u003EGeben Sie ein Wort oder einen Satz ein, nach dem Sie suchen m\u00F6chten, und dr\u00FCcken Sie die \u003Cstrong\u003EEINGABETASTE\u003C/strong\u003E.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDer Fokus wird auf dem ersten Vorkommen dieses Wortes oder Satzes platziert.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EF3\u003C/strong\u003E, um zum n\u00E4chsten Vorkommen dieses Wortes oder Satzes zu navigieren, oder \u003Cstrong\u003EUMSCHALT\u002BF3\u003C/strong\u003E, um zum vorherigen Vorkommen zu navigieren.\u003C/li\u003E\n\u003C/ol\u003E\n\n\n\n\u003Cp\u003E\u003C/p\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1860,
+      "Date": "2025-09-04T13:24:32+00:00",
+      "Category": "What\u0027s New",
+      "Tags": [
+        "locale-enu",
+        "minversion-2025.0.0",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "September Update verf\u00FCgbar \u2013 Was ist neu in JAWS 2025?",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EWir freuen uns, das September-Update f\u00FCr JAWS ank\u00FCndigen zu k\u00F6nnen, das die mehrzeilige Braille-Ausgabe auf kompatiblen Braillezeilen, aktualisierte KI-Modelle f\u00FCr das sprechende Bild und den FSCompanion sowie weitere Verbesserungen enth\u00E4lt.\u003C/p\u003E\n\n\n\n\u003Cp\u003ESie k\u00F6nnen auf die neueste Version aktualisieren \u00FCber das JAWS Men\u00FC \u003E Hilfe \u003E Nach Updates suchen. Die vollst\u00E4ndigen Versionshinweise finden Sie unter \u003Ca href=\u0022https://www.freedomsci.de/news/new_2025.htm\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003EWas ist Neu in JAWS 2025\u003C/a\u003E.\u003C/p\u003E\n\n\n\n\u003Cp\u003E\u003C/p\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1750,
+      "Date": "2025-07-14T15:00:00+00:00",
+      "Category": "Power Tips",
+      "Tags": [
+        "locale-enu",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Erstellen eines Ordners in Outlook",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003ESie k\u00F6nnen in Outlook Ordner und Unterordner erstellen, um Nachrichten zu organisieren und zu speichern. So gehen Sie vor:\u003C/p\u003E\n\n\n\n\u003Col class=\u0022wp-block-list\u0022\u003E\n\u003Cli\u003EDr\u00FCcken Sie in einem beliebigen Ordner die Tastenkombination \u003Cstrong\u003ESTRG\u002BUMSCHALT\u002BE\u003C/strong\u003E, um das Dialogfenster Neuen Ordner erstellen zu \u00F6ffnen.\u003C/li\u003E\n\n\n\n\u003Cli\u003EGeben Sie einen Namen f\u00FCr den Ordner ein.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003ETAB\u003C/strong\u003E, um zu einer Ausklappliste zu gelangen, in der Sie Elementtypen ausw\u00E4hlen k\u00F6nnen, die Ihr Ordner enthalten soll (nur im klassischen Outlook). Zu den Optionen geh\u00F6ren E-Mail und bereitgestellte Elemente, Notizen, Kalender, Journal, Kontakte und Aufgaben. Navigieren Sie in dieser Liste mit den Pfeiltasten Rauf und Runter.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003ETAB\u003C/strong\u003E, um zu einer Strukturansicht zu gelangen, in der Sie den Speicherort f\u00FCr Ihren neuen Ordner ausw\u00E4hlen k\u00F6nnen. In dieser Strukturansicht werden vorhandene Outlook-Ordner wie Posteingang, Entw\u00FCrfe und Gesendete Objekte sowie alle zuvor erstellten Ordner aufgelistet. Navigieren Sie in der Liste mit den Pfeiltasten Rauf und Runter und dr\u00FCcken Sie auf einem Ordner \u003Cstrong\u003EEINGABE\u003C/strong\u003E, um ihn auszuw\u00E4hlen.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003ETAB\u003C/strong\u003E, um zum Schalter OK zu springen und dr\u00FCcken Sie \u003Cstrong\u003EEINGABE\u003C/strong\u003E.\u003C/li\u003E\n\u003C/ol\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1757,
+      "Date": "2025-07-03T13:10:07+00:00",
+      "Category": "What\u0027s New",
+      "Tags": [
+        "locale-enu",
+        "minversion-2025.0.0",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Juli Update verf\u00FCgbar \u2013 Was ist neu in JAWS 2025?",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EWir freuen uns, das Juli-Update f\u00FCr JAWS ank\u00FCndigen zu k\u00F6nnen. Es enth\u00E4lt Verbesserungen f\u00FCr den KI Bezeichner, der \u00FCber das Vorschau Programm verf\u00FCgbar ist, einen neuen Bezeichnungsmanager f\u00FCr die Verwaltung benutzerdefinierter Bezeichnungen auf Webseiten und zus\u00E4tzliche Erweiterungen.\u003C/p\u003E\n\n\n\n\u003Cp\u003EUm auf die neueste Version zu aktualisieren, aktivieren Sie JAWS Men\u00FC \u003E Hilfe \u003E Nach Updates suchen.\u003C/p\u003E\n\n\n\n\u003Cp\u003EDie vollst\u00E4ndigen Versionshinweise finden Sie unter \u003Ca href=\u0022https://www.freedomsci.de/news/new_2025.htm\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003EWas ist Neu in JAWS 2025\u003C/a\u003E.\u003C/p\u003E\n\n\n\n\u003Cp\u003E\u003C/p\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1739,
+      "Date": "2025-06-30T15:00:00+00:00",
+      "Category": "Power Tips",
+      "Tags": [
+        "locale-enu",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Miniaturansichtsbereich in PowerPoint verwenden, um Folien hinzuzuf\u00FCgen, zu verschieben und zu l\u00F6schen",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EDer Bereich Miniaturansichten der Folien befindet sich auf der linken Seite des PowerPoint Anwendungsfensters. Verwenden Sie diesen, um schnell zu Folien zu navigieren und diese neu anzuordnen.\u003C/p\u003E\n\n\n\n\u003Col class=\u0022wp-block-list\u0022\u003E\n\u003Cli\u003EDr\u00FCcken Sie im Folienbereich \u003Cstrong\u003EUMSCHALT\u002BF6\u003C/strong\u003E, um zu den Miniaturansichten der Folien zu navigieren.\u003C/li\u003E\n\n\n\n\u003Cli\u003ENavigieren Sie mit \u003Cstrong\u003EPFEILTASTE RAUF\u003C/strong\u003E und \u003Cstrong\u003ERUNTER\u003C/strong\u003E durch die Liste der Folien. JAWS sagt den Titel jeder Folie an.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EF6\u003C/strong\u003E, um zu der fokussierten Folie zu navigieren.\u003C/li\u003E\n\n\n\n\u003Cli\u003EKopieren und verschieben Sie Folien mit Befehlen wie \u003Cstrong\u003ESTRG\u002BC\u003C/strong\u003E zum Kopieren, \u003Cstrong\u003ESTRG\u002BX\u003C/strong\u003E zum Ausschneiden und \u003Cstrong\u003ESTRG\u002BV\u003C/strong\u003E zum Einf\u00FCgen im Bereich der Miniaturansichten oder auch von einer Pr\u00E4sentation zu einer anderen.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie auf einer Folie \u003Cstrong\u003EENTFERNEN\u003C/strong\u003E,\u003Cstrong\u003E \u003C/strong\u003Eum diese zu l\u00F6schen.\u003C/li\u003E\n\u003C/ol\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1716,
+      "Date": "2025-06-02T15:00:00+00:00",
+      "Category": "Power Tips",
+      "Tags": [
+        "locale-enu",
+        "multilingual",
+        "os-windows11",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Einstellen von Fokussitzungen zur Minimierung von Ablenkungen in Windows 11",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EDie Fokusfunktion in Windows 11 hilft Ihnen, sich auf die Arbeit zu fokussieren, indem sie Ablenkungen minimiert. W\u00E4hrend die Fokussitzung aktiviert ist, erhalten Sie keine Benachrichtigungen und Erinnerungen.\u003C/p\u003E\n\n\n\n\u003Cp\u003ESo stellen Sie eine Fokussitzung ein:\u003C/p\u003E\n\n\n\n\u003Col class=\u0022wp-block-list\u0022\u003E\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EWINDOWS\u002BN\u003C/strong\u003E, um auf Benachrichtigungen zuzugreifen.\u003C/li\u003E\n\n\n\n\u003Cli\u003ENavigieren Sie im Dialog, indem Sie \u003Cstrong\u003ETAB\u003C/strong\u003E dr\u00FCcken.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie auf dem Fokus-Schalter die \u003Cstrong\u003ELEERTASTE\u003C/strong\u003E, um eine Sitzung zu starten. Nach dem Starten k\u00F6nnen Sie auf diesem Schalter die \u003Cstrong\u003ELeertaste\u003C/strong\u003E dr\u00FCcken, um die Sitzung zu beenden.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie die \u003Cstrong\u003ELEERTASTE\u003C/strong\u003E auf Fokusdauer erh\u00F6hen oder Fokusdauer verringern, um die Dauer der Fokussitzung zu \u00E4ndern.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EESC\u003C/strong\u003E, um die Benachrichtigungen zu schlie\u00DFen.\u003C/li\u003E\n\u003C/ol\u003E\n\n\n\n\u003Cp\u003E\u003C/p\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1695,
+      "Date": "2025-05-16T14:00:00+00:00",
+      "Category": "What\u0027s New",
+      "Tags": [
+        "locale-enu",
+        "minversion-2025.0.0",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Mai Update verf\u00FCgbar \u2013 Was ist neu in JAWS 2025?",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EWir freuen uns, ank\u00FCndigen zu k\u00F6nnen, dass MathCAT nun die Standardl\u00F6sung f\u00FCr das Lesen mathematischer Inhalte in Englisch ist und sowohl Nemeth als auch UEB Math unterst\u00FCtzt. Mit diesem Update wird auch die Zahlenverarbeitung f\u00FCr nicht-englische Benutzer verfeinert und der KI Bezeichner (Teil unseres Vorschau Programms) eingef\u00FChrt, der kurze Beschreibungen f\u00FCr bisher nicht beschriftete Elemente liefert.\u003C/p\u003E\n\n\n\n\u003Cp\u003ESie k\u00F6nnen auf die neueste Version aktualisieren \u00FCber das JAWS Men\u00FC \u0026gt; Hilfe \u0026gt; Nach Updates suchen. Die vollst\u00E4ndigen Versionshinweise finden Sie unter \u003Ca href=\u0022https://www.freedomsci.de/news/new_2025.htm\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003EWas ist Neu in JAWS 2025\u003C/a\u003E.\u003C/p\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1634,
+      "Date": "2025-05-05T15:00:00+00:00",
+      "Category": "Power Tips",
+      "Tags": [
+        "locale-enu",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Zugriff auf den Versionsverlauf in OneDrive mit JAWS",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EDie OneDrive-Desktop-App wird verwendet, um Dateien sowohl in der Cloud als auch auf Ihrem Ger\u00E4t zu speichern, damit Sie bei Bedarf einfach darauf zugreifen k\u00F6nnen. Wenn Sie eine Datei speichern und sp\u00E4ter \u00E4ndern, erstellt OneDrive einen Versionsverlauf, sodass Sie auf jede Version dieser Datei zugreifen k\u00F6nnen. Dies ist vor allem dann n\u00FCtzlich, wenn Sie versehentlich Inhalte aus der Datei l\u00F6schen oder die Datei \u00FCberschreiben und sie wiederherstellen m\u00F6chten.\u003C/p\u003E\n\n\n\n\u003Cp\u003ESo greifen Sie mit JAWS auf den Versionsverlauf einer Datei in OneDrive zu:\u003C/p\u003E\n\n\n\n\u003Col class=\u0022wp-block-list\u0022\u003E\n\u003Cli\u003ENavigieren Sie im Datei-Explorer zu der Datei.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EUMSCHALT\u002BF10\u003C/strong\u003E, um ein Kontextmen\u00FC zu \u00F6ffnen, welches Optionen f\u00FCr die Datei enth\u00E4lt.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EPFEIL RAUF\u003C/strong\u003E, um den Eintrag Eigenschaften auszuw\u00E4hlen und dr\u00FCcken Sie \u003Cstrong\u003EEINGABE\u003C/strong\u003E.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003ESTRG\u002BUMSCHALT\u002BTAB\u003C/strong\u003E, um zur Registerkarte \u003Cstrong\u003EVorg\u00E4ngerversionen\u003C/strong\u003E zu navigieren.\u003C/li\u003E\n\n\n\n\u003Cli\u003EVerwenden Sie die Pfeiltasten, um in der Liste der Dateiversionen f\u00FCr die ausgew\u00E4hlte Datei zu navigieren. Sie werden mit 1.0, 2.0, usw. nummeriert sein. JAWS sagt die Versionsnummer sowie die Uhrzeit und das Datum an, an dem die Datei erstellt oder ge\u00E4ndert wurde.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie auf einer Version der Datei \u003Cstrong\u003EUMSCHALT\u002BF10\u003C/strong\u003E, um auf ein Kontextmen\u00FC zuzugreifen. Navigieren Sie mit den Pfeiltasten durch das Men\u00FC und dr\u00FCcken Sie auf einer Option \u003Cstrong\u003EEINGABE\u003C/strong\u003E, um diese auszuw\u00E4hlen. Zur Auswahl stehen: Wiederherstellen, Version l\u00F6schen und Datei \u00F6ffnen. Bei der Wiederherstellung einer fr\u00FCheren Version wird die neueste Version gel\u00F6scht. Vergewissern Sie sich also, dass Sie dies wirklich beabsichtigen, bevor Sie diese Option ausw\u00E4hlen.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EALT\u002BF4\u003C/strong\u003E, um den Versionsverlauf zu schlie\u00DFen.\u003C/li\u003E\n\u003C/ol\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1674,
+      "Date": "2025-04-29T15:01:41+00:00",
+      "Category": "Announcement",
+      "Tags": [
+        "locale-enu",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Installieren Sie JAWS und Chrome Updates, um Probleme beim Kopieren und Einf\u00FCgen zu beheben",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EBei der Installation der Chrome- und Edge-Versionen 134 und 135 sind bei JAWS-Anwendern Probleme aufgetreten, die durch die Installation des April-Updates von JAWS und der neuesten Version von Google Chrome und Microsoft Edge behoben werden k\u00F6nnen.\u003C/p\u003E\n\n\n\n\u003Cp\u003EBeim Versuch, in den Chrome-Versionen 134 und 135 mit JAWS Text zu kopieren und einzuf\u00FCgen, dann funktionierte die Kopierfunktion nicht. Au\u00DFerdem erkannte JAWS in einigen F\u00E4llen Sprachwechsel nicht, und die Ausf\u00FChrung konnte auf einigen Webseiten langsamer sein.\u003C/p\u003E\n\n\n\n\u003Cp\u003EUm diese Probleme zu beheben, installieren Sie bitte das April-Update von JAWS 2025 und aktualisieren Sie Chrome und Edge auf die Version 136.\u003C/p\u003E\n\n\n\n\u003Cp\u003E\u003Cstrong\u003EHinweis:\u003C/strong\u003E Wenn Sie eine fr\u00FChere Version von JAWS verwenden und diese Probleme auftreten, aktualisieren Sie Chrome und Edge, um diese zu beheben. Auch wenn Edge 136 noch nicht freigegeben ist, sollten Sie weiterhin nach Updates suchen, da diese Version bald verf\u00FCgbar sein wird.\u003C/p\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1626,
+      "Date": "2025-04-28T15:00:00+00:00",
+      "Category": "Power Tips",
+      "Tags": [
+        "locale-deu",
+        "minversion-2025.2503.39",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Unterst\u00FCtzung f\u00FCr Schriftschnittmarkierungen in Braille",
+      "Content": "\n\u003Cp\u003EF\u00FCr diejenigen, die haupts\u00E4chlich \u00FCber die Braillezeile lesen, kann es schwierig sein, zu erkennen, wann ein Text bestimmte Schriftattribute wie fett, kursiv oder unterstrichen verwendet. F\u00FCr die Deutsche Voll- und Kurzschrift wurden Punktmuster definiert, die als Braille-Indikatoren verwendet werden und dem Text vorangestellt sind, um die verwendete Schriftform oder das Schriftattribut zu identifizieren. So stehen dabei zum Beispiel die Punkte 4-5-6 f\u00FCr fetten Text, die Punkte 4-5-6-7 f\u00FCr unterstrichenen Text und Punkt 5 gefolgt von Punkten 4-5-6 f\u00FCr kursiven Text. Handelt es sich um eine Textpassage aus mehreren W\u00F6rtern, werden die o. g. Punktmuster dem entsprechenden Text zweimal vorangestellt. Das Ende der Schriftschnitt\u00E4nderung wird durch Punkt 6 gefolgt von Punkt 3 gekennzeichnet.\u003C/p\u003E\n\n\n\n\u003Cp\u003E\u003Cstrong\u003EHinweis\u003C/strong\u003E: Diese Funktion steht bei Verwendung von Computerbraille nicht zur Verf\u00FCgung und bezieht sich auf die Verwendung von RTFC. Wird stattdessen Liblouis genutzt, dann \u00E4ndern sich auch die Punktmuster.\u003C/p\u003E\n\n\n\n\u003Cp\u003ESo konfigurieren Sie JAWS so, dass beim Lesen oder Bearbeiten von Dokumenten Braille-Schriftschnitt-Indikatoren angezeigt werden:\u003C/p\u003E\n\n\n\n\u003Col start=\u00221\u0022 class=\u0022wp-block-list\u0022\u003E\n\u003Cli\u003EDr\u00FCcken Sie\u0026nbsp;\u003Cstrong\u003EEINF\u00DCGEN\u002B6\u003C/strong\u003E\u0026nbsp;auf der Nummernreihe der Tastatur, um die Einstellungsverwaltung zu \u00F6ffnen.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDamit sich \u00C4nderungen auf alle Anwendungen auswirken, dr\u00FCcken Sie\u00A0\u003Cstrong\u003ESTRG\u002BUMSCHALT\u002BD\u003C/strong\u003E, um die Standardeinstellungen von JAWS zu laden. Damit \u00C4nderungen f\u00FCr eine spezielle Anwendung wirksam werden, w\u00E4hlen Sie diese in der Ausklappliste\u00A0Anwendungen.\u003C/li\u003E\n\n\n\n\u003Cli\u003EIm Sucheingabefeld geben Sie \u0026#8220;Schriftschnitt\u0026#8221; ohne Anf\u00FChrungsstriche ein.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie\u00A0\u003Cstrong\u003EPFEIL RUNTER\u003C/strong\u003E, um in den Suchergebnissen auf\u003Cstrong\u003E\u00A0\u003C/strong\u003ESchriftschnittmarkierungen anzeigen\u00A0zu gelangen und dr\u00FCcken Sie zum Ausw\u00E4hlen die\u00A0\u003Cstrong\u003ELEERTASTE\u003C/strong\u003E.\u003C/li\u003E\n\n\n\n\u003Cli\u003EW\u00E4hlen Sie\u0026nbsp;\u003Cstrong\u003EOK\u003C/strong\u003E, um Ihre \u00C4nderungen zu speichern und die Einstellungsverwaltung zu schlie\u00DFen.\u003C/li\u003E\n\u003C/ol\u003E\n\n\n\n\u003Cp\u003E\u003C/p\u003E\n"
+    },
+    {
+      "Read": false,
+      "Id": 1604,
+      "Date": "2025-04-07T15:00:00+00:00",
+      "Category": "Power Tips",
+      "Tags": [
+        "locale-enu",
+        "minversion-2025.2502.0",
+        "multilingual"
+      ],
+      "Guid": "",
+      "Title": "Verwenden Sie die Live-Textansicht, um Ihr Leseerlebnis zu verbessern",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EDie Live-Textansicht ist eine ZoomText-Bildschirmvergr\u00F6\u00DFerungsfunktion, die die Lesbarkeit von Bildschirmtext in Webbrowsern und anderen Anwendungen verbessert. Es zeigt w\u00E4hrend Sie in Dokumenten, E-Mails und Webseiten navigieren eine durchgehende Zeile mit klarem, leicht lesbarem Text am oberen oder unteren Rand des Bildschirms, die den Inhalt an der Position von Cursor, Mauszeiger oder Fokus anzeigt. \u003C/p\u003E\n\n\n\n\u003Cp\u003EVerwenden Sie die Live-Textansicht, um schwer lesbaren Text zu lesen, wie beispielsweise verschn\u00F6rkelten, dekorativen oder kontrastarmen Text. Die Live-Textansicht zeigt den Text deutlich in einem separaten Fenster an, so dass Sie bei geringerer Vergr\u00F6\u00DFerung mehr vom Bildschirm sehen und sich auf den Bereich konzentrieren k\u00F6nnen, den Sie lesen m\u00F6chten.\u003C/p\u003E\n\n\n\n\u003Cp\u003EDie Live-Textansicht steht als Vorschaufunktion im Rahmen des Vorschau Programms zur Verf\u00FCgung. So schalten Sie diese Funktion ein:\u003C/p\u003E\n\n\n\n\u003Col class=\u0022wp-block-list\u0022\u003E\n\u003Cli\u003EIm ZoomText- oder Fusion-Men\u00FC gehen Sie auf Hilfe und dann auf Vorschau Programm.\u003C/li\u003E\n\n\n\n\u003Cli\u003EAktivieren Sie das Kontrollfeld f\u00FCr Live-Textansicht.\u003C/li\u003E\n\n\n\n\u003Cli\u003EKlicken Sie auf OK und folgen Sie der Aufforderung zum Neustart.\u003C/li\u003E\n\u003C/ol\u003E\n\n\n\n\u003Cp\u003ENach dem Neustart erscheint die Live-Textansicht in der Werkzeugleiste auf der Vergr\u00F6\u00DFerer-Registerkarte. Dieser Schalter ersetzt die bisherige Schaltfl\u00E4che Navigation, die sich jetzt in einem Untermen\u00FC des ZoomText- oder Fusion-Men\u00FCs befindet.\u003C/p\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1553,
+      "Date": "2025-03-24T15:00:00+00:00",
+      "Category": "Power Tips",
+      "Tags": [
+        "locale-enu",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "In einem Word Dokument die Rechtschreibung mit den JAWS Schnellnavigationstasten pr\u00FCfen",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003ESie k\u00F6nnen in Word die JAWS Schnellnavigationstasten verwenden, um durch Rechtschreibfehler zu navigieren. So gehen Sie vor:\u003C/p\u003E\n\n\n\n\u003Col class=\u0022wp-block-list\u0022\u003E\n\u003Cli\u003EBefinden Sie sich in einem Word Dokument, dann dr\u00FCcken Sie \u003Cstrong\u003EEINF\u00DCGEN\u002BY\u003C/strong\u003E, um die Schnellnavigationstasten zu aktivieren. Auf diese Weise k\u00F6nnen Sie mit Hilfe von Buchstaben, die Sie auf der Tastatur dr\u00FCcken, zu bestimmten Elementen wie \u00DCberschriften, Tabellen oder Links navigieren, ohne diese Buchstaben in Ihr Dokument zu schreiben.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EM\u003C/strong\u003E, um wortweise zum n\u00E4chsten falsch geschriebenen Wort zu navigieren. Der Fokus steht dann auf dem ersten Buchstaben des Wortes. JAWS liest das falsch geschriebene Wort und den Satz, der dieses Wort enth\u00E4lt.\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EUMSCHALT\u002BM\u003C/strong\u003E, um r\u00FCckw\u00E4rts durch falsch geschriebene W\u00F6rter zu navigieren.\u003C/li\u003E\n\n\n\n\u003Cli\u003EBefinden Sie sich auf einem falsch geschriebenen Wort, dr\u00FCcken Sie \u003Cstrong\u003EUMSCHALT\u002BF10\u003C/strong\u003E, um ein Kontextmen\u00FC zu \u00F6ffnen. Dr\u00FCcken Sie \u003Cstrong\u003EPFEIL RUNTER\u003C/strong\u003E, um durch die Vorschl\u00E4ge zu navigieren. Dr\u00FCcken Sie auf einem Vorschlag \u003Cstrong\u003EEINGABE\u003C/strong\u003E, um diesen zu w\u00E4hlen und das falsch geschriebene Wort zu korrigieren.\u003C/li\u003E\n\n\n\n\u003Cli\u003EAlternativ k\u00F6nnen Sie den Windows Befehl \u003Cstrong\u003EALT\u002BF7\u003C/strong\u003E f\u00FCr eine Liste mit Vorschl\u00E4gen verwenden, und dann dort auf einem Vorschlag \u003Cstrong\u003EEINGABE\u003C/strong\u003E dr\u00FCcken, um ihn auszuw\u00E4hlen.\u003C/li\u003E\n\u003C/ol\u003E\n\n\n\n\u003Cp\u003EWenn Sie einen dieser Tastaturbefehle dr\u00FCcken, dann werden die Schnellnavigationstasten automatisch ausgeschaltet. Dr\u00FCcken Sie \u003Cstrong\u003EEINF\u00DCGEN\u002BY\u003C/strong\u003E, um diese wieder einzuschalten und das Navigieren mit \u003Cstrong\u003EM\u003C/strong\u003E und \u003Cstrong\u003EUMSCHALT\u002BM\u003C/strong\u003E fortzusetzen.\u003C/p\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1551,
+      "Date": "2025-03-10T15:00:00+00:00",
+      "Category": "Power Tips",
+      "Tags": [
+        "locale-enu",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "Erstellen einer Desktop-Verkn\u00FCpfung zu einer Anwendung in Windows 11 mit JAWS",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003ESie k\u00F6nnen eine Verkn\u00FCpfung zu einer Anwendung auf Ihrem Desktop erstellen, so dass die Verkn\u00FCpfung leicht zu finden ist und auf die Anwendung schnell zugegriffen werden kann. So gehen Sie vor:\u003C/p\u003E\n\n\n\n\u003Col class=\u0022wp-block-list\u0022\u003E\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EWINDOWS\u002BR\u003C/strong\u003E, um auf den Ausf\u00FChren-Dialog zuzugreifen.\u003C/li\u003E\n\n\n\n\u003Cli\u003E\u003Cspan style=\u0022color: initial;\u0022\u003ESchreiben Sie \u201Cshell:appsfolder\u201D ohne die Anf\u00FChrungsstriche und dr\u00FCcken Sie \u003C/span\u003E\u003Cstrong style=\u0022color: initial;\u0022\u003EEINGABE\u003C/strong\u003E\u003Cspan style=\u0022color: initial;\u0022\u003E. Der Fokus steht dann in einer Liste der auf Ihrem Computer installierten Anwendungen. \u003C/span\u003E\u003C/li\u003E\n\n\n\n\u003Cli\u003E\u003Cspan style=\u0022color: initial;\u0022\u003EDr\u00FCcken Sie \u003C/span\u003E\u003Cstrong style=\u0022color: initial;\u0022\u003EPFEIL RUNTER\u003C/strong\u003E\u003Cspan style=\u0022color: initial;\u0022\u003E, um in der Liste zu navigieren, oder nutzen Sie den Anfangsbuchstaben der gew\u00FCnschten Anwendung, um diese ausfindig zu machen.\u003C/span\u003E\u003C/li\u003E\n\n\n\n\u003Cli\u003E\u003Cspan style=\u0022color: initial;\u0022\u003EDr\u00FCcken Sie \u003C/span\u003E\u003Cstrong style=\u0022color: initial;\u0022\u003EUMSCHALT\u002BF10\u003C/strong\u003E\u003Cspan style=\u0022color: initial;\u0022\u003E, um einen rechten Mausklick auszuf\u00FChren und dr\u00FCcken Sie dann \u003C/span\u003E\u003Cstrong style=\u0022color: initial;\u0022\u003EV\u003C/strong\u003E\u003Cspan style=\u0022color: initial;\u0022\u003E, um \u201CVerkn\u00FCpfung erstellen\u201D auszuw\u00E4hlen. In einer Meldung werden Sie gefragt, ob Sie die Verkn\u00FCpfung auf dem Desktop erstellen m\u00F6chten. \u003C/span\u003E\u003C/li\u003E\n\n\n\n\u003Cli\u003E\u003Cspan style=\u0022color: initial;\u0022\u003EDr\u00FCcken Sie \u003C/span\u003E\u003Cstrong style=\u0022color: initial;\u0022\u003EALT\u002BJ\u003C/strong\u003E\u003Cspan style=\u0022color: initial;\u0022\u003E, um Ja auszuw\u00E4hlen.\u003C/span\u003E \u003Cspan style=\u0022color: initial;\u0022\u003EAuf Ihrem Desktop wird dann eine Verkn\u00FCpfung zu der Anwendung erstellt. Sie enth\u00E4lt den Namen der Anwendung, gefolgt von dem Wort \u201EVerkn\u00FCpfung\u201C.\u003C/span\u003E\u003C/li\u003E\n\n\n\n\u003Cli\u003E\u003Cspan style=\u0022color: initial;\u0022\u003ESie k\u00F6nnen die Desktop-Verkn\u00FCpfung umbenennen, sodass sie nur den Namen der Anwendung enth\u00E4lt. Um dieses zu tun, dr\u00FCcken Sie \u003C/span\u003E\u003Cstrong style=\u0022color: initial;\u0022\u003EWINDOWS\u002BD\u003C/strong\u003E\u003Cspan style=\u0022color: initial;\u0022\u003E, um auf den Desktop zu wechseln.\u003C/span\u003E\u003C/li\u003E\n\n\n\n\u003Cli\u003E\u003Cspan style=\u0022color: initial;\u0022\u003ENavigieren Sie zu der erstellten Verkn\u00FCpfung durch Dr\u00FCcken des Anfangsbuchstabens des App-Namens, dann dr\u00FCcken Sie \u003C/span\u003E\u003Cstrong style=\u0022color: initial;\u0022\u003EF2\u003C/strong\u003E\u003Cspan style=\u0022color: initial;\u0022\u003E, um den Umbenennen-Dialog zu \u00F6ffnen.\u003C/span\u003E\u003C/li\u003E\n\n\n\n\u003Cli\u003E\u003Cspan style=\u0022color: initial;\u0022\u003E\u00C4ndern Sie den Namen oder geben Sie einen neuen Namen ein und dr\u00FCcken Sie dann \u003C/span\u003E\u003Cstrong style=\u0022color: initial;\u0022\u003EEINGABE\u003C/strong\u003E\u003Cspan style=\u0022color: initial;\u0022\u003E. Ihre Desktop-Verkn\u00FCpfung sollte nun den neuen Namen tragen.\u003C/span\u003E\u003C/li\u003E\n\n\n\n\u003Cli\u003EDr\u00FCcken Sie \u003Cstrong\u003EALT\u002BTAB\u003C/strong\u003E, um zur\u00FCck in die App-Liste zu navigieren, dr\u00FCcken Sie dann \u003Cstrong\u003EALT\u002BF4\u003C/strong\u003E, um diese Liste zu schlie\u00DFen.\u003C/li\u003E\n\u003C/ol\u003E\n\u003C/span\u003E"
+    },
+    {
+      "Read": false,
+      "Id": 1560,
+      "Date": "2025-03-07T14:07:08+00:00",
+      "Category": "What\u0027s New",
+      "Tags": [
+        "locale-enu",
+        "minversion-2025.0.0",
+        "multilingual",
+        "product-jaws"
+      ],
+      "Guid": "",
+      "Title": "M\u00E4rz Update verf\u00FCgbar \u2013 Was ist neu in JAWS 2025?",
+      "Content": "\u003Cspan lang=\u0022de\u0022\u003E\n\u003Cp\u003EWir freuen uns, das M\u00E4rz Update f\u00FCr JAWS anzuk\u00FCndigen, welches Unterst\u00FCtzung f\u00FCr Schriftschnittmarkierungen auf der Brailleezeile, Verbesserungen f\u00FCr Thunderbird E-Mails und weitere Erweiterungen enth\u00E4lt.\u003C/p\u003E\n\n\n\n\u003Cp\u003ESie k\u00F6nnen auf die neueste Version aktualisieren \u00FCber das JAWS Men\u00FC \u0026gt; Hilfe \u0026gt; Nach Updates suchen. Die vollst\u00E4ndigen Versionshinweise finden Sie unter \u003Ca href=\u0022https://www.freedomsci.de/news/new_2025.htm\u0022 target=\u0022_blank\u0022 rel=\u0022noreferrer noopener\u0022\u003EWas ist Neu in JAWS 2025\u003C/a\u003E.\u003C/p\u003E\n\u003C/span\u003E"
+    }
+  ],
+  "ReceivedIds": [
+    1551,
+    1560,
+    1553,
+    1604,
+    1626,
+    1674,
+    1634,
+    1716,
+    1695,
+    1739,
+    1757,
+    1750,
+    1860,
+    1871,
+    1919
+  ]
+}

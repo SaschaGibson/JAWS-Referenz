@@ -1,0 +1,9 @@
+[NonJCFOptions]
+BrlTBLZoom=1
+BrlTblHeader=0
+DefaultVCursorCellCoordinatesAnnouncement=0
+BrlShowCoords=0
+[HTML]
+ButtonTextOptions=4
+[VirtualCursorVerbosity]
+ElementDescription=0|1|0
