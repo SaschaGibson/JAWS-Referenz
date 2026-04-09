@@ -14,7 +14,7 @@ Dieses Tool startet JAWS nach RDP-Reconnect automatisch über die JAWS-eigene AP
 In einer Eingabeaufforderung/PowerShell:
 
 ```powershell
-"C:\ProgramData\Beta\RemoteJawsRecovery\RemoteJawsReconnect.exe" --force-local --cooldown-seconds 0 --delay-seconds 0
+"C:\ProgramData\Beta\RemoteJawsRecovery\RemoteJawsReconnect\RemoteJawsReconnect.exe" --force-local --cooldown-seconds 0 --delay-seconds 0
 ```
 
 ## Häufige Fragen

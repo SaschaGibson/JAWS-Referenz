@@ -53,5 +53,5 @@ powershell.exe -ExecutionPolicy Bypass -File .\Create-DeliveryZip.ps1 -PackageMo
 - Logdatei prüfen: `restart-log.txt`
 - Testlauf erzwingen:
 ```powershell
-"C:\ProgramData\Beta\RemoteJawsRecovery\RemoteJawsReconnect.exe" --force-local --cooldown-seconds 0 --delay-seconds 0
+"C:\ProgramData\Beta\RemoteJawsRecovery\RemoteJawsReconnect\RemoteJawsReconnect.exe" --force-local --cooldown-seconds 0 --delay-seconds 0
 ```
