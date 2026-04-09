@@ -10,7 +10,11 @@ Dadurch entfallen viele Rechteprobleme beim gewaltsamen Prozessbeenden.
 ## Dateien
 
 - `remote_jaws_reconnect.py` (Aktionsskript mit Logging, Cooldown, DryRun)
-- `Register-RemoteJawsReconnectTask-FSAPI.ps1` (registriert die geplante Aufgabe)
+- `Build-RemoteJawsReconnectExe.ps1` (erzeugt eine EXE via PyInstaller, ohne sichtbares Konsolenfenster)
+- `Register-RemoteJawsReconnectTask-FSAPI.ps1` (registriert die geplante Aufgabe; EXE- oder Python-Modus)
+- `Create-DeliveryZip.ps1` (erstellt das auslieferfertige ZIP lokal)
+- `NUTZER-ANLEITUNG.md` (Kurzinfo für Endanwender)
+- `ADMIN-ANLEITUNG.md` (Deployment- und Betriebsanleitung)
 
 ## Logging
 
@@ -26,10 +30,22 @@ Standard-Logdatei:
 python .\remote_jaws_reconnect.py --dry-run --force-local
 ```
 
-2) Task registrieren:
+2) EXE bauen:
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File .\Register-RemoteJawsReconnectTask-FSAPI.ps1 -DryRun
+powershell.exe -ExecutionPolicy Bypass -File .\Build-RemoteJawsReconnectExe.ps1 -Clean
+```
+
+3) Task registrieren:
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File .\Register-RemoteJawsReconnectTask-FSAPI.ps1 -ActionMode Exe -DryRun
+```
+
+4) Liefer-ZIP lokal erzeugen:
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File .\Create-DeliveryZip.ps1
 ```
 
 ### Verhalten bei bereits vorhandener Task
@@ -39,6 +55,11 @@ powershell.exe -ExecutionPolicy Bypass -File .\Register-RemoteJawsReconnectTask-
 - `Overwrite` (Default): vorhandene Task wird aktualisiert/überschrieben
 - `Skip`: Registrierung wird ohne Fehler beendet, falls Task schon existiert
 - `Fail`: Registrierung bricht mit Fehler ab, falls Task schon existiert
+
+### Ohne sichtbares Fenster/Kommandozeile
+
+- Build erfolgt mit PyInstaller `--noconsole` (siehe Build-Skript).
+- Der Scheduled Task wird mit `Hidden=true` angelegt.
 
 ## Hinweis zu Python-Abhängigkeiten
 

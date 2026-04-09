@@ -1,6 +1,10 @@
 param(
     [string]$TaskName = 'Remote JAWS Reconnect Recovery (FSAPI)',
+    [ValidateSet('Exe','Python')]
+    [string]$ActionMode = 'Exe',
     [string]$PythonScriptPath = 'C:\ProgramData\Beta\RemoteJawsRecovery\remote_jaws_reconnect.py',
+    [string]$ExePath = 'C:\ProgramData\Beta\RemoteJawsRecovery\RemoteJawsReconnect.exe',
+    [string]$SourceExePath = '',
     [ValidateSet('RemoteConnect','SessionUnlock')]
     [string]$TriggerMode = 'RemoteConnect',
     [int]$DelaySeconds = 7,
@@ -15,35 +19,47 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$targetDir = Split-Path -Path $PythonScriptPath -Parent
+$targetPath = if ($ActionMode -eq 'Exe') { $ExePath } else { $PythonScriptPath }
+$targetDir = Split-Path -Path $targetPath -Parent
 $null = New-Item -ItemType Directory -Path $targetDir -Force -ErrorAction SilentlyContinue
 
-$sourceScript = Join-Path $PSScriptRoot 'remote_jaws_reconnect.py'
-if (-not (Test-Path $sourceScript)) {
-    throw "Python-Script nicht gefunden: $sourceScript"
+if ($ActionMode -eq 'Python') {
+    $sourceScript = Join-Path $PSScriptRoot 'remote_jaws_reconnect.py'
+    if (-not (Test-Path $sourceScript)) {
+        throw "Python-Script nicht gefunden: $sourceScript"
+    }
+    Copy-Item -Path $sourceScript -Destination $PythonScriptPath -Force
+} else {
+    if ([string]::IsNullOrWhiteSpace($SourceExePath)) {
+        $SourceExePath = Join-Path $PSScriptRoot 'dist\RemoteJawsReconnect.exe'
+    }
+    if (-not (Test-Path $SourceExePath)) {
+        throw "EXE nicht gefunden: $SourceExePath. Bitte zuerst Build-RemoteJawsReconnectExe.ps1 ausführen."
+    }
+    Copy-Item -Path $SourceExePath -Destination $ExePath -Force
 }
-Copy-Item -Path $sourceScript -Destination $PythonScriptPath -Force
 
 $userId = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
-$escapedPath = $PythonScriptPath.Replace('&','&amp;').Replace('<','&lt;').Replace('>','&gt;')
+$command = ''
+$arguments = @('--delay-seconds', $DelaySeconds, '--cooldown-seconds', $CooldownSeconds)
+if ($ActionMode -eq 'Python') {
+    $escapedPath = $PythonScriptPath.Replace('&','&amp;').Replace('<','&lt;').Replace('>','&gt;')
+    $pyLauncher = (Get-Command py.exe -ErrorAction SilentlyContinue)
+    $pythonCmd = if ($null -ne $pyLauncher) { 'py.exe' } else { 'python.exe' }
+    $command = $pythonCmd
+    if ($pythonCmd -eq 'py.exe') {
+        $arguments = @('-3', '"' + $escapedPath + '"') + $arguments
+    } else {
+        $arguments = @('"' + $escapedPath + '"') + $arguments
+    }
+} else {
+    $command = $ExePath.Replace('&','&amp;').Replace('<','&lt;').Replace('>','&gt;')
+}
 
-$pyLauncher = (Get-Command py.exe -ErrorAction SilentlyContinue)
-$pythonCmd = if ($null -ne $pyLauncher) { 'py.exe' } else { 'python.exe' }
-
-$arguments = @('-3', '"' + $escapedPath + '"', '--delay-seconds', $DelaySeconds, '--cooldown-seconds', $CooldownSeconds)
 if ($DryRun) { $arguments += '--dry-run' }
 if ($ForceLocal) { $arguments += '--force-local' }
 if (-not [string]::IsNullOrWhiteSpace($FallbackFunctionName)) {
     $arguments += @('--fallback-function-name', $FallbackFunctionName)
-}
-
-if ($pythonCmd -eq 'python.exe') {
-    $arguments = @('"' + $escapedPath + '"', '--delay-seconds', $DelaySeconds, '--cooldown-seconds', $CooldownSeconds)
-    if ($DryRun) { $arguments += '--dry-run' }
-    if ($ForceLocal) { $arguments += '--force-local' }
-    if (-not [string]::IsNullOrWhiteSpace($FallbackFunctionName)) {
-        $arguments += @('--fallback-function-name', $FallbackFunctionName)
-    }
 }
 
 $argString = ($arguments -join ' ')
@@ -111,7 +127,7 @@ $triggerXml
     </IdleSettings>
     <AllowStartOnDemand>true</AllowStartOnDemand>
     <Enabled>true</Enabled>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
     <RunOnlyIfIdle>false</RunOnlyIfIdle>
     <DisallowStartOnRemoteAppSession>false</DisallowStartOnRemoteAppSession>
     <UseUnifiedSchedulingEngine>true</UseUnifiedSchedulingEngine>
@@ -121,7 +137,7 @@ $triggerXml
   </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>$pythonCmd</Command>
+      <Command>$command</Command>
       <Arguments>$argString</Arguments>
     </Exec>
   </Actions>
@@ -156,7 +172,12 @@ if ($IfTaskExists -eq 'Overwrite') {
 & schtasks.exe @createArgs | Out-Host
 
 Write-Host "Task registriert: $TaskName"
-Write-Host "Python script: $PythonScriptPath"
+Write-Host "ActionMode: $ActionMode"
+if ($ActionMode -eq 'Exe') {
+    Write-Host "ExePath: $ExePath"
+} else {
+    Write-Host "Python script: $PythonScriptPath"
+}
 Write-Host "TriggerMode: $TriggerMode"
 Write-Host "DelaySeconds: $DelaySeconds"
 Write-Host "CooldownSeconds: $CooldownSeconds"
