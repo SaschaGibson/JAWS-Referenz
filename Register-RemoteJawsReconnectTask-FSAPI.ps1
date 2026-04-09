@@ -3,8 +3,11 @@ param(
     [ValidateSet('Exe','Python')]
     [string]$ActionMode = 'Exe',
     [string]$PythonScriptPath = 'C:\ProgramData\Beta\RemoteJawsRecovery\remote_jaws_reconnect.py',
-    [string]$ExePath = 'C:\ProgramData\Beta\RemoteJawsRecovery\RemoteJawsReconnect.exe',
+    [string]$ExePath = 'C:\ProgramData\Beta\RemoteJawsRecovery\RemoteJawsReconnect\RemoteJawsReconnect.exe',
+    [ValidateSet('OneDir','OneFile')]
+    [string]$ExeDeploymentMode = 'OneDir',
     [string]$SourceExePath = '',
+    [string]$SourceBundleDir = '',
     [ValidateSet('RemoteConnect','SessionUnlock')]
     [string]$TriggerMode = 'RemoteConnect',
     [int]$DelaySeconds = 7,
@@ -30,13 +33,30 @@ if ($ActionMode -eq 'Python') {
     }
     Copy-Item -Path $sourceScript -Destination $PythonScriptPath -Force
 } else {
-    if ([string]::IsNullOrWhiteSpace($SourceExePath)) {
-        $SourceExePath = Join-Path $PSScriptRoot 'dist\RemoteJawsReconnect.exe'
+    if ($ExeDeploymentMode -eq 'OneFile') {
+        if ([string]::IsNullOrWhiteSpace($SourceExePath)) {
+            $SourceExePath = Join-Path $PSScriptRoot 'dist\RemoteJawsReconnect.exe'
+        }
+        if (-not (Test-Path $SourceExePath)) {
+            throw "EXE nicht gefunden: $SourceExePath. Bitte zuerst Build-RemoteJawsReconnectExe.ps1 -BundleMode OneFile ausführen."
+        }
+        Copy-Item -Path $SourceExePath -Destination $ExePath -Force
+    } else {
+        if ([string]::IsNullOrWhiteSpace($SourceBundleDir)) {
+            $SourceBundleDir = Join-Path $PSScriptRoot 'dist\RemoteJawsReconnect'
+        }
+        if (-not (Test-Path $SourceBundleDir)) {
+            throw "OneDir-Bundle nicht gefunden: $SourceBundleDir. Bitte zuerst Build-RemoteJawsReconnectExe.ps1 -BundleMode OneDir ausführen."
+        }
+
+        $targetBundleDir = Split-Path -Path $ExePath -Parent
+        if (Test-Path $targetBundleDir) {
+            Get-ChildItem -Path $targetBundleDir -Force -ErrorAction SilentlyContinue | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+        } else {
+            $null = New-Item -ItemType Directory -Path $targetBundleDir -Force -ErrorAction SilentlyContinue
+        }
+        Copy-Item -Path (Join-Path $SourceBundleDir '*') -Destination $targetBundleDir -Recurse -Force
     }
-    if (-not (Test-Path $SourceExePath)) {
-        throw "EXE nicht gefunden: $SourceExePath. Bitte zuerst Build-RemoteJawsReconnectExe.ps1 ausführen."
-    }
-    Copy-Item -Path $SourceExePath -Destination $ExePath -Force
 }
 
 $userId = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
@@ -174,6 +194,7 @@ if ($IfTaskExists -eq 'Overwrite') {
 Write-Host "Task registriert: $TaskName"
 Write-Host "ActionMode: $ActionMode"
 if ($ActionMode -eq 'Exe') {
+    Write-Host "ExeDeploymentMode: $ExeDeploymentMode"
     Write-Host "ExePath: $ExePath"
 } else {
     Write-Host "Python script: $PythonScriptPath"

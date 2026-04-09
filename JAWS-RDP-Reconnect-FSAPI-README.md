@@ -33,7 +33,7 @@ python .\remote_jaws_reconnect.py --dry-run --force-local
 2) EXE bauen:
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File .\Build-RemoteJawsReconnectExe.ps1 -Clean
+powershell.exe -ExecutionPolicy Bypass -File .\Build-RemoteJawsReconnectExe.ps1 -BundleMode OneDir -Clean
 ```
 
 3) Task registrieren:
@@ -45,8 +45,10 @@ powershell.exe -ExecutionPolicy Bypass -File .\Register-RemoteJawsReconnectTask-
 4) Liefer-ZIP lokal erzeugen:
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File .\Create-DeliveryZip.ps1
+powershell.exe -ExecutionPolicy Bypass -File .\Create-DeliveryZip.ps1 -PackageMode OneDir -IncludeExe Required
 ```
+
+Damit ist garantiert, dass das gebaute OneDir-Bundle (`dist\RemoteJawsReconnect`) im ZIP enthalten ist.
 
 ### Verhalten bei bereits vorhandener Task
 
@@ -59,6 +61,7 @@ powershell.exe -ExecutionPolicy Bypass -File .\Create-DeliveryZip.ps1
 ### Ohne sichtbares Fenster/Kommandozeile
 
 - Build erfolgt mit PyInstaller `--noconsole` (siehe Build-Skript).
+- Für stabilen Betrieb ohne _MEI-Löschwarnung wird `-BundleMode OneDir` empfohlen.
 - Der Scheduled Task wird mit `Hidden=true` angelegt.
 
 ## Hinweis zu Python-Abhängigkeiten

@@ -2,6 +2,8 @@ param(
     [string]$EntryScript = '.\remote_jaws_reconnect.py',
     [string]$AppName = 'RemoteJawsReconnect',
     [string]$RuntimeTmpDir = 'C:\ProgramData\Beta\RemoteJawsRecovery\_runtime',
+    [ValidateSet('OneDir','OneFile')]
+    [string]$BundleMode = 'OneDir',
     [switch]$Clean
 )
 
@@ -22,17 +24,21 @@ $null = New-Item -ItemType Directory -Path $RuntimeTmpDir -Force -ErrorAction Si
 $arguments = @(
     '-3', '-m', 'PyInstaller',
     '--noconfirm',
-    '--onefile',
     '--noconsole',
     '--name', $AppName,
     '--collect-submodules', 'win32com',
     '--hidden-import', 'pythoncom',
     '--hidden-import', 'pywintypes',
-    '--runtime-tmpdir', $RuntimeTmpDir,
     '--distpath', '.\dist',
     '--workpath', '.\build',
     '--specpath', '.\build'
 )
+
+if ($BundleMode -eq 'OneFile') {
+    $arguments += @('--onefile', '--runtime-tmpdir', $RuntimeTmpDir)
+} else {
+    $arguments += '--onedir'
+}
 
 if ($Clean) {
     $arguments += '--clean'
@@ -46,9 +52,14 @@ if ($LASTEXITCODE -ne 0) {
     throw "PyInstaller fehlgeschlagen mit ExitCode $LASTEXITCODE"
 }
 
-$exePath = Join-Path (Resolve-Path '.\dist').Path ($AppName + '.exe')
+$distRoot = (Resolve-Path '.\dist').Path
+$exePath = if ($BundleMode -eq 'OneFile') {
+    Join-Path $distRoot ($AppName + '.exe')
+} else {
+    Join-Path (Join-Path $distRoot $AppName) ($AppName + '.exe')
+}
 if (-not (Test-Path $exePath)) {
-    throw "EXE wurde nicht erzeugt: $exePath"
+    throw "Ausgabedatei wurde nicht erzeugt: $exePath"
 }
 
 Write-Host "Build erfolgreich: $exePath"
