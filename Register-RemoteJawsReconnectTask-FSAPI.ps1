@@ -221,6 +221,10 @@ if ($IfTaskExists -eq 'Overwrite') {
 }
 
 & $script:SchtasksExe @createArgs | Out-Host
+$schtasksExitCode = $LASTEXITCODE
+if ($schtasksExitCode -ne 0) {
+    throw "schtasks.exe /Create fehlgeschlagen (ExitCode=$schtasksExitCode) für Task '$TaskName'."
+}
 
 Write-Host "Task registriert: $TaskName"
 Write-Host "ScriptVersion: $script:ScriptVersion"
